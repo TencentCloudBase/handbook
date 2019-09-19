@@ -1,0 +1,613 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 链接与图片评论Feed" href="https://cloudbasegroup.org/handbook/weapp/15/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="next" title="WXML与WXSS" href="https://cloudbasegroup.org/handbook/weapp/13">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weapp/15">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=15">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F15">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F15&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+    
+    <body class="post-template-default single single-post postid-15 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+    <nav id="header-db" class="row navbar navbar-default">
+            <div class="navbar-header">
+                  <div class="logotop fleft">
+                    <a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+                <div class="flex nav-items">
+                <h1 class="flex-item navbar-link">
+                    小程序技术训练营			</h1>
+                  </div>
+            </div>
+    
+            <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                <div class="sop-menu">
+                   <ul>
+                                       <li class="page_item no_current_page_item ">
+                           <a href="https://tencentcloudbase.github.io/handbook/tcb01.html">
+                               小程序开发入门					</a>
+                       </li>
+                                       <li class="page_item no_current_page_item">
+                           <a href="https://tencentcloudbase.github.io/handbook/tcb02.html">
+                               WXML与WXSS					</a>
+                       </li>
+                                       <li class="page_item current_page_item">
+                           <a href="https://tencentcloudbase.github.io/handbook/tcb03.html">
+                               链接与图片					</a>
+                       </li>
+                                                       </ul>
+               </div>		
+           </div>
+    </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">链接与图片</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>前几节的内容让我们的小程序有了文字，但小程序的内容形式还不够丰富，比如没有链接，没有图片等元素，而这些元素在小程序里也都是通过<strong>组件</strong>来实现的。</p>
+    <h4 id="navigator">navigator组件</h4>
+    <p>在小程序里，我们是通过navigator组件来给页面添加链接的。有些页面在我们打开小程序的时候就可以看得到，还有些则需要我们通过点击链接进行页面切换才可以看得到，这些我们可以称之为二级页面。</p>
+    <p><strong>技术文档</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html" target="_blank" rel="noopener noreferrer">navigator组件技术文档</a></p>
+    <p><strong>二级页面</strong></p>
+    <p>为了让二级页面与tabBar的页面有更加清晰的结构关系，我们可以在tabBar对应的页面文件夹下面新建要跳转的页面。比如我们的第一个tabBar是home，凡是home会跳转的二级页面，我们都建在home文件夹里。</p>
+    <p>我们同样在pages配置项里新建一个页面imgshow，名称大家可以自定义~这样pages配置项的内容如下：</p>
+            <div id="crayon-5d82f5b748be2678584051" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    "pages/home/home",
+        "pages/home/imgshow/imgshow",
+        "pages/list/list",
+        "pages/partner/partner",
+        "pages/more/more"</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748be2678584051-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748be2678584051-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748be2678584051-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748be2678584051-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748be2678584051-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748be2678584051-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pages/home/home"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5b748be2678584051-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pages/home/imgshow/imgshow"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5b748be2678584051-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pages/list/list"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5b748be2678584051-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pages/partner/partner"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5b748be2678584051-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pages/more/more"</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后我们再来在home页面的home.wxml加入以下代码：</p>
+            <div id="crayon-5d82f5b748bea289206064" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="index-link"&gt;
+      &lt;navigator url="./../home/imgshow/imgshow" class="item-link"&gt;让小程序显示图片&lt;/navigator&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bea289206064-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748bea289206064-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748bea289206064-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bea289206064-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"index-link"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bea289206064-2"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;navigator </span><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s ">"./../home/imgshow/imgshow"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-link"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">让小程序显示图片</span><span class="crayon-r ">&lt;/navigator&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bea289206064-3"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>在上面的代码中，我们把navigator组件嵌套在view组件里，当然不嵌套也是可以的。要写一个非常复杂的页面，就会经常用到这种嵌套。</p></blockquote>
+    <p>由于navigator组件没有添加样式，所以在视觉上看不出它是一个可以点击的链接，我们在home.wxss里给它添加一个样式：</p>
+            <div id="crayon-5d82f5b748bec016722664" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.item-link{
+      margin: 20px;
+      padding:10px 15px;
+      background-color: #4ea6ec;
+      color: #fff;
+      border-radius: 4px;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bec016722664-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748bec016722664-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748bec016722664-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748bec016722664-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748bec016722664-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5b748bec016722664-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d82f5b748bec016722664-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bec016722664-1"><span class="crayon-k ">.item-link</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748bec016722664-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">margin</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">20px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bec016722664-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding</span><span class="crayon-sy">:</span><span class="crayon-i ">10px</span><span class="crayon-h"> </span><span class="crayon-i ">15px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bec016722664-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#4ea6ec</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bec016722664-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#fff</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bec016722664-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">border-radius</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">4px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bec016722664-7"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>url是页面跳转链接，大家注意这个路径的写法，我们也可以把上面的链接形式写成以下代码：</p>
+            <div id="crayon-5d82f5b748bee992181451" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">/pages/home/imgshow/imgshow</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bee992181451-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bee992181451-1"><span class="crayon-o">/</span>pages<span class="crayon-o">/</span>home<span class="crayon-o">/</span>imgshow<span class="crayon-o">/</span>imgshow</div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这两个路径都是指向imgshow页面。</p>
+    <blockquote class="task"><p>小任务：为什么页面的路径有两个imgshow？比如把路径写成
+                <span id="crayon-5d82f5b748bf0092851733" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-o">/</span><span class="crayon-v">pages</span><span class="crayon-o">/</span><span class="crayon-v">home</span><span class="crayon-o">/</span><span class="crayon-v">imglist</span></span></span>对应的是什么页面？在pages配置项添加一下看看效果。</p></blockquote>
+    <h4><strong>相对路径与绝对路径</strong></h4>
+    <p><strong>相对路径</strong></p>
+    <p>大家注意我们之前使用的路径基本都是相对路径，相对路径使用“/”字符作为目录的分隔字符，</p>
+    <ul>
+    <li class="para">&nbsp;“./”&nbsp;代表当前目录&nbsp;&lt;img src=”./img/.jpg” /&gt;等同于&lt;img src=”img/icon.jpg” /&gt;</li>
+    <li class="para">“../”&nbsp;代表上一级目录</li>
+    <li class="para">&nbsp;“/”&nbsp;&nbsp; <strong>当前根目录</strong>，是相对目录；&lt;img src=”/img/icon.jpg” /&gt;</li>
+    </ul>
+    <blockquote class="task"><p><strong>小任务：</strong>你知道当前根目录是什么吗？/pages/home/imgshow/imgshow和./../home/imgshow/imgshow这两个的写法你明白它们为啥指向的是同一个路径了吗？</p></blockquote>
+    <p>要管理好图片资源、链接（页面）资源、音频资源、视频资源、wxss样式资源等等内部与外部资源，就一定要掌握路径方面的知识。我们之后也会经常运用这个知识。</p>
+    <p><strong>绝对路径</strong></p>
+    <p>那什么是绝对路径呢？网络链接比如 ：</p>
+            <div id="crayon-5d82f5b748bf3706960753" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bf3706960753-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bf3706960753-1"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这个就是绝对路径，还有C:\<em>Windows</em>\System32，这种从<strong>盘符开始</strong>的路径也是绝对路径。通常相对路径用的会比较多一些。</p>
+    <h4>image组件</h4>
+    <p>一个好看的网页怎么可能少得了图片呢？小程序添加图片是通过image组件的方式。</p>
+    <p><strong>技术文档</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html" target="_blank" rel="noopener noreferrer">image组件技术文档</a></p>
+    <p>我们首先把要显示的图片放到小程序的image文件夹里，然后再在imgshow页面下的imgshow.wxml添加以下代码：</p>
+            <div id="crayon-5d82f5b748bf5729590204" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view id="imgsection"&gt;
+      &lt;view class="title"&gt;小程序显示图片&lt;/view&gt;
+      &lt;view class="imglist"&gt;
+        &lt;image class="imgicon" src="/image/icon-tab1.png"&gt;&lt;/image&gt;
+      &lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bf5729590204-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748bf5729590204-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748bf5729590204-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748bf5729590204-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748bf5729590204-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5b748bf5729590204-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bf5729590204-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"imgsection"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf5729590204-2"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">小程序显示图片</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf5729590204-3"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"imglist"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf5729590204-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"imgicon"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"/image/icon-tab1.png"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf5729590204-5"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf5729590204-6"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>注意图片的链接是我们之前的tab图标链接，也就是这个链接来源于小程序的本地文件夹。可能你的图片命名会有所不同，主要根据情况修改。</p></blockquote>
+    <p>这样我们的图片就在小程序里显示出来啦~~</p>
+    <blockquote><p>如果我们不对图片的样式比如高度和宽度进行处理，图片显示就会变形。这是因为小程序会给图片增加一个默认的宽度和高度，宽度为300px，高度为225px。</p></blockquote>
+    <p>图片光显示出来还是不够的，很多时候我们会对图片显示出来的大小有要求，或者对它的外边距有要求；利用之前学到的知识，我们也可以给image组件加一些 css样式。比如我们在imgshow.wxss里面添加</p>
+            <div id="crayon-5d82f5b748bf7935941692" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.imglist{
+      text-align: center;
+    }
+    .imglist .imgicon{
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bf7935941692-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748bf7935941692-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748bf7935941692-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748bf7935941692-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748bf7935941692-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5b748bf7935941692-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d82f5b748bf7935941692-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d82f5b748bf7935941692-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bf7935941692-1"><span class="crayon-k ">.imglist</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748bf7935941692-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">text-align</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">center</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf7935941692-3"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748bf7935941692-4"><span class="crayon-k ">.imglist .imgicon</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748bf7935941692-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">200px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf7935941692-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">200px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf7935941692-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">margin</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">20px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf7935941692-8"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>云存储</h4>
+    <p>我们可以把图片放在小程序的本地文件夹里，也可以把图片放在网上。那如何把一张图片以链接的方式让其他人看到呢？这个时候就需要一个专门的存储图片的服务器（图床）了。</p>
+    <p><strong>免费的图床：</strong><a href="https://cloud.tencent.com/login" target="_blank" rel="noopener noreferrer">腾讯云对象存储COS</a></p>
+    <p>由于我们之前注册过小程序，可以<strong><span style="color: #800000;">选择其他登录方式</span></strong>里的<strong><span style="color: #800000;">微信公众号</span></strong>登录，登录后点击右上角<span style="color: #800000;"><strong>控制台</strong></span>，即可进入后台，在工具栏里下拉<span style="color: #800000;"><strong>云产品</strong></span>，找到<strong>存储</strong>下面的<strong>对象存储</strong>，在左侧菜单存储桶列表<strong>创建存储桶</strong>，只需<strong><span style="color: #800000;">注意将访问权限改为公有读私有写</span></strong>，其他按说明自行操作。</p>
+    <p>创建好存储桶bucket，然后大家可以把图片上传到对象存储服务器里面，并分享链接并在imgshow.wmxl测试一下：</p>
+            <div id="crayon-5d82f5b748bf9978937523" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="imglist"&gt;
+        &lt;image class="imgitem" src="https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg"&gt;&lt;/image&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bf9978937523-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748bf9978937523-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748bf9978937523-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bf9978937523-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"imglist"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf9978937523-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"imgitem"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bf9978937523-3"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>小任务：</strong>除了腾讯云存储以外，比较推荐的还有<a href="https://www.qiniu.com/products/kodo" target="_blank" rel="noopener noreferrer">七牛云对象存储</a>、<a href="https://www.aliyun.com/product/oss" target="_blank" rel="noopener noreferrer">阿里云对象存储OSS</a>。云储存除了可以上传图片外，还可以上传其他文件格式，试试看。</p></blockquote>
+    <h4>尺寸单位rpx</h4>
+    <p>上面的网络图片是变形的，为了让图片不变形，那我们需要给图片添加一个wxss样式，这里就有一个问题，这张图片的宽度为1684px，高度为998px，而手机的宽度却没有这么高的像素。我们想让图片在手机里完整显示而不变形该怎么处理呢？方法之一是我们可以使用尺寸单位rpx。</p>
+    <p><strong>技术文档</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html" target="_blank" rel="noopener noreferrer">尺寸单位rpx</a></p>
+    <p>在小程序里，所有的手机屏幕的宽度都为750rpx，我们可以把图片等比缩小。比如给图片添加样式:</p>
+            <div id="crayon-5d82f5b748bfb052063153" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.imglist .imgitem{
+      width: 700rpx;
+      height: 415rpx;
+      margin: 20rpx;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bfb052063153-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748bfb052063153-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748bfb052063153-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748bfb052063153-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748bfb052063153-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bfb052063153-1"><span class="crayon-k ">.imglist .imgitem</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748bfb052063153-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">700rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bfb052063153-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">415rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bfb052063153-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">margin</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">20rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748bfb052063153-5"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>有了rpx这个尺寸单位，我们可以确定一个元素在小程序里的精准位置和精准大小，不过这个尺寸单位处理图片起来经常需要换算挺麻烦的，我们来看下面的处理方法。</p>
+    <h4>图片的裁剪</h4>
+    <p>由于我们的图片可能尺寸大小不一，或者由于iPhone、安卓手机的尺寸大小不一以及我们对图片显示的要求不一，为了让我们的图片显示正常，小程序需要对图片进行一些裁剪。</p>
+    <p>小程序是通过mode的方式来对图片进行裁剪的，大家可以去阅读一下image组件关于13种mode模式的说明。</p>
+    <p><strong>技术文档</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/component/image.html" target="_blank" rel="noopener noreferrer">image组件技术文档</a></p>
+    <p>如果我们想处理好上面的图片，我们该怎么处理呢？按照技术文档，我们可以给image组件添加一个widthFix模式：<strong>宽度不变，高度自动变化，保持原图宽高比不变。</strong></p>
+            <div id="crayon-5d82f5b748bfe199521578" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="imglist"&gt;
+        &lt;image class="imgitem" mode="widthFix" src="https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg"&gt;&lt;/image&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748bfe199521578-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748bfe199521578-2" style="height: 40px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748bfe199521578-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748bfe199521578-1"><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"imglist"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bfe199521578-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">image </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"imgitem"</span><span class="crayon-h"> </span><span class="crayon-v">mode</span><span class="crayon-o">=</span><span class="crayon-s">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-v">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg"</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">image</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748bfe199521578-3"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后给图片添加wxss样式：</p>
+            <div id="crayon-5d82f5b748c00545256998" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.imglist .imgitem{
+      width: 100%;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c00545256998-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c00545256998-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c00545256998-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c00545256998-1"><span class="crayon-sy">.</span><span class="crayon-i">imglist</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-v">imgitem</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c00545256998-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">width</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">100</span><span class="crayon-o">%</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c00545256998-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>也就是说设置图片的宽度为百分比样式，而高度则自动变化，保持原图宽高比不变。</p>
+    <blockquote><p>百分比是网页、移动端等用来布局以及定义大小的一个非常重要的单位，大家要多学多练多分析哦~</p></blockquote>
+    <p>当然还会有这样的一个要求，我们希望图片全屏显示，但是设计师却只给图片预留了一个很小的高度，这样我们就必须对图片进行一定的裁剪了，我们可以在imgshow.wxml这样写。</p>
+            <div id="crayon-5d82f5b748c02807824847" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  &lt;view class="imglist"&gt;
+         &lt;image class="imgfull" mode="center" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/background.png"&gt;&lt;/image&gt;
+      &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c02807824847-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c02807824847-2" style="height: 40px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c02807824847-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c02807824847-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"imglist"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c02807824847-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"imgfull"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"center"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/background.png"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c02807824847-3"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>而在imgshow.wxss里面添加一些样式</p>
+            <div id="crayon-5d82f5b748c04450597924" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.imglist .imgfull{
+      width: 100%;
+      height: 100px;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c04450597924-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c04450597924-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c04450597924-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748c04450597924-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c04450597924-1"><span class="crayon-k ">.imglist .imgfull</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c04450597924-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100%</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c04450597924-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c04450597924-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家可以在开发者工具以及通过扫描开发者工具预览生成的二维码在手机上体验一下，并把这里的mode=”center”，换成其他12个模式来了解一下，不同的模式对图片裁剪的影响。</p>
+    <blockquote><p>图片的处理是一个非常重要的知识点，需要大家多多实践，但是原理和核心知识点都在wxss的样式处理和小程序image组件里，大家可以根据实际需求来应用。</p></blockquote>
+    <h4>背景属性</h4>
+    <p>背景属性也是属于CSS方面的知识，所谓背景属性就是给组件添加一些颜色背景或者图片背景。由于css的背景属性尤其是当我们想用一张图片作为组件的背景时，也会涉及到背景图片的位置与裁剪，这个和小程序image组件的裁剪多少有一些相通之处，所以我们就把CSS的背景属性放到这里来讲一下~</p>
+    <p>以下是我们经常会使用到的css背景属性以及相对应的技术文档，和之前我们强调的一样，技术文档是来翻阅和深入学习的，大家可以先用背景属性做出一些效果再说~</p>
+    <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+    <th colspan="2">背景属性</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_background.asp">background</a></th>
+    <td>在一个声明中设置所有的背景属性。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_background-color.asp">background-color</a></th>
+    <td>设置元素的背景颜色。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_background-image.asp">background-image</a></th>
+    <td>设置元素的背景图像。</td>
+    </tr>
+    <tr>
+    <th><a title="CSS3 background-size 属性" href="http://www.w3school.com.cn/cssref/pr_background-size.asp" target="_blank" rel="noopener noreferrer">background-size</a></th>
+    <td>规定背景图片的尺寸。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_background-repeat.asp" target="_blank" rel="noopener noreferrer">background-repeat</a></th>
+    <td>设置是否及如何重复背景图像。</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>比如我们可以给我们之前写好的home页面，id为wxmlinfo的view组件加一个背景颜色以及id为studyweapp的view组件添加一个背景图片：</p>
+            <div id="crayon-5d82f5b748c06055863307" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#wxmlinfo{
+      background-color: #dae7d9;
+    }
+    #studyweapp{
+      background-image: url(https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c06055863307-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c06055863307-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c06055863307-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748c06055863307-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748c06055863307-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5b748c06055863307-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d82f5b748c06055863307-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d82f5b748c06055863307-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c06055863307-1"><span class="crayon-k ">#wxmlinfo</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c06055863307-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#dae7d9</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c06055863307-3"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748c06055863307-4"><span class="crayon-k ">#studyweapp</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c06055863307-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">background-image</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">url</span><span class="crayon-sy">(</span><span class="crayon-e ">https</span><span class="crayon-sy">:</span><span class="crayon-i ">//hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/bg.png</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c06055863307-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">background-size</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">cover</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c06055863307-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">background-repeat</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">no-repeat</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c06055863307-8"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="danger"><p>大家注意，写在wxss里的图片只能来自服务器或者图床，不能放在小程序的文件结构里，这是小程序的一个规定。</p></blockquote>
+    <h4>图片的边框美化</h4>
+    <p>我们经常在一些app里看到很多图片它有圆角或者阴影，那这个是怎么实现的呢？这些效果是通过css的边框属性来实现的。</p>
+    <p>大家可以在小程序的image文件夹添加一张深色背景的图片（如果小程序的背景是深色的，图片背景是白色也是可以的）。我们给之前添加的image组件加一个圆角和阴影样式，在imgshow.wxss添加以下代码：</p>
+            <div id="crayon-5d82f5b748c08325203773" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.imglist .img{
+      border-radius: 8px;
+      box-shadow: 5px 8px 30px rgba(53,178,225,0.26);
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c08325203773-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c08325203773-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c08325203773-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748c08325203773-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c08325203773-1"><span class="crayon-k ">.imglist .img</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c08325203773-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">border-radius</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">8px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c08325203773-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">box-shadow</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">5px</span><span class="crayon-h"> </span><span class="crayon-i ">8px</span><span class="crayon-h"> </span><span class="crayon-i ">30px</span><span class="crayon-h"> </span><span class="crayon-i ">rgba</span><span class="crayon-sy">(</span><span class="crayon-i ">53,178,225,0.26</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c08325203773-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>图片有了圆角，有了阴影就有了一些现代感啦。</p>
+    <blockquote><p>这里用到了一个颜色就是rgba颜色值。RGB前面我们要求大家查过，RGBA(R,G,B,A)的R是红色值，G是绿色值，B是蓝色值，R,G,B的值取值范围是0~255，A是Alpha透明度，取值0~1之间，越靠近0越透明。</p></blockquote>
+    <p>我们来重新回顾一下边框属<a href="http://www.w3school.com.cn/cssref/pr_border-radius.asp" target="_blank" rel="noopener noreferrer">border-radius</a>和<a href="http://www.w3school.com.cn/cssref/pr_box-shadow.asp" target="_blank" rel="noopener noreferrer">box-shadow</a>，大家可以点击链接查看技术文档的详情。</p>
+    <p>除了圆角，我们经常会有把图片做成圆形的需求，我们来看具体的例子。首先在wxml文件里输入以下代码，添加一个logo图片，</p>
+            <div id="crayon-5d82f5b748c09153393384" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="imglist"&gt;
+        &lt;image class="circle" mode="widthFix" src="https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/logo.jpg"&gt;&lt;/image&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c09153393384-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c09153393384-2" style="height: 40px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c09153393384-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c09153393384-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"imglist"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c09153393384-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"circle"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/logo.jpg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c09153393384-3"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在与之对应的wxss文件里添加相应的css样式，</p>
+            <div id="crayon-5d82f5b748c0b549271295" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.imglist .circle{
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c0b549271295-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c0b549271295-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c0b549271295-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748c0b549271295-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748c0b549271295-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c0b549271295-1"><span class="crayon-k ">.imglist .circle</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0b549271295-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">200px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0b549271295-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">200px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0b549271295-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">border-radius</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100%</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0b549271295-5"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>也就是我们只需要定义了图片长宽之后，再来定义一下border-radius为100%即可把图片做成圆形。</p>
+    <h4>view、navigator、image组件嵌套</h4>
+    <p>前面我们学习了Navigator组件里添加一段文字，实现点击文字进行链接的跳转，Navigator组件还可以嵌套view组件，比如我们点击某块的内容会进行一个跳转。和view组件一样， Navigator组件也是可以嵌套的。</p>
+    <p>比如我们在home.wxml里输入以下代码：</p>
+            <div id="crayon-5d82f5b748c0d061923229" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="event-list"&gt;
+        &lt;navigator url="/pages/home/imgshow/imgshow" class="event-link"&gt;        
+            &lt;view class="event-img"&gt;
+                &lt;image mode="widthFix" src="https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg"&gt;&lt;/image&gt;
+            &lt;/view&gt;
+            &lt;view class="event-content"&gt;
+                &lt;view class="event-title"&gt;零基础学会小程序开发&lt;/view&gt;
+                &lt;view class="event-desc"&gt;通过两天集中的学习，你会循序渐进的开发出一些具有实际应用场景的小程序。 &lt;/view&gt;
+                &lt;view class="event-box"&gt;
+                    &lt;view class="event-address"&gt;深圳南山&lt;/view&gt;
+                    &lt;view class="event-time"&gt;2018年9月22日-23日&lt;/view&gt;
+                &lt;/view&gt;
+            &lt;/view&gt;
+        &lt;/navigator&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d82f5b748c0d061923229-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-1"><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-list"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-r">navigator</span><span class="crayon-h"> </span><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s">"/pages/home/imgshow/imgshow"</span><span class="crayon-h"> </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-link"</span><span class="crayon-o">&gt;</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-img"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">image </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg"</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">image</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-content"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-title"</span><span class="crayon-o">&gt;</span>零基础学会小程序开发<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-desc"</span><span class="crayon-o">&gt;</span>通过两天集中的学习，你会循序渐进的开发出一些具有实际应用场景的小程序。<span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-box"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-address"</span><span class="crayon-o">&gt;</span>深圳南山<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"event-time"</span><span class="crayon-o">&gt;</span><span class="crayon-cn">2018</span>年<span class="crayon-cn">9</span>月<span class="crayon-cn">22</span>日<span class="crayon-o">-</span><span class="crayon-cn">23</span>日<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-r">navigator</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0d061923229-15"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在home.wxss里输入以下样式：</p>
+            <div id="crayon-5d82f5b748c0f426055266" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.event-list{
+      background-color: #fafbfc;
+      padding: 20px 0;
+      }
+    .event-link{
+      margin: 10px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow:5rpx 8rpx 10rpx rgba(53,178,225,0.26);
+      overflow: hidden;
+    }
+    .event-img image{
+      width: 100%;
+      }
+    .event-content{
+      padding: 25rpx;
+      }
+    .event-title{
+      line-height: 1.7em;
+      }
+    .event-desc{
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5em;
+      font-weight: 200;
+      }
+    .event-box{
+      margin-top: 15px;
+      overflow: hidden;
+      }
+    .event-address,.event-time{
+      float: left;
+      color: #cecece;
+      font-size: 12px;
+      padding-right: 15px;
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-26" style="height: 20px;">26</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-27" style="height: 20px;">27</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-28" style="height: 20px;">28</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-29" style="height: 20px;">29</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-30" style="height: 20px;">30</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-31" style="height: 20px;">31</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-32" style="height: 20px;">32</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-33" style="height: 20px;">33</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-34" style="height: 20px;">34</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-35" style="height: 20px;">35</div><div class="crayon-num" data-line="crayon-5d82f5b748c0f426055266-36" style="height: 20px;">36</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-1"><span class="crayon-k ">.event-list</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#fafbfc</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">20px</span><span class="crayon-h"> </span><span class="crayon-i ">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-5"><span class="crayon-k ">.event-link</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">margin</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">10px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">border-radius</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">5px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#fff</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">box-shadow</span><span class="crayon-sy">:</span><span class="crayon-i ">5rpx</span><span class="crayon-h"> </span><span class="crayon-i ">8rpx</span><span class="crayon-h"> </span><span class="crayon-i ">10rpx</span><span class="crayon-h"> </span><span class="crayon-i ">rgba</span><span class="crayon-sy">(</span><span class="crayon-i ">53,178,225,0.26</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">overflow</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">hidden</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-11"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-12"><span class="crayon-k ">.event-img image</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100%</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-14"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-15"><span class="crayon-k ">.event-content</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">25rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-17"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-18"><span class="crayon-k ">.event-title</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-19"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">line-height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">1.7em</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-20"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-21"><span class="crayon-k ">.event-desc</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-22"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-size</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">14px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-23"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#666</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-24"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">line-height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">1.5em</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-25"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-weight</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">200</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-26"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-27"><span class="crayon-k ">.event-box</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-28"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">margin-top</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">15px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-29"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">overflow</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">hidden</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-30"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-31"><span class="crayon-k ">.event-address,.event-time</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-32"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">float</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">left</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-33"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#cecece</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-34"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-size</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">12px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-35"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding-right</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">15px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d82f5b748c0f426055266-36"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <div class="post-views post-15 entry-meta">
+                <span class="post-views-icon dashicons dashicons-chart-bar"></span>
+                <span class="post-views-label">阅读人数: </span>
+                <span class="post-views-count">2</span>
+                </div>		
+            <a class="post-edit-link" href="https://cloudbasegroup.org/wp-admin/post.php?post=15&amp;action=edit">编辑</a>	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
