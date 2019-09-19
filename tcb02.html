@@ -117,322 +117,476 @@
         </header><!-- .entry-header -->
     
         <div class="entry-content">
-            <p>学习技术不要光看视频、教材，一定要动手实践。只有实战，技术才会变得简单。小程序相比其他编程语言来说，可以让我们更快做出一些技术产品。</p>
-    <h4>开始前的准备</h4>
-    <p>小程序的开发有两样东西必不可少，一个是小程序开发的<strong>技术文档</strong>；还有一个就是小程序的<strong>开发者工具</strong>。</p>
-    <p><strong>开发者工具</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="noopener noreferrer">小程序开发者工具下载地址</a></p>
-    <p>大家可以根据自己电脑的操作系统来下载对应的<span style="color: #800000;"><strong>稳定版安装包</strong></span>进行安装。就和我们写Word、PPT文档要用Office的软件一样，我们要在开发者工具上多多动手，技术才能掌握的更加真切。</p>
-    <p><strong>技术文档</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/index.html" target="_blank" rel="noopener noreferrer">官方小程序技术文档</a></p>
-    <p>技术文档大家先只需要<strong><span style="color: #800000;">花五分钟左右的时间</span></strong>了解大致的结构即可，<span style="color: #800000;"><strong>先按照我们的教学步骤学完之后</strong></span>再来看也不迟。官方的小程序技术文档过于全面而且详细，对于初学者或者零基础的朋友来说，我们会引导大家如何循序渐进的学习文档里的技术知识。</p>
-    <blockquote class="danger"><p><strong>多看技术文档</strong>和<strong>多用开发工具</strong>也是我们学习其他编程语言或技术最为重要的两点，凡是脱离技术文档和开发工具看视频、看文章以及搜集再多的资料都是舍本求末的错误做法，而这也是很多初学者的一个通病。</p>
-    <p>值得注意的是小程序的开发功能更新非常频繁，很多网上的教程内容都比较过时，而只有技术文档才是同步最新的。无论你是初学者还是高手，技术文档都是我们技术开发的基础与落脚点，常读常新。</p></blockquote>
-    <h4>注册微信小程序</h4>
-    <p>小程序的注册非常方便，打开小程序注册页面，按照要求填入个人的信息，验证邮箱和手机号，扫描二维码绑定你的微信号即可，3分钟左右的时间即可搞定。</p>
-    <p><strong>注册页面：</strong><a href="https://mp.weixin.qq.com/wxopen/waregister?action=step1" target="_blank" rel="noopener noreferrer">小程序注册页面</a></p>
-    <blockquote class="danger"><p>注册小程序时不能使用注册过微信公众号、微信开放平台的邮箱哦，也就是需要你使用一个其他邮箱才行。</p></blockquote>
-    <p>当我们注册成功后，就可以自动登入到小程序的后台管理页面啦，如果你不小心关掉了后台页面，也可以点击小程序后台管理登录页进行登录。</p>
-    <p><strong>后台管理页：</strong><a href="https://mp.weixin.qq.com/cgi-bin/home?t=home/index&amp;lang=zh_CN" target="_blank" rel="noopener noreferrer">小程序后台管理登录页</a></p>
-    <blockquote><p>小程序和微信公众号的登录页都是同一个页面，他们会根据你的不同的注册邮箱来进行跳转。</p></blockquote>
-    <p>进入到小程序的后台管理页后，点击左侧菜单的<b>开发</b>进入设置页，然后再点击<strong>开发设置</strong>，在<strong>开发者ID</strong>里就可以看到<strong>AppID(小程序ID)</strong>，这个待会我们有用。</p>
-    <blockquote class="danger"><p>注意小程序的ID（AppID）不是你注册的邮箱和用户名，你需要到后台查看才行哦~</p></blockquote>
-    <h4>开通云开发服务</h4>
-    <p>点击微信开发者工具的“<strong>云开发</strong>”图标，在弹出框里点击“<strong>开通</strong>”，同意协议后，会弹出<strong>创建环境</strong>的对话框。这时会要求你输入<strong>环境名称</strong>和<strong>环境ID</strong>，以及当前云开发的基础环境配额（基础配额免费，而且足够你使用哦）。</p>
-    <blockquote><p>建议你<strong>环境名称</strong>可以使用
-                <span id="crayon-5d82f57998985801766137" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">xly</span></span></span>、<strong>环境ID</strong>自动生成即可，当你的云开发环境出现问题的时候，你可以提供你的环境ID，云开发团队会有专人为你解答。</p></blockquote>
-    <p>按照对话框提示的要求填写完之后，点击<strong>创建</strong>，会初始化环境，环境初始化成功后会自动弹出云开发控制台，这样我们的云开发服务就开通啦。大家可以花<strong>两分钟左右</strong>的时间熟悉一下云开发控制台的界面。</p>
-    <h4>新建一个模板小程序</h4>
-    <p>安装完开发者工具之后，我们使用微信扫码登录开发者工具，然后使用开发者工具新建一个小程序的项目，</p>
+            <p>相信通过前面的学习，大家对一个完整的小程序的文件结构有了一个大致的了解，对小程序的开发者工具也有了一定的认识，那这节我们来开始动手写一下小程序的代码。</p>
+    <h4><strong>编辑WXML文件</strong></h4>
+    <p>我们在开发者工具里打开之前修改的模板小程序home文件夹下的home.wxml，里面有如下代码</p>
+            <div id="crayon-5d830a9c7fd41486743924" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;!--pages/home/home.wxml--&gt;
+    &lt;text&gt;pages/home/home.wxml&lt;/text&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd41486743924-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd41486743924-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd41486743924-1"><span class="crayon-c">&lt;!--pages/home/home.wxml--&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd41486743924-2"><span class="crayon-r ">&lt;text&gt;</span><span class="crayon-i ">pages/home/home.wxml</span><span class="crayon-r ">&lt;/text&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这个第1行，是一句注释，也就是一句说明，不会显示在小程序的前端，第2行就是一个<strong>&lt;text&gt;组件</strong>。</p>
+    <p>接下来我们会广泛使用到小程序的&lt;view&gt;组件。比如我们在上面的代码下面加一下下面的代码，大家再来看效果：</p>
+            <div id="crayon-5d830a9c7fd47691662907" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;
+        &lt;view&gt;
+            &lt;view&gt;WXML 模板&lt;/view&gt;
+            &lt;view&gt;从事过网页编程的人知道，网页编程采用的是 HTML + CSS + JS 这样的组合，其中 HTML 是用来描述当前这个页面的结构，CSS 用来描述页面的样子，JS 通常是用来处理这个页面和用户的交互。&lt;/view&gt;
+        &lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd47691662907-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd47691662907-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd47691662907-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd47691662907-4" style="height: 40px;">4</div><div class="crayon-num" data-line="crayon-5d830a9c7fd47691662907-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d830a9c7fd47691662907-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd47691662907-1"><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd47691662907-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd47691662907-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">WXML 模板</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd47691662907-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">从事过网页编程的人知道，网页编程采用的是 HTML + CSS + JS 这样的组合，其中 HTML 是用来描述当前这个页面的结构，CSS 用来描述页面的样子，JS 通常是用来处理这个页面和用户的交互。</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd47691662907-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd47691662907-6"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家可以结合上面的代码，来了解一下组件的基本写法</p>
     <ul>
-    <li><strong>项目名称：</strong>这个可以根据自己的需要任意填写，可以是中文；</li>
-    <li><strong>目录：</strong>大家需要先在电脑上新建一个空文件夹，然后选择这个空文件夹；</li>
-    <li><strong>AppID：</strong>就是之前我们找到的<strong>AppID(小程序ID)</strong>（也可以点击右边的下拉框，下拉选择AppID）</li>
-    <li><strong>开发模式</strong>为小程序</li>
-    <li><strong>后端服务</strong>选择<span style="color: #800000;"><strong>不使用云服务</strong></span>，<span style="color: #800000;"><strong>注意为了教学的需要，先选择不使用云服务</strong></span></li>
-    <li><strong>语言</strong>为JavaScript</li>
+    <li>&lt;view&gt;组件和&lt;text&gt;组件类似，他们都是成对出现的，比如&lt;text&gt;&lt;/text&gt;，&lt;view&gt;&lt;/view&gt;，两个要一起写，有前面的开始标签，后面就要有一个闭合标签，闭合标签前面有一个“/”</li>
+    <li>view组件是可以嵌套写的，</li>
+    <li>为了让视觉上更好看，写代码的时候要有缩进（虽然不缩进也不会有影响）</li>
     </ul>
-    <p>点击<strong>新建</strong>确认之后就能在开发者工具的<strong>模拟器</strong>里看到一个简单的<strong>Hello World模板小程序</strong>，在编辑器里看到这个小程序的源代码。</p>
-    <blockquote class="task"><p><strong>小任务：&nbsp;</strong>分别点击开发者工具<strong>工具栏</strong>上的<strong>模拟器</strong>、<strong>编辑器</strong>、<strong>调试器</strong>，以及下面的手机下拉框、显示百分比，看看有什么效果。找到开发者工具的<strong>菜单栏</strong>，在<strong>项目</strong>菜单栏里找到查看所有项目，在<strong>设置</strong>菜单栏里找到<strong>外观设置</strong>，切换一下主题、调试器主题（深色、浅色）。</p></blockquote>
-    <p>接下来，我们点击开发者工具的工具栏里的<strong>预览</strong>图标，就会弹出一个二维码，使用你的手机微信扫描这个二维码就能在微信里看到这个小程序啦。<strong><span style="color: #008000;">以后我们要自己开发一个小程序都可以按照上面的操作新建一个模板小程序，然后在这个的基础上修改开发</span></strong>。</p>
-    <blockquote><p>如果你没有使用微信登录开发者工具，以及你的微信不是该小程序的开发者是没法预览的哦。这个<strong>Hello World模板小程序</strong>非常简单，但是它的文件结构却是完整的。</p></blockquote>
-    <h4>文件结构与页面组成</h4>
-    <blockquote><p>在了解以下知识时，大家只需要结合开发者工具的编辑器对照着介绍，一一展开文件夹、用编辑器查看文件的源代码，<span style="color: #800000;"><strong>大致浏览一下即可</strong></span>。这就是<strong><span style="color: #008000;">实战学习的方法</span></strong>（和看书、看视频的学习方法不同），千万不要死记硬背哦，你以后用多了自然就记住啦~</p></blockquote>
-    <p><strong>小程序的文件结构</strong></p>
-    <p>在开发者工具的<strong>编辑器</strong>里可以看到小程序源文件的<strong>根目录</strong>下有app.js、app.json和app.wxss，这是小程序必不可少的<span style="color: #800000;"><strong>三个主体文件</strong></span>，下面我们来大致了解一下小程序文件结构（<span style="color: #008000;"><strong>只需要大致了解就可以啦~不理解也没有关系</strong></span>）。</p>
-    <ul>
-    <li><strong>app.json</strong>：小程序的<strong>公共设置</strong>，可以对小程序进行全局配置，决定页面文件的路径、窗口表现、设置多 tab 等；</li>
-    <li><strong>app.wxss</strong>：小程序的<strong>公共样式表</strong>，可以配置整个小程序的文字的字体、颜色、背景，图片的大小等<strong>样式</strong>；</li>
-    <li><strong>app.js</strong>：小程序的逻辑（这个可以先放着，不用管）</li>
-    <li><strong>pages文件夹</strong>：这里存放着小程序的所有页面，展开pages文件夹就可以看到有index和logs两个<strong>页面文件夹</strong>；</li>
-    </ul>
-    <blockquote class="task"><p><strong>小任务：</strong>在结合开发者工具实战了解了上面的知识之后，你明白了哪个文件夹是小程序的根目录吗？</p></blockquote>
-    <p><strong>小程序的页面组成</strong></p>
-    <p>在每一个页面文件夹里都有<strong>四个文件</strong>，这四个文件的名称都是一样的，它们分别为：</p>
-    <ul>
-    <li><strong>json文件</strong>，和上面的app.json作用基本相同，只是app.json控制的是整个小程序的设置，而页面的json文件只控制单个页面的配置（因为有时候全局配置就够用了，所以页面配置有时候是空的）；</li>
-    <li><strong>wxml文件</strong>，小程序的页面结构，文字、图片、音乐、视频、地图、轮播等组件都会放在这里；</li>
-    <li><strong>wxss文件</strong>，小程序的页面样式，和app.wxss一样是控制样式，而页面的wxss文件是控制单个页面的样式；</li>
-    <li><strong>js文件</strong>，这个是控制小程序页面的逻辑（这个可以先放着，不用管）</li>
-    </ul>
-    <h4>小程序的全局配置</h4>
-    <p>在前面我们已经提到，<strong>app.json</strong>可以对整个小程序进行<strong>全局配置</strong>，而配置的依据就需要我们参考技术文档了。</p>
-    <p><strong>技术文档</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html" target="_blank" rel="noopener noreferrer">小程序全局配置</a></p>
-    <blockquote><p>打开上面的小程序全局配置技术文档，里面会有很多你看不懂的名称，这是非常正常的，大家也不需要记，<span style="color: #800000;"><strong>只需要花两三分钟时间</strong></span>快速浏览一下即可，后面我们会教大家如何结合技术文档来实战学习。</p></blockquote>
-    <p><strong>json语法</strong></p>
-    <p>在对小程序进行配置之前，<span style="color: #800000;"><strong>可以使用开发者工具打开app.json文件，对照着下面的json语法来进行理解</strong></span>：</p>
-    <ul>
-    <li>大括号<strong>{}保存对象</strong>，我们来看一下app.json，哪些地方用到了大括号{}，{}里面就是对象；</li>
-    <li>中括号<strong>[]保存数组</strong>，我们可以看到中括号[]里有
-    <div>
-    <div>“pages/index/index”等（这是小程序页面的路径），那这些页面路径就是数组啦；数组里的值都是平级的关系；</div>
-    </div>
-    </li>
-    <li>各个数据之间由<strong><span style="color: #800000;">英文字符</span>逗号,</strong>隔开，注意这里的数据包括对象、数据、单条属性与值，大家可以结合app.json<span style="color: #800000;"><strong>仔细比对逗号,出现的位置</strong></span>，<strong><span style="color: #800000;">平级数据的最后一条数据不要加逗号,</span></strong>，也就是只有数据之间才有逗号。</li>
-    <li>字段名称（<strong>属性名</strong>）与值之间用<strong>冒号:</strong>隔开，字段名称在前，字段的取值在后；</li>
-    <li>字段名称用<strong>双引号””</strong>给包着；</li>
-    </ul>
-    <blockquote class="danger"><p>注意，这里所有的标点符号都需要是<span style="color: #800000;"><strong>英文状态</strong></span>下的，也就是我们经常听说的全角半角里的半角状态，不然会报错哦。<span style="color: #800000;"><strong>很多之前没有接触过编程的童鞋经常会犯这样的错误，一定要多多注意！</strong></span>当我们要输入编程里的标点符号时，一定要先确认一下，你的输入法是汉语形态，还是字母形态，如果输的是汉字形态，一定要切换哦~</p></blockquote>
-    <p><strong>设置小程序窗口表现</strong></p>
-    <p>使用开发者工具打开app.json文件，可以看到如下代码里有一个<strong>window</strong>的字段名（如前面所说，字段名要用双引号””包着），它的值是一个<strong>对象</strong>（如前面所说，{}大括号里的就是对象），可见<strong>对象可以是一组数据的集合</strong>，这个集合里包含着几条数据。</p>
-            <div id="crayon-5d82f5799898d070924024" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+    <p>我们可以把这个页面写的更加复杂一点。</p>
+            <div id="crayon-5d830a9c7fd4a524212563" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
             
-                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
-        "navigationBarTextStyle": "black"
-      },</textarea></div>
-                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
-                    <table class="crayon-table" style="margin-left: -20px;">
-                        <tbody><tr class="crayon-row">
-                    <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5799898d070924024-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5799898d070924024-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5799898d070924024-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5799898d070924024-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5799898d070924024-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5799898d070924024-6" style="height: 20px;">6</div></div>
-                    </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5799898d070924024-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"window"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5799898d070924024-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"backgroundTextStyle"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"light"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799898d070924024-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"navigationBarBackgroundColor"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"#fff"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799898d070924024-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"navigationBarTitleText"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"WeChat"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799898d070924024-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"navigationBarTextStyle"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"black"</span></div><div class="crayon-line" id="crayon-5d82f5799898d070924024-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
-                        </tr>
-                    </tbody></table>
-                </div>
-            </div><p>这些就是<strong>window配置项</strong>，可用于设置小程序的状态栏、导航条、标题、窗口背景色。</p>
-    <blockquote class="task"><p>小任务：打开<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html" target="_blank" rel="noopener noreferrer">小程序全局配置</a>查看backgroundTextStyle、navigationBarBackgroundColor、navigationBarTitleText、navigationBarTextStyle的配置描述（大致了解即可）。</p></blockquote>
-    <p>使用开发者工具的编辑器将以上属性的值改成如下代码（这里的backgroundTextStyle只有在设置了下拉刷新样式时才会比较明显，以后会介绍）</p>
-            <div id="crayon-5d82f57998991437321256" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
-            
-                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  "window": {
-        "backgroundTextStyle": "dark",   
-        "navigationBarBackgroundColor": "#1772cb",
-        "navigationBarTitleText": "云开发技术训练营", 
-        "navigationBarTextStyle": "white"  
-      },</textarea></div>
-                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
-                    <table class="crayon-table" style="margin-left: -20px;">
-                        <tbody><tr class="crayon-row">
-                    <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f57998991437321256-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f57998991437321256-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f57998991437321256-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f57998991437321256-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f57998991437321256-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f57998991437321256-6" style="height: 20px;">6</div></div>
-                    </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f57998991437321256-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s ">"window"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f57998991437321256-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s ">"backgroundTextStyle"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s ">"dark"</span><span class="crayon-sy">,</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d82f57998991437321256-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s ">"navigationBarBackgroundColor"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s ">"#1772cb"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f57998991437321256-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s ">"navigationBarTitleText"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s ">"云开发技术训练营"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d82f57998991437321256-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s ">"navigationBarTextStyle"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s ">"white"</span><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d82f57998991437321256-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
-                        </tr>
-                    </tbody></table>
-                </div>
-            </div><p></p>
-    <blockquote class="danger"><p>添加完成之后<strong>记得保存代码</strong>哦，文件修改没有保存会在标签页有一个小的绿点。可以使用快捷键（同时按）Ctrl和S来保存（Mac电脑为Command和S）。</p></blockquote>
-    <p>然后点击开发者工具的<strong>编译</strong>图标，就能看到更新之后的效果啦，也可以点击<strong>预览</strong>，使用手机微信扫描生成的二维码查看实际效果。</p>
-    <blockquote class="task"><p><strong>小任务：</strong>
-                <span id="crayon-5d82f57998994640449530" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">navigationBarBackgroundColor</span></span></span>值是
-                <span id="crayon-5d82f57998995660494886" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-p">#F8F8F8</span></span></span>，
-                <span id="crayon-5d82f57998997273243268" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-p">#1772cb</span></span></span>，这是十六进制颜色值，它是一个非常基础而且用途范围极广的计算机概念，大家可以搜索了解一下：1、如何使用电脑版微信、QQ的截图工具取色（取色颜色会有一点偏差）；2、RGB颜色与十六进制颜色如何转换；</p></blockquote>
-    <p><span style="font-size: 20px; font-weight: bold; color: #2b2b2b;">新建小程序页面</span></p>
-    <p>新建页面的方法有两种，一种是使用开发者工具在<strong>pages文件夹</strong>下新建；还有一种是通过app.json的pages配置项来新建，我们先来看第2种方法。</p>
-    <p><strong>通过app.json新建页面</strong></p>
-    <p>pages配置项是设置页面的路径，也就是我们在小程序里写的每一个页面都需要填写在这里。使用开发者工具打开app.json文件，在pages配置项里新建一个home页面（<strong>页面名称可以是任意英文名</strong>），代码如下：</p>
-            <div id="crayon-5d82f57998999960228532" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
-            
-                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">"pages/home/home",
-    "pages/index/index",
-    "pages/logs/logs"</textarea></div>
-                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
-                    <table class="crayon-table" style="margin-left: -20px;">
-                        <tbody><tr class="crayon-row">
-                    <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f57998999960228532-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f57998999960228532-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f57998999960228532-3" style="height: 20px;">3</div></div>
-                    </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f57998999960228532-1"><span class="crayon-s">"pages/home/home"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f57998999960228532-2"><span class="crayon-s">"pages/index/index"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f57998999960228532-3"><span class="crayon-s">"pages/logs/logs"</span></div></div></td>
-                        </tr>
-                    </tbody></table>
-                </div>
-            </div><p></p>
-    <blockquote><p>大家写的时候可以回顾一下json语法，每个页面后都记得要用逗号,隔开，如果你的文件代码写错了，开发者工具会报错。</p></blockquote>
-    <p>在模拟器就能看到我们新建的这个首页了，会显示如下内容：</p>
-            <div id="crayon-5d82f5799899a155858896" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
-            
-                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pages/home/home.wxml</textarea></div>
-                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
-                    <table class="crayon-table" style="margin-left: -20px;">
-                        <tbody><tr class="crayon-row">
-                    <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5799899a155858896-1" style="height: 20px;">1</div></div>
-                    </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5799899a155858896-1">pages<span class="crayon-o">/</span>home<span class="crayon-o">/</span>home<span class="crayon-sy">.</span>wxml</div></div></td>
-                        </tr>
-                    </tbody></table>
-                </div>
-            </div><p>大家再来看看小程序的文件夹结构，是不是在pages文件夹下面多了一个home的文件夹？而且这个文件夹还自动新建了四个页面文件。</p>
-    <p>我们删掉文件目录下的index和logs文件夹，然后把app.json的pages配置项修改为：</p>
-            <div id="crayon-5d82f5799899c360586567" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
-            
-                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">"pages": [
-      "pages/home/home",
-      "pages/list/list",
-      "pages/partner/partner",
-      "pages/more/more"
-    ],</textarea></div>
-                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
-                    <table class="crayon-table" style="margin-left: -20px;">
-                        <tbody><tr class="crayon-row">
-                    <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5799899c360586567-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5799899c360586567-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5799899c360586567-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5799899c360586567-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5799899c360586567-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5799899c360586567-6" style="height: 20px;">6</div></div>
-                    </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5799899c360586567-1"><span class="crayon-s">"pages"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d82f5799899c360586567-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"pages/home/home"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899c360586567-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"pages/list/list"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899c360586567-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"pages/partner/partner"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899c360586567-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"pages/more/more"</span></div><div class="crayon-line" id="crayon-5d82f5799899c360586567-6"><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div></div></td>
-                        </tr>
-                    </tbody></table>
-                </div>
-            </div><p>也就是我们删掉了index和logs页面配置项的同时，又新增了三个页面(<strong>list、partner、more，这三个页面名称大家可以根据自己需要来命名</strong>)。</p>
-    <blockquote class="task"><p><strong>小任务：</strong>这些新建的页面文件都在电脑上的什么呢？比如在开发者工具右键点击home文件夹或者home.wxml，选择“<strong>在硬盘打开</strong>”就可以看到该文件在我们电脑的文件夹里什么的位置啦</p></blockquote>
-    <p><strong>小程序的首页</strong></p>
-    <p>在pages配置项的技术文档里有这样一句：“<strong>数组的第一项代表小程序的初始页面</strong>”，是什么意思呢？</p>
-    <p><strong>技术文档</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#pages" target="_blank" rel="noopener noreferrer">pages配置项</a></p>
-    <p>使用开发者工具打开app.json，把之前建好的”pages/list/list”剪切粘贴到”pages/home/home”的前面，也就是把list页面放到了数组的第一项，再来模拟器里看一下小程序的变化。原来pages配置项的第一项就是小程序的首页啦。</p>
-    <blockquote class="task"><p><strong>小任务：</strong>现在我们来使用新建页面的第1种方法，使用开发者工具在pages文件夹下新建页面。首先选中pages文件夹，然后点击上方的<strong>+</strong>号或鼠标右键，新建目录，然后输入目录名为post，然后再选中post文件夹，新建页面，页面名也为post，新建之后看看pages配置项的变化。</p></blockquote>
-    <p><strong>了解什么是配置项</strong></p>
-    <p>全局配置项里有太多的参数可能对新手来说显得有点复杂，这时候我们可以参考一下一个比较大的项目是如何配置的，<a href="https://github.com/wechat-miniprogram/miniprogram-demo/blob/master/miniprogram/app.json" target="_blank" rel="noopener noreferrer">全局配置参考</a>，大家只需要关注<strong>pages</strong>、<strong>window</strong>、<strong>tabBar</strong>的配置项即可。</p>
-    <p><strong>配置项参考：</strong><a href="https://github.com/wechat-miniprogram/miniprogram-demo/blob/master/miniprogram/app.json" target="_blank" rel="noopener noreferrer">全局配置参考</a></p>
-            <div id="crayon-5d82f5799899e379227040" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
-            
-                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
-      "pages": [
-        "pages/index/index",
-        "pages/logs/index"
-      ],
-      "window": {
-        "navigationBarTitleText": "Demo"
-      },
-      "tabBar": {
-        "list": [{
-          "pagePath": "pages/index/index",
-          "text": "首页"
-        }, {
-          "pagePath": "pages/logs/logs",
-          "text": "日志"
-        }]
-      },
-      "networkTimeout": {
-        "request": 10000,
-        "downloadFile": 10000
-      },
-      "debug": true,
-      "navigateToMiniProgramAppIdList": [
-        "wxe5f52902cf4de896"
-      ]
-    }</textarea></div>
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;
+        &lt;view&gt;
+            &lt;view&gt;
+                &lt;view&gt;技术学习说明&lt;/view&gt;
+                &lt;view&gt;技术和我们以往所接触的一些知识有很大的不同，比如英文非常强调词汇量，需要你多说多背；数学需要你记住公式，反复练习；在教学的方式上也有很大的不同，以前都是有专门的老师手把手教你，而且还有同学交流。那要学好技术，应该依循什么样的学习方法和教学方法呢？
+                &lt;/view&gt;
+            &lt;/view&gt;
+            &lt;view&gt;
+                &lt;view&gt;
+                    &lt;view&gt;自学而非手把手&lt;/view&gt;
+                    &lt;view&gt;技术的方向众多，而且知识点也是非常庞杂，需要你具备一定的自学能力，所谓自学能力就是要求你遇到问题能够勤于思考，擅于搜索，能够不断实践探索。在实际工作中，也要求你能根据技术文档可以迅速掌握前沿的技术，而同事不会有时间教你，如果没有自学能力，是很难胜任很多工作的。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view&gt;
+                    &lt;view&gt;查阅文档而非死记知识点&lt;/view&gt;
+                    &lt;view&gt;在高中一学期一门课只有很薄的一本书，老师会反复讲解知识点，强化你的记忆，考试也是闭卷；而技术一个很小的分支，内容就有几千页甚至更多，强记知识点显然不合适。学习技术要像查词典一样来查阅技术文档，你只需要掌握基本的语法和用法，在编程的时候随时查阅，就像你不需要背诵上万的单词也能知道它的意思用法一样，所以技术文档是学习技术最为重要的参考资料。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view&gt;
+                    &lt;view&gt;实战而非不动手的看书&lt;/view&gt;
+                    &lt;view&gt;技术是最强调结果的技能，你看了再多书，如果不知道技术成品是怎么写出来的，都是枉然。很多朋友有收集癖，下载了很多电子资源，收藏了很多高赞的技术文章，但是却没有动手去消化去理解，把时间和精力都浪费了。不动手在开发者工具里去写代码，不动手配置开发环境，缺乏实战的经验，都是阻碍你学好技术的坏习惯。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view&gt;
+                    &lt;view&gt;搜索而非做伸手党&lt;/view&gt;
+                    &lt;view&gt;在以前，我们遇到技术问题，我们可以问老师问同学，于是很多人把这种不良的习惯也带到了技术的学习当中，遇到问题也总喜欢求助于别人。技术的方向众多，环境复杂，问题也是很多，如果你总是依赖别人的解答，是很难学好技术的。一定要学会在网上通过搜索遇到的问题来找答案。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view&gt;
+                    &lt;view&gt;团队协作，而非单打独斗&lt;/view&gt;
+                    &lt;view&gt;一个产品涉及的技术非常多，需要很多人来一起配合才能开发好，所以学习技术的时候我们需要了解一些代码规范、工作的流程、项目管理等，在技术方面也会有API接口，接口文档这些，还要懂得如何和同职业的同事以及不同角色的人如设计师等一起配合，而不是自己一个人单打独斗。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view&gt;
+                    &lt;view&gt;系统的指导而非茫然无序&lt;/view&gt;
+                    &lt;view&gt;学好技术最依赖你自学，但是如果没有人指导你，你可能会像苍蝇一样陷入众多资料中茫然无序，抓不住一个技术的重点，也不清楚哪些技术才值得你深入学习，最好是有经验的人可以指点你应该看什么，学什么，什么才是重点，当然不是手把手教你。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+            &lt;/view&gt;
+        &lt;/view&gt;   
+    &lt;/view&gt;</textarea></div>
                 <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
                     <table class="crayon-table" style="margin-left: -28px;">
                         <tbody><tr class="crayon-row">
                     <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d82f5799899e379227040-26" style="height: 20px;">26</div></div>
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-5" style="height: 40px;">5</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-11" style="height: 40px;">11</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-16" style="height: 60px;">16</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-21" style="height: 60px;">21</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-26" style="height: 40px;">26</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-27" style="height: 20px;">27</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-28" style="height: 20px;">28</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-29" style="height: 20px;">29</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-30" style="height: 20px;">30</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-31" style="height: 40px;">31</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-32" style="height: 20px;">32</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-33" style="height: 20px;">33</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-34" style="height: 20px;">34</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-35" style="height: 20px;">35</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-36" style="height: 40px;">36</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-37" style="height: 20px;">37</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-38" style="height: 20px;">38</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-39" style="height: 20px;">39</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-40" style="height: 20px;">40</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4a524212563-41" style="height: 20px;">41</div></div>
                     </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f5799899e379227040-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"pages"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pages/index/index"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pages/logs/index"</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"window"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"navigationBarTitleText"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"Demo"</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"tabBar"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"list"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pagePath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"pages/index/index"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"text"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"首页"</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pagePath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"pages/logs/logs"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"text"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"日志"</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-17"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-18"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"networkTimeout"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"request"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">10000</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"downloadFile"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">10000</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-21"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-22"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"debug"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-23"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"navigateToMiniProgramAppIdList"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"wxe5f52902cf4de896"</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-25"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d82f5799899e379227040-26"><span class="crayon-sy">}</span></div></div></td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-1"><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">技术学习说明</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">技术和我们以往所接触的一些知识有很大的不同，比如英文非常强调词汇量，需要你多说多背；数学需要你记住公式，反复练习；在教学的方式上也有很大的不同，以前都是有专门的老师手把手教你，而且还有同学交流。那要学好技术，应该依循什么样的学习方法和教学方法呢？</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">自学而非手把手</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-11"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">技术的方向众多，而且知识点也是非常庞杂，需要你具备一定的自学能力，所谓自学能力就是要求你遇到问题能够勤于思考，擅于搜索，能够不断实践探索。在实际工作中，也要求你能根据技术文档可以迅速掌握前沿的技术，而同事不会有时间教你，如果没有自学能力，是很难胜任很多工作的。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-13"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-14"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-15"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">查阅文档而非死记知识点</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-16"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">在高中一学期一门课只有很薄的一本书，老师会反复讲解知识点，强化你的记忆，考试也是闭卷；而技术一个很小的分支，内容就有几千页甚至更多，强记知识点显然不合适。学习技术要像查词典一样来查阅技术文档，你只需要掌握基本的语法和用法，在编程的时候随时查阅，就像你不需要背诵上万的单词也能知道它的意思用法一样，所以技术文档是学习技术最为重要的参考资料。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-17"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-18"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-19"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-20"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">实战而非不动手的看书</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-21"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">技术是最强调结果的技能，你看了再多书，如果不知道技术成品是怎么写出来的，都是枉然。很多朋友有收集癖，下载了很多电子资源，收藏了很多高赞的技术文章，但是却没有动手去消化去理解，把时间和精力都浪费了。不动手在开发者工具里去写代码，不动手配置开发环境，缺乏实战的经验，都是阻碍你学好技术的坏习惯。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-22"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-23"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-24"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-25"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">搜索而非做伸手党</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-26"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">在以前，我们遇到技术问题，我们可以问老师问同学，于是很多人把这种不良的习惯也带到了技术的学习当中，遇到问题也总喜欢求助于别人。技术的方向众多，环境复杂，问题也是很多，如果你总是依赖别人的解答，是很难学好技术的。一定要学会在网上通过搜索遇到的问题来找答案。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-27"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-28"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-29"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-30"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">团队协作，而非单打独斗</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-31"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">一个产品涉及的技术非常多，需要很多人来一起配合才能开发好，所以学习技术的时候我们需要了解一些代码规范、工作的流程、项目管理等，在技术方面也会有API接口，接口文档这些，还要懂得如何和同职业的同事以及不同角色的人如设计师等一起配合，而不是自己一个人单打独斗。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-32"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-33"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-34"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-35"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">系统的指导而非茫然无序</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-36"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">学好技术最依赖你自学，但是如果没有人指导你，你可能会像苍蝇一样陷入众多资料中茫然无序，抓不住一个技术的重点，也不清楚哪些技术才值得你深入学习，最好是有经验的人可以指点你应该看什么，学什么，什么才是重点，当然不是手把手教你。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-37"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-38"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-39"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-40"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span><span class="crayon-i ">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d830a9c7fd4a524212563-41"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
                         </tr>
                     </tbody></table>
                 </div>
             </div><p></p>
-    <h4 id="tabbar">配置tabBar配置项</h4>
-    <p>在很多App的底部都有一个<strong>带有小图标</strong>的切换tab，比如手机微信App底部就有微信、通讯录、发现、我四个tab，这个小图标就是icon，整个呢就是tabBar，小程序也可以有，需要我们在app.json里配置tabBar配置项。</p>
-    <p><strong>icon下载</strong></p>
-    <p>在官方技术文档里我们了解到icon 大小限制为40kb，建议尺寸为81px * 81px（大一点是可以的），不懂设计icon的童鞋可以去矢量图标库去下载。（<span style="color: #800000;"><strong>注意下载的格式要是png哦</strong></span>）</p>
-    <p><strong>icon资源：</strong><a href="http://www.iconfont.cn/" target="_blank" rel="noopener noreferrer">iconfont阿里巴巴矢量图标库</a></p>
-    <p>大家可以留意下手机微信的tabBar的每一个icon其实是一组两个，也就是选中时的状态和没有选中时的状态，他们的颜色也是不一样的，而在iconfont里大家除了选择图标还可以选择<strong>不同的颜色</strong>来下载哦。比如我们要让tabBar有四个切换tab，那么我们就需要下载4个icon的两种配色共8张图片。</p>
-    <p>使用开发者工具在<strong>模板小程序的根目录下</strong>新建一个image的文件夹，把命名好的icon都放在里面。</p>
-    <blockquote><p>icon的配色最好是一明一暗，而且与你的小程序的整体颜色风格保持一致，这样切换起来才不会突兀；选择的这4个icon的风格最好一致，不然tabBar就不会好看啦。icon的名称最好也一致，比如home对应的icon可以为home.icon和home-active.icon。</p></blockquote>
-    <p>&nbsp;</p>
-    <p><strong>配置tabBar配置项</strong></p>
-    <p>通过tabBar配置项，可以设置tabBar的默认字体颜色、选中过的字体颜色、背景色等。</p>
-    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html#tabBar" target="_blank" rel="noopener noreferrer">tabBar配置项</a></p>
-    <p>通过技术文档，我们先<span style="color: #800000;"><strong>大致了解</strong></span>color、selectedColor、backgroundColor的意思。然后使用开发者工具打开app.json在window配置项后面新建一个tabBar配置项，代码如下：</p>
-            <div id="crayon-5d82f579989a0319590857" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+    <h4>WXSS选择器</h4>
+    <p>大家是不是已经发现我们写的小程序页面有点丑？那我们需要对这个小程序页面进行美化。但是我们的代码里面&lt;view&gt;组件这么多，要是不对每个组件进行区分，就很难对每个组件进行美化了。</p>
+    <p><strong>id与class选择器</strong></p>
+    <p>这个时候我们就要先了解一下选择器的概念。选择器是用来干什么的呢？从名字里我们就可以看出来，就是为了选择。比如学校有1000个人，我们要选择出其中一个人，那我们可以给所有人一个学号，这个学号是唯一的，我们可以称这个学号为<strong>id</strong>，用于精准的选择；还有的时候我们需要对一群人进行分类选择，比如整个班级或者所有男生，这个班级、性别，我们可以称为<strong>class</strong>，用于分类选择。</p>
+    <p>在wxss技术文档这里有关于选择器的描述。</p>
+    <p><strong>技术文档</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html" target="_blank" rel="noopener noreferrer">WXSS技术文档</a></p>
+    <p><strong>给组件增加属性</strong></p>
+    <p>比如上面的view组件实在太多了，为了区分它们，我们给他们加一些属性，这样我们就可以用选择器选择它们了。</p>
+            <div id="crayon-5d830a9c7fd4c349015614" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
             
-                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">"tabBar": {
-        "color": "#7A7E83",
-        "selectedColor": "#13227a",
-        "backgroundColor": "#ffffff",
-        "list": [
-          {
-            "pagePath": "pages/home/home",
-            "iconPath": "image/icon-tab1.png",
-            "selectedIconPath": "image/icon-tab1-active.png",
-            "text": "首页"
-          },
-          {
-            "pagePath": "pages/list/list",
-            "iconPath": "image/icon-tab2.png",
-            "selectedIconPath": "image/icon-tab2-active.png",
-            "text": "活动"
-          },
-          {
-            "pagePath": "pages/partner/partner",
-            "iconPath": "image/icon-tab3.png",
-            "selectedIconPath": "image/icon-tab3-active.png",
-            "text": "伙伴"
-          },
-          {
-            "pagePath": "pages/more/more",
-            "iconPath": "image/icon-tab4.png",
-            "selectedIconPath": "image/icon-tab4-active.png",
-            "text": "更多"
-          }
-        ]
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view id="wxmlinfo"&gt;
+        &lt;view class="content"&gt;
+            &lt;view class="title"&gt;WXML 模板&lt;/view&gt;
+            &lt;view class="desc"&gt;从事过网页编程的人知道，网页编程采用的是 HTML + CSS + JS 这样的组合，其中 HTML 是用来描述当前这个页面的结构，CSS 用来描述页面的样子，JS 通常是用来处理这个页面和用户的交互。
+            &lt;/view&gt;
+        &lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd4c349015614-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4c349015614-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4c349015614-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4c349015614-4" style="height: 40px;">4</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4c349015614-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4c349015614-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4c349015614-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd4c349015614-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"wxmlinfo"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4c349015614-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"content"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4c349015614-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">WXML 模板</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4c349015614-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">从事过网页编程的人知道，网页编程采用的是 HTML + CSS + JS 这样的组合，其中 HTML 是用来描述当前这个页面的结构，CSS 用来描述页面的样子，JS 通常是用来处理这个页面和用户的交互。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4c349015614-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4c349015614-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4c349015614-7"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>以及比较复杂的那一段代码的view组件也加上属性。给组件添加属性在外观上并不会有什么效果哦~</p>
+            <div id="crayon-5d830a9c7fd4f608201921" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view id="studyweapp"&gt;
+        &lt;view class="content"&gt;
+            &lt;view class="header"&gt;
+                &lt;view class="title"&gt;技术学习说明&lt;/view&gt;
+                &lt;view class="desc"&gt;技术和我们以往所接触的一些知识有很大的不同，比如英文非常强调词汇量，需要你多说多背；数学需要你记住公式，反复练习；在教学的方式上也有很大的不同，以前都是有专门的老师手把手教你，而且还有同学交流。
+                那要学好技术，应该依循什么样的学习方法和教学方法呢？
+                &lt;/view&gt;
+            &lt;/view&gt;
+            &lt;view class="lists"&gt;
+                &lt;view class="item"&gt;
+                    &lt;view class="item-title"&gt;自学而非手把手&lt;/view&gt;
+                    &lt;view class="item-desc"&gt;技术的方向众多，而且知识点也是非常庞杂，需要你具备一定的自学能力，所谓自学能力就是要求你遇到问题能够勤于思考，擅于搜索，能够不断实践探索。在实际工作中，也要求你能根据技术文档可以迅速掌握前沿的技术，而同事不会有时间教你，如果没有自学能力，是很难胜任很多工作的。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view class="item"&gt;
+                    &lt;view class="item-title"&gt;查阅文档而非死记知识点&lt;/view&gt;
+                    &lt;view class="item-desc"&gt;在高中一学期一门课只有很薄的一本书，老师会反复讲解知识点，强化你的记忆，考试也是闭卷；而技术一个很小的分支，内容就有几千页甚至更多，强记知识点显然不合适。学习技术要像查词典一样来查阅技术文档，你只需要掌握基本的语法和用法，在编程的时候随时查阅，就像你不需要背诵上万的单词也能知道它的意思用法一样，所以技术文档是学习技术最为重要的参考资料。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view class="item"&gt;
+                    &lt;view class="item-title"&gt;实战而非不动手的看书&lt;/view&gt;
+                    &lt;view class="item-desc"&gt;技术是最强调结果的技能，你看了再多书，如果不知道技术成品是怎么写出来的，都是枉然。很多朋友有收集癖，下载了很多电子资源，收藏了很多高赞的技术文章，但是却没有动手去消化去理解，把时间和精力都浪费了。不动手在开发者工具里去写代码，不动手配置开发环境，缺乏实战的经验，都是阻碍你学好技术的坏习惯。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view class="item"&gt;
+                    &lt;view class="item-title"&gt;搜索而非做伸手党&lt;/view&gt;
+                    &lt;view class="item-desc"&gt;在以前，我们遇到技术问题，我们可以问老师问同学，于是很多人把这种不良的习惯也带到了技术的学习当中，遇到问题也总喜欢求助于别人。技术的方向众多，环境复杂，问题也是很多，如果你总是依赖别人的解答，是很难学好技术的。一定要学会在网上通过搜索遇到的问题来找答案。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view class="item"&gt;
+                    &lt;view class="item-title"&gt;团队协作，而非单打独斗&lt;/view&gt;
+                    &lt;view class="item-desc"&gt;一个产品涉及的技术非常多，需要很多人来一起配合才能开发好，所以学习技术的时候我们需要了解一些代码规范、工作的流程、项目管理等，在技术方面也会有API接口，接口文档这些，还要懂得如何和同职业的同事以及不同角色的人如设计师等一起配合，而不是自己一个人单打独斗。&lt;/view&gt;
+                &lt;/view&gt;
+                &lt;view class="item"&gt;
+                    &lt;view class="item-title"&gt;系统的指导而非茫然无序&lt;/view&gt;
+                    &lt;view class="item-desc"&gt;学好技术最依赖你自学，但是如果没有人指导你，你可能会像苍蝇一样陷入众多资料中茫然无序，抓不住一个技术的重点，也不清楚哪些技术才值得你深入学习，最好是有经验的人可以指点你应该看什么，学什么，什么才是重点，当然不是手把手教你。
+                    &lt;/view&gt;
+                &lt;/view&gt;
+            &lt;/view&gt;
+        &lt;/view&gt;   
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-5" style="height: 40px;">5</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-12" style="height: 60px;">12</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-17" style="height: 60px;">17</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-22" style="height: 60px;">22</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-26" style="height: 20px;">26</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-27" style="height: 60px;">27</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-28" style="height: 20px;">28</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-29" style="height: 20px;">29</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-30" style="height: 20px;">30</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-31" style="height: 20px;">31</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-32" style="height: 60px;">32</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-33" style="height: 20px;">33</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-34" style="height: 20px;">34</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-35" style="height: 20px;">35</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-36" style="height: 40px;">36</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-37" style="height: 20px;">37</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-38" style="height: 20px;">38</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-39" style="height: 20px;">39</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-40" style="height: 20px;">40</div><div class="crayon-num" data-line="crayon-5d830a9c7fd4f608201921-41" style="height: 20px;">41</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"studyweapp"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"content"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"header"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">技术学习说明</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">技术和我们以往所接触的一些知识有很大的不同，比如英文非常强调词汇量，需要你多说多背；数学需要你记住公式，反复练习；在教学的方式上也有很大的不同，以前都是有专门的老师手把手教你，而且还有同学交流。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;那要学好技术，应该依循什么样的学习方法和教学方法呢？</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"lists"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-11"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">自学而非手把手</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">技术的方向众多，而且知识点也是非常庞杂，需要你具备一定的自学能力，所谓自学能力就是要求你遇到问题能够勤于思考，擅于搜索，能够不断实践探索。在实际工作中，也要求你能根据技术文档可以迅速掌握前沿的技术，而同事不会有时间教你，如果没有自学能力，是很难胜任很多工作的。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-13"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-14"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-15"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-16"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">查阅文档而非死记知识点</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-17"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">在高中一学期一门课只有很薄的一本书，老师会反复讲解知识点，强化你的记忆，考试也是闭卷；而技术一个很小的分支，内容就有几千页甚至更多，强记知识点显然不合适。学习技术要像查词典一样来查阅技术文档，你只需要掌握基本的语法和用法，在编程的时候随时查阅，就像你不需要背诵上万的单词也能知道它的意思用法一样，所以技术文档是学习技术最为重要的参考资料。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-18"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-19"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-20"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-21"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">实战而非不动手的看书</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-22"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">技术是最强调结果的技能，你看了再多书，如果不知道技术成品是怎么写出来的，都是枉然。很多朋友有收集癖，下载了很多电子资源，收藏了很多高赞的技术文章，但是却没有动手去消化去理解，把时间和精力都浪费了。不动手在开发者工具里去写代码，不动手配置开发环境，缺乏实战的经验，都是阻碍你学好技术的坏习惯。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-23"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-24"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-25"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-26"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">搜索而非做伸手党</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-27"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">在以前，我们遇到技术问题，我们可以问老师问同学，于是很多人把这种不良的习惯也带到了技术的学习当中，遇到问题也总喜欢求助于别人。技术的方向众多，环境复杂，问题也是很多，如果你总是依赖别人的解答，是很难学好技术的。一定要学会在网上通过搜索遇到的问题来找答案。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-28"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-29"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-30"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-31"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">团队协作，而非单打独斗</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-32"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">一个产品涉及的技术非常多，需要很多人来一起配合才能开发好，所以学习技术的时候我们需要了解一些代码规范、工作的流程、项目管理等，在技术方面也会有API接口，接口文档这些，还要懂得如何和同职业的同事以及不同角色的人如设计师等一起配合，而不是自己一个人单打独斗。</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-33"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-34"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-35"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">系统的指导而非茫然无序</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-36"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">学好技术最依赖你自学，但是如果没有人指导你，你可能会像苍蝇一样陷入众多资料中茫然无序，抓不住一个技术的重点，也不清楚哪些技术才值得你深入学习，最好是有经验的人可以指点你应该看什么，学什么，什么才是重点，当然不是手把手教你。</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-37"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-38"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-39"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-40"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span><span class="crayon-i ">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d830a9c7fd4f608201921-41"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="danger"><p>大家在学习的过程中，要随时在开发者工具的模拟器上查看效果，也要经常用微信扫码<strong>预览</strong>所生成的二维码来查看效果，千万不要只看教程怎么说，而是自己要动手去实战。</p></blockquote>
+    <h4>CSS参考手册</h4>
+    <p>给wxml文件的组件加了选择器之后，我们就可以在wxss文件里给指定的某个&lt;view&gt;组件以及某类&lt;view&gt;组件添加一些美化了，这里我们需要编辑home.wxss文件。wxss美化的知识和css是一样的，所以小程序的技术文档里面没有，大家可以看一下w3shool的CSS参考手册。CSS文件的作用就是来美化组件的。</p>
+    <p>技术文档：<a href="http://www.w3school.com.cn/cssref/index.asp" target="_blank" rel="noopener noreferrer">CSS参考手册</a></p>
+    <p>这里大家只需要了解CSS的<strong>字体属性</strong>、<strong>文本属性</strong>、<strong>背景属性</strong>、<strong>边框属性</strong>、<strong>盒模型</strong></p>
+    <blockquote class="danger"><p>CSS涉及的知识点非常多，现在大家也只需要知道有这些概念即可，学技术千万不要在<strong>没有看到实际效果的情况下</strong>来死记概念。概念没有记住一点关系都没有，因为大家可以随时来查文档。接下来我们也会有实际的例子让大家看到效果，大家想深入学习的时候可以回头再看这些文档。</p></blockquote>
+    <h4>字体属性与文本属性</h4>
+    <blockquote><p>下面这些关于CSS的基础知识点，大家可以结合我们是如何调整Word、PPT的样式的来理解，比如我们是怎么调整文本的大小、颜色、粗细等等的，添加样式的时候要注意随手实战了解了效果再说。</p></blockquote>
+    <p>比如class为title的&lt;view&gt;组件里面的文字是标题，我们需要对标题的字体进行加大、加粗以及居中处理，这时候我们就可以在home.wxss文件里加入以下代码，然后大家看看有什么效果。</p>
+            <div id="crayon-5d830a9c7fd51378832408" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.title{
+      font-size: 20px; 
+      font-weight: 600;
+      text-align: center;
       }</textarea></div>
                 <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
-                    <table class="crayon-table" style="margin-left: -28px;">
+                    <table class="crayon-table" style="margin-left: -20px;">
                         <tbody><tr class="crayon-row">
                     <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-26" style="height: 20px;">26</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-27" style="height: 20px;">27</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-28" style="height: 20px;">28</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-29" style="height: 20px;">29</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-30" style="height: 20px;">30</div><div class="crayon-num" data-line="crayon-5d82f579989a0319590857-31" style="height: 20px;">31</div></div>
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd51378832408-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd51378832408-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd51378832408-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd51378832408-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d830a9c7fd51378832408-5" style="height: 20px;">5</div></div>
                     </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f579989a0319590857-1"><span class="crayon-s">"tabBar"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"color"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"#7A7E83"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"selectedColor"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"#13227a"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"backgroundColor"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"#ffffff"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"list"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pagePath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"pages/home/home"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"iconPath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"image/icon-tab1.png"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"selectedIconPath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"image/icon-tab1-active.png"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"text"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"首页"</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pagePath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"pages/list/list"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"iconPath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"image/icon-tab2.png"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"selectedIconPath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"image/icon-tab2-active.png"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"text"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"活动"</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pagePath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"pages/partner/partner"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"iconPath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"image/icon-tab3.png"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"selectedIconPath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"image/icon-tab3-active.png"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"text"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"伙伴"</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pagePath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"pages/more/more"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-26"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"iconPath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"image/icon-tab4.png"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-27"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"selectedIconPath"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"image/icon-tab4-active.png"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-28"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"text"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"更多"</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-29"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d82f579989a0319590857-31"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd51378832408-1"><span class="crayon-k ">.title</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d830a9c7fd51378832408-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-size</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">20px</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d830a9c7fd51378832408-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-weight</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">600</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd51378832408-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">text-align</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">center</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd51378832408-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
                         </tr>
                     </tbody></table>
                 </div>
-            </div><p>这里有一个比较重要的属性就是list，它是一个<strong>数组</strong>，决定了tabBar上面的文字、icon、以及点击之后的跳转链接。</p>
-    <ul>
-    <li>pagePath<span style="color: #800000;"><strong>必须为</strong></span>我们在pages配置项里建好的页面</li>
-    <li>text是tab按钮上的文字</li>
-    <li>iconPath、selectedIconPath分别为没有选中时的图片路径和选中时的图片路径。</li>
-    </ul>
-    <blockquote class="task"><p><strong>小任务：</strong>你知道应该如何制作一个底部没有tabBar的小程序吗？要让tabBar没有icon，应该如何配置？给tabBar添加一个position属性，值为top，小程序在界面上会有什么变化？再给小程序新增几个页面（不添加到tabBar上），我们应该如何在模拟器看到页面的内容？</p></blockquote>
-    <h4>小程序的页面配置</h4>
-    <p>使用打开一个页面的页面json文件，比如home的home.json，在json里面新建一些配置信息，如下所示。</p>
-    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/page.html" target="_blank" rel="noopener noreferrer">小程序页面配置</a></p>
-            <div id="crayon-5d82f579989a2935731346" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            </div><p>通过
+                <span id="crayon-5d830a9c7fd53310355615" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">.</span><span class="crayon-v">title</span></span></span>这个选择器，我们就选择到了类class为
+                <span id="crayon-5d830a9c7fd55209233858" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">title</span></span></span>的&lt;view&gt;组件，然后就可以精准地对它进行美化，对它的美化代码不会用在其他组件上了。</p>
+    <blockquote><p>大家也要留意css的写法，这里font-size，font-weight，text-align外面称之为属性，冒号:后面的我们称之为值，属性:值这一整个我们叫做声明，每个声明我们用分号;隔开。大家不要记这些概念，知道是个什么东西就行了。</p></blockquote>
+    <p>class为item-title的&lt;view&gt;组件里面的文字是一个列表的标题，我们希望它和其他文字的样式有所不同，不过这个标题要比title的字体小一些；比其他文字更粗，但是比title更细；颜色我们可以添加一个彩色字体，</p>
+            <div id="crayon-5d830a9c7fd56686015973" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
             
-                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
-      "usingComponents": {},
-      "navigationBarBackgroundColor": "#ce5a4c",
-      "navigationBarTextStyle": "white",
-      "navigationBarTitleText": "小程序页面",
-      "backgroundColor": "#eeeeee",
-      "backgroundTextStyle": "light"
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.item-title{
+      font-size:18px;
+      font-weight:500;
+      color: #c60;
     }</textarea></div>
                 <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
                     <table class="crayon-table" style="margin-left: -20px;">
                         <tbody><tr class="crayon-row">
                     <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d82f579989a2935731346-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d82f579989a2935731346-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d82f579989a2935731346-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d82f579989a2935731346-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d82f579989a2935731346-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d82f579989a2935731346-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d82f579989a2935731346-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d82f579989a2935731346-8" style="height: 20px;">8</div></div>
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd56686015973-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd56686015973-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd56686015973-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd56686015973-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d830a9c7fd56686015973-5" style="height: 20px;">5</div></div>
                     </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d82f579989a2935731346-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d82f579989a2935731346-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"usingComponents"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a2935731346-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"navigationBarBackgroundColor"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"#ce5a4c"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a2935731346-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"navigationBarTextStyle"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"white"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a2935731346-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"navigationBarTitleText"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"小程序页面"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a2935731346-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"backgroundColor"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"#eeeeee"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d82f579989a2935731346-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"backgroundTextStyle"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"light"</span></div><div class="crayon-line" id="crayon-5d82f579989a2935731346-8"><span class="crayon-sy">}</span></div></div></td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd56686015973-1"><span class="crayon-k ">.item-title</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d830a9c7fd56686015973-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-size</span><span class="crayon-sy">:</span><span class="crayon-i ">18px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd56686015973-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-weight</span><span class="crayon-sy">:</span><span class="crayon-i ">500</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd56686015973-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#c60</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd56686015973-5"><span class="crayon-sy">}</span></div></div></td>
                         </tr>
                     </tbody></table>
                 </div>
-            </div><p>配置的属性与值的含义我们可以结合实际的效果以及技术文档来了解。</p>
-    <blockquote class="task"><p><strong>小任务：</strong>了解一下给小程序的页面配置前和配置后，页面哪些地方变动了？你是否对技术文档里“页面中配置项在当前页面会覆盖&nbsp;
-                <span id="crayon-5d82f579989a4268438035" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">json</span></span></span>&nbsp;的&nbsp;
-                <span id="crayon-5d82f579989a6783640442" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">window</span></span></span>&nbsp;中相同的配置项。”有了一定的认识？</p></blockquote>
+            </div><p>我们希望描述类的文字颜色浅一点，不要那么黑，我们可以换一个浅一点的颜色，我们在home.wxss下面继续加代码。</p>
+            <div id="crayon-5d830a9c7fd58726139158" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.desc,.item-desc{
+      color: #333;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd58726139158-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd58726139158-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd58726139158-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd58726139158-1"><span class="crayon-k ">.desc,.item-desc</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d830a9c7fd58726139158-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#333</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd58726139158-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>大家注意，我们这里有两个选择器，一个是desc，一个是item-desc，当我们希望两个不同的选择器有相同的css代码时，可以简化一起写，然后用逗号,隔开。</p></blockquote>
+    <p>除了标题（class为title和item-title的&lt;view&gt;组件）我们都给他们加了字体大小，我们希望所有的文字大小、行间距有一个统一的设定。</p>
+            <div id="crayon-5d830a9c7fd5a549226325" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#wxmlinfo,#studyweapp{
+      font-size:16px;
+      font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+      line-height: 1.6;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd5a549226325-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5a549226325-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5a549226325-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5a549226325-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5a549226325-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd5a549226325-1"><span class="crayon-k ">#wxmlinfo,#studyweapp</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5a549226325-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-size</span><span class="crayon-sy">:</span><span class="crayon-i ">16px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5a549226325-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-family</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">-apple-system-font,Helvetica</span><span class="crayon-h"> </span><span class="crayon-i ">Neue,Helvetica,sans-serif</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5a549226325-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">line-height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">1.6</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5a549226325-5"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>为了大家方便查阅技术文档，我们把这些常用的css技术文档整理到以下表格，方便大家更深入的去学习。</p>
+    <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+    <th colspan="2">字体属性</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_font_font-family.asp" target="_blank" rel="noopener noreferrer">font-family</a></th>
+    <td>规定文本的字体系列。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_font_font-size.asp" target="_blank" rel="noopener noreferrer">font-size</a></th>
+    <td>规定文本的字体尺寸。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_font_weight.asp" target="_blank" rel="noopener noreferrer">font-weight</a></th>
+    <td>规定字体的粗细。</td>
+    </tr>
+    </tbody>
+    <thead>
+    <tr>
+    <th colspan="2">文本属性</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_text_color.asp" target="_blank" rel="noopener noreferrer">color</a></th>
+    <td>设置文本的颜色。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_dim_line-height.asp" target="_blank" rel="noopener noreferrer">line-height</a></th>
+    <td>设置行高。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_text_text-align.asp" target="_blank" rel="noopener noreferrer">text-align</a></th>
+    <td>规定文本的水平对齐方式。</td>
+    </tr>
+    </tbody>
+    </table>
+    <h4>盒模型</h4>
+    <p>大家有没有发现段落之间的距离、文字之间的距离，以及与边框之间的距离都比较拥挤？这个时候就需要用到盒子模型啦。盒子模型就像一个长方形的盒子，它有长度、高度、也有边框，以及内边距与外边距。我们通过实战来了解一下。</p>
+    <blockquote><p>长度、高度、边框我们比较好理解，那这个内边距和外边距是什么意思呢？</p>
+    <p>内边距就是这个长方形的边框与长方形里面的内容之间的距离，有上边距，右边距、下边距、左边距这个四个内边距，分别为padding-top，padding-right，padding-bottom，padding-left。注意是上、右、下、左，这样一个顺时针。</p>
+    <p>那外边距就是这个长方形的边框与长方形外面的内容之间的距离，同样也有上边距margin-top，右边距margin-right，下边距margin-bottom，左边距margin-left这个四个边距。同样也是上、右、下、左这个顺时针。</p></blockquote>
+    <p>比如我们给id为wxmlinfo和studyweapp的&lt;view&gt;组件加一个内部距，让文字</p>
+            <div id="crayon-5d830a9c7fd5c191713662" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#wxmlinfo,#studyweapp{
+      padding-top:20px;
+      padding-right:15px;
+      padding-bottom:20px;
+      padding-left:15px;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd5c191713662-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5c191713662-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5c191713662-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5c191713662-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5c191713662-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d830a9c7fd5c191713662-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd5c191713662-1"><span class="crayon-k ">#wxmlinfo,#studyweapp</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5c191713662-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding-top</span><span class="crayon-sy">:</span><span class="crayon-i ">20px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5c191713662-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding-right</span><span class="crayon-sy">:</span><span class="crayon-i ">15px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5c191713662-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding-bottom</span><span class="crayon-sy">:</span><span class="crayon-i ">20px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5c191713662-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding-left</span><span class="crayon-sy">:</span><span class="crayon-i ">15px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd5c191713662-6"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p><b>padding的简写&nbsp; </b>上面这四个padding是可以做一定的简写的，关于padding的简写，大家可以去阅读以下技术文档，多用就会了，<a href="http://www.w3school.com.cn/cssref/pr_padding.asp" target="_blank" rel="noopener noreferrer">CSS padding属性&nbsp;</a>，在这里有四个padding简写的案例，比如上面的这四条声明可以简写成padding:20px 15px。大家可以业余深入了解一下。</p></blockquote>
+    <p>class为title的view组件是标题，我们希望它和下面的文字距离大一点，我们可以添加以下样式:</p>
+            <div id="crayon-5d830a9c7fd6b743567384" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.title,.item-title{
+      margin-bottom:0.9em;
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd6b743567384-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd6b743567384-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd6b743567384-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd6b743567384-1"><span class="crayon-k ">.title,.item-title</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d830a9c7fd6b743567384-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">margin-bottom</span><span class="crayon-sy">:</span><span class="crayon-i ">0.9em</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd6b743567384-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里咋又冒出了一个em的单位，em是相对于当前字体尺寸而言的单位，如果当前你的字体大小为16px，那1em为16px；如果当前你的字体大小为18px，那1em为18px。</p>
+    <p>为了让class为item-title的&lt;view&gt;组件，也就是列表的标题更加突出，我们可以给它左边加一个边框，</p>
+            <div id="crayon-5d830a9c7fd6c051238703" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.item-title{
+      border-left: 3px solid #c60;
+      padding-left: 15px;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d830a9c7fd6c051238703-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d830a9c7fd6c051238703-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d830a9c7fd6c051238703-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d830a9c7fd6c051238703-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d830a9c7fd6c051238703-1"><span class="crayon-k ">.item-title</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d830a9c7fd6c051238703-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">border-left</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">3px</span><span class="crayon-h"> </span><span class="crayon-i ">solid</span><span class="crayon-h"> </span><span class="crayon-i ">#c60</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd6c051238703-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding-left</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">15px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d830a9c7fd6c051238703-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这样，小程序的一篇文章的样式看起来就算马马虎虎可以接受啦~为了便于大家查阅，我们也把盒子模型的三类属性整合在了一起</p>
+    <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+    <th colspan="2">内边距属性</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_font_font-family.asp" target="_blank" rel="noopener noreferrer">padding</a></th>
+    <td>在一个声明中设置所有内边距属性。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_font_font-size.asp" target="_blank" rel="noopener noreferrer">padding-top</a></th>
+    <td>设置元素的上内边距。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_font_weight.asp" target="_blank" rel="noopener noreferrer">padding-right</a></th>
+    <td>设置元素的右内边距。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_font_weight.asp" target="_blank" rel="noopener noreferrer">padding-bottom</a></th>
+    <td>设置元素的下内边距。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_font_weight.asp" target="_blank" rel="noopener noreferrer">padding-left</a></th>
+    <td>设置元素的左内边距。</td>
+    </tr>
+    </tbody>
+    <thead>
+    <tr>
+    <th colspan="2">外边距属性</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_margin.asp" target="_blank" rel="noopener noreferrer">margin</a></th>
+    <td>在一个声明中设置所有外边距属性。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_margin-top.asp" target="_blank" rel="noopener noreferrer">margin-top</a></th>
+    <td>设置元素的上外边距。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_margin-right.asp" target="_blank" rel="noopener noreferrer">margin-right</a></th>
+    <td>设置元素的右外边距</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_margin-bottom.asp" target="_blank" rel="noopener noreferrer">margin-bottom</a></th>
+    <td>设置元素的下外边距。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_margin-left.asp" target="_blank" rel="noopener noreferrer">margin-left</a></th>
+    <td>设置元素的左外边距。</td>
+    </tr>
+    </tbody>
+    <thead>
+    <tr>
+    <th colspan="2">边框属性</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border.asp" target="_blank" rel="noopener noreferrer">border</a></th>
+    <td>在一个声明中设置所有的边框属性。比如border:1px solid #ccc;</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border-top.asp" target="_blank" rel="noopener noreferrer">border-top</a></th>
+    <td>在一个声明中设置所有的上边框属性。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border-right.asp" target="_blank" rel="noopener noreferrer">border-right</a></th>
+    <td>在一个声明中设置所有的右边框属性。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border-bottom.asp" target="_blank" rel="noopener noreferrer">border-bottom</a></th>
+    <td>在一个声明中设置所有的下边框属性。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border-left.asp" target="_blank" rel="noopener noreferrer">border-left</a></th>
+    <td>在一个声明中设置所有的左边框属性。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border-width.asp" target="_blank" rel="noopener noreferrer">border-width</a></th>
+    <td>设置四条边框的宽度。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border-style.asp" target="_blank" rel="noopener noreferrer">border-style</a></th>
+    <td>设置四条边框的样式。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border-color.asp" target="_blank" rel="noopener noreferrer">border-color</a></th>
+    <td>设置四条边框的颜色。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_border-radius.asp" target="_blank" rel="noopener noreferrer">border-radius</a></th>
+    <td>简写属性，设置所有四个 border-*-radius 属性。</td>
+    </tr>
+    <tr>
+    <th><a href="http://www.w3school.com.cn/cssref/pr_box-shadow.asp" target="_blank" rel="noopener noreferrer">box-shadow</a></th>
+    <td>向方框添加一个或多个阴影。</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>更多的设计样式，大家可以根据上面的技术文档，在开发者工具里像做实验一样的来测试学习。</p>
     	</div><!-- .entry-content -->
     </div><!-- #post-## -->
     <!-- <div class="sop-bottom">
