@@ -1,0 +1,644 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 渐变与动画评论Feed" href="https://cloudbasegroup.org/handbook/weapp/28/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="数据绑定" href="https://cloudbasegroup.org/handbook/weapp/31">
+    <link rel="next" title="WeUI框架" href="https://cloudbasegroup.org/handbook/weapp/25">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weapp/28">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=28">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F28">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F28&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+    
+    <body class="post-template-default single single-post postid-28 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                          <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/tcb01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            小程序技术训练营			</h1>
+                          </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                     <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb01.html">
+                                    小程序开发入门					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb02.html">
+                                    WXML与WXSS					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb03.html">
+                                    链接与图片					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb04.html">
+                                    WeUI框架					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb05.html">
+                                    渐变与动画					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb06.html">
+                                    数据绑定					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">渐变与动画</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>CSS是编程科技与设计艺术结合得最为完美的一项技术，编程的优雅在于代码的<strong>清晰可读</strong>，而设计的优雅在于能够结合技术为用户带来一场<strong>视觉和交互的盛宴</strong>。借助于CSS，不仅可以做出平面设计师常用的滤镜、渐变等设计效果，还可以设计出一些交互动画，增强用户的体验。</p>
+    <h4>CSS的渐变Gradient</h4>
+    <p>颜色渐变是设计师必不可少的，CSS linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient" target="_blank" rel="noopener noreferrer">CSS 渐变属性<span aria-current="page">linear-gradient</span></a></p>
+    <p>使用开发者工具新建一个gradient的页面，然后在gradient.wxml页面输入以下代码：</p>
+            <div id="crayon-5d8437d1a466a876225888" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="gradient-display"&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a466a876225888-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a466a876225888-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a466a876225888-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"gradient-display"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a466a876225888-2"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在gradient.wxss里输入：</p>
+            <div id="crayon-5d8437d1a4671719122549" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.gradient-display{
+      background-image:linear-gradient(red, blue);
+      width: 100vw;
+      height: 100vh;
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4671719122549-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4671719122549-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4671719122549-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4671719122549-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a4671719122549-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4671719122549-1"><span class="crayon-sy">.</span>gradient<span class="crayon-o">-</span>display<span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4671719122549-2"><span class="crayon-h">&nbsp;&nbsp;</span>background<span class="crayon-o">-</span>image<span class="crayon-o">:</span>linear<span class="crayon-o">-</span>gradient<span class="crayon-sy">(</span>red<span class="crayon-sy">,</span><span class="crayon-h"> </span>blue<span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4671719122549-3"><span class="crayon-h">&nbsp;&nbsp;</span>width<span class="crayon-o">:</span><span class="crayon-h"> </span>100vw<span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4671719122549-4"><span class="crayon-h">&nbsp;&nbsp;</span>height<span class="crayon-o">:</span><span class="crayon-h"> </span>100vh<span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4671719122549-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们发现因为背景图片使用了linear-gradient属性，它默认的渐变方向是从上到下，第一个颜色（这里为红色red）是起始颜色，第二个颜色（这里为蓝色blue）为停止颜色。</p>
+    <p>将.gradient-display里的backgound-image的值依次换成以下：</p>
+    <p><b>改变渐变的方向</b></p>
+            <div id="crayon-5d8437d1a4673937856401" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">background-image: linear-gradient(45deg, blue, red);
+    /* 渐变轴为45度，从蓝色渐变到红色 */</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4673937856401-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4673937856401-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4673937856401-1"><span class="crayon-e ">background-image</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">linear-gradient</span><span class="crayon-sy">(</span><span class="crayon-i ">45deg,</span><span class="crayon-h"> </span><span class="crayon-i ">blue,</span><span class="crayon-h"> </span><span class="crayon-i ">red</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4673937856401-2"><span class="crayon-c">/* 渐变轴为45度，从蓝色渐变到红色 */</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>也可以这样写，代码具体含义可以去参考技术文档了解</p>
+            <div id="crayon-5d8437d1a4675728973785" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">background-image:linear-gradient(to left top, blue, red);
+    /* 从右下到左上、从蓝色渐变到红色 */</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4675728973785-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4675728973785-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4675728973785-1"><span class="crayon-e ">background-image</span><span class="crayon-sy">:</span><span class="crayon-i ">linear-gradient</span><span class="crayon-sy">(</span><span class="crayon-i ">to</span><span class="crayon-h"> </span><span class="crayon-i ">left</span><span class="crayon-h"> </span><span class="crayon-i ">top,</span><span class="crayon-h"> </span><span class="crayon-i ">blue,</span><span class="crayon-h"> </span><span class="crayon-i ">red</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4675728973785-2"><span class="crayon-c">/* 从右下到左上、从蓝色渐变到红色 */</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>增加更多颜色变换</strong></p>
+            <div id="crayon-5d8437d1a4676319420312" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">background-image:linear-gradient(0deg, blue, green 40%, red);
+    /* 从下到上（渐变轴为0度），从蓝色开始渐变、到高度40%位置是绿色渐变开始、最后以红色结束 */</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4676319420312-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4676319420312-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4676319420312-1"><span class="crayon-e ">background-image</span><span class="crayon-sy">:</span><span class="crayon-i ">linear-gradient</span><span class="crayon-sy">(</span><span class="crayon-i ">0deg,</span><span class="crayon-h"> </span><span class="crayon-i ">blue,</span><span class="crayon-h"> </span><span class="crayon-i ">green</span><span class="crayon-h"> </span><span class="crayon-i ">40%,</span><span class="crayon-h"> </span><span class="crayon-i ">red</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4676319420312-2"><span class="crayon-c">/* 从下到上（渐变轴为0度），从蓝色开始渐变、到高度40%位置是绿色渐变开始、最后以红色结束 */</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>颜色百分比</strong></p>
+            <div id="crayon-5d8437d1a4678280123986" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">background-image: linear-gradient(19deg, rgb(33, 212, 253) 0%, rgb(183, 33, 255) 100%);</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4678280123986-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4678280123986-1"><span class="crayon-e ">background-image</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">linear-gradient</span><span class="crayon-sy">(</span><span class="crayon-i ">19deg,</span><span class="crayon-h"> </span><span class="crayon-i ">rgb</span><span class="crayon-sy">(</span><span class="crayon-i ">33,</span><span class="crayon-h"> </span><span class="crayon-i ">212,</span><span class="crayon-h"> </span><span class="crayon-i ">253</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-i ">0%,</span><span class="crayon-h"> </span><span class="crayon-i ">rgb</span><span class="crayon-sy">(</span><span class="crayon-i ">183,</span><span class="crayon-h"> </span><span class="crayon-i ">33,</span><span class="crayon-h"> </span><span class="crayon-i ">255</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-i ">100%</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>小任务：</strong>参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/radial-gradient" target="_blank" rel="noopener noreferrer">径向渐变技术文档</a>下面的examples，在小程序里实现一个径向渐变的案例。通过实战的方式，理解技术文档就像辞典，前期学习不必做到全部看懂，能够拿来用就行。</p></blockquote>
+    <h4>Filter滤镜</h4>
+    <p>滤镜对于设计师来说一定不会陌生，CSS也有滤镜filter属性，可以对图片进行高斯模糊、调整对比度、转换为灰度图像、色相旋转、图片透明等操作。</p>
+    <blockquote><p>相比于Photoshop等工具的滤镜效果来说，使用CSS可以批量化处理图片滤镜效果，而且通过编程的手段不仅可以叠加各种效果，而且还能与交互相结合。</p></blockquote>
+    <p>这里我们主要介绍用的最多的三个滤镜效果，高斯模糊blur，图片变灰grayscale(<em>%</em>)，图片透明opacity(<em>%</em>)，其他滤镜效果大家以后可以阅读技术文档。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter" target="_blank" rel="noopener noreferrer">滤镜属性</a></p>
+    <p>使用开发者工具新建一个filter页面，然后在filter.wxml输入：</p>
+            <div id="crayon-5d8437d1a467b104371631" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="filter-display"&gt;
+        &lt;view&gt;blur高斯模糊&lt;/view&gt;
+        &lt;image class="blur" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"&gt;&lt;/image&gt;
+        &lt;view&gt;grayscale图片变灰&lt;/view&gt;
+        &lt;image class="grayscale" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"&gt;&lt;/image&gt;
+        &lt;view&gt;opacity图片透明&lt;/view&gt;
+        &lt;image class="opacity" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"&gt;&lt;/image&gt;
+        &lt;view&gt;多个滤镜叠加，注意css的写法即可&lt;/view&gt;
+        &lt;image class="multiple" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"&gt;&lt;/image&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-3" style="height: 40px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-5" style="height: 40px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-7" style="height: 40px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-9" style="height: 40px;">9</div><div class="crayon-num" data-line="crayon-5d8437d1a467b104371631-10" style="height: 20px;">10</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a467b104371631-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"filter-display"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">blur高斯模糊</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"blur"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">grayscale图片变灰</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"grayscale"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">opacity图片透明</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"opacity"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">多个滤镜叠加，注意css的写法即可</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"multiple"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467b104371631-10"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在filter.wxss里输入：</p>
+            <div id="crayon-5d8437d1a467c564507952" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    .filter-display img{
+            width: 150px;height: auto;
+        }
+        .blur{
+            filter: blur(8px);
+        }
+        .grayscale{
+            filter: grayscale(90%);
+        }
+        .opacity{
+            filter: opacity(25%);
+        }
+        .multiple{
+            filter: blur(8px) grayscale(90%) opacity(25%);
+        }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d8437d1a467c564507952-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a467c564507952-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">.filter-display img</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">150px</span><span class="crayon-sy">;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">auto</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">.blur</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">filter</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">blur</span><span class="crayon-sy">(</span><span class="crayon-i ">8px</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">.grayscale</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">filter</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">grayscale</span><span class="crayon-sy">(</span><span class="crayon-i ">90%</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">.opacity</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">filter</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">opacity</span><span class="crayon-sy">(</span><span class="crayon-i ">25%</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">.multiple</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">filter</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">blur</span><span class="crayon-sy">(</span><span class="crayon-i ">8px</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-i ">grayscale</span><span class="crayon-sy">(</span><span class="crayon-i ">90%</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-i ">opacity</span><span class="crayon-sy">(</span><span class="crayon-i ">25%</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a467c564507952-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>图片由灰色变为彩色</strong></p>
+    <p>在实际应用中，会在网站上添加很多不同色系的图片，比如合作伙伴的logo、嘉宾的照片、新闻图片等，为了让照片和网站的色系保持一致，因此就需要对所有图片进行统一的滤镜处理，而将图片变灰是比较常见的一种做法。</p>
+    <p>有时我们还会给这些变灰的图片添加一个交互特效，那就是当鼠标悬停在图片上时，图片会由灰色变为彩色。</p>
+    <p>在filter.wxml输入如下代码:</p>
+            <div id="crayon-5d8437d1a467e148604167" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="filter-display"&gt;
+        &lt;text&gt;将鼠标悬停（模拟器）或手指（手机微信）按住或放开图片查看效果&lt;/text&gt;
+        &lt;view class="grayscale" hover-class="grayscale-hover" &gt;
+          &lt;image mode="widthFix"  src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"&gt;&lt;/image&gt;
+        &lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a467e148604167-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a467e148604167-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a467e148604167-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a467e148604167-4" style="height: 40px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a467e148604167-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a467e148604167-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a467e148604167-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"filter-display"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467e148604167-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;text&gt;</span><span class="crayon-i ">将鼠标悬停（模拟器）或手指（手机微信）按住或放开图片查看效果</span><span class="crayon-r ">&lt;/text&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467e148604167-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"grayscale"</span><span class="crayon-h"> </span><span class="crayon-e ">hover-class</span><span class="crayon-o">=</span><span class="crayon-s ">"grayscale-hover"</span><span class="crayon-r "> &gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467e148604167-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467e148604167-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a467e148604167-6"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在技术文档<a href="https://developers.weixin.qq.com/miniprogram/dev/component/view.html" target="_blank" rel="noopener noreferrer">view组件</a>，我们可以看到hover-class是指定按下去的样式类。</p>
+    <p>在filter.wxss里添加如下样式：</p>
+            <div id="crayon-5d8437d1a4680703142474" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.filter-display image{
+      width: 150px;height: auto;
+    }
+    .grayscale{
+      filter: grayscale(90%);
+    }
+    .grayscale-hover{
+      filter:grayscale(0);
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437d1a4680703142474-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4680703142474-1"><span class="crayon-k ">.filter-display image</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4680703142474-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">150px</span><span class="crayon-sy">;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">auto</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4680703142474-3"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4680703142474-4"><span class="crayon-k ">.grayscale</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4680703142474-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">filter</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">grayscale</span><span class="crayon-sy">(</span><span class="crayon-i ">90%</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4680703142474-6"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4680703142474-7"><span class="crayon-k ">.grayscale-hover</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4680703142474-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">filter</span><span class="crayon-sy">:</span><span class="crayon-i ">grayscale</span><span class="crayon-sy">(</span><span class="crayon-i ">0</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4680703142474-9"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>高斯模糊的背景</strong></p>
+    <p>高斯模糊是UI设计师经常用到的一个特效。平面设计师通常是人工、手动去给图片设计样式，而UI设计师则可以结合CSS给相同类别的<strong>所有图片</strong>添加<strong>统一的</strong>样式，比如我们希望每个用户信息页的背景、每篇文章顶部的背景都不一样。</p>
+    <p>在filter.wxml输入如下代码:</p>
+            <div id="crayon-5d8437d1a4683416582410" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="userinfo-display"&gt;
+        &lt;view class="blur-bg"&gt;&lt;/view&gt;
+        &lt;view class="user-img"&gt;
+            &lt;image src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/luffy.jpg"&gt;&lt;/image&gt;
+        &lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4683416582410-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4683416582410-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4683416582410-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4683416582410-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a4683416582410-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a4683416582410-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4683416582410-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"userinfo-display"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4683416582410-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"blur-bg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4683416582410-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"user-img"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4683416582410-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/luffy.jpg"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4683416582410-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4683416582410-6"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在filter.wxss里添加如下样式：</p>
+            <div id="crayon-5d8437d1a4685848356109" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.blur-bg {
+        width: 750rpx;height: 300rpx;overflow: hidden;
+        background: url(https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/blurimg.jpg);
+        background-size: cover;
+        position: fixed;
+        filter: blur(15px);
+        z-index: -1;   
+    }
+    .user-img{
+        width: 750rpx;height: 300rpx;
+        display: flex;
+        justify-content: center; 
+        align-items:center;   
+    }
+    .user-img image {
+      width: 80rpx;height: 80rpx;
+      border-radius: 100%;
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d8437d1a4685848356109-18" style="height: 20px;">18</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4685848356109-1"><span class="crayon-k ">.blur-bg </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">750rpx</span><span class="crayon-sy">;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">300rpx</span><span class="crayon-sy">;</span><span class="crayon-e ">overflow</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">hidden</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">background</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">url</span><span class="crayon-sy">(</span><span class="crayon-e ">https</span><span class="crayon-sy">:</span><span class="crayon-i ">//hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/blurimg.jpg</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">background-size</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">cover</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">position</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">fixed</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">filter</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">blur</span><span class="crayon-sy">(</span><span class="crayon-i ">15px</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">z-index</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">-1</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-8"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-9"><span class="crayon-k ">.user-img</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">750rpx</span><span class="crayon-sy">;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">300rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">display</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">flex</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">justify-content</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">center</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">align-items</span><span class="crayon-sy">:</span><span class="crayon-i ">center</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-14"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-15"><span class="crayon-k ">.user-img image </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">80rpx</span><span class="crayon-sy">;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">80rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-17"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">border-radius</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100%</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4685848356109-18"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>UI设计师在处理网页元素的设计时，不会像平面设计师一样可以对每个元素都差异化的精心雕琢，毕竟CSS是没法做到像Photoshop等设计工具那样复杂，但是他可以做到批量。所以相对于平面设计师而言，UI设计师更注重单调且统一。</p></blockquote>
+    <h4>变形属性Transform</h4>
+    <p>CSS transform属性能通过修改CSS视觉格式化模型的坐标空间旋转、缩放、倾斜或平移给定的组件。</p>
+    <blockquote><p>关于变形Transform、过渡Transition、动画Animation的技术文档，大家<strong>先不要急着钻研</strong>，粗略浏览一下即可，以后有时间再来研究。</p></blockquote>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform" target="_blank" rel="noopener noreferrer">CSS 变形属性transform</a></p>
+    <p>使用微信开发者工具新建一个transform页面，在transform.wxml里输入以下代码</p>
+            <div id="crayon-5d8437d1a4687492596125" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="transform-display"&gt;
+        &lt;view&gt;缩放,scale(x,y)，x为长度缩放倍数，y为宽度缩放倍数，如果只有一个值，则是长和宽缩放的倍数&lt;/view&gt;
+        &lt;image class="scale"  mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg" &gt;&lt;/image&gt;
+        &lt;view&gt;平移,translate(x,y)，x为x轴平移的距离，y为y轴平移的距离，如果只有一个值，则是x和y轴缩放的距离，值可以为负数&lt;/view&gt;
+        &lt;image class="translate" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg" &gt;&lt;/image&gt;
+       &lt;view&gt;旋转,rotate()里的值为旋转的角度&lt;/view&gt;
+       &lt;image class="rotate"  mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg" &gt;&lt;/image&gt;
+       &lt;view&gt;倾斜,skew()里的值为旋转的角度&lt;/view&gt;
+       &lt;image class="skew"  mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg" &gt;&lt;/image&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-3" style="height: 40px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-5" style="height: 40px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-7" style="height: 40px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-9" style="height: 40px;">9</div><div class="crayon-num" data-line="crayon-5d8437d1a4687492596125-10" style="height: 20px;">10</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4687492596125-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"transform-display"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">缩放,scale(x,y)，x为长度缩放倍数，y为宽度缩放倍数，如果只有一个值，则是长和宽缩放的倍数</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"scale"</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r "> &gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">平移,translate(x,y)，x为x轴平移的距离，y为y轴平移的距离，如果只有一个值，则是x和y轴缩放的距离，值可以为负数</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"translate"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r "> &gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-6"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">旋转,rotate()里的值为旋转的角度</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-7"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"rotate"</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r "> &gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-8"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">倾斜,skew()里的值为旋转的角度</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-9"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"skew"</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r "> &gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4687492596125-10"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在transform.wxss文件里添加如下样式：</p>
+            <div id="crayon-5d8437d1a4689091516055" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.transform-display image{
+      width: 80px;height: 80px;
+      }
+    .scale{
+        transform: scale(1,0.5);
+    }
+    .translate{
+        transform: translate(500px,20px);
+    }
+    .rotate{
+        transform: rotate(45deg);
+    }
+    .skew{
+        transform: skew(120deg);
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d8437d1a4689091516055-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4689091516055-1"><span class="crayon-k ">.transform-display image</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">80px</span><span class="crayon-sy">;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">80px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-4"><span class="crayon-k ">.scale</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">transform</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">scale</span><span class="crayon-sy">(</span><span class="crayon-i ">1,0.5</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-6"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-7"><span class="crayon-k ">.translate</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">transform</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">translate</span><span class="crayon-sy">(</span><span class="crayon-i ">500px,20px</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-9"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-10"><span class="crayon-k ">.rotate</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">transform</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">rotate</span><span class="crayon-sy">(</span><span class="crayon-i ">45deg</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-12"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-13"><span class="crayon-k ">.skew</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">transform</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">skew</span><span class="crayon-sy">(</span><span class="crayon-i ">120deg</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4689091516055-15"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>过渡属性Transition</h4>
+    <p><strong>CSS transitions </strong>可以控制组件从一个属性状态切换为另外一个属性状态时的过渡效果。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition" target="_blank" rel="noopener noreferrer">CSS 过渡属性Transition</a></p>
+    <p>建议大家只用<strong>简写属性transition</strong>，多个属性连着一起写会更好一些，transition的语法如下，语法比较复杂，大家可以结合后面的实际案例</p>
+            <div id="crayon-5d8437d1a468b415298247" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.selector {
+        transition: [transition-property] [transition-duration] [transition-timing-function] [transition-delay];
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a468b415298247-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a468b415298247-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a468b415298247-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a468b415298247-1"><span class="crayon-k ">.selector </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a468b415298247-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">transition</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">[transition-property]</span><span class="crayon-h"> </span><span class="crayon-i ">[transition-duration]</span><span class="crayon-h"> </span><span class="crayon-i ">[transition-timing-function]</span><span class="crayon-h"> </span><span class="crayon-i ">[transition-delay]</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a468b415298247-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <ul>
+    <li><strong>transition-property</strong>，应用过渡的 CSS 或动画属性的名称；</li>
+    <li><strong>transition-duration</strong>，整个过渡效果持续的时间，默认时间为0秒，所以要有过渡效果这个是必须定义的；</li>
+    <li><strong>transition-timing-function</strong>，规定过渡效果的时间曲线，默认为ease；</li>
+    <li><strong>transition-delay</strong>，过渡效果延迟多久，或者说何时开始，默认为0秒，不定义的话也就是直接开始；</li>
+    </ul>
+    <p><strong>背景颜色的变化</strong></p>
+    <p>同样还是把下面的代码输入到小程序的页面当中，通过实战的方式来查看效果。</p>
+    <p>使用开发者工具新建一个transition页面，然后在transition.wxml页面里面输入以下代码：</p>
+            <div id="crayon-5d8437d1a468d621059138" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="transition-display"&gt;
+        &lt;view class="box bg-color" hover-class="bg-color-hover"&gt;&lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a468d621059138-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a468d621059138-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a468d621059138-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a468d621059138-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"transition-display"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a468d621059138-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"box bg-color"</span><span class="crayon-h"> </span><span class="crayon-e ">hover-class</span><span class="crayon-o">=</span><span class="crayon-s ">"bg-color-hover"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a468d621059138-3"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在transition.wxss里面输入：</p>
+            <div id="crayon-5d8437d1a468f447755434" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.box{width: 150px;height: 150px;cursor: pointer;}
+    .bg-color{
+        background-color:green;
+    }
+    .bg-color-hover{
+        background-color: yellow;
+        transition: background-color 5s ease-out 3s;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a468f447755434-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a468f447755434-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a468f447755434-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a468f447755434-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a468f447755434-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a468f447755434-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a468f447755434-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a468f447755434-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a468f447755434-1"><span class="crayon-k ">.box</span><span class="crayon-sy">{</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">150px</span><span class="crayon-sy">;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">150px</span><span class="crayon-sy">;</span><span class="crayon-e ">cursor</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">pointer</span><span class="crayon-sy">;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a468f447755434-2"><span class="crayon-k ">.bg-color</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a468f447755434-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-i ">green</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a468f447755434-4"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a468f447755434-5"><span class="crayon-k ">.bg-color-hover</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a468f447755434-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">yellow</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a468f447755434-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">transition</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">background-color</span><span class="crayon-h"> </span><span class="crayon-i ">5s</span><span class="crayon-h"> </span><span class="crayon-i ">ease-out</span><span class="crayon-h"> </span><span class="crayon-i ">3s</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a468f447755434-8"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>动画是需要触发的，这里我们使用的是<strong>悬停hover-class</strong>来触发效果，把鼠标放在元素上8秒以上，看一下正方形的背景颜色有什么变化。</p>
+    <p>了解了效果之后，我们再来结合实际案例理解语法：</p>
+    <ul>
+    <li>因为我们是用hover来触发的，所以transition要写在元素的hover-class里，盒子之前的背景是绿色green，悬停的背景是黄色yellow；</li>
+    <li>因为我们改变的是盒子background-color，所以transition需要过渡的CSS属性名称，就是background-color；</li>
+    <li>动画过渡持续的时间，我们设置的是5秒，也就是背景由绿色变为黄色的时间；</li>
+    <li>这里的ease-out（慢速结束）是颜色过渡的时间曲线效果。还可以有linear（匀速）、ease-in（慢速开始）、ease-in-out（慢速开始和慢速结束）。持续的时间很短的情况下，这几个时间曲线效果差别是及其细微的，<strong>需要设计师对动画足够敏感了</strong>。</li>
+    <li>动画延迟的时间是3秒，也就是说3秒之后动画才开始。</li>
+    </ul>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_animated_properties" target="_blank" rel="noopener noreferrer">可设置动画的属性列表</a></p>
+    <p>我们来查看一个综合案例，在transition.wxml里输入</p>
+            <div id="crayon-5d8437d1a4690531606367" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;
+        &lt;text&gt;盒子的多个属性一起动画: width, height, background-color, transform. 将鼠标或手指悬停在盒子上查看动画之后放开。&lt;/text&gt;
+        &lt;view class="animatebox" hover-class="animatebox-hover"&gt;&lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4690531606367-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4690531606367-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4690531606367-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4690531606367-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4690531606367-1"><span class="crayon-r ">&lt;view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4690531606367-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;text&gt;</span><span class="crayon-i ">盒子的多个属性一起动画: width, height, background-color, transform. 将鼠标或手指悬停在盒子上查看动画之后放开。</span><span class="crayon-r ">&lt;/text&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4690531606367-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"animatebox"</span><span class="crayon-h"> </span><span class="crayon-e ">hover-class</span><span class="crayon-o">=</span><span class="crayon-s ">"animatebox-hover"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4690531606367-4"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在transition.wxss里输入</p>
+            <div id="crayon-5d8437d1a4692515629229" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.animatebox {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: #4a9d64;
+        transition:width 2s, height 2s, background-color 2s, transform 2s;
+    }
+    .animatebox-hover {
+        background-color: #cd584a;
+        width:200px;
+        height:200px;
+        transform:rotate(180deg);
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8437d1a4692515629229-13" style="height: 20px;">13</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4692515629229-1"><span class="crayon-k ">.animatebox </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">display</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">block</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#4a9d64</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">transition</span><span class="crayon-sy">:</span><span class="crayon-i ">width</span><span class="crayon-h"> </span><span class="crayon-i ">2s,</span><span class="crayon-h"> </span><span class="crayon-i ">height</span><span class="crayon-h"> </span><span class="crayon-i ">2s,</span><span class="crayon-h"> </span><span class="crayon-i ">background-color</span><span class="crayon-h"> </span><span class="crayon-i ">2s,</span><span class="crayon-h"> </span><span class="crayon-i ">transform</span><span class="crayon-h"> </span><span class="crayon-i ">2s</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-7"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-8"><span class="crayon-k ">.animatebox-hover </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#cd584a</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-i ">200px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-i ">200px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">transform</span><span class="crayon-sy">:</span><span class="crayon-i ">rotate</span><span class="crayon-sy">(</span><span class="crayon-i ">180deg</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4692515629229-13"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>动画属性Animation</h4>
+    <p><strong>CSS animations&nbsp;</strong>使得可以将从一个CSS样式配置转换到另一个CSS样式配置。动画包括两个部分:描述动画的样式规则和用于指定动画开始、结束以及中间点样式的关键帧。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation" target="_blank" rel="noopener noreferrer">CSS动画属性Animation</a></p>
+            <div id="crayon-5d8437d1a4694664451295" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="fadeIn"&gt;
+     &lt;view&gt;注意会有一个无限颜色渐变变化的动画&lt;/view&gt;
+        &lt;image mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg" &gt;&lt;/image&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4694664451295-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4694664451295-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4694664451295-3" style="height: 40px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4694664451295-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4694664451295-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"fadeIn"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4694664451295-2"><span class="crayon-i "> </span><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">注意会有一个无限颜色渐变变化的动画</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4694664451295-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-r "> &gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437d1a4694664451295-4"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在wxss里输入以下代码</p>
+            <div id="crayon-5d8437d1a4695760261487" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+    
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .fadeIn {
+      animation: 4s linear 0s infinite alternate fadeIn;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8437d1a4695760261487-13" style="height: 20px;">13</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437d1a4695760261487-1"><span class="crayon-n">@keyframes fadeIn </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">from </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">opacity</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-5">&nbsp;</div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-k ">to </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e ">opacity</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">1</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-9"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-10">&nbsp;</div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-11"><span class="crayon-k ">.fadeIn </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">animation</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">4s</span><span class="crayon-h"> </span><span class="crayon-i ">linear</span><span class="crayon-h"> </span><span class="crayon-i ">0s</span><span class="crayon-h"> </span><span class="crayon-i ">infinite</span><span class="crayon-h"> </span><span class="crayon-i ">alternate</span><span class="crayon-h"> </span><span class="crayon-i ">fadeIn</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437d1a4695760261487-13"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>CSS3 动画库 Animate.css</strong></p>
+    <p>Animate.css是一个有趣的，跨浏览器的css3动画库，只需要你引入一个CSS文件，就能够给指定的元素添加动画样式。</p>
+    <p><strong>技术文档：</strong><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener noreferrer">Animate.css</a></p>
+    <p>它预设了抖动（shake）、闪烁（flash）、弹跳（bounce）、翻转（flip）、旋转（rotateIn/rotateOut）、淡入淡出（fadeIn/fadeOut）等多达 80种动画效果，几乎包含了所有常见的动画效果。</p>
+    <blockquote class="task"><p><strong>小任务：</strong>参考Animate.css的shake抖动，在小程序实现一个组件抖动的案例。除了引入一些weui这样的样式框架，还有一些开源的库我们也可以学习和借鉴，更多内容则需要大家以后可以深入学习了。</p></blockquote>
+    <div class="post-views post-28 entry-meta">
+                <span class="post-views-icon dashicons dashicons-chart-bar"></span>
+                <span class="post-views-label">阅读人数: </span>
+                <span class="post-views-count">0</span>
+                </div>		
+            <a class="post-edit-link" href="https://cloudbasegroup.org/wp-admin/post.php?post=28&amp;action=edit">编辑</a>	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
