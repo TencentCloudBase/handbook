@@ -1,0 +1,500 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 数据绑定评论Feed" href="https://cloudbasegroup.org/handbook/weapp/31/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="next" title="渐变与动画" href="https://cloudbasegroup.org/handbook/weapp/28">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weapp/31">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=31">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F31">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F31&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+    
+    <body class="post-template-default single single-post postid-31 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                          <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/tcb01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            小程序技术训练营			</h1>
+                          </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                     <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb01.html">
+                                    小程序开发入门					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb02.html">
+                                    WXML与WXSS					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb03.html">
+                                    链接与图片					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb04.html">
+                                    WeUI框架					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb05.html">
+                                    渐变与动画					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb06.html">
+                                    数据绑定					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">数据绑定</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>今天我们来了解一下数据绑定，什么是数据绑定呢？就是把WXML 中的一些动态数据分离出来放到对应的js文件的 Page 的 data里。</p>
+    <blockquote><p>数据绑定这个概念其实很多学过网页开发的朋友也会比较困惑。大家可以不必执着于这个深奥的概念，而是先来动手做一下了解是一个什么效果。在潜移默化里，你会get到前端里一个非常了不得的技术知识哦~</p></blockquote>
+    <h4>把数据分离出来</h4>
+    <p>我们可以在小程序的页面文件wxml里写这样一段代码，比如我们可以写在home.wxml里面，</p>
+            <div id="crayon-5d8437e7daf22319870121" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;张明，您已登录，欢迎&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf22319870121-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf22319870121-1"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">张明，您已登录，欢迎</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这样的场景我们经常遇到，不同的人使用一款App或者H5的时候，页面会根据不同的登录人不同的用户信息。</p>
+    <p>我们可以这样把wxml的代码修改成这样：</p>
+            <div id="crayon-5d8437e7daf29371832009" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;{{username}}，您已登录，欢迎&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf29371832009-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf29371832009-1"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">username</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span>，您已登录，欢迎<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在home.js的data里面写这样一段代码，最终呈现的结果是：</p>
+            <div id="crayon-5d8437e7daf2b598440344" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        username:"张明"
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf2b598440344-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf2b598440344-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf2b598440344-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf2b598440344-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf2b598440344-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">username</span><span class="crayon-o">:</span><span class="crayon-s">"张明"</span></div><div class="crayon-line" id="crayon-5d8437e7daf2b598440344-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在模拟器我们看到呈现的结果和之前一样，我们可以data里面的”张明”修改成任何一个人的名字，前端的页面也会相应有所改变，如果通过函数的方式根据不同的用户修改username的值，这样不同的登录的人登录就会显示相应的用户名。</p>
+    <blockquote><p>大家再回头来回顾一下json语法，这里的username是字段名称，也就是变量，冒号:后面的是值。在wxml文件里，只需要用双大括号{{}}把变量名包起来，就能把data里面的变量给渲染出来。</p></blockquote>
+    <h4>数据类型</h4>
+    <p>通过前面的案例我们了解到WXML 中的动态数据均来自对应 Page 的 data。
+                <span id="crayon-5d8437e7daf2d682173297" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">data</span></span></span>&nbsp;是小程序的页面第一次渲染使用的<strong>初始数据</strong>。小程序的页面加载时，
+                <span id="crayon-5d8437e7daf2f416314513" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">data</span></span></span>&nbsp;将会以
+                <span id="crayon-5d8437e7daf31715826274" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">JSON</span></span></span>字符串的形式由逻辑层传至渲染层，因此
+                <span id="crayon-5d8437e7daf32417208559" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">data</span></span></span>中的数据必须是可以转成
+                <span id="crayon-5d8437e7daf33262521156" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">JSON</span></span></span>的类型：字符串String，数字Number，布尔值Boolean，对象Object，数组Array。</p>
+    <ul>
+    <li><strong>字符串String</strong>，用于存储和处理文本，可以结合Excel单元格格式里的文本格式来理解；</li>
+    <li><strong>数字Number</strong>，这个很好理解，比如233这个数，它的数字格式和文本格式是有很大不同的，学Excel一定不会陌生；</li>
+    <li><strong>布尔值Boolean</strong>，就是true和false，虽然只有两个值，但是它代表着两种选择，两种不同的条件，两种不同的结果；</li>
+    <li><strong>对象Object</strong>，结合之前所学，我们再来回顾一下：对象由大括号{}分隔，在大括号{}内部，对象的属性以名称和值对的形式 name : value来定义，属性由逗号,分隔</li>
+    <li><strong>数组Array</strong>，结合之前所学，我们再来回顾一下：数组由中括号[ ]来分割，有点类似于列表；</li>
+    </ul>
+    <blockquote><p>数据类型在编程语言里是一个非常重要的概念，大家可以先只需要知道是啥就可以，不必强行理解哦。就像我们把不同的人分为男、女、深圳人、程序员等不同类型一样，数据类型就是一种对不同类型的数据进行了一个分类而已，只是为了区分它们才有了不同的格式规范它们。</p></blockquote>
+    <h4>组件属性的渲染</h4>
+    <p>通过数据绑定，我们还可以把 style、class 、id等属性分离出来来控制组件的样式等信息。</p>
+    <p>使用开发者工具在home.wxml里输入以下内容：</p>
+            <div id="crayon-5d8437e7daf35895595388" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;navigator id="item-{{id}}" class="{{itemclass}}" url="{{itemurl}}" &gt;
+      &lt;image style="width: {{imagewidth}}" mode="{{imagemode}}" src="{{imagesrc}}"&gt;&lt;/image&gt;
+    &lt;/navigator&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf35895595388-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf35895595388-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf35895595388-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf35895595388-1"><span class="crayon-r ">&lt;navigator </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"item-{{id}}"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"{{itemclass}}"</span><span class="crayon-h"> </span><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s ">"{{itemurl}}"</span><span class="crayon-r "> &gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf35895595388-2"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"width: {{imagewidth}}"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"{{imagemode}}"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{imagesrc}}"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf35895595388-3"><span class="crayon-r ">&lt;/navigator&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>需要按照json的语法，把下面data里面的数据<strong>添加</strong>到home.js的data里面：</p>
+            <div id="crayon-5d8437e7daf37331993489" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        id: 233,
+        itemurl:"/pages/home/imgshow/imgshow",
+        itemclass:"event-item",
+        imagesrc: "https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg",
+        imagemode:"widthFix",
+        imagewidth:"100%",
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf37331993489-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf37331993489-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf37331993489-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437e7daf37331993489-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437e7daf37331993489-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437e7daf37331993489-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437e7daf37331993489-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437e7daf37331993489-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf37331993489-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf37331993489-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">233</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf37331993489-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">itemurl</span><span class="crayon-o">:</span><span class="crayon-s">"/pages/home/imgshow/imgshow"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf37331993489-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">itemclass</span><span class="crayon-o">:</span><span class="crayon-s">"event-item"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf37331993489-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">imagesrc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://hackwork.oss-cn-shanghai.aliyuncs.com/lesson/weapp/4/weapp.jpg"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf37331993489-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">imagemode</span><span class="crayon-o">:</span><span class="crayon-s">"widthFix"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf37331993489-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">imagewidth</span><span class="crayon-o">:</span><span class="crayon-s">"100%"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf37331993489-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在模拟器里查看显示的效果，发现显示的结果上和我们之前不采用数据绑定没有什么区别，但是用数据绑定的好处是为我们以后添加大量数据以及进行编程更新打下了基础。</p>
+    <h4>字符串与数字</h4>
+    <p>在前面我们以前说过，数字Number与字符串String在Excel里是不同的，在小程序（也就是JavaScript）里也是不同的。我们来实战了解一下，在home.wxml里输入以下代码：</p>
+            <div id="crayon-5d8437e7daf39780932157" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;两个数字Number相加：{{love1+forever1}}&lt;/view&gt;
+    &lt;view&gt;两个字符串String相加：{{love2+forever2}}&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf39780932157-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf39780932157-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf39780932157-1"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">两个数字Number相加：{{love1+forever1}}</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf39780932157-2"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">两个字符串String相加：{{love2+forever2}}</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后把下面data里的数据添加到home.js里面:</p>
+            <div id="crayon-5d8437e7daf3b311047539" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        love1:520,
+        love2:"520",
+        forever1:1314,
+        forever2:"1314",
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf3b311047539-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf3b311047539-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf3b311047539-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437e7daf3b311047539-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437e7daf3b311047539-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437e7daf3b311047539-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf3b311047539-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf3b311047539-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">love1</span><span class="crayon-o">:</span><span class="crayon-cn">520</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3b311047539-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">love2</span><span class="crayon-o">:</span><span class="crayon-s">"520"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3b311047539-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">forever1</span><span class="crayon-o">:</span><span class="crayon-cn">1314</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3b311047539-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">forever2</span><span class="crayon-o">:</span><span class="crayon-s">"1314"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3b311047539-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在这里我们可以看到使用””双引号包住的是字符串格式，而没有使用双引号的是数字格式。</p>
+    <p>可以看到数字格式的数字相加和四则运算的加法是一致的，而字符串与字符串的相加是<strong>拼接</strong>。+ 加号在JavaScript里既可以扮演四则运算符的角色，也可以进行拼接，取决于数据的格式。</p>
+    <blockquote><p>小任务：数字格式的520和字符串格式的520，它们在页面的显示上虽然是一样的，但是字符串格式可以拼接，而数字格式的数字，则方便以后我们进行数字大小的比较。请问出身年份是应该使用数字格式，还是字符串格式？身份证号码呢？</p></blockquote>
+    <h4>渲染数组里的单条数据</h4>
+    <p>在前面我们就已经接触过数组，比如<strong>pages配置项</strong>就是小程序里所有页面的一个列表。数组Array是值的<strong>有序</strong>集合，每个值叫做一个元素，而每个元素在数组中有一个位置，以数字表示，称为<strong>索引</strong>。这个索引是从0开始的非负整数，也就是0，1，2，3，4，5…..</p>
+    <p>在home.wxml里输入以下代码：</p>
+            <div id="crayon-5d8437e7daf3c401869491" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;互联网快讯&lt;/view&gt;
+    &lt;view&gt;{{newstitle[0]}}&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf3c401869491-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf3c401869491-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf3c401869491-1"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">互联网快讯</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf3c401869491-2"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">{{newstitle[0]}}</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后把下面data里的数据添加到home.js里面：</p>
+            <div id="crayon-5d8437e7daf3e611932050" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        newstitle:[
+          "瑞幸咖啡：有望在三季度达到门店运营的盈亏平衡点",
+          "腾讯：广告高库存量还是会持续到下一年",
+          "上汽集团云计算数据中心落户郑州，总投资20亿元",
+          "京东：月收入超2万元快递小哥数量同比增长163%",
+          "腾讯：《和平精英》日活跃用户已超五千万",
+        ],
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437e7daf3e611932050-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">newstitle</span><span class="crayon-o">:</span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"瑞幸咖啡：有望在三季度达到门店运营的盈亏平衡点"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"腾讯：广告高库存量还是会持续到下一年"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"上汽集团云计算数据中心落户郑州，总投资20亿元"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"京东：月收入超2万元快递小哥数量同比增长163%"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"腾讯：《和平精英》日活跃用户已超五千万"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf3e611932050-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们发现数组的第一条数据就显示出来了，也就是说{{array[0]}}对应着数组array的第一项，0就是索引的第一个位置，也就是我们可以使用数组名+中括号[ ]+索引的位置来访问数组的某一条数据。</p>
+    <blockquote class="task"><p>小任务：我们已经知道newstitle[0]显示的是第1条新闻的标题，那怎么显示第5条新闻的标题？还记得pages配置项的第一项就是小程序的初始页面么，你现在知道它是怎么做到的么？</p></blockquote>
+    <h4>渲染对象类型的数据</h4>
+    <p>对象（object）是 JavaScript 语言的核心概念，也是<span style="color: #800000;"><strong>最重要的数据类型</strong></span>。对象是一个包含相关数据和方法的集合（通常由一些变量和函数组成，我们称之为对象里面的<strong>属性</strong>和<strong>方法</strong>）。</p>
+    <p>有的时候一个对象有多个属性，就拿电影来说，就有电影名称，国家，发行时间、票价、评价等等无数个属性，我们该如何把这些呈现在页面上呢？</p>
+    <p>在home.wxml文件里输入以下代码：</p>
+            <div id="crayon-5d8437e7daf40025628061" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;image mode="widthFix" src="{{movie.img}}" style="width:300rpx"&gt;&lt;/image&gt;
+    &lt;view&gt;电影名：{{movie.name}}&lt;/view&gt;
+    &lt;view&gt;英文名：{{movie.englishname}}&lt;/view&gt;
+    &lt;view&gt;国家：{{movie.country}}&lt;/view&gt;
+    &lt;view&gt;发行年份：{{movie.year}}&lt;/view&gt;
+    &lt;view&gt;简述：{{movie.desc}}&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf40025628061-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf40025628061-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf40025628061-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437e7daf40025628061-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437e7daf40025628061-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437e7daf40025628061-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf40025628061-1"><span class="crayon-o">&lt;</span><span class="crayon-e">image </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"{{movie.img}}"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s">"width:300rpx"</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">image</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf40025628061-2"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span>电影名：<span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-v">name</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf40025628061-3"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span>英文名：<span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-v">englishname</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf40025628061-4"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span>国家：<span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-v">country</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf40025628061-5"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span>发行年份：<span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-v">year</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf40025628061-6"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span>简述：<span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-v">desc</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在与之对应的home.js的data里，添加如下数据：</p>
+            <div id="crayon-5d8437e7daf42580410518" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">data: {
+        movie: {
+          name: "肖申克的救赎",
+          englishname:"The Shawshank Redemption",
+          country:"美国",
+          year:1994,
+          img: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp",
+          desc: "有的人的羽翼是如此光辉，即使世界上最黑暗的牢狱，也无法长久地将他围困！"
+        },
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437e7daf42580410518-10" style="height: 20px;">10</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf42580410518-1"><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">movie</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"肖申克的救赎"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">englishname</span><span class="crayon-o">:</span><span class="crayon-s">"The Shawshank Redemption"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">country</span><span class="crayon-o">:</span><span class="crayon-s">"美国"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">year</span><span class="crayon-o">:</span><span class="crayon-cn">1994</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"有的人的羽翼是如此光辉，即使世界上最黑暗的牢狱，也无法长久地将他围困！"</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf42580410518-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这样，对象Object类型的数据就被渲染出来啦。也就是在双大括号{{}}里，输入变量movie+点+属性名即可，这就是<strong>对象的点表示法</strong>。</p>
+    <h4>复杂的数据嵌套</h4>
+    <p>对象是可以嵌套的，也就是一个对象可以作为另外一个对象的值，除了对象里套对象，数组里也可以套对象，对象里也可以套数组。把现实生活中的事物转化成错综复杂的数据，是非常重要的数据思维。</p>
+    <p>比如上面我们只列出了豆瓣排名第1的电影，那top5前五的电影呢，它就是一个列表；每一部电影的工作人员又有导演、编剧、演员，而每一部电影的演员名单又是一个列表，每个演员又有复杂的属性，比如姓名、出身年月、所获奖项（列表）…真的是子子孙孙无穷尽。当然简单的数据我们可以写在data里面，而如此复杂的数据就要使用到数据库啦。</p>
+    <p>比如我们把下面data里的数据添加到home.js里面：</p>
+            <div id="crayon-5d8437e7daf44865382126" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    movies:[
+          {
+            name: "肖申克的救赎",
+            englishname: "The Shawshank Redemption",
+            country: "美国",
+            year: 1994,
+            img: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp",
+            desc: "有的人的羽翼是如此光辉，即使世界上最黑暗的牢狱，也无法长久地将他围困！",
+            actor:[
+              {
+                name:"蒂姆·罗宾斯",
+                role:"安迪·杜佛兰"
+              },
+              {
+                name:"摩根·弗里曼",
+                role:"艾利斯·波伊德·瑞德"
+              },
+            ]
+          },
+          {
+            name: "霸王别姬",
+            englishname: "Farewell My Concubine",
+            country: "中国",
+            year: 1993,
+            img: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2561716440.webp",
+            desc: "风华绝代",
+            actor: [
+              {
+                name: "张国荣",
+                role: "程蝶衣"
+              },
+              {
+                name: "张丰毅",
+                role: "段小楼"
+              },
+            ]
+          },
+        ],</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-26" style="height: 20px;">26</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-27" style="height: 20px;">27</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-28" style="height: 20px;">28</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-29" style="height: 20px;">29</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-30" style="height: 20px;">30</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-31" style="height: 20px;">31</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-32" style="height: 20px;">32</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-33" style="height: 20px;">33</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-34" style="height: 20px;">34</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-35" style="height: 20px;">35</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-36" style="height: 20px;">36</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-37" style="height: 20px;">37</div><div class="crayon-num" data-line="crayon-5d8437e7daf44865382126-38" style="height: 20px;">38</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf44865382126-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">movies</span><span class="crayon-o">:</span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"肖申克的救赎"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">englishname</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"The Shawshank Redemption"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">country</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"美国"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">year</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1994</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"有的人的羽翼是如此光辉，即使世界上最黑暗的牢狱，也无法长久地将他围困！"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">actor</span><span class="crayon-o">:</span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-s">"蒂姆·罗宾斯"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">role</span><span class="crayon-o">:</span><span class="crayon-s">"安迪·杜佛兰"</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-s">"摩根·弗里曼"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">role</span><span class="crayon-o">:</span><span class="crayon-s">"艾利斯·波伊德·瑞德"</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">englishname</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"Farewell My Concubine"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">country</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"中国"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">year</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1993</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2561716440.webp"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-26"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"风华绝代"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-27"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">actor</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-28"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-29"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"张国荣"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-30"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">role</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"程蝶衣"</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-31"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-32"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-33"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"张丰毅"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-34"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">role</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"段小楼"</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-35"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-36"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-37"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8437e7daf44865382126-38"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>那我们应该如何把豆瓣电影排名第2的霸王别姬的主演之一的张国荣的名字给渲染到页面呢？
+                <span id="crayon-5d8437e7daf46455703724" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movies</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">actor</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">name</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span></span></span>表示的是电影列表里的第2部电影，
+                <span id="crayon-5d8437e7daf48330227959" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movies</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">actor</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span></span></span>表示的是第2部电影里的排名第一的主演，
+                <span id="crayon-5d8437e7daf49142516022" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movies</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">actor</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">name</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span></span></span>则表示的是主演的名字啦。</p>
+    <p>在home.wxml里输入以下代码测试看一下显示的是不是张国荣？</p>
+            <div id="crayon-5d8437e7daf4b679257869" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;豆瓣电影排名第2、最重要的主演演员名：&lt;/view&gt;
+    &lt;view&gt;{{movies[1].actor[0].name}}&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf4b679257869-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf4b679257869-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf4b679257869-1"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">豆瓣电影排名第2、最重要的主演演员名：</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf4b679257869-2"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">{{movies[1].actor[0].name}}</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>那如何把第2部电影里的所有数据都渲染出来呢？</p>
+            <div id="crayon-5d8437e7daf4c663944653" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;image mode="widthFix" src="{{movies[1].img}}" style="width:300rpx"&gt;&lt;/image&gt;
+    &lt;view&gt;电影名：{{movies[1].name}}&lt;/view&gt;
+    &lt;view&gt;英文名：{{movies[1].englishname}}&lt;/view&gt;
+    &lt;view&gt;发行地：{{movies[1].country}}&lt;/view&gt;
+    &lt;view&gt;发行年份：{{movies[1].year}}&lt;/view&gt;
+    &lt;view&gt;简述：{{movies[1].desc}}&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf4c663944653-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf4c663944653-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf4c663944653-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437e7daf4c663944653-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437e7daf4c663944653-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437e7daf4c663944653-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf4c663944653-1"><span class="crayon-r ">&lt;image </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{movies[1].img}}"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"width:300rpx"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf4c663944653-2"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">电影名：{{movies[1].name}}</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf4c663944653-3"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">英文名：{{movies[1].englishname}}</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf4c663944653-4"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">发行地：{{movies[1].country}}</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf4c663944653-5"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">发行年份：{{movies[1].year}}</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf4c663944653-6"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">简述：{{movies[1].desc}}</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p>小任务：在home.wxml输入以下代码会是什么结果？为什么不能这样？</p>
+            <div id="crayon-5d8437e7daf4e209501356" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;{{movies}}&lt;/view&gt;
+    &lt;view&gt;{{movies[1]}}&lt;/view&gt;
+    &lt;view&gt;{{movies[1].actor}}&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437e7daf4e209501356-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437e7daf4e209501356-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437e7daf4e209501356-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437e7daf4e209501356-1"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movies</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf4e209501356-2"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movies</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d8437e7daf4e209501356-3"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">movies</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">.</span><span class="crayon-v">actor</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>
+    </p></blockquote>
+    <p>以上我们只是输出了数组里的单条数据，或者对象嵌套的数据里的单条数据，如果是商品列表、电影列表、新闻列表这些我们应该如何渲染到页面呢？后面一节我们将会介绍列表渲染和条件渲染。</p>
+    	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>

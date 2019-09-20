@@ -1,0 +1,509 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » WeUI框架评论Feed" href="https://cloudbasegroup.org/handbook/weapp/25/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="渐变与动画" href="https://cloudbasegroup.org/handbook/weapp/28">
+    <link rel="next" title="链接与图片" href="https://cloudbasegroup.org/handbook/weapp/15">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weapp/25">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=25">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F25">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F25&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+    
+    <body class="post-template-default single single-post postid-25 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+    <nav id="header-db" class="row navbar navbar-default">
+            <div class="navbar-header">
+                  <div class="logotop fleft">
+                    <a href="https://tencentcloudbase.github.io/handbook/tcb01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+                <div class="flex nav-items">
+                <h1 class="flex-item navbar-link">
+                    小程序技术训练营			</h1>
+                  </div>
+            </div>
+    
+            <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+             <div class="sop-menu">
+                <ul>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb01.html">
+                            小程序开发入门					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb02.html">
+                            WXML与WXSS					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb03.html">
+                            链接与图片					</a>
+                    </li>
+                                    <li class="page_item current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb04.html">
+                            WeUI框架					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb05.html">
+                            渐变与动画					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb06.html">
+                            数据绑定					</a>
+                    </li>
+                                                    </ul>
+            </div>		
+        </div>
+    </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">WeUI框架</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>WeUI是一套小程序的UI框架，所谓UI框架就是一套<strong>界面设计</strong>方案。有了组件，我们可以用它来拼接出一个内容丰富的小程序，而有了一个UI框架，就能让我们的小程序变得更加美观。</p>
+    <h4>体验WeUI小程序</h4>
+    <p>WeUI&nbsp;是微信官方设计团队设计的一套同微信原生视觉体验一致的基础样式库。在手机微信里搜索<strong>WeUI</strong>小程序或者扫描<a href="https://user-images.githubusercontent.com/2395166/29502325-ada080f6-8661-11e7-94c2-23d638210f45.jpg" target="_blank" rel="noopener noreferrer">WeUI小程序码</a>即可在手机里体验。</p>
+    <p>我们还可以下载WeUI小程序的源码在开发者工具里查看它具体是怎么做的。</p>
+    <p><strong>源码下载：</strong><a href="https://github.com/Tencent/weui-wxss/archive/master.zip" target="_blank" rel="noopener noreferrer">WeUI小程序源码</a></p>
+    <p>下载解压压缩包之后可以看到weui-wxss-master文件夹，点击开发者工具工具栏里的<strong>项目</strong>菜单选择<strong>导入项目</strong>，之后就可以在开发者工具查看到WeUI的源代码了.</p>
+    <ul>
+    <li>项目名称，可以自己命名，比如“体验WeUI”；</li>
+    <li>目录，选择<strong>weui-wxss-master</strong>下<strong>dist</strong>文件夹；</li>
+    <li>下拉选择appid</li>
+    </ul>
+    <blockquote class="task"><p><strong>小任务：</strong>为什么是<strong>weui-wxss-master</strong>下的<strong>dist</strong>文件夹，而不是<strong>weui-wxss-master</strong>？你还记得什么是小程序的根目录吗？</p></blockquote>
+    <p>结合WeUI在开发者工具模拟器的实际体验以及WeUI的源代码，找到WeUI基础组件里的article、flex、grid、panel，表单组件里的button、list与之对应的pages文件夹下的页面文件，并查看该页面文件的wxml、wxss代码，了解它们是如何写的。</p>
+    <blockquote class="task"><p><strong>小任务：</strong>点击开发者工具栏里的<strong>预览</strong>，用手机微信扫描二维码体验，看看与官方的WeUI小程序有什么不同。</p></blockquote>
+    <blockquote><p>WeUI的界面虽然非常简单，但是背后却包含着非常多的设计理念，这一点我们可以阅读<a href="https://developers.weixin.qq.com/miniprogram/design/" target="_blank" rel="noopener noreferrer">小程序设计指南</a>，来加深对UI设计的理解。</p></blockquote>
+    <h4>WeUI的使用</h4>
+    <p>前面我们已经下载了WeUI的源代码，其实WeUI的核心文件是<strong>weui.wxss</strong>。那我们如何<strong>在我们的模板小程序里</strong>使用WeUI的样式呢？</p>
+    <p>首先我们在<strong>模板小程序</strong>的根目录（<span style="color: #800000;"><strong>注意是在第一节建好的模板小程序里</strong></span>）下新建一个style的文件夹，然后把weui小程序dist/style目录下的weui.wxss文件粘贴到style的文件夹里。</p>
+            <div id="crayon-5d8437b1df209905755917" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">├── pages  
+    ├── image  
+    ├── style
+    │   ├── weui.wxss   
+    ├── app.js 
+    ├── app.json
+    ├── app.wxss</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df209905755917-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df209905755917-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df209905755917-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df209905755917-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437b1df209905755917-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437b1df209905755917-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437b1df209905755917-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df209905755917-1">├──<span class="crayon-h"> </span><span class="crayon-i">pages</span><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d8437b1df209905755917-2">├──<span class="crayon-h"> </span><span class="crayon-i">image</span><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d8437b1df209905755917-3">├──<span class="crayon-h"> </span><span class="crayon-i">style</span></div><div class="crayon-line" id="crayon-5d8437b1df209905755917-4">│<span class="crayon-h">&nbsp;&nbsp; </span>├──<span class="crayon-h"> </span><span class="crayon-v">weui</span><span class="crayon-sy">.</span><span class="crayon-i">wxss</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d8437b1df209905755917-5">├──<span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-i">js</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d8437b1df209905755917-6">├──<span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-i">json</span></div><div class="crayon-line" id="crayon-5d8437b1df209905755917-7">├──<span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">wxss</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>使用开发者工具打开模板小程序的app.wxss文件的第二行添加以下代码：</p>
+            <div id="crayon-5d8437b1df210876207779" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">@import 'style/weui.wxss';</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df210876207779-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df210876207779-1"><span class="crayon-sy">@</span><span class="crayon-i">import</span><span class="crayon-h"> </span><span class="crayon-s">'style/weui.wxss'</span><span class="crayon-sy">;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这样weui的css样式就被引入到我们的小程序中啦，那我们该如何使用WeUI已经写好的样式呢？</p>
+    <h4>Flex布局</h4>
+    <p>前面我们已经了解了如何给wxml文件添加文字、链接、图片等元素和组件，我们希望给这些元素和组件的排版更加结构化，不再是单纯的上下关系，还有左右关系，以及左右上下嵌套的关系，这个时候就需要了解布局方面的知识啦。</p>
+    <blockquote><p>布局也是一种样式，也属于css方面的知识哦，所以大家应该知道该在哪里给组件添加布局样式啦~没错，就是在wxss文件里~</p></blockquote>
+    <p>小程序的布局采用的是Flex布局。Flex是Flexible Box的缩写，意为”<strong>弹性布局</strong>”，用来为盒状模型提供最大的灵活性。</p>
+    <p>我们可以在home.wxml输入以下代码：</p>
+            <div id="crayon-5d8437b1df212007779246" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="flex-box"&gt;
+      &lt;view class='list-item'&gt;Python&lt;/view&gt;
+      &lt;view class='list-item'&gt;小程序&lt;/view&gt;
+      &lt;view class='list-item'&gt;网站建设&lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df212007779246-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df212007779246-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df212007779246-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df212007779246-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437b1df212007779246-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df212007779246-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"flex-box"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df212007779246-2"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'list-item'</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Python</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df212007779246-3"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'list-item'</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">小程序</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df212007779246-4"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'list-item'</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">网站建设</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df212007779246-5"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>为了让list-item更加明显我们给他们添加一个边框、背景、高度以及居中处理，比如在home.wxss文件写入以下样式代码：</p>
+            <div id="crayon-5d8437b1df214681989810" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.list-item{
+      background-color: #82c2f7;
+      height: 100px;
+      text-align: center;
+      border:1px solid #bdd2f8;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df214681989810-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df214681989810-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df214681989810-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df214681989810-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437b1df214681989810-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437b1df214681989810-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df214681989810-1"><span class="crayon-k ">.list-item</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df214681989810-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">background-color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">#82c2f7</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df214681989810-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df214681989810-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">text-align</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">center</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df214681989810-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">border</span><span class="crayon-sy">:</span><span class="crayon-i ">1px</span><span class="crayon-h"> </span><span class="crayon-i ">solid</span><span class="crayon-h"> </span><span class="crayon-i ">#bdd2f8</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df214681989810-6"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>让组件变成左右关系</strong></p>
+    <p>我们可有看到这三个项目是上下关系，但要改成左右关系，那该怎么弄呢？我们可以在home.wxss文件写入以下样式：</p>
+            <div id="crayon-5d8437b1df216085434450" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.flex-box{
+      display: flex;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df216085434450-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df216085434450-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df216085434450-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df216085434450-1"><span class="crayon-k ">.flex-box</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df216085434450-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">display</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">flex</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df216085434450-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们给外层（也可以叫做父级）的view组件添加display:flex之后，这三个项目就成了左右结构的布局啦~</p>
+    <p><strong>让组件的宽度均分</strong></p>
+    <p>我们希望这三个list-item的view组件三等分该如何处理呢？我们只需要给list-item添加一个flex:1的样式，</p>
+            <div id="crayon-5d8437b1df218694354461" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.list-item{
+      flex:1;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df218694354461-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df218694354461-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df218694354461-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df218694354461-1"><span class="crayon-k ">.list-item</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df218694354461-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">flex</span><span class="crayon-sy">:</span><span class="crayon-i ">1</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df218694354461-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>那怎么弄二等分、四等分、五等分呢，只需要相应增减list-item即可，有多少个list-item就有多少等分，比如四等分。</p>
+            <div id="crayon-5d8437b1df21a871061238" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="flex-box"&gt;
+      &lt;view class='list-item'&gt;Python&lt;/view&gt;
+      &lt;view class='list-item'&gt;小程序&lt;/view&gt;
+      &lt;view class='list-item'&gt;网站建设&lt;/view&gt;
+      &lt;view class='list-item'&gt;HTML5&lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df21a871061238-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df21a871061238-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df21a871061238-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df21a871061238-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437b1df21a871061238-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437b1df21a871061238-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df21a871061238-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"flex-box"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df21a871061238-2"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'list-item'</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Python</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df21a871061238-3"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'list-item'</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">小程序</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df21a871061238-4"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'list-item'</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">网站建设</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df21a871061238-5"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'list-item'</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">HTML5</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df21a871061238-6"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>flex是弹性布局，flex:1这个样式是一个相对概念，这里的相对是指这每个list-item的宽度之比都为1。</p>
+    <p><strong>让组件内的内容垂直居中</strong></p>
+    <p>我们看到list-item组件里的文字都不是垂直居中的，我们希望文字垂直居中该如何处理呢？我们需要给list-item的组件添加以下样式。</p>
+            <div id="crayon-5d8437b1df21c158216784" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.list-item{
+      display: flex;
+      align-items:center;/*垂直居中*/
+      justify-content: center;/*水平居中*/
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df21c158216784-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df21c158216784-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df21c158216784-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df21c158216784-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437b1df21c158216784-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df21c158216784-1"><span class="crayon-k ">.list-item</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df21c158216784-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">display</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">flex</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df21c158216784-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">align-items</span><span class="crayon-sy">:</span><span class="crayon-i ">center</span><span class="crayon-sy">;</span><span class="crayon-c">/*垂直居中*/</span></div><div class="crayon-line" id="crayon-5d8437b1df21c158216784-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">justify-content</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">center</span><span class="crayon-sy">;</span><span class="crayon-c">/*水平居中*/</span></div><div class="crayon-line" id="crayon-5d8437b1df21c158216784-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>为什么会给list-item加了一个display:flex的样式呢？和前面一样display:flex是要给父级标签添加的样式，要让list-item里面的内容实现flex布局，就需要给list-item添加display:flex样式啦。</p>
+    <blockquote><p>当然flex还可以表示更加复杂的布局结构，比如左中右，左1/4，中1/2，右1/4等等，由于小程序以及手机UI设计不会弄那么复杂，所以这里就不做更多介绍啦。</p></blockquote>
+    <h4 id="全局样式与局部样式">全局样式与局部样式</h4>
+    <p>全局样式与局部样式的概念大家需要了解一下，在<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html" target="_blank" rel="noopener noreferrer">app.wxss技术文档</a>里是这样描述的：</p>
+    <blockquote><p>定义在 app.wxss 中的样式为全局样式，作用于每一个页面。在 page 的 wxss 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 app.wxss 中相同的选择器。</p></blockquote>
+    <p>也就是说我们在app.wxss引入了weui.wxss，我们新建的所有的二级页面，都会自动拥有weui的样式~</p>
+    <h4>Flex样式参考</h4>
+    <p>在WeUI小程序里我们发现在基础组件里也有Flex，它的目的就是把内容给几等分。我们可以在模拟器里看到有一等分（100%），二等分、三等分、四等分。它实现的原理和我们上面讲的一样。</p>
+    <p>大家可以找到WeUI文件结构下example文件夹里的flex页面，我们可以阅读一下flex.wxml的代码。比如我们找到二等分的代码：</p>
+            <div id="crayon-5d8437b1df225861793637" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="weui-flex"&gt;
+        &lt;view class="weui-flex__item"&gt;&lt;view class="placeholder"&gt;weui&lt;/view&gt;&lt;/view&gt;
+        &lt;view class="weui-flex__item"&gt;&lt;view class="placeholder"&gt;weui&lt;/view&gt;&lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df225861793637-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df225861793637-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df225861793637-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df225861793637-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df225861793637-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-flex"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df225861793637-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-flex__item"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"placeholder"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">weui</span><span class="crayon-r ">&lt;/view&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df225861793637-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-flex__item"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"placeholder"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">weui</span><span class="crayon-r ">&lt;/view&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df225861793637-4"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们可以直接把这段代码复制粘贴到home.wxml里，我们发现即使我们没有给weui-flex和weui-flex__item添加样式，但是它们自动就有了flex布局，这是因为我们之前把weui.wxss引入到了app.wxss文件里，关于flex布局weui.wxss都已经给我们写好啦，是不是省了我们很多的麻烦？</p>
+    <blockquote><p>也就是说，WeUI框架的引入是因为它把很多css样式写好啦，省去了我们的一些麻烦，我们要使用它就是需要把我们的组件的选择器如class、id和WeUI框架的保持一致即可。</p></blockquote>
+    <h4>使用WeUI美化文章排版</h4>
+    <p>前面我们在写home.wxml文章内容的时候，不同的标题要设置不同的大小、间距，文章正文也要设置内外边距，图片也要设置模式，当然这些样式我们都可以自己写，但是看起来会不那么美观，由于是小程序，如果文章的外观和微信的设计风格一致，看起来就会舒服很多。</p>
+    <p>WeUI的设计风格符合小程序设计指南，所以它的一些样式标准值得我们参考。</p>
+    <p>设计规范：<a href="https://developers.weixin.qq.com/miniprogram/design/index.html?t=2018724" target="_blank" rel="noopener noreferrer">微信小程序设计指南</a></p>
+    <blockquote><p>哦，原来WeUI框架不仅可以让我们少写一些CSS样式，引入它还可以使我们的小程序设计符合规范。我们觉得它不好看，可以不引入它自己写css吗？当然可以啦，WeUI框架只是一个方便我们的辅助工具而已，所使用的也都是我们之前掌握到的CSS的知识，在大家CSS熟练之后，我们也可以抛开它自由发挥。</p></blockquote>
+    <p>那我们如何使用WeUI框架美化文章呢？我们可以先体验WeUI小程序基础组件下的article，然后打开WeUI小程序文件结构下的example的article页面下的article.wxml，copy参考它的代码，改成以下的代码：</p>
+            <div id="crayon-5d8437b1df227091397858" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="page__bd"&gt;
+        &lt;view class="weui-article"&gt;
+            &lt;view class="weui-article__h1"&gt;HackWork技术工坊&lt;/view&gt;
+            &lt;view class="weui-article__section"&gt;
+                &lt;view class="weui-article__p"&gt;HackWork技术工坊是技术普及的活动，致力于以有趣的形式让参与者学到有用的技术。任务式实战、系统指导以及社区学习能有效提高技术小白学习技术的效率以及热情。
+                &lt;/view&gt;
+                &lt;view class="weui-article__section"&gt;
+                    &lt;view class="weui-article__h3"&gt;任务式实战&lt;/view&gt;
+                    &lt;view class="weui-article__p"&gt;
+                            每节都会有非常明确的学习任务，会引导你循序渐进地通过实战来掌握各个知识点。只有动手做过的技术才属于自己。
+                    &lt;/view&gt;
+                    &lt;view class="weui-article__p"&gt;
+                        &lt;image class="weui-article__img" src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/hackwork/weapp/img1.jpg" mode="aspectFit" style="height: 180px" /&gt;
+                    &lt;/view&gt;
+                    &lt;view class="weui-article__h3"&gt;系统指导&lt;/view&gt;
+                    &lt;view class="weui-article__p"&gt;
+                            针对所有学习问题我们都会耐心解答，我们会提供详细的学习文档，对大家的学习进行系统指导。
+                    &lt;/view&gt;
+                    &lt;view class="weui-article__p"&gt;
+                        &lt;image class="weui-article__img" src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/hackwork/weapp/img2.jpg" mode="aspectFit" style="height: 180px" /&gt;
+                    &lt;/view&gt;
+                    &lt;view class="weui-article__h3"&gt;社区学习&lt;/view&gt;
+                    &lt;view class="weui-article__p"&gt;
+                            参与活动即加入了我们的技术社区，我们会长期提供教学指导，不必担心学不会，也不用担心没有一起学习的伙伴。
+                    &lt;/view&gt;
+                &lt;/view&gt; 
+            &lt;/view&gt;     
+        &lt;/view&gt;   
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-5" style="height: 40px;">5</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-13" style="height: 40px;">13</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-20" style="height: 40px;">20</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-26" style="height: 20px;">26</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-27" style="height: 20px;">27</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-28" style="height: 20px;">28</div><div class="crayon-num" data-line="crayon-5d8437b1df227091397858-29" style="height: 20px;">29</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df227091397858-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"page__bd"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__h1"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">HackWork技术工坊</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__section"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__p"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">HackWork技术工坊是技术普及的活动，致力于以有趣的形式让参与者学到有用的技术。任务式实战、系统指导以及社区学习能有效提高技术小白学习技术的效率以及热情。</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__section"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__h3"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">任务式实战</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__p"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每节都会有非常明确的学习任务，会引导你循序渐进地通过实战来掌握各个知识点。只有动手做过的技术才属于自己。</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-11"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__p"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-13"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__img"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/hackwork/weapp/img1.jpg"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"aspectFit"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"height: 180px"</span><span class="crayon-r "> /&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-14"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-15"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__h3"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">系统指导</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-16"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__p"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-17"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;针对所有学习问题我们都会耐心解答，我们会提供详细的学习文档，对大家的学习进行系统指导。</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-18"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-19"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__p"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-20"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__img"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/hackwork/weapp/img2.jpg"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"aspectFit"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"height: 180px"</span><span class="crayon-r "> /&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-21"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-22"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__h3"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">社区学习</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-23"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__p"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-24"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;参与活动即加入了我们的技术社区，我们会长期提供教学指导，不必担心学不会，也不用担心没有一起学习的伙伴。</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-25"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-26"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span><span class="crayon-i "> </span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-27"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-28"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span><span class="crayon-i ">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d8437b1df227091397858-29"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>WeUI框架的核心与延伸</h4>
+    <p>使用WeUI框架的核心在于使用它写好了样式的选择器，结构与形式不完全受限制。比如上面的class为weui-article的view组件的样式在我们之前引入的weui.wxss就写好了，样式为</p>
+            <div id="crayon-5d8437b1df22b506702668" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.weui-article{
+      padding:20px 15px;
+      font-size:15px
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df22b506702668-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df22b506702668-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df22b506702668-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df22b506702668-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df22b506702668-1"><span class="crayon-k ">.weui-article</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df22b506702668-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding</span><span class="crayon-sy">:</span><span class="crayon-i ">20px</span><span class="crayon-h"> </span><span class="crayon-i ">15px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df22b506702668-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-size</span><span class="crayon-sy">:</span><span class="crayon-i ">15px</span></div><div class="crayon-line" id="crayon-5d8437b1df22b506702668-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>所以我们只需要给view组件添加weui-article的class，view组件就有了这个写好了的样式啦。weui-article__h3，weui-article__p也是如此。</p>
+    <p>如果想给weui-article__h3这个小标题换一个颜色，该怎么处理呢？通常我们不推荐直接修改weui.wxss（除非你希望所有的小标题颜色都替换掉）。我们可以给要替换颜色的view组件再增加一个class选择器，再来添加样式即可。比如把社区学习这里的代码改成：</p>
+            <div id="crayon-5d8437b1df22f315605532" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="weui-article__h3 hw__h3"&gt;社区学习&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df22f315605532-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df22f315605532-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-article__h3 hw__h3"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">社区学习</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在home.wxss文件里添加</p>
+            <div id="crayon-5d8437b1df231209718881" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.hw__h3{
+      color:#1772cb;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df231209718881-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df231209718881-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df231209718881-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df231209718881-1"><span class="crayon-k ">.hw__h3</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df231209718881-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">color</span><span class="crayon-sy">:</span><span class="crayon-i ">#1772cb</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df231209718881-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>一个view组件可以有多个class，这样就非常方便我们定向给某个组件添加一个特定的样式啦。</p>
+    <h4>模板样式的更改</h4>
+    <p>可能上面新闻列表的样式很多人不喜欢，想换一个其他的排版样式，数据分离有个好处就是我们可以不用修改数据本身，而直接修改wxml里的排版即可。修改排版样式的核心在wxss，也就是修改css样式。</p>
+    <p>我们想让图文结构是上下结构，我们可以删掉weui框架所特有的一些选择器，也就是删掉一些class，比如weui-media-box__hd_in-appmsg，weui-media-box__thumb等等，然后添加一些选择器，也就是加入一些自己命令的id和class。</p>
+            <div id="crayon-5d8437b1df233518443532" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="page__bd" id="news-list"&gt;
+        &lt;view class="weui-panel__bd"&gt;
+            &lt;navigator url="" class="news-item" hover-class="weui-cell_active"&gt;
+                &lt;view class="news-img"&gt;
+                    &lt;image mode="widthFix" class="" src="https://img.36krcdn.com/20190810/v2_1565404308155_img_000" /&gt;
+                &lt;/view&gt;
+                &lt;view class="news-desc"&gt;
+                    &lt;view class="weui-media-box__title"&gt;小程序可以在 PC 端微信打开了&lt;/view&gt;
+                    &lt;view class="weui-media-box__desc"&gt;微信开始测试「PC 端支持打开小程序」的新能力，用户终于不用在电脑上收到小程序时望手机兴叹。&lt;/view&gt;
+                    &lt;view class="weui-media-box__info"&gt;
+                        &lt;view class="weui-media-box__info__meta"&gt;深圳&lt;/view&gt;
+                        &lt;view class="weui-media-box__info__meta weui-media-box__info__meta_extra"&gt;8月9日&lt;/view&gt;
+                    &lt;/view&gt;
+                &lt;/view&gt;
+            &lt;/navigator&gt;
+        &lt;/view&gt; 
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-9" style="height: 40px;">9</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d8437b1df233518443532-17" style="height: 20px;">17</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df233518443532-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"page__bd"</span><span class="crayon-h"> </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"news-list"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-panel__bd"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;navigator </span><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s ">""</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"news-item"</span><span class="crayon-h"> </span><span class="crayon-e ">hover-class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-cell_active"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"news-img"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">""</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://img.36krcdn.com/20190810/v2_1565404308155_img_000"</span><span class="crayon-r "> /&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"news-desc"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">小程序可以在 PC 端微信打开了</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__desc"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">微信开始测试「PC 端支持打开小程序」的新能力，用户终于不用在电脑上收到小程序时望手机兴叹。</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__info"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-11"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__info__meta"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">深圳</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__info__meta weui-media-box__info__meta_extra"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">8月9日</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-13"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-14"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-15"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/navigator&gt;</span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-16"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span><span class="crayon-i "> </span></div><div class="crayon-line" id="crayon-5d8437b1df233518443532-17"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后我们在home.wxss里添加我们想要添加的css样式。</p>
+            <div id="crayon-5d8437b1df235597669458" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#news-list .news-item{
+      margin: 15rpx;
+      padding: 15rpx;
+      border-bottom: 1rpx solid #ccc
+      }
+    #news-list .news-img image{
+      width: 100%;
+      }
+    #news-list .news-desc{
+      width: 100%;
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8437b1df235597669458-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8437b1df235597669458-1"><span class="crayon-k ">#news-list .news-item</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">margin</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">15rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">padding</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">15rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">border-bottom</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">1rpx</span><span class="crayon-h"> </span><span class="crayon-i ">solid</span><span class="crayon-h"> </span><span class="crayon-i ">#ccc</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-6"><span class="crayon-k ">#news-list .news-img image</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100%</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-9"><span class="crayon-k ">#news-list .news-desc</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">100%</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8437b1df235597669458-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>pc网页、移动端网页等也会有非常丰富的UI框架，它们和小程序的WeUI框架的核心与原理都是一样。由于它们可以大大提升我们写页面的开发速度，所以应用得非常普遍</p></blockquote>
+   	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
