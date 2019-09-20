@@ -1,0 +1,442 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 小程序组件评论Feed" href="https://cloudbasegroup.org/handbook/weapp/55/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="优化与部署上线" href="https://cloudbasegroup.org/handbook/weapp/57">
+    <link rel="next" title="列表渲染与条件渲染" href="https://cloudbasegroup.org/handbook/weapp/53">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weapp/55">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=55">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F55">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F55&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-55 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+                <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                          <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/tcb01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            小程序技术训练营			</h1>
+                          </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                     <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb01.html">
+                                    小程序开发入门					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb02.html">
+                                    WXML与WXSS					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb03.html">
+                                    链接与图片					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb04.html">
+                                    WeUI框架					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb05.html">
+                                    渐变与动画					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb06.html">
+                                    数据绑定					</a>
+                            </li>
+                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb07.html">
+                                    列表渲染与条件渲染					</a>
+                            </li>
+                             <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb08.html">
+                                    小程序组件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb09.html">
+                                    优化与部署上线					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">小程序组件</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>在前面我们已经接触过表示文本的&lt;text&gt;组件、表示图像的&lt;image&gt;组件、表示视图容器的&lt;view&gt;组件，表示链接的&lt;navigator&gt;组件，这些组件大大丰富了小程序的结构布局和元素类型，接下来我们还将介绍一些组件。</p>
+    <h4>组件的属性</h4>
+    <p>前面我们已经通过实战的方式接触了一些组件，这个时候我们再回头理解一些基础的概念，那就是组件的属性。</p>
+    <p>公共属性是指小程序所有的组件都有的属性，比如id、class、style等，而不同属性的值就是数据，有数据就有数据类型。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/component.html" target="_blank" rel="noopener noreferrer">小程序组件</a></p>
+    <p>大家可以打开上面的技术文档，快速了解一下组件的公共属性有哪些，以及属性有哪些类型，各个类型的数据类型和取值说明。而不同的组件除了都有公共属性外，还有自己的特有属性。<span style="color: #800000;"><strong>查阅技术文档，大家能够理解多少是多少，不要去强行理解和记忆</strong></span>。在实际开发中，很多属性我们不会</p>
+    <blockquote class="task"><p>小任务：通过技术文档了解一下&lt;text&gt;组件、&lt;image&gt;组件、&lt;view&gt;组件、&lt;navigator&gt;组件有哪些私有属性。</p></blockquote>
+    <blockquote><p>擅于查阅技术文档，是任何方向的程序员必备的非常重要的能力，就跟学英语查词典一样。在实际开发中，一个新的技术方向你所能依赖的不再有老师这样的角色，因为没有人有义务教你。技术文档和搜索能力是你最可信赖的依靠。</p></blockquote>
+    <h4>轮播效果</h4>
+    <p>很多App和小程序的页面顶部都有一个图片的轮播，小程序有专门的轮播组件swiper。要详细了解轮播组件swiper，当然少不了要阅读官方的技术文档啦</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html" target="_blank" rel="noopener noreferrer">轮播组件swiper</a></p>
+    <p>使用开发者工具，在home.wxml里输入以下代码：</p>
+            <div id="crayon-5d84ce71bb7d4874377054" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="home-top"&gt;
+        &lt;view class="home-swiper"&gt;
+            &lt;swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{activecolor}}"&gt;
+              &lt;block wx:for="{{imgUrls}}" wx:key="*this" &gt;
+                &lt;swiper-item&gt;
+                    &lt;image src="{{item}}" style="width:100%;height:200px" class="slide-image" mode="widthFix"  /&gt;
+                &lt;/swiper-item&gt;
+              &lt;/block&gt;
+            &lt;/swiper&gt;
+        &lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-3" style="height: 40px;">3</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d84ce71bb7d4874377054-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"home-top"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"home-swiper"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;swiper </span><span class="crayon-e ">indicator-dots</span><span class="crayon-o">=</span><span class="crayon-s ">"{{indicatorDots}}"</span><span class="crayon-h"> </span><span class="crayon-e ">autoplay</span><span class="crayon-o">=</span><span class="crayon-s ">"{{autoplay}}"</span><span class="crayon-h"> </span><span class="crayon-e ">interval</span><span class="crayon-o">=</span><span class="crayon-s ">"{{interval}}"</span><span class="crayon-h"> </span><span class="crayon-e ">duration</span><span class="crayon-o">=</span><span class="crayon-s ">"{{duration}}"</span><span class="crayon-h"> </span><span class="crayon-e ">indicator-color</span><span class="crayon-o">=</span><span class="crayon-s ">"{{indicatorColor}}"</span><span class="crayon-h"> </span><span class="crayon-e ">indicator-active-color</span><span class="crayon-o">=</span><span class="crayon-s ">"{{activecolor}}"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;block </span>wx<span class="crayon-o">:</span><span class="crayon-e ">for</span><span class="crayon-o">=</span><span class="crayon-s ">"{{imgUrls}}"</span><span class="crayon-h"> </span>wx<span class="crayon-o">:</span><span class="crayon-e ">key</span><span class="crayon-o">=</span><span class="crayon-s ">"*this"</span><span class="crayon-r "> &gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;swiper-item&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{item}}"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"width:100%;height:200px"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"slide-image"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-r ">&nbsp;&nbsp;/&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/swiper-item&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/block&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/swiper&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7d4874377054-11"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在home.js里的data里添加以下数据：</p>
+            <div id="crayon-5d84ce71bb7db700869808" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">imgUrls: [
+      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+    ],
+    interval: 5000,
+    duration: 1000,
+    indicatorDots: true,
+    indicatorColor: "#ffffff",
+    activecolor:"#2971f6",
+    autoplay: true,</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d84ce71bb7db700869808-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-1"><span class="crayon-v">imgUrls</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-5"><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-6"><span class="crayon-v">interval</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">5000</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-7"><span class="crayon-v">duration</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1000</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-8"><span class="crayon-v">indicatorDots</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-9"><span class="crayon-v">indicatorColor</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"#ffffff"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-10"><span class="crayon-v">activecolor</span><span class="crayon-o">:</span><span class="crayon-s">"#2971f6"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7db700869808-11"><span class="crayon-v">autoplay</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>要构成一个完整的轮播，除了配置<strong>相同尺寸规格的图片</strong>以外，还可以配置轮播时的面板指示点、动画效果、是否自动播放等。轮播组件swiper自带很有特有的属性，大家可以自己动手多去配置，结合开发者工具实战的效果，来深入理解技术文档对这些属性以及属性的取值的说明。</p>
+    <h4>audio组件</h4>
+    <p>audio组件是音频组件，我们在home.wxml文件里输入以下代码：</p>
+            <div id="crayon-5d84ce71bb7de557541489" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;audio src="{{musicinfo.src}}" poster="{{musicinfo.poster}}" name="{{musicinfo.name}}" author="{{musicinfo.author}}" controls&gt;&lt;/audio&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7de557541489-1" style="height: 40px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7de557541489-1"><span class="crayon-r ">&lt;audio </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{musicinfo.src}}"</span><span class="crayon-h"> </span><span class="crayon-e ">poster</span><span class="crayon-o">=</span><span class="crayon-s ">"{{musicinfo.poster}}"</span><span class="crayon-h"> </span><span class="crayon-e ">name</span><span class="crayon-o">=</span><span class="crayon-s ">"{{musicinfo.name}}"</span><span class="crayon-h"> </span><span class="crayon-e ">author</span><span class="crayon-o">=</span><span class="crayon-s ">"{{musicinfo.author}}"</span><span class="crayon-h"> </span>controls<span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/audio&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在home.js里的data里添加以下数据：</p>
+            <div id="crayon-5d84ce71bb7e0521644323" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    musicinfo: {
+          poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
+          name: '此时此刻',
+          author: '许巍',
+          src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&amp;uin=346897220&amp;vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&amp;fromtag=46',
+        },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7e0521644323-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e0521644323-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e0521644323-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e0521644323-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e0521644323-5" style="height: 60px;">5</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e0521644323-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7e0521644323-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">musicinfo</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e0521644323-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">poster</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e0521644323-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'此时此刻'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e0521644323-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">author</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'许巍'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e0521644323-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">src</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&amp;uin=346897220&amp;vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&amp;fromtag=46'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e0521644323-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/component/audio.html" target="_blank" rel="noopener noreferrer">audio组件技术文档</a></p>
+    <ul>
+    <li>src：要播放音频的资源地址</li>
+    <li>poster：默认控件上的音频封面的图片资源地址</li>
+    <li>name：默认控件上的音频名字</li>
+    <li>author：默认控件上的作者名字</li>
+    </ul>
+    <p>可能由于audio组件使用的场景和频次都非常低，audio组件以后就要被抛弃了，需要用到小程序的API来创建音乐播放。</p>
+    <h4>video组件</h4>
+    <p>video组件用来表示视频，我们在home.wxml文件里输入以下代码：</p>
+            <div id="crayon-5d84ce71bb7e1050722606" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;video id="daxueVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" autoplay loop muted initial-time="100" controls event-model="bubble"&gt;
+    &lt;/video&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7e1050722606-1" style="height: 60px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e1050722606-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7e1050722606-1"><span class="crayon-o">&lt;</span><span class="crayon-e">video </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s">"daxueVideo"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"</span><span class="crayon-h"> </span><span class="crayon-e">autoplay </span><span class="crayon-e">loop </span><span class="crayon-e">muted </span><span class="crayon-e ">initial-time</span><span class="crayon-o">=</span><span class="crayon-s">"100"</span><span class="crayon-h"> </span><span class="crayon-e">controls </span><span class="crayon-e ">event-model</span><span class="crayon-o">=</span><span class="crayon-s">"bubble"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e1050722606-2"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">video</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/component/video.html" target="_blank" rel="noopener noreferrer">video组件技术文档</a></p>
+    <p>大家可以结合实际效果和技术文档来理解以下属性，把上面案例的autoplay或者某个属性删掉查看一下具体效果，加深自己对组件属性的理解。</p>
+    <ul>
+    <li>autoplay：是否自动播放</li>
+    <li>loop：是否循环播放</li>
+    <li>muted：是否静音播放</li>
+    <li>inital-time：指定视频初始播放位置，单位是秒</li>
+    <li>controls：是否显示默认播放控件</li>
+    </ul>
+    <h4>cover效果</h4>
+    <p>我们也可以把view、图片组件覆盖在地图map或视频video组件之上。比如我们希望在视频的左上角显示视频的标题以及在右上角显示商家的logo，就可以使用cover效果。</p>
+            <div id="crayon-5d84ce71bb7e9316145580" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;video id="daxueVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" controls event-model="bubble"&gt;
+       &lt;view class="covertext"&gt;腾讯大学：腾讯特色学习交流平台&lt;/view&gt;
+       &lt;image class="coverimg" src="https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/portal/css/img/nav/logo-bg-color.svg" &gt;&lt;/image&gt;
+    &lt;/video&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7e9316145580-1" style="height: 60px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e9316145580-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e9316145580-3" style="height: 40px;">3</div><div class="crayon-num" data-line="crayon-5d84ce71bb7e9316145580-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7e9316145580-1"><span class="crayon-r ">&lt;video </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"daxueVideo"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"</span><span class="crayon-h"> </span>controls<span class="crayon-h"> </span><span class="crayon-e ">event-model</span><span class="crayon-o">=</span><span class="crayon-s ">"bubble"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e9316145580-2"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"covertext"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">腾讯大学：腾讯特色学习交流平台</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e9316145580-3"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"coverimg"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/portal/css/img/nav/logo-bg-color.svg"</span><span class="crayon-r "> &gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7e9316145580-4"><span class="crayon-r ">&lt;/video&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在wxss文件里输入以下代码;</p>
+            <div id="crayon-5d84ce71bb7eb086560182" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.covertext{
+      width: 500rpx;
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      top:20rpx;
+      left:10rpx;
+    }
+    .coverimg{
+      width:100rpx;height:23rpx;
+      position: absolute;
+      right:10rpx;
+      top:10rpx;
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d84ce71bb7eb086560182-14" style="height: 20px;">14</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-1"><span class="crayon-k ">.covertext</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">500rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">color</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">white</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">font-size</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">12px</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">position</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">absolute</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">top</span><span class="crayon-sy">:</span><span class="crayon-i ">20rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">left</span><span class="crayon-sy">:</span><span class="crayon-i ">10rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-8"><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-9"><span class="crayon-k ">.coverimg</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">width</span><span class="crayon-sy">:</span><span class="crayon-i ">100rpx</span><span class="crayon-sy">;</span><span class="crayon-e ">height</span><span class="crayon-sy">:</span><span class="crayon-i ">23rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">position</span><span class="crayon-sy">:</span><span class="crayon-h"> </span><span class="crayon-i ">absolute</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">right</span><span class="crayon-sy">:</span><span class="crayon-i ">10rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">top</span><span class="crayon-sy">:</span><span class="crayon-i ">10rpx</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7eb086560182-14"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>地图组件</h4>
+    <p>要想在地图上标记一个地点，首先我们需要知道该地点的经纬度，这个时候就需要使用到坐标拾取器的工具。</p>
+    <p><strong>经纬度获取：</strong><a href="https://lbs.qq.com/tool/getpoint/index.html" target="_blank" rel="noopener noreferrer">腾讯地图坐标拾取器</a></p>
+    <p>在搜索框里我们可以搜索“深圳腾讯大厦”，得到纬度为22.540503，经度为113.934528。</p>
+    <p>使用开发者工具，在home.wxml里输入以下代码：</p>
+            <div id="crayon-5d84ce71bb7ed173287558" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;map
+      id="myMap"
+      style="width: 100%; height: 300px;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      show-location
+    &gt;&lt;/map&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ed173287558-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-1"><span class="crayon-r ">&lt;map</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-2"><span class="crayon-r ">&nbsp;&nbsp;</span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"myMap"</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"width: 100%; height: 300px;"</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">latitude</span><span class="crayon-o">=</span><span class="crayon-s ">"{{latitude}}"</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">longitude</span><span class="crayon-o">=</span><span class="crayon-s ">"{{longitude}}"</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">markers</span><span class="crayon-o">=</span><span class="crayon-s ">"{{markers}}"</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e ">covers</span><span class="crayon-o">=</span><span class="crayon-s ">"{{covers}}"</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-8"><span class="crayon-h">&nbsp;&nbsp;</span>show<span class="crayon-o">-</span>location</div><div class="crayon-line" id="crayon-5d84ce71bb7ed173287558-9"><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/map&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在home.js的data里添加以下代码：</p>
+            <div id="crayon-5d84ce71bb7ef633011668" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    latitude: 22.540503,
+        longitude: 113.934528,
+        markers: [{
+          id: 1,
+          latitude: 22.540503,
+          longitude: 113.934528,
+          title: '深圳腾讯大厦'
+        }],</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7ef633011668-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ef633011668-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ef633011668-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ef633011668-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ef633011668-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ef633011668-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ef633011668-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d84ce71bb7ef633011668-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7ef633011668-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">latitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">22.540503</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ef633011668-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">longitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">113.934528</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ef633011668-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">markers</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ef633011668-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ef633011668-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">latitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">22.540503</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ef633011668-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">longitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">113.934528</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ef633011668-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'深圳腾讯大厦'</span></div><div class="crayon-line" id="crayon-5d84ce71bb7ef633011668-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在开发者工具的模拟器里我们就可以看到腾讯大厦的地图了，点击marker标记，就能看到自定义的名称深圳腾讯大厦了。点击开发者工具的预览，使用手机微信扫描生成的二维码，在手机微信里的地图和模拟器的略微有点不同。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/component/map.html" target="_blank" rel="noopener noreferrer">Map组件技术文档</a></p>
+    <p><strong>在地图上标记多个点</strong></p>
+    <p>注意从技术文档里我们可以了解到markers标记点用于在地图上显示标记的位置，它的<strong>数据类型</strong>是<strong>Array数组</strong>，我们也看到上面的案例它的数据是由中括号[ ] 包住的列表。也就是我们可以在地图上标记多个点。在markers里多添加几个坐标：</p>
+            <div id="crayon-5d84ce71bb7f3980194708" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    markers: [
+          {
+            id: 1,
+          latitude: 22.540503,
+          longitude: 113.934528,
+          title: '深圳腾讯大厦'
+          },
+          {
+            id: 2,
+            latitude: 22.540576,
+            longitude: 113.933790,
+            title: '万利达科技大厦'
+          },
+          {
+            id: 3,
+            latitude: 22.522807,
+            longitude: 113.935338,
+            title: '深圳腾讯滨海大厦'
+          },
+          {
+            id: 4,
+            latitude: 22.547400,
+            longitude: 113.944370,
+            title: '腾讯C2'
+          },    
+        ],</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d84ce71bb7f3980194708-26" style="height: 20px;">26</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">markers</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">latitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">22.540503</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">longitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">113.934528</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'深圳腾讯大厦'</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">latitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">22.540576</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">longitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">113.933790</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'万利达科技大厦'</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">latitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">22.522807</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">longitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">113.935338</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'深圳腾讯滨海大厦'</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">latitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">22.547400</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">longitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">113.944370</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'腾讯C2'</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d84ce71bb7f3980194708-26"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里标记了腾讯在深圳的4个办公地点，大家可以在手机上预览了解实际的效果。</p>
+    <p>地图是一个非常复杂的组件，除了marker，还有以下属性，大家可以根据实际需求自行研究。</p>
+    <ul>
+    <li>callout:点击marker出现气泡callout、以及气泡上的label，可以丰富点击地图标记弹出丰富的信息介绍；</li>
+    <li>circle：在地图上显示圆，比如用于显示方圆几公里，或者权重大小在地图的可视化</li>
+    <li>polygon：指定一系列坐标点，根据 points 坐标数据生成闭合多边形,，比如圈出实际的范围</li>
+    <li>polyline：指定一系列坐标点，从数组第一项连线至最后一项，比如跑步的路线</li>
+    </ul>
+    <p>&nbsp;</p>
+    	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
