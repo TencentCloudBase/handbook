@@ -1,0 +1,846 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » JavaScript入门评论Feed" href="https://cloudbasegroup.org/handbook/weappjs/33/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="点击事件" href="https://cloudbasegroup.org/handbook/weappjs/35">
+    <link rel="next" title="链接与图片" href="https://cloudbasegroup.org/handbook/weapp/15">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weappjs/33">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=33">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweappjs%2F33">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweappjs%2F33&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-33 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+    <nav id="header-db" class="row navbar navbar-default">
+            <div class="navbar-header">
+                  <div class="logotop fleft">
+                    <a href="https://tencentcloudbase.github.io/handbook/tcb11.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+                <div class="flex nav-items">
+                <h1 class="flex-item navbar-link">
+                    小程序与JavaScript			</h1>
+                  </div>
+            </div>
+    
+            <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+             <div class="sop-menu">
+                <ul>
+                                    <li class="page_item current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb11.html">
+                            JavaScript入门					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb12.html">
+                            点击事件					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb13.html">
+                            页面渲染					</a>
+                    </li>
+                                                    </ul>
+            </div>		
+        </div>
+    </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">JavaScript入门</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>JavaScript是目前世界上最流行的编程语言之一，它也是小程序开发最重要的基础语言。要做出一个功能复杂的小程序，除了需要掌握JavaScript的基本语法，还要了解如何使用JavaScript来操作小程序（通过API接口）。</p>
+    <h4>控制台Console</h4>
+    <p>打开微信开发者工具，在<strong>调试器</strong>里可以看到<strong>Console</strong>、Sources、Network、Appdata、Wxml等标签，这些都是调试器的功能模块。&nbsp;而<strong>控制台Console</strong>除了可以显示小程序的错误信息外，还可以用于输入和调试代码。</p>
+    <p><b>数学运算</b></p>
+    <p>JavaScript的算数运算符和我们常见的数学运算符没有太大区别，+加、-减、乘*、除/、指数**，我们可以在控制台Console的<span style="color: #0000ff;"><strong>&gt;</strong></span>后面逐行输入并按Enter执行以下代码：</p>
+            <div id="crayon-5d86db7d72ed6274396640" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">136+384; //加法
+    (110/0.5+537-100)*2; //加减乘除
+    2**5; //指数运算符</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72ed6274396640-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72ed6274396640-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72ed6274396640-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72ed6274396640-1"><span class="crayon-cn">136</span><span class="crayon-o">+</span><span class="crayon-cn">384</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//加法</span></div><div class="crayon-line" id="crayon-5d86db7d72ed6274396640-2"><span class="crayon-sy">(</span><span class="crayon-cn">110</span><span class="crayon-o">/</span><span class="crayon-cn">0.5</span><span class="crayon-o">+</span><span class="crayon-cn">537</span><span class="crayon-o">-</span><span class="crayon-cn">100</span><span class="crayon-sy">)</span><span class="crayon-o">*</span><span class="crayon-cn">2</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//加减乘除</span></div><div class="crayon-line" id="crayon-5d86db7d72ed6274396640-3"><span class="crayon-cn">2</span><span class="crayon-o">*</span><span class="crayon-o">*</span><span class="crayon-cn">5</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//指数运算符</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>//为JavaScript的注释，可以不用输入，输入也不会有影响；JavaScript的语句之间用英文字符的分号;分隔。</p></blockquote>
+    <p><strong>Console.log打印日志</strong></p>
+    <p>在控制台输入四则运算可以直接得到结果，是因为调用了console.log()函数，我们可以把上面的四则运算在控制台里使用
+                <span id="crayon-5d86db7d72edd683933427" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-cn">321</span><span class="crayon-o">*</span><span class="crayon-cn">3</span><span class="crayon-sy">)</span></span></span>打印出来，除了四则运算，console.log()还可以打印<strong>字符串String</strong>，比如：</p>
+            <div id="crayon-5d86db7d72ee0532020098" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log("童鞋，欢迎开始JavaScript的学习~\nJavaScript是一门非常流行的编程语言，只要是有浏览器的地方就少不了JavaScript；\n网页、小程序、甚至App、桌面应用等都少不了JavaScript；\nJavaScript玩得溜的人我们可以称其为前端开发工程师；\n前端开发工程师是需求量极大的岗位\n");
+    console.log('%c欢迎关注小程序的云开发：https://www.zhihu.com/org/teng-xun-yun-kai-fa-tcb （用云开发可以更快速学好前端开发）','color: red' );</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72ee0532020098-1" style="height: 40px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72ee0532020098-2" style="height: 40px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72ee0532020098-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"童鞋，欢迎开始JavaScript的学习~\nJavaScript是一门非常流行的编程语言，只要是有浏览器的地方就少不了JavaScript；\n网页、小程序、甚至App、桌面应用等都少不了JavaScript；\nJavaScript玩得溜的人我们可以称其为前端开发工程师；\n前端开发工程师是需求量极大的岗位\n"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d86db7d72ee0532020098-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'%c欢迎关注小程序的云开发：https://www.zhihu.com/org/teng-xun-yun-kai-fa-tcb （用云开发可以更快速学好前端开发）'</span><span class="crayon-sy">,</span><span class="crayon-s">'color: red'</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在实际应用中，总有一些具有特殊含义的字符无法直接输入，比如换行
+                <span id="crayon-5d86db7d72ee2309536750" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">\</span><span class="crayon-v">n</span></span></span>、Tab键
+                <span id="crayon-5d86db7d72ee4738376037" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">\</span><span class="crayon-v">t</span></span></span>、回车
+                <span id="crayon-5d86db7d72ee6375573088" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">\</span><span class="crayon-v">r</span></span></span>、反斜杠
+                <span id="crayon-5d86db7d72ee7629883625" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">\</span><span class="crayon-sy">\</span></span></span>，这些我们称之为转义字符。JavaScript中单引号和双引号都表示字符串。如果字符串中存在双引号，建议最外层用单引号；如果字符串中存在单引号，建议最外层用双引号。如何在控制台给打印的字体添加颜色等，大家可以自行去研究。</p>
+    <p><strong>console.log打印数组Array</strong></p>
+    <p>我们可以在控制台使用console.log()打印数组，打印出来之后，结果的前面会有数字显示数组的长度length，以及可以展开。</p>
+            <div id="crayon-5d86db7d72ee9908664681" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(["肖申克的救赎","霸王别姬","这个杀手不太冷","阿甘正传","美丽人生"])</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72ee9908664681-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72ee9908664681-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-sy">[</span><span class="crayon-s">"肖申克的救赎"</span><span class="crayon-sy">,</span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-s">"这个杀手不太冷"</span><span class="crayon-sy">,</span><span class="crayon-s">"阿甘正传"</span><span class="crayon-sy">,</span><span class="crayon-s">"美丽人生"</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在展开的结果里，我们可以看到数组的索引index，以及索引index对应的值（比如：
+                <span id="crayon-5d86db7d72eeb749519773" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-cn">1</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"霸王别姬"</span></span></span>）、该数组的长度length，以及数组的<strong>方法</strong>(<strong>在__proto__里可以看到，比如concat、push、shift、slice、toString等</strong>)。</p>
+    <p>我们也可以通过索引值打印数组里的单一数据，也就是通过指定数组名以及索引值，来访问某个特定的元素：</p>
+            <div id="crayon-5d86db7d72eec247076885" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(["肖申克的救赎","霸王别姬","这个杀手不太冷","阿甘正传","美丽人生"][3])</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72eec247076885-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72eec247076885-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-sy">[</span><span class="crayon-s">"肖申克的救赎"</span><span class="crayon-sy">,</span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-s">"这个杀手不太冷"</span><span class="crayon-sy">,</span><span class="crayon-s">"阿甘正传"</span><span class="crayon-sy">,</span><span class="crayon-s">"美丽人生"</span><span class="crayon-sy">]</span><span class="crayon-sy">[</span><span class="crayon-cn">3</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>console.log打印对象Object</strong></p>
+    <p>在控制台里使用console.log()函数打印一个对象Object，对象的结果仍然可以通过左侧的三角展开可以看到对象的属性以及属性对应的值。</p>
+            <div id="crayon-5d86db7d72eee811621203" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log({name: "霸王别姬",img: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp",desc: "风华绝代。"})</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72eee811621203-1" style="height: 40px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72eee811621203-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp"</span><span class="crayon-sy">,</span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"风华绝代。"</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们可以通过点表示法来访问该属性获取属性对应的值：</p>
+            <div id="crayon-5d86db7d72ef0292031824" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log({name: "霸王别姬",img: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp",desc: "风华绝代。"}.desc)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72ef0292031824-1" style="height: 40px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72ef0292031824-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp"</span><span class="crayon-sy">,</span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"风华绝代。"</span><span class="crayon-sy">}</span><span class="crayon-sy">.</span><span class="crayon-v">desc</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>当我们打印数组的某一项和通过点表示法获取对象某个属性对应的值的时候，有没有觉得打印的内容太长？这个时候我们可以把数组、对象赋值给一个变量，类似于数学里的y=ax+b，就可以大大简化代码了。</p>
+    <h4>变量与赋值</h4>
+    <p>JavaScript可以使用<strong>let语句<span style="color: #008000;">声明变量</span></strong>，使用<strong>等号=</strong>可以<strong>给变量赋值</strong>，等号=左侧为<strong>变量名</strong>，右侧为<strong>给该变量赋的值</strong>，变量的值可以是任何<strong>数据类型</strong>。JavaScript常见的数据类型有：数值（Number）、字符串（String）、布尔值（Boolean）、对象（Object）、函数（Function）等。</p>
+    <p><strong>将数据赋值给变量</strong></p>
+    <p>比如我们可以在控制台里，将上面的数组和对象赋值给一个变量，然后打印该变量，先来打印数组：</p>
+            <div id="crayon-5d86db7d72ef1444828165" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let movielist=["肖申克的救赎","霸王别姬","这个杀手不太冷","阿甘正传","美丽人生"]
+    console.log(movielist)
+    console.log(movielist[2])</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72ef1444828165-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72ef1444828165-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72ef1444828165-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72ef1444828165-1"><span class="crayon-e">let </span><span class="crayon-v">movielist</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-s">"肖申克的救赎"</span><span class="crayon-sy">,</span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-s">"这个杀手不太冷"</span><span class="crayon-sy">,</span><span class="crayon-s">"阿甘正传"</span><span class="crayon-sy">,</span><span class="crayon-s">"美丽人生"</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d86db7d72ef1444828165-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movielist</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72ef1444828165-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movielist</span><span class="crayon-sy">[</span><span class="crayon-cn">2</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>再来看打印对象的情况：</p>
+            <div id="crayon-5d86db7d72ef3365121022" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let movie={name: "霸王别姬",img: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp",desc: "风华绝代。"}
+    console.log(movie)
+    console.log(movie.name)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72ef3365121022-1" style="height: 40px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72ef3365121022-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72ef3365121022-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72ef3365121022-1"><span class="crayon-e">let </span><span class="crayon-v">movie</span><span class="crayon-o">=</span><span class="crayon-sy">{</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp"</span><span class="crayon-sy">,</span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"风华绝代。"</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86db7d72ef3365121022-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movie</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72ef3365121022-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-v">name</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>通过<strong>将复杂的数据信息（数组、对象）赋值给一个变量</strong>，代码得到了大大的简化，可以深刻了解到<strong>变量是用于存储信息的”容器”</strong>。</p>
+    <p><strong>变量的冲突与覆盖</strong></p>
+    <p>比如我们在控制台Console里使用let声明一个变量username，然后将username打印出来：</p>
+            <div id="crayon-5d86db7d72ef5735662487" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let username="小明"
+    console.log(username)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72ef5735662487-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72ef5735662487-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72ef5735662487-1"><span class="crayon-e">let </span><span class="crayon-v">username</span><span class="crayon-o">=</span><span class="crayon-s">"小明"</span></div><div class="crayon-line" id="crayon-5d86db7d72ef5735662487-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">username</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>但是如果再次使用let声明username，并给username赋值时就会出现变量名冲突的报错，比如再在控制台里输入以下代码并按Enter执行，看会报什么错？</p>
+            <div id="crayon-5d86db7d72ef6101423869" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let username="小丸子"</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72ef6101423869-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72ef6101423869-1"><span class="crayon-e">let </span><span class="crayon-e ">username</span><span class="crayon-o">=</span><span class="crayon-s">"小丸子"</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>也就是说声明了一个变量名之后，就不能再次<strong>声明这个变量名</strong>啦。但是我们却可以给该变量重新赋值，比如：</p>
+            <div id="crayon-5d86db7d72efa367908736" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">username="小军"
+    console.log(username)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72efa367908736-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72efa367908736-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72efa367908736-1"><span class="crayon-e ">username</span><span class="crayon-o">=</span><span class="crayon-s">"小军"</span></div><div class="crayon-line" id="crayon-5d86db7d72efa367908736-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">username</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们发现给该变量重新赋值之后，变量的值就被覆盖了。所以let 变量名=值，相当于进行了两步操作，第一步是声明变量名，第二步是给变量赋值，具体可以通过控制台执行下面的代码来理解。</p>
+            <div id="crayon-5d86db7d72efb154966386" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let school  //声明变量
+    school="清华"   //将字符串String"清华"赋值给变量
+    console.log(school)  //打印变量
+    school=["清华","北大","上交","复旦","浙大","南大","中科大"] //给变量赋值新的数据类型新的数据
+    console.log(school)  //打印变量</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72efb154966386-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72efb154966386-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72efb154966386-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72efb154966386-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72efb154966386-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72efb154966386-1"><span class="crayon-e">let </span><span class="crayon-v">school</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//声明变量</span></div><div class="crayon-line" id="crayon-5d86db7d72efb154966386-2"><span class="crayon-e ">school</span><span class="crayon-o">=</span><span class="crayon-s">"清华"</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-c">//将字符串String"清华"赋值给变量</span></div><div class="crayon-line" id="crayon-5d86db7d72efb154966386-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">school</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//打印变量</span></div><div class="crayon-line" id="crayon-5d86db7d72efb154966386-4"><span class="crayon-v">school</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-s">"清华"</span><span class="crayon-sy">,</span><span class="crayon-s">"北大"</span><span class="crayon-sy">,</span><span class="crayon-s">"上交"</span><span class="crayon-sy">,</span><span class="crayon-s">"复旦"</span><span class="crayon-sy">,</span><span class="crayon-s">"浙大"</span><span class="crayon-sy">,</span><span class="crayon-s">"南大"</span><span class="crayon-sy">,</span><span class="crayon-s">"中科大"</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-c">//给变量赋值新的数据类型新的数据</span></div><div class="crayon-line" id="crayon-5d86db7d72efb154966386-5"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">school</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//打印变量</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>通过使用控制台实战打印具体的信息，我们就会对声明变量、赋值、覆盖（修改变量的值）有了更深的了解。</p>
+    <blockquote><p>这个undefined是console.log()这个函数的返回值，每个函数都有返回值，如果函数没有提供返回值，会返回 undefined。</p></blockquote>
+    <blockquote class="task"><p>小任务：那我们是否可以给一个没有声明过的变量名直接赋值呢？你知道应该如何在控制台打印测试结果吗？你的实验结果是？</p></blockquote>
+    <h4>操作数组</h4>
+    <p>在前面我们已经说过，数组是一个有序的列表。下面这个数组是豆瓣电影的top5：</p>
+            <div id="crayon-5d86db7d72efd918546733" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">["肖申克的救赎","霸王别姬","这个杀手不太冷","阿甘正传","美丽人生"]</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72efd918546733-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72efd918546733-1"><span class="crayon-sy">[</span><span class="crayon-s">"肖申克的救赎"</span><span class="crayon-sy">,</span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-s">"这个杀手不太冷"</span><span class="crayon-sy">,</span><span class="crayon-s">"阿甘正传"</span><span class="crayon-sy">,</span><span class="crayon-s">"美丽人生"</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>但是有时候我们需要操作一下该数组，比如想增加5项数据，变成top10，比如数据太多，只想要top3等等，这个时候就需要对数组进行操作了。要对数组进行操作，就有操作的方法。前面我们已经将给数组赋值给了movielist，下面我们可以直接使用该变量。也可以先在控制台再赋值一下。</p>
+            <div id="crayon-5d86db7d72eff586261570" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">movielist=["肖申克的救赎","霸王别姬","这个杀手不太冷","阿甘正传","美丽人生"]</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72eff586261570-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72eff586261570-1"><span class="crayon-v">movielist</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-s">"肖申克的救赎"</span><span class="crayon-sy">,</span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-s">"这个杀手不太冷"</span><span class="crayon-sy">,</span><span class="crayon-s">"阿甘正传"</span><span class="crayon-sy">,</span><span class="crayon-s">"美丽人生"</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>分隔符join方法</strong></p>
+    <p>join方法将数组元素拼接为字符串,以分隔符分割，默认是逗号,分割。</p>
+            <div id="crayon-5d86db7d72f01917034651" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(movielist.join("、"))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f01917034651-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f01917034651-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movielist</span><span class="crayon-sy">.</span><span class="crayon-e">join</span><span class="crayon-sy">(</span><span class="crayon-s">"、"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>添加数组push方法</strong></p>
+    <p>push()方法向数组的末尾添加一个或更多元素，并<strong>返回新数组的长度</strong>。</p>
+            <div id="crayon-5d86db7d72f03806045520" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(movielist.push("千与千寻","泰坦尼克号","辛德勒的名单","盗梦空间","忠犬八公的故事"))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f03806045520-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f03806045520-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movielist</span><span class="crayon-sy">.</span><span class="crayon-e">push</span><span class="crayon-sy">(</span><span class="crayon-s">"千与千寻"</span><span class="crayon-sy">,</span><span class="crayon-s">"泰坦尼克号"</span><span class="crayon-sy">,</span><span class="crayon-s">"辛德勒的名单"</span><span class="crayon-sy">,</span><span class="crayon-s">"盗梦空间"</span><span class="crayon-sy">,</span><span class="crayon-s">"忠犬八公的故事"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里返回的是新数组的长度，那我们打印一下新数组看具体包含了哪些值，push方法在原来的数组后面（不是前面）新增了5个值（不是覆盖，重新赋值）。</p>
+            <div id="crayon-5d86db7d72f04457127053" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(movielist)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f04457127053-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f04457127053-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movielist</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>移除最后一项pop方法</strong></p>
+    <p>pop() 从数组末尾<strong>移除</strong>最后一项，并返回移除的项的值：</p>
+            <div id="crayon-5d86db7d72f06824970018" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(movielist.pop())</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f06824970018-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f06824970018-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movielist</span><span class="crayon-sy">.</span><span class="crayon-e">pop</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>返回的是数组的最后一项，我们再来打印movielist，看看有什么变化：</p>
+            <div id="crayon-5d86db7d72f07757206111" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(movielist)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f07757206111-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f07757206111-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movielist</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>以上通过一些实际的案例让大家了解如何使用控制台打印这种实战方式来了解了一些数组具体的操作方法，数组的操作方法还有很多，大家可以去查阅技术文档。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener noreferrer">MDN数组Array</a></p>
+    <blockquote><p>如果说小程序的开发离不开小程序的官方技术文档，那MDN则是每一个前端开发工程师都必须经常去翻阅的技术文档。打上<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener noreferrer">MDN数组Array</a>，在页面的左侧菜单里，我们可以看到Array有着数十种方法，而这些方法，都是我们之前打印了数组之后在__proto__里看到的方法。关于数组的prototype，学有余力的人可以去阅读<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype" target="_blank" rel="noopener noreferrer">MDN Array.Prototype</a></p></blockquote>
+    <blockquote class="task"><p><strong>小任务：</strong>通过实战的方式了解一下数组的concat()、reverse()、shift()、slice()、sort()、splice()、unshift()方法</p></blockquote>
+    <h4>操作对象</h4>
+    <p>我们可以用点表示法访问对象的属性，通过给该属性赋值就能够添加和修改对象的属性的值了。在之前我们声明过一个对象movie：</p>
+            <div id="crayon-5d86db7d72f09901448468" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">movie={name: "霸王别姬",img: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp",desc: "风华绝代。"}</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f09901448468-1" style="height: 40px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f09901448468-1"><span class="crayon-v">movie</span><span class="crayon-o">=</span><span class="crayon-sy">{</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp"</span><span class="crayon-sy">,</span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"风华绝代。"</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>给对象添加属性</strong></p>
+    <p>比如我们给霸王别姬增加英文名的属性，直接在控制台里输入以下代码：</p>
+            <div id="crayon-5d86db7d72f0b072478911" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">movie.englishname="Farewell My Concubine"</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f0b072478911-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f0b072478911-1"><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-e ">englishname</span><span class="crayon-o">=</span><span class="crayon-s">"Farewell My Concubine"</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在控制台打印movie看看movie是否有了englishname的属性</p>
+            <div id="crayon-5d86db7d72f0d435977238" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(movie)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f0d435977238-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f0d435977238-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movie</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>删除对象的某个属性</strong></p>
+    <p>比如我们想删除movie的img属性，可以通过delete 方法来删除</p>
+            <div id="crayon-5d86db7d72f0e868888254" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">delete movie.img</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f0e868888254-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f0e868888254-1"><span class="crayon-r">delete</span><span class="crayon-h"> </span><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-v">img</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在控制台打印movie看看movie的img属性是否被删除了。</p>
+            <div id="crayon-5d86db7d72f10114705608" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(movie)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f10114705608-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f10114705608-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movie</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>更新对象的某个属性</strong></p>
+    <p>比如我们想更新movie的desc属性，可以通过重新赋值的方式来更新</p>
+            <div id="crayon-5d86db7d72f11546213975" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">movie.desc="人生如戏。"</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f11546213975-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f11546213975-1"><span class="crayon-v">movie</span><span class="crayon-sy">.</span><span class="crayon-e ">desc</span><span class="crayon-o">=</span><span class="crayon-s">"人生如戏。"</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在控制台打印movie看看movie的desc属性是否有了变化。</p>
+            <div id="crayon-5d86db7d72f13552547520" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(movie)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f13552547520-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f13552547520-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">movie</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>常量</h4>
+    <p>在前面我们知道变量的值可以通过重新赋值的方式来改变，但是有些数据我们希望是固定的（写死，不会经常改变），这个时候可以使用<span style="color: #800000;"><strong>const声明</strong></span>创建一个值的<strong>只读</strong>引用。const声明和let声明挺像的。</p>
+    <p>比如开发小程序的时候，我们会确定小程序的色系、颜色等，使用const声明，以后直接调用这个常量，这样就不用记那么多复杂的参数，以后想全网改样式，直接改const的内容即可。比如：</p>
+            <div id="crayon-5d86db7d72f14782118075" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const defaultStyle = {
+      color: '#7A7E83',
+      selectedColor: '#3cc51f',
+      backgroundColor: '#ffffff',
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f14782118075-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f14782118075-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f14782118075-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f14782118075-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f14782118075-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f14782118075-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">defaultStyle</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f14782118075-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">color</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'#7A7E83'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86db7d72f14782118075-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">selectedColor</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'#3cc51f'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86db7d72f14782118075-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">backgroundColor</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'#ffffff'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86db7d72f14782118075-5"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>字符串的操作</h4>
+    <p>前面我们已经知道字符串是JavaScript的数据类型之一，那我们可以怎么来操作字符串呢？下面我们就来结合MDN技术文档来学习。<span style="color: #800000;"><strong>MDN文档是前端最为依赖的技术文档</strong></span>，我们要像查词典一样来学习如何使用它。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="noopener noreferrer">MDN技术文档之JavaScript标准库之String</a></p>
+    <p>首先我们在main.js里输入以下代码，然后执行，在Console控制台查看效果：</p>
+            <div id="crayon-5d86db7d72f16876207294" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let lesson="云开发技术训练营";
+    let enname="CloudBase Camp"
+    console.log(lesson.length);  //返回字符串的长度
+    console.log(lesson[4]);  //返回在指定位置的字符
+    console.log(lesson.charAt(4));   //返回在指定位置的字符
+    console.log(lesson.substring(3,6));  //从索引3开始到6（不包括6）
+    console.log(lesson.substring(4));  //从索引4开始到结束
+    console.log(enname.toLowerCase()); //把一个字符串全部变为小写：
+    console.log(enname.toUpperCase());  //把一个字符串全部变为大写：
+    console.log(enname.indexOf('oud')); //搜索指定字符串出现的位置：
+    console.log(enname.concat(lesson)); //连接两个字符串
+    console.log(lesson.slice(4)); //提取字符串的某个部分，并以新的字符串返回被提取的部分</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d86db7d72f16876207294-12" style="height: 20px;">12</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f16876207294-1"><span class="crayon-e">let </span><span class="crayon-e ">lesson</span><span class="crayon-o">=</span><span class="crayon-s">"云开发技术训练营"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-2"><span class="crayon-e">let </span><span class="crayon-e ">enname</span><span class="crayon-o">=</span><span class="crayon-s">"CloudBase Camp"</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">lesson</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回字符串的长度</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-4"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">lesson</span><span class="crayon-sy">[</span><span class="crayon-cn">4</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回在指定位置的字符</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-5"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">lesson</span><span class="crayon-sy">.</span><span class="crayon-e">charAt</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-c">//返回在指定位置的字符</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-6"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">lesson</span><span class="crayon-sy">.</span><span class="crayon-e">substring</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-cn">6</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//从索引3开始到6（不包括6）</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-7"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">lesson</span><span class="crayon-sy">.</span><span class="crayon-e">substring</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//从索引4开始到结束</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-8"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">enname</span><span class="crayon-sy">.</span><span class="crayon-e">toLowerCase</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//把一个字符串全部变为小写：</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-9"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">enname</span><span class="crayon-sy">.</span><span class="crayon-e">toUpperCase</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//把一个字符串全部变为大写：</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-10"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">enname</span><span class="crayon-sy">.</span><span class="crayon-e">indexOf</span><span class="crayon-sy">(</span><span class="crayon-s">'oud'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//搜索指定字符串出现的位置：</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-11"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">enname</span><span class="crayon-sy">.</span><span class="crayon-e">concat</span><span class="crayon-sy">(</span><span class="crayon-v">lesson</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//连接两个字符串</span></div><div class="crayon-line" id="crayon-5d86db7d72f16876207294-12"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">lesson</span><span class="crayon-sy">.</span><span class="crayon-e">slice</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//提取字符串的某个部分，并以新的字符串返回被提取的部分</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后打开技术文档，在技术文档左侧菜单的<strong>属性</strong>和<strong>方法</strong>里，找到操作字符串用了哪些属性和方法，通过翻阅技术文档既加深对字符串的每个操作的理解，也知道该如何查阅技术文档。</p>
+    <blockquote class="danger"><p>字符串怎么有这么多属性和方法？多就对了，正是因为多，所以我们不能用传统的死记硬背来学习技术。技术文档怎么有这么多新词汇我见都没有见过，完全看不懂？你不需要全部都懂，就像我们不需要懂词典里的所有单词和语法一样。即使是GRE满分高手也不能认全所有单词，而通常6级单词就已经够用了，技术也是一样的道理。</p></blockquote>
+    <h4>Math对象</h4>
+    <p>Math是一个内置对象， 它具有数学常数和函数的属性和方法，但<strong>它不是一个函数对象。</strong>大家可以先在控制台实战然后再来了解这句话啊含义。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank" rel="noopener noreferrer"> Math对象MDN文档</a></p>
+    <p>在开发者工具的控制台console里输入以下代码，根据得到的结果来弄清楚每个函数的意思。</p>
+            <div id="crayon-5d86db7d72f18838649099" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let x=3,y=4,z=5.001,a=-3,b=-4,c=-5;
+    console.log(Math.abs(b)); //返回b的绝对值
+    console.log(Math.round(z));//返回z四舍五入后的整数
+    console.log(Math.pow(x,y)) //返回x的y次幂
+    console.log(Math.max(x,y,z,a,b,c)); //返回x,y,z,a,b,c的最大值
+    console.log(Math.min(x,y,z,a,b,c));//返回x,y,z,a,b,c的最小值
+    console.log(Math.sign(a));  //返回a是正数还是负数
+    console.log(Math.hypot(x,y));  //返回所有x,y的平方和的平方根 
+    console.log(Math.PI);  //返回一个圆的周长与直径的比例，约3.1415</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86db7d72f18838649099-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f18838649099-1"><span class="crayon-i">let</span><span class="crayon-h"> </span><span class="crayon-v">x</span><span class="crayon-o">=</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-v">y</span><span class="crayon-o">=</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-v">z</span><span class="crayon-o">=</span><span class="crayon-cn">5.001</span><span class="crayon-sy">,</span><span class="crayon-v">a</span><span class="crayon-o">=</span><span class="crayon-o">-</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-v">b</span><span class="crayon-o">=</span><span class="crayon-o">-</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-v">c</span><span class="crayon-o">=</span><span class="crayon-o">-</span><span class="crayon-cn">5</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d86db7d72f18838649099-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">abs</span><span class="crayon-sy">(</span><span class="crayon-v">b</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//返回b的绝对值</span></div><div class="crayon-line" id="crayon-5d86db7d72f18838649099-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">round</span><span class="crayon-sy">(</span><span class="crayon-v">z</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-c">//返回z四舍五入后的整数</span></div><div class="crayon-line" id="crayon-5d86db7d72f18838649099-4"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">pow</span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">,</span><span class="crayon-v">y</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//返回x的y次幂</span></div><div class="crayon-line" id="crayon-5d86db7d72f18838649099-5"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">max</span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">,</span><span class="crayon-v">y</span><span class="crayon-sy">,</span><span class="crayon-v">z</span><span class="crayon-sy">,</span><span class="crayon-v">a</span><span class="crayon-sy">,</span><span class="crayon-v">b</span><span class="crayon-sy">,</span><span class="crayon-v">c</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//返回x,y,z,a,b,c的最大值</span></div><div class="crayon-line" id="crayon-5d86db7d72f18838649099-6"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">min</span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">,</span><span class="crayon-v">y</span><span class="crayon-sy">,</span><span class="crayon-v">z</span><span class="crayon-sy">,</span><span class="crayon-v">a</span><span class="crayon-sy">,</span><span class="crayon-v">b</span><span class="crayon-sy">,</span><span class="crayon-v">c</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-c">//返回x,y,z,a,b,c的最小值</span></div><div class="crayon-line" id="crayon-5d86db7d72f18838649099-7"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">sign</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回a是正数还是负数</span></div><div class="crayon-line" id="crayon-5d86db7d72f18838649099-8"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">hypot</span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">,</span><span class="crayon-v">y</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回所有x,y的平方和的平方根 </span></div><div class="crayon-line" id="crayon-5d86db7d72f18838649099-9"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-v">PI</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回一个圆的周长与直径的比例，约3.1415</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们打开技术文档，在左侧菜单找一下Math对象的属性有哪些，Math对象的方法又有哪些？大致感受一下属性和方法到底是什么意思。</p>
+    <blockquote><p>注意，在别的开发语言里面，我们想获取一个数的绝对值可以直接调用abs(x)函数即可，而JavaScript却是Math.abs(x)，这是因为前面说的Math不是函数(函数对象)，而是一个对象。</p></blockquote>
+    <h4>Date对象</h4>
+    <p>Date 对象用于处理日期和时间。时间有年、月、日、星期、小时、分钟、秒、毫秒以及时区的概念，因此Date对象属性和方法也显得比较多。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" rel="noopener noreferrer">Date对象MDN文档</a></p>
+            <div id="crayon-5d86db7d72f1a129999247" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let now = new Date();  //返回当日的日期和时间。
+    console.log(now); 
+    console.log(now.getFullYear()); //从 Date 对象以四位数字返回年份。
+    console.log(now.getMonth());  //从 Date 对象返回月份 (0 ~ 11)。
+    console.log(now.getDate());  //从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+    console.log(now.getDay());  //从 Date 对象返回一周中的某一天 (0 ~ 6)。
+    console.log(now.getHours());  //返回 Date 对象的小时 (0 ~ 23)。
+    console.log(now.getMinutes());  //返回 Date 对象的分钟 (0 ~ 59)。
+    console.log(now.getSeconds());  //返回 Date 对象的秒数 (0 ~ 59)。
+    console.log(now.getMilliseconds());  //返回 Date 对象的毫秒(0 ~ 999)。
+    console.log(now.getTime());  //返回 1970 年 1 月 1 日至今的毫秒数。</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86db7d72f1a129999247-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-1"><span class="crayon-e">let </span><span class="crayon-v">now</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-r">Date</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回当日的日期和时间。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getFullYear</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">//从 Date 对象以四位数字返回年份。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-4"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getMonth</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//从 Date 对象返回月份 (0 ~ 11)。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-5"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getDate</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//从 Date 对象返回一个月中的某一天 (1 ~ 31)。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-6"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getDay</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//从 Date 对象返回一周中的某一天 (0 ~ 6)。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-7"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getHours</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回 Date 对象的小时 (0 ~ 23)。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-8"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getMinutes</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回 Date 对象的分钟 (0 ~ 59)。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-9"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getSeconds</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回 Date 对象的秒数 (0 ~ 59)。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-10"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getMilliseconds</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回 Date 对象的毫秒(0 ~ 999)。</span></div><div class="crayon-line" id="crayon-5d86db7d72f1a129999247-11"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getTime</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//返回 1970 年 1 月 1 日至今的毫秒数。</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>全局对象wx</h4>
+    <p>
+                <span id="crayon-5d86db7d72f1c455068061" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span></span></span>是小程序的全局对象，用于承载小程序能力相关 API。小程序开发框架提供丰富的微信原生 API，可以方便的调起微信提供的能力，如获取用户信息，了解网络状态等。大家可以在微信开发者工具的控制台Console里了解一下这个wx这个对象。</p>
+            <div id="crayon-5d86db7d72f1e206418112" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f1e206418112-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f1e206418112-1"><span class="crayon-v">wx</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>可以看到wx的所有属性和方法，如果你对wx的哪个属性和方法不了解，你可以查阅技术文档。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html#API" target="_blank" rel="noopener noreferrer">API技术文档</a></p>
+    <p><strong>了解网络状态</strong></p>
+    <p><strong>获取网络类型技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device/network/wx.getNetworkType.html" target="_blank" rel="noopener noreferrer">wx.getNetworkType()</a></p>
+    <p>大家可以切换一下开发者工具的模拟器的网络，然后多次在控制台console输入以下代码查看有什么不同：</p>
+            <div id="crayon-5d86db7d72f1f742067940" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.getNetworkType({
+      success(res) {
+        console.log(res)
+      }
+    });</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f1f742067940-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f1f742067940-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f1f742067940-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f1f742067940-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f1f742067940-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f1f742067940-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getNetworkType</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f1f742067940-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f1f742067940-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72f1f742067940-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86db7d72f1f742067940-5"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>了解用户信息</strong></p>
+    <p><strong>获取用户信息技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserInfo.html" target="_blank" rel="noopener noreferrer">wx.getUserInfo()</a></p>
+    <p>登录开发者工具之后（大家应该已经处于登录状态），在控制台console里输入以下代码，看得到什么信息：</p>
+            <div id="crayon-5d86db7d72f21031085815" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.getUserInfo({
+      success(res) {
+          console.log(res);
+      }
+    });</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f21031085815-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f21031085815-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f21031085815-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f21031085815-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f21031085815-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f21031085815-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getUserInfo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f21031085815-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f21031085815-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d86db7d72f21031085815-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86db7d72f21031085815-5"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后退出开发者工具，再输入以上代码，看看是什么令人兴奋的结果？</p>
+    <p><strong>获取设备信息</strong></p>
+    <p><strong>获取设备信息技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/base/system/system-info/wx.getSystemInfo.html" target="_blank" rel="noopener noreferrer">wx.getSystemInfo()</a></p>
+            <div id="crayon-5d86db7d72f23460539639" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.getSystemInfo({
+      success (res) {
+        console.log(res.model)
+        console.log(res.pixelRatio)
+        console.log(res.windowWidth)
+        console.log(res.windowHeight)
+        console.log(res.language)
+        console.log(res.version)
+        console.log(res.platform)
+      }
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86db7d72f23460539639-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f23460539639-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getSystemInfo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">model</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">pixelRatio</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">windowWidth</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">windowHeight</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">language</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">version</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">platform</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86db7d72f23460539639-11"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>页面链接跳转</strong></p>
+    <p><strong>页面跳转技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html" target="_blank" rel="noopener noreferrer">wx.navigateTo()</a></p>
+    <p>除了可以获取到用户、设备、网络等的信息，使用控制台来调用对象的方法也可以执行一些动作，比如页面跳转。在控制台Console里输入：</p>
+            <div id="crayon-5d86db7d72f25801147876" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.navigateTo({
+      url: '/pages/home/imgshow/imgshow'
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f25801147876-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f25801147876-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f25801147876-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f25801147876-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">navigateTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f25801147876-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'/pages/home/imgshow/imgshow'</span></div><div class="crayon-line" id="crayon-5d86db7d72f25801147876-3"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>还可以返回页面的上一层，在控制台里输入</p>
+    <p><strong>页面返回技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateBack.html" target="_blank" rel="noopener noreferrer">wx.navigateBack()</a></p>
+            <div id="crayon-5d86db7d72f27455734806" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.navigateBack({
+      delta: 1
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f27455734806-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f27455734806-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f27455734806-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f27455734806-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">navigateBack</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f27455734806-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">delta</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-5d86db7d72f27455734806-3"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><b>显示消息提示框</b></p>
+    <p><strong>显示消息提示框技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html" target="_blank" rel="noopener noreferrer">wx.showToast()</a></p>
+            <div id="crayon-5d86db7d72f29603900230" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  wx.showToast({
+        title: '弹出成功',
+        icon: 'success',
+        duration: 1000
+      })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f29603900230-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f29603900230-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f29603900230-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f29603900230-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f29603900230-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f29603900230-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">showToast</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f29603900230-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'弹出成功'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86db7d72f29603900230-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">icon</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'success'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86db7d72f29603900230-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">duration</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1000</span></div><div class="crayon-line" id="crayon-5d86db7d72f29603900230-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>设置当前页面的标题</strong></p>
+    <p><strong>设置标题技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.setNavigationBarTitle.html" target="_blank" rel="noopener noreferrer">wx.setNavigationBarTitle()</a></p>
+            <div id="crayon-5d86db7d72f2a927008057" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.setNavigationBarTitle({
+      title: '控制台更新的标题'
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f2a927008057-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f2a927008057-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f2a927008057-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f2a927008057-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">setNavigationBarTitle</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f2a927008057-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'控制台更新的标题'</span></div><div class="crayon-line" id="crayon-5d86db7d72f2a927008057-3"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>打开文件选择</strong></p>
+    <p><strong>打开文件选择技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html" target="_blank" rel="noopener noreferrer">wx.chooseImage()</a></p>
+            <div id="crayon-5d86db7d72f2c231649875" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success (res) {
+        const tempFilePaths = res.tempFilePaths
+      }
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86db7d72f2c231649875-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86db7d72f2c231649875-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86db7d72f2c231649875-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86db7d72f2c231649875-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86db7d72f2c231649875-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86db7d72f2c231649875-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86db7d72f2c231649875-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86db7d72f2c231649875-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86db7d72f2c231649875-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">chooseImage</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f2c231649875-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">count</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86db7d72f2c231649875-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">sizeType</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'original'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'compressed'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86db7d72f2c231649875-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">sourceType</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'album'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'camera'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86db7d72f2c231649875-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86db7d72f2c231649875-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">tempFilePaths</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-i">tempFilePaths</span></div><div class="crayon-line" id="crayon-5d86db7d72f2c231649875-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86db7d72f2c231649875-8"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这一部分主要是让大家明白控制台Console的强大之处，以及通过控制台实战的方法对小程序API的运行机制有一个初步的了解。</p>
+   	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

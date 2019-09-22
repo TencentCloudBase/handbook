@@ -1,0 +1,594 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 点击事件评论Feed" href="https://cloudbasegroup.org/handbook/weappjs/35/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="页面渲染" href="https://cloudbasegroup.org/handbook/weappjs/37">
+    <link rel="next" title="JavaScript入门" href="https://cloudbasegroup.org/handbook/weappjs/33">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weappjs/35">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=35">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweappjs%2F35">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweappjs%2F35&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-35 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+                <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                          <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/tcb11.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            小程序与JavaScript			</h1>
+                          </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                     <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb11.html">
+                                    JavaScript入门					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb12.html">
+                                    点击事件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb13.html">
+                                    页面渲染					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">点击事件</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p><strong>事件</strong>是视图层到逻辑层的通信方式，当我们<strong>点击tap</strong>、<strong>触摸touch</strong>、<strong>长按longpress</strong>小程序<strong>绑定了事件的组件</strong>时，就会触发事件，执行逻辑层中对应的<strong>事件处理函数</strong>。</p>
+    <blockquote><p>小程序框架的视图层由 WXML 与 WXSS 来编写的，由组件来进行展示。将逻辑层的数据反应成视图，同时将视图层的事件发送给逻辑层。逻辑层将数据进行处理后发送给视图层，同时接受视图层的事件反馈。</p></blockquote>
+    <h4>页面滚动</h4>
+    <p>使用开发者工具新建一个tapevent的页面（直接在app.json的pages配置项第一行添加一个tapevent的页面，由于是第一项，这样就可以成为小程序的首页呈现出来），然后将以下代码输入到tapevent.wxml文件里：</p>
+            <div id="crayon-5d86dbadd03a5812247095" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button type="primary" bindtap="scrollToPosition"&gt;滚动到页面指定位置&lt;/button&gt;
+    &lt;view class="pagetop" style="background-color:#333;width:100%;height:400px"&gt;&lt;/view&gt;
+    &lt;button type="primary" bindtap="scrollToTop"&gt;滚动到页面顶部（返回顶部）&lt;/button&gt;
+    &lt;view id="pageblock" style="background-color:#333;width:100%;height:400px"&gt;&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03a5812247095-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03a5812247095-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03a5812247095-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03a5812247095-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03a5812247095-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"primary"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"scrollToPosition"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">滚动到页面指定位置</span><span class="crayon-r ">&lt;/button&gt;</span></div><div class="crayon-line" id="crayon-5d86dbadd03a5812247095-2"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"pagetop"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"background-color:#333;width:100%;height:400px"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d86dbadd03a5812247095-3"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"primary"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"scrollToTop"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">滚动到页面顶部（返回顶部）</span><span class="crayon-r ">&lt;/button&gt;</span></div><div class="crayon-line" id="crayon-5d86dbadd03a5812247095-4"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"pageblock"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"background-color:#333;width:100%;height:400px"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里的
+                <span id="crayon-5d86dbadd03ac661711752" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">type</span><span class="crayon-o">=</span><span class="crayon-s">"primary"</span></span></span>只是引入weui给button添加的样式。而函数名scrollToPosition和scrollToTop是可以自己定义的，然后我们再来在相应的js文件里要添加和函数名scrollToPosition和scrollToTop对应的事件处理函数。</p>
+    <p>在tapevent.js的Page({})里（也就是和
+                <span id="crayon-5d86dbadd03af443767033" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>、
+                <span id="crayon-5d86dbadd03b0534152911" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-sy">}</span></span></span>等函数平级），输入以下代码：</p>
+            <div id="crayon-5d86dbadd03b2108726987" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  scrollToTop() {
+        wx.pageScrollTo({
+          scrollTop: 0,
+          duration: 300
+        })
+      },
+    
+      scrollToPosition() {
+        wx.pageScrollTo({
+          scrollTop: 6000,
+          duration: 300
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d86dbadd03b2108726987-13" style="height: 20px;">13</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">scrollToTop</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">pageScrollTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">scrollTop</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">duration</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">300</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-7">&nbsp;</div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">scrollToPosition</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">pageScrollTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">scrollTop</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">6000</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">duration</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">300</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03b2108726987-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>当用户点击该button组件的时候会在该页面对应的Page中找到相应的事件处理函数。保存编译之后，看看是不是就有了页面滚动的效果了？原理是scrollToTop()和scrollToPosition()这两个函数实际上都是调用了同一个小程序的<strong>滚动API</strong> wx.pageScrollTo()，关于该API的具体参数信息，我们可以查阅技术文档。</p>
+    <p><strong>滚动API技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/scroll/wx.pageScrollTo.html" target="_blank" rel="noopener noreferrer">wx.pageScrollTo(Object object)</a></p>
+    <p>在官方文档我们可以看到wx.pageScrollTo()的作用是将页面滚动到目标位置，支持选择器和滚动距离两种方式定位</p>
+    <ul>
+    <li>scrollTop滚动到页面的目标位置，单位 px，值为0就是滚动到顶部；值为600就是</li>
+    <li>duration是滚动动画的时长，单位为ms，而1秒=1000毫秒</li>
+    </ul>
+    <p>那如何滚动到指定的选择器的位置呢？前面我们已经给view分别添加了id和class的选择器，只需要将之前的函数的配置信息<span style="color: #800000;"><strong>修改</strong></span>为如下（<span style="color: #800000;"><strong>注意哦，如果你是添加而不是修改，函数名会冲突的，或者你可以起其他的函数名</strong></span>）：</p>
+            <div id="crayon-5d86dbadd03b4718695969" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  scrollToTop() {
+        wx.pageScrollTo({
+          duration: 3000,
+          selector:".pagetop"
+        })
+      },
+    
+      scrollToPosition() {
+        wx.pageScrollTo({
+          duration: 300,
+          selector:"#pageblock"
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d86dbadd03b4718695969-13" style="height: 20px;">13</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">scrollToTop</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">pageScrollTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">duration</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">3000</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">selector</span><span class="crayon-o">:</span><span class="crayon-s">".pagetop"</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-7">&nbsp;</div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">scrollToPosition</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">pageScrollTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">duration</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">300</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">selector</span><span class="crayon-o">:</span><span class="crayon-s">"#pageblock"</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03b4718695969-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>小任务：</strong>如果只是在组件上绑定了事件也就是只有
+                <span id="crayon-5d86dbadd03b6262885313" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">bindtap</span><span class="crayon-o">=</span><span class="crayon-s">"scrollToPosition"</span></span></span>，但是并没有在js文件里写相应的事件处理函数scrollToPosition，看一下控制台Console会报什么错？</p></blockquote>
+    <blockquote class="danger"><p>不要误以为只有button组件才可以绑定事件哦，还记得我们小程序组件里看的技术文档<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/component.html" target="_blank" rel="noopener noreferrer">小程序组件</a>吗？在公共属性部分，可以看到<strong>所有组件都有以下属性bind* / catch*</strong>，这个属性的类型是EventHandler，bindtap就是bind*的一个类型。也就是说小程序的所有组件都可以通过以上方法触发事件处理函数，达到滚动等效果。使用button为案例只是为了便于展示而已。</p></blockquote>
+    <blockquote><p><strong>命名规范：</strong>JavaScript的项目名、函数名、变量等都应该遵循简洁、语义化的原则。函数名推荐使用驼峰法来命名(<strong>camelCase</strong>)，比如scrollToTop、pageScrollTo，也就是由<strong>小写字母开始</strong>，<strong>后续每个单词首字母都大写</strong>，长得跟骆驼<img draggable="false" class="emoji" alt="🐫" src="https://s.w.org/images/core/emoji/12.0.0-1/svg/1f42b.svg">的驼峰似的。</p></blockquote>
+    <h4>消息提示框Toast</h4>
+    <p>消息提示框是移动端App、H5(WebApp)、小程序经常会使用到的一个交互界面。在tapevent.wxml输入代码：</p>
+            <div id="crayon-5d86dbadd03b8428896801" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button type="primary" bindtap="toastTap"&gt;点击弹出消息对话框&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03b8428896801-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03b8428896801-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"primary"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"toastTap"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">点击弹出消息对话框</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在js里输入以下代码：</p>
+            <div id="crayon-5d86dbadd03ba315803075" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  toastTap() {
+        wx.showToast({
+          title: '购买成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03ba315803075-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03ba315803075-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03ba315803075-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03ba315803075-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03ba315803075-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03ba315803075-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03ba315803075-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03ba315803075-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">toastTap</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03ba315803075-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">showToast</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03ba315803075-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'购买成功'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03ba315803075-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">icon</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'success'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03ba315803075-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">duration</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">2000</span></div><div class="crayon-line" id="crayon-5d86dbadd03ba315803075-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03ba315803075-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>消息提示技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showToast.html" target="_blank" rel="noopener noreferrer">wx.showToast(Object object)</a></p>
+    <ul>
+    <li>title：为必填，提示的内容</li>
+    <li>icon：只有三个选项，success、loading、none，大家可以自行测试一下三个不同取值的效果</li>
+    <li>duration：提示延迟的时间，默认为1500毫秒，也就是1.5秒</li>
+    </ul>
+    <blockquote class="task"><p><strong>小任务：</strong>修改title、icon和duration，以及添加image属性，看看会有什么样不同的表现形式，以及你在哪个App的何种场景下见过类似的消息提示信息？</p></blockquote>
+    <h4>模态对话框</h4>
+    <blockquote><p>为了让界面显示的更加简洁，你可以使用快捷键Ctrl+/(Mac为Command+/)来将上面wxml里的代码注释掉，js文件里面的函数就不用注释啦</p></blockquote>
+    <p>使用开发者工具继续在tapevent.wxml文件里添加代码，这次我们会调用一下小程序的模态框（还是强调modalTap是你可以根据命名规范任意命名的，只需要在js里添加相应的事件处理函数就可以调用API）:</p>
+            <div id="crayon-5d86dbadd03bb670069932" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button type="primary" bindtap="modalTap"&gt;显示模态对话框&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03bb670069932-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03bb670069932-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"primary"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"modalTap"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">显示模态对话框</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在tapevent.js中输入以下代码：</p>
+            <div id="crayon-5d86dbadd03bd432303928" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  modalTap() {
+        wx.showModal({
+          title: '学习声明',
+          content: '学习小程序的开发是一件有意思的事情，我决定每天打卡学习',
+          showCancel: true,
+          confirmText: '确定',
+          success(res) {
+            if (res.confirm) {
+              console.log('用户点击了确定')
+            } else if (res.cancel) {
+              console.log('用户点击了取消')
+            }
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d86dbadd03bd432303928-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">modalTap</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">showModal</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'学习声明'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">content</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'学习小程序的开发是一件有意思的事情，我决定每天打卡学习'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">showCancel</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">confirmText</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'确定'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">confirm</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'用户点击了确定'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">cancel</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'用户点击了取消'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03bd432303928-15"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存编译之后，点击模拟器上的按钮，就可以显示出一个对话框，这个对话框我们称之为Modal模态对话框。</p>
+    <p><strong>模态对话框技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showModal.html" target="_blank" rel="noopener noreferrer">wx.showModal(Object object)</a></p>
+    <p><strong>千变万化之API</strong></p>
+    <p>阅读API的技术文档，就要了解该API有哪些属性，属性代表得是什么含义，属性是什么类型（<strong>这一点非常重要</strong>），以及它的默认值是什么，可以有哪些取值。</p>
+    <ul>
+    <li>title属性不是必填，删除title的赋值，就不会显示标题啦；</li>
+    <li>content属性也不是必填，为提示的内容；</li>
+    <li>showCancel默认值就是true，意思是默认显示取消按钮，改为false就不显示了</li>
+    <li>confirmText默认值为确定，你可以改成别的试试</li>
+    </ul>
+    <p>通过给API已有的属性赋不同的值，API所展现的内容就会有很多种变化，而具体要怎么用，则需要你根据实际的小程序开发项目来使用了。</p>
+    <blockquote class="task"><p>小任务：在哪些App、小程序、H5(WebApp)你会看到模态框？这些模态框是在什么情况下出现的，它的作用是啥？你能模仿这些模态框写一下配置信息吗？</p></blockquote>
+    <p><strong>console.log日志打印</strong></p>
+    <p>点击模态框上面的取消、确定按钮，留意一下开发者工具调试器Console的日志打印信息：当我们点击取消按钮时，会打印“用户点击了取消”；当我们点击确定按钮时，会打印“用户点击了确定”，而这打印的结果是由上面的这段代码输出的：</p>
+            <div id="crayon-5d86dbadd03bf481332666" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">success(res) {
+      if (res.confirm) {
+        console.log('用户点击了确定')
+      } else if (res.cancel) {
+        console.log('用户点击了取消')
+      }
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03bf481332666-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03bf481332666-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03bf481332666-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03bf481332666-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03bf481332666-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03bf481332666-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03bf481332666-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03bf481332666-1"><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03bf481332666-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">confirm</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03bf481332666-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'用户点击了确定'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03bf481332666-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">cancel</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03bf481332666-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'用户点击了取消'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03bf481332666-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86dbadd03bf481332666-7"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>那这段代码到底怎么理解呢？除了
+                <span id="crayon-5d86dbadd03c1340423971" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'用户点击了确定'</span><span class="crayon-sy">)</span></span></span>，这个之前接触过可以理解外，res是什么？res.confirm、res.cancel是什么，从哪里来的？我们可以使用console.log()打印一下。将上面这段代码增加一些打印信息。</p>
+            <div id="crayon-5d86dbadd03c2891329573" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">success(res) {
+      console.log(res)
+      if (res.confirm) {
+        console.log(res)
+        console.log("点击确认之后的res.confirm是：" + res.confirm)
+        console.log("点击确认之后的res.cancel是：" + res.cancel)
+      } else if (res.cancel) {
+        console.log(res)
+        console.log('用户点击了取消')
+        console.log("点击取消之后的res.confirm是：" + res.confirm)
+        console.log("点击取消之后的res.cancel是：" + res.cancel)
+      }
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d86dbadd03c2891329573-13" style="height: 20px;">13</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-1"><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">confirm</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"点击确认之后的res.confirm是："</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">confirm</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"点击确认之后的res.cancel是："</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">cancel</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">cancel</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'用户点击了取消'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"点击取消之后的res.confirm是："</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">confirm</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"点击取消之后的res.cancel是："</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">cancel</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86dbadd03c2891329573-13"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>再来编译之后点击模态框的取消和确定按钮，看打印出来什么结果。当点击确认时，res.confirm的值为true，就执行if分支里的语句；当res.cancel的值为true，就执行res.cancel的语句。在<strong>模态对话框技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showModal.html" target="_blank" rel="noopener noreferrer">wx.showModal(Object object)</a>也有<strong>object.success 回调函数</strong>的说明。</p>
+    <blockquote><p><strong>success、fail、complete回调函数&nbsp;</strong>在技术文档里可以看到属性里有success和fail两个回调函数，success为接口调用成功的回调函数；fail为接口调用失败的回调函数。关于这方面的知识大家可以阅读技术文档<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html#API" target="_blank" rel="noopener noreferrer">小程序API</a>，大致了解一下异步API与回调函数的参数，理解异步 API 的执行结果需要通过&nbsp;
+                <span id="crayon-5d86dbadd03c4153461355" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-t">Object</span></span></span>&nbsp;类型的参数中传入的对应回调函数获取。（不理解也没有关系）</p></blockquote>
+    <h4>手机振动</h4>
+    <p>手机振动API分两种，一种是长振动，一种是短振动，两个API写法大致相同，为了体验效果，我们以长振动为例，在tapevent.wxml里输入以下代码，</p>
+            <div id="crayon-5d86dbadd03c6046311385" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button type="primary" bindtap="vibrateLong"&gt;长振动&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03c6046311385-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03c6046311385-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"primary"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"vibrateLong"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">长振动</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在tapevent.js里添加与之对应的事件处理函数：</p>
+            <div id="crayon-5d86dbadd03c8697964167" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  vibrateLong() {
+        wx.vibrateLong({
+          success(res) {
+            console.log(res)
+          },
+          fail(err) {
+            console.error(err)
+          },
+          complete() {
+            console.log('振动完成')
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d86dbadd03c8697964167-13" style="height: 20px;">13</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">vibrateLong</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">vibrateLong</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">fail</span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">error</span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">complete</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'振动完成'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03c8697964167-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存编译之后，点击预览，使用手机扫描来体验一下长振动的效果。</p>
+    <p><strong>长振动技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device/vibrate/wx.vibrateLong.html" target="_blank" rel="noopener noreferrer">wx.vibrateLong()</a></p>
+    <p>在长振动技术文档里我们再次看到API里三个回调函数，success、fail、complete。在模拟器上点击按钮时，就可以看到打印日志。console.error向控制台的console中打印 error 日志，如果不能调用长振动，那一般是手机权限的问题了。</p>
+    <blockquote><p>小任务：参考长振动的代码以及<a href="https://developers.weixin.qq.com/miniprogram/dev/api/device/vibrate/wx.vibrateShort.html" target="_blank" rel="noopener noreferrer">短振动的技术文档</a>，写一个短振动的案例，体验一下两者有什么不同。</p></blockquote>
+    <p><span style="font-size: 20px; font-weight: bold; color: #2b2b2b;">弹出操作菜单</span></p>
+    <p>下面我们来了解一下操作操作，在tapevent.wxml输入以下代码</p>
+            <div id="crayon-5d86dbadd03ca460865672" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button type="default" bindtap="actionSheetTap"&gt;弹出操作菜单&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03ca460865672-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03ca460865672-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"default"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"actionSheetTap"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">弹出操作菜单</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在tapevent.js里添加与之对应的事件处理函数：</p>
+            <div id="crayon-5d86dbadd03cc886739543" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  actionSheetTap() {
+        wx.showActionSheet({
+          itemList: ['添加照片', '删除照片', '更新照片', '查询更多'],
+          success(e) {
+            console.log(e.tapIndex)
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03cc886739543-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03cc886739543-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03cc886739543-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03cc886739543-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03cc886739543-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03cc886739543-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03cc886739543-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86dbadd03cc886739543-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03cc886739543-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">actionSheetTap</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cc886739543-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">showActionSheet</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cc886739543-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">itemList</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'添加照片'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'删除照片'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'更新照片'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'查询更多'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03cc886739543-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">e</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cc886739543-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">e</span><span class="crayon-sy">.</span><span class="crayon-v">tapIndex</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03cc886739543-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d86dbadd03cc886739543-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03cc886739543-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>弹出菜单技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showActionSheet.html" target="_blank" rel="noopener noreferrer">wx.showActionSheet(Object object)</a></p>
+    <p>保存之后在模拟器体验，点击按钮就会弹出显示<strong>添加照片</strong>、<strong>删除照片</strong>、<strong>更新照片</strong>、<strong>查询更多</strong>等选项的操作菜单，当然我们点击操作菜单的选项之后是没有反应的，点击之后的反应还需要我们以后来写事件处理函数才行。</p>
+    <p><strong>success回调函数</strong></p>
+    <p>当我们点击操作菜单的不同选项时，会返回不同的数字，这取决于success回调函数里的e.tapIndex的值。在官方文档里我们可以了解到，当用户点击的按钮序号，从上到下的顺序，从0开始，相当于对应着数组itemList的序号，这样就为我们以后根据不同的菜单选项来执行不同的操作提供了可能。</p>
+    <blockquote class="task"><p><strong>小任务：</strong>在success(e){}回调函数里，添加console.log(e)打印e以及console.log(e.errMsg)打印e的errMsg对象看看是什么结果。</p></blockquote>
+    <h4>页面路由</h4>
+    <p>页面路由是一个非常重要的概念，打开新页面、页面返回、Tab页面切换、页面重定向等都是也能路由的不同方式。</p>
+    <blockquote><p>关于页面路由，大家可以阅读一下<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/route.html" target="_blank" rel="noopener noreferrer">页面路由技术文档</a>，页面路由我们可以简单的理解为对页面链接的管理，根据不同的url链接来显示不同的内容和页面信息。在后面的章节我们还会具体讲一下页面路由的知识的，不必苛求一次性都搞明白。</p></blockquote>
+    <p><strong>Navigator组件与页面路由API</strong></p>
+    <p>在前面我们已经学习过<a href="https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html" target="_blank" rel="noopener noreferrer">Navigator组件</a>，在navigator组件的技术文档里，我们可以看到open-type属性以及合法值。在小程序API左侧也可以看到5个不同的API。它们之间的对应关系如下:</p>
+    <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+    <th><strong>页面路由API</strong></th>
+    <td><b>Navigator open-type值</b></td>
+    <td style="text-align: center;"><strong>含义</strong></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th>&nbsp;<a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.redirectTo.html" target="_blank" rel="noopener noreferrer">redirectTo</a></th>
+    <td>redirect</td>
+    <td>关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面。</td>
+    </tr>
+    <tr>
+    <th><a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html" target="_blank" rel="noopener noreferrer">navigateTo</a></th>
+    <td>navigate</td>
+    <td>保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面。</td>
+    </tr>
+    <tr>
+    <th>&nbsp;<a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateBack.html" target="_blank" rel="noopener noreferrer">navigateBack</a></th>
+    <td>navigateBack</td>
+    <td>关闭当前页面，返回上一页面或多级页面。</td>
+    </tr>
+    <tr>
+    <th>&nbsp;<a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.switchTab.html" target="_blank" rel="noopener noreferrer">switchTab</a></th>
+    <td>switchTab</td>
+    <td>跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面</td>
+    </tr>
+    <tr>
+    <th><a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.reLaunch.html" target="_blank" rel="noopener noreferrer">reLaunch</a></th>
+    <td>reLaunch</td>
+    <td>关闭所有页面，打开到应用内的某个页面</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>也就是说Navigator组件可以做到的事情，使用JavaScript调用小程序也能路由API也可以做到。Navigator组件的内容是写死的，而JavaScript则可以提供动态的数据。</p>
+    <p><b>跳转到新页面与Tab页</b></p>
+    <p>我们可以在之前创建的home.wxml里输入以下代码：</p>
+            <div id="crayon-5d86dbadd03cd662660993" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button bindtap="navigateTo"&gt;保留页面并跳转&lt;/button&gt;
+    &lt;button bindtap="switchTab"&gt;跳转到组件Tab页&lt;/button&gt;
+    &lt;button bindtap="redirectTo"&gt;关闭当前页面跳转&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03cd662660993-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03cd662660993-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03cd662660993-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03cd662660993-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"navigateTo"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">保留页面并跳转</span><span class="crayon-r ">&lt;/button&gt;</span></div><div class="crayon-line" id="crayon-5d86dbadd03cd662660993-2"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"switchTab"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">跳转到组件Tab页</span><span class="crayon-r ">&lt;/button&gt;</span></div><div class="crayon-line" id="crayon-5d86dbadd03cd662660993-3"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"redirectTo"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">关闭当前页面跳转</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在home.js文件里添加以下代码：</p>
+            <div id="crayon-5d86dbadd03cf563033976" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">navigateTo() {
+        wx.navigateTo({
+            url: '/pages/home/imgshow/imgshow'
+        })
+    },
+    switchTab() {
+        wx.switchTab({
+            url: "/pages/list/list",
+        })
+    },
+    redirectTo() {
+        wx.redirectTo({
+            url: '/pages/home/imgshow/imgshow'
+        })
+    },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d86dbadd03cf563033976-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-1"><span class="crayon-e">navigateTo</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">navigateTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'/pages/home/imgshow/imgshow'</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-5"><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-6"><span class="crayon-e">switchTab</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">switchTab</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"/pages/list/list"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-10"><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-11"><span class="crayon-e">redirectTo</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">redirectTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'/pages/home/imgshow/imgshow'</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03cf563033976-15"><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存之后在开发者工具的模拟器点击按钮，就实现了页面和Tab页的切换效果。在前面我们提到bintap是小程序所有组件的公有属性，只有bintap绑定了页面路由切换的事件处理函数，组件是不是Navigator也就不重要了，也就是链接跳转不再是Navigator组件的专利。</p>
+    <blockquote><p>注意这里的url的路径，我们使用的是相对于小程序根目录的绝对路径。app.json的pages配置项前面没有/是因为app.json本来就在根目录，所以可以使用相对路径以及这里的取值，以及API很多参数的字符串String类型的赋值，单引号和双引号都是没有影响的。</p></blockquote>
+    <p><strong>返回上一页</strong></p>
+    <p>在home页面里的imgshow文件夹下的imgshow.wxml（在小程序开发的第一部分建过这个页面，如果没有，你再创建也可以）输入以下代码：</p>
+            <div id="crayon-5d86dbadd03d1954994464" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button bindtap="navigateBack"&gt;返回上一页&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03d1954994464-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03d1954994464-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"navigateBack"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">返回上一页</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在imgshow.js里添加以下代码</p>
+            <div id="crayon-5d86dbadd03d6961009953" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">navigateBack() {
+        wx.navigateBack({
+            delta: 1
+        })
+    },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d86dbadd03d6961009953-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d86dbadd03d6961009953-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d86dbadd03d6961009953-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d86dbadd03d6961009953-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d86dbadd03d6961009953-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d86dbadd03d6961009953-1"><span class="crayon-e">navigateBack</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03d6961009953-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">navigateBack</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d86dbadd03d6961009953-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">delta</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-5d86dbadd03d6961009953-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d86dbadd03d6961009953-5"><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>点击<strong>保留页面跳转按钮</strong>以及<strong>返回上一页</strong>按钮，这样我们就可以在小程序里通过点击组件实现了页面的切换与页面的返回。而如果是使用wx.redirectTo跳转到新的页面就没法使用返回上一页了。</p>
+    <blockquote><p>wx.navigateTo 是保留当前页面、跳转到应用内的某个页面，使用 wx.navigateBack可以返回到原页面。对于页面不是特别多的小程序，且页面间存在经常切换时，推荐使用 wx.navigateTo进行跳转， 然后返回，提高加载速度。</p></blockquote>
+    	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
