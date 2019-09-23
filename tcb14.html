@@ -1,0 +1,805 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 生命周期评论Feed" href="https://cloudbasegroup.org/handbook/weappjs/39/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="数据表单" href="https://cloudbasegroup.org/handbook/weappjs/41">
+    <link rel="next" title="页面渲染" href="https://cloudbasegroup.org/handbook/weappjs/37">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weappjs/39">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=39">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweappjs%2F39">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweappjs%2F39&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-39 single-format-standard masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+                <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                          <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/tcb11.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            小程序与JavaScript			</h1>
+                          </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                     <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb11.html">
+                                    JavaScript入门					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb12.html">
+                                    点击事件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb13.html">
+                                    页面渲染					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb14.html">
+                                    生命周期					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb15.html">
+                                    数据表单					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb16.html">
+                                    图片、缓存与文件					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">生命周期</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>从前面的学习我们了解到，函数可以操作（增删改查）数据（包括字符串、数组、对象、Boolean等所有数据类型），组件拥有了属性数据，也就拥有了被编程的能力，可见携带数据的重要性（id、class、style甚至点击事件都是组件携带的数据，都可以用来编程）。这一节我们就拿深入了解，组件是如何携带数据的，事件对象数据的作用以及数据如何跨页面渲染。</p>
+    <h4>链接携带数据</h4>
+    <p><b>URL链接的特殊字符</b></p>
+    <p>在日常生活中，我们经常可以看到有的链接特别长，比如百度、京东、淘宝等搜索某个关键词的链接，下面是使用百度搜索云开发时的链接：</p>
+            <div id="crayon-5d882f1b1e936494384682" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=云开发&amp;rsv_pq=81ee270400007011&amp;rsv_t=ed834wm24xdJRGRsfv7bxPKX%2FXGlLt6fqh%2BiB9x5g0EUQjyxdCDbTXHbSFE&amp;rqlang=cn&amp;rsv_enter=1&amp;rsv_dl=tb&amp;rsv_sug3=20&amp;rsv_sug1=19&amp;rsv_sug7=100&amp;rsv_sug2=0&amp;inputT=5035&amp;rsv_sug4=6227</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e936494384682-1" style="height: 60px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e936494384682-1"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=云开发&amp;rsv_pq=81ee270400007011&amp;rsv_t=ed834wm24xdJRGRsfv7bxPKX%2FXGlLt6fqh%2BiB9x5g0EUQjyxdCDbTXHbSFE&amp;rqlang=cn&amp;rsv_enter=1&amp;rsv_dl=tb&amp;rsv_sug3=20&amp;rsv_sug1=19&amp;rsv_sug7=100&amp;rsv_sug2=0&amp;inputT=5035&amp;rsv_sug4=6227</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>以及之前在视频组件里用到的视频链接：</p>
+            <div id="crayon-5d882f1b1e93c318349904" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e93c318349904-1" style="height: 60px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e93c318349904-1"><span class="crayon-v">http</span><span class="crayon-o">:</span><span class="crayon-c">//wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&amp;bizid=1023&amp;hy=SH&amp;fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这些链接通常包括以下特殊字符，以及都有着基本相同的含义，通过这些特殊字符，链接就被塞进了很多数据信息，其中?、&amp;、=是我们接下来关注的重点。</p>
+    <ul>
+    <li>/ 分隔目录和子目录</li>
+    <li>? 分隔实际的URL和参数</li>
+    <li>&amp; URL中指定的参数间的分隔符</li>
+    <li>= URL中指定的参数的值</li>
+    <li># 同一个页面的位置标识符，类似于页面的书签；</li>
+    </ul>
+    <p><strong>获取URL链接的数据</strong></p>
+    <p>使用开发者工具，新建一个lifecyle的页面，以及在home页面新建一个二级页面detail（也就是在pages配置项新建一个pages/home/detail/detail，以及注意将lifecycle设置为首页）然后在lifecyle.wxml里输入以下代码，这里的url也通过?、&amp;、=添加了很多数据：</p>
+            <div id="crayon-5d882f1b1e93f468452331" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;navigator id="detailshow" url="./../home/detail/detail?id=lesson&amp;uid=tcb&amp;key=tap&amp;ENV=weapp&amp;frompage=lifecycle" class="item-link"&gt;点击链接看控制台&lt;/navigator&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e93f468452331-1" style="height: 40px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e93f468452331-1"><span class="crayon-r ">&lt;navigator </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"detailshow"</span><span class="crayon-h"> </span><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s ">"./../home/detail/detail?id=lesson&amp;uid=tcb&amp;key=tap&amp;ENV=weapp&amp;frompage=lifecycle"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"item-link"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">点击链接看控制台</span><span class="crayon-r ">&lt;/navigator&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>点击链接，发现页面仍然能够跳转到detail页面，给url所添加的数据并不会改变页面的路径，毕竟页面的路径通常是由/来控制的。</p>
+    <p>那链接携带的数据的作用是什么呢？大家发现没，<strong>本来</strong>点击的是lifecycle里的链接，但是却跳转到了detail，如果链接携带的数据一直都在，只要我们可以在detail里把链接的数据给获取到，那我们是不是实现了<strong>数据的跨页面</strong>呢？</p>
+    <p><strong>获取url参数的生命周期函数onload</strong></p>
+    <p>onload是Page页面的生命周期函数，当页面加载时触发。一个页面只会调用一次，可以在 onLoad 函数的参数中获取打开当前页面路径中的参数。</p>
+    <p>使用开发者工具，在detail.js的onload函数里添加console.log，把onload函数的参数打印出来：</p>
+            <div id="crayon-5d882f1b1e941742112512" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">onLoad: function (options) {
+      console.log(options)
+    },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e941742112512-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e941742112512-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e941742112512-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e941742112512-1"><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e941742112512-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e941742112512-3"><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>再次点击lifecycle.wxml页面的链接，会跳转到detail，页面加载时会触发生命周期回调函数onload，会打印函数里的参数options，我们可以看看控制台的打印信息。</p>
+            <div id="crayon-5d882f1b1e943830349946" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{id: "lesson", uid: "tcb", key: "tap", ENV: "weapp", frompage: "lifecycle"}</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e943830349946-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e943830349946-1"><span class="crayon-sy">{</span><span class="crayon-v">id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"lesson"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">uid</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"tcb"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">key</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"tap"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">ENV</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"weapp"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">frompage</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"lifecycle"</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>相信大家会这样的数据类型非常熟悉，它就是一个对象Object，我们可以通过点表示法，获取到对象里具体的属性，比如options.id就能显示我们在lifecycle点击的组件的id。</p>
+    <p><b>数据跨页面</b></p>
+    <p>回到之前列表渲染章节的电影列表页面（<span style="color: #800000;"><strong>你可以把之前关于电影列表的wxml和wxsss以及数据代码复制粘贴到lifecycle</strong></span>），给Navigator组件添加一些信息，找到下面的代码：</p>
+            <div id="crayon-5d882f1b1e945586957216" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active"&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e945586957216-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e945586957216-1"><span class="crayon-o">&lt;</span><span class="crayon-r">navigator</span><span class="crayon-h"> </span><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s">""</span><span class="crayon-h"> </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-media-box weui-media-box_appmsg"</span><span class="crayon-h"> </span><span class="crayon-e ">hover-class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-cell_active"</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>将其修改为如下，也就是添加id={{index}}，将每部电影的id、name、img、desc等信息写进链接</p>
+            <div id="crayon-5d882f1b1e947589106751" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;navigator url="./../home/detail/detail?id={{index}}&amp;name={{movies.name}}&amp;img={{movies.img}}&amp;desc={{movies.desc}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active"&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e947589106751-1" style="height: 40px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e947589106751-1"><span class="crayon-r ">&lt;navigator </span><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s ">"./../home/detail/detail?id={{index}}&amp;name={{movies.name}}&amp;img={{movies.img}}&amp;desc={{movies.desc}}"</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box weui-media-box_appmsg"</span><span class="crayon-h"> </span><span class="crayon-e ">hover-class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-cell_active"</span><span class="crayon-r ">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>编译之后，在lifecycle页面点击其中一部电影，我们发现所有链接还是会跳转到detail，但是控制台输出的信息却不一样，点击哪一部电影，就会在控制台输出哪部电影的信息，数据不仅实现了跨页面，还实现了点哪个显示哪个的区分。</p>
+    <p><strong>跨页面数据渲染</strong></p>
+    <p>当然我们也可以继续把数据使用setData渲染到detail页面，为方便我们仅渲染图片信息，在detail.wxml里输入：</p>
+            <div id="crayon-5d882f1b1e948825206520" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;image mode="widthFix" src="{{detail.img}}" sytle="height:auto"&gt;&lt;/image&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e948825206520-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e948825206520-1"><span class="crayon-r ">&lt;image </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{detail.img}}"</span><span class="crayon-h"> </span><span class="crayon-e ">sytle</span><span class="crayon-o">=</span><span class="crayon-s ">"height:auto"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在detail.js的data里添加一个detail对象，detail对象三个属性用来接收setData的数据，所以可以为空值：</p>
+            <div id="crayon-5d882f1b1e94a985237290" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    detail:{
+          name:"",
+          img:"",
+          desc:""
+        },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e94a985237290-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e94a985237290-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e94a985237290-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e94a985237290-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e94a985237290-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e94a985237290-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">detail</span><span class="crayon-o">:</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e94a985237290-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e94a985237290-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e94a985237290-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-s">""</span></div><div class="crayon-line" id="crayon-5d882f1b1e94a985237290-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在onload生命周期函数里将options的值赋值给detail</p>
+            <div id="crayon-5d882f1b1e94c711370928" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">onLoad: function (options) {
+      console.log(options)
+      this.setData({
+        detail: options,
+      }
+      )
+    },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e94c711370928-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e94c711370928-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e94c711370928-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e94c711370928-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e94c711370928-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e94c711370928-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d882f1b1e94c711370928-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e94c711370928-1"><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e94c711370928-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e94c711370928-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e94c711370928-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">detail</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">options</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e94c711370928-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e94c711370928-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e94c711370928-7"><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这样，我们在lifecycle里点击哪部电影，哪部电影的海报就在detai页里显示啦。</p>
+    <blockquote><p>不过使用链接url传递参数有字节限制以及只能在跨页面中使用，但是可以用来传递比如页面链接来源，可以追踪用户来自于什么设备、什么App、通过什么方式以及来自哪个朋友的邀请链接；还可以用于一些网页链接的API必备的id、key等。跨多个页面以及传递更多参数、数据等，可以使用公共数据存储app.globalData（本节会介绍）、数据缓存（后面章节会介绍）、数据库（云开发部分会介绍）以及新增的页面间通信接口<a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html" target="_blank" rel="noopener noreferrer">getOpenerEventChannel</a>（这里不多介绍）</p></blockquote>
+    <h4 id="dataset">组件携带数据dataset</h4>
+    <p>组件有公有属性和私有属性，这些属性都是数据，事件处理函数可以修改这些属性，从而让组件有丰富的表现形式。不仅如此，在组件节点中还可以<strong>附加一些自定义数据</strong>。在事件中可以获取这些自定义的节点数据，用于事件的逻辑处理，从而让组件变成相当复杂且强大的编程对象。</p>
+    <p><strong>使用JavaScript代替Navigator组件</strong></p>
+    <p>使用开发者工具在lifecycle.wxml里输入以下代码，</p>
+            <div id="crayon-5d882f1b1e94d852278917" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;image id="imageclick" src="https://img13.360buyimg.com/n7/jfs/t1/842/9/3723/77573/5b997bedE4f438e5b/ccd1077b985c7150.jpg" mode="widthFix" style="width:200rpx" bindtap="clickImage"&gt;&lt;/image&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e94d852278917-1" style="height: 40px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e94d852278917-1"><span class="crayon-r ">&lt;image </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"imageclick"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://img13.360buyimg.com/n7/jfs/t1/842/9/3723/77573/5b997bedE4f438e5b/ccd1077b985c7150.jpg"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"width:200rpx"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"clickImage"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后我们在lifecycle.js里添加如下代码，在上一节我们说过当点击组件触发事件时，逻辑层绑定该事件的处理函数会收到一个事件对象，我们仍然把这个事件对象打印出来：</p>
+            <div id="crayon-5d882f1b1e94f880286660" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  clickImage:function(event){
+        console.log('我是button',event)
+        wx.navigateTo({
+          url: "/pages/home/detail/detail?id=imageclick&amp;uid=tcb&amp;key=tap&amp;ENV=weapp&amp;frompage=lifecycle"
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e94f880286660-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e94f880286660-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e94f880286660-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e94f880286660-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e94f880286660-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e94f880286660-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e94f880286660-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">clickImage</span><span class="crayon-o">:</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e94f880286660-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'我是button'</span><span class="crayon-sy">,</span><span class="crayon-v">event</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e94f880286660-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">navigateTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e94f880286660-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"/pages/home/detail/detail?id=imageclick&amp;uid=tcb&amp;key=tap&amp;ENV=weapp&amp;frompage=lifecycle"</span></div><div class="crayon-line" id="crayon-5d882f1b1e94f880286660-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e94f880286660-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>当我们点击lifecycle页面的图片时，clickImage会收到一个事件对象，打印出来的结果里包含着target和currentTarget两个属性，currentTarget指向事件所绑定的元素，而target始终指向事件发生时的元素。由于这个案例事件绑定的元素和事件发生时的元素都是imageclick，所以它们的值相同，它们里面都包含了<strong>当前组件</strong>的id，以及dataset，那这个dataset是啥呢？</p>
+    <blockquote><p>值得强调的是很多童鞋以为只有点击Navigator组件、button组件才能进行链接跳转，这是思维定势的误区，通过bindtap，组件被赋予了一定的编程能力，尽管没有url属性，使用wx.navigateTo也能具备这种能力。</p></blockquote>
+    <p><strong>自定义属性dataset</strong></p>
+    <p>我们给上面的image加一个父级组件，这里的data-sku、data-spu和data-pid的值以及图片使用的都是京东iphone的数据。这些自定义数据以 data- 开头，多个单词由连字符 – 连接。</p>
+            <div id="crayon-5d882f1b1e951974245946" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view id="viewclick" style="background-color: red;padding:20px;" data-sku="100000177760" data-spu="100000177756" data-pid="100000177756" data-toggle="Apple iPhone XR" data-jd-color="Red" data-productBrand="Apple" bindtap="clickView"&gt;
+      &lt;image id="imageclick" src="https://img13.360buyimg.com/n7/jfs/t1/842/9/3723/77573/5b997bedE4f438e5b/ccd1077b985c7150.jpg" mode="widthFix" style="width:200rpx" bindtap="clickImage"&gt;点击button&lt;/image&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e951974245946-1" style="height: 40px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e951974245946-2" style="height: 40px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e951974245946-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e951974245946-1"><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s">"viewclick"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s">"background-color: red;padding:20px;"</span><span class="crayon-h"> </span><span class="crayon-e ">data-sku</span><span class="crayon-o">=</span><span class="crayon-s">"100000177760"</span><span class="crayon-h"> </span><span class="crayon-e ">data-spu</span><span class="crayon-o">=</span><span class="crayon-s">"100000177756"</span><span class="crayon-h"> </span><span class="crayon-e ">data-pid</span><span class="crayon-o">=</span><span class="crayon-s">"100000177756"</span><span class="crayon-h"> </span><span class="crayon-e ">data-toggle</span><span class="crayon-o">=</span><span class="crayon-s">"Apple iPhone XR"</span><span class="crayon-h"> </span><span class="crayon-e ">data-jd-color</span><span class="crayon-o">=</span><span class="crayon-s">"Red"</span><span class="crayon-h"> </span><span class="crayon-e ">data-productBrand</span><span class="crayon-o">=</span><span class="crayon-s">"Apple"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s">"clickView"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d882f1b1e951974245946-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">image </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s">"imageclick"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://img13.360buyimg.com/n7/jfs/t1/842/9/3723/77573/5b997bedE4f438e5b/ccd1077b985c7150.jpg"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s">"width:200rpx"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s">"clickImage"</span><span class="crayon-o">&gt;</span>点击<span class="crayon-v">button</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">image</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d882f1b1e951974245946-3"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在lifecycle.js里添加事件处理函数clickView，</p>
+            <div id="crayon-5d882f1b1e953137913051" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  clickView: function (event) {
+        console.log('我是view',event)
+        wx.navigateTo({
+          url:"/pages/home/detail/detail?id=viewclick&amp;uid=tcb&amp;key=tap&amp;ENV=weapp&amp;frompage=lifecycle"
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e953137913051-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e953137913051-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e953137913051-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e953137913051-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e953137913051-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e953137913051-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e953137913051-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">clickView</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e953137913051-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'我是view'</span><span class="crayon-sy">,</span><span class="crayon-v">event</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e953137913051-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">navigateTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e953137913051-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-s">"/pages/home/detail/detail?id=viewclick&amp;uid=tcb&amp;key=tap&amp;ENV=weapp&amp;frompage=lifecycle"</span></div><div class="crayon-line" id="crayon-5d882f1b1e953137913051-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e953137913051-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>当我们点击红色空白处（非图片区域）时，只会触发clickView，target与currentTarget的值相同。而当我们<span style="color: #800000;"><strong>点击图片</strong></span>时，就会<span style="color: #800000;"><strong>触发两个事件处理函数</strong></span>。</p>
+    <blockquote><p>我们点击的是图片image组件，却分别触发了绑定在image组件以及image的父级（上一级）组件view的事件处理函数，我们称这为<span style="color: #800000;"><strong>事件冒泡</strong></span>。</p></blockquote>
+    <p>注意这时clickView事件对象的currentTarget和target的值就不相同了。在点击图片的情况下<span style="color: #800000;"><strong>只有在clickView事件对象的currentTarget</strong></span>里看到dataset获取到了view组件的自定义数据。</p>
+    <blockquote><p>同时从detail页面的打印（注意两个事件的链接有id的值不同）可以看出，点击图片，跳转到的是图片绑定的事件指定的页面，页面的id为imageclick。</p></blockquote>
+    <p>我们再来观察dataset的值，发现jdColor以及productbrand，这是因为dataset会把连字符写法会转换成驼峰写法，而大写字符会自动转成小写字符。data-jd-color变成了jdColor，而data-productBrand转成了productbrand。也就是说我们点击组件，从事件对象的dataset里，我们可以<strong>通过event.currentTarget.dataset来获取组件的自定义数据。</strong></p>
+    <p><strong>点击组件显示当前组件其他数据&nbsp;</strong></p>
+    <p>通过事件对象我们不仅可以明确知道点击了什么组件，而且还可以获取当前组件的自定义数据。比如上面案例中我们可以轻松获取到京东该商品的pid，从而跳转到该商品的详情页（https://item.jd.com/京东商品的pid.html），我们可以在clickView事件处理函数里添加：</p>
+            <div id="crayon-5d882f1b1e954217130194" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let jdpid=event.currentTarget.dataset.pid
+    let pidurl = "https://item.jd.com/" + jdpid + ".html"
+    console.log(url)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e954217130194-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e954217130194-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e954217130194-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e954217130194-1"><span class="crayon-e">let </span><span class="crayon-v">jdpid</span><span class="crayon-o">=</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">currentTarget</span><span class="crayon-sy">.</span><span class="crayon-v">dataset</span><span class="crayon-sy">.</span><span class="crayon-e">pid</span></div><div class="crayon-line" id="crayon-5d882f1b1e954217130194-2"><span class="crayon-e">let </span><span class="crayon-e ">pidurl</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"https://item.jd.com/"</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">jdpid</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">".html"</span></div><div class="crayon-line" id="crayon-5d882f1b1e954217130194-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">url</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这样链接该商品的详情页就被打印出来啦~（小程序不支持navigateTo的外链跳转）。如果我们要<strong>获取当前组件的其他相关数据</strong>，使用事件对象非常方便，比如点击小图显示大图，toggle弹出其他内容等等。</p>
+    <blockquote><p>小程序也支持给data-*属性添加wxss样式，比如我们可以给data-pid添加样式，
+                <span id="crayon-5d882f1b1e956477462201" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">view</span><span class="crayon-sy">[</span><span class="crayon-e">data</span><span class="crayon-o">-</span><span class="crayon-e">pid</span><span class="crayon-sy">]</span><span class="crayon-sy">{</span><span class="crayon-v">margin</span><span class="crayon-o">:</span><span class="crayon-cn">30px</span><span class="crayon-sy">;</span><span class="crayon-sy">}</span></span></span>，data-*属性既可以类似于选择器一样的存在，也可以对它进行编程，是不是很强大？</p></blockquote>
+    <h4>小程序和页面的生命周期</h4>
+    <p>App()函数注册小程序，Page()函数注册小程序中的一个页面，他们<span style="color: #800000;"><strong>都接受的是对象Object类型的参数</strong></span>，包含一些生命周期函数和事件处理函数。App() 必须在 app.js 中调用，必须调用且只能调用一次。开发者<strong>可以添加任意的函数或数据变量到&nbsp;
+                <span id="crayon-5d882f1b1e958867401710" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-t">Object</span></span></span>参数中，用&nbsp;
+                <span id="crayon-5d882f1b1e95a599602365" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-r">this</span></span></span>&nbsp;可以访问</strong>。</p>
+    <p><strong>小程序构造器：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/App.html" target="_blank" rel="noopener noreferrer">App(Object object)</a></p>
+    <p><strong>页面构造器：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html" target="_blank" rel="noopener noreferrer">Page(Object object)</a></p>
+    <blockquote class="task"><p><strong>小任务：</strong>为什么我们不能在App()和Page()里不能直接用等号=给变量赋值？你明白了吗？注意函数语句与对象属性与方法在写法上的不同。</p></blockquote>
+    <p><strong>打印日志了解生命周期</strong></p>
+    <p>对小程序和页面的生命周期，我们可以通过打印日志的方式来了解生命周期函数具体的执行顺序和情况，使用开发者工具在app.js里给onLaunch、onShow、onHide添加一些打印日志。</p>
+            <div id="crayon-5d882f1b1e95c609126484" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLaunch(opts) {
+        console.log('onLaunch监听小程序初始化。',opts)
+      },
+      onShow(opts) {
+        console.log('onShow监听小程序启动或切前台',opts)
+      },
+      onHide() {
+        console.log('onHide监听小程序切后台')
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d882f1b1e95c609126484-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">onLaunch</span><span class="crayon-sy">(</span><span class="crayon-v">opts</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'onLaunch监听小程序初始化。'</span><span class="crayon-sy">,</span><span class="crayon-v">opts</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">onShow</span><span class="crayon-sy">(</span><span class="crayon-v">opts</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'onShow监听小程序启动或切前台'</span><span class="crayon-sy">,</span><span class="crayon-v">opts</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">onHide</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'onHide监听小程序切后台'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e95c609126484-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>想必大家已经注意，有的参数写的options，有的写的却是opts；前面事件对象有的写的是event，有的则用的是e，这个参数都是可以自定义的哦</p></blockquote>
+    <p>以及在lifecylce.js的js里添加</p>
+            <div id="crayon-5d882f1b1e95e583981366" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLoad: function(options) {
+        console.log("onLoad监听页面加载",options)
+      },
+      onReady: function() {
+        console.log("onReady监听页面初次渲染完成")
+      },
+      onShow: function() {
+        console.log("onShow监听页面显示")
+      },
+      onHide: function() {
+        console.log("onHide监听页面隐藏")
+      },
+      onUnload: function() {
+        console.log("onUnload监听页面卸载")
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d882f1b1e95e583981366-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"onLoad监听页面加载"</span><span class="crayon-sy">,</span><span class="crayon-v">options</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onReady</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"onReady监听页面初次渲染完成"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onShow</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"onShow监听页面显示"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onHide</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"onHide监听页面隐藏"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onUnload</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"onUnload监听页面卸载"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e95e583981366-15"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>通过在模拟器执行各种动作，比如编译、点击转发按钮、点击小程序转发按钮旁的关闭按钮（并没有关闭）、页面切换等来了解生命周期函数的<strong>执行顺序</strong>（比如页面生命周期），对切前台和切后台、页面的加载、渲染、显示、隐藏、卸载有一定的了解。</p>
+    <blockquote><p>前面我们已经了解到，通过点击事件可以触发事件处理函数，也就是需要用户来点击某个组件才能触发；这里页面的生命周期函数也可以触发事件处理函数，它不需要用户点击组件，只需要用户打开小程序、打开某个页面，把小程序切后台等情况时就能触发里面的函数。</p></blockquote>
+    <p><strong>小程序打开场景值</strong></p>
+    <p>在&nbsp;
+                <span id="crayon-5d882f1b1e95f289359644" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">App</span></span></span>&nbsp;的&nbsp;
+                <span id="crayon-5d882f1b1e961495294448" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onLaunch</span></span></span>&nbsp;和&nbsp;
+                <span id="crayon-5d882f1b1e963806537990" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onShow</span></span></span>打印的对象里有一个scene为1001，这个是场景值。场景值用来描述用户进入小程序的路径方式。用户进入你的小程序的方式有很多，比如有的是扫描二维码、有的是长按图片识别二维码，有的是通过微信群进入的小程序，有的是朋友单聊进入的小程序，有的是通过公众号进入的小程序等等，这些就是场景值，而具体的场景值，可以看技术文档，场景值对产品、运营来说非常重要。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/scene-list.html" target="_blank" rel="noopener noreferrer">场景值列表</a></p>
+    <p><strong>onLaunch与onShow</strong></p>
+    <p>onLaunch是监听小程序的初始化，初始化完成时触发，<strong>全局只会触发一次</strong>，所以在这里我们可以用来执行获取用户登录信息的函数等一些非常核心的数据，如果onLaunch的函数过多，会影响小程序的启动速度。</p>
+    <p>onShow是在小程序启动，或从后台进入前台显示时触发，也就是<strong>它会触发很多次</strong>，在这里就不大适合放获取用户登录信息的函数啦。这两者的区别要注意。</p>
+    <h4>用户登录与信息获取</h4>
+    <p>小程序用户登录和获取用户信息相对来说比较复杂，为了能够让大家可以更加直观的结合我们之前的知识来一步步探究到底是怎么一回事，建议大家重<strong>新建一个</strong><span style="color: #800000;"><strong>不使用云服务</strong></span>的小程序项目。</p>
+    <p><strong>了解wx.login、wx.getSetting</strong></p>
+    <p>使用开发者工具将app.js的代码修改为如下（可以把之前的全部删掉或注释掉，把下面代码复制粘贴过去）。<strong>了解一个函数一个API，实战方面从打印日志开始，而理论方面从技术文档开始</strong>。</p>
+            <div id="crayon-5d882f1b1e964798492129" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">App({
+      onLaunch: function () {
+        wx.login({
+          success(res){
+            console.log('wx.login得到的数据',res)
+          }
+        })
+    
+        wx.getSetting({
+          success(res){
+            console.log('wx.getSetting得到的数据',res)
+          }
+        })
+      },
+    
+      globalData: {
+        userInfo: null
+      }
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d882f1b1e964798492129-19" style="height: 20px;">19</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e964798492129-1"><span class="crayon-e">App</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onLaunch</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">login</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'wx.login得到的数据'</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-8">&nbsp;</div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getSetting</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'wx.getSetting得到的数据'</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-14"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-15">&nbsp;</div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">globalData</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">userInfo</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">null</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-18"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e964798492129-19"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>模板小程序用的是箭头函数的写法，大家可以结合之前关于箭头函数的介绍、模板小程序的代码和上面的写法对照来学习。</p></blockquote>
+    <p>从控制台可以看到wx.login会得到errMsg和code，这个code是用户的登录凭证。而wx.getSetting则会得到errMsg和用户当前的<a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/setting/AuthSetting.html" target="_blank" rel="noopener noreferrer">权限设置authSetting</a>，包含是否允许获取用户信息，是否允许获取用户位置，是否允许使用手机相册等权限。我们可以根据打印的结果结合技术文档来深入理解。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html" target="_blank" rel="noopener noreferrer">获取用户登录凭证wx.login</a>、<a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/setting/wx.getSetting.html" target="_blank" rel="noopener noreferrer">获取用户当前权限设置wx.getSetting</a></p>
+    <blockquote><p>如果要让小程序和自己的服务器账号打通，仅仅获取用户登录凭证是不够的，需要将这个code以及你的小程序appid和appSecret传回到你的开发服务器，然后在自己的服务器上调用<a href="https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html" target="_blank" rel="noopener noreferrer">auth.code2session</a>接口，得到用户的openid和session_key。由于openid是当前用户的唯一标识，可以用来判断该用户是否已经在自己的服务器上注册过，如果注册过，则根据openid生成自定义登录态并返回给小程序，整个过程非常复杂。而由于<span style="color: #800000;"><strong>云开发与微信登录鉴权无缝整合</strong></span>，这些内容都不会涉及，所以这里不多介绍。</p></blockquote>
+    <p><strong>获取用户信息wx.getUserInfo</strong></p>
+    <p>我们要获取用户信息，首先需要判断用户是否允许，可以从authSetting对象里看scope.userInfo属性是否为true，如果为true，那我们可以调用wx.getUserInfo()接口来获取用户信息。</p>
+    <p>使用开发者工具给上面的wx.getSetting()函数添加内容，最终代码如下：</p>
+            <div id="crayon-5d882f1b1e966525141087" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    wx.getSetting({
+          success(res){
+            console.log('wx.getSetting得到的数据',res)
+            if (res.authSetting["scope.userInfo"]){
+              wx.getUserInfo({
+                success(res){
+                  console.log("wx.getUserInfo得到的数据",res)
+                }
+              })
+            }
+          }
+        })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d882f1b1e966525141087-12" style="height: 20px;">12</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e966525141087-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getSetting</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'wx.getSetting得到的数据'</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">authSetting</span><span class="crayon-sy">[</span><span class="crayon-s">"scope.userInfo"</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getUserInfo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"wx.getUserInfo得到的数据"</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e966525141087-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>由于scope.userInfo是一个属性名，无法使用点表示法res.authSetting.scope.userInfo来获取到它的值（会误认为是authSetting属性下的scope属性的usrInfo属性值），这里用到的是获取对象属性的另外一种表示方法，叫括号表示法，也就是用中括号[]围住属性名，属性名需用单引号或双引号围住。</p></blockquote>
+    <p>在控制台console我们可以看到<a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/UserInfo.html" target="_blank" rel="noopener noreferrer">userInfo对象</a>里包含着当前登录用户的昵称、头像、性别等信息。</p>
+    <p><strong>globalData</strong></p>
+    <p>但是这个数据是在app.js里，和我们之前接触到的数据都在页面的js文件里有不同。而且这个用户信息的数据是所有页面都通用的，放在app.js里公用是应该的，但是我们要怎么才能调用到这个数据呢？</p>
+    <p>globalData对象通常用来存放整个小程序都会使用到的数据，比如我们可以把用户信息赋值给globalData的任意自定义属性。模板小程序已经声明了一个userInfo属性，我们也可以自定义其他属性名，比如（后面我们会用到）</p>
+            <div id="crayon-5d882f1b1e968778731243" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  tcbData:{
+        title:"云开发训练营",
+        year:2019,
+        company:"腾讯Tencent"
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e968778731243-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e968778731243-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e968778731243-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e968778731243-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e968778731243-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e968778731243-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">tcbData</span><span class="crayon-o">:</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e968778731243-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-s">"云开发训练营"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e968778731243-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">year</span><span class="crayon-o">:</span><span class="crayon-cn">2019</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d882f1b1e968778731243-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">company</span><span class="crayon-o">:</span><span class="crayon-s">"腾讯Tencent"</span></div><div class="crayon-line" id="crayon-5d882f1b1e968778731243-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在上面的wx.getUserInfo的success回调函数里将获取到的userInfo对象赋值给globalData对象的userInfo属性。</p>
+            <div id="crayon-5d882f1b1e96a492393863" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.getUserInfo({
+      success(res){
+        console.log("wx.getUserInfo得到的数据",res)
+        this.globalData.userInfo = res.userInfo
+      }
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e96a492393863-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e96a492393863-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e96a492393863-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e96a492393863-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e96a492393863-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e96a492393863-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e96a492393863-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getUserInfo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e96a492393863-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e96a492393863-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"wx.getUserInfo得到的数据"</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e96a492393863-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">userInfo</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-i">userInfo</span></div><div class="crayon-line" id="crayon-5d882f1b1e96a492393863-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e96a492393863-6"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>但是会提示
+                <span id="crayon-5d882f1b1e96c637455986" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">Cannot </span><span class="crayon-e">read </span><span class="crayon-m">property</span><span class="crayon-h"> </span><span class="crayon-s">'globalData'</span><span class="crayon-h"> </span><span class="crayon-e">of </span><span class="crayon-v">undefined</span><span class="crayon-sy">;</span></span></span>报错，但是模板小程序也是这样写代码的为什么却没有报错？这是因为箭头函数的this与非箭头函数this指向有不同。</p>
+    <p><strong>that与this</strong></p>
+    <p>this的指向情况非常复杂，尽管<strong>哪个对象调用函数，函数里面的this就指向哪个对象</strong>，说起来非常简单，但是场景太多，大家在开发时不必强行理解，死记硬背，把this打印出来即可。我们可以将回调函数success的this打印出来，</p>
+            <div id="crayon-5d882f1b1e96d553325373" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">success(res){
+      console.log('this是啥',this)
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e96d553325373-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e96d553325373-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e96d553325373-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e96d553325373-1"><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e96d553325373-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'this是啥'</span><span class="crayon-sy">,</span><span class="crayon-r">this</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e96d553325373-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>结果是this&nbsp;undefined，并没有定义，和我们预计的是Page()函数对象并不一致，给它的this.globalData赋值当然会报错。</p>
+    <p>解决方法有两种，一种是模板小程序使用箭头函数，箭头函数继承的是外部对象的this，我们可以把代码wx.getSetting()里的success回调函数的写法<strong>都</strong>改为箭头函数的写法（这里有两个，只改一个行不行？试试看），这时我们可以再来打印this，看看是什么情况。</p>
+    <p>在控制台我们可以看到改为箭头函数之后的this的结果为一个pe对象，里面包含着Page()对象的生命周期函数和属性。</p>
+    <p>第二种方法是使用that指代，在wx.getSetting()函数的前面写一行代码：</p>
+            <div id="crayon-5d882f1b1e96f556381673" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let that=this
+    wx.getSetting({............}) //为了便于你找位置</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e96f556381673-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e96f556381673-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e96f556381673-1"><span class="crayon-e">let </span><span class="crayon-v">that</span><span class="crayon-o">=</span><span class="crayon-r">this</span></div><div class="crayon-line" id="crayon-5d882f1b1e96f556381673-2"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getSetting</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//为了便于你找位置</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后把wx.getUserInfo的success回调函数的改为如下：</p>
+            <div id="crayon-5d882f1b1e970732362508" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.getUserInfo({
+      success: res =&gt;{
+        console.log('that是啥',that)
+        console.log("wx.getUserInfo得到的数据",res)
+        that.globalData.userInfo = res.userInfo
+      }
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e970732362508-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e970732362508-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e970732362508-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e970732362508-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e970732362508-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e970732362508-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d882f1b1e970732362508-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e970732362508-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getUserInfo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e970732362508-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e970732362508-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'that是啥'</span><span class="crayon-sy">,</span><span class="crayon-v">that</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e970732362508-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"wx.getUserInfo得到的数据"</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e970732362508-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">that</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">userInfo</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-i">userInfo</span></div><div class="crayon-line" id="crayon-5d882f1b1e970732362508-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e970732362508-7"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>由于情况复杂，this的指向经常会变，但是在this的指向还是Page()对象时，我们就把this赋值给that，这样就不会因为this指向变更而出现undefined了。</p>
+    <p><strong>getApp()</strong></p>
+    <p>那我们如何在页面的js里调用globalData呢，这个时候就需要用到getApp()函数啦。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/getApp.html" target="_blank" rel="noopener noreferrer">getApp()</a></p>
+    <p>使用开发者工具新建一个user页面，然后在user.js的Page()函数前面添加如下代码：</p>
+            <div id="crayon-5d882f1b1e972641851568" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let app = getApp()
+    console.log('user页面打印的app', app)
+    console.log('user页面打印的globalData', app.globalData.userInfo)
+    console.log('user页面打印的tcbData',app.tcbData.eventInfo)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e972641851568-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e972641851568-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e972641851568-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e972641851568-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e972641851568-1"><span class="crayon-e">let </span><span class="crayon-v">app</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">getApp</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e972641851568-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'user页面打印的app'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e972641851568-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'user页面打印的globalData'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">userInfo</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e972641851568-4"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'user页面打印的tcbData'</span><span class="crayon-sy">,</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">tcbData</span><span class="crayon-sy">.</span><span class="crayon-v">eventInfo</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这样我们就能获取app.js里的globalData和自定义的属性了。</p>
+    <blockquote><p>这里还会有一个问题，就是尽管我们已经获取到了globalData，我们也能在globalData.userInfo的打印日志里看到用户的信息，但是当我们想获取里面的值时，还是会报错，这是因为
+                <span id="crayon-5d882f1b1e974369780949" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">getUserInfo</span></span></span>是异步获取的信息，这里涉及到的异步，我们之后会详细介绍。<span style="font-size: 20px; font-weight: bold; color: #2b2b2b;">&nbsp;</span></p></blockquote>
+    <h4>通过button来获取用户信息</h4>
+    <p>在我们使用wx.getUserInfo的方式来获取用户信息时，控制台会报错：
+                <span id="crayon-5d882f1b1e975266496602" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">获取<span class="crayon-h"> </span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-i">getUserInfo</span><span class="crayon-h"> </span>接口后续将不再出现授权弹窗，请注意升级</span></span>。也就是小程序官方已经不建议开发者用wx.getUserInfo来获取用户信息了，而是建议通过button的方式来获取，对用户的体验更好，也就是用户只有点击了按钮，用户信息才会被获取。</p>
+    <p>使用开发者工具在user.wxml里输入以下代码，这是一个button组件，要获取到用户信息，有两个必备条件，一是
+                <span id="crayon-5d882f1b1e977777944233" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">open</span><span class="crayon-o">-</span><span class="crayon-v">type</span><span class="crayon-o">=</span><span class="crayon-s">"getUserInfo"</span></span></span>，必须是这个值；二是绑定事件处理函数的属性名为bindgetuserinfo（类似于bindtap，但是属性名必须为bindgetuserinfo，至于事件处理函数的名称可以自定义）</p>
+            <div id="crayon-5d882f1b1e979689834311" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button open-type="getUserInfo" bindgetuserinfo="getUserInfomation"&gt; 点击获取用户信息 &lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e979689834311-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e979689834311-1"><span class="crayon-o">&lt;</span><span class="crayon-e">button </span><span class="crayon-r">open</span><span class="crayon-e ">-type</span><span class="crayon-o">=</span><span class="crayon-s">"getUserInfo"</span><span class="crayon-h"> </span><span class="crayon-e ">bindgetuserinfo</span><span class="crayon-o">=</span><span class="crayon-s">"getUserInfomation"</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span>点击获取用户信息<span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">button</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里的getUserInfomation和之前点击事件的事件处理函数是一致的，点击组件触发getUserInfomation，仍然会收到事件对象，我们把它打印出来，在user.js里添加以下代码：</p>
+            <div id="crayon-5d882f1b1e97a223843106" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  getUserInfomation: function (event) {
+        console.log('getUserInfomation打印的事件对象',event)
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e97a223843106-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e97a223843106-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e97a223843106-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e97a223843106-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">getUserInfomation</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e97a223843106-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'getUserInfomation打印的事件对象'</span><span class="crayon-sy">,</span><span class="crayon-v">event</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e97a223843106-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>当我们点击“<strong>点击获取用户信息</strong>”的button按钮后，在控制台可以查看到getUserInfomation打印的事件对象，事件对象里有个detail属性，里面就有userInfo的数据，这个具体如何调用，详细大家结合之前学过的知识应该有所了解。</p>
+    <p>首先在user.js的data里初始化一个userInfo对象，用来接收数据：</p>
+            <div id="crayon-5d882f1b1e97c528401296" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        userInfo:{}
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e97c528401296-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e97c528401296-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e97c528401296-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e97c528401296-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e97c528401296-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">userInfo</span><span class="crayon-o">:</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d882f1b1e97c528401296-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在事件处理函数getUserInfomation获取到的userInfo通过this.setData赋值给它，也就是getUserInfomation的函数为</p>
+            <div id="crayon-5d882f1b1e97e815286150" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  getUserInfomation: function (event) {
+        console.log('getUserInfomation打印的事件对象',event)
+        this.setData({ 
+          userInfo: event.detail.userInfo, 
+          })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e97e815286150-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e97e815286150-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e97e815286150-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e97e815286150-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e97e815286150-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e97e815286150-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e97e815286150-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">getUserInfomation</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e97e815286150-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'getUserInfomation打印的事件对象'</span><span class="crayon-sy">,</span><span class="crayon-v">event</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e97e815286150-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d882f1b1e97e815286150-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">userInfo</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">detail</span><span class="crayon-sy">.</span><span class="crayon-v">userInfo</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d882f1b1e97e815286150-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e97e815286150-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这时data里的userInfo就有用户信息了，我们可以在user.wxml添加以下代码来将数据渲染出来。</p>
+            <div id="crayon-5d882f1b1e97f189439421" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view&gt;{{userInfo.nickName}}&lt;/view&gt;
+    &lt;view&gt;{{userInfo.country}}&lt;/view&gt;
+    &lt;image mode="widthFix" style="width:64px;height:64px" src="{{userInfo.avatarUrl}}"&gt;&lt;/image&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e97f189439421-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e97f189439421-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e97f189439421-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e97f189439421-1"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">userInfo</span><span class="crayon-sy">.</span><span class="crayon-v">nickName</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d882f1b1e97f189439421-2"><span class="crayon-o">&lt;</span><span class="crayon-e">view</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">userInfo</span><span class="crayon-sy">.</span><span class="crayon-v">country</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-c ">/view&gt;</span></div><div class="crayon-line" id="crayon-5d882f1b1e97f189439421-3"><span class="crayon-c ">&lt;image mode="widthFix" style="width:64px;height:64px" src="{{userInfo.avatarUrl}}"&gt;&lt;/i</span><span class="crayon-v">mage</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>当我们再次点击“<strong>点击获取用户信息</strong>”的button按钮后，数据就渲染出来了。</p>
+    <p><strong>将用户信息写进app.js</strong></p>
+    <p>这种方式只能在user页面才能获取到用户信息，限制非常大，那我们应该怎么做呢？我们要把获取到的用户信息写到app.js成为页面的公共信息，以后可以跨页面只需在user页面点击一次按钮即可。</p>
+    <p>在getUserInfomation将获取到的用户信息传给globalData的userInfo属性：</p>
+            <div id="crayon-5d882f1b1e981415246386" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  getUserInfomation: function (event) {
+        console.log('getUserInfomation打印的事件对象',event)
+        app.globalData.userInfo = event.detail.userInfo
+        this.setData({ 
+          userInfo: event.detail.userInfo, 
+          })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d882f1b1e981415246386-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d882f1b1e981415246386-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d882f1b1e981415246386-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d882f1b1e981415246386-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d882f1b1e981415246386-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d882f1b1e981415246386-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d882f1b1e981415246386-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d882f1b1e981415246386-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">getUserInfomation</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d882f1b1e981415246386-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'getUserInfomation打印的事件对象'</span><span class="crayon-sy">,</span><span class="crayon-v">event</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e981415246386-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">userInfo</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">detail</span><span class="crayon-sy">.</span><span class="crayon-e">userInfo</span></div><div class="crayon-line" id="crayon-5d882f1b1e981415246386-4"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d882f1b1e981415246386-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">userInfo</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">detail</span><span class="crayon-sy">.</span><span class="crayon-v">userInfo</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d882f1b1e981415246386-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d882f1b1e981415246386-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>关于用户登录以及信息获取，这里我们只是梳理了一些比较核心的知识点，还有一些大家可以去参考模板小程序里的代码，这里有一套相对比较完整的案例。更具有实际开发意义的用户登录，之后会在云开发部分介绍。</p>
+    <blockquote><p>获取用户信息还有一种方式，就是通过组件<a href="https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html" target="_blank" rel="noopener noreferrer">&lt;open-data&gt;</a>来展示，由于比较简单，这里就不多介绍啦。</p></blockquote>
+	
+                </div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
