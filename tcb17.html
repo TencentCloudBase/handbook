@@ -1,0 +1,897 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 网络API评论Feed" href="https://cloudbasegroup.org/handbook/weappjs/45/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="WeUI框架" href="https://cloudbasegroup.org/handbook/weapp/25">
+    <link rel="next" title="图片、缓存与文件" href="https://cloudbasegroup.org/handbook/weappjs/43">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weappjs/45">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=45">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweappjs%2F45">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweappjs%2F45&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-45 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+                <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                          <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/tcb11.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            小程序与JavaScript			</h1>
+                          </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                     <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb11.html">
+                                    JavaScript入门					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb12.html">
+                                    点击事件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb13.html">
+                                    页面渲染					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb14.html">
+                                    生命周期					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb15.html">
+                                    数据表单					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb16.html">
+                                    图片、缓存与文件					</a>
+                            </li>
+                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb17.html">
+                                    网络API					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">网络API</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>数据和文件是小程序开发非常重要的元素，在前面的章节里，数据和文件等的存储都是在小程序的页面进行渲染、或是页面间传递或与本地手机交互。这一节我们会来介绍数据、文件如何与网络HTTP进行数据、文件的对话，如何获取并上传网络数据和文件。</p>
+    <h4>数据API</h4>
+    <p>小程序以及很多程序的API是<strong>预先就已经写好的函数</strong>，使我们不需要对底层有太多了解，只需要按照技术文档进行传递参数就能调用出非常复杂的功能。而还有一类API则侧重于把<strong>数据资源</strong>给开放出来，我们可以通过<strong>HTTP的方式</strong>来使用这些数据。</p>
+    <p><strong>了解网络数据API</strong></p>
+    <p>复制以下链接地址，用浏览器打开，看看会返回什么结果：</p>
+            <div id="crayon-5d897c0a948c3406380054" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">//知乎日报的最新话题
+    https://news-at.zhihu.com/api/4/news/latest
+    
+    //知乎日报某一个话题的内容
+    https://news-at.zhihu.com/api/4/news/9714883
+    
+    //v2ex论坛的最新主题
+    https://www.v2ex.com/api/topics/latest.json
+    
+    //CNode论坛的最新话题
+    https://cnodejs.org/api/v1/topics</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a948c3406380054-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948c3406380054-1"><span class="crayon-c">//知乎日报的最新话题</span></div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-2"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//news-at.zhihu.com/api/4/news/latest</span></div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-3">&nbsp;</div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-4"><span class="crayon-c">//知乎日报某一个话题的内容</span></div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-5"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//news-at.zhihu.com/api/4/news/9714883</span></div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-6">&nbsp;</div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-7"><span class="crayon-c">//v2ex论坛的最新主题</span></div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-8"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//www.v2ex.com/api/topics/latest.json</span></div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-9">&nbsp;</div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-10"><span class="crayon-c">//CNode论坛的最新话题</span></div><div class="crayon-line" id="crayon-5d897c0a948c3406380054-11"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//cnodejs.org/api/v1/topics</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>以上所返回的数据类型都是json格式，相信大家应该比较熟悉了。那我们如何把以上数据渲染到我们的小程序页面上呢？</p>
+    <blockquote><p>数据是一种资源，比如新闻资讯、电商商品、公众号文章、股市行情、空气质量和天气、地图、词典翻译、快递信息、书籍信息、音乐视频、财务公司信息等等这些都是数据，数据也是一种商品，一种服务，通常它的使用对象是开发者，有些免费，有些也会收取一定的费用，大家可以通过综合性API服务平台<a href="https://www.juhe.cn/" target="_blank" rel="noopener noreferrer">聚合API</a>来对API服务有一个基础的了解。</p></blockquote>
+    <p><strong>练手API资源推荐</strong></p>
+    <p>这里推荐几个程序员经常会拿来练手的API资源，你可以使用这些API来做网站、小程序、移动端（iOS、安卓）、桌面端，也可以用于各种框架比如Vue、React、Flutter等等，数据没变，只是解决方案不同。</p>
+    <ul>
+    <li><a href="https://www.juhe.cn/" target="_blank" rel="noopener noreferrer">聚合API</a>：一个比较全面的综合性API服务平台</li>
+    <li><a href="https://www.jisuapi.com/" target="_blank" rel="noopener noreferrer">即速API</a>：也是提供一些综合性的API服务</li>
+    <li><a href="https://www.v2ex.com/p/7v9TEc53" target="_blank" rel="noopener noreferrer">V2EX API</a>：v2ex论坛是很多程序员经常会光顾的综合性技术论坛</li>
+    <li><a href="https://cnodejs.org/api/" target="_blank" rel="noopener noreferrer">CNode API</a>：Nodejs交流论坛</li>
+    <li><a href="https://www.heweather.com/" target="_blank" rel="noopener noreferrer">和风天气</a>：含天气预报、空气质量、实况天气等数据</li>
+    <li><a href="https://developer.github.com/v3/" target="_blank" rel="noopener noreferrer">Github API</a>：Github是所有程序员都（必须）会使用的网站</li>
+    <li><a href="https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90" target="_blank" rel="noopener noreferrer">知乎日报API</a>：知乎日报API分析</li>
+    </ul>
+    <blockquote><p>各大公司的开发平台：比如<a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;lang=zh_CN&amp;tab=dev" target="_blank" rel="noopener noreferrer">微信开放平台</a>提供了微信账号体系的接入，<a href="https://cloud.tencent.com/document/api" target="_blank" rel="noopener noreferrer">腾讯云API中心</a>则提供了调用云资源的能力（包含服务器、物联网、人工智能等API）、<a href="https://developer.wordpress.org/rest-api/reference/" target="_blank" rel="noopener noreferrer">开源网站Wordpress</a>也提供API调用的服务，在API资源的开放方面，国外也做得比较领先（<a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener noreferrer">国外免费API列表</a>）。而对于特定的数据资源，也可以通过爬虫等方式来自建。</p></blockquote>
+    <h4>渲染网络数据到页面</h4>
+    <p>要渲染从API里获取到的数据，首先我们需要对API里的字段（属性）到底是干什么的要有一定的了解。比如知乎日报的API字段如下，这个可以从<span style="color: #800000;"><strong>API相关的文档里了解到以及需要我们结合Console.log来对比了解</strong></span>。</p>
+    <p>比如<strong>date</strong>&nbsp;: 日期；<strong>stories</strong>&nbsp;: 当日新闻；<strong>title</strong>&nbsp;: 新闻标题；<strong>images</strong>&nbsp;: 图像地址；<strong>id</strong>&nbsp;:&nbsp;<strong>url</strong>&nbsp;与&nbsp;<strong>share_url</strong>&nbsp;中最后的数字为内容的 id；<strong>top_stories</strong>&nbsp;: 界面顶部轮播的显示内容，这些在做数据渲染前就需要有所了解。</p>
+    <p><strong>获取网络数据</strong></p>
+    <p>使用开发者工具新建一个request页面，然后在request.js里的onLoad生命周期函数里输入以下代码：</p>
+            <div id="crayon-5d897c0a948ca119739884" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLoad: function (options) {
+        wx.request({
+          url: 'https://news-at.zhihu.com/api/4/news/latest', //知乎日报最新话题
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success(res) {
+            console.log('网络请求成功之后获取到的数据',res)
+            console.log('知乎日报最新话题',res.data)
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d897c0a948ca119739884-12" style="height: 20px;">12</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948ca119739884-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">request</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'https://news-at.zhihu.com/api/4/news/latest'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//知乎日报最新话题</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">header</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'content-type'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'application/json'</span><span class="crayon-h"> </span><span class="crayon-c">// 默认值</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'网络请求成功之后获取到的数据'</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'知乎日报最新话题'</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948ca119739884-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>域名校验与白名单</strong></p>
+    <p>编译之后，在控制台Console你会看到如下报错，你的域名不在域名白名单里面，这是因为小程序<strong>只可以跟指定的域名与进行网络通信</strong>。</p>
+            <div id="crayon-5d897c0a948ce533165441" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">request:fail url not in domain list</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948ce533165441-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948ce533165441-1"><span class="crayon-v">request</span><span class="crayon-o">:</span><span class="crayon-e">fail </span><span class="crayon-e">url </span><span class="crayon-st">not</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-e">domain </span><span class="crayon-v">list</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>解决方法有两种，一是打开开发者工具<strong>工具栏右上角</strong>的<strong>详情</strong>，勾选<strong>不校验合法域名、业务域名、TLS版本以及HTTPS证书</strong>；二是你可以去小程序的<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener noreferrer">管理后台</a>（注册小程序时的页面），点击<strong>开发</strong>–<strong>开发设置</strong>，在<strong>request合法域名</strong>处添加该域名（如果你不想把这个小程序发布上线，没有必要添加）。</p>
+    <p><strong>res对象和res.data对象</strong></p>
+    <p>编译之后，在控制台Console就可以看到打印的<strong>res对象</strong>，以及<strong>res里的data对象</strong>。res.data的数据正是我们使用浏览器打开链接所得到的json数据，结合我们之前学到的数据渲染方面的知识，相信大家应该对如何将数据渲染到页面就不会感到陌生了。</p>
+    <p>在打印的res对象有一些参数，比如<strong>cookies</strong>、<strong>header</strong>、<strong>statusCode</strong>这些是什么意思呢？我们可以来结合技术文档深入了解。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html" target="_blank" rel="noopener noreferrer">wx.request网络数据请求</a></p>
+    <ul>
+    <li><strong>statusCode：</strong>开发者服务器返回的<strong> HTTP 状态码</strong>，也就是指示HTTP请求是否成功，其中<strong>200为请求成功</strong>，<strong>404请求失败</strong>，更多状态码的知识可以查阅<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status" target="_blank" rel="noopener noreferrer">MDN HTTP响应代码</a></li>
+    <li><strong>header：</strong>开发者服务器返回的 HTTP消息头，其中Content-Type为服务器文档的<strong>MIME 类型</strong>，API的MIME类型通常为
+                <span id="crayon-5d897c0a948d0754813138" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-s">"application/json; charset=UTF-8"</span></span></span>，建议服务器返回值使用&nbsp;<strong>UTF-8</strong>&nbsp;编码（如果你有服务器的话）。</li>
+    <li>wx.request只能发起 HTTPS 请求，默认超时时间为60s，最大并发限制为10个</li>
+    </ul>
+    <blockquote class="task"><p><strong>小任务：</strong>把request的链接换成v2ex、cnode论坛的API链接以及知乎日报某一个话题的内容API，看看是什么结果？你知道返回来的json数据的每一条属性代表的意思吗？</p></blockquote>
+    <h4>将数据渲染到页面</h4>
+    <p>既然我们已经从知乎日报的API取得了数据，那渲染数据的方法以及如何实现跨页面渲染，在前面的章节我们已经就有所了解了。</p>
+    <p><strong>简单的知乎日报首页</strong></p>
+    <p>使用开发者工具在request.wxml里输入weui的列表样式（需要引入weui框架哦）</p>
+            <div id="crayon-5d897c0a948d2628621798" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="page__bd"&gt;
+        &lt;view class="weui-panel weui-panel_access"&gt;
+            &lt;view class="weui-panel__bd" wx:for="{{stories}}" wx:for-item="stories" wx:key="*item"&gt;
+                &lt;navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active"&gt;
+                    &lt;view class="weui-media-box__hd weui-media-box__hd_in-appmsg"&gt;
+                        &lt;image class="weui-media-box__thumb" mode="widthFix" src="{{stories.images[0]}}" sytle="height:auto"&gt;&lt;/image&gt;
+                    &lt;/view&gt;
+                    &lt;view class="weui-media-box__bd weui-media-box__bd_in-appmsg"&gt;
+                        &lt;view class="weui-media-box__title"&gt;{{stories.title}}&lt;/view&gt;
+                    &lt;/view&gt;
+                &lt;/navigator&gt;
+            &lt;/view&gt;
+        &lt;/view&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-6" style="height: 40px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d897c0a948d2628621798-14" style="height: 20px;">14</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948d2628621798-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"page__bd"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-panel weui-panel_access"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-panel__bd"</span><span class="crayon-h"> </span>wx<span class="crayon-o">:</span><span class="crayon-e ">for</span><span class="crayon-o">=</span><span class="crayon-s ">"{{stories}}"</span><span class="crayon-h"> </span>wx<span class="crayon-o">:</span><span class="crayon-e ">for-item</span><span class="crayon-o">=</span><span class="crayon-s ">"stories"</span><span class="crayon-h"> </span>wx<span class="crayon-o">:</span><span class="crayon-e ">key</span><span class="crayon-o">=</span><span class="crayon-s ">"*item"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;navigator </span><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s ">""</span><span class="crayon-h"> </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box weui-media-box_appmsg"</span><span class="crayon-h"> </span><span class="crayon-e ">hover-class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-cell_active"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__hd weui-media-box__hd_in-appmsg"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__thumb"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{stories.images[0]}}"</span><span class="crayon-h"> </span><span class="crayon-e ">sytle</span><span class="crayon-o">=</span><span class="crayon-s ">"height:auto"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__bd weui-media-box__bd_in-appmsg"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-media-box__title"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">{{stories.title}}</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-11"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/navigator&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-13"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948d2628621798-14"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在request.js的data里声明date、stories、top_stories的初始值（使用的变量和API的字段尽量保持一致，这样就不容易混乱）</p>
+            <div id="crayon-5d897c0a948d4580243654" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        date:"",
+        stories:[],
+        top_stories:[],
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948d4580243654-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948d4580243654-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948d4580243654-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948d4580243654-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948d4580243654-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948d4580243654-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948d4580243654-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">date</span><span class="crayon-o">:</span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948d4580243654-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">stories</span><span class="crayon-o">:</span><span class="crayon-sy">[</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948d4580243654-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">top_stories</span><span class="crayon-o">:</span><span class="crayon-sy">[</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948d4580243654-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在onLoad生命周期函数里将数据通过setData的方式给赋值给data：</p>
+            <div id="crayon-5d897c0a948d6900702500" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLoad: function (options) {
+        let that=this
+        wx.request({
+          url: 'https://news-at.zhihu.com/api/4/news/latest', 
+          header: {
+            'content-type': 'application/json' 
+          },
+          success(res) {
+            let date=res.data.date
+            let stories=res.data.stories
+            let top_stories = res.data.top_stories
+            that.setData({
+              date,stories,top_stories
+            })
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d897c0a948d6900702500-17" style="height: 20px;">17</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948d6900702500-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">that</span><span class="crayon-o">=</span><span class="crayon-r">this</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">request</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'https://news-at.zhihu.com/api/4/news/latest'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">header</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'content-type'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'application/json'</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">date</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">date</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-10"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">stories</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">stories</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-11"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">top_stories</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">top_stories</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-12"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">that</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">date</span><span class="crayon-sy">,</span><span class="crayon-v">stories</span><span class="crayon-sy">,</span><span class="crayon-v">top</span><span class="crayon-sy">_</span>stories</div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948d6900702500-17"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>编译之后，我们就能看到知乎日报的数据就渲染在页面上了。</p>
+    <blockquote class="task"><p><strong>小任务：</strong>
+                <span id="crayon-5d897c0a948de230233852" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">top_stories</span></span></span>&nbsp;是界面顶部轮播的显示内容，制作一个swiper轮播，将top_stories里的内容渲染到轮播上。</p></blockquote>
+    <blockquote class="danger"><p>打开开发者工具调试工具栏的AppData标签页，就能看到从网络API里获取到的数据。也可以在此处编辑数据，并及时地反馈到界面上。如果AppData里有数据，可以确认页面已经取得res里的data数据，如果数据没有渲染到页面，说明列表渲染可能有误。通过这种方式可以诊断页面渲染问题所在。</p></blockquote>
+    <p><strong>详情页数据渲染</strong></p>
+    <p>前面我们获取的只是知乎的最新文章列表，那文章里面的内容呢？通过API文档以及我们通过链接访问的结果来看，我们只需要取得了文章的ID，就能从API里获取到文章的详情页内容：</p>
+            <div id="crayon-5d897c0a948e0209702005" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">https://news-at.zhihu.com/api/4/news/9714883  //9714883是文章的ID</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948e0209702005-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948e0209702005-1"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//news-at.zhihu.com/api/4/news/9714883&nbsp;&nbsp;//9714883是文章的ID</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>使用开发者工具新建一个story页面，然后在story.wxml里输入以下代码:</p>
+            <div id="crayon-5d897c0a948e2117328770" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="page__bd"&gt;
+        &lt;view class="weui-article"&gt;
+            &lt;view class="weui-article__h1"&gt;{{title}}&lt;/view&gt;
+            &lt;view class="weui-article__section"&gt;
+                &lt;view class="weui-article__section"&gt;
+                    &lt;view class="weui-article__p"&gt;
+                        &lt;image class="weui-article__img" src="{{image}}" mode="widthFix" style="width:100%" /&gt;
+                     &lt;/view&gt;
+                     &lt;view class="weui-article__p"&gt;                      
+                          {{body}}                
+                    &lt;/view&gt;
+                    &lt;view class="weui-article__p"&gt;
+                            知乎链接：{{share_url}}
+                    &lt;/view&gt;
+                &lt;/view&gt; 
+            &lt;/view&gt;     
+        &lt;/view&gt;   
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d897c0a948e2117328770-18" style="height: 20px;">18</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948e2117328770-1"><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"page__bd"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-article"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-article__h1"</span><span class="crayon-o">&gt;</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">title</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-article__section"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-article__section"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-article__p"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">image </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-article__img"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s">"{{image}}"</span><span class="crayon-h"> </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s">"width:100%"</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-article__p"</span><span class="crayon-o">&gt;</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">body</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-article__p"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>知乎链接：<span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">share_url</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d897c0a948e2117328770-18"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在request.js的data里声明title、body、image、share_url的初始值：</p>
+            <div id="crayon-5d897c0a948e3779073448" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        title:"",
+        body:"",
+        image:"",
+        share_url:"",
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948e3779073448-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948e3779073448-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948e3779073448-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948e3779073448-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948e3779073448-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a948e3779073448-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948e3779073448-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948e3779073448-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948e3779073448-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">body</span><span class="crayon-o">:</span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948e3779073448-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">image</span><span class="crayon-o">:</span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948e3779073448-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">share_url</span><span class="crayon-o">:</span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948e3779073448-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在onLoad生命周期函数里调用wx.request获取文章详情页的数据，并通过setData的方式给赋值给data：</p>
+            <div id="crayon-5d897c0a948e8230931894" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLoad: function (options) {
+        let stories_id=9714883
+        let that = this
+        wx.request({
+          url: 'https://news-at.zhihu.com/api/4/news/'+stories_id,
+          header: {
+            'content-type': 'application/json'
+          },
+          success(res) {
+            let title = res.data.title
+            let body=res.data.body
+            let image=res.data.image
+            let share_url=res.data.share_url
+            that.setData({
+              title,body,image,share_url
+            })
+          }
+        })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d897c0a948e8230931894-18" style="height: 20px;">18</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948e8230931894-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">stories_id</span><span class="crayon-o">=</span><span class="crayon-cn">9714883</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">that</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">this</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">request</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'https://news-at.zhihu.com/api/4/news/'</span><span class="crayon-o">+</span><span class="crayon-v">stories_id</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">header</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'content-type'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'application/json'</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">title</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">title</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-11"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">body</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">body</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-12"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">image</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">image</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-13"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">share_url</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">share_url</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-14"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">that</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-sy">,</span><span class="crayon-v">body</span><span class="crayon-sy">,</span><span class="crayon-v">image</span><span class="crayon-sy">,</span><span class="crayon-v">share</span><span class="crayon-sy">_</span>url</div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d897c0a948e8230931894-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>编译之后，发现数据虽然渲染出来了，但是存在“乱码”（是HTML标签），那这个要如何处理呢？这个就涉及到小程序的富文本解析了。</p>
+    <p><strong>HTML标签解析rich-text</strong></p>
+    <p>只需要将富文本对象放在rich-text的nodes里，就能将富文本解析出来了，比如将上面的{{body}}替换成以下代码。</p>
+            <div id="crayon-5d897c0a948e9000768052" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;rich-text nodes="{{body}}"&gt;&lt;/rich-text&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948e9000768052-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948e9000768052-1"><span class="crayon-r ">&lt;rich-text </span><span class="crayon-e ">nodes</span><span class="crayon-o">=</span><span class="crayon-s ">"{{body}}"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/rich-text&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>小程序富文本解析的方案还有：Comi ，腾讯 Omi 团队开发的小程序代码高亮和 markdown 渲染组件，<a href="https://github.com/Tencent/omi/blob/master/tutorial/comi-principle.md#%E5%8E%9F%E7%90%86" target="_blank" rel="noopener noreferrer">Github地址</a>，具体效果可以在微信小程序里搜索<strong>omiCloud</strong>；以及wxPrase，微信小程序富文本解析自定义组件，支持HTML及markdown解析，<a href="https://github.com/icindy/wxParse" target="_blank" rel="noopener noreferrer">Github地址</a>，当你遇到更加复杂的富文本解析时，可以来深入了解。</p></blockquote>
+    <p><strong>跨页面数据渲染</strong></p>
+    <p>上面我们只是渲染了单篇文章的详情页，那如何点击文章列表就能渲染与之相应的文章详情页呢？这就回到了我们之前学过的跨页面数据渲染。</p>
+    <p>首先把request页面置于首页，然后再给request.wxml里的navigator组件的链接上携带文章的id：</p>
+    <div>
+    
+            <div id="crayon-5d897c0a948eb101242241" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">url="/pages/story/story?id={{stories.id}}"</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948eb101242241-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948eb101242241-1"><span class="crayon-e ">url</span><span class="crayon-o">=</span><span class="crayon-s">"/pages/story/story?id={{stories.id}}"</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><br>
+    当点击request页面的链接时，链接携带的数据就会传到story页面的生命周期函数onLoad的options对象里，将options里的id，赋值给stories_id，也就是将文章id 9714883修改为options.id<br>
+    
+            <div id="crayon-5d897c0a948ed801372081" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let stories_id=options.id</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948ed801372081-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948ed801372081-1"><span class="crayon-e">let </span><span class="crayon-v">stories_id</span><span class="crayon-o">=</span><span class="crayon-v">options</span><span class="crayon-sy">.</span><span class="crayon-v">id</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><br>
+    这样再来点击request页面的链接，不同的链接就会渲染不同的文章详情。<p></p>
+    <p><strong>解构赋值</strong></p>
+    <p>解构赋值也就是从数组Array和对象Object中提取值，按照对照的位置，对变量进行赋值。比如上面的变量声明，为了能够与API里的数据字段一一对应，我们会声明很多变量，知乎日报的API还算比较少的，多了就比较复杂了。</p>
+            <div id="crayon-5d897c0a948ef840000363" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let title = res.data.title
+    let body=res.data.body
+    let image=res.data.image
+    let share_url=res.data.share_url</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948ef840000363-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948ef840000363-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948ef840000363-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948ef840000363-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948ef840000363-1"><span class="crayon-e">let </span><span class="crayon-v">title</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">title</span></div><div class="crayon-line" id="crayon-5d897c0a948ef840000363-2"><span class="crayon-e">let </span><span class="crayon-v">body</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">body</span></div><div class="crayon-line" id="crayon-5d897c0a948ef840000363-3"><span class="crayon-e">let </span><span class="crayon-v">image</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">image</span></div><div class="crayon-line" id="crayon-5d897c0a948ef840000363-4"><span class="crayon-e">let </span><span class="crayon-v">share_url</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-v">share_url</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这时可以简写成：</p>
+            <div id="crayon-5d897c0a948f0021748148" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let { title, body, image, share_url}=res.data</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948f0021748148-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948f0021748148-1"><span class="crayon-e">let</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">title</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">body</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">share_url</span><span class="crayon-sy">}</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>
+    </p></div>
+    <h4>历史上的今天</h4>
+    <p>知乎日报的API是比较开放的，并不需要我们去注册API服务就能获取到这些数据，但是大多数情况下，API是商品服务，需要我们注册，那需要注册的API和开放的API有什么不同呢？</p>
+    <p><strong>注册历史上的今天的服务</strong></p>
+    <p>注册<a href="https://www.juhe.cn/" target="_blank" rel="noopener noreferrer">聚合API</a>并认证，认证之后可以申请开通<strong>历史上的今天</strong>、图书电商数据等免费的API服务，并找到你的与之<strong>对应的AppKey</strong>。</p>
+    <p>替换下面链接<strong>你的历史上的今天对应的key</strong>（直接输AppKey就行），然后在浏览器打开链接（下面这个是1.0版）</p>
+            <div id="crayon-5d897c0a948f2339576975" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">http://api.juheapi.com/japi/toh?month=9&amp;day=15&amp;key=你的历史上的今天对应的key</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948f2339576975-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948f2339576975-1">http<span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-o">/</span>api<span class="crayon-sy">.</span>juheapi<span class="crayon-sy">.</span>com<span class="crayon-o">/</span>japi<span class="crayon-o">/</span>toh<span class="crayon-sy">?</span>month<span class="crayon-o">=</span>9<span class="crayon-o">&amp;</span>day<span class="crayon-o">=</span>15<span class="crayon-o">&amp;</span>key<span class="crayon-o">=</span>你的历史上的今天对应的key</div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>也可以选择事件列表的2.0版（<strong>为了讲解方便，下面以1.0版本为主</strong>）</p>
+            <div id="crayon-5d897c0a948f4193612305" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">http://v.juhe.cn/todayOnhistory/queryEvent.php?date=9/15&amp;key=你的历史上的今天对应的key</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948f4193612305-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948f4193612305-1"><span class="crayon-v">http</span><span class="crayon-o">:</span><span class="crayon-c">//v.juhe.cn/todayOnhistory/queryEvent.php?date=9/15&amp;key=你的历史上的今天对应的key</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>key的存放</strong></p>
+    <p>通常我们会把拿到的key放在app.js的globalData里，或者在小程序里新建一个config.js，方便以后全局调用，而不是把key直接写在页面里。</p>
+    <p><strong>方法一：</strong>写在app.js里的globalData，或者新建一个keyData对象，只要达到全局调用的目的都可以，以globalData为例</p>
+            <div id="crayon-5d897c0a948f5067548621" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  globalData: {
+        juheKey:"366444.......00ff", //聚合AppKey
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948f5067548621-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948f5067548621-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948f5067548621-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948f5067548621-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">globalData</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948f5067548621-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">juheKey</span><span class="crayon-o">:</span><span class="crayon-s">"366444.......00ff"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//聚合AppKey</span></div><div class="crayon-line" id="crayon-5d897c0a948f5067548621-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这种方式调用时首先在页面的js文件里、Page()函数的前面使用</p>
+            <div id="crayon-5d897c0a948f7151584550" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const app=getApp()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948f7151584550-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948f7151584550-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-o">=</span><span class="crayon-e">getApp</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>之后就可以使用app.globalData.juheKey来调用它了。</p>
+    <p><strong>方法二：</strong>也可以在小程序的根目录或者utils文件夹新建一个config.js，然后结合前面模块化的知识，写入以下代码：</p>
+            <div id="crayon-5d897c0a948f9809431477" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">module.exports = {
+      juheKey:"366444.......00ff", //聚合AppKey
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948f9809431477-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948f9809431477-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948f9809431477-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948f9809431477-1"><span class="crayon-v">module</span><span class="crayon-sy">.</span><span class="crayon-v">exports</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948f9809431477-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">juheKey</span><span class="crayon-o">:</span><span class="crayon-s">"366444.......00ff"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//聚合AppKey</span></div><div class="crayon-line" id="crayon-5d897c0a948f9809431477-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这种方式调用时我们需要先在页面的Page()函数前面引入模块化文件</p>
+            <div id="crayon-5d897c0a948fa372240877" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const key = require('../../utils/config.js')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948fa372240877-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948fa372240877-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">key</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">require</span><span class="crayon-sy">(</span><span class="crayon-s">'../../utils/config.js'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后就可以使用key.juheKey调用它了。</p>
+    <blockquote><p>将一些通用的数据、函数单独拿出来存放在globalData里或进行模块化，是在实际开发中会经常使用到的一种方法，它可以让数据、函数更容易管理以及可以重复利用，使得代码更加精简。</p></blockquote>
+    <p><strong>wx.request请求数据</strong></p>
+    <p>使用开发者工具新建一个apidata页面，然后在apidata.js的Page()函数前面输入以下代码：</p>
+            <div id="crayon-5d897c0a948fc684143289" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const app=getApp()
+    const now = new Date(); 
+    const month = now.getMonth()+1 //月份需要+1
+    const day = now.getDate()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948fc684143289-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948fc684143289-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948fc684143289-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948fc684143289-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948fc684143289-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-o">=</span><span class="crayon-e">getApp</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948fc684143289-2"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-r">Date</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d897c0a948fc684143289-3"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">month</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getMonth</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-o">+</span><span class="crayon-cn">1</span><span class="crayon-h"> </span><span class="crayon-c">//月份需要+1</span></div><div class="crayon-line" id="crayon-5d897c0a948fc684143289-4"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">day</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getDate</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在生命周期函数onLoad里输入wx.request数据请求：</p>
+            <div id="crayon-5d897c0a948fe644038693" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLoad: function (options) {
+        wx.request({
+          url: 'http://api.juheapi.com/japi/toh', 
+          data: {
+            month: month,
+            day: day,
+            key: app.globalData.juheKey,
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          success(res) {
+            console.log(res.data)
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d897c0a948fe644038693-16" style="height: 20px;">16</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948fe644038693-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">request</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'http://api.juheapi.com/japi/toh'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">month</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">month</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">day</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">day</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">key</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">juheKey</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">header</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'content-type'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'application/json'</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a948fe644038693-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>wx.request里的data就是要传入的参数，我们把month、day、key传入到请求的链接里。它等价于以下链接（注意把data里的属性值，以免传两次参数）</p>
+            <div id="crayon-5d897c0a948ff135979223" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">url: "http://api.juheapi.com/japi/toh?" + "month=" + month + "&amp;day=" + day + "&amp;key=" + app.globalData.juheKey,</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a948ff135979223-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a948ff135979223-1"><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"http://api.juheapi.com/japi/toh?"</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">"month="</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">month</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">"&amp;day="</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">day</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">"&amp;key="</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">juheKey</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>模板字符串</strong></p>
+    <p>要将多个字符串连接起来，可以使用加号+来用作字符串的拼接，如果变量比较多，是不是很麻烦？我们还可以使用模板字符串，模板字符串使用<strong>反引号</strong>
+                <span id="crayon-5d897c0a94901531197268" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">`</span><span class="crayon-sy">`</span></span></span>来表示（在电脑键盘esc按键下面）。要在模板字符串中嵌入变量，需要将变量名写在
+                <span id="crayon-5d897c0a94903157225881" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>之中，比如上面的链接也可以写成：</p>
+            <div id="crayon-5d897c0a94904438118442" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">url: `http://api.juheapi.com/japi/toh?month=${month}&amp;day=${day}&amp;key=${app.globalData.juheKey}`,</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a94904438118442-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a94904438118442-1"><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">`</span><span class="crayon-v">http</span><span class="crayon-o">:</span><span class="crayon-c">//api.juheapi.com/japi/toh?month=${month}&amp;day=${day}&amp;key=${app.globalData.juheKey}`,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在控制台我们就可以看到获取到的res.data数据，至于如何渲染到页面，这里就不多介绍了。</p>
+    <h4>天气API</h4>
+    <p>注册<a href="https://www.heweather.com/" target="_blank" rel="noopener noreferrer">和风天气</a>，并在控制台的<strong>应用管理</strong>新建一个应用，获取到该应用的key，按照上面的方法将key添加到globalData里：</p>
+            <div id="crayon-5d897c0a94906797348022" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  globalData: {
+        heweatherKey:"732c.........0b", //和风天气key
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a94906797348022-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a94906797348022-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a94906797348022-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a94906797348022-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">globalData</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a94906797348022-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">heweatherKey</span><span class="crayon-o">:</span><span class="crayon-s">"732c.........0b"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//和风天气key</span></div><div class="crayon-line" id="crayon-5d897c0a94906797348022-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>通过技术文档我们可以了解到免费版和风天气API的<strong>必备字段</strong>为weather-type（根据不同的值可以取得不同的数据）和<strong>请求参数</strong>（其中location为必备参数）</p>
+    <p><strong>技术文档：</strong><a href="https://dev.heweather.com/docs/api/weather" target="_blank" rel="noopener noreferrer">和风常规天气数据API</a></p>
+    <p>也就是我们可以通过链接可以获取到数据，<strong>注意now在问号?的前面，也就是它不是请求的参数</strong>，location和key才是。</p>
+            <div id="crayon-5d897c0a94907295632441" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">https://free-api.heweather.net/s6/weather/now?location=beijing&amp;key=你的key</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a94907295632441-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a94907295632441-1"><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//free-api.heweather.net/s6/weather/now?location=beijing&amp;key=你的key</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在apidata.js Page()的data里初始化声明weathertype（属性名最好不要有连接符-）和location：</p>
+            <div id="crayon-5d897c0a94909287282599" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        weathertype:"now",
+        location:"beijing"  //location的写法有很多种，具体可以参考技术文档
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a94909287282599-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a94909287282599-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a94909287282599-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a94909287282599-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a94909287282599-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a94909287282599-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">weathertype</span><span class="crayon-o">:</span><span class="crayon-s">"now"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a94909287282599-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">location</span><span class="crayon-o">:</span><span class="crayon-s">"beijing"</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//location的写法有很多种，具体可以参考技术文档</span></div><div class="crayon-line" id="crayon-5d897c0a94909287282599-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在生命周期函数里添加wx.request请求（onLoad里可以写多个wx.request请求）</p>
+            <div id="crayon-5d897c0a9490b458296669" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    const weathertype=this.data.weathertype
+        wx.request({
+          url: `https://free-api.heweather.net/s6/weather/${weathertype}`,
+          data: {
+            location: that.data.location,
+            key: app.globalData.heweatherKey,
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          success(res) {
+            console.log(res.data)
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d897c0a9490b458296669-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a9490b458296669-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">weathertype</span><span class="crayon-o">=</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-e">weathertype</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-2"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">request</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">`</span><span class="crayon-v">https</span><span class="crayon-o">:</span><span class="crayon-c">//free-api.heweather.net/s6/weather/${weathertype}`,</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">location</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">that</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">.</span><span class="crayon-v">location</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">key</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">heweatherKey</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">header</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'content-type'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'application/json'</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a9490b458296669-15"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在控制台就能看到请求到的res.data了。如果你想点击按钮切换不同城市以及不同的天气数据类型，结合前面所学的知识，我们只需要通过事件处理函数调用setData修改weathertype和location即可。</p>
+    <h4>encodeURI与decodeURI</h4>
+    <p>在浏览网页的时候我们经常看到汉字或一些字符变成了一个“乱码”，原因就在于链接进行了编码处理。encodeURI() 函数可把字符串作为 URI 进行编码，而decodeURI()函数则可以进行解码。</p>
+    <p>在开发者工具的控制台里输入以下代码</p>
+            <div id="crayon-5d897c0a9490c446741127" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log(encodeURI("北京"))
+    console.log(decodeURI("%e9%85%92%e5%ba%97"))
+    console.log(decodeURI("https://hackwork.org/handbook/python/174/%e5%86%99%e5%87%ba%e7%ac%ac%e4%b8%80%e8%a1%8cpython%e4%bb%a3%e7%a0%81/"))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a9490c446741127-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a9490c446741127-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a9490c446741127-3" style="height: 40px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a9490c446741127-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-e">encodeURI</span><span class="crayon-sy">(</span><span class="crayon-s">"北京"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a9490c446741127-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-e">decodeURI</span><span class="crayon-sy">(</span><span class="crayon-s">"%e9%85%92%e5%ba%97"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a9490c446741127-3"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-e">decodeURI</span><span class="crayon-sy">(</span><span class="crayon-s">"https://hackwork.org/handbook/python/174/%e5%86%99%e5%87%ba%e7%ac%ac%e4%b8%80%e8%a1%8cpython%e4%bb%a3%e7%a0%81/"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>腾讯地图LBS</h4>
+    <p>如果想在小程序中调用地图的POI检索（POI，即兴趣点Point of Interest，区域内搜索酒店、学校、ATM等）、 关键词输入提示、地址解析、逆地址解析、行政区划、距离计算、路径规划等数据服务，这时候就需要使用到地图类相关的API。</p>
+    <p><strong>地图API：</strong><a href="https://lbs.qq.com/index.html" target="_blank" rel="noopener noreferrer">腾讯LBS位置服务</a></p>
+    <p><strong>注册账号获取Key</strong></p>
+    <p>首先在注册后登录，点击<strong>控制台</strong>&nbsp;—<strong>key管理</strong>—<strong>创建新密钥</strong>，然后取得key，key的格式类似于“43UBZ-*****-*****-*****-*****-HTBIA”。</p>
+    <p>然后点击当前Key的<strong>设置</strong>，启动产品里勾选<strong>微信小程序</strong>和<strong>WebServiceAPI里的签名校验</strong>，获取到地图的<strong>Secret key</strong>。这两种API的调用方式，小程序都支持。</p>
+    <p>&nbsp;</p>
+    <p>然后将地图的两个key，写入到globalData里</p>
+            <div id="crayon-5d897c0a9490e502378422" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  globalData: {
+        mapKey:"43UBZ-*****-IITUH-*****-2M723-******",//你的key
+        mapSecretKey:"spZwWz**********Xh20uW", //你的Secret key
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a9490e502378422-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a9490e502378422-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a9490e502378422-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a9490e502378422-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a9490e502378422-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">globalData</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a9490e502378422-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">mapKey</span><span class="crayon-o">:</span><span class="crayon-s">"43UBZ-*****-IITUH-*****-2M723-******"</span><span class="crayon-sy">,</span><span class="crayon-c">//你的key</span></div><div class="crayon-line" id="crayon-5d897c0a9490e502378422-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">mapSecretKey</span><span class="crayon-o">:</span><span class="crayon-s">"spZwWz**********Xh20uW"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//你的Secret key</span></div><div class="crayon-line" id="crayon-5d897c0a9490e502378422-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>md5加密算法</strong></p>
+    <p>在<a href="https://lbs.qq.com/FAQ/key_faq.html#4" target="_blank" rel="noopener noreferrer">WebServiceAPI Key配置中签名校验</a>里提到我们使用WebServiceAPI的方法需要对请求路径+”?”+请求参数+SK进行拼接，并计算拼接后字符串<strong>md5值</strong>，即为签名(sig)。MD5是计算机安全领域广泛使用到的一种加密算法，主要用于确保消息传输的完整一致。</p>
+    <p><strong>md5依赖：</strong><a href="https://github.com/blueimp/JavaScript-MD5/archive/master.zip" target="_blank" rel="noopener noreferrer">md5开源项目下载链接</a></p>
+    <p>解压之后，将js文件夹里的md5.min.js复制粘贴到小程序utils文件夹下。然后再在Page()前面引入这个文件</p>
+            <div id="crayon-5d897c0a94910736032941" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const md5 = require('../../utils/md5.min.js')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a94910736032941-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a94910736032941-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">md5</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">require</span><span class="crayon-sy">(</span><span class="crayon-s">'../../utils/md5.min.js'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>坐标逆解析</strong></p>
+    <p>坐标的逆解析就是坐标(latitude,longitude)转化为详细的地址名。</p>
+    <p><strong>技术文档：</strong><a href="https://lbs.qq.com/webservice_v1/guide-gcoder.html" target="_blank" rel="noopener noreferrer">坐标的逆地址解析</a></p>
+    <p>再在apidata.js Page()的data里初始化声明latitude,longitude，比如我们用腾讯大厦的经纬度值：</p>
+            <div id="crayon-5d897c0a94911485862878" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        latitude:"22.540503",
+        longitude: "113.934528",
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a94911485862878-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a94911485862878-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a94911485862878-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a94911485862878-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a94911485862878-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a94911485862878-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">latitude</span><span class="crayon-o">:</span><span class="crayon-s">"22.540503"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a94911485862878-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">longitude</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"113.934528"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a94911485862878-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在onLoad函数里调用wx.request发起HTTPS网络请求</p>
+            <div id="crayon-5d897c0a94913589001418" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLoad: function (options) {
+       let that=this
+        const { latitude, longitude } = that.data
+        const { mapKey, mapSecretKey}=app.globalData
+        let SIG = md5("/ws/geocoder/v1?key=" + mapKey + "&amp;location=" + latitude + "," + longitude + mapSecretKey)
+        wx.request({
+          url: 'https://apis.map.qq.com/ws/geocoder/v1',
+          data: {
+            key: mapKey,
+            location: `${latitude},${longitude}`,
+            sig: SIG
+          },
+          header: {
+            'content-type': 'application/json'
+          },
+          success(res) {
+            console.log(res.data)
+          }
+        })   
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d897c0a94913589001418-20" style="height: 20px;">20</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d897c0a94913589001418-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onLoad</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-2"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-e">let </span><span class="crayon-v">that</span><span class="crayon-o">=</span><span class="crayon-r">this</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">latitude</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-i">longitude</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">that</span><span class="crayon-sy">.</span><span class="crayon-e">data</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-4"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">mapKey</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">mapSecretKey</span><span class="crayon-sy">}</span><span class="crayon-o">=</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-e">globalData</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-5"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">SIG</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">md5</span><span class="crayon-sy">(</span><span class="crayon-s">"/ws/geocoder/v1?key="</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">mapKey</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">"&amp;location="</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">latitude</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">","</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">longitude</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">mapSecretKey</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">request</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'https://apis.map.qq.com/ws/geocoder/v1'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">key</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">mapKey</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">location</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">`</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">latitude</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">longitude</span><span class="crayon-sy">}</span><span class="crayon-sy">`</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">sig</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-i">SIG</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">header</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'content-type'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'application/json'</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5d897c0a94913589001418-20"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在控制台Console就可以看到当前坐标(latitude,longitude)逆解析出来的详细信息。</p>
+    <blockquote><p>小程序使用腾讯地图位置服务，还有一种更加简单的方法，具体可以阅读《<a href="https://lbs.qq.com/product/miniapp/guide/" target="_blank" rel="noopener noreferrer">微信小程序：个性地图使用指南</a>》</p></blockquote>
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
