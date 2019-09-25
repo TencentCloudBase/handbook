@@ -1,0 +1,696 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 云开发快速入门评论Feed" href="https://cloudbasegroup.org/handbook/tcb/62/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="小程序开发入门" href="https://cloudbasegroup.org/handbook/weapp/10">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/tcb/62">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=62">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Ftcb%2F62">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Ftcb%2F62&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-62 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+    <nav id="header-db" class="row navbar navbar-default">
+            <div class="navbar-header">
+                  <div class="logotop fleft">
+                    <a href="https://tencentcloudbase.github.io/handbook/tcb21.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+                <div class="flex nav-items">
+                <h1 class="flex-item navbar-link">
+                    云开发技术训练营			</h1>
+                  </div>
+            </div>
+    
+            <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+             <div class="sop-menu">
+                <ul>
+                                    <li class="page_item current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb21.html">
+                            云开发快速入门					</a>
+                    </li>
+                                                    </ul>
+            </div>		
+        </div>
+    </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">云开发快速入门</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>如果你想免费、快速的开发出一个完整的项目，用小程序的云开发可能是最好的选择。小程序的云开发所用到的主要是前端开发的知识。</p>
+    <h4>注册微信小程序</h4>
+    <p>小程序的注册非常方便，打开小程序注册页面，按照要求填入个人的信息，验证邮箱和手机号，扫描二维码绑定你的微信号即可，3分钟左右的时间即可搞定。</p>
+    <p><strong>注册页面：</strong><a href="https://mp.weixin.qq.com/wxopen/waregister?action=step1" target="_blank" rel="noopener noreferrer">小程序注册页面</a></p>
+    <blockquote class="danger"><p>注册小程序时不能使用注册过微信公众号、微信开放平台的邮箱哦，也就是需要你使用一个其他邮箱才行。</p></blockquote>
+    <p>当我们注册成功后，就可以自动登入到小程序的后台管理页面啦，如果你不小心关掉了后台页面，也可以点击小程序后台管理登录页进行登录。</p>
+    <p><strong>后台管理页：</strong><a href="https://mp.weixin.qq.com/cgi-bin/home?t=home/index&amp;lang=zh_CN" target="_blank" rel="noopener noreferrer">小程序后台管理登录页</a></p>
+    <blockquote><p>小程序和微信公众号的登录页都是同一个页面，他们会根据你的不同的注册邮箱来进行跳转。</p></blockquote>
+    <p>进入到小程序的后台管理页后，点击左侧菜单的<b>开发</b>进入设置页，然后再点击<strong>开发设置</strong>，在<strong>开发者ID</strong>里就可以看到<strong>AppID(小程序ID)</strong>，这个待会我们有用。</p>
+    <blockquote class="danger"><p>注意小程序的ID（AppID）不是你注册的邮箱和用户名，你需要到后台查看才行哦~</p></blockquote>
+    <h4>必备工具与云开发文档</h4>
+    <p>大家可以根据自己的电脑操作系统来下载相应的版本，注意要选择稳定版&nbsp;Stable Build的开发者工具。</p>
+    <p><strong>开发者工具</strong>：<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html" target="_blank" rel="noopener noreferrer">小程序开发者工具下载地址</a></p>
+    <p>和学习任何编程一样，官方技术文档都是最值得阅读的参考资料。技术文档大家先只需要<strong><span style="color: #800000;">花五分钟左右的时间</span></strong>了解大致的结构即可，<span style="color: #800000;"><strong>先按照我们的教学步骤学完之后</strong></span>再来看也不迟哦。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html" target="_blank" rel="noopener noreferrer">云开发官方文档</a></p>
+    <blockquote><p>由于小程序的云开发在不断新增功能，更新非常频繁，所以要确保自己的开发者工具是最新的哦（不然会报很多奇奇怪怪的错误），比如你之前下载过要先同步到最新才行~</p></blockquote>
+    <h4>体验云开发模板小程序</h4>
+    <p>安装完开发者工具之后，我们使用微信扫码登录开发者工具，然后使用开发者工具新建一个小程序的项目：</p>
+    <ul>
+    <li><strong>项目名称</strong>：这个可以根据自己的需要任意填写；</li>
+    <li><strong>目录</strong>：大家可以先在电脑上新建一个空文件夹，然后选择它；</li>
+    <li><strong>AppID</strong>：就是之前我们找到的<strong>AppID(小程序ID)</strong>（也可以下拉选择AppID）</li>
+    <li><strong>开发模式</strong>为小程序（默认），</li>
+    <li><strong>后端服务</strong>选择<strong>小程序·云开发</strong></li>
+    </ul>
+    <p>点击<strong>新建</strong>确认之后就能在开发者工具的<strong>模拟器</strong>里看到<strong>云开发QuickStart小程序</strong>，在编辑器里看到这个小程序的源代码。</p>
+    <p>接下来，我们点击开发者工具的工具栏里的<strong>预览</strong>图标，就会弹出一个二维码，使用微信扫描这个二维码就能在手机里看到这个小程序啦。</p>
+    <blockquote><p>如果你没有使用微信登录开发者工具，以及你的微信不是该小程序的开发者是没法预览的哦。</p></blockquote>
+    <p>在手机里（或模拟器）操作这个小程序，把小程序里的每个按键都点一遍，看看会有什么反应。我们会发现很多地方都会显示“调用失败”等，这非常正常，我们接下来会通过一系列的操作让小程序不报错。</p>
+    <h4>开通云开发服务</h4>
+    <p>点击微信开发者工具的“<strong>云开发</strong>”图标，在弹出框里点击“<strong>开通</strong>”，同意协议后，会弹出<strong>创建环境</strong>的对话框。这时会要求你输入<strong>环境名称</strong>和<strong>环境ID</strong>，以及当前云开发的基础环境配额（基础配额免费，而且足够你使用哦）。</p>
+    <blockquote><p>建议你<strong>环境名称</strong>可以使用
+                <span id="crayon-5d8acdf9534ac153662772" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">xly</span></span></span>、<strong>环境ID</strong>自动生成即可，当你的云开发环境出现问题的时候，你可以提供你的环境ID，云开发团队会有专人为你解答。</p></blockquote>
+    <p>按照对话框提示的要求填写完之后，点击<strong>创建</strong>，会初始化环境，环境初始化成功后会自动弹出云开发控制台，这样我们的云开发服务就开通啦。大家可以花<strong>两分钟左右</strong>的时间熟悉一下云开发控制台的界面。</p>
+    <p><strong>找到云开发的环境ID</strong></p>
+    <p>点击云开发控制台窗口里的<strong>设置</strong>图标，在<strong>环境变量</strong>的标签页找到<strong>环境名称</strong>和<strong>环境ID</strong>。</p>
+    <p>当云开发服务开通后，我们可以在小程序源代码cloudfunctions文件夹名看到你的环境名称。如果在cloudfunctions文件夹名显示的不是环境名称，而是“<strong>未指定环境</strong>”，可以鼠标右键该文件夹，选择“更多设置”，然后再点击“设置”小图标，选择环境并确定。</p>
+    <p><strong>指定小程序的云开发环境</strong></p>
+    <p>在开发者工具中打开源代码文件夹<strong>miniprogram</strong>里的app.js，找到如下代码：</p>
+            <div id="crayon-5d8acdf9534b4633594081" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.cloud.init({
+      // 此处请填入环境 ID, 环境 ID 可打开云控制台查看
+      env: 'my-env-id',
+      traceUser: true,
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534b4633594081-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534b4633594081-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8acdf9534b4633594081-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8acdf9534b4633594081-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8acdf9534b4633594081-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534b4633594081-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">init</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8acdf9534b4633594081-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// 此处请填入环境 ID, 环境 ID 可打开云控制台查看</span></div><div class="crayon-line" id="crayon-5d8acdf9534b4633594081-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'my-env-id'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534b4633594081-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">traceUser</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534b4633594081-5"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在
+                <span id="crayon-5d8acdf9534b6844032677" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'my-env-id'</span></span></span>处改成你的环境ID，如
+                <span id="crayon-5d8acdf9534b8896936374" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'xly-snoop'</span></span></span></p>
+    <h4>下载Nodejs</h4>
+    <p><strong>NodeJS</strong>是在服务端运行JavaScript的运行环境，云开发所使用的服务端环境就是NodeJS。<strong>npm</strong>是Node包管理器，通过npm，我们可以非常方便的安装云开发所需要的依赖包。</p>
+    <blockquote><p>npm是前端开发必不可少的包（模块）管理器，它的主要功能就是来管理<strong>包package</strong>，包括安装、卸载、更新、查看、搜索、发布等，其他编程语言也有类似的包管理器，比如Python的pip，PHP的composer、Java的maven。我们可以把包管理器看成是windows的软件管理中心或手机的应用中心，只是它们用的是可视化界面，包管理器用的是<strong>命令行Command Line</strong>。</p></blockquote>
+    <p><strong>下载地址：</strong><a href="http://nodejs.cn/download/" target="_blank" rel="noopener noreferrer">Nodejs下载地址</a></p>
+    <p>大家可以根据电脑的操作系统下载相应的NodeJS安装包并安装（<span style="color: #800000;"><strong>安装时不要修改安装目录，啥也别管直接next安装即可</strong></span>）。打开电脑终端（Windows电脑为<strong>cmd命令提示符</strong>，Mac电脑为终<strong>端Terminal</strong>），然后逐行输入并按Enter执行下面的代码：</p>
+            <div id="crayon-5d8acdf9534b9628293444" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">node --version
+    npm --version</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534b9628293444-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534b9628293444-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534b9628293444-1"><span class="crayon-v">node</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-e">version</span></div><div class="crayon-line" id="crayon-5d8acdf9534b9628293444-2"><span class="crayon-v">npm</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">version</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>如果显示为<span class="s1">v10.15.0以及</span><span class="s1">6.11.3（可能你的版本号会有所不同），表示你的Nodejs环境已经安装成功。</span></p>
+    <blockquote class="danger"><p>学编程要仔细，一个字母，一个单词，一个标点符号都不要出错哦。注意输上面的命令时node、npm的后面有一个空格，而且是两个短横杠–。</p></blockquote>
+    <h4>部署并上传云函数</h4>
+    <p><strong>部署并上传云函数</strong></p>
+    <p><span style="color: #800000;"><strong>cloudfuntions文件夹</strong></span>图标里有朵小云，表示这就是<strong>云函数根目录</strong>。展开cloudfunctions，我们可以看到里面有login、openapi、callback、echo文件夹，这些就是<strong>云函数目录</strong>。而<strong>miniprogram文件夹</strong>则放置的是小程序的页面文件。</p>
+    <blockquote><p>cloudfunctions里放的是云函数，miniprogram放的是小程序的页面，这并不是一成不变的，也就是说你也可以修改这些文件夹的名称，这取决于项目配置文件project.config.json里的如下配置项：</p>
+            <div id="crayon-5d8acdf9534bb851862344" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">"miniprogramRoot": "miniprogram/",
+    "cloudfunctionRoot": "cloudfunctions/",</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534bb851862344-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534bb851862344-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534bb851862344-1"><span class="crayon-s">"miniprogramRoot"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"miniprogram/"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534bb851862344-2"><span class="crayon-s">"cloudfunctionRoot"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"cloudfunctions/"</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>但是你最好是让放小程序页面的文件夹以及放云函数的文件夹处于平级关系且都在项目的根目录下，便于管理。</p></blockquote>
+    <p>使用鼠标右键其中的一个云函数目录比如login，在右键菜单中选择<span style="color: #800000;"><strong>在终端中打开</strong></span>，打开后在终端中输入以下代码并按Enter回车执行：</p>
+            <div id="crayon-5d8acdf9534bd670338845" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">npm install</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534bd670338845-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534bd670338845-1"><span class="crayon-e">npm </span><span class="crayon-v">install</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>如果显示“npm不是内部或外部命令”，你需要关闭微信开发者工具启动的终端，而是重新打开一个终端窗口，并在里面输入
+                <span id="crayon-5d8acdf9534bf316331496" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">cd</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">D</span><span class="crayon-h"> </span>你的云函数目录</span></span>进入云函数目录，比如
+                <span id="crayon-5d8acdf9534c0105287068" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">cd</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">D</span><span class="crayon-h"> </span><span class="crayon-v">C</span><span class="crayon-o">:</span><span class="crayon-sy">\</span><span class="crayon-v">download</span><span class="crayon-sy">\</span><span class="crayon-v">tcb</span><span class="crayon-o">-</span><span class="crayon-v">project</span><span class="crayon-sy">\</span><span class="crayon-v">cloudfunctions</span><span class="crayon-sy">\</span><span class="crayon-v">login</span></span></span>进入login的云函数目录，然后再来执行npm install命令。</p></blockquote>
+    <p>这时候会下载云函数的依赖模块，下载完成后，再右键login云函数目录，点击“<strong>创建并部署：所有文件</strong>”，这时会把本地的云函数上传到云端，上传成功后在login云函数目录图标会变成一朵小云。</p>
+    <p>在开发者工具的工具栏上点击“<strong>云开发</strong>”图标会打开云开发控制台，在云开发控制台点击<strong>云函数</strong>图标，就能在云函数列表里看到我们上传好的“login”云函数啦。</p>
+    <p><strong>上传所有云函数</strong></p>
+    <p>接下来我们按照这样的流程把<strong>其他所有云函数</strong>（如openapi）都部署都上传，也就是要执行和上面相同的步骤，总结如下：</p>
+    <ol>
+    <li>右键云函数目录，选择在终端中打开，输入
+                <span id="crayon-5d8acdf9534c2117940540" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">npm </span><span class="crayon-v">install</span></span></span>命令下载依赖文件；</li>
+    <li>然后再右键云函数目录，点击“<strong>创建并部署：所有文件</strong>”</li>
+    <li>在云开发控制台–云函数–<strong>云函数列表</strong>查看云函数是否部署成功。</li>
+    </ol>
+    <blockquote class="danger"><p>login、openapi、echo、callback这些云函数在后面都会用到的哦，一定要确定自己部署上传成功，不然后面会报错的哦。</p></blockquote>
+    <h4>npm包管理器与依赖模块</h4>
+    <p>为什么要在云函数目录执行npm install，而不是其他地方？这是因为npm install会下载云函数目录下的配置文件<strong>package.json</strong>里的<strong>dependencies</strong>，它表示的是当前云函数需要依赖的模块。package.json在哪里，就在哪里执行npm install，没有package.json，没有dependencies，就没法下载啊。</p>
+    <p>执行npm install命令下载的依赖模块会放在<strong>node_modules</strong>文件夹里，大家可以在执行了npm install命令之后，在电脑里打开查看一下<strong>node_modules</strong>文件夹里下载了哪些模块。</p>
+    <p>既然npm install是下载模块，那它是从哪里下载的呢？就以wx-server-sdk为例，我们可以在以下链接看到wx-server-sdk的情况：</p>
+            <div id="crayon-5d8acdf9534c4667747186" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">https://www.npmjs.com/package/wx-server-sdk</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534c4667747186-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534c4667747186-1">https<span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-o">/</span>www<span class="crayon-sy">.</span>npmjs<span class="crayon-sy">.</span>com<span class="crayon-o">/</span>package<span class="crayon-o">/</span>wx<span class="crayon-o">-</span>server<span class="crayon-o">-</span>sdk</div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>为什么package.json里依赖的是一个模块wx-server-sdk，但是node_modules文件夹里却下载了那么多模块？这是因为wx-server-sdk也依赖三个包tcb-admin-node、protobuf、jstslib，而这三个包又会依赖其他包，子子孙孙的，于是就有了很多模块。</p>
+    <p>node_modules文件夹这么大（几十M~几百M都可能），会不会影响小程序的大小？小程序的大小只与<strong><span style="color: #800000;">miniprogram文件夹</span></strong>有关，当你把云函数都部署上传到服务器之后，你把整个<span style="color: #800000;"><strong>cloudfuntions文件夹</strong></span>删掉都没有关系。相同的依赖（比如都依赖wx-server-sdk）一旦部署到云函数之后，你可以选择不上传node_modules时，因为已经上传过了。</p>
+    <h4>获取openid与云函数login</h4>
+    <p>当我们把<strong>云函数login</strong>部署上传成功后，就可以在模拟器以及手机（需要重新点击<strong>预览</strong>图标并扫描二维码）里<strong>点击获取openid</strong>了。</p>
+    <p><strong>点击获取openid</strong></p>
+    <p>openid是小程序用户的唯一标识，也就是每一个小程序用户都有一个唯一的openid。点击“<strong>点击获取openid</strong>”，在<strong>用户管理指引</strong>页面如果显示“用户id获取成功”以及一串字母+数字，那么表示你login云函数部署并上传成功啦。<span style="color: #800000;"><strong>如果获取openid失败，你则需要解决login云函数的部署上传，才能进行下面的步骤哦</strong></span>。</p>
+    <p><strong>调用云函数的解读</strong></p>
+    <p>小程序的首页是”pages/index/index”，我们可以从app.json的配置项或者模拟器左下角的页面路径可以看出来。在index.wxml里有这段代码：</p>
+            <div id="crayon-5d8acdf9534c6146568528" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button class="userinfo-nickname" bindtap="onGetOpenid"&gt;点击获取 openid&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534c6146568528-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534c6146568528-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"userinfo-nickname"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"onGetOpenid"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">点击获取 openid</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>也就是当点击“<strong>点击获取openid</strong>”按钮时，会触发bindtap绑定的事件处理函数<strong>onGetOpenid</strong>，在index.js里可以看到onGetOpenid事件处理函数（<span style="color: #800000;"><strong>在index.js里找到事件处理函数onGetOpenid对比理解</strong></span>）调用了wx.cloud.callFunction()接口（<span style="color: #800000;"><strong>打开技术文档对比理解</strong></span>）</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/functions/callFunction.html" target="_blank" rel="noopener noreferrer">调用云函数wx.cloud.callFunction</a></p>
+    <p>调用云函数的方法很简单，只需要填写云函数的名称name（这里为login），以及需要传递的参数（这里并没有上传参数），就可以进行调用。在success回调函数里添加以下代码<span style="color: #800000;"><strong>打印res对象</strong></span>：</p>
+            <div id="crayon-5d8acdf9534c8672610786" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log('调用login云函数返回的res',res)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534c8672610786-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534c8672610786-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'调用login云函数返回的res'</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>添加完成之后<span style="color: #800000;"><strong>记得保存代码</strong></span>哦，文件修改没有保存会在标签页有一个小的绿点。可以使用快捷键（同时按）Ctrl和S来保存（Mac电脑为Command和S）。</p></blockquote>
+    <p>编译之后，再点击“<strong>点击获取openid</strong>”按钮，就能看到完整的res对象，res对象有三个参数：</p>
+    <ul>
+    <li><strong>requestID</strong>：云函数执行 ID，可用于在<strong>云开发控制台</strong>查找日志，打开云开发控制台–云函数–日志，可以在这里根据云函数函数名以及requestID来筛选查看云函数的调用日志（含返回结果）；</li>
+    <li><strong>result：</strong><span style="color: #800000;"><strong>云函数返回的结果</strong></span>，login云函数返回的结果里包含appid、event对象，我们可以通过res.result.appid以及res.result.event访问它们；</li>
+    <li>errMsg：显示云函数是否调用成功</li>
+    </ul>
+    <p>事件处理函数onGetOpenid调用云函数成功之后，干了三件事情：</p>
+    <ul>
+    <li>使用console.log打印openid，可以在点击按钮触发云函数在控制台看到该打印结果；</li>
+    <li>把获取到的appid赋值给app.js文件里的globalData全局对象；</li>
+    <li>跳转到userConsole页面；</li>
+    </ul>
+    <p>而userConsole页面就只是从globalData里将openid取出来通过setData渲染到页面。</p>
+    <blockquote class="task"><p><strong>小任务：</strong>你明白为啥wx.cloud.callFunction()是小程序端的API了么？思考一下为啥云开发会有小程序端的API和服务端API的区别？能理解多少是多少，不清楚也没有关系，后面会有更多内容助你理解。</p></blockquote>
+    <p><strong>云函数login解读</strong></p>
+    <p>为什么调用云函数login返回的res的<strong>result对象</strong>里会包含event对象、appid、userInfo这些结果？这就取决于云函数是怎么写的了。使用开发者工具打开<strong>login云函数</strong>（在<strong>cloudfuntions文件夹</strong>里）的index.js。</p>
+            <div id="crayon-5d8acdf9534cb006342464" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">exports.main = (event, context) =&gt; {}</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534cb006342464-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534cb006342464-1"><span class="crayon-v">exports</span><span class="crayon-sy">.</span><span class="crayon-v">main</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这是一个<strong>箭头函数</strong>的写法，其中<strong>event</strong>和<strong>context</strong>是参数。我们将两个打印日志修改为以下代码，相当于备注一下到底打印到哪里去了：</p>
+            <div id="crayon-5d8acdf9534cd632718810" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log('服务端打印的event',event)
+    console.log('服务端打印的context',context)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534cd632718810-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534cd632718810-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534cd632718810-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'服务端打印的event'</span><span class="crayon-sy">,</span><span class="crayon-v">event</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d8acdf9534cd632718810-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'服务端打印的context'</span><span class="crayon-sy">,</span><span class="crayon-v">context</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存之后，右键点击index.js文件，选择<strong>云函数增量上传:（更新文件）</strong>，更新login云函数，我们再来点击“<strong>点击获取openid</strong>”按钮，打印的结果在哪里呢？在<strong>云开发控制台的云函数日志里面</strong>。我们发现event对象包含程序用户的 openid 和小程序的 appid，而context对象则是云函数的调用信息和运行状态。</p>
+    <blockquote class="danger"><p>云函数的打印日志会显示云开发控制台的日志里面，这一点非常重要，要多加利用。只要是打印日志，无论是显示在开发者工具控制台还是显示在云开发控制台的就没有不重要的。</p></blockquote>
+    <div>
+    <div><strong>getWXContext()</strong></div>
+    </div>
+    <p>getWXContext()API是云开发服务端的工具类API，会返回小程序用户的openid、小程序appid、小程序用户的unionid等。说这么多不如直接打印，在下面添加一行打印信息：</p>
+            <div id="crayon-5d8acdf9534ce770736393" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const wxContext = cloud.getWXContext()
+    console.log('getWXContext返回的结果',wxContext)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534ce770736393-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534ce770736393-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534ce770736393-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">wxContext</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">getWXContext</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d8acdf9534ce770736393-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'getWXContext返回的结果'</span><span class="crayon-sy">,</span><span class="crayon-v">wxContext</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存之后，右键点击index.js文件，选择<strong>云函数增量上传:（更新文件）</strong>，更新login云函数，我们再来点击“<strong>点击获取openid</strong>”按钮，然后去云开发控制台的云函数日志里看到底返回了什么结果。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-server-api/utils/getWXContext.html" target="_blank" rel="noopener noreferrer">getWXContext()</a></p>
+    <p>对照技术文档来理解返回的结果。</p>
+    <blockquote><p>注意小程序用户 unionid只有在开发者帐号下存在<strong>同主体的</strong>公众号或移动应用，并且该用户已经授权登录过该公众号或移动应用才能获得。</p></blockquote>
+    <p><strong>return</strong></p>
+    <p>return语句是终止函数的执行，并返回一个指定的值给<strong>函数调用者</strong>。这里返回了4个值，而前面我们就调用过login云函数，就是<strong>函数的调用者</strong>，所以我们打印的事件处理函数onGetOpenid的回调函数的<strong>res对象</strong>正是这个return返回的结果。那既然如此，我们在return多加一些内容看看，比如我们之前的一些数据结构案例，将return函数改为如下代码：</p>
+            <div id="crayon-5d8acdf9534d0986320627" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  let lesson = "云开发技术训练营";
+      let enname = "CloudBase Camp";
+      let x = 3, y = 4, z = 5.001, a = -3, b = -4, c = -5;
+      let now = new Date();
+      return {
+        movie: { name: "霸王别姬", img: "https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp", desc: "风华绝代。" },
+        movielist:["肖申克的救赎", "霸王别姬", "这个杀手不太冷", "阿甘正传", "美丽人生"],
+        charat: lesson.charAt(4),
+        concat: enname.concat(lesson),
+        uppercase: enname.toUpperCase(),
+        abs: Math.abs(b),
+        pow: Math.pow(x, y),
+        sign: Math.sign(a),
+        now: now.toString(),
+        fullyear: now.getFullYear(),
+        date: now.getDate(),
+        day: now.getDay(),
+        hours: now.getHours(),
+        minutes: now.getMinutes(),
+        seconds: now.getSeconds(),
+        time: now.getTime(),
+        event,
+        openid: wxContext.OPENID,
+        appid: wxContext.APPID,
+        unionid: wxContext.UNIONID,
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-6" style="height: 40px;">6</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5d8acdf9534d0986320627-26" style="height: 20px;">26</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-e ">lesson</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"云开发技术训练营"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-e ">enname</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"CloudBase Camp"</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-i">let</span><span class="crayon-h"> </span><span class="crayon-v">x</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">z</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">5.001</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">b</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">c</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-cn">5</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">let </span><span class="crayon-v">now</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-r">Date</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">movie</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">img</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">desc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"风华绝代。"</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">movielist</span><span class="crayon-o">:</span><span class="crayon-sy">[</span><span class="crayon-s">"肖申克的救赎"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"霸王别姬"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"这个杀手不太冷"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"阿甘正传"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"美丽人生"</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">charat</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">lesson</span><span class="crayon-sy">.</span><span class="crayon-e">charAt</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">concat</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">enname</span><span class="crayon-sy">.</span><span class="crayon-e">concat</span><span class="crayon-sy">(</span><span class="crayon-v">lesson</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">uppercase</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">enname</span><span class="crayon-sy">.</span><span class="crayon-e">toUpperCase</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">abs</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">abs</span><span class="crayon-sy">(</span><span class="crayon-v">b</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">pow</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">pow</span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">sign</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">sign</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">now</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">toString</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">fullyear</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getFullYear</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">date</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getDate</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">day</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getDay</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">hours</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getHours</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">minutes</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getMinutes</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">seconds</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getSeconds</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">time</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">now</span><span class="crayon-sy">.</span><span class="crayon-e">getTime</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">event</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-23"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">openid</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">wxContext</span><span class="crayon-sy">.</span><span class="crayon-v">OPENID</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-24"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">appid</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">wxContext</span><span class="crayon-sy">.</span><span class="crayon-v">APPID</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-25"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">unionid</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">wxContext</span><span class="crayon-sy">.</span><span class="crayon-v">UNIONID</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d0986320627-26"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存之后，右键点击index.js文件，选择<strong>云函数增量上传:（更新文件）</strong>，更新login云函数，我们再来点击“<strong>点击获取openid</strong>”按钮，然后去云开发控制台的云函数日志里看到底返回了什么结果。</p>
+    <blockquote class="danger"><p>这里我们多次反复提及更新了index.js文件之后就要选择<strong>云函数增量上传:（更新文件）</strong>，更新login云函数，希望大家平时的时候注意，这也是小程序云开发<strong>服务端</strong>和<strong>小程序端</strong>一个非常大的区别。</p></blockquote>
+    <h4>新建云函数</h4>
+    <p>鼠标右键cloudfunctions云函数根目录，在弹出的窗口选择<strong>新建Node.js云函数</strong>，比如输入<strong>sum</strong>，按Enter确认后，微信开发者工具会在本地（你的电脑）创建出<strong>sum云函数目录</strong>，同时也会在线上环境中创建出对应的云函数（也就是自动部署好了，可以到云开发控制台云函数列表里看到）</p>
+    <p>打开sum云函数目录下的index.js，添加&nbsp;<span id="crayon-5d73987b92a36114172053" class="crayon-syntax crayon-syntax-inline crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco"><span class="crayon-pre crayon-code"><span class="crayon-v">sum</span><span class="crayon-o">:</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">a</span><span class="crayon-o">+</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">b</span><span class="crayon-sy">,</span></span></span>到return函数里（把多余的内容可以删掉了），然后<span style="color: #800000;"><strong>记得选择云函数增量上传:（更新文件），更新sum云函数</strong></span>。</p>
+            <div id="crayon-5d8acdf9534d3608581733" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;"> return {
+        sum:event.a+event.b,
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534d3608581733-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534d3608581733-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8acdf9534d3608581733-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534d3608581733-1"><span class="crayon-h"> </span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8acdf9534d3608581733-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">sum</span><span class="crayon-o">:</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">a</span><span class="crayon-o">+</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">b</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d3608581733-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这个a和b是变量，但是和前面不一样的是，在服务端我们并没有声明a和b啊，这是因为我们可以在小程序端声明变量。</p>
+    <p>点击开发者工具模拟器的“<strong>快速新建云函数</strong>”，会跳转到addFunction页面，打开addFunction.wxml，我们看到<strong>测试云函数</strong>绑定的是testFunction事件处理函数。</p>
+            <div id="crayon-5d8acdf9534d4178308259" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="list-item" bindtap="testFunction"&gt;
+       &lt;text&gt;测试云函数&lt;/text&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534d4178308259-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534d4178308259-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8acdf9534d4178308259-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534d4178308259-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"list-item"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"testFunction"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5d8acdf9534d4178308259-2"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-r ">&lt;text&gt;</span><span class="crayon-i ">测试云函数</span><span class="crayon-r ">&lt;/text&gt;</span></div><div class="crayon-line" id="crayon-5d8acdf9534d4178308259-3"><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们去看addFunction.js里的testFunction，看变量a和b这两个小程序端的变量是怎么和服务端的变量关联起来的，而又是如何把结果渲染到页面的。testFunction调用云函数sum同样是通过wx.cloud.callFunction，不同的是在data里有a和b：</p>
+            <div id="crayon-5d8acdf9534d6860186731" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">data: {
+      a: 1,
+      b: 2
+    },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534d6860186731-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534d6860186731-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8acdf9534d6860186731-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8acdf9534d6860186731-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534d6860186731-1"><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8acdf9534d6860186731-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">a</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf9534d6860186731-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">b</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">2</span></div><div class="crayon-line" id="crayon-5d8acdf9534d6860186731-4"><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>data里填写的是传递给云函数的参数，也就是先把小程序端的参数传递给云函数，然后云函数处理之后再返回res对象，我们可以在success回调函数里打印res对象：</p>
+            <div id="crayon-5d8acdf9534d8719860850" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log("sum云函数返回的对象",res)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534d8719860850-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534d8719860850-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"sum云函数返回的对象"</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>编译之后，我们再点击<strong>测试云函数</strong>，在控制台就能看到打印的结果，res.result.sum就是3。直接把res.result.sum通过setData赋值到result就能渲染出数字，那这个res.result是什么？JSON.stringify()又是什么？</p>
+            <div id="crayon-5d8acdf9534da000699571" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">result: JSON.stringify(res.result)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534da000699571-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534da000699571-1"><span class="crayon-v">result</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">JSON</span><span class="crayon-sy">.</span><span class="crayon-e">stringify</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">result</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们可以打印一下res.result，以及JSON.stringify(res.result)</p>
+            <div id="crayon-5d8acdf9534dc907893936" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">console.log("res.result是啥", res.result)
+    console.log("JSON.stringify(res.result)是啥", JSON.stringify(res.result))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534dc907893936-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf9534dc907893936-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534dc907893936-1"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"res.result是啥"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">result</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d8acdf9534dc907893936-2"><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"JSON.stringify(res.result)是啥"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">JSON</span><span class="crayon-sy">.</span><span class="crayon-e">stringify</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">result</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>res.result是对象，而JSON.stringify(res.result)是json格式，
+                <span id="crayon-5d8acdf9534dd982870679" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">JSON</span><span class="crayon-sy">.</span><span class="crayon-e">stringify</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>&nbsp;方法是将一个JavaScript值(对象或者数组)转换为一个 <strong>JSON字符串</strong>，因为对象如果直接渲染到页面是会显示
+                <span id="crayon-5d8acdf9534df114463242" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">[</span><span class="crayon-t">object</span><span class="crayon-h"> </span><span class="crayon-t">Object</span><span class="crayon-sy">]</span></span></span>的。</p>
+    <blockquote class="task"><p><strong>小任务：</strong>将小程序的参数传递给云端，有没有一点wx.request的感觉？相当于我们通过云函数写好了一个数据API，然后在小程序端调用。新建一个云函数，把各种数学运算都部署到云端，然后通过传递参数，调用这些算法，并将结果渲染到页面。</p></blockquote>
+    <h4>体验上传图片</h4>
+    <p><strong>上传图片到云存储</strong></p>
+    <p>使用<strong>模拟器以及手机端</strong>点击<strong>云开发QuickStart小程序</strong>的上传图片按钮，选择一张图片并打开，如果在<strong>文件存储指引</strong>页面显示上传成功和文件的路径以及图片的缩略图，说明你的图片就上传到云开发服务器里啦。</p>
+    <p>点击云开发控制台的<strong>存储</strong>图标，就可以进入到<strong>存储管理页</strong>查看到你之前上传的图片啦，<span style="color: #800000;"><strong>点击该图片名称</strong></span>可以看到这张图片的一些信息，如：文件大小、格式、上传者的OpenID以及<strong>存储位置</strong>、<strong>下载地址</strong>和<strong>File ID</strong>。复制<strong>下载地址</strong>链接，在浏览器就能查看到这张图片啦。</p>
+    <blockquote><p>值得注意的是由于QuickStart小程序将“上传图片”这个按钮上传的所有图片都命名为my-image，所以上传同一格式的图片就会被覆盖掉，也就是无论你上传多少张相同格式的图片，只会在后台里看到最后更新的那张图片。以后我们会教大家怎么修改代码，让图片不会被覆盖。</p></blockquote>
+    <p><strong>组件支持</strong></p>
+    <p>我们可以把<strong>下载地址</strong>作为图床来使用的，也就是你可以把图片的下载地址放到其他网页图片是可以显示的。云存储的图片还有一个<span style="color: #800000;"><strong>FileID</strong></span>（既云文件ID，以cloud://开头）则只能用于<span style="color: #800000;"><strong>小程序的特定场景</strong></span>，也只有部分组件的部分属性支持，把链接粘贴到浏览器也是打不开的。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/component/" target="_blank" rel="noopener noreferrer">组件支持</a></p>
+    <p>比如我们在index页面的index.wxml里输入以下代码，在image组件的src属性里输入你的云存储图片的FileID，它是可以显示出来的。</p>
+            <div id="crayon-5d8acdf9534e0287115791" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;image src="你的图片的FileID"&gt;&lt;/image&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf9534e0287115791-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf9534e0287115791-1"><span class="crayon-r ">&lt;image </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"你的图片的FileID"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>但是如果你<strong><span style="color: #800000;">退出登录开发者工具，图片就不会显示，而且还会报错</span></strong>，所以不要把图片的FileID当做图床用，FileID另有它用。</p>
+    <h4>体验云调用之服务端调用</h4>
+    <p>重新点击开发者工具的<strong>预览</strong>图标，然后用手机扫描二维码，在<strong>手机端</strong>点击云开发QuickStart的云调用里的服务端调用，就可以<strong>发送模板消息</strong>和<strong>获取小程序码</strong>。</p>
+    <p>点击<strong>获取小程序码</strong>，如果显示调用失败，说明你的<strong>openapi云函数</strong>没有部署成功，需要你先部署成功才行哦。调用成功，就能获取到你的小程序码啦，这个小程序码也会保存到云开发的存储里。</p>
+    <blockquote class="danger"><p>发送模板消息，只能在手机微信里预览测试哦，使用微信开发者工具是发送不了模板消息，而且控制台还会报错</p></blockquote>
+    <p>点击<strong>发送模板消息</strong>，你的微信就会收到一则<span style="color: #800000;"><strong>服务通知</strong></span>，该通知是由你的小程序发出的<strong>购买成功</strong>通知。这就是微信的模板消息啦，很多微信公众号、小程序都会有这样的功能，使用小程序云开发，我们也可以轻松定制自己的服务通知（后面会教大家如何定制）。</p>
+    <h4>体验前端操作数据库</h4>
+    <p>点击微信开发者工具的云开发图标，打开云开发控制台，点击数据库图标进入到<strong>数据库管理页</strong>，点击<strong>集合名称</strong>右侧的<strong>+号</strong>图标，就可以创建一个数据集合了，这里我们只需要添加一个<strong>counters</strong>的集合（不需添加数据）即可。</p>
+    <p>在开发者工具的编辑器里展开<strong>miniprogram文件夹</strong>，打开pages文件下databaseGuide里的<strong>databaseGuide.js</strong>文件，在这里找到
+                <span id="crayon-5d8acdf9534e2280308219" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onAdd</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>、
+                <span id="crayon-5d8acdf9534ea732905367" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onQuery</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>、
+                <span id="crayon-5d8acdf9534eb652795324" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onCounterInc</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>、
+                <span id="crayon-5d8acdf9534ed077782030" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onCounterDec</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>、
+                <span id="crayon-5d8acdf9534ee676430213" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onRemove</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>分别选中绿色的代码块，然后<strong>同时按</strong>快捷键Ctrl和/（Mac电脑的快捷键为Command和/），就可以批量取消代码的注释。</p>
+    <blockquote><p>//是前端编程语言JavaScript的单行注释，位于&nbsp;<span class="code_marked">//</span>&nbsp;这一行的代码都不会执行，我们使用快捷键就是批量取消这些代码的注释，让整段代码生效。之所以显示为绿色，是微信开发者工具为了让我们看得更清晰而做的语法高亮。</p></blockquote>
+    <div>
+    <div><strong>前端操作数据库的页面逻辑</strong></div>
+    </div>
+    <p>以上的函数是在小程序的前端页面来操作数据库，点击开发者工具模拟器云开发QuickStart里的前端操作数据库，</p>
+    <ul>
+    <li>在第1步（数据库指引有标注），我们会获取到用户的openid，也就是说你没有获取到openid是没法通过小程序的前端来操作数据库的哦</li>
+    <li>第2步，需要我们在<strong>云开发控制台</strong>里的<strong>数据库管理页</strong>创建一个<strong>counters</strong>的集合（不需添加数据）；</li>
+    <li>第3步，点击按钮页面的按钮“<strong>新增记录</strong>”（按钮就在这个页面的第4条与第5条之间，看起来不是那么明显），这时会调用
+                <span id="crayon-5d8acdf9534f0623072023" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onAdd</span></span></span>方法，往<strong>counters集合</strong>新增一个记录（之前手动添加有木有很辛苦？），我们可以去云开发控制台的<strong>数据库管理页</strong>查看一下counters集合是不是有了一条记录；大家可以多点击几下<strong>新增记录</strong>按钮，然后去云开发控制台看数据库又有什么变化。也就是小程序前端页面通过
+                <span id="crayon-5d8acdf9534f2234729777" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onAdd</span></span></span>方法，在数据库新增了记录。</li>
+    <li>第4步，点击按钮<strong>查询记录</strong>，这时调用的是
+                <span id="crayon-5d8acdf9534f3194331417" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onQuery</span></span></span>方法就能在小程序里<strong>获取到</strong>第3步我们存储到数据库里的数据啦</li>
+    <li>第5步，点击计数器按钮+号和-号，可以更新count的值，点击+号按钮会调用
+                <span id="crayon-5d8acdf9534f5840847850" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onCounterInc</span></span></span>方法，而点击-号
+                <span id="crayon-5d8acdf9534f6086514872" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onCounterDec</span></span></span>方法，比如我们点击加号到7，再去<strong>数据库管理页</strong>查看最新的一条记录（也就是最后一条），它的count由原来的1更新到了7（<strong>先点刷新按钮</strong>），我们再点击-号按钮到5，再来数据库管理页查看有什么变化变化（<strong>先点刷新按钮</strong>）</li>
+    <li>第6步，点击<strong>删除记录</strong>按钮，会调用
+                <span id="crayon-5d8acdf9534f8987112416" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onRemove</span></span></span>方法，这时会删掉数据库里最新的记录（也就是第5步里的那一条记录）。</li>
+    </ul>
+    <p>通过实战我们了解到，databaseGuide.js文件里的
+                <span id="crayon-5d8acdf9534fa804512687" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onAdd</span></span></span>、
+                <span id="crayon-5d8acdf9534fb467852954" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onQuery</span></span></span>、
+                <span id="crayon-5d8acdf9534fd509935288" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onCounterInc</span></span></span>、
+                <span id="crayon-5d8acdf9534fe488221352" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onCounterDec</span></span></span>、
+                <span id="crayon-5d8acdf9534ff421461901" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">onRemove</span></span></span>可以实现小程序的前端页面来操作数据库。</p>
+    <p>这些函数大家可以结合<strong>databaseGuide.js</strong>文件和<strong>云开发技术文档</strong>关于数据库的内容来理解。（<span style="color: #008000;"><strong>关于前端是如何操作数据库的，我们之后还会深入讲解，这里只需要了解大致的逻辑即可</strong></span>）</p>
+    <blockquote><p>在前面JavaScript的章节里我们了解到数据以及数据的存储是非常重要的，而有了数据库，用函数生成的数据能够比缓存存储的更加持久，而且在上面我们实现了对数据进行增(添加)、删(删除)、改(修改、更新)、查(查询并渲染到页面)，不仅如此，缓存的容量也比较有限，最多不过10M，而数据库可以存几百G以上，可见它的重要性。</p></blockquote>
+    <h4>开始一个新的云开发项目</h4>
+    <p><strong>基于云开发QuickStart模板小程序</strong><br>
+    云开发QuickStart模板小程序有很多多余的页面，这个我们只需要把miniprogram文件夹下的pages、images、components、style文件夹里的文件清空，以及app.json的pages配置项里的页面删除，把app.wxss里的样式代码都删掉就是一个全新的开始啦。这是方法之一，也可以使用下面的方法（<span style="color: #800000;"><strong>推荐学习时使用下面的方法</strong></span>）。</p>
+    <p><strong>基于没有使用云开发的项目改造</strong><br>
+    当然我们也可以把前面章节没有使用云开发的项目改造成使用云服务，首先在小程序的根目录下新建一个文件夹，比如<strong>cloudfunctions</strong>，然后在project.config.json添加云函数文件夹的路径配置即可，</p>
+            <div id="crayon-5d8acdf953501511592205" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">"cloudfunctionRoot": "cloudfunctions/",</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf953501511592205-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf953501511592205-1"><span class="crayon-s">"cloudfunctionRoot"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"cloudfunctions/"</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后新建一个miniprogram文件夹，把小程序除了project.config.json以外的其他文件，比如pages、utils、images、app.js、app.json等文件都放到miniprogram文件夹里，再在project.config.json添加miniprogramRoot配置:</p>
+            <div id="crayon-5d8acdf953503437424631" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">"cloudfunctionRoot": "cloudfunctions/",
+    "miniprogramRoot":"miniprogram/",</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf953503437424631-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf953503437424631-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf953503437424631-1"><span class="crayon-s">"cloudfunctionRoot"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"cloudfunctions/"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf953503437424631-2"><span class="crayon-s">"miniprogramRoot"</span><span class="crayon-o">:</span><span class="crayon-s">"miniprogram/"</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="danger"><p>值得一提的是，云函数部署上传成功，我们就可以一直调用，只要你的小程序的appid以及环境ID没有变，你创建再多的小程序项目，都可以直接调用部署好的云函数，比如前面的login、echo、callback、sum等云函数。也就是说云函数一旦部署成功，它就一直在云端服务器里，哪怕你把小程序本地的云函数都删掉也没有关系。</p></blockquote>
+    <p>当新建了并配置了云函数根目录为cloudfunctions文件夹之后，云函数根目录里并没有云函数，我们可以右键点击云函数根目录cloudfunctions文件夹选择<span style="color: #800000;"><strong>同步云函数列表</strong></span>，可以把所有云端的云函数列表都列举出来（这只是列举了列表），而要修改云函数里面的内容，我们可以右键点击其中的一个云函数目录选择<span style="color: #800000;"><strong>下载云函数</strong></span>即可。</p>
+    <p>除此之外，我们需要小程序的app.js的生命周期函数onLaunch里使用wx.cloud.init()来初始化云开发能力：</p>
+            <div id="crayon-5d8acdf953504593595711" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLaunch: function () {
+        if (!wx.cloud) {
+          console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+        } else {
+          wx.cloud.init({
+            env: '你的环境ID',
+            traceUser: true,
+          })
+        }
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d8acdf953504593595711-10" style="height: 20px;">10</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf953504593595711-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">onLaunch</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-o">!</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">error</span><span class="crayon-sy">(</span><span class="crayon-s">'请使用 2.2.3 或以上的基础库以使用云能力'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">init</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'你的环境ID'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">traceUser</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d8acdf953504593595711-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>云开发能力全局只需要初始化一次即可，这里的traceUser属性设置为true，会将用户访问记录到用户管理中，在云开发控制台的<strong>运营分析</strong>—<strong>用户访问</strong>里可以看到访问记录。</p>
+    <h4>基础库与wx.cloud</h4>
+    <p>在小程序端初始化云开发能力的代码里，涉及到wx.cloud以及基础库版本的知识。关于wx.cloud，我们可以和之前在控制台了解wx对象一样，直接在开发者工具的控制台里输入：</p>
+            <div id="crayon-5d8acdf953506741679328" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.cloud</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf953506741679328-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf953506741679328-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>来了解对象有哪些属性与方法。我们可以看到有如下方法：</p>
+            <div id="crayon-5d8acdf953508042064098" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">CloudID: ƒ () //用于云调用获取开放数据
+    callFunction: ƒ () //调用云函数
+    database: ƒ () //获取数据库的引用
+    deleteFile: ƒ () //从云存储空间删除文件
+    downloadFile: ƒ () //从云存储空间下载文件
+    getTempFileURL: ƒ () //用云文件 ID 换取真实链接
+    init: ƒ ()  //初始化云开发能力
+    uploadFile: ƒ () //上传文件至云存储空间</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d8acdf953508042064098-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d8acdf953508042064098-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d8acdf953508042064098-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d8acdf953508042064098-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d8acdf953508042064098-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d8acdf953508042064098-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d8acdf953508042064098-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d8acdf953508042064098-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d8acdf953508042064098-1"><span class="crayon-v">CloudID</span><span class="crayon-o">:</span><span class="crayon-h"> </span>ƒ<span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//用于云调用获取开放数据</span></div><div class="crayon-line" id="crayon-5d8acdf953508042064098-2"><span class="crayon-v">callFunction</span><span class="crayon-o">:</span><span class="crayon-h"> </span>ƒ<span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//调用云函数</span></div><div class="crayon-line" id="crayon-5d8acdf953508042064098-3"><span class="crayon-v">database</span><span class="crayon-o">:</span><span class="crayon-h"> </span>ƒ<span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//获取数据库的引用</span></div><div class="crayon-line" id="crayon-5d8acdf953508042064098-4"><span class="crayon-v">deleteFile</span><span class="crayon-o">:</span><span class="crayon-h"> </span>ƒ<span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//从云存储空间删除文件</span></div><div class="crayon-line" id="crayon-5d8acdf953508042064098-5"><span class="crayon-v">downloadFile</span><span class="crayon-o">:</span><span class="crayon-h"> </span>ƒ<span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//从云存储空间下载文件</span></div><div class="crayon-line" id="crayon-5d8acdf953508042064098-6"><span class="crayon-v">getTempFileURL</span><span class="crayon-o">:</span><span class="crayon-h"> </span>ƒ<span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//用云文件 ID 换取真实链接</span></div><div class="crayon-line" id="crayon-5d8acdf953508042064098-7"><span class="crayon-v">init</span><span class="crayon-o">:</span><span class="crayon-h"> </span>ƒ<span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//初始化云开发能力</span></div><div class="crayon-line" id="crayon-5d8acdf953508042064098-8"><span class="crayon-v">uploadFile</span><span class="crayon-o">:</span><span class="crayon-h"> </span>ƒ<span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">//上传文件至云存储空间</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>而关于基础库，有三个地方需要注意它的存在，平时开发的时候需要留意</p>
+    <ul>
+    <li>开发者工具的project.config.json里有这样一个属性<strong>libVersion</strong>，这个也可以在开发者工具<strong>工具栏</strong>右上角的<strong>详情</strong>里的本地设置里的调试基础库，建议切换到最新，切换后libVersion的值也会修改到切换的版本；</li>
+    <li>官方文档基础库的更新日志，小程序更新非常频繁，而更新的核心就是基础库：所以<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/release/" target="_blank" rel="noopener noreferrer">基础库更新日志</a>要经常留意</li>
+    <li>每个API，技术文档都会标明它的基础库支持的最低版本，而小程序·云开发 SDK是2.2.3以上的基础库才开始支持的。</li>
+    </ul>
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
