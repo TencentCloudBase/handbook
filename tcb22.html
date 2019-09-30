@@ -1,0 +1,849 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 云开发能力评论Feed" href="https://cloudbasegroup.org/handbook/tcb/67/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="小程序开发入门" href="https://cloudbasegroup.org/handbook/weapp/10">
+    <link rel="next" title="云开发快速入门" href="https://cloudbasegroup.org/handbook/tcb/62">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/tcb/67">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=67">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Ftcb%2F67">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Ftcb%2F67&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-67 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+    <nav id="header-db" class="row navbar navbar-default">
+            <div class="navbar-header">
+                  <div class="logotop fleft">
+                    <a href="https://tencentcloudbase.github.io/handbook/tcb21.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+                <div class="flex nav-items">
+                <h1 class="flex-item navbar-link">
+                    云开发技术训练营			</h1>
+                  </div>
+            </div>
+    
+            <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+             <div class="sop-menu">
+                <ul>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb21.html">
+                            云开发快速入门					</a>
+                    </li>
+                                    <li class="page_item current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/tcb22.html">
+                            云开发能力					</a>
+                    </li>
+                                                    </ul>
+            </div>		
+        </div>
+    </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">云开发能力</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>在上一节，我们大致体验了一下云开发：开通了云开发服务，相当于在云端拥有了一个Nodejs的环境，我们可以把云函数部署到云端。通过云开发的能力进行调用云函数、上传图片、操作数据库以及使用小程序的一些开放接口，下面来进一步了解和使用云开发能力，并加强对<span style="color: #800000;"><strong>云端测试</strong></span>、<span style="color: #800000;"><strong>本地调试</strong></span>以及<span style="color: #800000;"><strong>本地Console日志打印</strong></span>，<span style="color: #800000;"><strong>云端日志打印</strong></span>的理解。</p>
+    <blockquote><p>用编程来写项目，就像是在做一系列精密而复杂的实验，你不能总是劳烦他人帮你解决问题，而是要掌握<span style="color: #800000;"><strong>调试</strong></span>、<span style="color: #800000;"><strong>测试</strong></span>、<span style="color: #800000;"><strong>日志打印</strong></span>等手段来检查每一步操作是否正确，你需要学会查看报错信息，如果不正确问题在哪、出了什么问题，你才能有针对性的去搜索，有针对性的去咨询他人。</p></blockquote>
+    <h4>本地调试与云端测试</h4>
+    <p>为了能够让大家更加清楚的了解：<span style="color: #800000;"><strong>完整操作一个云函数的流程</strong></span>以及<strong><span style="color: #800000;">本地调试与云端测试的重要性</span></strong>，我们以长方形的边长（a、b）求周长、面积这个简单的数学公式为例。</p>
+    <p><strong>第一步：新建云函数</strong></p>
+    <p>首先我们右键点击<strong>云函数根目录</strong>（也就是<strong>cloudfunctions文件夹</strong>），选择<span style="color: #800000;"><strong>新建Nodejs云函数</strong></span>，函数名为长方形的英文rectangle，然后打开index.js，修改return里的内容为如下：</p>
+            <div id="crayon-5d91f3269b15d718060306" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">exports.main = async (event, context) =&gt; {
+      const wxContext = cloud.getWXContext()
+      return {
+        circum:(event.width+event.height)*2,
+        area:event.width*event.height
+      }
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b15d718060306-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b15d718060306-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b15d718060306-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b15d718060306-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b15d718060306-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b15d718060306-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b15d718060306-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b15d718060306-1"><span class="crayon-v">exports</span><span class="crayon-sy">.</span><span class="crayon-v">main</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">async</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b15d718060306-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">wxContext</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">getWXContext</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b15d718060306-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b15d718060306-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">circum</span><span class="crayon-o">:</span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">width</span><span class="crayon-o">+</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">height</span><span class="crayon-sy">)</span><span class="crayon-o">*</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b15d718060306-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">area</span><span class="crayon-o">:</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">width</span><span class="crayon-o">*</span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-i">height</span></div><div class="crayon-line" id="crayon-5d91f3269b15d718060306-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d91f3269b15d718060306-7"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>circum是周长，周长=（宽度width+高度height）<img draggable="false" class="emoji" alt="✖️" src="https://s.w.org/images/core/emoji/12.0.0-1/svg/2716.svg">2；area是面积，面积=宽度width<img draggable="false" class="emoji" alt="✖️" src="https://s.w.org/images/core/emoji/12.0.0-1/svg/2716.svg">高度height，只要我们之后把长方形的参数宽度width和高度height传递进来（<span style="color: #800000;"><strong>之后我们会来讲怎么传</strong></span>），即可获得长方形的周长和面积。</p>
+    <p>建好云函数之后，我们右键点击云函数目录，也就是rectangle文件夹，选择<span style="color: #800000;"><strong>在终端中打开</strong></span>，使用npm install来安装依赖。</p>
+            <div id="crayon-5d91f3269b164955477803" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">npm install</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b164955477803-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b164955477803-1"><span class="crayon-e">npm </span><span class="crayon-v">install</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>第二步：本地调试云函数是否正确</strong></p>
+    <p>对于一个复杂的云函数，我们最好是先在本地测试一下云函数是否正确，然后再部署上传到云端。那如何本地测试呢？右键点击云函数目录，也就是rectangle文件夹，选择<span style="color: #800000;"><strong>本地调试</strong></span>（这种方式进入本地调试会默认开启rectangle的本地调试），修改以下代码：</p>
+            <div id="crayon-5d91f3269b167911061249" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+      "key": "value"
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b167911061249-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b167911061249-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b167911061249-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b167911061249-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b167911061249-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"key"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"value"</span></div><div class="crayon-line" id="crayon-5d91f3269b167911061249-3"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们给参数宽度width和高度height赋值（<strong><span style="color: #800000;">注意传递的是JSON格式，最后一个参数结尾不能有逗号,</span></strong>），比如赋值为3和6：</p>
+            <div id="crayon-5d91f3269b168056558921" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+      "width": 3,
+      "height":7
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b168056558921-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b168056558921-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b168056558921-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b168056558921-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b168056558921-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b168056558921-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"width"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b168056558921-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"height"</span><span class="crayon-o">:</span><span class="crayon-cn">7</span></div><div class="crayon-line" id="crayon-5d91f3269b168056558921-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后点击<span style="color: #800000;"><strong>调用</strong></span>，如果显示函数执行成功(注意仍然是在调试的console标签)，并得到周长circum和面积area的结果分别为20、21，那证明云函数没有写错，这时候我们就可以部署并上传到云端了。</p>
+    <p><strong>第三步：云端测试云函数是否正确</strong></p>
+    <p>打开<strong>云开发控制台</strong>的<strong>云函数</strong>标签页，找到rectangle云函数，点击<strong>云端测试</strong>，同样我们给参数赋值，将以下代码进行修改：</p>
+            <div id="crayon-5d91f3269b16b575816048" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+      "key1": "test value 1",
+      "key2": "test value 2"
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b16b575816048-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b16b575816048-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b16b575816048-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b16b575816048-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b16b575816048-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b16b575816048-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"key1"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"test value 1"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b16b575816048-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"key2"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"test value 2"</span></div><div class="crayon-line" id="crayon-5d91f3269b16b575816048-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>比如给宽度width赋值为4，高度height赋值为7，即代码修改为：</p>
+            <div id="crayon-5d91f3269b16d902961365" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+      "width": 4,
+      "height": 7
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b16d902961365-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b16d902961365-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b16d902961365-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b16d902961365-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b16d902961365-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b16d902961365-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"width"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b16d902961365-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"height"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">7</span></div><div class="crayon-line" id="crayon-5d91f3269b16d902961365-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后点击运行测试，（会等一段时间），再来查看测试的结果，如果返回结果如下，则表示在云端的云函数可以正常调用：</p>
+            <div id="crayon-5d91f3269b16f717997063" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{"circum":22,"area":28}</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b16f717997063-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b16f717997063-1"><span class="crayon-sy">{</span><span class="crayon-s">"circum"</span><span class="crayon-o">:</span><span class="crayon-cn">22</span><span class="crayon-sy">,</span><span class="crayon-s">"area"</span><span class="crayon-o">:</span><span class="crayon-cn">28</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在云端测试的调用结果也是可以在云开发控制台云函数的日志里查看到的。</p>
+    <blockquote><p>在第一节我们要触发云函数，需要在小程序页面里写一个组件（比如button）并绑定事件处理函数，然后再在事件处理函数（或在页面的生命周期函数）里使用wx.cloud.callFunction()调用云函数，通过这种方式来触发云函数，会比较麻烦，而<span style="color: #800000;"><strong>本地调试和云端测试则可以直接触发云函数</strong></span>查看结果，大大提升了调试的便利度。</p></blockquote>
+    <p>云函数的调用采用事件触发模型，小程序端的调用、本地调试和云端测试都会触发云函数的调用事件，其中本地调试调用的不是云端的云函数，而是小程序本地的云函数。</p>
+    <blockquote class="task"><p><strong>小任务：</strong>rectangle云函数需要传入两个参数才能返回值，有些云函数，比如前面的login云函数不需要传入参数，你知道应该怎么进行本地调试和云端测试吗？在本地调试的请求方式有<strong>手动触发</strong>和<strong>模拟器触发</strong>，开启模拟器触发，点击第一节“<strong>点击获取openid</strong>”的按钮试试看（注意这时调用的是本地的云函数，修改一下login云函数不上传试试看）；</p></blockquote>
+    <h4>小程序端与服务端</h4>
+    <p><strong>小程序端与云端的初始化</strong></p>
+    <p>小程序默认可以创建两个环境，这两个环境都有云函数配置、数据库、云存储且独立隔离，开发上会存在两个环境切换的情况（一个用于生产环境，一个用于测试环境），而<strong>区别这两个环境的就是它们的环境ID</strong>，小程序端与云端的初始化时要注意。</p>
+    <p>在前面我们介绍过小程序的初始化是在app.js文件里使用wx.cloud.init来初始化，如下：</p>
+            <div id="crayon-5d91f3269b170541612175" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.cloud.init({
+      env: 'my-env-id', //可以填写生产环境或者测试环境的环境ID
+      traceUser: true,
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b170541612175-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b170541612175-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b170541612175-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b170541612175-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b170541612175-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">init</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b170541612175-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'my-env-id'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-c">//可以填写生产环境或者测试环境的环境ID</span></div><div class="crayon-line" id="crayon-5d91f3269b170541612175-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">traceUser</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b170541612175-4"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里的
+                <span id="crayon-5d91f3269b172792535354" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">env</span></span></span>&nbsp;<span style="color: #800000;"><strong>只会决定小程序端API调用的云环境</strong></span>（如云函数、云存储、数据库，毕竟有两个环境里都有），并<strong>不会决定云函数中的 API 调用的环境</strong>。在开发者工具的控制台，也会打印默认环境：</p>
+            <div id="crayon-5d91f3269b174388900299" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">当前代码初始化的默认环境为：你的默认环境ID</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b174388900299-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b174388900299-1">当前代码初始化的默认环境为：你的默认环境<span class="crayon-v">ID</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>云函数中的API调用的环境也可以使用初始化来设置。</p>
+            <div id="crayon-5d91f3269b176019350909" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">cloud.init({
+      env: cloud.DYNAMIC_CURRENT_ENV,
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b176019350909-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b176019350909-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b176019350909-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b176019350909-1"><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">init</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b176019350909-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-v">DYNAMIC_CURRENT_ENV</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b176019350909-3"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>
+                <span id="crayon-5d91f3269b177694291202" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-v">DYNAMIC_CURRENT_ENV</span></span></span><strong>设置 API 默认环境等于当前所在环境</strong>。<span style="color: #800000;"><strong>建议所有的云函数都使用以上方式来初始化，也就是配置env的值为cloud.DYNAMIC_CURRENT_ENV或使用你的环境ID，不要为空</strong></span>。</p>
+    <p><strong>关于wx-server-sdk</strong></p>
+    <p>每一个云函数都会用到wx-server-sdk这个Node包，而要使用这个包都需要有Nodejs环境，小程序端的本地需要我们自己下载Nodejs（前面已下载），而云端则自带Nodejs环境。那这个wx-server-sdk到底什么呢？我们可以打开它的npm包地址：</p>
+    <p><strong>npm包地址：</strong><a href="https://www.npmjs.com/package/wx-server-sdk" target="_blank" rel="noopener noreferrer">wx-server-sdk包地址</a></p>
+    <p>在<strong>Dependencies</strong>标签页可以看到wx-server-sdk依赖<strong>&nbsp;tcb-admin-node、</strong><strong>protobufjs、</strong><strong>tslib</strong>这三个包，而其中<strong>tcb-admin-node</strong>是核心，学有余力的童鞋可以看一下它的技术文档。</p>
+    <p><strong>技术文档：</strong><a href="https://github.com/TencentCloudBase/tcb-admin-node" target="_blank" rel="noopener noreferrer">tcb-admin-node的Github地址</a></p>
+    <p><b>async与await</b></p>
+    <p>在wx-server-sdk中不再兼容success、fail、complete回调，只会返回Promise。在云函数中也经常会需要处理一些异步操作，在异步操作完成后再返回结果给到调用方，我们可以通过在云函数中返回一个&nbsp;
+                <span id="crayon-5d91f3269b179631333408" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">Promise</span></span></span>&nbsp;的方法来实现。Promise表示异步操作返回的结果。在新建的云函数里会看到下面这样的一个语句（有
+                <span id="crayon-5d91f3269b17b666400828" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">async</span></span></span>）：</p>
+            <div id="crayon-5d91f3269b17c152819686" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">exports.main = async (event, context) =&gt; {
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b17c152819686-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b17c152819686-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b17c152819686-1"><span class="crayon-v">exports</span><span class="crayon-sy">.</span><span class="crayon-v">main</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">async</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b17c152819686-2"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>
+                <span id="crayon-5d91f3269b17e032402483" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">async</span></span></span>表示函数里有异步操作，async函数的返回值是一个 Promise 对象。在后面还会遇到
+                <span id="crayon-5d91f3269b17f118836381" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">await</span></span></span>，表示紧跟在它后面的表达式需要等待结果；以及promise对象的<strong>then()方法</strong>（有点类似于success回调函数），和<strong>catch()方法</strong>（有点类似于fail回调函数），<span style="color: #008000;"><strong>这些我们以后会经常遇到，先理解不了也没有关系，大家在书写时推荐云函数使用上面的写法就对了</strong></span>。</p>
+    <blockquote class="danger"><p><strong>云函数的注意事项</strong></p>
+    <ul>
+    <li>在云函数部署并上传到云端之后，更新里面的文件比如index.js、config.json，建议右键点击更新好的文件（不是云函数目录）选择<span style="color: #008000;"><strong>云函数增量上传：更新文件</strong></span>，<strong><span style="color: #800000;">不建议通过上传并部署所有文件的方式</span></strong>，否则在几分钟内会出现云函数调用失败的情况；</li>
+    <li>删除一个云函数之后，<span style="color: #800000;"><strong>不建议再新建一个同名的云函数并上传部署</strong></span>，否则在十多分钟内会出现云函数调用失败的情况，建议换一个云函数名，比如login换成user，在小程序端使用
+                <span id="crayon-5d91f3269b180659520837" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">callFunction</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">''</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></span></span>调用云函数时把name的值换成user就可以了</li>
+    <li>调用云函数时，我们还可以在开发者工具调试面板的NetWork标签查看调用云函数的情况。</li>
+    </ul>
+    </blockquote>
+    <h4>获取用户信息和登录</h4>
+    <p>在生命周期章节，我们大致介绍了一下如何使用wx.getUserInfo API和通过组件的open-type=”getUserInfo” 来获取用户的信息（如头像、昵称），下面我们就来详细介绍云开发的免鉴权登录与用户信息的结合。</p>
+    <blockquote><p>使用open-type=”getUserInfo” 来获取用户信息的作用和 wx.getUserInfo API基本效果是一样的，区别在于wx.getUserInfo 这种方式最好是在用户允许获取公开信息（也就是res.authSetting[‘scope.userInfo’]的值为true）之后再调用，如果用户拒绝了授权就不会再有弹窗（除非用户删掉了你的小程序再使用），调用就会失败，而使用组件的方式是用户主动点击，用户即使拒绝了，再点击仍会弹出授权弹窗。所以推荐先使用组件来获取用户授权，然后再来使用wx.getUserInfo来获取用户信息。</p></blockquote>
+    <p><strong>通过button获取用户信息</strong></p>
+    <p>使用开发者工具新建一个login页面，然后在login.wxml里输入以下代码，我们通过组件的方式来获取用户的信息：</p>
+            <div id="crayon-5d91f3269b182775976233" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button open-type="getUserInfo" bindgetuserinfo="getUserInfomation"&gt;点击获取用户信息&lt;/button&gt;
+    &lt;image src="{{avatarUrl}}"&gt;&lt;/image&gt;
+    &lt;view&gt;{{city}}&lt;/view&gt;
+    &lt;view&gt;{{nickName}}&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b182775976233-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b182775976233-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b182775976233-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b182775976233-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b182775976233-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">open-type</span><span class="crayon-o">=</span><span class="crayon-s ">"getUserInfo"</span><span class="crayon-h"> </span><span class="crayon-e ">bindgetuserinfo</span><span class="crayon-o">=</span><span class="crayon-s ">"getUserInfomation"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">点击获取用户信息</span><span class="crayon-r ">&lt;/button&gt;</span></div><div class="crayon-line" id="crayon-5d91f3269b182775976233-2"><span class="crayon-r ">&lt;image </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{avatarUrl}}"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5d91f3269b182775976233-3"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">{{city}}</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5d91f3269b182775976233-4"><span class="crayon-r ">&lt;view&gt;</span><span class="crayon-i ">{{nickName}}</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在login.js的data里初始化avatarUrl、nickName以及city，没有获取到用户信息时，用一张默认图片代替，昵称显示用户未登录，city显示为未知：</p>
+            <div id="crayon-5d91f3269b184092652518" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        avatarUrl: '/images/user-unlogin.png',
+        nickName:"用户未登陆",
+        city:"未知",
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b184092652518-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b184092652518-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b184092652518-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b184092652518-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b184092652518-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b184092652518-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b184092652518-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">avatarUrl</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'/images/user-unlogin.png'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b184092652518-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">nickName</span><span class="crayon-o">:</span><span class="crayon-s">"用户未登陆"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b184092652518-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">city</span><span class="crayon-o">:</span><span class="crayon-s">"未知"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b184092652518-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在login.js文件里输入以下代码，在事件处理函数getUserInfomation我们可以打印event对象，open-type=”getUserInfo”的组件的event对象的detail里就有userInfo：</p>
+            <div id="crayon-5d91f3269b186731259745" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  getUserInfomation: function (event) {
+        console.log('getUserInfomation打印的事件对象', event)
+        let { avatarUrl, city, nickName}= event.detail.userInfo
+        this.setData({
+          avatarUrl,city, nickName
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b186731259745-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b186731259745-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b186731259745-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b186731259745-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b186731259745-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b186731259745-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b186731259745-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b186731259745-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">getUserInfomation</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b186731259745-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'getUserInfomation打印的事件对象'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">event</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b186731259745-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">city</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">nickName</span><span class="crayon-sy">}</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">detail</span><span class="crayon-sy">.</span><span class="crayon-e">userInfo</span></div><div class="crayon-line" id="crayon-5d91f3269b186731259745-4"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b186731259745-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">,</span><span class="crayon-v">city</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-i">nickName</span></div><div class="crayon-line" id="crayon-5d91f3269b186731259745-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b186731259745-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>将获取的avatarUrl，city，nickName通过this.setData()赋值给data。编译之后点击<strong>点击获取用户信息</strong>按钮，首先会<span style="color: #800000;"><strong>弹出授权弹窗</strong></span>，当用户确认之后，就会显示用户的信息。</p>
+    <p><strong>获取用户高清头像</strong></p>
+    <p>我们发现获取到的头像不是很清晰，这是因为默认的头像大小为132*132（<a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/UserInfo.html" target="_blank" rel="noopener noreferrer">UserInfo用户头像说明</a>），如果把avatarUrl链接后面的132修改为0就能获取到640*640大小的头像了：</p>
+            <div id="crayon-5d91f3269b188078982596" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  getUserInfomation: function (event) {
+        let { avatarUrl, city, nickName}= event.detail.userInfo
+        avatarUrl = avatarUrl.split("/")
+        avatarUrl[avatarUrl.length - 1] = 0;
+        avatarUrl = avatarUrl.join('/'); 
+        this.setData({
+          avatarUrl,city, nickName
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d91f3269b188078982596-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b188078982596-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">getUserInfomation</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b188078982596-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">city</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">nickName</span><span class="crayon-sy">}</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">event</span><span class="crayon-sy">.</span><span class="crayon-v">detail</span><span class="crayon-sy">.</span><span class="crayon-e">userInfo</span></div><div class="crayon-line" id="crayon-5d91f3269b188078982596-3"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">avatarUrl</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">.</span><span class="crayon-e">split</span><span class="crayon-sy">(</span><span class="crayon-s">"/"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b188078982596-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">[</span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">.</span><span class="crayon-v">length</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5d91f3269b188078982596-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">avatarUrl</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">.</span><span class="crayon-e">join</span><span class="crayon-sy">(</span><span class="crayon-s">'/'</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d91f3269b188078982596-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b188078982596-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">,</span><span class="crayon-v">city</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-i">nickName</span></div><div class="crayon-line" id="crayon-5d91f3269b188078982596-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b188078982596-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>页面加载时就显示用户信息</strong></p>
+    <p>在获得了用户授权和用户信息的情况下，刷新页面或进行页面跳转，用户的个人信息还是不会显示，这是因为getUserInfomation事件处理函数<strong>点击组件时才触发</strong>，我们需要在<strong>页面加载时也能触发</strong>获取用户信息才行。</p>
+    <p>我们可以在login.js的onLoad生命周期函数里输入以下代码，当用户授权之后来调用wx.getUserInfo() API：</p>
+            <div id="crayon-5d91f3269b18a759945102" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.getSetting({
+      success: res =&gt; {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: res =&gt; {
+              let { avatarUrl, city, nickName } =res.userInfo
+              this.setData({
+                avatarUrl, city, nickName
+              })
+            }
+          })
+        }
+      }
+    });</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d91f3269b18a759945102-14" style="height: 20px;">14</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b18a759945102-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getSetting</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">authSetting</span><span class="crayon-sy">[</span><span class="crayon-s">'scope.userInfo'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getUserInfo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">let</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">city</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-i">nickName</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-e">userInfo</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-7"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">avatarUrl</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">city</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-i">nickName</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d91f3269b18a759945102-14"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这样当我们加载页面时，用户的信息就能显示出来了，不过这里的头像是从API里重新取的，也会不清晰。我们当然可以像之前一样把头像的链接替换一下，但是如果每个页面都这么写就会很麻烦，解决的方法有2种，一种是把高清头像存储到缓存里，还有一种是把代码封装成一个组件（大家可以自己研究如何<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/component.html" target="_blank" rel="noopener noreferrer">自定义组件</a>了）。</p>
+    <p><strong>openid、用户信息与登录</strong></p>
+    <p>尽管我们已经获取到了用户的头像、昵称等信息，但是这不能称之为真正意义的登录，只有获取到了用户身份的唯一ID也就是<strong>openid</strong>，我们才能把用户行为比如点赞、评论、发布文章、收藏等与用户挂钩，用户这些行为都与数据库有关，而<strong>能够确定点赞、评论、文章、收藏这些数据与用户关系的就是openid</strong>，也就是说<span style="color: #800000;"><strong>只要获取到了openid就意味着用户已经登录</strong></span>，而获取用户信息（如头像、昵称）不过是一个附加服务，这两个是可以完全独立的。没有openid，我们也无法把用户信息给存储到数据库，也就没法让用户自定义用户信息。无论是用户行为，还是用户的信息，openid都是一个重要的桥梁。</p>
+    <blockquote><p>通过前面的login云函数，我们就已经可以获取到用户的openid。无需维护复杂的鉴权机制，即可获取天然可信任的用户登录态（openid），是云开发的一个重要优势。无论是云存储还是云数据库，openid都扮演着一个重要的角色。</p></blockquote>
+    <h4>小程序端上传图片到云存储</h4>
+    <p>要把图片上传到云存储，会使用到wx.cloud.uploadFile，<strong>这个API是小程序端的API</strong>，它是把<strong>本地资源也就是临时文件里的文件</strong>上传到云存储里。在前面《<strong>图片、缓存与文件</strong>》章节里我们已经了解到如何把图片上传到小程序的临时文件，而要把临时文件上传到云存储，则需要调用wx.cloud.uploadFile API。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/storage/uploadFile.html" target="_blank" rel="noopener noreferrer">wx.cloud.uploadFile</a></p>
+    <p>在wx.cloud.uploadFile技术文档里，可以看到要调用API，需要获取图片的<strong>filePath</strong>，在小程序里为临时文件的路径，也就是要把上传到小程序的临时文件路径赋值给它；还有一个<strong>cloudPath</strong>，这个为文件的云存储路径，这个是<span style="color: #800000;"><strong>我们可以任意设置的</strong></span>。</p>
+    <p>使用开发者工具在login.wxml里添加以下代码，代码和前面章节基本一致，大家也可以回顾一下以前的内容：</p>
+            <div id="crayon-5d91f3269b18c759621859" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button bindtap="chooseImg"&gt;选择图片&lt;/button&gt;
+    &lt;image mode="widthFix" src="{{imgurl}}"&gt;&lt;/image&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b18c759621859-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b18c759621859-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b18c759621859-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"chooseImg"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">选择图片</span><span class="crayon-r ">&lt;/button&gt;</span></div><div class="crayon-line" id="crayon-5d91f3269b18c759621859-2"><span class="crayon-r ">&lt;image </span><span class="crayon-e ">mode</span><span class="crayon-o">=</span><span class="crayon-s ">"widthFix"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{imgurl}}"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在login.js的data里初始化imgurl，这里imgurl是一个字符串，</p>
+            <div id="crayon-5d91f3269b18e192721393" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  data: {
+        imgurl: "",
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b18e192721393-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b18e192721393-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b18e192721393-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b18e192721393-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18e192721393-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">imgurl</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">""</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b18e192721393-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在login.js里添加事件处理函数chooseImg，我们再来回顾一下临时文件的知识：</p>
+            <div id="crayon-5d91f3269b18f305910314" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  chooseImg: function () {
+        wx.chooseImage({
+          count: 1,
+          sizeType: ['compressed'],
+          sourceType: ['album', 'camera'],
+          success: function (res) {
+            console.log(res)
+            console.log(res.tempFilePaths)
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d91f3269b18f305910314-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b18f305910314-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">chooseImg</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">chooseImage</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">count</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">sizeType</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'compressed'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">sourceType</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'album'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'camera'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">tempFilePaths</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b18f305910314-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>编译后，上传一张图片，在控制台里我们可以看到res.tempFilePaths是一个数组格式，而wx.cloud.uploadFile的filePath是一个字符串，所以我们在上传时，可以把第一张图片的路径（字符串）赋值给filePath：</p>
+            <div id="crayon-5d91f3269b191783755676" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const filePath = res.tempFilePaths[0]</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b191783755676-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b191783755676-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">filePath</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">tempFilePaths</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>文件名与后缀的处理</strong></p>
+    <p>我们知道一个文件由<strong>文件名称</strong>和<strong>文件后缀</strong>构成，比如tcb.jpg和cloudbase.png，jpeg说明图片的格式是JPG格式，而png说明图片是PNG格式，文件名称相同<span style="color: #800000;"><strong>且</strong></span>格式相同就是出现覆盖，如果我们随意更改了<span style="color: #800000;"><strong>文件的后缀</strong></span>，大多数文件就会打不开。所以要把<strong>cloudPath云存储的路径</strong>需要我们把文件名和后缀给处理好。</p>
+    <p>当我们把图片上传到小程序的临时文件后，我们可以查看一下临时路径是什么样子的：</p>
+            <div id="crayon-5d91f3269b193522513110" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">http://tmp/wx7124afdb64d578f5.o6zAJs291xB-a5G1FlXwylqTqNQ4.esN9ygu5Hmyfccd41d052e20322e6f3469de87f662a0.png</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b193522513110-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b193522513110-1"><span class="crayon-v">http</span><span class="crayon-o">:</span><span class="crayon-c">//tmp/wx7124afdb64d578f5.o6zAJs291xB-a5G1FlXwylqTqNQ4.esN9ygu5Hmyfccd41d052e20322e6f3469de87f662a0.png</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>临时路径的文件名就不是原来的文件名，会变成一段长字符，但文件的格式还是原来的文件格式（后缀）。那<strong>cloudPath</strong>要输入文件的路径，就需要填写文件名和文件格式，这个要怎么处理呢？</p>
+    <p>在上一节的QuickStart小程序里，文件上传到云存储的处理方式如下：</p>
+            <div id="crayon-5d91f3269b195929557796" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b195929557796-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b195929557796-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-e ">cloudPath</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'my-image'</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">filePath</span><span class="crayon-sy">.</span><span class="crayon-e">match</span><span class="crayon-sy">(</span><span class="crayon-o">/</span><span class="crayon-sy">\</span><span class="crayon-sy">.</span><span class="crayon-sy">[</span><span class="crayon-o">^</span><span class="crayon-sy">.</span><span class="crayon-sy">]</span><span class="crayon-o">+</span><span class="crayon-sy">?</span><span class="crayon-sy">$</span><span class="crayon-o">/</span><span class="crayon-sy">)</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>也就是它把上传的所有图片都命名为<strong>my-image</strong>，而文件的后缀还是原来的文件后缀（也就是文件格式不变）。这里的filePath.match(/\.[^.]+?$/)[0]是<strong>字符串的正则处理</strong>，后面我们会来详细了解。我们先可以在开发者工具的控制台输入以下代码了解一下它的功能：</p>
+            <div id="crayon-5d91f3269b197017475496" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const filepath="http://tmp/wx7124afdb64d578f5.o6zAJs291xB-a5G1FlXwylqTqNQ4.esN9ygu5Hmyfccd41d052e20322e6f3469de87f662a0.png"
+    filepath.match(/\.[^.]+?$/)[0]</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b197017475496-1" style="height: 40px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b197017475496-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b197017475496-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-e ">filepath</span><span class="crayon-o">=</span><span class="crayon-s">"http://tmp/wx7124afdb64d578f5.o6zAJs291xB-a5G1FlXwylqTqNQ4.esN9ygu5Hmyfccd41d052e20322e6f3469de87f662a0.png"</span></div><div class="crayon-line" id="crayon-5d91f3269b197017475496-2"><span class="crayon-v">filepath</span><span class="crayon-sy">.</span><span class="crayon-e">match</span><span class="crayon-sy">(</span><span class="crayon-o">/</span><span class="crayon-sy">\</span><span class="crayon-sy">.</span><span class="crayon-sy">[</span><span class="crayon-o">^</span><span class="crayon-sy">.</span><span class="crayon-sy">]</span><span class="crayon-o">+</span><span class="crayon-sy">?</span><span class="crayon-sy">$</span><span class="crayon-o">/</span><span class="crayon-sy">)</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>打印可以得到临时文件的后缀，这里为.png。这种把所有文件都命名为<strong>my-image</strong>的做法，会导致当文件的后缀相同时文件会被覆盖，如果不希望文件被覆盖，我们需要给文件命不同的名字，我们可以这样处理：</p>
+            <div id="crayon-5d91f3269b199923403305" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const cloudPath = `${Date.now()}-${Math.floor(Math.random(0, 1) * 1000)}` + filePath.match(/\.[^.]+?$/)[0]</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b199923403305-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b199923403305-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">cloudPath</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">`</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">Date</span><span class="crayon-sy">.</span><span class="crayon-e">now</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span><span class="crayon-o">-</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">floor</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">random</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-cn">1000</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span><span class="crayon-sy">`</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">filePath</span><span class="crayon-sy">.</span><span class="crayon-e">match</span><span class="crayon-sy">(</span><span class="crayon-o">/</span><span class="crayon-sy">\</span><span class="crayon-sy">.</span><span class="crayon-sy">[</span><span class="crayon-o">^</span><span class="crayon-sy">.</span><span class="crayon-sy">]</span><span class="crayon-o">+</span><span class="crayon-sy">?</span><span class="crayon-sy">$</span><span class="crayon-o">/</span><span class="crayon-sy">)</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>给文件名加上时间戳和一个随机数，时间戳是以毫秒计算，而随机数是以1000内的正整数，除非1秒钟（1秒=1000毫秒）上传几十万张照片，不然文件名是不会重复的。</p>
+    <p>结合上面的内容，我们可以把wx.chooseImage()的success回调函数如下处理：</p>
+            <div id="crayon-5d91f3269b19b833219691" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">success: function (res) {
+      const filePath = res.tempFilePaths[0]
+      const cloudPath = `${Date.now()}-${Math.floor(Math.random(0, 1) * 1000)}` + filePath.match(/\.[^.]+?$/)[0]
+      wx.cloud.uploadFile({
+        cloudPath,
+        filePath,
+        success: res =&gt; {
+          console.log('上传成功后获得的res：', res)
+        },
+      })
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d91f3269b19b833219691-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b19b833219691-1"><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">filePath</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">tempFilePaths</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">cloudPath</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">`</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">Date</span><span class="crayon-sy">.</span><span class="crayon-e">now</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span><span class="crayon-o">-</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">floor</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">random</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-cn">1000</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span><span class="crayon-sy">`</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">filePath</span><span class="crayon-sy">.</span><span class="crayon-e">match</span><span class="crayon-sy">(</span><span class="crayon-o">/</span><span class="crayon-sy">\</span><span class="crayon-sy">.</span><span class="crayon-sy">[</span><span class="crayon-o">^</span><span class="crayon-sy">.</span><span class="crayon-sy">]</span><span class="crayon-o">+</span><span class="crayon-sy">?</span><span class="crayon-sy">$</span><span class="crayon-o">/</span><span class="crayon-sy">)</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">uploadFile</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">cloudPath</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">filePath</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'上传成功后获得的res：'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b19b833219691-11"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>编译之后，我们再次上传一张图片就会打印上传成功之后的res对象，里面包含<strong>图片在云存储里的fileID</strong>，注意它的文件名和文件后缀，以及我们可以在云开发控制台的存储里找到你上传的图片，也就是说我们<span style="color: #800000;"><strong>上传图片到云存储是无法直接获取到图片的下载地址的</strong></span>。</p>
+    <p><strong>云存储的二级目录</strong></p>
+    <p>在存储里我们都是把所有的图片放在根目录下，没有二级目录，那我们能不能建一个二级目录呢？当然是可以的，我们可以在cloudPath的前面加一个文件路径就可以了，比如：</p>
+            <div id="crayon-5d91f3269b19d038648559" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const cloudPath = `cloudbase/${Date.now()}-${Math.floor(Math.random(0, 1) * 1000)}` + filePath.match(/\.[^.]+?$/)[0]</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b19d038648559-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b19d038648559-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">cloudPath</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">`</span><span class="crayon-e">cloudbase</span><span class="crayon-o">/</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">Date</span><span class="crayon-sy">.</span><span class="crayon-e">now</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span><span class="crayon-o">-</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">floor</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">random</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-cn">1000</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span><span class="crayon-sy">`</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">filePath</span><span class="crayon-sy">.</span><span class="crayon-e">match</span><span class="crayon-sy">(</span><span class="crayon-o">/</span><span class="crayon-sy">\</span><span class="crayon-sy">.</span><span class="crayon-sy">[</span><span class="crayon-o">^</span><span class="crayon-sy">.</span><span class="crayon-sy">]</span><span class="crayon-o">+</span><span class="crayon-sy">?</span><span class="crayon-sy">$</span><span class="crayon-o">/</span><span class="crayon-sy">)</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>渲染云存储图片到组件</strong></p>
+    <p>在上一节<a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/component/" target="_blank" rel="noopener noreferrer">组件支持</a>部分了解到，我们是可以把<strong>fileID</strong>直接在小程序的某些组件里渲染出来的。综合以上内容chooseImg事件处理函数最终为以下代码（注意this.setData的this指向，这里为了方便把success回调都写成了箭头函数）：</p>
+            <div id="crayon-5d91f3269b19f899775654" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  chooseImg: function () {
+        wx.chooseImage({
+          count: 1,
+          sizeType: ['compressed'],
+          sourceType: ['album', 'camera'],
+          success: res=&gt; {
+            const filePath = res.tempFilePaths[0]
+            const cloudPath = `cloudbase/${Date.now()}-${Math.floor(Math.random(0, 1) * 1000)}` + filePath.match(/\.[^.]+?$/)[0]
+            wx.cloud.uploadFile({
+              cloudPath,
+              filePath,
+              success: res =&gt; {
+                console.log('上传成功后获得的res：', res)
+                const imgurl=res.fileID            
+                this.setData({
+                  imgurl
+                })
+              },
+            })
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-8" style="height: 40px;">8</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5d91f3269b19f899775654-22" style="height: 20px;">22</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b19f899775654-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">chooseImg</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">chooseImage</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">count</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">sizeType</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'compressed'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">sourceType</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'album'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'camera'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">filePath</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">tempFilePaths</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">cloudPath</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">`</span><span class="crayon-e">cloudbase</span><span class="crayon-o">/</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">Date</span><span class="crayon-sy">.</span><span class="crayon-e">now</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span><span class="crayon-o">-</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">floor</span><span class="crayon-sy">(</span><span class="crayon-v">Math</span><span class="crayon-sy">.</span><span class="crayon-e">random</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-cn">1000</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span><span class="crayon-sy">`</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">filePath</span><span class="crayon-sy">.</span><span class="crayon-e">match</span><span class="crayon-sy">(</span><span class="crayon-o">/</span><span class="crayon-sy">\</span><span class="crayon-sy">.</span><span class="crayon-sy">[</span><span class="crayon-o">^</span><span class="crayon-sy">.</span><span class="crayon-sy">]</span><span class="crayon-o">+</span><span class="crayon-sy">?</span><span class="crayon-sy">$</span><span class="crayon-o">/</span><span class="crayon-sy">)</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">uploadFile</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">cloudPath</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">filePath</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'上传成功后获得的res：'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">imgurl</span><span class="crayon-o">=</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-e">fileID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-15"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">setData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">imgurl</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-20"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-21"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b19f899775654-22"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>在云开发控制台的存储里，我们可以看到每张图片的详细信息都有<strong>上传者 Open ID</strong>，无论你是使用开发者工具在模拟器的小程序里上传还是预览在手机的小程序里上传，只要你用的是同一个微信账号，这个上传者openid都是一致的，<span style="color: #800000;"><strong>云存储会自动记录上传者的openid</strong></span>。</p></blockquote>
+    <blockquote class="task"><p>小任务：结合《<strong>图片、缓存与文件</strong>》章节里的<a href="https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseMessageFile.html" target="_blank" rel="noopener noreferrer">wx.chooseMessageFile()</a>的知识，将客户端会话（微信聊天窗口）里的视频、音频、PDF、Excel等也上传到云存储里。</p></blockquote>
+    <h4>云函数上传图片到云存储</h4>
+    <p>云开发不仅在小程序端可以上传文件到云存储，还可以通过云函数也就是云端上传图片到云存储（这里会涉及到一点Nodejs的知识）。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-server-api/storage/uploadFile.html" target="_blank" rel="noopener noreferrer">uploadFile</a></p>
+    <p>注意<span style="color: #800000;"><strong>云函数上传图片的API属于服务端API，与wx.cloud.uploadFile是小程序端API不同</strong></span>。</p>
+    <p>使用开发者工具<strong>右键点击</strong>云函数根目录也就是cloudfunctions文件夹，选择<strong>新建Node.js云函数</strong>，云函数的名称命名为uploadimg，右键点击uploadimg文件夹，选择<strong>硬盘打开</strong>，然后拷贝一张图片如demo.jpg进去，文件结构如下：</p>
+            <div id="crayon-5d91f3269b1a1287302818" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">uploadimg云函数目录        
+    ├── index.js 
+    ├── package.json 
+    ├── demo.jpg</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b1a1287302818-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b1a1287302818-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b1a1287302818-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b1a1287302818-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b1a1287302818-1"><span class="crayon-i">uploadimg</span>云函数目录<span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5d91f3269b1a1287302818-2">├──<span class="crayon-h"> </span><span class="crayon-v">index</span><span class="crayon-sy">.</span><span class="crayon-i">js</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d91f3269b1a1287302818-3">├──<span class="crayon-h"> </span><span class="crayon-t">package</span><span class="crayon-sy">.</span><span class="crayon-i">json</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5d91f3269b1a1287302818-4">├──<span class="crayon-h"> </span><span class="crayon-v">demo</span><span class="crayon-sy">.</span><span class="crayon-v">jpg</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后打开index.js，输入以下代码：</p>
+            <div id="crayon-5d91f3269b1a3686117913" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const cloud = require('wx-server-sdk')
+    const fs = require('fs')
+    const path = require('path')
+    cloud.init({
+      env: cloud.DYNAMIC_CURRENT_ENV,
+    })
+    exports.main = async (event, context) =&gt; {
+      const fileStream = fs.createReadStream(path.join(__dirname, 'demo.jpg'))
+      return await cloud.uploadFile({
+        cloudPath: 'tcbdemo.jpg',
+        fileContent: fileStream,
+      })
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5d91f3269b1a3686117913-13" style="height: 20px;">13</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">require</span><span class="crayon-sy">(</span><span class="crayon-s">'wx-server-sdk'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-2"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">fs</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">require</span><span class="crayon-sy">(</span><span class="crayon-s">'fs'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-3"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">path</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">require</span><span class="crayon-sy">(</span><span class="crayon-s">'path'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-4"><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">init</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-v">DYNAMIC_CURRENT_ENV</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-6"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-7"><span class="crayon-v">exports</span><span class="crayon-sy">.</span><span class="crayon-v">main</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">async</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">fileStream</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">fs</span><span class="crayon-sy">.</span><span class="crayon-e">createReadStream</span><span class="crayon-sy">(</span><span class="crayon-v">path</span><span class="crayon-sy">.</span><span class="crayon-e">join</span><span class="crayon-sy">(</span><span class="crayon-v">__dirname</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'demo.jpg'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">uploadFile</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">cloudPath</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'tcbdemo.jpg'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">fileContent</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">fileStream</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1a3686117913-13"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后右键点击uploadimg文件夹，选择<span style="color: #000000;"><strong>在终端中打开</strong></span>，输入npm install安装依赖，再点击uploadimg文件夹，选择<strong>上传并部署所有文件</strong>（这时图片也一并上传到了云端）。</p>
+    <p>由于<span style="color: #800000;"><strong>云端测试无法获取用户登陆态信息</strong></span>，所以我们不能在云端测试里把图片上传到云存储，需要在小程序端调用，使用开发者工具在login.wxml输入以下代码，也就是新建一个绑定uploadimg事件处理函数的button用于触发：</p>
+            <div id="crayon-5d91f3269b1a4542377106" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button bindtap="uploadimg"&gt;云函数上传图片&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b1a4542377106-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b1a4542377106-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"uploadimg"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">云函数上传图片</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后在login.js里输入以下代码，在事件处理函数uploadimg里调用uploadimg云函数，并返回调用之后的res对象：</p>
+            <div id="crayon-5d91f3269b1b2500457768" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  uploadimg() {
+        wx.cloud.callFunction({
+          name: 'uploadimg',
+          success: res =&gt; {
+            console.log(res)
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b1b2500457768-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b1b2500457768-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b1b2500457768-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b1b2500457768-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b1b2500457768-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b1b2500457768-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b1b2500457768-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b1b2500457768-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b1b2500457768-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">uploadimg</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1b2500457768-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">callFunction</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1b2500457768-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'uploadimg'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5d91f3269b1b2500457768-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1b2500457768-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b2500457768-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5d91f3269b1b2500457768-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b2500457768-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>编译之后，点击<strong>云函数上传图片</strong>按钮，就可以调用uploadimg云函数，从而调用uploadFile API将服务端/云端的图片上传到云存储里面啦，可以打开云开发控制台的云存储查看是否有tcbdemo.jpg这张图片。</p>
+    <blockquote class="danger"><p>注意，通过这种方式上传到云存储的图片，是<span style="color: #800000;"><strong>没有<span style="color: #800000;">上</span>传者 Open ID</strong></span>的，在云存储里查看这张图片的详细信息，就可以了解到。</p></blockquote>
+    <h4>调用数据库</h4>
+    <p><strong>数据库的导入</strong></p>
+    <p>在调用数据库之前，我们需要先有一个比较贴近实际的数据库案例，为此把前面章节用到的知乎日报数据整理出了一个数据库文件。云开发数据库支持用文件的方式导入已有的数据（这里推荐大家使用json）。</p>
+    <p><strong>数据库下载：</strong><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/data.json" target="_blank" rel="noopener noreferrer">知乎日报文章数据</a></p>
+    <p>右键点击链接，将data.json存储到电脑。为了方便大家阅读与编辑data.json文件的内容，推荐大家使用Visual Studio Code编辑器。</p>
+    <p><strong>代码编辑器</strong>：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a></p>
+    <blockquote class="task"><p><strong>编辑器的汉化与插件：</strong>可能你安装的VS Code的界面是英文的，可以参照<a href="https://blog.csdn.net/qq_30068487/article/details/82589347" target="_blank" rel="noopener noreferrer">VSCode设置中文显示</a>，将VS Code汉化。</p></blockquote>
+    <p>使用VS Code编辑器打开data.json，发现数据的内容与写法我们都比较熟悉，知识各个记录对象之间是<strong>使用回车&nbsp;
+                <span id="crayon-5d91f3269b1b3728527098" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">\</span><span class="crayon-v">n</span></span></span>&nbsp;分隔，而不是逗号,</strong>这一点需要大家注意。</p>
+    <p>打开云开发控制台，在数据库里新建一个集合<strong>zhihu_daily</strong>，导入该json文件，导入时会有冲突模式选择，看下面的介绍，推荐大家使用upsert：</p>
+    <ul>
+    <li>Insert：总是插入新记录</li>
+    <li>Upsert：如果记录存在则更新，否则插入新记录</li>
+    </ul>
+    <p>导入后，发现数据库自动给每一条数据（记录）都加了唯一的标识<strong>_id</strong>。</p>
+    <p><b>小程序端调用数据库</b></p>
+    <p>在小程序端调用数据库的方式很简单，我们可以把下面的代码写到一个事件处理函数里，然后点击组件触发事件处理函数来调用；也可以直接写到页面的生命周期函数里面；还可以把它写到app.js小程序的生命周期函数里面。</p>
+    <p>使用开发者工具，将下面的代码写到login.js的onLoad函数里面，我们</p>
+    <ul>
+    <li>先使用<strong>wx.cloud.database()</strong>获取<strong>数据库</strong>的引用（相当于连接数据库）;</li>
+    <li>再使用<strong>db.collection()</strong>获取集合的引用；</li>
+    <li>再通过Collection.get来获取集合里的记录.</li>
+    </ul>
+    <p></p>
+            <div id="crayon-5d91f3269b1b5952011154" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const db = wx.cloud.database()
+    db.collection('zhihu_daily')
+      .get()
+      .then(res =&gt; {
+        console.log(res.data)
+      })
+      .catch(err =&gt; {
+        console.error(err)
+      })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d91f3269b1b5952011154-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-2"><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'zhihu_daily'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">then</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">catch</span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">error</span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b5952011154-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>编译之后，就能在控制台看到调用的20条数据库记录了（如果没有指定&nbsp;limit，则默认最多取 20 条记录）。</p>
+    <p><strong>云函数调用数据库</strong></p>
+    <p>使用云函数也可以调用数据库，使用开发者工具<strong>右键点击</strong>云函数根目录也就是cloudfunctions文件夹，选择<strong>新建Node.js云函数</strong>，云函数的名称命名为zhihu_daily，然后打开index.js，输入以下代码：</p>
+            <div id="crayon-5d91f3269b1b7544036543" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const cloud = require('wx-server-sdk')
+    cloud.init({
+      env: cloud.DYNAMIC_CURRENT_ENV
+    })
+    const db = cloud.database()
+    exports.main = async (event, context) =&gt; {
+      return await db.collection('zhihu_daily')
+        .get()
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5d91f3269b1b7544036543-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">require</span><span class="crayon-sy">(</span><span class="crayon-s">'wx-server-sdk'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-2"><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">init</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-v">DYNAMIC_CURRENT</span><span class="crayon-sy">_</span>ENV</div><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-4"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-5"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-6"><span class="crayon-v">exports</span><span class="crayon-sy">.</span><span class="crayon-v">main</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">async</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'zhihu_daily'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5d91f3269b1b7544036543-9"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后右键点击index.js，选择<strong>云函数增量上传：更新文件</strong>，我们既可以使用云函数的本地调试（要本地调试需要使用npm install安装wx-server-sdk依赖），也可以使用云端测试来了解云函数调用数据库的情况。</p>
+    <p><strong>openid与数据库</strong></p>
+    <p>在云开发控制台的数据库标签里，打开上一节内容里的counters集合，在这个集合里我们可以看到每条记录除了有_id字段以外，还有一个<strong>_openid字段</strong>用来标志每条记录的创建者（也就是小程序的用户）。但是在我们使用管理端（控制台和云函数）中创建的数据比如我们之前导入的zhihu_daily，就不会有&nbsp;
+                <span id="crayon-5d91f3269b1b9326032618" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">_openid</span></span></span>&nbsp;字段，因为这些记录属于管理员（不是用户）创建的记录。</p>
+    <p>我们可以自定义&nbsp;
+                <span id="crayon-5d91f3269b1c9420213398" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">_id</span></span></span>（也就是给数据添加一个_id字段并填入任意值），但不可自定义和修改&nbsp;
+                <span id="crayon-5d91f3269b1cb728187175" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">_openid</span></span></span>&nbsp;。
+                <span id="crayon-5d91f3269b1cc995288171" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">_openid</span></span></span>&nbsp;是在文档创建时由系统根据小程序用户默认创建的，可以用来标识和定位文档。和云存储一样，数据库的记录也和openid有着紧密的联系。</p>
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
