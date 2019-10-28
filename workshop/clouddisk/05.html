@@ -1,0 +1,639 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/workshop.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术工坊 » Feed" href="https://cloudbasegroup.org/workshop/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术工坊 » 评论Feed" href="https://cloudbasegroup.org/workshop/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术工坊 » 第三节：代码的逻辑与功能拆解评论Feed" href="https://cloudbasegroup.org/workshop/clouddisk/31/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/workshop\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/workshop/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/workshop/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/workshop/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/workshop/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/workshop/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/workshop/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="活动后：功能迭代与学习交流" href="https://cloudbasegroup.org/workshop/clouddisk/33/">
+    <link rel="next" title="第二节：文件目录与页面解读" href="https://cloudbasegroup.org/workshop/clouddisk/26/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/workshop/clouddisk/31/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/workshop/?p=31">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/workshop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fworkshop%2Fclouddisk%2F31%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/workshop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fworkshop%2Fclouddisk%2F31%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-31 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            口袋网盘小程序			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/01.html">
+                                    准备：技术工坊预备手册					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/02.html">
+                                    开场：功能介绍与学习目标					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/03.html">
+                                    第一节：导入项目与体验					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/04.html">
+                                    第二节：文件目录与页面解读					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/05.html">
+                                    第三节：代码的逻辑与功能拆解					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/06.html">
+                                    活动后：功能迭代与学习交流					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">第三节：代码的逻辑与功能拆解</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>通过前面对文件目录和页面文件的梳理，相信大家应该可以对小程序有哪些页面，每个页面到底实现了一个什么效果，应该有了一个体验式的了解。那接下来我们会教大家如何拆解代码和如何实现功能。</p>
+    <h4>1、新建文件夹和相册的弹窗功能</h4>
+    <p><strong>1.1 mp-dialog弹窗的实现</strong></p>
+    <p>通过前面的学习了解到，新建文件夹的<strong>+号</strong>button是在miniprogram文件夹下的pages/folder/folder，而新建相册是在miniprogram文件夹下的pages/album/album实现的。找到对应页面也就是folder.wxml和album.wxml我们可以看到有类似的如下代码（新建相册的代码和这个相差不大）：</p>
+            <div id="crayon-5db72cde7ce96819582796" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;mp-dialog title="新建文件夹" show="{{dialogShow}}" bindbuttontap="formSubmit" buttons="{{buttons}}"&gt;
+        &lt;view class='item-add'&gt;
+          &lt;view class='item-name'&gt;
+            &lt;input name="name" placeholder='请输入文件夹名' auto-focus value='{{inputValue}}' bindinput='keyInput'&gt;&lt;/input&gt;
+          &lt;/view&gt;
+      &lt;/view&gt;
+    &lt;/mp-dialog&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ce96819582796-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7ce96819582796-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7ce96819582796-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7ce96819582796-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7ce96819582796-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5db72cde7ce96819582796-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5db72cde7ce96819582796-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ce96819582796-1"><span class="crayon-r ">&lt;mp-dialog </span><span class="crayon-e ">title</span><span class="crayon-o">=</span><span class="crayon-s ">"新建文件夹"</span><span class="crayon-h"> </span><span class="crayon-e ">show</span><span class="crayon-o">=</span><span class="crayon-s ">"{{dialogShow}}"</span><span class="crayon-h"> </span><span class="crayon-e ">bindbuttontap</span><span class="crayon-o">=</span><span class="crayon-s ">"formSubmit"</span><span class="crayon-h"> </span><span class="crayon-e ">buttons</span><span class="crayon-o">=</span><span class="crayon-s ">"{{buttons}}"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7ce96819582796-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'item-add'</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7ce96819582796-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'item-name'</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7ce96819582796-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;input </span><span class="crayon-e ">name</span><span class="crayon-o">=</span><span class="crayon-s ">"name"</span><span class="crayon-h"> </span><span class="crayon-e ">placeholder</span><span class="crayon-o">=</span><span class="crayon-s ">'请输入文件夹名'</span><span class="crayon-h"> </span>auto<span class="crayon-o">-</span>focus<span class="crayon-h"> </span><span class="crayon-e ">value</span><span class="crayon-o">=</span><span class="crayon-s ">'{{inputValue}}'</span><span class="crayon-h"> </span><span class="crayon-e ">bindinput</span><span class="crayon-o">=</span><span class="crayon-s ">'keyInput'</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/input&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7ce96819582796-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7ce96819582796-6"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7ce96819582796-7"><span class="crayon-r ">&lt;/mp-dialog&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这个mp-dialog就是前面说的weui-miniprogram拓展能力的<strong>Dialog弹窗组件</strong>，大家可以结合技术文档来快速了解一下代码：</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/extended/weui/dialog.html" target="_blank" rel="noopener noreferrer">mp-dialog弹窗功能</a></p>
+    <p>通过技术文档我们可以了解到这里的title就是弹窗的标题，修改一下里面的值，然后点击开发者工具栏里的<strong>编译</strong>按钮在小程序里查看弹窗的标题有什么变化。</p>
+    <p>&nbsp;</p>
+    <p><strong>1.2&nbsp; 点击按钮实现新建文件夹、相册的功能</strong></p>
+    <p>在mp-dialog里这行代码里，我们可以看到有一个<strong>bindbuttontap</strong>，双引号””里面的值<strong>formSubmit</strong>是<strong>点击确定或取消按钮时会触发的事件名称</strong>。</p>
+            <div id="crayon-5db72cde7ce9e907618116" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;mp-dialog title="新建文件夹" show="{{dialogShow}}" bindbuttontap="formSubmit" buttons="{{buttons}}"&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ce9e907618116-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ce9e907618116-1"><span class="crayon-r ">&lt;mp-dialog </span><span class="crayon-e ">title</span><span class="crayon-o">=</span><span class="crayon-s ">"新建文件夹"</span><span class="crayon-h"> </span><span class="crayon-e ">show</span><span class="crayon-o">=</span><span class="crayon-s ">"{{dialogShow}}"</span><span class="crayon-h"> </span><span class="crayon-e ">bindbuttontap</span><span class="crayon-o">=</span><span class="crayon-s ">"formSubmit"</span><span class="crayon-h"> </span><span class="crayon-e ">buttons</span><span class="crayon-o">=</span><span class="crayon-s ">"{{buttons}}"</span><span class="crayon-r ">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在foler.js和album.js里，我们都可以找到
+                <span id="crayon-5db72cde7cea1121648815" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">async </span><span class="crayon-e">formSubmit</span><span class="crayon-sy">(</span><span class="crayon-v">e</span><span class="crayon-sy">)</span></span></span>函数，类似于下面这样：</p>
+            <div id="crayon-5db72cde7cea3203184359" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  async formSubmit(e) {
+    
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cea3203184359-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cea3203184359-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cea3203184359-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cea3203184359-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">async </span><span class="crayon-e">formSubmit</span><span class="crayon-sy">(</span><span class="crayon-v">e</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cea3203184359-2">&nbsp;</div><div class="crayon-line" id="crayon-5db72cde7cea3203184359-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这个就是点击确定或取消按钮会触发的事件处理函数，通过这个函数我们就能实现新建文件夹或相册的功能。其中</p>
+            <div id="crayon-5db72cde7cea4449372636" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">if(e.detail.index==1){
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cea4449372636-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cea4449372636-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cea4449372636-1"><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">e</span><span class="crayon-sy">.</span><span class="crayon-v">detail</span><span class="crayon-sy">.</span><span class="crayon-v">index</span><span class="crayon-o">==</span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cea4449372636-2"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>表示的是如果用户点击的是确定就新建文件夹，而如果点击的是取消就关闭弹窗。</p>
+    <p>&nbsp;</p>
+    <p><strong>1.3 输入文件夹名和相册名</strong></p>
+    <p>在foler和album页面也就是<strong>folder.wxml</strong>和<strong>album.wxml</strong>的mp-dialog组件里面，都有这样一段代码，它是一个input输入框的组件，通过它可以实现输入文件名和相册名的功能：</p>
+            <div id="crayon-5db72cde7cea6765011454" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;input name="name" placeholder='请输入文件夹名' auto-focus value='{{inputValue}}' bindinput='keyInput'&gt;&lt;/input&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cea6765011454-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cea6765011454-1"><span class="crayon-o">&lt;</span><span class="crayon-e">input </span><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"name"</span><span class="crayon-h"> </span><span class="crayon-v">placeholder</span><span class="crayon-o">=</span><span class="crayon-s">'请输入文件夹名'</span><span class="crayon-h"> </span><span class="crayon-v">auto</span><span class="crayon-o">-</span><span class="crayon-e">focus </span><span class="crayon-v">value</span><span class="crayon-o">=</span><span class="crayon-s">'{{inputValue}}'</span><span class="crayon-h"> </span><span class="crayon-v">bindinput</span><span class="crayon-o">=</span><span class="crayon-s">'keyInput'</span><span class="crayon-o">&gt;</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">input</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/component/input.html" target="_blank" rel="noopener noreferrer">input输入框</a></p>
+    <p>通过技术文档我们可以了解到这里的placeholder就是输入框为空时的占位符，修改一下里面的值，然后点击开发者工具栏里的<strong>编译</strong>按钮，在小程序里查看输入框里的内容有什么变化。</p>
+    <p>&nbsp;</p>
+    <p><strong>1.4、将文件夹名和相册名保存到云数据库</strong></p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/database/init.html" target="_blank" rel="noopener noreferrer">云数据库的初始化</a></p>
+    <p>通过技术文档我们可以了解到在开始使用数据库 API 进行增删改查操作之前，需要先获取数据库的引用，也就是需要先有</p>
+            <div id="crayon-5db72cde7cea7147624547" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const db = wx.cloud.database()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cea7147624547-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cea7147624547-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在<strong>foler.js</strong>和<strong>album.js</strong>文件的前5行内我们都可以看到这样一个引用，所谓引用大致可以理解为执行函数的时候先要连接上数据库~只需要上面一行代码即可。</p>
+    <p>在<strong>foler.js</strong>和<strong>album.js</strong>的<strong>formSubmit</strong>事件处理函数里都有下面这样的diam，它实现的是将文件夹名和相册名保存到云数据库：</p>
+            <div id="crayon-5db72cde7cea9026083967" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">let result = await db.collection('user').doc(app.globalData.id).update({
+      data: {
+        albums: _.set(app.globalData.allData.albums),
+        folders: _.set(app.globalData.allData.folders)
+      }
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cea9026083967-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cea9026083967-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cea9026083967-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7cea9026083967-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7cea9026083967-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5db72cde7cea9026083967-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cea9026083967-1"><span class="crayon-e">let </span><span class="crayon-v">result</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'user'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">doc</span><span class="crayon-sy">(</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">id</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">update</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cea9026083967-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cea9026083967-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">albums</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">set</span><span class="crayon-sy">(</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">allData</span><span class="crayon-sy">.</span><span class="crayon-v">albums</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72cde7cea9026083967-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">folders</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">set</span><span class="crayon-sy">(</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">allData</span><span class="crayon-sy">.</span><span class="crayon-v">folders</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5db72cde7cea9026083967-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5db72cde7cea9026083967-6"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>2、显示文件夹内文件、相册内的照片</h4>
+    <p>通过上面的方式，我们已经知道如何使用代码添加文件夹和相册了，但是当我们新建了很多文件夹、相册，并往里面添加了文件或照片时，在技术上又如何知道我们打开的是哪个文件夹或相册呢？我们又怎样才能显示每个文件夹或相册里的文件和照片呢？</p>
+    <p><strong>2.1 显示文件和照片的页面</strong></p>
+    <p>在folder.wxml和album.wxml里，都有类似这样的一段代码，这段代码的功能就是当点击某个文件夹或相册时会跳转到其他页面。</p>
+            <div id="crayon-5db72cde7ceac520789324" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;navigator url="/pages/files/files?id={{idx}}"&gt;
+      ...
+    &lt;/navigator&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ceac520789324-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7ceac520789324-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7ceac520789324-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ceac520789324-1"><span class="crayon-o">&lt;</span><span class="crayon-e">navigator </span><span class="crayon-v">url</span><span class="crayon-o">=</span><span class="crayon-s">"/pages/files/files?id={{idx}}"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7ceac520789324-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span></div><div class="crayon-line" id="crayon-5db72cde7ceac520789324-3"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">navigator</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html" target="_blank" rel="noopener noreferrer">Navigator组件</a></p>
+    <p>也就是说pages/files/files页面（或pages/photos/photos页面）这个页面会用来显示文件夹里的文件列表（相册里的照片列表）。</p>
+    <p>这里的Navigator组件实现的就是页面的跳转，而url里的值就是跳转到的页面，比如上面的是跳转到pages/files/files里去。
+                <span id="crayon-5db72cde7cead258223528" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">?</span><span class="crayon-v">id</span><span class="crayon-o">=</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">idx</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span></span></span>是链接携带的一个参数数据。有了这个参数，就能够知道我们到底打开的是哪个文件夹或者相册啦~</p>
+    <p>&nbsp;</p>
+    <p><strong>2.2 文件和照片与指定文件夹、相册对应</strong></p>
+    <p>大家会发现无论我们打开哪个文件夹（或相册），都会跳转到files/files页面（或photos/photos页面），也就是明明点击的是两个不同的文件夹（或相册）打开页面都是一样的，但是里面的文件（或照片）都是不一样的，这又是如何做到的呢？</p>
+    <p>这个就与上面提到的
+                <span id="crayon-5db72cde7ceaf258793580" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">?</span><span class="crayon-v">id</span><span class="crayon-o">=</span><span class="crayon-sy">{</span><span class="crayon-sy">{</span><span class="crayon-v">idx</span><span class="crayon-sy">}</span><span class="crayon-sy">}</span></span></span>的作用，链接携带了一个参数，我们需要首先在<strong>onLoad生命周期函数</strong>里将携带的参数获取出来，这样files/files页面（或photos/photos页面）就知道我们打开的是哪一个文件夹或相册了（相册的代码和这个类似，功能也是一样的）：</p>
+            <div id="crayon-5db72cde7ceb1633772717" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onLoad(options) {
+        this.folderId = options.id
+        console.log(options)
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ceb1633772717-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7ceb1633772717-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7ceb1633772717-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7ceb1633772717-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ceb1633772717-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">onLoad</span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7ceb1633772717-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">folderId</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">options</span><span class="crayon-sy">.</span><span class="crayon-e">id</span></div><div class="crayon-line" id="crayon-5db72cde7ceb1633772717-3"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">options</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5db72cde7ceb1633772717-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html" target="_blank" rel="noopener noreferrer">Page生命周期函数</a></p>
+    <p>从技术文档里我们可以了解到onLoad会在页面加载的时候触发，而query（就是代码里的<strong>options</strong>）打开当前页面路径中的参数（就是代码里的<strong>options.id</strong>），获取了文件夹（或相册）独有的id，我们再来从数据库拉取相应的文件（或照片）。</p>
+    <blockquote><p>所谓页面的生命周期，就是我们打开这个页面时，页面从加载到显示在我们的眼前，到被你给切换掉页面或者隐藏、卸载掉的过程，监听这个过程的就是生命周期函数，比如onLoad、onShow等。</p></blockquote>
+    <p>&nbsp;</p>
+    <p><strong>2.3 显示文件夹内的文件、相册内的照片</strong></p>
+    <p>在files.js和photos.js的onShow生命周期函数里我们可以看到如下代码（相册的是
+                <span id="crayon-5db72cde7ceb3507007081" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">getPhotos</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>，功能一样）：</p>
+            <div id="crayon-5db72cde7ceb5834310531" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  onShow() {
+        this.getFiles()
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ceb5834310531-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7ceb5834310531-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7ceb5834310531-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ceb5834310531-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">onShow</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7ceb5834310531-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-e">getFiles</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5db72cde7ceb5834310531-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里的onShow也是页面的生命周期函数，当页面显示时就调用getFiles()函数（
+                <span id="crayon-5db72cde7ceb6898497745" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">getPhotos</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>）函数，这个函数就在files.js（或photos.js）这个文件里，它的作用就是从数据库拉取文件（或照片）:</p>
+            <div id="crayon-5db72cde7ceb8022169515" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  // 获取文件夹中的数据
+      async getFiles() {
+    
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ceb8022169515-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7ceb8022169515-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7ceb8022169515-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7ceb8022169515-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ceb8022169515-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// 获取文件夹中的数据</span></div><div class="crayon-line" id="crayon-5db72cde7ceb8022169515-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">async </span><span class="crayon-e">getFiles</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7ceb8022169515-3">&nbsp;</div><div class="crayon-line" id="crayon-5db72cde7ceb8022169515-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>那它是怎么实现的呢？这段代码会比较复杂，但是它的核心就是：</p>
+            <div id="crayon-5db72cde7ceb9366502963" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const userinfo = await db.collection('user').doc(app.globalData.id).get()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ceb9366502963-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ceb9366502963-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">userinfo</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'user'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">doc</span><span class="crayon-sy">(</span><span class="crayon-v">app</span><span class="crayon-sy">.</span><span class="crayon-v">globalData</span><span class="crayon-sy">.</span><span class="crayon-v">id</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/doc.get.html" target="_blank" rel="noopener noreferrer">获取数据库的记录数据</a></p>
+    <p>这段代码实现的是从集合user的记录里获取记录数据，这个记录数据，这个记录数据就包含着某个用户的所有文件、相册数据。</p>
+    <h4>3、上传文件到文件夹、照片到相册</h4>
+    <p><strong>3.1 文件、照片上传的页面文件</strong></p>
+    <p>点击文件夹内上传文件（或相册内上传照片）的页面，也就是files/files页面（或photos/photos页面）里的<span style="color: #008000;"><strong>+号</strong></span>按钮，就会跳转到添加文件（或照片）的页面，这个页面的链接为/pages/files/add（或/pages/photos/add）。</p>
+    <p>当我们点击files/files页面（或photos/photos页面）里的<strong><span style="color: #008000;">+号</span></strong>时，会触发绑定bindtap的事件处理函数addfile（或addphoto）：</p>
+            <div id="crayon-5db72cde7cebb193319115" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  &lt;view class='addbutton'&gt;
+        &lt;view class='add-item' bindtap="addfile"&gt;
+         &lt;image class='add-icon' src='/images/add.png'&gt;&lt;/image&gt;
+        &lt;/view&gt;
+      &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cebb193319115-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cebb193319115-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cebb193319115-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7cebb193319115-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7cebb193319115-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cebb193319115-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'addbutton'</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cebb193319115-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'add-item'</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"addfile"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cebb193319115-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">'add-icon'</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">'/images/add.png'</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cebb193319115-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cebb193319115-5"><span class="crayon-i ">&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>而事件处理函数addfile（或addphoto）就在files.js（或photos.js里）：</p>
+            <div id="crayon-5db72cde7cebc136990044" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  addfile(e) {
+        wx.navigateTo({
+          url: '/pages/files/add?id=' + this.folderId,
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cebc136990044-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cebc136990044-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cebc136990044-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7cebc136990044-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7cebc136990044-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cebc136990044-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">addfile</span><span class="crayon-sy">(</span><span class="crayon-v">e</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cebc136990044-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">navigateTo</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cebc136990044-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'/pages/files/add?id='</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-r">this</span><span class="crayon-sy">.</span><span class="crayon-v">folderId</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72cde7cebc136990044-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5db72cde7cebc136990044-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/route/wx.navigateTo.html" target="_blank" rel="noopener noreferrer">wx.navigateTo()</a></p>
+    <p>之前的跳转是通过Navigator组件，这里的跳转是通过wx.navigatorTo的API，这个API的效果和Navigator组件是一样的，而且url的值以及携带的参数都是一样的原理。</p>
+    <p>&nbsp;</p>
+    <p><strong>3.2 文件、照片上传的form表单</strong></p>
+    <p>打开 /pages/files/add（或/pages/photos/add）页面文件，它们的名称都是add.wxml，文件、照片就是通过<strong>form表单</strong>来上传到云存储或数据库的。</p>
+            <div id="crayon-5db72cde7cebe434361868" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;form bindsubmit="formSubmit"&gt;
+        ...
+        &lt;view class="btn-box"&gt;
+            &lt;button type="primary" form-type="submit"&gt;提交&lt;/button&gt;
+        &lt;/view&gt;
+    &lt;/form&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cebe434361868-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cebe434361868-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cebe434361868-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7cebe434361868-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7cebe434361868-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5db72cde7cebe434361868-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cebe434361868-1"><span class="crayon-r ">&lt;form </span><span class="crayon-e ">bindsubmit</span><span class="crayon-o">=</span><span class="crayon-s ">"formSubmit"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cebe434361868-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;...</span></div><div class="crayon-line" id="crayon-5db72cde7cebe434361868-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"btn-box"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cebe434361868-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;button </span><span class="crayon-e ">type</span><span class="crayon-o">=</span><span class="crayon-s ">"primary"</span><span class="crayon-h"> </span><span class="crayon-e ">form-type</span><span class="crayon-o">=</span><span class="crayon-s ">"submit"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">提交</span><span class="crayon-r ">&lt;/button&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cebe434361868-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/view&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cebe434361868-6"><span class="crayon-r ">&lt;/form&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/component/form.html" target="_blank" rel="noopener noreferrer">form表单</a></p>
+    <p>尽管表单里的内容比较复杂，但是它的核心是点击提交button，就会触发binsubmit绑定的事件处理函数formSubmit，和前面一样wxml页面绑定的事件处理函数都会在js文件里，也就是说add.wxml里的formSubmit就在add.js里。</p>
+    <blockquote><p>当我们点击上传文件add页面里的<strong>点击添加文件</strong>（也就是下面正方形的+加号），会打开微信的聊天对话框，而点击上传照片add页面的正方形+号，会打开手机的相册或相机，那这是怎么实现的呢？其实这是因为这个+号表面上一样，但是背后调用的API有所不同，上传文件调用的是wx.chooseMessageFile()，而上传图片调用的是wx.chooseImage()，两个API表现形式不一样。</p></blockquote>
+    <p>&nbsp;</p>
+    <p><strong>3.3 上传文件的API&nbsp;</strong></p>
+    <p>使用开发者工具打开pages/files/add.wxml文件，可以看到下面的代码，这个view也就是点击正方形的+号，绑定bindtap了一个
+                <span id="crayon-5db72cde7cec0866782818" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">chooseMessageFile</span></span></span>事件处理函数，</p>
+            <div id="crayon-5db72cde7cec2183818194" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="weui-uploader__input" bindtap="chooseMessageFile"&gt;&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cec2183818194-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cec2183818194-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-uploader__input"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"chooseMessageFile"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们可以add.js里找到chooseMessageFile事件处理函数，在里面可以看到这样的代码：</p>
+            <div id="crayon-5db72cde7cec3574733650" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.chooseMessageFile({
+      count: 5,
+      success: res =&gt; {
+          ...
+      }
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cec3574733650-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cec3574733650-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cec3574733650-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7cec3574733650-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7cec3574733650-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5db72cde7cec3574733650-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cec3574733650-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">chooseMessageFile</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cec3574733650-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">count</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">5</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72cde7cec3574733650-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cec3574733650-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span></div><div class="crayon-line" id="crayon-5db72cde7cec3574733650-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5db72cde7cec3574733650-6"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseMessageFile.html" target="_blank" rel="noopener noreferrer">wx.chooseMessageFile()</a></p>
+    <p>通过技术文档我们可以了解到，点击<strong>正方形+号</strong>，我们可以从客户端会话里选择5个文件来上传。</p>
+    <p>&nbsp;</p>
+    <p><strong>3.4 上传图片的API</strong></p>
+    <p>使用开发者工具打开pages/photos/add.wxml文件，可以看到下面的代码，这个view也就是点击正方形的+号，绑定bindtap了一个
+                <span id="crayon-5db72cde7cec5319931342" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">chooseImage</span></span></span>事件处理函数，</p>
+            <div id="crayon-5db72cde7cec7788478703" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="weui-uploader__input" bindtap="chooseImage"&gt;&lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cec7788478703-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cec7788478703-1"><span class="crayon-r ">&lt;view </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-uploader__input"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"chooseImage"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/view&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们可以add.js里找到chooseImage事件处理函数，在里面可以看到这样的代码：</p>
+            <div id="crayon-5db72cde7cec8696073048" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.chooseImage({
+      count: 9,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: res =&gt; {
+      }
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cec8696073048-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cec8696073048-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cec8696073048-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7cec8696073048-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7cec8696073048-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5db72cde7cec8696073048-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5db72cde7cec8696073048-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cec8696073048-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">chooseImage</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cec8696073048-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">count</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">9</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72cde7cec8696073048-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">sizeType</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'original'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'compressed'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72cde7cec8696073048-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">sourceType</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'album'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'camera'</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72cde7cec8696073048-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cec8696073048-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5db72cde7cec8696073048-7"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.chooseImage.html" target="_blank" rel="noopener noreferrer">wx.chooseImage()</a></p>
+    <p>通过技术文档我们可以了解到代码里的参数所代表的含义：</p>
+    <ul>
+    <li><strong>count</strong>：可以选择的照片数量，默认为9张（由于imgurl声明的是字符串</li>
+    <li><strong>sourceType</strong>：选择图片的来源，album就是图片可以来自手机相册；而camera是可以来自手机拍照，两个都写就是来自相册或拍照都可以；</li>
+    <li><strong>sizeType：</strong>所选的图片的尺寸，original为原图，compressed为压缩图，为了减轻服务器压力，建议为压缩图；</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p><strong>3.5 上传文件和图片到云存储</strong></p>
+    <p>通过wx.chooseMessageFile()和wx.chooseImage()这两个API，只能把文件和图片上传到小程序本地的临时文件里，我们还需要将临时的文件资源上传到云存储空间才行。这时就需要用到
+                <span id="crayon-5db72cde7ceca115280072" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">uploadFile</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span> API了，在pages/files/add.js文件pages/photos/add.js文件里，我们都可以看到类似于下面的代码：</p>
+            <div id="crayon-5db72cde7cecb602660915" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">return wx.cloud.uploadFile({   
+      ...
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cecb602660915-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cecb602660915-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cecb602660915-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cecb602660915-1"><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">uploadFile</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h">&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5db72cde7cecb602660915-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span></div><div class="crayon-line" id="crayon-5db72cde7cecb602660915-3"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-server-api/storage/uploadFile.html" target="_blank" rel="noopener noreferrer">cloud.uploadFile()</a></p>
+    <p>通过技术文档可以了解到，我们只需要输入云存储的路径cloudPath以及要上传的文件资源的路径fileContent，就能把临时文件资源上传到云存储里啦。</p>
+    <p>&nbsp;</p>
+    <h4>4、复制粘贴文件的链接与预览照片</h4>
+    <p><strong>4.1 复制粘贴文件在云存储的链接</strong></p>
+    <p>在pages/files/add.wxml里，我们可以看到下面的代码，当我们长按bindlongpress组件时，就会触发longpress事件处理函数：</p>
+            <div id="crayon-5db72cde7cecd550273072" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;view class="weui-cell" data-index="{{index}}" bindlongpress="longpress"&gt;
+    &lt;/view&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cecd550273072-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cecd550273072-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cecd550273072-1"><span class="crayon-o">&lt;</span><span class="crayon-e">view </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"weui-cell"</span><span class="crayon-h"> </span><span class="crayon-v">data</span><span class="crayon-o">-</span><span class="crayon-v">index</span><span class="crayon-o">=</span><span class="crayon-s">"{{index}}"</span><span class="crayon-h"> </span><span class="crayon-v">bindlongpress</span><span class="crayon-o">=</span><span class="crayon-s">"longpress"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5db72cde7cecd550273072-2"><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">view</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在add.js里找到longpress事件处理函数，我们可以看到如下代码：</p>
+            <div id="crayon-5db72cde7cecf942669455" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">   wx.setClipboardData({
+          data:realurl,
+          success(res) {
+            wx.getClipboardData({
+              success(res) {
+                console.log(res.data) 
+              }
+            })
+          }
+        })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5db72cde7cecf942669455-10" style="height: 20px;">10</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7cecf942669455-1"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">setClipboardData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-v">realurl</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">getClipboardData</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5db72cde7cecf942669455-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里调用了小程序的复制和粘贴API，也就是小程序在执行的时候，会先获取文件在云存储的链接，并将链接设置到系统（也就是手机）的剪贴板上，再被我们复制出来。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/device/clipboard/wx.setClipboardData.html" target="_blank" rel="noopener noreferrer">设置剪切板内容wx.setClipboardData()</a>、<a href="https://developers.weixin.qq.com/miniprogram/dev/api/device/clipboard/wx.getClipboardData.html" target="_blank" rel="noopener noreferrer">获取剪切板内容wx.getClipboardData()</a></p>
+    <p>&nbsp;</p>
+    <p><strong>4.2 预览相册里的图片</strong></p>
+    <p>在pages/photos/add.wxml文件里，我们可以看到image组件绑定bindtap了一个事件处理函数previewImage:</p>
+            <div id="crayon-5db72cde7ced0013232090" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;image class="weui-uploader__img" data-src="{{image}}" bindtap="previewImage" src="{{image.src}}"&gt;&lt;/image&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ced0013232090-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ced0013232090-1"><span class="crayon-r ">&lt;image </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"weui-uploader__img"</span><span class="crayon-h"> </span><span class="crayon-e ">data-src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{image}}"</span><span class="crayon-h"> </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"previewImage"</span><span class="crayon-h"> </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"{{image.src}}"</span><span class="crayon-r ">&gt;</span><span class="crayon-r ">&lt;/image&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>当我们点击图片时，就会触发在add.js的previewImage事件，我们可以在add.js里找到如下代码：</p>
+            <div id="crayon-5db72cde7ced2165442201" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  previewImage(e) {
+        ...
+    
+        wx.previewImage({
+          current: current.src,
+          urls: photos
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72cde7ced2165442201-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72cde7ced2165442201-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72cde7ced2165442201-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72cde7ced2165442201-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72cde7ced2165442201-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5db72cde7ced2165442201-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5db72cde7ced2165442201-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5db72cde7ced2165442201-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72cde7ced2165442201-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">previewImage</span><span class="crayon-sy">(</span><span class="crayon-v">e</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7ced2165442201-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-sy">.</span></div><div class="crayon-line" id="crayon-5db72cde7ced2165442201-3">&nbsp;</div><div class="crayon-line" id="crayon-5db72cde7ced2165442201-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-e">previewImage</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72cde7ced2165442201-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">current</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">current</span><span class="crayon-sy">.</span><span class="crayon-v">src</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72cde7ced2165442201-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">urls</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-i">photos</span></div><div class="crayon-line" id="crayon-5db72cde7ced2165442201-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5db72cde7ced2165442201-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/api/media/image/wx.previewImage.html" target="_blank" rel="noopener noreferrer">wx.previewImage()</a></p>
+    <p>previewImage事件处理函数会调用wx.previewImage()来实现图片的预览（如果没有预览的功能，图片是不能点击放大到窗口查看的哦）</p>
+    <blockquote><p>对于项目开发经验不足或编程资历尚浅的同学来说，想通过抽丝剥茧的方式来一步步拆解出每一行每一句代码具体的含义是非常难的，除了我们需要掌握一定的编程基础，具备一定的搜索能力（这里查阅JavaScript技术文档和小程序技术文档），还有一项技能必不可少，那就是学会使用Console.log()打印。</p></blockquote>
+</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/workshop/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/workshop\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

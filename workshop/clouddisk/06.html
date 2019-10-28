@@ -21,7 +21,7 @@
     <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
     <link rel="alternate" type="application/rss+xml" title="云开发技术工坊 » Feed" href="https://cloudbasegroup.org/workshop/feed/">
     <link rel="alternate" type="application/rss+xml" title="云开发技术工坊 » 评论Feed" href="https://cloudbasegroup.org/workshop/comments/feed/">
-    <link rel="alternate" type="application/rss+xml" title="云开发技术工坊 » 开场：功能介绍与学习目标评论Feed" href="https://cloudbasegroup.org/workshop/clouddisk/101/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术工坊 » 活动后：功能迭代与学习交流评论Feed" href="https://cloudbasegroup.org/workshop/clouddisk/33/feed/">
             <script type="text/javascript">
                 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/workshop\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
                 !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
@@ -54,123 +54,108 @@
     <link rel="https://api.w.org/" href="https://cloudbasegroup.org/workshop/wp-json/">
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/workshop/xmlrpc.php?rsd">
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
-    <link rel="prev" title="第一节：导入项目与体验" href="https://cloudbasegroup.org/workshop/clouddisk/10/">
-    <link rel="next" title="准备：技术工坊预备手册" href="https://cloudbasegroup.org/workshop/clouddisk/4/">
+    <link rel="next" title="第三节：代码的逻辑与功能拆解" href="https://cloudbasegroup.org/workshop/clouddisk/31/">
     <meta name="generator" content="WordPress 5.2.2">
-    <link rel="canonical" href="https://cloudbasegroup.org/workshop/clouddisk/101/">
-    <link rel="shortlink" href="https://cloudbasegroup.org/workshop/?p=101">
-    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/workshop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fworkshop%2Fclouddisk%2F101%2F">
-    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/workshop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fworkshop%2Fclouddisk%2F101%2F&amp;format=xml">
+    <link rel="canonical" href="https://cloudbasegroup.org/workshop/clouddisk/33/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/workshop/?p=33">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/workshop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fworkshop%2Fclouddisk%2F33%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/workshop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fworkshop%2Fclouddisk%2F33%2F&amp;format=xml">
             <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
             
     </head>
     
-    <body class="post-template-default single single-post postid-101 single-format-standard logged-in masthead-fixed full-width singular">
+    <body class="post-template-default single single-post postid-33 single-format-standard logged-in masthead-fixed full-width singular">
     
         <div id="primary" class="content-area">
             <div id="content" class="site-content" role="main">
                 
             <nav id="header-db" class="row navbar navbar-default">
-                <div class="navbar-header">
-                        <div class="logotop fleft">
-                        <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
-                    </div>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        </button>
-                    <div class="flex nav-items">
-                    <h1 class="flex-item navbar-link">
-                        口袋网盘小程序			</h1>
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
                         </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            口袋网盘小程序			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/01.html">
+                                    准备：技术工坊预备手册					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/02.html">
+                                    开场：功能介绍与学习目标					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/03.html">
+                                    第一节：导入项目与体验					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/04.html">
+                                    第二节：文件目录与页面解读					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/05.html">
+                                    第三节：代码的逻辑与功能拆解					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/06.html">
+                                    活动后：功能迭代与学习交流					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
                 </div>
-        
-                <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
-                    <div class="sop-menu">
-                    <ul>
-                                        <li class="page_item no_current_page_item">
-                            <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/01.html">
-                                准备：技术工坊预备手册					</a>
-                        </li>
-                                        <li class="page_item current_page_item">
-                            <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/02.html">
-                                开场：功能介绍与学习目标					</a>
-                        </li>
-                                        <li class="page_item no_current_page_item">
-                            <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/03.html">
-                                第一节：导入项目与体验					</a>
-                        </li>
-                                        <li class="page_item no_current_page_item">
-                            <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/04.html">
-                                第二节：文件目录与页面解读					</a>
-                        </li>
-                                        <li class="page_item no_current_page_item">
-                            <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/05.html">
-                                第三节：代码的逻辑与功能拆解					</a>
-                        </li>
-                                        <li class="page_item no_current_page_item">
-                            <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/06.html">
-                                活动后：功能迭代与学习交流					</a>
-                        </li>
-                                                        </ul>
-                </div>		
-            </div>
-        </nav>
+            </nav>
     
     <div class="sop-content">
         <header class="entry-header">
-            <h1 class="entry-title">开场：功能介绍与学习目标</h1>
+            <h1 class="entry-title">活动后：功能迭代与学习交流</h1>
         </header><!-- .entry-header -->
     
         <div class="entry-content">
-            <p>口袋网盘小程序是一个可以将手机相册里的照片（或拍照的照片）和微信聊天会话里的文件（比如Excel、PPT、PDF、音频、视频等文件）上传到云开发的存储里，并可以进行分享的网盘。</p>
-    <h4>1、项目简述</h4>
-    <p>口袋网盘小程序使用的是<strong>小程序的云开发</strong>，云开发自带免费的云存储、云数据库，开始时不需要涉及服务器的搭建及运维，也不需要进行域名注册与备案，只需要通过一些简单的API就能实现一个完整项目的业务逻辑，<strong>免费而且无需后端</strong>，开发成本非常低，因此这个小程序<strong>从创建到发布都是免费的</strong>，非常适合新手。</p>
-    <h4>2、功能介绍与项目的目标</h4>
-    <p>技术工坊将会围绕以下几个比较核心的功能点进行功能逻辑的拆解以及对代码是如何实现这些功能的进行分析，我们会结合具体的代码页面，事件触发与处理的逻辑以及调用的相关API进行解读。</p>
-    <p><strong>2.1 文件夹和相册的创建</strong></p>
-    <p>点击添加按钮会弹出弹窗，在弹窗的表单里输入文件夹名、相册名，点击确定提交将文件夹名、相册名上传到云开发的数据库里。完成这个功能，可以大致拆解为以下几个功能点：</p>
-    <blockquote>
-    <ul>
-    <li>mp-dialog弹窗的实现</li>
-    <li>点击确认按钮实现新建文件夹、相册的功能</li>
-    <li>通过表单收集输入的文件夹名和相册名</li>
-    <li>将文件夹名和相册名保存到云数据库</li>
-    </ul>
-    </blockquote>
+            <div class="page" title="Page 8">
+    <div class="section">
+    <div class="layoutArea">
+    <div class="column">
+    <p>学习编程是一件快乐而有成就感的事情，掌握小程序的云开发不仅可以提升技术技能，还能享受到技术创造的魅力。只参加一次技术工坊的活动离掌握技术远远不够，你需要夯实基础，以及不断的提升项目实际开发的能力。</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    <h4>1、通过训练营夯实基础</h4>
+    <p>在前面我们只是粗略的了解了一下开源网盘小程序是怎么实现的，要想自己能真正完全读取里面的代码以及可以做到完善这个小程序的功能开发，或者你想举一反三用小程序云开发来实现其他功能，那你就很有必要学习一下小程序云开发的基础知识啦。</p>
+    <p>我们每个月都会有免费的十天云开发技术训练营线上学习活动，通过训练营，哪怕你是<strong>零基础的小白</strong>，也能够学会小程序的云开发，欢迎来撩~</p>
+    <p><strong>训练营联系方式：</strong>云开发CloudBase小助手微信号：Tcloudedu1</p>
+    <p><strong>训练营在线教程（三部分）：</strong><a href="https://tencentcloudbase.github.io/handbook/tcb01.html" target="_blank" rel="noopener noreferrer">小程序基础入门</a>、<a href="https://tencentcloudbase.github.io/handbook/tcb11.html" target="_blank" rel="noopener noreferrer">小程序与JavaScript</a>、<a href="https://tencentcloudbase.github.io/handbook/tcb21.html" target="_blank" rel="noopener noreferrer">云开发入门实战</a></p>
+    <h4>2、功能的拓展与迭代</h4>
+    <p>网盘小程序只是一个简单的demo，在功能上还有很多地方可以不断完善和添加，这也是一个实际的技术产品都会经历的不断迭代进化的过程。</p>
+    <p><strong>2.1、通过前端来删除文件、照片</strong></p>
+    <p>删除文件和照片，删的只是<strong>数据库/集合</strong>里<strong>某个用户</strong>的<strong>某个文件夹或相册</strong>里的<strong>指定文件和照片</strong>，这里标粗的每个短语都需要使用函数进行处理，而这里有涉及两个核心的功能：</p>
+    <blockquote><p>一、删除数据库的记录，这会使用到云开发小程序端删除数据记录的Document.remove 这个API</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-client-api/database/doc.remove.html" target="_blank" rel="noopener noreferrer">删除数据库中的一条记录</a></p>
+    <p>二、如何在小程序里触发删除；这是一个交互的问题，我们可以使用<strong>左滑</strong>这种交互方式要删除的文件或照片，可以使用weui扩展能力的Slideview：</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/extended/weui/slideview.html" target="_blank" rel="noopener noreferrer">左滑交互功能的实现</a></p></blockquote>
     <p>&nbsp;</p>
-    <p><strong>2.2&nbsp; 显示文件夹内文件、相册内的照片</strong></p>
-    <p>当我们往文件夹里添加了文件，或者往相册里添加了照片，点击其中的一个文件夹/相册，就能显示与之对应的文件夹/相册里的文件/照片，而不会乱套，这在代码里又是如何实现的呢？</p>
-    <blockquote>
-    <ul>
-    <li>点击文件夹或相册，是如何跳转到指定的文件列表与照片列表页面的</li>
-    <li>文件和照片是如何与指定文件夹、相册对应起来的</li>
-    <li>如何显示文件夹内的文件、相册内的照片</li>
-    </ul>
-    </blockquote>
-    <p>&nbsp;</p>
-    <p><strong>2.3 上传文件到文件夹、照片到相册</strong></p>
-    <p>要上传文件或照片，首先要有一个form表单，form表单除了可以收集文字、单选多选、滑动值等以外，还可以收集文件和照片等数据。我们会使用到小程序上传文件以及上传图片的API将文件和图片上传到临时文件，然后再通过云开发的API将文件或图片上传到云存储里，并将取得的链接记录在数据库里。</p>
-    <blockquote>
-    <ul>
-    <li>文件、照片上传的页面文件</li>
-    <li>文件、照片上传的form表单</li>
-    <li>上传微信会话里的文件的API</li>
-    <li>上传手机相册或拍照的图片的API</li>
-    <li>上传文件和图片到云存储</li>
-    </ul>
-    </blockquote>
-    <p>&nbsp;</p>
-    <p><strong>2.4 复制粘贴文件的链接与预览照片</strong></p>
-    <p>那我们怎样才能把上传到云存储里的文件或照片分享给其他人或者获取其他人分享给我们的文件和照片呢？我们可以通过文件在云存储的真实链接这种方式，以及通过预览图片的方式（这种方式支持下载）来进行分享。</p>
-    <blockquote>
-    <ul>
-    <li>复制粘贴文件在云存储的链接</li>
-    <li>预览相册里的图片</li>
-    </ul>
-    </blockquote>
+    <p><strong>2.2、限定文件上传的大小</strong></p>
+    <p>由于是网盘，我们有时候可能不希望别人拿来上传高清视频等大型文件，这个时候就需要限制文件的上传大小。要限制文件的上传大小，首先就要能够先获取到上传的文件的</p>
+    <p>技术文档：wx.getFileInfo()</p>
+    <p><strong>2.3、限定上传人的openid</strong></p>
+    <p><strong>2.4、类似微信朋友圈一样展示照片</strong></p>
+    <p><strong>2.5、根据文件类型显示小图标</strong></p>
+    <p><strong>2.6、给照片添加专属水印</strong></p>
+    <h4>3、开源项目技术小组</h4>
+    <p>如果你基础</p>
 	</div><!-- .entry-content -->
     </div><!-- #post-## -->
     <!-- <div class="sop-bottom">

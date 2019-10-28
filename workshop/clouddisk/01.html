@@ -56,7 +56,7 @@
     <link rel="https://api.w.org/" href="https://cloudbasegroup.org/workshop/wp-json/">
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/workshop/xmlrpc.php?rsd">
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
-    <link rel="prev" title="第一节：导入项目与体验" href="https://cloudbasegroup.org/workshop/clouddisk/10/">
+    <link rel="prev" title="开场：功能介绍与学习目标" href="https://cloudbasegroup.org/workshop/clouddisk/101/">
     <meta name="generator" content="WordPress 5.2.2">
     <link rel="canonical" href="https://cloudbasegroup.org/workshop/clouddisk/4/">
     <link rel="shortlink" href="https://cloudbasegroup.org/workshop/?p=4">
@@ -97,19 +97,23 @@
                     </li>
                                     <li class="page_item no_current_page_item">
                         <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/02.html">
-                            第一节：导入项目与体验					</a>
+                            开场：功能介绍与学习目标					</a>
                     </li>
                                     <li class="page_item no_current_page_item">
                         <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/03.html">
-                            第二节：文件目录与页面解读					</a>
+                            第一节：导入项目与体验					</a>
                     </li>
                                     <li class="page_item no_current_page_item">
                         <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/04.html">
-                            第三节：代码的逻辑与功能拆解					</a>
+                            第二节：文件目录与页面解读					</a>
                     </li>
                                     <li class="page_item no_current_page_item">
                         <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/05.html">
-                            拓展：功能的拓展与迭代					</a>
+                            第三节：代码的逻辑与功能拆解					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/workshop/clouddisk/06.html">
+                            活动后：功能迭代与学习交流					</a>
                     </li>
                                                     </ul>
             </div>		
@@ -163,14 +167,14 @@
     <p><strong>4.1 开通云开发服务</strong></p>
     <p>点击微信开发者工具的“<strong>云开发</strong>”图标，在弹出框里点击“<strong>开通</strong>”，同意协议后，会弹出<strong>创建环境</strong>的对话框。这时会要求你输入<strong>环境名称</strong>和<strong>环境ID</strong>，以及当前云开发的基础环境配额（基础配额免费，而且足够你使用哦）。</p>
     <blockquote><p>建议你<strong>环境名称</strong>可以使用
-                <span id="crayon-5db694cf8fd87817016136" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">xly</span></span></span>、<strong>环境ID</strong>自动生成即可，当你的云开发环境出现问题的时候，你可以提供你的环境ID，云开发团队会有专人为你解答。</p></blockquote>
+                <span id="crayon-5db72c357e73a209089444" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">xly</span></span></span>、<strong>环境ID</strong>自动生成即可，当你的云开发环境出现问题的时候，你可以提供你的环境ID，云开发团队会有专人为你解答。</p></blockquote>
     <p>按照对话框提示的要求填写完之后，点击<strong>创建</strong>，会初始化环境，环境初始化成功后会自动弹出云开发控制台，这样我们的云开发服务就开通啦。大家可以花<strong>两分钟左右</strong>的时间熟悉一下云开发控制台的界面。<br>
     <strong>4.2 找到云开发的环境ID</strong></p>
     <p>点击云开发控制台窗口里的<strong>设置</strong>图标，在<strong>环境变量</strong>的标签页找到<strong>环境名称</strong>和<strong>环境ID</strong>。</p>
     <p>当云开发服务开通后，我们可以在小程序源代码cloudfunctions文件夹名看到你的环境名称。如果在cloudfunctions文件夹名显示的不是环境名称，而是“<strong>未指定环境</strong>”，可以鼠标右键该文件夹，选择“更多设置”，然后再点击“设置”小图标，选择环境并确定。<br>
     <strong>4.3 指定小程序的云开发环境</strong></p>
     <p>在开发者工具中打开源代码文件夹<strong>miniprogram</strong>里的app.js，找到如下代码：</p>
-            <div id="crayon-5db694cf8fd8e412710129" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            <div id="crayon-5db72c357e742697246059" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
             
                 <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.cloud.init({
       // 此处请填入环境 ID, 环境 ID 可打开云控制台查看
@@ -181,15 +185,15 @@
                     <table class="crayon-table" style="margin-left: -20px;">
                         <tbody><tr class="crayon-row">
                     <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db694cf8fd8e412710129-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db694cf8fd8e412710129-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db694cf8fd8e412710129-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db694cf8fd8e412710129-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db694cf8fd8e412710129-5" style="height: 20px;">5</div></div>
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72c357e742697246059-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72c357e742697246059-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5db72c357e742697246059-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5db72c357e742697246059-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5db72c357e742697246059-5" style="height: 20px;">5</div></div>
                     </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db694cf8fd8e412710129-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">init</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db694cf8fd8e412710129-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// 此处请填入环境 ID, 环境 ID 可打开云控制台查看</span></div><div class="crayon-line" id="crayon-5db694cf8fd8e412710129-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'my-env-id'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db694cf8fd8e412710129-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">traceUser</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db694cf8fd8e412710129-5"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72c357e742697246059-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">init</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5db72c357e742697246059-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// 此处请填入环境 ID, 环境 ID 可打开云控制台查看</span></div><div class="crayon-line" id="crayon-5db72c357e742697246059-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'my-env-id'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72c357e742697246059-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">traceUser</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5db72c357e742697246059-5"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
                         </tr>
                     </tbody></table>
                 </div>
             </div><p>在
-                <span id="crayon-5db694cf8fd91772150052" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'my-env-id'</span></span></span>处改成你的环境ID，如
-                <span id="crayon-5db694cf8fd92668957963" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'xly-snoop'</span></span></span></p>
+                <span id="crayon-5db72c357e744647604564" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'my-env-id'</span></span></span>处改成你的环境ID，如
+                <span id="crayon-5db72c357e746382181985" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">env</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'xly-snoop'</span></span></span></p>
     <h4>5、下载Nodejs</h4>
     <p><strong>5.1 下载并安装Nodejs</strong></p>
     <p><strong>NodeJS</strong>是在服务端运行JavaScript的运行环境，云开发所使用的服务端环境就是NodeJS。<strong>npm</strong>是Node包管理器，通过npm，我们可以非常方便的安装云开发所需要的依赖包。</p>
@@ -197,7 +201,7 @@
     <p>大家可以根据电脑的操作系统下载相应的NodeJS安装包并安装（<strong>安装时不要修改安装目录，啥也别管直接next安装即可</strong>）。<br>
     <strong>5.2 检查Nodejs是否安装成功</strong></p>
     <p>打开电脑终端（Windows电脑为<strong>cmd命令提示符</strong>，Mac电脑为终<strong>端Terminal</strong>），然后逐行输入并按Enter执行下面的代码：</p>
-            <div id="crayon-5db694cf8fd94288304483" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            <div id="crayon-5db72c357e747679775981" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
             
                 <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">node --version
     npm --version</textarea></div>
@@ -205,9 +209,9 @@
                     <table class="crayon-table" style="margin-left: -20px;">
                         <tbody><tr class="crayon-row">
                     <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db694cf8fd94288304483-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db694cf8fd94288304483-2" style="height: 20px;">2</div></div>
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72c357e747679775981-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5db72c357e747679775981-2" style="height: 20px;">2</div></div>
                     </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db694cf8fd94288304483-1"><span class="crayon-v">node</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-e">version</span></div><div class="crayon-line" id="crayon-5db694cf8fd94288304483-2"><span class="crayon-v">npm</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">version</span></div></div></td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72c357e747679775981-1"><span class="crayon-v">node</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-e">version</span></div><div class="crayon-line" id="crayon-5db72c357e747679775981-2"><span class="crayon-v">npm</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">version</span></div></div></td>
                         </tr>
                     </tbody></table>
                 </div>
@@ -219,16 +223,16 @@
     <p>大家可以根据电脑的操作系统下载相应的Git安装包并安装（<strong>安装时不要修改安装目录，啥也别管直接next安装即可</strong>）。<br>
     <strong>6.2 检查Git是否安装成功</strong></p>
     <p>打开电脑终端（Windows电脑为<strong>cmd命令提示符</strong>，Mac电脑为终<strong>端Terminal</strong>），然后逐行输入并按Enter执行下面的代码:</p>
-            <div id="crayon-5db694cf8fd96121768797" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            <div id="crayon-5db72c357e749196155509" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
             
                 <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">git --version</textarea></div>
                 <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
                     <table class="crayon-table" style="margin-left: -20px;">
                         <tbody><tr class="crayon-row">
                     <td class="crayon-nums " data-settings="hide">
-                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db694cf8fd96121768797-1" style="height: 20px;">1</div></div>
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5db72c357e749196155509-1" style="height: 20px;">1</div></div>
                     </td>
-                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db694cf8fd96121768797-1"><span class="crayon-v">git</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">version</span></div></div></td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5db72c357e749196155509-1"><span class="crayon-v">git</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">version</span></div></div></td>
                         </tr>
                     </tbody></table>
                 </div>
