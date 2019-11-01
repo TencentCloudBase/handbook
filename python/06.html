@@ -1,0 +1,665 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Python操作文件评论Feed" href="https://cloudbasegroup.org/handbook/python/83/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="日期与时间" href="https://cloudbasegroup.org/handbook/python/81/">
+    <link rel="next" title="pyecharts数据可视化" href="https://cloudbasegroup.org/handbook/python/85/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/python/83/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=83">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F83%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F83%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-83 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/python/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            Python零基础快速入门			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/01.html">
+                                    写出第一行python代码					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/02.html">
+                                    基本语法与语句					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/03.html">
+                                    函数、模块和库					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/04.html">
+                                    用python做数学题					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/05.html">
+                                    日期与时间					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/06.html">
+                                    Python操作文件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/07.html">
+                                    pyecharts数据可视化					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/08.html">
+                                    python操作Excel					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/09.html">
+                                    python图片处理					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">Python操作文件</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>使用命令行是程序员的基本功，而使用Python命令行操作文件是运维工程师、测试工程师等职业必备的基本技能，同时也是Python各领域开发方向的工程师所必须掌握的。这是一节有意思而非常实用的内容。</p>
+    <h4>命令行</h4>
+    <p>前面我们已经接触过cd这个命令行，那还有哪些常用的命令行呢？大家打开命令行工具，下面的代码直接在命令行里面输入即可。</p>
+    <p><strong>打印当前目录（文件夹）的路径</strong></p>
+    <p>这个当前目录（文件夹）是相对于命令行工具而言的，由于Linux或Mac的文件结构比较复杂，这个命令就很有必要啦</p>
+    <p>Linux和Mac用户，可以使用
+                <span id="crayon-5dbc022f0dd0a011426476" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">pwd</span></span></span>命令：</p>
+            <div id="crayon-5dbc022f0dd11697806659" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pwd</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd11697806659-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd11697806659-1"><span class="crayon-r ">pwd</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>Windows用户可以使用chdir命令，不过windows命令行工具自带显示完整路径，大家在命令行里输入看下效果，发现用处不大。</p>
+            <div id="crayon-5dbc022f0dd13878670340" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">chdir</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd13878670340-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd13878670340-1"><span class="crayon-r ">chdir</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>&nbsp;</p>
+    <p><strong>新建目录（文件夹）</strong></p>
+    <p>
+                <span id="crayon-5dbc022f0dd15866948685" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">mkdir</span></span></span>，使用mkdir+文件名可以在当前目录新建一个文件夹，也可以使用mkdir+一个完整的文件夹路径来新建文件夹。注意命令间的是空格不要漏写啦</p>
+            <div id="crayon-5dbc022f0dd16377310396" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">mkdir newdoc</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd16377310396-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd16377310396-1"><span class="crayon-e">mkdir </span><span class="crayon-i">newdoc</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+            <div id="crayon-5dbc022f0dd18762852353" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">mkdir C:\Users\hackwork\Downloads\python-project\newdoc</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd18762852353-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd18762852353-1"><span class="crayon-i">mkdir</span><span class="crayon-h"> </span><span class="crayon-i">C</span><span class="crayon-o">:</span><span class="crayon-sy">\</span><span class="crayon-i">Users</span><span class="crayon-sy">\</span><span class="crayon-i">hackwork</span><span class="crayon-sy">\</span><span class="crayon-i">Downloads</span><span class="crayon-sy">\</span><span class="crayon-i">python</span><span class="crayon-cn">-project</span><span class="crayon-sy">\</span><span class="crayon-i">newdoc</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>注意Windows的路径是右斜杠”\”，而Mac或Linux的路径是左斜杠”/”</p>
+    <p>&nbsp;</p>
+    <p><strong>更改目录（文件夹）</strong></p>
+    <p>cd更改目录（文件夹）就是改变命令行工具所在的位置，这个是我们在命令行工具最常用的命令之一啦。</p>
+            <div id="crayon-5dbc022f0dd1a460153955" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">cd newdoc</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd1a460153955-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd1a460153955-1"><span class="crayon-r ">cd</span><span class="crayon-h"> </span><span class="crayon-i">newdoc</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>意思是进入当前路径下的名称为newdoc文件夹。也可以输入完整的路径，比如：</p>
+            <div id="crayon-5dbc022f0dd1c917102152" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">cd C:\Users\hackwork\Downloads\python-project\newdoc</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd1c917102152-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd1c917102152-1"><span class="crayon-r ">cd</span><span class="crayon-h"> </span><span class="crayon-i">C</span><span class="crayon-o">:</span><span class="crayon-sy">\</span><span class="crayon-i">Users</span><span class="crayon-sy">\</span><span class="crayon-i">hackwork</span><span class="crayon-sy">\</span><span class="crayon-i">Downloads</span><span class="crayon-sy">\</span><span class="crayon-i">python</span><span class="crayon-cn">-project</span><span class="crayon-sy">\</span><span class="crayon-i">newdoc</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>还可以输入</p>
+            <div id="crayon-5dbc022f0dd1d647732476" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">cd ../</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd1d647732476-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd1d647732476-1"><span class="crayon-r ">cd</span><span class="crayon-h"> </span><span class="crayon-sy">.</span><span class="crayon-sy">.</span><span class="crayon-o">/</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>意思是返回当前目录的上一层。</p>
+    <p>&nbsp;</p>
+    <p><strong>列出目录（文件夹）下的所有文件</strong></p>
+    <p>在Linux和Mac可以输入ls命令来列出目录（文件夹）下的文件，而Windows则是输入dir命令。</p>
+            <div id="crayon-5dbc022f0dd1e308977129" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">ls</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd1e308977129-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd1e308977129-1"><span class="crayon-r ">ls</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+            <div id="crayon-5dbc022f0dd20176108376" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">dir</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd20176108376-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd20176108376-1"><span class="crayon-r ">dir</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>&nbsp;</p>
+    <p><strong>删除目录（文件夹）</strong></p>
+    <p>使用
+                <span id="crayon-5dbc022f0dd22961943987" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">rmdir</span></span></span>命令+文件夹名，可以删除该文件夹</p>
+            <div id="crayon-5dbc022f0dd23184726003" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">rmdir newdoc</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd23184726003-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd23184726003-1"><span class="crayon-r ">rmdir</span><span class="crayon-h"> </span><span class="crayon-i">newdoc</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>命令行知识拓展</h4>
+    <blockquote><p>知识拓展部分，了解即可。</p></blockquote>
+    <p>使用命令行来对操作系统的文件等进行管理是运维工程师必备的一个基本技能，由于侧重点有限，我们只是列举了一些最常用的命令，更多内容大家可以去阅读一些拓展资料。</p>
+    <p>文档：<a href="http://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener noreferrer">Mac 、Linux命令大全以及Shell教程</a></p>
+    <p>而Python的File对象、OS模块、shutil模块、glob模块等也能管理操作系统的文件系统，不仅如此Python甚至可以完全取代shell脚本语言。因此这也是为什么Python会成为运维工程师和测试工程师推荐学习的开发语言。</p>
+    <h4>File对象</h4>
+    <p><strong>读文件</strong></p>
+    <p>首先用VS Code在python-project目录下，新建一个test.txt文件，然后再test.txt文件里输入以下文字内容：</p>
+            <div id="crayon-5dbc022f0dd24667242744" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">秋风清，秋月明，
+    
+    落叶聚还散，寒鸦栖复惊。
+    
+    相思相见知何日？此时此夜难为情！
+    
+    入我相思门，知我相思苦，
+    
+    长相思兮长相忆，短相思兮无穷极，
+    
+    早知如此绊人心，何如当初莫相识。</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc022f0dd24667242744-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-1">秋风清，秋月明，</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-3">落叶聚还散，寒鸦栖复惊。</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-4">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-5">相思相见知何日？此时此夜难为情！</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-6">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-7">入我相思门，知我相思苦，</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-8">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-9">长相思兮长相忆，短相思兮无穷极，</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-10">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd24667242744-11">早知如此绊人心，何如当初莫相识。</div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后我们在python-project目录下新建一个lesson5.py的Python文件，输入以下代码：</p>
+            <div id="crayon-5dbc022f0dd26778129046" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#如果文件内容是中文，可能在Windows电脑上会出现编码的错误
+    #可以在open函数加一个encoding，也就是第一行换成openfile = open('test.txt',encoding="utf-8")
+    openfile = open('test.txt')
+    readfile=openfile.read()
+    print(openfile)
+    print(readfile)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd26778129046-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd26778129046-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd26778129046-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc022f0dd26778129046-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc022f0dd26778129046-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc022f0dd26778129046-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd26778129046-1"><span class="crayon-c">#如果文件内容是中文，可能在Windows电脑上会出现编码的错误</span></div><div class="crayon-line" id="crayon-5dbc022f0dd26778129046-2"><span class="crayon-c">#可以在open函数加一个encoding，也就是第一行换成openfile = open('test.txt',encoding="utf-8")</span></div><div class="crayon-line" id="crayon-5dbc022f0dd26778129046-3"><span class="crayon-v">openfile</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'test.txt'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd26778129046-4"><span class="crayon-v">readfile</span><span class="crayon-o">=</span><span class="crayon-v">openfile</span><span class="crayon-sy">.</span><span class="crayon-e">read</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd26778129046-5"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">openfile</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd26778129046-6"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">readfile</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们再来执行看看结果。</p>
+    <p><strong>写文件</strong></p>
+    <p>要写文件需要先打开一个文件。</p>
+            <div id="crayon-5dbc022f0dd28494817748" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#如果文件内容是中文，可能在Windows电脑上会出现编码的错误
+    #可以在open函数加一个encoding，也就是第一行换成openfile = open('test2.txt','w',encoding="utf-8")
+    
+    openfile = open('test2.txt','w')
+    writefile=openfile.write('有美人兮，见之不忘，一日不见兮，思之如狂')
+    openfile.close()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd28494817748-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd28494817748-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd28494817748-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc022f0dd28494817748-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc022f0dd28494817748-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc022f0dd28494817748-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd28494817748-1"><span class="crayon-c">#如果文件内容是中文，可能在Windows电脑上会出现编码的错误</span></div><div class="crayon-line" id="crayon-5dbc022f0dd28494817748-2"><span class="crayon-c">#可以在open函数加一个encoding，也就是第一行换成openfile = open('test2.txt','w',encoding="utf-8")</span></div><div class="crayon-line" id="crayon-5dbc022f0dd28494817748-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd28494817748-4"><span class="crayon-v">openfile</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'test2.txt'</span><span class="crayon-sy">,</span><span class="crayon-s">'w'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd28494817748-5"><span class="crayon-v">writefile</span><span class="crayon-o">=</span><span class="crayon-v">openfile</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-s">'有美人兮，见之不忘，一日不见兮，思之如狂'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd28494817748-6"><span class="crayon-v">openfile</span><span class="crayon-sy">.</span><span class="crayon-e">close</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>os模块</h4>
+    <p>使用开发者工具在python-project的文件夹下新建一个lesson6.py的文件，然后依次输入以下命令，然后使用命令行执行lesson6.py来看一下效果。</p>
+    <p><strong>文件所在路径</strong></p>
+            <div id="crayon-5dbc022f0dd2b098802592" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    print (os.getcwd())</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd2b098802592-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd2b098802592-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd2b098802592-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd2b098802592-2"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">os</span><span class="crayon-sy">.</span><span class="crayon-e">getcwd</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>重命名文件或文件夹</strong></p>
+            <div id="crayon-5dbc022f0dd2d494929064" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    os.rename("text.txt","秋风词.txt")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd2d494929064-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd2d494929064-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd2d494929064-1"><span class="crayon-e">import </span><span class="crayon-e">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd2d494929064-2"><span class="crayon-v">os</span><span class="crayon-sy">.</span><span class="crayon-e">rename</span><span class="crayon-sy">(</span><span class="crayon-s">"text.txt"</span><span class="crayon-sy">,</span><span class="crayon-s">"秋风词.txt"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>创建文件夹</strong></p>
+            <div id="crayon-5dbc022f0dd2e376860071" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    os.mkdir("test")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd2e376860071-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd2e376860071-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd2e376860071-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd2e376860071-2"><span class="crayon-k ">os</span><span class="crayon-sy">.</span><span class="crayon-e">mkdir</span><span class="crayon-sy">(</span><span class="crayon-s">"test"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>改变当前路径</strong></p>
+            <div id="crayon-5dbc022f0dd30859969326" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    os.chdir("test")
+    print(os.getcwd())</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd30859969326-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd30859969326-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd30859969326-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd30859969326-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd30859969326-2"><span class="crayon-k ">os</span><span class="crayon-sy">.</span><span class="crayon-e">chdir</span><span class="crayon-sy">(</span><span class="crayon-s">"test"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd30859969326-3"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">os</span><span class="crayon-sy">.</span><span class="crayon-e">getcwd</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>删除文件夹</strong></p>
+            <div id="crayon-5dbc022f0dd31093086768" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    os.rmdir('test')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd31093086768-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd31093086768-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd31093086768-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd31093086768-2"><span class="crayon-k ">os</span><span class="crayon-sy">.</span><span class="crayon-e">rmdir</span><span class="crayon-sy">(</span><span class="crayon-s">'test'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>列出当前目录所有文件与文件夹</strong></p>
+            <div id="crayon-5dbc022f0dd33240405955" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    print(os.listdir())</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd33240405955-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd33240405955-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd33240405955-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd33240405955-2"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">os</span><span class="crayon-sy">.</span><span class="crayon-e">listdir</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>检验给出的路径是否是一个文件</strong></p>
+    <p>在python-project文件下新建一个文件或文件夹，命名为”test3″，然后在lesson6.py里输入以下命令：</p>
+            <div id="crayon-5dbc022f0dd34844816075" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    t="test3"
+    print(os.path.isfile(t))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd34844816075-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd34844816075-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd34844816075-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd34844816075-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd34844816075-2"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-s">"test3"</span></div><div class="crayon-line" id="crayon-5dbc022f0dd34844816075-3"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">os.path</span><span class="crayon-sy">.</span><span class="crayon-e">isfile</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>检验给出的路径是否是一个目录（文件夹）</strong></p>
+    <p>在python-project文件下新建一个文件或文件夹，命名为”test3″，然后在lesson6.py里输入以下命令：</p>
+            <div id="crayon-5dbc022f0dd36123609064" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    t="test3"
+    print(os.path.isdir(t))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd36123609064-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd36123609064-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd36123609064-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd36123609064-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd36123609064-2"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-s">"test3"</span></div><div class="crayon-line" id="crayon-5dbc022f0dd36123609064-3"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">os.path</span><span class="crayon-sy">.</span><span class="crayon-e">isdir</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>返回一个路径的目录名和文件名</strong></p>
+            <div id="crayon-5dbc022f0dd38335484574" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import os
+    t="/Users/hackwork/python-project/test.txt"
+    print(os.path.split(t))
+    print(os.path.splitext(t))
+    print(os.path.dirname(t))
+    print(os.path.basename(t))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd38335484574-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd38335484574-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd38335484574-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc022f0dd38335484574-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc022f0dd38335484574-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc022f0dd38335484574-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd38335484574-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">os</span></div><div class="crayon-line" id="crayon-5dbc022f0dd38335484574-2"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-s">"/Users/hackwork/python-project/test.txt"</span></div><div class="crayon-line" id="crayon-5dbc022f0dd38335484574-3"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">os.path</span><span class="crayon-sy">.</span><span class="crayon-e">split</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd38335484574-4"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">os.path</span><span class="crayon-sy">.</span><span class="crayon-e">splitext</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd38335484574-5"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">os.path</span><span class="crayon-sy">.</span><span class="crayon-e">dirname</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd38335484574-6"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">os.path</span><span class="crayon-sy">.</span><span class="crayon-e">basename</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>shutil模块</h4>
+    <p>使用python批量修改文件名、批量新建文件夹等</p>
+    <p><strong>复制文件</strong></p>
+    <p>这里的文件不限文件格式，比如我们在python-project放一张名称为“hackwork.jpg”的图片，然后使用开发者工具在python-project文件夹下新建一个lesson6-1.py的Python文件，输入以下代码:</p>
+            <div id="crayon-5dbc022f0dd39389714543" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import shutil
+    shutil.copyfile("hackwork.jpg","hackwork-copy.jpg")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd39389714543-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd39389714543-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd39389714543-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">shutil</span></div><div class="crayon-line" id="crayon-5dbc022f0dd39389714543-2"><span class="crayon-k ">shutil</span><span class="crayon-sy">.</span><span class="crayon-e">copyfile</span><span class="crayon-sy">(</span><span class="crayon-s">"hackwork.jpg"</span><span class="crayon-sy">,</span><span class="crayon-s">"hackwork-copy.jpg"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>&nbsp;</p>
+    <p><strong>复制文件夹</strong></p>
+    <p>我们在python-project文件夹下新建一个文件夹名称为“鸣人”，然后在lesson6-1.py输入以下代码并执行：</p>
+            <div id="crayon-5dbc022f0dd3b083898172" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import shutil
+    shutil.copytree("鸣人","鸣人的影分身")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd3b083898172-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd3b083898172-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd3b083898172-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">shutil</span></div><div class="crayon-line" id="crayon-5dbc022f0dd3b083898172-2"><span class="crayon-k ">shutil</span><span class="crayon-sy">.</span><span class="crayon-e">copytree</span><span class="crayon-sy">(</span><span class="crayon-s">"鸣人"</span><span class="crayon-sy">,</span><span class="crayon-s">"鸣人的影分身"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>执行之后我们会发现在python-project文件夹下就出现了一个“鸣人的影分身”。这个复制文件夹和我们在电脑上操作的复制是一样，如果“鸣人”这个文件夹下有文件，也会一并复制。</p>
+    <p>&nbsp;</p>
+    <p><strong>移动文件或文件夹</strong></p>
+    <p>比如我们可以把之前建好的hackwork.jpg图片给移动到“鸣人”的文件夹下：</p>
+            <div id="crayon-5dbc022f0dd3d965276662" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import shutil
+    shutil.move("hackwork.jpg","鸣人")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd3d965276662-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd3d965276662-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd3d965276662-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">shutil</span></div><div class="crayon-line" id="crayon-5dbc022f0dd3d965276662-2"><span class="crayon-k ">shutil</span><span class="crayon-sy">.</span><span class="crayon-e">move</span><span class="crayon-sy">(</span><span class="crayon-s">"hackwork.jpg"</span><span class="crayon-sy">,</span><span class="crayon-s">"鸣人"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>glob模块</h4>
+    <p>模块提供了一个函数用于从目录通配符搜索中生成文件列表，比如我们想知道python-project文件夹下有哪些Python文件，我们可以在lesson6.py输入以下代码:</p>
+            <div id="crayon-5dbc022f0dd3e988798969" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import glob 
+    t=glob.glob("*.py")
+    print (t)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd3e988798969-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd3e988798969-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd3e988798969-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd3e988798969-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">glob</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbc022f0dd3e988798969-2"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-k ">glob</span><span class="crayon-sy">.</span><span class="crayon-k ">glob</span><span class="crayon-sy">(</span><span class="crayon-s">"*.py"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd3e988798969-3"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>上面的”*”是通配符，用来模糊搜索文件，而“*.py”的意思就是模糊搜索所有Python文件。如果你是想搜索文件夹下所有jpg图片或mp3音频格式可以用”*.jpg”或”*.mp3″，如果你想搜索文件名包含某个单词字母，或者某个汉字，可以看下面案例</p>
+            <div id="crayon-5dbc022f0dd40392771157" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import glob 
+    
+    #打印文件名包含字母t的文件
+    t=glob.glob("*t*")
+    print(t)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd40392771157-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd40392771157-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd40392771157-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc022f0dd40392771157-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc022f0dd40392771157-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd40392771157-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">glob</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbc022f0dd40392771157-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd40392771157-3"><span class="crayon-c">#打印文件名包含字母t的文件</span></div><div class="crayon-line" id="crayon-5dbc022f0dd40392771157-4"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-k ">glob</span><span class="crayon-sy">.</span><span class="crayon-k ">glob</span><span class="crayon-sy">(</span><span class="crayon-s">"*t*"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd40392771157-5"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>最终会返回所有满足条件的文件路径的一个列表List类型，既然是一个列表格式，那我们就可以打印列表里某个位置的文件名啦</p>
+            <div id="crayon-5dbc022f0dd42085645026" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import glob 
+    
+    #打印文件名包含字母t的文件
+    t=glob.glob("*t*")
+    
+    #打印列表里排第二的文件名
+    print(t[1]</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc022f0dd42085645026-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc022f0dd42085645026-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc022f0dd42085645026-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc022f0dd42085645026-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc022f0dd42085645026-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc022f0dd42085645026-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc022f0dd42085645026-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc022f0dd42085645026-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">glob</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbc022f0dd42085645026-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd42085645026-3"><span class="crayon-c">#打印文件名包含字母t的文件</span></div><div class="crayon-line" id="crayon-5dbc022f0dd42085645026-4"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-k ">glob</span><span class="crayon-sy">.</span><span class="crayon-k ">glob</span><span class="crayon-sy">(</span><span class="crayon-s">"*t*"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc022f0dd42085645026-5">&nbsp;</div><div class="crayon-line" id="crayon-5dbc022f0dd42085645026-6"><span class="crayon-c">#打印列表里排第二的文件名</span></div><div class="crayon-line" id="crayon-5dbc022f0dd42085645026-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>&nbsp;</p>
+            
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

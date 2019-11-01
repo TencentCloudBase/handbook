@@ -1,0 +1,394 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » python操作Excel评论Feed" href="https://cloudbasegroup.org/handbook/python/87/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="pyecharts数据可视化" href="https://cloudbasegroup.org/handbook/python/85/">
+    <link rel="next" title="python图片处理" href="https://cloudbasegroup.org/handbook/python/89/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/python/87/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=87">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F87%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F87%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-87 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/python/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            Python零基础快速入门			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/01.html">
+                                    写出第一行python代码					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/02.html">
+                                    基本语法与语句					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/03.html">
+                                    函数、模块和库					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/04.html">
+                                    用python做数学题					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/05.html">
+                                    日期与时间					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/06.html">
+                                    Python操作文件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/07.html">
+                                    pyecharts数据可视化					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/08.html">
+                                    python操作Excel					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/09.html">
+                                    python图片处理					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">python操作Excel</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>Python通过安装一些“软件”模块能够处理Excel文件，Excel文件是我们平时工作比不可少的，有了Python我们就可以批量处理Excel文件啦。</p>
+    <blockquote><p>Excel是必备的办公软件，而要成为Excel高手，以往通常会被要求学习VBA，而现在VBA已经不推荐学习了，Python基本可以代替VBA来操作Excel、Word、PPT等，所以Python也是值得一学的办公利器哦~</p></blockquote>
+    <h4>安装xlwt、xlrd库</h4>
+    <p>Mac电脑输入命令</p>
+            <div id="crayon-5dbc02f978f60165507726" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip3 install xlwt xlrd</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02f978f60165507726-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02f978f60165507726-1"><span class="crayon-e">pip3 </span><span class="crayon-e">install </span><span class="crayon-e">xlwt </span><span class="crayon-v">xlrd</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>Windows电脑输入</p>
+            <div id="crayon-5dbc02f978f67496664438" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip install xlwt xlrd</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02f978f67496664438-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02f978f67496664438-1"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-e">xlwt </span><span class="crayon-v">xlrd</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>新建一个Excel文件</h4>
+    <p>首先我们要知道工作簿workbook和工作表worksheet的区别，整个Excel文件可以称为一个工作簿(workbook)，而每个工作簿可以有很多张工作表(worksheet)，每个工作簿至少要有一个工作表。</p>
+    <p>使用VS Code新建一个lesson8文件夹，并在里面新建一个python文件比如lesson8.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbc02f978f69466993579" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import xlwt
+    # 创建一个工作簿并设置编码
+    workbook = xlwt.Workbook(encoding = 'utf-8')
+    
+    # 创建一个工作表并命名
+    worksheet = workbook.add_sheet('第一周')
+    worksheet = workbook.add_sheet('第二周')
+    worksheet = workbook.add_sheet('第三周')
+    worksheet = workbook.add_sheet('第四周')
+    
+    # 保存工作簿
+    workbook.save('工作计划.xls')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc02f978f69466993579-12" style="height: 20px;">12</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02f978f69466993579-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">xlwt</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-2"><span class="crayon-c"># 创建一个工作簿并设置编码</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-3"><span class="crayon-v">workbook</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">xlwt</span><span class="crayon-sy">.</span><span class="crayon-e">Workbook</span><span class="crayon-sy">(</span><span class="crayon-v">encoding</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'utf-8'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-4">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-5"><span class="crayon-c"># 创建一个工作表并命名</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-6"><span class="crayon-v">worksheet</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">workbook</span><span class="crayon-sy">.</span><span class="crayon-e">add_sheet</span><span class="crayon-sy">(</span><span class="crayon-s">'第一周'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-7"><span class="crayon-v">worksheet</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">workbook</span><span class="crayon-sy">.</span><span class="crayon-e">add_sheet</span><span class="crayon-sy">(</span><span class="crayon-s">'第二周'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-8"><span class="crayon-v">worksheet</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">workbook</span><span class="crayon-sy">.</span><span class="crayon-e">add_sheet</span><span class="crayon-sy">(</span><span class="crayon-s">'第三周'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-9"><span class="crayon-v">worksheet</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">workbook</span><span class="crayon-sy">.</span><span class="crayon-e">add_sheet</span><span class="crayon-sy">(</span><span class="crayon-s">'第四周'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-10">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-11"><span class="crayon-c"># 保存工作簿</span></div><div class="crayon-line" id="crayon-5dbc02f978f69466993579-12"><span class="crayon-v">workbook</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'工作计划.xls'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>执行完之后，我们可以在lesson8的文件夹里看到一个名叫工作计划的Excel工作簿，打开之后里面内容虽然是空的（因为我们并没有往里面写内容），但是工作簿有四张工作表，分别为第一周、第二周、第三周、第四周。</p>
+    <h4>新建一个带有内容的Excel文件</h4>
+    <p>要想给Excel文件添加内容，首先我们要理解Excel单元格的知识，我们可以把Excel单元格看成是一个x轴向右，y轴向下的坐标，从0开始计数，也就是0表示1，这是程序普遍计数法。</p>
+    <ul>
+    <li>(0,0)表示第一行，第一列；</li>
+    <li>(1,0)表示第二行，第一列；</li>
+    <li>(0,1)表示第一行，第二列；</li>
+    </ul>
+    <p>用label=””来给单元格赋值，这样我们就可以使用Python精确地给Excel每个单元格填充内容了。</p>
+    <p>使用VS Code新建一个lesson8文件夹，并在里面新建一个python文件比如lesson8-1.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbc02f978f6c753266730" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import xlwt
+    # 创建一个workbook 设置编码
+    workbook = xlwt.Workbook(encoding = 'utf-8')
+    # 创建一个worksheet
+    worksheet = workbook.add_sheet('第一周')
+    #写入Excel，注意三个参数分别对应工作表的行、列、值
+    worksheet.write(1,0, label = '星期一')
+    worksheet.write(2,0, label = '星期二')
+    worksheet.write(3,0, label = '星期三')
+    worksheet.write(4,0, label = '星期四')
+    worksheet.write(5,0, label = '星期五')
+    worksheet.write(0,1, label = '工作计划')
+    # 保存
+    workbook.save('工作计划2.xls')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc02f978f6c753266730-14" style="height: 20px;">14</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">xlwt</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-2"><span class="crayon-c"># 创建一个workbook 设置编码</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-3"><span class="crayon-v">workbook</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">xlwt</span><span class="crayon-sy">.</span><span class="crayon-e">Workbook</span><span class="crayon-sy">(</span><span class="crayon-v">encoding</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'utf-8'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-4"><span class="crayon-c"># 创建一个worksheet</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-5"><span class="crayon-v">worksheet</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">workbook</span><span class="crayon-sy">.</span><span class="crayon-e">add_sheet</span><span class="crayon-sy">(</span><span class="crayon-s">'第一周'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-6"><span class="crayon-c">#写入Excel，注意三个参数分别对应工作表的行、列、值</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-7"><span class="crayon-v">worksheet</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">label</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'星期一'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-8"><span class="crayon-v">worksheet</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">label</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'星期二'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-9"><span class="crayon-v">worksheet</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">label</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'星期三'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-10"><span class="crayon-v">worksheet</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">label</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'星期四'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-11"><span class="crayon-v">worksheet</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">5</span><span class="crayon-sy">,</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">label</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'星期五'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-12"><span class="crayon-v">worksheet</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">label</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'工作计划'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-13"><span class="crayon-c"># 保存</span></div><div class="crayon-line" id="crayon-5dbc02f978f6c753266730-14"><span class="crayon-v">workbook</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'工作计划2.xls'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>执行完之后，我们可以在lesson8的文件夹里看到工作计划2.xls文件，使用Excel打开，我们可以看到一张工作计划的表格啦。</p>
+    <h4>Excel公式与函数</h4>
+    <p>Excel强大的地方不只是做表格，更在于它里面有很多公式和函数，而这些都是可以使用Python来操作的。要给Excel输入公式可以使用Formula(“”)函数。</p>
+    <p>使用VS Code新建一个lesson8文件夹，并在里面新建一个python文件比如lesson8-2.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbc02f978f6e950905865" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from xlwt import *
+    
+    w = Workbook(encoding = 'utf-8')
+    ws = w.add_sheet('公式案例表')
+    
+    #第一列的内容，输入一些数值计算公式
+    ws.write(0, 0, Formula("-(1+1)"))
+    ws.write(1, 0, Formula("-(1+1)/(-2-2)"))
+    ws.write(2, 0, Formula("-(134.8780789+1)"))
+    ws.write(3, 0, Formula("-(134.8780789e-10+1)"))
+    ws.write(4, 0, Formula("-1/(1+1)+9344"))
+    
+    #第二列的内容，同样输入数值计算的公式
+    ws.write(0, 1, Formula("-(1+1)"))
+    ws.write(1, 1, Formula("-(1+1)/(-2-2)"))
+    ws.write(2, 1, Formula("-(134.8780789+1)"))
+    ws.write(3, 1, Formula("-(134.8780789e-10+1)"))
+    ws.write(4, 1, Formula("-1/(1+1)+9344"))
+    
+    #第三列的内容，输入Excel单元格公式，直接使用Excel单元格的计法，如A2,B3，注意A1是第一列第一行，也就是(0,0),B3是第二列第3行，也就是(2,1),Excel单元格的计法是列(字母)在前，行(数字)在后。
+    ws.write(1, 2, Formula("A2*B2"))
+    ws.write(2, 2, Formula("A3*B3"))
+    ws.write(3, 2, Formula("A4*B4*sin(pi()/4)"))
+    ws.write(4, 2, Formula("A5%*B5*pi()/1000"))
+    
+    #第四列的内容，使用Excel连接符、SUM公式
+    ws.write(0, 3, Formula("C1^2"))
+    ws.write(1, 3, Formula("SUM(A2;B2;;;;;C2)"))
+    ws.write(2, 3, Formula("SUM($A$1:$C$5)"))
+    ws.write(3, 3, Formula('"我爱你"'))
+    ws.write(4, 3, Formula('"一生一世"'))
+    
+    #第五列的内容，使用Excel连接符、SUM公式、IF函数等
+    ws.write(0, 4, Formula('D4 &amp; D5'))
+    ws.write(1, 4, Formula('now()'))
+    ws.write(2, 4, Formula('TRUE'))
+    ws.write(3, 4, Formula('FALSE'))
+    ws.write(4, 4, Formula('IF(A1&gt;A2;3;"这是IF函数输出的结果")'))
+    
+    w.save('单元格公式.xls')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-20" style="height: 40px;">20</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-26" style="height: 20px;">26</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-27" style="height: 20px;">27</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-28" style="height: 20px;">28</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-29" style="height: 20px;">29</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-30" style="height: 20px;">30</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-31" style="height: 20px;">31</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-32" style="height: 20px;">32</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-33" style="height: 20px;">33</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-34" style="height: 20px;">34</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-35" style="height: 20px;">35</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-36" style="height: 20px;">36</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-37" style="height: 20px;">37</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-38" style="height: 20px;">38</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-39" style="height: 20px;">39</div><div class="crayon-num" data-line="crayon-5dbc02f978f6e950905865-40" style="height: 20px;">40</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">xlwt </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-o">*</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-3"><span class="crayon-k ">w</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">Workbook</span><span class="crayon-sy">(</span><span class="crayon-v">encoding</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">'utf-8'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-4"><span class="crayon-v">ws</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">w</span><span class="crayon-sy">.</span><span class="crayon-e">add_sheet</span><span class="crayon-sy">(</span><span class="crayon-s">'公式案例表'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-5">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-6"><span class="crayon-c">#第一列的内容，输入一些数值计算公式</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-7"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-(1+1)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-8"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-(1+1)/(-2-2)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-9"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-(134.8780789+1)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-10"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-(134.8780789e-10+1)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-11"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-1/(1+1)+9344"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-12">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-13"><span class="crayon-c">#第二列的内容，同样输入数值计算的公式</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-14"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-(1+1)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-15"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-(1+1)/(-2-2)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-16"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-(134.8780789+1)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-17"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-(134.8780789e-10+1)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-18"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"-1/(1+1)+9344"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-19">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-20"><span class="crayon-c">#第三列的内容，输入Excel单元格公式，直接使用Excel单元格的计法，如A2,B3，注意A1是第一列第一行，也就是(0,0),B3是第二列第3行，也就是(2,1),Excel单元格的计法是列(字母)在前，行(数字)在后。</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-21"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"A2*B2"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-22"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"A3*B3"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-23"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"A4*B4*sin(pi()/4)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-24"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"A5%*B5*pi()/1000"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-25">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-26"><span class="crayon-c">#第四列的内容，使用Excel连接符、SUM公式</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-27"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"C1^2"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-28"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"SUM(A2;B2;;;;;C2)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-29"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">"SUM($A$1:$C$5)"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-30"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">'"我爱你"'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-31"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">'"一生一世"'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-32">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-33"><span class="crayon-c">#第五列的内容，使用Excel连接符、SUM公式、IF函数等</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-34"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">'D4 &amp; D5'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-35"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">'now()'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-36"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">'TRUE'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-37"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">'FALSE'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-38"><span class="crayon-v">ws</span><span class="crayon-sy">.</span><span class="crayon-e">write</span><span class="crayon-sy">(</span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">4</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">Formula</span><span class="crayon-sy">(</span><span class="crayon-s">'IF(A1&gt;A2;3;"这是IF函数输出的结果")'</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-39">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f6e950905865-40"><span class="crayon-k ">w</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'单元格公式.xls'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这段Python代码其实包含着大量的Excel公式与函数的信息，如果你对Excel公式或函数有一定的了解，那你就会明白Python的强大之处啦。如果你不了解，说明你Excel的水平还处于较低的层次，欢迎参加<strong>HackWork技术工坊的Excel数据分析</strong>以提升水平。代码大家可以根据自己Excel的水平研究一下。</p>
+    <h4>获取Excel文件的信息</h4>
+    <p>增删改查CURD（或CRUD），即增加Create、读取查询Retrieve(Read)、更新Update、删除Delete是数据库的基本操作，我们在操作Excel时也不例外，前面我们已经介绍了增Create，那怎么读取Excel文件呢？</p>
+    <p>使用VS Code新建一个lesson8文件夹，并在里面新建一个python文件比如lesson8-3.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbc02f978f71780799063" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#引入xlrd库，然后使用open_workbook函数打开Excel工作簿
+    import xlrd
+    book = xlrd.open_workbook("工作计划2.xls")
+    
+    #打印工作表的数量
+    print(book.nsheets)
+    
+    #打印工作表的名称
+    print(book.sheet_names())
+    
+    #打印第一张工作表的行数与列数
+    sheet1=book.sheets()[0]
+    print(sheet1.nrows)
+    print(sheet1.ncols)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc02f978f71780799063-14" style="height: 20px;">14</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02f978f71780799063-1"><span class="crayon-c">#引入xlrd库，然后使用open_workbook函数打开Excel工作簿</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-2"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">xlrd</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-3"><span class="crayon-v">book</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">xlrd</span><span class="crayon-sy">.</span><span class="crayon-e">open_workbook</span><span class="crayon-sy">(</span><span class="crayon-s">"工作计划2.xls"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-4">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-5"><span class="crayon-c">#打印工作表的数量</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-6"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">book</span><span class="crayon-sy">.</span><span class="crayon-v">nsheets</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-7">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-8"><span class="crayon-c">#打印工作表的名称</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-9"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">book</span><span class="crayon-sy">.</span><span class="crayon-e">sheet_names</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-10">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-11"><span class="crayon-c">#打印第一张工作表的行数与列数</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-12"><span class="crayon-v">sheet1</span><span class="crayon-o">=</span><span class="crayon-v">book</span><span class="crayon-sy">.</span><span class="crayon-e">sheets</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-13"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">sheet1</span><span class="crayon-sy">.</span><span class="crayon-v">nrows</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f71780799063-14"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">sheet1</span><span class="crayon-sy">.</span><span class="crayon-v">ncols</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>执行上面的代码，我们可以获取到Excel的基础信息，我们可以把工作计划2.xls，换成我们之前建好的工作计划.xls以及单元格公式.xls来了解了Excel文件信息的函数。</p>
+    <h4>获取Excel指定行列的内容</h4>
+    <p>光只了解工作表的名称，工作表和工作表的行与列的数量显然不能满足我们操作Excel的需求，我们还需要获取的是每个单元格里的具体数据。</p>
+    <p>Python的xlrd既可以打印一整行或一整列的数据，也可以打印根据坐标轴交叉确定的单元格里的数据。</p>
+    <p>使用VS Code新建一个lesson8文件夹，并在里面新建一个python文件比如lesson8-4.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbc02f978f73218403155" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import xlrd
+    book = xlrd.open_workbook("工作计划2.xls")
+    
+    sheet1=book.sheets()[0]
+    
+    #打印第一张工作表第一列的数据
+    print(sheet1.col_values(0))
+    
+    #打印第一张工作表第三行的数据
+    print(sheet1.row_values(2))
+    
+    #打印第一张工作表某一个单元格的数据
+    print(sheet1.cell_value(rowx=2,colx=0))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc02f978f73218403155-13" style="height: 20px;">13</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02f978f73218403155-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">xlrd</span></div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-2"><span class="crayon-v">book</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">xlrd</span><span class="crayon-sy">.</span><span class="crayon-e">open_workbook</span><span class="crayon-sy">(</span><span class="crayon-s">"工作计划2.xls"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-4"><span class="crayon-v">sheet1</span><span class="crayon-o">=</span><span class="crayon-v">book</span><span class="crayon-sy">.</span><span class="crayon-e">sheets</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-5">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-6"><span class="crayon-c">#打印第一张工作表第一列的数据</span></div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">sheet1</span><span class="crayon-sy">.</span><span class="crayon-e">col_values</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-8">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-9"><span class="crayon-c">#打印第一张工作表第三行的数据</span></div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-10"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">sheet1</span><span class="crayon-sy">.</span><span class="crayon-e">row_values</span><span class="crayon-sy">(</span><span class="crayon-cn">2</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-11">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-12"><span class="crayon-c">#打印第一张工作表某一个单元格的数据</span></div><div class="crayon-line" id="crayon-5dbc02f978f73218403155-13"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">sheet1</span><span class="crayon-sy">.</span><span class="crayon-e">cell_value</span><span class="crayon-sy">(</span><span class="crayon-v">rowx</span><span class="crayon-o">=</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-v">colx</span><span class="crayon-o">=</span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>拓展学习</h4>
+    <p>Python能不能控制Excel文件的排版和格式呢？答案是可以的，这里就不多做介绍啦，感兴趣的朋友可以参与我们的线上学习<a href="https://h5.youzan.com/v2/goods/36biaqcu5kmik" target="_blank" rel="noopener noreferrer"><strong>用Python高效办公</strong></a>。</p>
+    <blockquote><p>通常知名咨询公司都会要求学习VBA来对Office办公软件进行编程，不过VBA逐渐会被Python取代。Python更加简单易学，而且功能比VBA更加强大。</p></blockquote>
+    <p>xlwt以及xlrd库python操作Excel的库还有openpyxl、xlsxwriter、xlrd、xlwt、xlutils、pandas等等，Python有着非常完善的数据生态，我们可以使用Python爬虫爬取网页数据，然后把数据写入到Excel，或者读取Excel的数据生成图表等，有了这些库，我们就可以不必学VBA，学Python就可以啦。</p>
+    <p><strong>技术文档：</strong><a href="http://www.python-excel.org/" target="_blank" rel="noopener noreferrer">Python操作Excel英文技术文档</a></p>
+            
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

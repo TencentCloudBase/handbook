@@ -1,0 +1,495 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 函数、模块和库评论Feed" href="https://cloudbasegroup.org/handbook/python/77/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="基本语法与语句" href="https://cloudbasegroup.org/handbook/python/75/">
+    <link rel="next" title="用python做数学题" href="https://cloudbasegroup.org/handbook/python/79/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/python/77/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=77">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F77%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F77%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-77 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/python/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            Python零基础快速入门			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/01.html">
+                                    写出第一行python代码					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/02.html">
+                                    基本语法与语句					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/03.html">
+                                    函数、模块和库					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/04.html">
+                                    用python做数学题					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/05.html">
+                                    日期与时间					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/06.html">
+                                    Python操作文件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/07.html">
+                                    pyecharts数据可视化					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/08.html">
+                                    python操作Excel					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/09.html">
+                                    python图片处理					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">函数、模块和库</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>Python号称万能胶水语言，它的功能非常强大，啥都可以写，覆盖的领域非常广，原因在于Python有非常丰富的函数、模块、库。</p>
+    <blockquote><p>我们可以拿Windows操作系统来类比，windows功能也很强大，它强大在哪里？一是它自带了一些基础的软件，比如浏览器，它相当于Python的一个库，而浏览器有打开网页、新建标签页等等功能，这些相当于是Python的模块，而每个模块都是由多个函数写的；二是有很多第三方为它开发了更强大的软件，比如windows还有其他浏览器，以及还有photoshop等这些强大的第三方软件。Python也有非常强大的库生态系统。</p></blockquote>
+    <h4>技术文档的重要性</h4>
+    <p>学习技术一定要<span style="color: #800000;"><strong>求本溯源</strong></span>，多查阅技术文档。学任何一门编程语言，也一定不要脱离技术文档。如果不多翻阅技术文档，单纯依靠记忆，一不仅会增加你的记忆负担和学习成本，二你所掌握的内容可能并不足够系统与专业，难以深入学习下去。</p>
+    <p><strong>技术文档：</strong><a href="https://docs.python.org/zh-cn/3.7/index.html" target="_blank" rel="noopener noreferrer">Python官方中文技术文档</a></p>
+    <blockquote><p>尽管Python在中国很火，但是官方技术文档的中文版直到2019年3月底才推出，而绝大多数技术资料还只有英文版，所以要学好Python或编程，一定的英文文档阅读能力也是必备的。</p></blockquote>
+    <p>脱离技术文档，只看书、视频、文章，是很多人学习技术的一大弊端，一定要注意实战+技术文档是学技术的核心。在后面的学习里，我们也会列出相关的技术文档供大家查阅。</p>
+    <h4>内置函数与语法</h4>
+    <p>关于Python的函数，其实前面我们就提到过一些，比如输出函数print()，输入函数input()，数字类型转换函数int()，float()，这些都是Python已经写好了的函数，我们称之为Python的内置函数。</p>
+    <p><strong>技术文档</strong>：<a href="https://docs.python.org/zh-cn/3.7/library/functions.html" target="_blank" rel="noopener noreferrer">Python 内置函数列表</a></p>
+    <p><strong>通过技术文档让自己更专业</strong></p>
+    <p>前面我们已经学过print()函数，在<a href="https://docs.python.org/zh-cn/3.7/library/functions.html" target="_blank" rel="noopener noreferrer">Python 内置函数列表</a>里面并点击查阅对应的文档介绍。在技术文档里我们了解到print()函数的语法如下：</p>
+            <div id="crayon-5dbba9ea444d8462564127" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444d8462564127-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444d8462564127-1"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-o">*</span><span class="crayon-v">objects</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">sep</span><span class="crayon-o">=</span><span class="crayon-s">' '</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">end</span><span class="crayon-o">=</span><span class="crayon-s">'\n'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-k ">file</span><span class="crayon-o">=</span><span class="crayon-k ">sys</span><span class="crayon-sy">.</span><span class="crayon-v">stdout</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">flush</span><span class="crayon-o">=</span><span class="crayon-t">False</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>下面有相应的注解（翻译的实在太差），这里的objects是多个对象（字符串就是对象之一），sep=”表示分割对象的内容，end=’\n’是指输出结尾默认带换行。还有file和flush的知识这里先不介绍。</p>
+    <p>平时学习是很少看到下面这么复杂的案例的。如果没有文档，你不会了解还可以这么用。<strong>要使用一个定义好了的函数，了解技术文档里的语法是非常重要的</strong>。就跟我们查单词用法一样。</p>
+    <p>使用VS Code在lesson3文件夹里新建一个lesson3.py文件，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbba9ea444e0037553260" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#print()函数可以一次性输出多个对象，比如下面：
+    print("你好啊~","欢迎，","吃饭没？")
+    
+    #print()函数输出的对象之间可以用sep里的内容隔开，而我们把默认的“\n”换行换成了.，表示这句之后不会换行了，而是多了一个.
+    print("我", "爱", "你",sep="!",end=".")
+    
+    #sep的内容可以是任意字符串
+    print("广东省","深圳市","南山区",sep="-")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444e0037553260-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba9ea444e0037553260-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba9ea444e0037553260-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbba9ea444e0037553260-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbba9ea444e0037553260-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbba9ea444e0037553260-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbba9ea444e0037553260-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbba9ea444e0037553260-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444e0037553260-1"><span class="crayon-c">#print()函数可以一次性输出多个对象，比如下面：</span></div><div class="crayon-line" id="crayon-5dbba9ea444e0037553260-2"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"你好啊~"</span><span class="crayon-sy">,</span><span class="crayon-s">"欢迎，"</span><span class="crayon-sy">,</span><span class="crayon-s">"吃饭没？"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444e0037553260-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444e0037553260-4"><span class="crayon-c">#print()函数输出的对象之间可以用sep里的内容隔开，而我们把默认的“\n”换行换成了.，表示这句之后不会换行了，而是多了一个.</span></div><div class="crayon-line" id="crayon-5dbba9ea444e0037553260-5"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"我"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"爱"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"你"</span><span class="crayon-sy">,</span><span class="crayon-v">sep</span><span class="crayon-o">=</span><span class="crayon-s">"!"</span><span class="crayon-sy">,</span><span class="crayon-v">end</span><span class="crayon-o">=</span><span class="crayon-s">"."</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444e0037553260-6">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444e0037553260-7"><span class="crayon-c">#sep的内容可以是任意字符串</span></div><div class="crayon-line" id="crayon-5dbba9ea444e0037553260-8"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"广东省"</span><span class="crayon-sy">,</span><span class="crayon-s">"深圳市"</span><span class="crayon-sy">,</span><span class="crayon-s">"南山区"</span><span class="crayon-sy">,</span><span class="crayon-v">sep</span><span class="crayon-o">=</span><span class="crayon-s">"-"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>内置的数值函数</h4>
+    <p>使用VS Code在lesson3文件夹里新建一个lesson3-1.py文件，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbba9ea444e3329188061" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#求绝对值的abs函数
+    t1=abs(-100)
+    print(t1)
+    
+    #求最大值的max函数
+    t2=max(11,232,22,520,100,175) 
+    print(t2)
+    
+    #求最小值的min函数
+    t3=min(11,232,22,520,100,175) 
+    print(t3)
+    
+    #求浮点数四舍五入值的round函数
+    t4=round(520.1314)
+    print(t4)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dbba9ea444e3329188061-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-1"><span class="crayon-c">#求绝对值的abs函数</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-2"><span class="crayon-v">t1</span><span class="crayon-o">=</span><span class="crayon-k ">abs</span><span class="crayon-sy">(</span><span class="crayon-o">-</span><span class="crayon-cn">100</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-3"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">t1</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-4">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-5"><span class="crayon-c">#求最大值的max函数</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-6"><span class="crayon-v">t2</span><span class="crayon-o">=</span><span class="crayon-k ">max</span><span class="crayon-sy">(</span><span class="crayon-cn">11</span><span class="crayon-sy">,</span><span class="crayon-cn">232</span><span class="crayon-sy">,</span><span class="crayon-cn">22</span><span class="crayon-sy">,</span><span class="crayon-cn">520</span><span class="crayon-sy">,</span><span class="crayon-cn">100</span><span class="crayon-sy">,</span><span class="crayon-cn">175</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">t2</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-8">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-9"><span class="crayon-c">#求最小值的min函数</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-10"><span class="crayon-v">t3</span><span class="crayon-o">=</span><span class="crayon-k ">min</span><span class="crayon-sy">(</span><span class="crayon-cn">11</span><span class="crayon-sy">,</span><span class="crayon-cn">232</span><span class="crayon-sy">,</span><span class="crayon-cn">22</span><span class="crayon-sy">,</span><span class="crayon-cn">520</span><span class="crayon-sy">,</span><span class="crayon-cn">100</span><span class="crayon-sy">,</span><span class="crayon-cn">175</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-11"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">t3</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-12">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-13"><span class="crayon-c">#求浮点数四舍五入值的round函数</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-14"><span class="crayon-v">t4</span><span class="crayon-o">=</span><span class="crayon-k ">round</span><span class="crayon-sy">(</span><span class="crayon-cn">520.1314</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444e3329188061-15"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">t4</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>函数与调用函数</h4>
+    <p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。函数能提高应用的模块性，和代码的重复利用率。比如求绝对值的函数abs(x)功能就比较单一，我们要求很多个数的绝对值时，可以反复只使用这个函数就行。</p>
+    <p>要调用一个函数，首先我们要知道函数的名称，然后按照函数的语法把相应的数值传入既可。如果觉得难以理解也没有关系，实战过很多个案例的效果之后再来理解也不迟。</p>
+    <h4>自定义函数</h4>
+    <p>在Python中，定义一个函数要使用<strong>
+                <span id="crayon-5dbba9ea444e5886758572" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">def</span></span></span>语句</strong>（以def这个关键词开头），依次写出<strong>函数名</strong>（函数名称只要不和关键词冲突，可以任意命名）、<strong>括号</strong>、<strong>括号中的参数</strong>（参数可以是一个，也可以是任意多个）和<strong>冒号</strong>
+                <span id="crayon-5dbba9ea444e7610644703" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-o">:</span></span></span>，然后，在缩进块（可以用tab键来缩进）中编写函数体，函数的返回值用
+                <span id="crayon-5dbba9ea444ea912933565" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-st">return</span></span></span>语句返回（之前我们提到过的返回）。</p>
+    <p>上面一段话有点难以理解，那我们来自定义一个求绝对值的函数为例子，来促进大家理解。</p>
+    <p>使用VS Code在lesson3文件夹里新建一个python文件比如lesson3-2.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbba9ea444eb176954827" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">def other_abs(x):
+        if x &gt;= 0:
+            return x
+        else:
+            return -x
+    print(other_abs(-33))
+    print(other_abs(-66))
+    print(other_abs(0))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444eb176954827-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba9ea444eb176954827-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba9ea444eb176954827-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbba9ea444eb176954827-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbba9ea444eb176954827-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbba9ea444eb176954827-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbba9ea444eb176954827-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbba9ea444eb176954827-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444eb176954827-1"><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-e">other_abs</span><span class="crayon-sy">(</span><span class="crayon-v">x</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbba9ea444eb176954827-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-v">x</span><span class="crayon-h"> </span><span class="crayon-o">&gt;=</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbba9ea444eb176954827-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-i">x</span></div><div class="crayon-line" id="crayon-5dbba9ea444eb176954827-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">else</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbba9ea444eb176954827-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">x</span></div><div class="crayon-line" id="crayon-5dbba9ea444eb176954827-6"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">other_abs</span><span class="crayon-sy">(</span><span class="crayon-o">-</span><span class="crayon-cn">33</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444eb176954827-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">other_abs</span><span class="crayon-sy">(</span><span class="crayon-o">-</span><span class="crayon-cn">66</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444eb176954827-8"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">other_abs</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家可以发现，当我们定义了一次函数之后，就可以反复调用这个函数，是不是很方便？</p>
+    <blockquote class="danger"><p>学习 Python 与其他语言最大的区别就是，Python 的代码块不使用大括号&nbsp;<span class="marked">{}</span>&nbsp;来控制类，函数以及其他逻辑判断，而是用缩进来写模块。缩进的空白数量是可变的但是数量必须一致。大家可以统一用四个空格或一个Tab键来缩进代码。</p></blockquote>
+    <h4>多个参数的函数</h4>
+    <p><span style="color: #2b2b2b; font-size: 16px;">比如我们想定义一个求长方形面积的函数，要求长方形的面积会有两个参数，一个是长，一个是宽，这个时候我们定义函数的时候就要定义两个参数了，来看下面的案例具体是怎么定义两个参数的函数，以及是怎么调用两个参数的函数的.</span></p>
+    <p>使用VS Code在lesson3文件夹里新建一个python文件比如lesson3-3.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbba9ea444ed215564449" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">def area(width,height):
+        area=width*height
+        return area
+    print(area(3,4))
+    print(area(21,3))
+    print(area(7,8))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444ed215564449-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba9ea444ed215564449-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba9ea444ed215564449-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbba9ea444ed215564449-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbba9ea444ed215564449-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbba9ea444ed215564449-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444ed215564449-1"><span class="crayon-e">def </span><span class="crayon-e">area</span><span class="crayon-sy">(</span><span class="crayon-v">width</span><span class="crayon-sy">,</span><span class="crayon-v">height</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbba9ea444ed215564449-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">area</span><span class="crayon-o">=</span><span class="crayon-e ">width*</span><span class="crayon-e">height</span></div><div class="crayon-line" id="crayon-5dbba9ea444ed215564449-3"><span class="crayon-e">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-e">area</span></div><div class="crayon-line" id="crayon-5dbba9ea444ed215564449-4"><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-e">area</span><span class="crayon-sy">(</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-cn">4</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444ed215564449-5"><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-e">area</span><span class="crayon-sy">(</span><span class="crayon-cn">21</span><span class="crayon-sy">,</span><span class="crayon-cn">3</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444ed215564449-6"><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-e">area</span><span class="crayon-sy">(</span><span class="crayon-cn">7</span><span class="crayon-sy">,</span><span class="crayon-cn">8</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>我们在前面的内置数值函数里其实就已经接触过多个参数的函数，比如max()函数和min()函数，它们就是多个参数的函数。</p></blockquote>
+    <h4>内置模块(内置标准库)</h4>
+    <p>使用模块最大的好处是大大提高了代码的可维护性。其次，编写代码不必从零开始。当一个模块编写完毕，就可以被其他地方引用。是不是有点类似函数，我们可以把模块简单的看成一个个函数的集合。</p>
+    <p>Python内置了很多有用的模块（内置标准库），关于Python内置模块有哪些以及对应的模块使用方法，我们可以查看技术文档。</p>
+    <p><strong>技术文档</strong>：<a href="https://docs.python.org/zh-cn/3.7/library/index.html" target="_blank" rel="noopener noreferrer">Python内置模块列表</a></p>
+    <blockquote class="task"><p><strong>使用思维导图工具整理Python模块：</strong>我们可以看到内置模块种类非常多，有文件处理服务、数字数学模块、文件和目录访问模块、数据压缩和存档模块、通用操作系统服务模块、图形界面模块、多媒体服务模块等等，这些大家可以以后深入学习。大家可以下载一个思维导图软件（比如Xmind、百度脑图等）将这些模块整理一下。</p></blockquote>
+    <h4>math模块</h4>
+    <p>我们以Python内置的math模块为例来说明模块的使用方法。math模块里面就有很多写好了的函数，比如：</p>
+    <ul>
+    <li>math.ceil(x)：求大于等于x的最小的整数值；</li>
+    <li>math.sin(x)：求正弦；</li>
+    <li>math.cos(x)：求余弦；</li>
+    <li>math.tan(x)：求正切；</li>
+    <li>math.sqrt(x)：求平方根；</li>
+    <li>math.pow(x, y)，求x的y次方。</li>
+    </ul>
+    <p><strong>技术文档：</strong><a href="https://docs.python.org/zh-cn/3.7/library/math.html" target="_blank" rel="noopener noreferrer">math模块</a></p>
+    <p>要调用模块，首先我们需要引入<strong>import该模块</strong>，引入math模块，我们可以直接输入:</p>
+            <div id="crayon-5dbba9ea444ef587417828" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import math</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444ef587417828-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444ef587417828-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">math</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>而调用math模块的函数，还是和上面调用函数的方式是一样的，比如我们调用math模块的math.sqrt(x)函数。使用VS Code在lesson3文件夹里新建一个python文件比如lesson3-4.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbba9ea444f1100402910" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import math
+    
+    value1 = 9
+    value2 = 16
+    value3 = 100
+    
+    print(math.sqrt(value1))
+    print(math.sqrt(value2))
+    print(math.sqrt(value3))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbba9ea444f1100402910-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">math</span></div><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-3"><span class="crayon-v">value1</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">9</span></div><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-4"><span class="crayon-v">value2</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">16</span></div><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-5"><span class="crayon-v">value3</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">100</span></div><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-6">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">math</span><span class="crayon-sy">.</span><span class="crayon-e">sqrt</span><span class="crayon-sy">(</span><span class="crayon-v">value1</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-8"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">math</span><span class="crayon-sy">.</span><span class="crayon-e">sqrt</span><span class="crayon-sy">(</span><span class="crayon-v">value2</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444f1100402910-9"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">math</span><span class="crayon-sy">.</span><span class="crayon-e">sqrt</span><span class="crayon-sy">(</span><span class="crayon-v">value3</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>函数的调用方式：</strong>比较内置函数、自定义函数和内置模块里的函数的调用方式有什么相同和不同之处。</p></blockquote>
+    <blockquote class="danger"><p>注意：在调用模块的时候，python文件的名称和模块名称不能相同，否则会报错。比如你调用的模块是math，你的python文件名就不能叫math.py。</p></blockquote>
+    <h4>查看模块定义好了哪些函数</h4>
+    <p>我们要看一个模块定义好了哪些函数，可以使用dir()函数，dir()函数会返回一个模块里定义的所有模块，变量和函数。我们除了可以使用技术文档来查看一个模块里有哪些函数以外，还可以使用dir()函数。</p>
+    <p>使用VS Code在lesson3文件夹里新建一个python文件比如lesson3-5.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbba9ea444f3040524709" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import math 
+    content = dir(math) 
+    print(content)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444f3040524709-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba9ea444f3040524709-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba9ea444f3040524709-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444f3040524709-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">math</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbba9ea444f3040524709-2"><span class="crayon-v">content</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">dir</span><span class="crayon-sy">(</span><span class="crayon-k ">math</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbba9ea444f3040524709-3"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">content</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>查看其它模块内置函数：</strong>参考上面的方法分别查看datetime、calendar、time、io、random、statistics、shutil、glob模块包含哪些变量与函数。这些模块在后面的章节里都会使用到。</p></blockquote>
+    <h4>from…import语句</h4>
+    <p>Python 的 from …import语句让你从模块中导入一个指定的部分到当前命名空间中。这句话可能有点绕和难以理解，我们可以看一下math模块的案例。</p>
+    <p>在math模块中，除了定义一些有用的数学函数，还定义了一些数学常量，比如pi（也就是圆周率）,e（也就是自然对数的底数）等。</p>
+            <div id="crayon-5dbba9ea444f4139269069" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from math import pi
+    print(pi)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444f4139269069-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba9ea444f4139269069-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444f4139269069-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-k ">math</span><span class="crayon-h"> </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">pi</span></div><div class="crayon-line" id="crayon-5dbba9ea444f4139269069-2"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">pi</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>使用from math import pi，就把math模块里的pi引入进来了，我们就可以直接打印pi的值。我们也可以把之前math模块的案例改成如下：</p>
+            <div id="crayon-5dbba9ea444f6054216432" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from math import sqrt
+    
+    value1 = 9
+    value2 = 16
+    value3 = 100
+    
+    print(sqrt(value1))
+    print(sqrt(value2))
+    print(sqrt(value3))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbba9ea444f6054216432-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-k ">math</span><span class="crayon-h"> </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">sqrt</span></div><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-3"><span class="crayon-v">value1</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">9</span></div><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-4"><span class="crayon-v">value2</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">16</span></div><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-5"><span class="crayon-v">value3</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-cn">100</span></div><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-6">&nbsp;</div><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">sqrt</span><span class="crayon-sy">(</span><span class="crayon-v">value1</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-8"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">sqrt</span><span class="crayon-sy">(</span><span class="crayon-v">value2</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba9ea444f6054216432-9"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">sqrt</span><span class="crayon-sy">(</span><span class="crayon-v">value3</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>函数的调用方式：</strong>了解import 模块名和from 模块名 import 函数名这两种引入模块的方式调用函数的相同与不同之处。</p></blockquote>
+    <h4>pip管理库</h4>
+    <blockquote><p>前面说到库在Python里相当于是Windows的软件，Windows的第三方软件需要下载，Python的第三方库同样也是下载；下载Windows的软件我们可以到Windows的应用中心去下载，下载Python的第三方库，我们会用到pip。</p></blockquote>
+    <p>pip&nbsp;是一个现代的，通用的 Python 包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。而与之对应的应用中心是<a href="https://pypi.org/">PyPi-Python包管理中心</a></p>
+    <p>用pip来下载第三方的库方法非常简单，首先我们需要知道模块的名称，然后直接在命令行输入，输入pip install +模块\库名，比如pillow的库，在window输入：</p>
+            <div id="crayon-5dbba9ea444f8822866484" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip install pillow</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444f8822866484-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444f8822866484-1"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-v">pillow</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>Mac用户则需要输入：</p>
+            <div id="crayon-5dbba9ea444f9765645164" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip3 install pillow</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444f9765645164-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444f9765645164-1"><span class="crayon-e">pip3 </span><span class="crayon-e">install </span><span class="crayon-v">pillow</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家可以去<a href="https://pypi.org/">pypi</a>网站去搜索一下pillow，就可以了解更多关于pillow的信息。</p>
+    <p>python到底有哪些吐血推荐的模块(库、包)呢？大家可以去Github上看一下经验人士整理的一个列表。</p>
+    <p><strong>资料整理</strong>：<a href="https://github.com/jobbole/awesome-python-cn" target="_blank" rel="noopener noreferrer">Python 资源推荐</a>(中文)、<a href="https://github.com/vinta/awesome-python" target="_blank" rel="noopener noreferrer">Python资源推荐</a>(英文、更推荐)</p>
+    <blockquote class="task"><p><strong>了解Python有哪些第三方库：</strong>去PyPi的网站<a href="https://pypi.org/" target="_blank" rel="noopener noreferrer">PyPi-Python包管理中心</a>查看一下，比如搜索一下pillow、django、tensorflow、flask、beautifulsoup等库，这些库都是业内知名库，以后大家一定会学到的。在<a href="https://github.com/jobbole/awesome-python-cn" target="_blank" rel="noopener noreferrer">Python 资源推荐</a>(中文)、<a href="https://github.com/vinta/awesome-python" target="_blank" rel="noopener noreferrer">Python资源推荐</a>(英文、更推荐)搜索这些库，看这些库大致是做什么用的。</p></blockquote>
+    <h4>查看安装了哪些第三方库</h4>
+    <p>如果执行了前面的命令，那我们就已经安装好了pillow，怎么看我们安装了哪些第三方库呢？我们可以使用命令行工具执行以下命令：</p>
+    <p>Mac用户查看我们安装了哪些Python的第三方库</p>
+            <div id="crayon-5dbba9ea444fb093301699" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip3 list</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444fb093301699-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444fb093301699-1"><span class="crayon-e">pip3 </span><span class="crayon-i">list</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>Windows用户可以输入以下命令：</p>
+            <div id="crayon-5dbba9ea444fd339570658" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip list</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba9ea444fd339570658-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba9ea444fd339570658-1"><span class="crayon-e">pip </span><span class="crayon-i">list</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>可能很多小伙伴会问，你咋知道输入pip list就可以显示我们电脑安装了哪些第三方库，这个命令从何而来？其实类似于python，pip这些命令，大家都可以在命令行里输入python –help或pip –help来查看有哪些命令。</p>
+    <p>以pip为例，我们可以在命令行工具里，Mac用户输入pip3 –help，Windows 用户输入pip –help，查看返回的数据。pip除了有pip list，还有install（安装） ,uninstall（卸载），download（下载）等等命令。</p></blockquote>
+            
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

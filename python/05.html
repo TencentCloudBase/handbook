@@ -1,0 +1,489 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 日期与时间评论Feed" href="https://cloudbasegroup.org/handbook/python/81/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-light-abite-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/light-abite/light-abite.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="用python做数学题" href="https://cloudbasegroup.org/handbook/python/79/">
+    <link rel="next" title="Python操作文件" href="https://cloudbasegroup.org/handbook/python/83/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/python/81/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=81">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F81%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F81%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-81 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/python/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            Python零基础快速入门			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/01.html">
+                                    写出第一行python代码					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/02.html">
+                                    基本语法与语句					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/03.html">
+                                    函数、模块和库					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/04.html">
+                                    用python做数学题					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/05.html">
+                                    日期与时间					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/06.html">
+                                    Python操作文件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/07.html">
+                                    pyecharts数据可视化					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/08.html">
+                                    python操作Excel					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/09.html">
+                                    python图片处理					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">日期与时间</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>在Python中，与时间处理有关的模块就包括：time，datetime以及calendar，这些都是Python内置的标准库/模块，我们可以去<a href="https://docs.python.org/zh-cn/3.7/library/index.html" target="_blank" rel="noopener noreferrer">Python内置模块列表</a>来具体了解每一个模块的功能以及包含哪些函数和对应的函数语法。</p>
+    <h4>数据格式之元组Tuple</h4>
+    <p>Python 的元组Tuple与列表List类似，不同之处在于元组的元素不能修改。元组使用小括号()，列表使用方括号[]。我们还是拿之前的案例，只是把方括号[]改成了小括号()，两者的数据格式不同，但是用法比较类似。</p>
+            <div id="crayon-5dbc0218cf2d5430531034" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">company = ('Apple','Google','Amazon','Facebook','MicroSoft')	 	 
+    print(company)	 	 
+               
+    #索引要用方括号[]，里面的数字就是索引的位置，从0开始，0就是第一个位置，1就是第二个位置	 	 
+    print(company[0])	 	 
+    print(company[1])</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2d5430531034-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2d5430531034-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2d5430531034-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2d5430531034-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc0218cf2d5430531034-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc0218cf2d5430531034-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2d5430531034-1"><span class="crayon-v">company</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-s">'Apple'</span><span class="crayon-sy">,</span><span class="crayon-s">'Google'</span><span class="crayon-sy">,</span><span class="crayon-s">'Amazon'</span><span class="crayon-sy">,</span><span class="crayon-s">'Facebook'</span><span class="crayon-sy">,</span><span class="crayon-s">'MicroSoft'</span><span class="crayon-sy">)</span><span class="crayon-h">	 	 </span></div><div class="crayon-line" id="crayon-5dbc0218cf2d5430531034-2"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">company</span><span class="crayon-sy">)</span><span class="crayon-h">	 	 </span></div><div class="crayon-line" id="crayon-5dbc0218cf2d5430531034-3"><span class="crayon-h"> 	 	 </span></div><div class="crayon-line" id="crayon-5dbc0218cf2d5430531034-4"><span class="crayon-c">#索引要用方括号[]，里面的数字就是索引的位置，从0开始，0就是第一个位置，1就是第二个位置	 	 </span></div><div class="crayon-line" id="crayon-5dbc0218cf2d5430531034-5"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">company</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-h">	 	 </span></div><div class="crayon-line" id="crayon-5dbc0218cf2d5430531034-6"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">company</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>time模块</h4>
+    <p>Python 的 time 模块里面就有很多函数可以转换常见日期格式。我们来看一下time模块里有哪些函数。</p>
+    <p><strong>技术文档</strong>：<a href="https://docs.python.org/zh-cn/3.7/library/time.html" target="_blank" rel="noopener noreferrer">time模块</a></p>
+    <p><strong>打印本地时间</strong></p>
+    <p>使用VS Code新建一个lesson5文件夹，并在里面新建一个python文件比如lesson5.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbc0218cf2dc943204861" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import time
+    print (time.localtime())</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2dc943204861-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2dc943204861-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2dc943204861-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">time</span></div><div class="crayon-line" id="crayon-5dbc0218cf2dc943204861-2"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">localtime</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>执行代码，打印出来的会是一个元组Tuple格式的数据，类似于下面这样：</p>
+            <div id="crayon-5dbc0218cf2df494662679" class="crayon-syntax crayon-theme-light-abite crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">time.struct_time(tm_year=2018, tm_mon=7, tm_mday=16, tm_hour=12, tm_min=3, tm_sec=5, tm_wday=0, tm_yday=197, tm_isdst=0)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -21px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2df494662679-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2df494662679-1"><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">struct_time</span><span class="crayon-sy">(</span><span class="crayon-v">tm_year</span><span class="crayon-o">=</span><span class="crayon-cn">2018</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tm_mon</span><span class="crayon-o">=</span><span class="crayon-cn">7</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tm_mday</span><span class="crayon-o">=</span><span class="crayon-cn">16</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tm_hour</span><span class="crayon-o">=</span><span class="crayon-cn">12</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tm_min</span><span class="crayon-o">=</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tm_sec</span><span class="crayon-o">=</span><span class="crayon-cn">5</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tm_wday</span><span class="crayon-o">=</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tm_yday</span><span class="crayon-o">=</span><span class="crayon-cn">197</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">tm_isdst</span><span class="crayon-o">=</span><span class="crayon-cn">0</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>&nbsp;</p>
+    <p><strong>格式化时间</strong></p>
+    <p>但是元组格式的时间不适合我们人类阅读啊，这个时候我们就需要格式化时间啦~</p>
+    <p>要格式化时间就要用到time模块里的time.strftime()函数啦。time.strftime()函数接收时间元组，并返回一个可读字符串来表示当地时间，格式由参数format决定，这个有点类似于我们之前接触过的format()函数。</p>
+            <div id="crayon-5dbc0218cf2e0500091193" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import time
+    t=time.localtime()
+    
+    # 把时间格式化成2018-07-20 16:12:34的形式
+    print (time.strftime("%Y-%m-%d %H:%M:%S",t ))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2e0500091193-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e0500091193-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e0500091193-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e0500091193-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e0500091193-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2e0500091193-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">time</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e0500091193-2"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">localtime</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e0500091193-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc0218cf2e0500091193-4"><span class="crayon-c"># 把时间格式化成2018-07-20 16:12:34的形式</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e0500091193-5"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">strftime</span><span class="crayon-sy">(</span><span class="crayon-s">"%Y-%m-%d %H:%M:%S"</span><span class="crayon-sy">,</span><span class="crayon-i">t</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里的%Y，%m，%d，%H，%M，%S是什么意思呢，大家可以执行上面的代码然后结合下面的格式化形式来理解:</p>
+            <div id="crayon-5dbc0218cf2e2549283369" class="crayon-syntax crayon-theme-light-abite crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">%y 两位数的年份表示（00-99）
+    %Y 四位数的年份表示（000-9999）
+    %m 月份（01-12）
+    %d 月内中的一天（0-31）
+    %H 24小时制小时数（0-23）
+    %I 12小时制小时数（01-12）
+    %M 分钟数（00-59）
+    %S 秒（00-59）
+    %j 年内的一天（001-366，一年过了多少天）
+    %w 星期（0-6），星期天为星期的开始（也就是0为星期天，1为星期一，依次类推）</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -29px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e2549283369-10" style="height: 20px;">10</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-1"><span class="crayon-o">%</span><span class="crayon-i">y</span><span class="crayon-h"> </span>两位数的年份表示（<span class="crayon-cn">00</span><span class="crayon-o">-</span><span class="crayon-cn">99</span>）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-2"><span class="crayon-o">%</span><span class="crayon-i">Y</span><span class="crayon-h"> </span>四位数的年份表示（<span class="crayon-cn">000</span><span class="crayon-o">-</span><span class="crayon-cn">9999</span>）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-3"><span class="crayon-o">%</span><span class="crayon-i">m</span><span class="crayon-h"> </span>月份（<span class="crayon-cn">01</span><span class="crayon-o">-</span><span class="crayon-cn">12</span>）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-4"><span class="crayon-o">%</span><span class="crayon-i">d</span><span class="crayon-h"> </span>月内中的一天（<span class="crayon-cn">0</span><span class="crayon-o">-</span><span class="crayon-cn">31</span>）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-5"><span class="crayon-o">%</span><span class="crayon-i">H</span><span class="crayon-h"> </span><span class="crayon-cn">24</span>小时制小时数（<span class="crayon-cn">0</span><span class="crayon-o">-</span><span class="crayon-cn">23</span>）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-6"><span class="crayon-o">%</span><span class="crayon-i">I</span><span class="crayon-h"> </span><span class="crayon-cn">12</span>小时制小时数（<span class="crayon-cn">01</span><span class="crayon-o">-</span><span class="crayon-cn">12</span>）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-7"><span class="crayon-o">%</span><span class="crayon-i">M</span><span class="crayon-h"> </span>分钟数（<span class="crayon-cn">00</span><span class="crayon-o">-</span><span class="crayon-cn">59</span>）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-8"><span class="crayon-o">%</span><span class="crayon-i">S</span><span class="crayon-h"> </span>秒（<span class="crayon-cn">00</span><span class="crayon-o">-</span><span class="crayon-cn">59</span>）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-9"><span class="crayon-o">%</span><span class="crayon-i">j</span><span class="crayon-h"> </span>年内的一天（<span class="crayon-cn">001</span><span class="crayon-o">-</span><span class="crayon-cn">366</span>，一年过了多少天）</div><div class="crayon-line" id="crayon-5dbc0218cf2e2549283369-10"><span class="crayon-o">%</span><span class="crayon-k ">w</span><span class="crayon-h"> </span>星期（<span class="crayon-cn">0</span><span class="crayon-o">-</span><span class="crayon-cn">6</span>），星期天为星期的开始（也就是<span class="crayon-cn">0</span>为星期天，<span class="crayon-cn">1</span>为星期一，依次类推）</div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们也可以把时间格式化成我们比较习惯的时间：</p>
+            <div id="crayon-5dbc0218cf2e4187082835" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import time
+    t=time.localtime()
+    
+    # 把时间格式化成2018年07月20日 16时12分34秒的形式
+    print (time.strftime("%Y年%m月%d日 %H时%M分%S秒",t ))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2e4187082835-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e4187082835-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e4187082835-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e4187082835-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e4187082835-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2e4187082835-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">time</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e4187082835-2"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">localtime</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e4187082835-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc0218cf2e4187082835-4"><span class="crayon-c"># 把时间格式化成2018年07月20日 16时12分34秒的形式</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e4187082835-5"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">strftime</span><span class="crayon-sy">(</span><span class="crayon-s">"%Y年%m月%d日 %H时%M分%S秒"</span><span class="crayon-sy">,</span><span class="crayon-i">t</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>格式化时间在Excel以及其他编程语言里都是必须要掌握的一个知识点，它们的计法也大致和上面一致。</p></blockquote>
+    <blockquote class="task"><p>windows电脑在执行这段代码时会报错，建议大家自行百度/Google找到解决方案，想一想应该搜索哪些关键词？右侧链接<a href="https://segmentfault.com/q/1010000003070325" target="_blank" rel="noopener noreferrer">Python中文处理</a>里有答案，可以先不急着看。</p></blockquote>
+    <p><strong>今天是一年的第几天，以及是星期几</strong></p>
+    <p>前面有提到%j是返回一年过了多少天，而%w则返回这一天为星期几</p>
+            <div id="crayon-5dbc0218cf2e6880126093" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import time
+    t=time.localtime()
+    
+    # 把时间格式化成2018年07月20日 16时12分34秒的形式
+    print (time.strftime("今天是一年的第%j天",t ))
+    print (time.strftime("今天是星期%w",t ))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2e6880126093-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e6880126093-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e6880126093-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e6880126093-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e6880126093-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc0218cf2e6880126093-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2e6880126093-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">time</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e6880126093-2"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">localtime</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e6880126093-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc0218cf2e6880126093-4"><span class="crayon-c"># 把时间格式化成2018年07月20日 16时12分34秒的形式</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e6880126093-5"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">strftime</span><span class="crayon-sy">(</span><span class="crayon-s">"今天是一年的第%j天"</span><span class="crayon-sy">,</span><span class="crayon-i">t</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2e6880126093-6"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">strftime</span><span class="crayon-sy">(</span><span class="crayon-s">"今天是星期%w"</span><span class="crayon-sy">,</span><span class="crayon-i">t</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>数据类型之字典Dictionary</h4>
+    <p>前面我们已经介绍了好几种数据类型啦，大家可以回顾一下，现在再介绍一个数据类型字典Dictionary。</p>
+    <p>还是结合我们之前的案例，最有钱的五家互联网公司我们用列表List数据结构可以显示出来，</p>
+            <div id="crayon-5dbc0218cf2e8281960809" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">company = ['Apple','Google','Amazon','Facebook','MicroSoft']</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2e8281960809-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2e8281960809-1"><span class="crayon-v">company</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'Apple'</span><span class="crayon-sy">,</span><span class="crayon-s">'Google'</span><span class="crayon-sy">,</span><span class="crayon-s">'Amazon'</span><span class="crayon-sy">,</span><span class="crayon-s">'Facebook'</span><span class="crayon-sy">,</span><span class="crayon-s">'MicroSoft'</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>但是如果我们要显示这五家公司所对应的市值呢，那就需要额外再=建一个列表List：</p>
+            <div id="crayon-5dbc0218cf2eb564107498" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">Values = ['9400亿美金','8300亿美金','8800亿美金','6000亿美金','8100亿美金']</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2eb564107498-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2eb564107498-1"><span class="crayon-v">Values</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">'9400亿美金'</span><span class="crayon-sy">,</span><span class="crayon-s">'8300亿美金'</span><span class="crayon-sy">,</span><span class="crayon-s">'8800亿美金'</span><span class="crayon-sy">,</span><span class="crayon-s">'6000亿美金'</span><span class="crayon-sy">,</span><span class="crayon-s">'8100亿美金'</span><span class="crayon-sy">]</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>但是如果是使用字典，就不用那么麻烦，可以写成：</p>
+            <div id="crayon-5dbc0218cf2ec338039842" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;"> TopCompany = {'Apple': '9400亿美金', 'Google': '8300亿美金', 'Amazon':'8800亿美金','Facebook': '6000亿美金', 'MicroSoft': '8100亿美金'}</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2ec338039842-1" style="height: 40px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2ec338039842-1"><span class="crayon-h"> </span><span class="crayon-v">TopCompany</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-s">'Apple'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'9400亿美金'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Google'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'8300亿美金'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Amazon'</span><span class="crayon-o">:</span><span class="crayon-s">'8800亿美金'</span><span class="crayon-sy">,</span><span class="crayon-s">'Facebook'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'6000亿美金'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'MicroSoft'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'8100亿美金'</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>注意数据类型为字典Dictionary的写法，列表是由中括号[]，元组是有小括号()，字典是由大括号{}给包围；列表、元组、字典里面的每个值都是由逗号,隔开；但是字典的每个值是一对，左边的称之为键key，右边的成为值value，键与值之间由冒号:隔开，大家注意这个的写法。</p>
+    <p>那这个字典Dictionary的用途在哪里呢？我们看一下下面的案例。</p>
+            <div id="crayon-5dbc0218cf2ee577755253" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">TopCompany = {'Apple': '9400亿美金', 'Google': '8300亿美金', 'Amazon':'8800亿美金','Facebook': '6000亿美金', 'MicroSoft': '8100亿美金'}
+    print(TopCompany['Amazon'])</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2ee577755253-1" style="height: 40px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ee577755253-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2ee577755253-1"><span class="crayon-v">TopCompany</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-s">'Apple'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'9400亿美金'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Google'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'8300亿美金'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Amazon'</span><span class="crayon-o">:</span><span class="crayon-s">'8800亿美金'</span><span class="crayon-sy">,</span><span class="crayon-s">'Facebook'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'6000亿美金'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'MicroSoft'</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'8100亿美金'</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5dbc0218cf2ee577755253-2"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">TopCompany</span><span class="crayon-sy">[</span><span class="crayon-s">'Amazon'</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们想知道Amazon公司对应的市值，直接通过key就能找到对应的值。</p>
+    <blockquote><p>我们发现列表List、元组Tuple是通过位置来查找数据的，而字典Dictionary是通过键key来查找值value的。</p></blockquote>
+    <p><strong>今天是星期几</strong></p>
+    <p>前面我们已经知道通过%w，我们可以打印出今天是星期几，但是打印出来的是阿拉伯数字，和我们平时的习惯不一样啊。不过我们却知道每个阿拉伯数字对应的意思，比如2对应着星期二，那么我们就可以使用字典Dictionary这个数据类型，把阿拉伯数字转换为对应的意思啦，我们来看案例：</p>
+            <div id="crayon-5dbc0218cf2ef681202650" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import time
+    t=time.localtime()
+    weeklist={'0':'星期天','1':'星期一','2':'星期二','3':'星期三','4':'星期四','5':'星期五','6':'星期六'}
+    weekday=time.strftime("%w",t)
+    
+    #如前面所说，因为如果直接打印weekday，它会返回的是阿拉伯数字
+    print(weekday)
+    
+    #我们使用weeklist将阿拉伯数字转换为对应的星期几
+    print (weeklist[weekday])</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc0218cf2ef681202650-10" style="height: 20px;">10</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">time</span></div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-2"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">localtime</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-3"><span class="crayon-v">weeklist</span><span class="crayon-o">=</span><span class="crayon-sy">{</span><span class="crayon-s">'0'</span><span class="crayon-o">:</span><span class="crayon-s">'星期天'</span><span class="crayon-sy">,</span><span class="crayon-s">'1'</span><span class="crayon-o">:</span><span class="crayon-s">'星期一'</span><span class="crayon-sy">,</span><span class="crayon-s">'2'</span><span class="crayon-o">:</span><span class="crayon-s">'星期二'</span><span class="crayon-sy">,</span><span class="crayon-s">'3'</span><span class="crayon-o">:</span><span class="crayon-s">'星期三'</span><span class="crayon-sy">,</span><span class="crayon-s">'4'</span><span class="crayon-o">:</span><span class="crayon-s">'星期四'</span><span class="crayon-sy">,</span><span class="crayon-s">'5'</span><span class="crayon-o">:</span><span class="crayon-s">'星期五'</span><span class="crayon-sy">,</span><span class="crayon-s">'6'</span><span class="crayon-o">:</span><span class="crayon-s">'星期六'</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-4"><span class="crayon-v">weekday</span><span class="crayon-o">=</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-e">strftime</span><span class="crayon-sy">(</span><span class="crayon-s">"%w"</span><span class="crayon-sy">,</span><span class="crayon-v">t</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-5">&nbsp;</div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-6"><span class="crayon-c">#如前面所说，因为如果直接打印weekday，它会返回的是阿拉伯数字</span></div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">weekday</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-8">&nbsp;</div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-9"><span class="crayon-c">#我们使用weeklist将阿拉伯数字转换为对应的星期几</span></div><div class="crayon-line" id="crayon-5dbc0218cf2ef681202650-10"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">weeklist</span><span class="crayon-sy">[</span><span class="crayon-v">weekday</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>&nbsp;</p>
+    <p><strong>打印时间戳</strong></p>
+    <p>时间戳是指格林威治时间1970年01月01日00时00分00秒(北京时间1970年01月01日08时00分00秒)起至现在的总秒数。</p>
+            <div id="crayon-5dbc0218cf2f1369805436" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import time
+    print (time.time())</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2f1369805436-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f1369805436-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2f1369805436-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">time</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f1369805436-2"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-k ">time</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家会发现返回的是一个小数（浮点数），单位是秒。由于我们的时间在不断流动，因此大家每次执行这段代码，结果都会不一样。</p>
+    <h4>datetime模块</h4>
+    <p>Python的datetime模块也是用来处理时间的，不过很多人在使用datetime模块的时候，会有点迷糊，我们先来看下面的例子</p>
+    <p><strong>技术文档</strong>：<a href="https://docs.python.org/zh-cn/3.7/library/datetime.html" target="_blank" rel="noopener noreferrer">datetime模块</a></p>
+    <p><strong>打印今天的时间</strong></p>
+            <div id="crayon-5dbc0218cf2f3466966150" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from datetime import date
+    from datetime import datetime
+    print (date.today())
+    print (datetime.now())</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2f3466966150-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f3466966150-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f3466966150-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f3466966150-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2f3466966150-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-k ">datetime</span><span class="crayon-h"> </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">date</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f3466966150-2"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-k ">datetime</span><span class="crayon-h"> </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">datetime</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f3466966150-3"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">date</span><span class="crayon-sy">.</span><span class="crayon-e">today</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f3466966150-4"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">datetime</span><span class="crayon-sy">.</span><span class="crayon-e">now</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>from datetime import date，这个可以理解，意思就是查找datetime模块下的date类，并引入；那这个from datetime import datetime按理说也应该是查找datetime模块下的datetime类啊，怎么出现了两个datetime。嗯，是这样的，这是由于datetime模块就有一个和它同名的datetime类，因为名称相同所以很多人容易弄混。</p>
+    <p>那什么时候要用到from import呢？这个要看我们要调用的函数所处的位置，比如datetime.now()处于datetime模块下的datetime类之下。以前我们接触的函数在模块下的位置比较单一，所以没有from import，而datetime模块结构多了一些层级。</p>
+    <p>&nbsp;</p>
+    <p><strong>计算天数的时间间隔</strong></p>
+    <p>我们想知道未来的某一天（比如你一个亲密朋友的生日）离今天还有多少天~可以输入一下以下代码并执行：</p>
+            <div id="crayon-5dbc0218cf2f5391809467" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from datetime import date
+    now=date.today()
+    future=date(2019,2,12)
+    time=future-now
+    print (time.days)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2f5391809467-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f5391809467-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f5391809467-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f5391809467-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f5391809467-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2f5391809467-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-k ">datetime</span><span class="crayon-h"> </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">date</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f5391809467-2"><span class="crayon-v">now</span><span class="crayon-o">=</span><span class="crayon-v">date</span><span class="crayon-sy">.</span><span class="crayon-e">today</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f5391809467-3"><span class="crayon-v">future</span><span class="crayon-o">=</span><span class="crayon-e">date</span><span class="crayon-sy">(</span><span class="crayon-cn">2019</span><span class="crayon-sy">,</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-cn">12</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f5391809467-4"><span class="crayon-k ">time</span><span class="crayon-o">=</span><span class="crayon-v">future</span><span class="crayon-o">-</span><span class="crayon-e">now</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f5391809467-5"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-k ">time</span><span class="crayon-sy">.</span><span class="crayon-v">days</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>生日天数计算器：</strong>你的小猫咪出生日期是2018年2月12日，请问它出生多少天了？</p></blockquote>
+    <h4>calendar模块</h4>
+    <p>Python的calendar模块主要是来处理与日历相关的函数，我们来看一下如何使用calendar模块打印日历。</p>
+    <p><strong>技术文档</strong>：<a href="https://docs.python.org/zh-cn/3.7/library/calendar.html" target="_blank" rel="noopener noreferrer">calendar模块</a></p>
+            <div id="crayon-5dbc0218cf2f7135650990" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import calendar
+    
+    rili = calendar.month(2018, 7)
+    print ("让我们来看一下2018年7月份的日历:")
+    print (rili)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc0218cf2f7135650990-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f7135650990-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f7135650990-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f7135650990-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc0218cf2f7135650990-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc0218cf2f7135650990-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">calendar</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f7135650990-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc0218cf2f7135650990-3"><span class="crayon-v">rili</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">calendar</span><span class="crayon-sy">.</span><span class="crayon-e">month</span><span class="crayon-sy">(</span><span class="crayon-cn">2018</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">7</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f7135650990-4"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-s">"让我们来看一下2018年7月份的日历:"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc0218cf2f7135650990-5"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">rili</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p>日历打印：打印一下你出生那年那月的日历</p></blockquote>
+            
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

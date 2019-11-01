@@ -1,0 +1,606 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 写出第一行python代码评论Feed" href="https://cloudbasegroup.org/handbook/python/73/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="云开发能力" href="https://cloudbasegroup.org/handbook/tcb/67/">
+    <link rel="next" title="基本语法与语句" href="https://cloudbasegroup.org/handbook/python/75/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/python/73/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=73">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F73%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F73%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-73 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+    <nav id="header-db" class="row navbar navbar-default">
+            <div class="navbar-header">
+                  <div class="logotop fleft">
+                    <a href="https://tencentcloudbase.github.io/handbook/python/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+                <div class="flex nav-items">
+                <h1 class="flex-item navbar-link">
+                    Python零基础快速入门			</h1>
+                  </div>
+            </div>
+    
+            <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+             <div class="sop-menu">
+                <ul>
+                                    <li class="page_item current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/01.html">
+                            写出第一行python代码					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/02.html">
+                            基本语法与语句					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/03.html">
+                            函数、模块和库					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/04.html">
+                            用python做数学题					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/05.html">
+                            日期与时间					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/06.html">
+                            Python操作文件					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/07.html">
+                            pyecharts数据可视化					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/08.html">
+                            python操作Excel					</a>
+                    </li>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://tencentcloudbase.github.io/handbook/python/09.html">
+                            python图片处理					</a>
+                    </li>
+                                                    </ul>
+            </div>		
+        </div>
+    </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">写出第一行python代码</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>人生苦短，我用Python。Python是最适合技术爱好者入门的编程语言，而且Python非常热门且有钱途，广泛应用在Linux运维、数据分析、web网站、自动化测试、人工智能等多个领域。</p>
+    <h4>编辑器</h4>
+    <p>Python的编辑器我们推荐大家Visual Studio Code（简称VS Code），它是微软MicroSoft推出的一款开源免费编辑器，支持Mac、Windows等多个平台，而且它支持几乎所有流行开发语言，大家学习其他语言的开发也比较推荐它。</p>
+    <p><strong>代码编辑器</strong>：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a></p>
+    <blockquote><p>可以写Python的代码编辑器有很多，比如Sublime Text，PyCharm，但是我们这里最推荐VS Code，因为它的界面是中文，免费，功能强大，通用于几乎所有开发语言。经常使用VS Code并掌握它的使用技巧，会对你以后编程有非常大的助益。</p></blockquote>
+    <blockquote class="task"><p><strong>编辑器的汉化与插件：</strong>可能你会发现你安装的VS Code的界面是英文的，参照<a href="https://blog.csdn.net/qq_30068487/article/details/82589347" target="_blank" rel="noopener noreferrer">VSCode设置中文显示</a>，将VS Code汉化。掌握如何给VS Code安装插件，请安装好Microsoft微软公司的两款插件，一个是Chinese (Simplified)也就是将VS Code汉化的插件（汉化时就已安装）；一个是Python插件。<a href="https://v.qq.com/x/page/b0864kjtrko.html" target="_blank" rel="noopener noreferrer">视频指南</a></p></blockquote>
+    <h4>Python的下载与安装</h4>
+    <p>要学习Python编程，首先我们需要安装Python，我们推荐大家到官网上面下载Python的安装包，不同的操作系统以及电脑不同的版本会有不同的安装包，大家可以根据情况来自行下载并安装。</p>
+    <p><strong>Python下载</strong>：<a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python官方下载地址</a></p>
+    <blockquote><p>从官网的链接我们可以看到Python当前最新的版本为3.7.*。开发语言也是一直在不断的更新之中~网上很多教程以及还有不少公司还在用Python 2.7这个版本，和我们公司还停留在Windows 7甚至XP一样，这个我们不去管啦，我们只学最新、最能代表趋势的。</p></blockquote>
+    <p>然后点击<strong>Download Python 3.7.*</strong>之后会进入一个版本选择页面，在该页面的底部，我们根据windows是否64位和32位和Mac版本来下载executable installer。也可以直接点击下面链接：</p>
+    <ul>
+    <li><strong>Mac版</strong>：<a href="https://www.python.org/ftp/python/3.7.4/python-3.7.4-macosx10.6.pkg" target="_blank" rel="noopener noreferrer">32位或64位</a></li>
+    <li><strong>Windows版</strong>：<a href="https://www.python.org/ftp/python/3.7.4/python-3.7.4.exe" target="_blank" rel="noopener noreferrer">32位</a>、<a href="https://www.python.org/ftp/python/3.7.4/python-3.7.4-amd64.exe" target="_blank" rel="noopener noreferrer">64位</a></li>
+    </ul>
+    <p><span style="color: #800000;"><strong>Windows安装时也就是点击Install Now前，请注意先勾选Add Python 3.7 to PATH</strong></span></p>
+    <blockquote class="danger"><p>由于Python 3和Python 2版本差异很大，而网络上有太多落后的教程，因此内容也就鱼龙混杂，大家在参考网络资源的时候要注意一下。一是不要学混了，二是出现一些错误时，可能是因为你参考的版本落后啦。</p></blockquote>
+    <blockquote class="task"><p><strong>Python的下载与安装：</strong>你知道你的电脑是32位还是64位的么？请自行百度了解。你们知道以后该如何下载Python的最新版么？（<strong>仅限Windows用户</strong>在安装时要注意什么？如果没有勾选Add Python to PATH，请参考<a href="https://blog.51cto.com/12105235/2149476" target="_blank" rel="noopener noreferrer">Windows 环境变量配置</a>）</p></blockquote>
+    <h4><strong>命令行工具</strong></h4>
+    <p>那怎么判断我们的Python是否已经安装成功呢？这个时候就要用到我们的命令行工具啦。</p>
+    <p>Mac电脑的命令行工具是<strong>Terminal终端</strong>，打开终端然后输入以下代码：</p>
+            <div id="crayon-5dbba8fb0b355559018640" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">python3 --version</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b355559018640-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b355559018640-1"><span class="crayon-v">python3</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">version</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>Windows电脑的命令行工具是<strong>命令提示符cmd</strong>，打开命令提示符输入以下代码：</p>
+            <div id="crayon-5dbba8fb0b35d844823735" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">python --version</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b35d844823735-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b35d844823735-1"><span class="crayon-v">python</span><span class="crayon-h"> </span><span class="crayon-o">--</span><span class="crayon-v">version</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="danger"><p>学编程要仔细，一个字母，一个单词，一个标点符号都不要出错。注意python、python3的后面有空格。</p></blockquote>
+    <p>这段代码的目的是显示Python当前的版本，如果出现的是Python 3.7.0，则表示我们的Python安装好啦，如果出现的是：<br>
+    
+                <span id="crayon-5dbba8fb0b35f695657093" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">‘<span class="crayon-i">python</span>’<span class="crayon-h"> </span>不是内部或外部命令，也不是可运行的程序或批处理文件。</span></span>那表示Python没有安装成功。</p>
+    <blockquote class="danger"><p>为什么windows输入的是python –version，而Mac是python3 –version呢？在Mac电脑输入python –version试试？这是因为Mac电脑自带python 2.7.*的python版本。由于python 2和3版本差异很大，以后Mac的童鞋不要忘记运行的时候少了版本切换“3”。</p></blockquote>
+    <blockquote class="task"><p><strong>判断Python是否安装成功：</strong>Mac请打开Terminal终端，Windows用户则要打开cmd，如果不知道怎么打开，可以问身边的童鞋或自行百度。请使用命令行来判断Python3是否安装成功，这一步<strong>至关重要</strong>哦。</p></blockquote>
+    <h4>Python的交互模式</h4>
+    <p>那我们怎么开始写我们的Python代码呢？我们直接在打开的命令行工具里输入:</p>
+            <div id="crayon-5dbba8fb0b361484342723" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">python</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b361484342723-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b361484342723-1"><span class="crayon-v">python</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>Mac用户</strong>不要忘记版本切换数字“3”哦，也就是Mac用户输入</p>
+            <div id="crayon-5dbba8fb0b363173723684" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">python3</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b363173723684-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b363173723684-1"><span class="crayon-v">python3</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>就可以进入到我们的<strong>Python交互模式</strong>之中啦，我们可以直接在Python的交互模式里直接写Python的代码~~</p>
+    <p><strong>了解命令行模式与交互模式的区别</strong></p>
+    <p>命令行模式与Python的交互模式界面是不同的，当我们的命令行窗口的光标前有“&gt;&gt;&gt;”时，这时候命令行窗口处于交互模式下。</p>
+            <div id="crayon-5dbba8fb0b364596542946" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">Type "help", "copyright", "credits" or "license" for more information.
+    &gt;&gt;&gt; </textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b364596542946-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba8fb0b364596542946-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b364596542946-1"><span class="crayon-r ">Type</span><span class="crayon-h"> </span><span class="crayon-s">"help"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"copyright"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"credits"</span><span class="crayon-h"> </span><span class="crayon-i">or</span><span class="crayon-h"> </span><span class="crayon-s">"license"</span><span class="crayon-h"> </span><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-e">more </span><span class="crayon-i">information</span><span class="crayon-sy">.</span></div><div class="crayon-line" id="crayon-5dbba8fb0b364596542946-2"><span class="crayon-o">&gt;&gt;&gt;</span><span class="crayon-h"> </span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>如果要退出交互模式，则输入下面代码即可重新进入命令行模式，</p>
+            <div id="crayon-5dbba8fb0b366056101425" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">exit()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b366056101425-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b366056101425-1"><span class="crayon-e">exit</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家可以反复操作几次，通过输入python（Mac用户python3）进入交互模式，通过输入上面的exit()退出交互模式，来了解命令行模式和交互模式在界面上的区别。</p>
+    <blockquote class="task"><p><strong>交互模式和命令行模式的区别：</strong>请和身边的童鞋一起交流一下Python的命令行模式和交互模式在界面上有什么区别。怎么进入Python的交互模式，又怎么退出交互模式，怎么进入命令行模式，怎么退出命名行模式。</p></blockquote>
+    <h4>算数运算与算数运算符</h4>
+    <p>前面说到当我们使用命令行工具进入到Python的交互模式后，我们就可以直接在交互模式里写Python的代码了。下面我们会列出很多Python的代码案例，大家可以在Python的交互模式下一条一条执行（写完一条按回车键Enter即可）看看结果：</p>
+            <div id="crayon-5dbba8fb0b367892659287" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">136+384</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b367892659287-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b367892659287-1"><span class="crayon-cn">136</span><span class="crayon-o">+</span><span class="crayon-cn">384</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这是数学里的加法，我们也还可以这样写：</p>
+            <div id="crayon-5dbba8fb0b369083365185" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">112+231+177</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b369083365185-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b369083365185-1"><span class="crayon-cn">112</span><span class="crayon-o">+</span><span class="crayon-cn">231</span><span class="crayon-o">+</span><span class="crayon-cn">177</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>原来python是可以像计算器一样，直接做数学运算的~我们来写一个更加复杂的案例：</p>
+            <div id="crayon-5dbba8fb0b36b236796119" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">(110/0.5+537-100)*2</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b36b236796119-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b36b236796119-1"><span class="crayon-sy">(</span><span class="crayon-cn">110</span><span class="crayon-o">/</span><span class="crayon-cn">0.5</span><span class="crayon-o">+</span><span class="crayon-cn">537</span><span class="crayon-o">-</span><span class="crayon-cn">100</span><span class="crayon-sy">)</span><span class="crayon-o">*</span><span class="crayon-cn">2</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里的”+”、”-“、”*”、”/”就是我们所说的算数运算符。</p>
+    <p>算数运算符还有”%”（取模，也就是返回除法的余数）、”**”（幂，也就是返回x的y次幂）、”//”（取整除，也就是返回商的整数部分）。</p>
+    <blockquote><p>大家注意这里有一个词就是“返回”，有点类似于“得到”或“得出”，对应着英文单词“return”，return这个之后会在Python函数里用到，大家就会对返回这个词有更深的理解了。</p></blockquote>
+    <p>我们来看两道小学数学题，932除以3的整数是多少？余数是多少？3的4次方是多少？</p>
+            <div id="crayon-5dbba8fb0b36c645014583" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">932//3
+    932%3
+    3**4</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b36c645014583-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba8fb0b36c645014583-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba8fb0b36c645014583-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b36c645014583-1"><span class="crayon-cn">932</span><span class="crayon-c">//3</span></div><div class="crayon-line" id="crayon-5dbba8fb0b36c645014583-2"><span class="crayon-cn">932</span><span class="crayon-o">%</span><span class="crayon-cn">3</span></div><div class="crayon-line" id="crayon-5dbba8fb0b36c645014583-3"><span class="crayon-cn">3</span><span class="crayon-o">*</span><span class="crayon-o">*</span><span class="crayon-cn">4</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>用Python来做计算器是不是很有意思？</p>
+    <blockquote><p><strong>Python算数运算符：</strong>尽管Python的算数运算符很简单，但是大家要记住基础的+、-、*、/、**，以及了解怎么用交互模式执行最简单的代码。</p></blockquote>
+    <h4>数字类型转换</h4>
+    <p>为啥上面<strong>有个关键的计算题</strong>得出的结果有小数点？这是因为程序里的数字也有整数和小数之分，只是叫法不一样，叫整型（Int）和浮点型（Float）。整型和浮点型可以转换：</p>
+    <ul class="list">
+    <li><b>int(x)</b>&nbsp;将x转换为一个整数。</li>
+    <li><b>float(x)</b>&nbsp;将x转换到一个浮点数</li>
+    </ul>
+    <p>再拿上面的为例，我们在交互模式里输入，就不会有小数点啦~</p>
+            <div id="crayon-5dbba8fb0b36e400207035" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">int((110/0.5+537-100)*2)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b36e400207035-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b36e400207035-1"><span class="crayon-k ">int</span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-cn">110</span><span class="crayon-o">/</span><span class="crayon-cn">0.5</span><span class="crayon-o">+</span><span class="crayon-cn">537</span><span class="crayon-o">-</span><span class="crayon-cn">100</span><span class="crayon-sy">)</span><span class="crayon-o">*</span><span class="crayon-cn">2</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在交互模式里输入</p>
+            <div id="crayon-5dbba8fb0b370021693247" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">int(3.1415926)
+    float(99)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b370021693247-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba8fb0b370021693247-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b370021693247-1"><span class="crayon-k ">int</span><span class="crayon-sy">(</span><span class="crayon-cn">3.1415926</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba8fb0b370021693247-2"><span class="crayon-k ">float</span><span class="crayon-sy">(</span><span class="crayon-cn">99</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>Python浮点计算不精确：</strong>计算一下1.1+2.31，查看一下结果，请通过百度搜索了解为什么Python做小数计算不靠谱。了解什么是整型、什么是浮点型。</p></blockquote>
+    <h4>Python的输出</h4>
+    <p>我们还是在交互模式里输入以下代码，和之前说的一样写完一条然后按Enter执行~</p>
+            <div id="crayon-5dbba8fb0b371736293053" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">print("Hello, World!")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b371736293053-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b371736293053-1"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"Hello, World!"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这个就是很多开发语言最喜欢写的Hello World了。print()是一个输出函数，大家只需要记住这个格式就可以。括号()内是我们要输出的内容，我们可以写一个更加复杂的：</p>
+            <div id="crayon-5dbba8fb0b373344062717" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">print("听说Python编程挺有用的，我想用两天的时间学会它")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b373344062717-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b373344062717-1"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"听说Python编程挺有用的，我想用两天的时间学会它"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>双引号””里面的内容是一个<strong>字符串</strong>，就好像我们Excel里单元格格式有<strong>文本格式</strong>和<strong>数值格式</strong>一样，双引号里面的内容就有点类似于文本格式。字符串除了可以用””双引号括起来以外，还可以使用”单引号括起来。</p>
+    <blockquote class="danger"><p><strong>符号必须是英文字符：</strong>大家注意与程序相关的很多符号都必须是英文字符，输入中文字符的符号会报错的哦，大家可以试一下会报什么错。比如执行
+                <span id="crayon-5dbba8fb0b375612550508" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-i">print</span>（“我想学<span class="crayon-i">Python</span>”）</span></span></p></blockquote>
+    <p>下面两行代码，大家在交互模式里输入一下，看看结果，来了解程序里字符串与数字的不同</p>
+            <div id="crayon-5dbba8fb0b377253033272" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">print(121+234)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b377253033272-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b377253033272-1"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-cn">121</span><span class="crayon-o">+</span><span class="crayon-cn">234</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+            <div id="crayon-5dbba8fb0b378057490483" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">print("121+234")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b378057490483-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b378057490483-1"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"121+234"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>了解print()输出函数：</strong>直接在交互模式里输入并执行
+                <span id="crayon-5dbba8fb0b379675710800" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-cn">121</span><span class="crayon-o">+</span><span class="crayon-cn">234</span></span></span>以及
+                <span id="crayon-5dbba8fb0b37b365292525" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-cn">121</span><span class="crayon-o">+</span><span class="crayon-cn">234</span><span class="crayon-sy">)</span></span></span>，或
+                <span id="crayon-5dbba8fb0b37c744843637" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-s">"我想学Python"</span></span></span>以及print(“我想学Python”)，看看有什么区别？</p>
+    <p><strong>字符串类型：</strong>是否可以执行
+                <span id="crayon-5dbba8fb0b37e314468142" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">print</span><span class="crayon-sy">(</span>我想学<span class="crayon-v">python</span><span class="crayon-sy">)</span></span></span>，或者直接在交互模式里输入并执行
+                <span id="crayon-5dbba8fb0b37f502201657" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">我想学<span class="crayon-v">python</span></span></span>为什么？不可以执行会交互模式会报什么错误信息？你可以不必知道具体原因，只需要大致了解字符串类型与数值类型即可。</p></blockquote>
+    <h4>新建Python文件</h4>
+    <p>Python这样一条一条执行多麻烦啊，我想写更加复杂的Python代码，而且我上面敲的代码都没有保存，有什么解决办法吗？这个时候Python文件就派上用场了。</p>
+    <blockquote><p>Python文件和Word文件一样，都是文件，不同的是word文件的后缀是.doc或者.docx，而Python文件的后缀是.py。我们要新建一个Word文件会用到微软Office的Word软件，Python文件则需要用到我们前面所说的Visual Studio Code编辑器啦~</p></blockquote>
+    <p>首先我们在我们的电脑上新建一个文件夹，文件夹名最好是英文，比如叫python-project，然后打开VS Code编辑器，点击编辑器工具栏的<strong>文件</strong>–<strong>打开文件夹（Mac点击打开）</strong>，在弹出的窗口里选择我们新建的文件夹python-project，然后在编辑器的左侧就会看到<strong>资源管理器。</strong></p>
+    <p>在资源管理器PYTHON-PROJECT右侧，有<strong>新建文件</strong>、<strong>新建文件夹</strong>的小图标。点击新建文件夹，输入lesson1，然后再在lesson1文件夹里，点击小图标<strong>新建文件</strong>，输入lesson1.py。</p>
+    <blockquote class="danger"><p>注意文件夹和文件名中间不能有空格，且最好是英文</p></blockquote>
+    <p>学习时我们会有很多Python文件，因此合理的文件夹结构便于我们管理，大家可以把<strong>文件夹结构</strong>建成如下结构。也就是活动有多少节课就建多少个文件夹，然后再在文件夹里新建python文件。</p>
+            <div id="crayon-5dbba8fb0b381700221198" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">python-project         
+    ├── lesson1  
+    │   ├── lesson1.py
+    │   ├── lesson1-1.py
+    │   ├── lesson1-2.py
+    ├── lesson2 
+    ├── lesson3  
+    ├── lesson4</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b381700221198-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba8fb0b381700221198-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba8fb0b381700221198-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbba8fb0b381700221198-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbba8fb0b381700221198-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbba8fb0b381700221198-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbba8fb0b381700221198-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbba8fb0b381700221198-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b381700221198-1"><span class="crayon-v">python</span><span class="crayon-o">-</span><span class="crayon-i">project</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5dbba8fb0b381700221198-2">├──<span class="crayon-h"> </span><span class="crayon-i">lesson1</span><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5dbba8fb0b381700221198-3">│<span class="crayon-h">&nbsp;&nbsp; </span>├──<span class="crayon-h"> </span><span class="crayon-v">lesson1</span><span class="crayon-e">.py</span></div><div class="crayon-line" id="crayon-5dbba8fb0b381700221198-4">│<span class="crayon-h">&nbsp;&nbsp; </span>├──<span class="crayon-h"> </span><span class="crayon-v">lesson1</span><span class="crayon-o">-</span><span class="crayon-cn">1.py</span></div><div class="crayon-line" id="crayon-5dbba8fb0b381700221198-5">│<span class="crayon-h">&nbsp;&nbsp; </span>├──<span class="crayon-h"> </span><span class="crayon-v">lesson1</span><span class="crayon-o">-</span><span class="crayon-cn">2.py</span></div><div class="crayon-line" id="crayon-5dbba8fb0b381700221198-6">├──<span class="crayon-h"> </span><span class="crayon-i">lesson2</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbba8fb0b381700221198-7">├──<span class="crayon-h"> </span><span class="crayon-i">lesson3</span><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5dbba8fb0b381700221198-8">├──<span class="crayon-h"> </span><span class="crayon-v">lesson4</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p><strong>使用VS Code管理文件：</strong>掌握如何使用VS Code打开一个文件夹，如何使用VS Code新建文件夹以及新建Python文件；以及如何在文件夹里建子文件夹，在子文件夹里建文件等。（如果Windows用户不显示文件的后缀.py，请自行百度搜索windows如何显示文件拓展名），以及了解VS Code的基础界面。</p></blockquote>
+    <p>我们可以在VS Code里右键点击建好的python文件，比如右键lesson1.py，在这里我们可以（1）找到python文件在电脑的位置（windows在资源管理器显示，mac在Finder显示）；（2）可以复制文件的相对路径和路径；（3）可以直接执行python文件，<span style="color: #800000;"><strong>先不建议大家在VS Code里执行Python文件</strong></span></p>
+    <h4>Python文件的编辑与执行</h4>
+    <p><strong>编辑Python文件</strong></p>
+    <p>使用VS Code打开lesson1.py文件，输入以下代码，然后保存（<span style="color: #800000;"><strong>记得一定要保存哦</strong></span>）</p>
+            <div id="crayon-5dbba8fb0b383690058623" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">print("如果再给我一次机会，我想对你说下面这个数字：")
+    print(136+384)
+    print("如果要给这个数字定一个期限，我希望是：")
+    print(int((110/0.5+537-100)*2))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b383690058623-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbba8fb0b383690058623-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbba8fb0b383690058623-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbba8fb0b383690058623-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b383690058623-1"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"如果再给我一次机会，我想对你说下面这个数字："</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba8fb0b383690058623-2"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-cn">136</span><span class="crayon-o">+</span><span class="crayon-cn">384</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba8fb0b383690058623-3"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">"如果要给这个数字定一个期限，我希望是："</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbba8fb0b383690058623-4"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-k ">int</span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-cn">110</span><span class="crayon-o">/</span><span class="crayon-cn">0.5</span><span class="crayon-o">+</span><span class="crayon-cn">537</span><span class="crayon-o">-</span><span class="crayon-cn">100</span><span class="crayon-sy">)</span><span class="crayon-o">*</span><span class="crayon-cn">2</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><b>文件的路径与执行Python文件</b></p>
+    <p>要使用命令行工具执行Python文件，我们需要在<strong>命令行模式下</strong>执行（<strong><span style="color: #800000;">注意不是交互模式哦</span></strong>）。要在命令行工具里执行Python文件，首先，我们需要在命令行工具里找到Python所在的位置，</p>
+    <p><strong>Mac电脑 </strong>比如你把python-project文件夹（注意第一课的代码在lesson1文件夹里）放在Mac的下载downloads里面，我们需要输入命令：</p>
+            <div id="crayon-5dbba8fb0b385388536017" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">cd downloads/python-project/lesson1</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b385388536017-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b385388536017-1"><span class="crayon-e">cd </span><span class="crayon-v">downloads</span><span class="crayon-o">/</span><span class="crayon-v">python</span><span class="crayon-o">-</span><span class="crayon-v">project</span><span class="crayon-o">/</span><span class="crayon-v">lesson1</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后输入ls命令之后按Enter，ls命令会列出当前文件夹里所有文件</p>
+            <div id="crayon-5dbba8fb0b386127322378" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">ls</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b386127322378-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b386127322378-1"><span class="crayon-r">ls</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>如果我们可以看到lesson1.py，说明我们找对了位置，然后再执行</p>
+            <div id="crayon-5dbba8fb0b388618535776" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">python3 lesson1.py</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b388618535776-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b388618535776-1"><span class="crayon-e">python3 </span><span class="crayon-v">lesson1</span><span class="crayon-sy">.</span><span class="crayon-v">py</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>Windows电脑 </strong>我们需要先找到python-project的文件夹路径（注意第一课的代码在lesson1文件夹里），比如C:\download，需要输入命令之后按Enter进入目录：</p>
+            <div id="crayon-5dbba8fb0b389510821618" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">cd /d C:\download\python-project\lesson1</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b389510821618-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b389510821618-1"><span class="crayon-r">cd</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-i">d</span><span class="crayon-h"> </span><span class="crayon-v">C</span><span class="crayon-o">:</span><span class="crayon-sy">\</span><span class="crayon-v">download</span><span class="crayon-sy">\</span><span class="crayon-v">python</span><span class="crayon-o">-</span><span class="crayon-v">project</span><span class="crayon-sy">\</span><span class="crayon-v">lesson1</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="danger"><p>通常情况下cd命令即可切换路径，但是部分windows电脑直接使用cd命令无法切换，可以使用上面的cd&nbsp; /d 命令。</p></blockquote>
+    <p>然后再输入dir命令之后按Enter，可以得到当前文件夹下所有文件夹和文件</p>
+            <div id="crayon-5dbba8fb0b38b305714870" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">dir</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b38b305714870-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b38b305714870-1"><span class="crayon-v">dir</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>如果我们可以看到lesson1.py，说明我们找对了位置，然后再执行</p>
+            <div id="crayon-5dbba8fb0b38d931914439" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">python lesson1.py</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbba8fb0b38d931914439-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbba8fb0b38d931914439-1"><span class="crayon-e">python </span><span class="crayon-v">lesson1</span><span class="crayon-sy">.</span><span class="crayon-v">py</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="task"><p>cd是<strong>change directory</strong>的缩写，这里 cd+<strong>空格</strong>+文件夹的路径，表示进入该文件夹。不同的操作系统的命令不同，Mac与Linux的差不多，Windows的名与Linux/Mac有所不同。</p>
+    <p><strong>文件的路径：</strong>Mac或Windows文件路径是计算机基础知识，如果你新建了一个文件夹却不知道它的路径是什么，请自行百度搜索如何查看Mac文件路径或如何查看Windows文件路径。然后使用Mac使用ls命令，Windows使用dir命令确认我们在命令行里找到了文件。</p>
+    <p><strong>Python文件的执行：</strong>注意要执行Python文件使用的是Python的命令行模式，而非交互模式；在执行Python文件前，需要先用命令行的方式找到python文件的位置。</p></blockquote>
+    <h4>拓展思考</h4>
+    <p>能不能直接在VS Code的终端里执行Python文件呢？答案是可以的。不过Python的语法提示、版本切换等比较复杂，而且Python执行的原理都是使用命令行工具来执行，大家先把上面的知识掌握再说。还有Anaconda、Jupyter以及Cpython、Pypy、IPython等等工具，甚至pipenv、virtualenv等等大家可以先把我们整个教程掌握了再说。</p>
+            
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

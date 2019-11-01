@@ -1,0 +1,506 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » python图片处理评论Feed" href="https://cloudbasegroup.org/handbook/python/89/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="python操作Excel" href="https://cloudbasegroup.org/handbook/python/87/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/python/89/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=89">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F89%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F89%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-89 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/python/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            Python零基础快速入门			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/01.html">
+                                    写出第一行python代码					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/02.html">
+                                    基本语法与语句					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/03.html">
+                                    函数、模块和库					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/04.html">
+                                    用python做数学题					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/05.html">
+                                    日期与时间					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/06.html">
+                                    Python操作文件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/07.html">
+                                    pyecharts数据可视化					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/08.html">
+                                    python操作Excel					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/09.html">
+                                    python图片处理					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">python图片处理</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>Pillow是Python里的图像处理库（PIL：Python Image Library），提供了了广泛的文件格式支持，强大的图像处理能力，主要包括图像储存、图像显示、格式转换以及基本的图像处理操作等。</p>
+    <h4>安装pillow</h4>
+    <p>Windows安装pillow，只需要输入</p>
+            <div id="crayon-5dbc030e58688012928930" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip install Pillow</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e58688012928930-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e58688012928930-1"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-v">Pillow</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>而Mac电脑则不要忘记带版本号3</p>
+            <div id="crayon-5dbc030e5868e791545225" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip3 install Pillow</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e5868e791545225-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e5868e791545225-1"><span class="crayon-e">pip3 </span><span class="crayon-e">install </span><span class="crayon-v">Pillow</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>Pillow的功能非常强大，它是计算机视觉、图像处理乃至人工智能等多个领域都经常使用的库。</p>
+    <p><strong>技术文档</strong>：<a href="https://pillow.readthedocs.io/en/5.2.x/" target="_blank" rel="noopener noreferrer">pillow官方技术文档</a></p>
+    <p>如果想要深入学习，阅读技术文档是非常有必要的，下面也会为大家提供一些实战的案例。</p>
+    <h4>打开图片</h4>
+    <p>首先我们使用VS Code新建一个lesson9文件夹，然后复制一张图片到该文件夹，比如图片的名称为<a href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/python/hackwork.jpg" target="_blank" rel="noopener noreferrer">hackwork.jpg</a>（或者右键另存为我们准备好的图片），并在lesson9文件夹下新建一个python文件比如lesson9.py，输入下面的代码。</p>
+            <div id="crayon-5dbc030e58690865038620" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+    
+    # 打开一个jpg图像文件
+    image = Image.open('hackwork.jpg')
+    
+    # 显示图片
+    image.show()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e58690865038620-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e58690865038620-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e58690865038620-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e58690865038620-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e58690865038620-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e58690865038620-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc030e58690865038620-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e58690865038620-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">Image</span></div><div class="crayon-line" id="crayon-5dbc030e58690865038620-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e58690865038620-3"><span class="crayon-c"># 打开一个jpg图像文件</span></div><div class="crayon-line" id="crayon-5dbc030e58690865038620-4"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'hackwork.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58690865038620-5">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e58690865038620-6"><span class="crayon-c"># 显示图片</span></div><div class="crayon-line" id="crayon-5dbc030e58690865038620-7"><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-e">show</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>再在命令行工具里执行lesson9.py，这样就看到电脑会打开hackwork.jpg的图片。</p>
+    <h4>显示图片的信息</h4>
+    <p>使用pillow可以获取到图片的一些基础信息，并返回这些数据，虽然我们用其他设计工具比如ps等也能查看到图片的这些信息，但是编程的强大之处在于可以如果我们想要获取数万张图片的信息，只需要几段代码就可以搞定，不是人工使用ps查看可比。</p>
+            <div id="crayon-5dbc030e58693055437213" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+    
+    image = Image.open('hackwork.jpg')
+    print(image.format) #图片的文件格式；
+    print(image.size) #图片的长宽像素
+    print(image.width) #图片的宽度，像素
+    print(image.height) #图片的高度
+    print(image.mode) #图片的颜色模式
+    print(image.filename) #图片的名称
+    print(image.info)  #图片的产品信息</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc030e58693055437213-10" style="height: 20px;">10</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e58693055437213-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Image</span></div><div class="crayon-line" id="crayon-5dbc030e58693055437213-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e58693055437213-3"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'hackwork.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58693055437213-4"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">format</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">#图片的文件格式；</span></div><div class="crayon-line" id="crayon-5dbc030e58693055437213-5"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">size</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">#图片的长宽像素</span></div><div class="crayon-line" id="crayon-5dbc030e58693055437213-6"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">width</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">#图片的宽度，像素</span></div><div class="crayon-line" id="crayon-5dbc030e58693055437213-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">height</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">#图片的高度</span></div><div class="crayon-line" id="crayon-5dbc030e58693055437213-8"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">mode</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">#图片的颜色模式</span></div><div class="crayon-line" id="crayon-5dbc030e58693055437213-9"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">filename</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-c">#图片的名称</span></div><div class="crayon-line" id="crayon-5dbc030e58693055437213-10"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">info</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">#图片的产品信息</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>基础图片处理</h4>
+    <p>使用基础的图片软件，我们可以转换图片的格式，调整图片的大小，以及生成图片的缩略图，而Pillow也只需要数行代码就能处理这些图片。</p>
+    <p><strong>转换图片格式</strong></p>
+    <p>首先我们需要了解Pillow支持哪些图片格式，在技术文档里面我们可以发现pillow支持的图片格式是非常多的，除了jpg、png，还支持gif、pdf、eps、psd等，甚至webp，可谓相当全面了。</p>
+    <p><strong>技术文档：</strong><a href="https://pillow.readthedocs.io/en/5.1.x/handbook/image-file-formats.html" target="_blank" rel="noopener noreferrer">Pillow支持的图片格式</a></p>
+    <p>使用VS Code在lesson9文件夹下新建一个python文件，比如lesson9-1.py，输入下面代码后执行：</p>
+            <div id="crayon-5dbc030e58695917071633" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+    
+    image = Image.open('hackwork.jpg')
+    image.save('hackwork.png')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e58695917071633-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e58695917071633-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e58695917071633-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e58695917071633-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e58695917071633-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Image</span></div><div class="crayon-line" id="crayon-5dbc030e58695917071633-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e58695917071633-3"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'hackwork.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58695917071633-4"><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'hackwork.png'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>执行python文件后，我们就可以在lesson9文件夹里发现多了一张hackwork.png的图片。</p>
+    <blockquote><p>在平时工作中，很多人在修改文件格式的时候会犯一个错误，就是直接修改文件的后缀名，比如把jpg换成png等，这很可能会导致你的文件打不开，而Python虽然代码很简短，image.save()函数也只是修改了一下文件的后缀名，但是背后却是对图片进行的处理的。</p></blockquote>
+    <p><strong>修改图片大小</strong></p>
+    <p>使用resize()函数可以修改图片的大小，在lesson9文件夹下新建一个python文件，比如lesson9-2.py，输入下面代码后执行：</p>
+            <div id="crayon-5dbc030e58697035812181" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+    
+    image = Image.open('hackwork.jpg')
+    new_image = image.resize((400, 400))
+    new_image.save('hackwork_400_400.jpg')
+    
+    # 打印原来图片的大小
+    print(image.size) 
+    
+    # 打印新图片的大小
+    print(new_image.size)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc030e58697035812181-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e58697035812181-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Image</span></div><div class="crayon-line" id="crayon-5dbc030e58697035812181-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e58697035812181-3"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'hackwork.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58697035812181-4"><span class="crayon-v">new_image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-e">resize</span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-cn">400</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">400</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58697035812181-5"><span class="crayon-v">new_image</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'hackwork_400_400.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58697035812181-6">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e58697035812181-7"><span class="crayon-c"># 打印原来图片的大小</span></div><div class="crayon-line" id="crayon-5dbc030e58697035812181-8"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">size</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbc030e58697035812181-9">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e58697035812181-10"><span class="crayon-c"># 打印新图片的大小</span></div><div class="crayon-line" id="crayon-5dbc030e58697035812181-11"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">new_image</span><span class="crayon-sy">.</span><span class="crayon-v">size</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>除了在终端会显示出新旧两张图片的大小以外，我们还会在lesson9的文件夹里看到多了一张hackwork_400_400.jpg图片。打开这张图片，我们发现图片变形比较严重，因为长宽比不协调。</p>
+    <p><strong>缩略图</strong></p>
+    <p>上面修改图片大小会让图片的长宽比失衡，而如果是用缩略图的，则会保持正常的长宽比。使用pillow的thumbnail()函数可以对图片进行等比例压缩。</p>
+            <div id="crayon-5dbc030e58698198252535" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+    image = Image.open('hackwork.jpg')
+    image.thumbnail((400, 400))
+    image.save('hackwork_thumbnail.jpg')
+    
+    print(image.size)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e58698198252535-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e58698198252535-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e58698198252535-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e58698198252535-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e58698198252535-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e58698198252535-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e58698198252535-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Image</span></div><div class="crayon-line" id="crayon-5dbc030e58698198252535-2"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'hackwork.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58698198252535-3"><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-e">thumbnail</span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-cn">400</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">400</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58698198252535-4"><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'hackwork_thumbnail.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e58698198252535-5">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e58698198252535-6"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-v">size</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>旋转图片</strong></p>
+            <div id="crayon-5dbc030e5869a451597989" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+    colorImage  = Image.open("hackwork.jpg")
+    rotated     = colorImage.rotate(45)
+    transposed  = colorImage.transpose(Image.ROTATE_90)
+    colorImage.show()
+    rotated.show()
+    transposed.show()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e5869a451597989-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e5869a451597989-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e5869a451597989-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e5869a451597989-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e5869a451597989-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e5869a451597989-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc030e5869a451597989-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e5869a451597989-1"><span class="crayon-e">from </span><span class="crayon-e">PIL </span><span class="crayon-e">import </span><span class="crayon-e">Image</span></div><div class="crayon-line" id="crayon-5dbc030e5869a451597989-2"><span class="crayon-v">colorImage</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-e">open</span><span class="crayon-sy">(</span><span class="crayon-s">"hackwork.jpg"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869a451597989-3"><span class="crayon-v">rotated</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">colorImage</span><span class="crayon-sy">.</span><span class="crayon-e">rotate</span><span class="crayon-sy">(</span><span class="crayon-cn">45</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869a451597989-4"><span class="crayon-v">transposed</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">colorImage</span><span class="crayon-sy">.</span><span class="crayon-e">transpose</span><span class="crayon-sy">(</span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-v">ROTATE_90</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869a451597989-5"><span class="crayon-v">colorImage</span><span class="crayon-sy">.</span><span class="crayon-e">show</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869a451597989-6"><span class="crayon-v">rotated</span><span class="crayon-sy">.</span><span class="crayon-e">show</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869a451597989-7"><span class="crayon-v">transposed</span><span class="crayon-sy">.</span><span class="crayon-e">show</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>裁剪图片</strong></p>
+    <p>裁剪图片时的函数是crop()，裁剪是按照长方形来进行裁剪，crop()里的四个数值是按照图片的左、上、右、下位置来进行裁剪。也就</p>
+            <div id="crayon-5dbc030e5869b443931150" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+    
+    image = Image.open("hackwork.jpg")
+    box=(900, 100, 1500, 500)
+    cropedImage = image.crop(box)
+    cropedImage.save("hackwork_cropped.jpg")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e5869b443931150-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e5869b443931150-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e5869b443931150-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e5869b443931150-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e5869b443931150-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e5869b443931150-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e5869b443931150-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Image</span></div><div class="crayon-line" id="crayon-5dbc030e5869b443931150-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869b443931150-3"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">"hackwork.jpg"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869b443931150-4"><span class="crayon-v">box</span><span class="crayon-o">=</span><span class="crayon-sy">(</span><span class="crayon-cn">900</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">100</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1500</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">500</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869b443931150-5"><span class="crayon-v">cropedImage</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-e">crop</span><span class="crayon-sy">(</span><span class="crayon-v">box</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869b443931150-6"><span class="crayon-v">cropedImage</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">"hackwork_cropped.jpg"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>将一张图片粘贴到另外一张图片(合并图片)</h4>
+    <p></p>
+            <div id="crayon-5dbc030e5869d597038869" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+    
+    image = Image.open('weapp.jpg')
+    logo = Image.open('code.jpg')
+    image_copy = image.copy()
+    position = ((image_copy.width - logo.width), (image_copy.height - logo.height))
+    image_copy.paste(logo, position)
+    image_copy.save('pasted_image.jpg')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e5869d597038869-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e5869d597038869-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e5869d597038869-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e5869d597038869-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e5869d597038869-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e5869d597038869-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc030e5869d597038869-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc030e5869d597038869-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e5869d597038869-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Image</span></div><div class="crayon-line" id="crayon-5dbc030e5869d597038869-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869d597038869-3"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'weapp.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869d597038869-4"><span class="crayon-v">logo</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'code.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869d597038869-5"><span class="crayon-v">image_copy</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">copy</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869d597038869-6"><span class="crayon-v">position</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-v">image_copy</span><span class="crayon-sy">.</span><span class="crayon-v">width</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-v">logo</span><span class="crayon-sy">.</span><span class="crayon-v">width</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">image_copy</span><span class="crayon-sy">.</span><span class="crayon-v">height</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-h"> </span><span class="crayon-v">logo</span><span class="crayon-sy">.</span><span class="crayon-v">height</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869d597038869-7"><span class="crayon-v">image_copy</span><span class="crayon-sy">.</span><span class="crayon-e">paste</span><span class="crayon-sy">(</span><span class="crayon-v">logo</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">position</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869d597038869-8"><span class="crayon-v">image_copy</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'pasted_image.jpg'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>图片特效</h4>
+    <p></p>
+            <div id="crayon-5dbc030e5869f325409086" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image, ImageFilter
+    
+    # 打开一个jpg图像文件，注意是当前路径:
+    image = Image.open('test.jpg')
+    # 应用模糊滤镜:
+    image2 = image.filter(ImageFilter.BLUR)
+    image2.save('blur.jpg', 'jpeg')
+    
+    # 高斯模糊
+    image3 = image.filter(ImageFilter.GaussianBlur)
+    image3.save('GaussianBlur.jpg', 'jpeg')
+    
+    # 边缘增强
+    image4 = image.filter(ImageFilter.EDGE_ENHANCE)
+    image4.save('EdgeEhance.jpg', 'jpeg')
+    
+    # 找到边缘
+    image5 = image.filter(ImageFilter.FIND_EDGES)
+    image5.save('FindEdges.jpg', 'jpeg')
+    
+    # 浮雕
+    image6 = image.filter(ImageFilter.EMBOSS)
+    image6.save('Emboss.jpg', 'jpeg')
+    
+    # 轮廓
+    image7 = image.filter(ImageFilter.CONTOUR)
+    image7.save('Contour.jpg', 'jpeg')
+    
+    # 锐化
+    image8 = image.filter(ImageFilter.SHARPEN)
+    image8.save('Sharpen.jpg', 'jpeg')
+    
+    
+    # 平滑
+    image9 = image.filter(ImageFilter.SMOOTH)
+    image9.save('Smooth.jpg', 'jpeg')
+    
+    # 细节
+    image10 = image.filter(ImageFilter.DETAIL)
+    image10.save('Detail.jpg', 'jpeg')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-26" style="height: 20px;">26</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-27" style="height: 20px;">27</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-28" style="height: 20px;">28</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-29" style="height: 20px;">29</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-30" style="height: 20px;">30</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-31" style="height: 20px;">31</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-32" style="height: 20px;">32</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-33" style="height: 20px;">33</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-34" style="height: 20px;">34</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-35" style="height: 20px;">35</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-36" style="height: 20px;">36</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-37" style="height: 20px;">37</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-38" style="height: 20px;">38</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-39" style="height: 20px;">39</div><div class="crayon-num" data-line="crayon-5dbc030e5869f325409086-40" style="height: 20px;">40</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e5869f325409086-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">ImageFilter</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-3"><span class="crayon-c"># 打开一个jpg图像文件，注意是当前路径:</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-4"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">'test.jpg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-5"><span class="crayon-c"># 应用模糊滤镜:</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-6"><span class="crayon-v">image2</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">BLUR</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-7"><span class="crayon-v">image2</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'blur.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-8">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-9"><span class="crayon-c"># 高斯模糊</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-10"><span class="crayon-v">image3</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">GaussianBlur</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-11"><span class="crayon-v">image3</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'GaussianBlur.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-12">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-13"><span class="crayon-c"># 边缘增强</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-14"><span class="crayon-v">image4</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">EDGE_ENHANCE</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-15"><span class="crayon-v">image4</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'EdgeEhance.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-16">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-17"><span class="crayon-c"># 找到边缘</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-18"><span class="crayon-v">image5</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">FIND_EDGES</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-19"><span class="crayon-v">image5</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'FindEdges.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-20">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-21"><span class="crayon-c"># 浮雕</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-22"><span class="crayon-v">image6</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">EMBOSS</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-23"><span class="crayon-v">image6</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'Emboss.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-24">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-25"><span class="crayon-c"># 轮廓</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-26"><span class="crayon-v">image7</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">CONTOUR</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-27"><span class="crayon-v">image7</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'Contour.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-28">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-29"><span class="crayon-c"># 锐化</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-30"><span class="crayon-v">image8</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">SHARPEN</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-31"><span class="crayon-v">image8</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'Sharpen.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-32">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-33">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-34"><span class="crayon-c"># 平滑</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-35"><span class="crayon-v">image9</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">SMOOTH</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-36"><span class="crayon-v">image9</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'Smooth.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-37">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-38"><span class="crayon-c"># 细节</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-39"><span class="crayon-v">image10</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-k ">filter</span><span class="crayon-sy">(</span><span class="crayon-v">ImageFilter</span><span class="crayon-sy">.</span><span class="crayon-v">DETAIL</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e5869f325409086-40"><span class="crayon-v">image10</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'Detail.jpg'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'jpeg'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>创建图片</h4>
+    <p></p>
+            <div id="crayon-5dbc030e586a1240595904" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image
+     
+    image = Image.new('RGB', (60, 30), color = (73, 109, 137))
+    image.save('pil_color.png')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e586a1240595904-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e586a1240595904-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e586a1240595904-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e586a1240595904-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e586a1240595904-1"><span class="crayon-e">from </span><span class="crayon-e">PIL </span><span class="crayon-e">import </span><span class="crayon-e">Image</span></div><div class="crayon-line" id="crayon-5dbc030e586a1240595904-2"><span class="crayon-e"> </span></div><div class="crayon-line" id="crayon-5dbc030e586a1240595904-3"><span class="crayon-v">image</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-e">new</span><span class="crayon-sy">(</span><span class="crayon-s">'RGB'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">60</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">30</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">color</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">73</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">109</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">137</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a1240595904-4"><span class="crayon-v">image</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">'pil_color.png'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>在图片上写文字</h4>
+    <p></p>
+            <div id="crayon-5dbc030e586a2306260223" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from PIL import Image, ImageFont, ImageDraw, ImageEnhance
+    
+    source_img = Image.open("test.jpg").convert("RGB")
+    
+    
+    font = ImageFont.truetype("Arial")
+    
+    text = "very loooooooooooooooooong text"
+    
+    # get text size
+    text_size = font.getsize(text)
+    
+    # set button size + 10px margins
+    button_size = (text_size[0]+20, text_size[1]+20)
+    
+    # create image with correct size and black background
+    button_img = Image.new('RGB', button_size, "black")
+    
+    # put text on button with 10px margins
+    button_draw = ImageDraw.Draw(button_img)
+    button_draw.text((10, 10), text, font=font)
+    
+    # put button on source image in position (0, 0)
+    source_img.paste(button_img, (0, 0))
+    
+    # save in new file
+    source_img.save("output.jpg", "JPEG")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-26" style="height: 20px;">26</div><div class="crayon-num" data-line="crayon-5dbc030e586a2306260223-27" style="height: 20px;">27</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc030e586a2306260223-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">PIL </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">ImageFont</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">ImageDraw</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-e">ImageEnhance</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-3"><span class="crayon-v">source_img</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">open</span><span class="crayon-sy">(</span><span class="crayon-s">"test.jpg"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">convert</span><span class="crayon-sy">(</span><span class="crayon-s">"RGB"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-4">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-5">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-6"><span class="crayon-v">font</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">ImageFont</span><span class="crayon-sy">.</span><span class="crayon-e">truetype</span><span class="crayon-sy">(</span><span class="crayon-s">"Arial"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-7">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-8"><span class="crayon-v">text</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-s">"very loooooooooooooooooong text"</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-9">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-10"><span class="crayon-c"># get text size</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-11"><span class="crayon-v">text_size</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">font</span><span class="crayon-sy">.</span><span class="crayon-e">getsize</span><span class="crayon-sy">(</span><span class="crayon-v">text</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-12">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-13"><span class="crayon-c"># set button size + 10px margins</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-14"><span class="crayon-v">button_size</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">text_size</span><span class="crayon-sy">[</span><span class="crayon-cn">0</span><span class="crayon-sy">]</span><span class="crayon-o">+</span><span class="crayon-cn">20</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">text_size</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">]</span><span class="crayon-o">+</span><span class="crayon-cn">20</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-15">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-16"><span class="crayon-c"># create image with correct size and black background</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-17"><span class="crayon-v">button_img</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Image</span><span class="crayon-sy">.</span><span class="crayon-k ">new</span><span class="crayon-sy">(</span><span class="crayon-s">'RGB'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">button_size</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"black"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-18">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-19"><span class="crayon-c"># put text on button with 10px margins</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-20"><span class="crayon-v">button_draw</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">ImageDraw</span><span class="crayon-sy">.</span><span class="crayon-e">Draw</span><span class="crayon-sy">(</span><span class="crayon-v">button_img</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-21"><span class="crayon-v">button_draw</span><span class="crayon-sy">.</span><span class="crayon-e">text</span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-cn">10</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">text</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">font</span><span class="crayon-o">=</span><span class="crayon-v">font</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-22">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-23"><span class="crayon-c"># put button on source image in position (0, 0)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-24"><span class="crayon-v">source_img</span><span class="crayon-sy">.</span><span class="crayon-e">paste</span><span class="crayon-sy">(</span><span class="crayon-v">button_img</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-25">&nbsp;</div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-26"><span class="crayon-c"># save in new file</span></div><div class="crayon-line" id="crayon-5dbc030e586a2306260223-27"><span class="crayon-v">source_img</span><span class="crayon-sy">.</span><span class="crayon-e">save</span><span class="crayon-sy">(</span><span class="crayon-s">"output.jpg"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"JPEG"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+            
+</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

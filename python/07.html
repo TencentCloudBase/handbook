@@ -1,0 +1,652 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » pyecharts数据可视化评论Feed" href="https://cloudbasegroup.org/handbook/python/85/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="Python操作文件" href="https://cloudbasegroup.org/handbook/python/83/">
+    <link rel="next" title="python操作Excel" href="https://cloudbasegroup.org/handbook/python/87/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/python/85/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=85">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F85%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F85%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-85 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/python/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            Python零基础快速入门			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/01.html">
+                                    写出第一行python代码					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/02.html">
+                                    基本语法与语句					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/03.html">
+                                    函数、模块和库					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/04.html">
+                                    用python做数学题					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/05.html">
+                                    日期与时间					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/06.html">
+                                    Python操作文件					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/07.html">
+                                    pyecharts数据可视化					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/08.html">
+                                    python操作Excel					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/09.html">
+                                    python图片处理					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">pyecharts数据可视化</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>数据处理是Python的强项，借助于一些数据可视化的库，比如pyecharts就可以做出非常精美的交互式图表啦。</p>
+    <blockquote><p>python的库非常多，每个库又有非常多的函数，不是每一个库都会被写成非常详细的教程，每个函数的用法我们也是没法记住的，所以在使用任何一个python库时，都要去翻阅对应的技术文档。</p></blockquote>
+    <h4>Pyecharts入门</h4>
+    <p>pyecharts 可以生成 Echarts 图表，Echarts 是百度开源的一个数据可视化 JS 库，广泛用于在网页上呈现可以交互的图表，有了pyecharts，我们也可以实用Python来生成好看的交互图表啦。</p>
+    <p><strong>技术文档：</strong><a href="https://05x-docs.pyecharts.org/#/zh-cn/prepare" target="_blank" rel="noopener noreferrer">pyecharts技术文档</a></p>
+    <blockquote><p>技术文档可以先粗略浏览一下，因为技术文档通常比较大而全，直接阅读可能没法快速上手，等你实战完这一章的教程之后，如果你想继续深入，可以通过阅读文档的方式来提高。</p></blockquote>
+    <p><strong>安装pyecharts</strong></p>
+    <p>为了能更好的使用pyecharts，我们把pyecharts依赖的一些库也一起安装，除了和pyecharts_snapshot是必须的，下面的大家可以选择性安装，不过为了学习的需要，建议大家都安装。</p>
+    <ul>
+    <li>pyecharts就是主要库啦</li>
+    <li>pyecharts_snapshot 用于生成图表，如果图表没有显示出来，可以用之前学的pip list来检查一下它是否安装成功</li>
+    <li>echarts-themes-pypkg：这个主要用于pyecharts的主题生成</li>
+    </ul>
+    <p></p>
+            <div id="crayon-5dbc02a93d982060691770" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip install pyecharts==0.5.11 pyecharts_snapshot echarts-themes-pypkg</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d982060691770-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d982060691770-1"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-i">pyecharts</span><span class="crayon-o">==</span>0<span class="crayon-sy">.</span>5<span class="crayon-sy">.</span>11<span class="crayon-h"> </span><span class="crayon-e">pyecharts_snapshot </span><span class="crayon-i">echarts</span><span class="crayon-cn">-themes</span><span class="crayon-cn">-pypkg</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote class="danger"><p>注意Mac要把pip写成pip3哦~</p></blockquote>
+    <p><strong>制作第一个信息图表</strong></p>
+    <p>我们使用VS Code在python-project目录下新建一个bar.py文件，然后输入下面代码（#里面的内容不用输哦，主要是为了让大家理解里么的代码）：</p>
+            <div id="crayon-5dbc02a93d98a754444761" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#我们要制作一个柱状图，需要先引入Bar
+    from pyecharts import Bar
+    
+    #创建图表实例，并给图表添加标题和副标题
+    bar = Bar("使用Python制作柱状图", "HackWork技术工坊交互图表实战")
+    
+    #选择图表的主题样式
+    bar.use_theme("vintage")
+    
+    #图例的名称
+    name="服装"
+    
+    #x轴坐标的数据，注意是一个列表List类型，注意这里有6个数据
+    x_axis=["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+    
+    #y轴坐标的数据，注意是也一个列表List类型，注意这里也有6个数据
+    y_axis=[5, 20, 36, 10, 75, 90]
+    
+    # 给图表添加数据
+    bar.add(name,x_axis,y_axis)
+    
+    # 生成本地 HTML 文件
+    bar.render()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5dbc02a93d98a754444761-23" style="height: 20px;">23</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-1"><span class="crayon-c">#我们要制作一个柱状图，需要先引入Bar</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-2"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">pyecharts </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">Bar</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-4"><span class="crayon-c">#创建图表实例，并给图表添加标题和副标题</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-5"><span class="crayon-v">bar</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">Bar</span><span class="crayon-sy">(</span><span class="crayon-s">"使用Python制作柱状图"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"HackWork技术工坊交互图表实战"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-6">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-7"><span class="crayon-c">#选择图表的主题样式</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-8"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">use_theme</span><span class="crayon-sy">(</span><span class="crayon-s">"vintage"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-9">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-10"><span class="crayon-c">#图例的名称</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-11"><span class="crayon-v">name</span><span class="crayon-o">=</span><span class="crayon-s">"服装"</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-12">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-13"><span class="crayon-c">#x轴坐标的数据，注意是一个列表List类型，注意这里有6个数据</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-14"><span class="crayon-v">x_axis</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-s">"衬衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"羊毛衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"雪纺衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"裤子"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"高跟鞋"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"袜子"</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-15">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-16"><span class="crayon-c">#y轴坐标的数据，注意是也一个列表List类型，注意这里也有6个数据</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-17"><span class="crayon-v">y_axis</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-cn">5</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">20</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">36</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">75</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">90</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-18">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-19"><span class="crayon-c"># 给图表添加数据</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-20"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-v">name</span><span class="crayon-sy">,</span><span class="crayon-v">x_axis</span><span class="crayon-sy">,</span><span class="crayon-v">y_axis</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-21">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-22"><span class="crayon-c"># 生成本地 HTML 文件</span></div><div class="crayon-line" id="crayon-5dbc02a93d98a754444761-23"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再来执行python文件，这时会在python-project目录下生成一个render.html文件，在电脑上找到该文件，双击打开或使用浏览器打开。</p>
+    <blockquote><p>再执行一次python文件，会把之前生成的render.html给覆盖掉，这个可以留意一下。</p></blockquote>
+    <blockquote class="danger"><p>使用电脑自带的终端与VS Code的终端执行后html文件的位置会有所不同，这是因为执行路径的问题，这个以后你们可以自行研究。</p></blockquote>
+    <h4>图表的设置</h4>
+    <p>我们说过Python不仅有很多库，而且每个库有很多函数，下面的这些设置也是阅读pyecharts文档而<strong>整理抄袭过来</strong>的，所以大家千万不要去记，先搞清楚是怎么一回事，然后再去翻阅技术文档哦~</p>
+    <p><strong>设置不同的主题样式</strong></p>
+    <p>在上面的案例中，我们使用到了bar.use_theme()，这个可以设置主题的样式，默认的是dark，主题样式还有vintage、macarons、infographic、shine、roma、westeros、wonderland、chalk、halloween、essos、walden、purple-passion、romantic.</p>
+    <p>比如我们想换成wonderland样式，只需修改use_theme()里的值即可。把上面的案例里的vintage换成wonderland，然后再来执行bar.py文件，查看效果:</p>
+            <div id="crayon-5dbc02a93d98c229716256" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">bar.use_theme("wonderland")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d98c229716256-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d98c229716256-1"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">use_theme</span><span class="crayon-sy">(</span><span class="crayon-s">"wonderland"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>设置画布的样式</strong></p>
+    <p>我们可以设置画布的宽度（默认为800px）、高度（默认为400px）以及背景颜色（默认为白色），上面的案例我们没有给画布设置样式，所以画布的宽、高度、背景颜色都是默认值。</p>
+    <p>我们可以在Bar()里给柱状图表设置宽度为1200px，高度为600px，背景颜色为#f7e7cd，修改之后再来执行python文件查看效果：</p>
+            <div id="crayon-5dbc02a93d98f376792343" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">bar = Bar("使用Python制作柱状图", "HackWork技术工坊交互图表实战",width=1200,height=600,background_color="#f7e7cd")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d98f376792343-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d98f376792343-1"><span class="crayon-v">bar</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">Bar</span><span class="crayon-sy">(</span><span class="crayon-s">"使用Python制作柱状图"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"HackWork技术工坊交互图表实战"</span><span class="crayon-sy">,</span><span class="crayon-v">width</span><span class="crayon-o">=</span><span class="crayon-cn">1200</span><span class="crayon-sy">,</span><span class="crayon-v">height</span><span class="crayon-o">=</span><span class="crayon-cn">600</span><span class="crayon-sy">,</span><span class="crayon-v">background_color</span><span class="crayon-o">=</span><span class="crayon-s">"#f7e7cd"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>设置右侧实用工具箱</strong></p>
+    <p>在图表的右侧有一个工具箱，可以下载图片、查看数据，有时候我们希望显示更多内容，有时为了展示我们希望不要有工具箱出现，这些都是可以设置的。</p>
+    <p>比如我们想显示更多的工具，可以在add()里添加设置is_more_utils为True。</p>
+            <div id="crayon-5dbc02a93d991270980495" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">bar.add(name,x_axis,y_axis,is_more_utils=True)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d991270980495-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d991270980495-1"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-v">name</span><span class="crayon-sy">,</span><span class="crayon-v">x_axis</span><span class="crayon-sy">,</span><span class="crayon-v">y_axis</span><span class="crayon-sy">,</span><span class="crayon-v">is_more_utils</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>如果你不希望显示工具箱，可以在add()里添加设置is_toolbox_show为False。</p>
+            <div id="crayon-5dbc02a93d993193155876" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">bar.add(name,x_axis,y_axis,is_toolbox_show =False)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d993193155876-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d993193155876-1"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-v">name</span><span class="crayon-sy">,</span><span class="crayon-v">x_axis</span><span class="crayon-sy">,</span><span class="crayon-v">y_axis</span><span class="crayon-sy">,</span><span class="crayon-v">is_toolbox_show</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-t">False</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>设置x轴、y轴的名称</strong></p>
+    <p>我们只需要给add()函数传入xaxis_name=””、yaxis_name=””值即可。</p>
+            <div id="crayon-5dbc02a93d994436402671" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">bar.add(name,x_axis,y_axis,xaxis_name="商品销量",yaxis_name="商品类型")</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d994436402671-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d994436402671-1"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-v">name</span><span class="crayon-sy">,</span><span class="crayon-v">x_axis</span><span class="crayon-sy">,</span><span class="crayon-v">y_axis</span><span class="crayon-sy">,</span><span class="crayon-v">xaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品销量"</span><span class="crayon-sy">,</span><span class="crayon-v">yaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品类型"</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>更多设置比如设置坐标线的颜色、坐标线的宽度、坐标轴名称的位置、坐标轴标签字体的颜色和大小等，以及提示框、图形上的文本标签等等大家都可以以后查阅技术文档来了解哦~</p>
+    <h4>数据比较与数据堆叠</h4>
+    <p><strong>数据比较</strong></p>
+    <p>在实际作图中，我们希望可以对多个类别的数据进行比较，比如在这里我们希望可以通过柱状图来比较两个厂家商品销量。这时我们x轴的商品类型不变，而在y轴有两个数据，我们来看一下使用pyecharts是怎么处理的。</p>
+    <p>新建一个python文件，比如bar2.py，输入下面的代码，然后保存</p>
+            <div id="crayon-5dbc02a93d996050169918" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from pyecharts import Bar
+    bar = Bar("柱状图堆叠实例", "HackWork技术工坊交互图表实战")
+    
+    #x轴坐标的数据
+    x_axis=["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+    
+    #y轴坐标的数据
+    y_axis1=[5, 20, 36, 10, 75, 90]
+    y_axis2=[10, 25, 8, 60, 20, 80]
+    
+    # 给图表添加数据
+    bar.add("商家A", x_axis, y_axis1,xaxis_name="商品销量",yaxis_name="商品类型")
+    bar.add("商家B", x_axis, y_axis2,xaxis_name="商品销量",yaxis_name="商品类型")
+    
+    bar.render()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dbc02a93d996050169918-15" style="height: 20px;">15</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d996050169918-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">pyecharts </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Bar</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-2"><span class="crayon-v">bar</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">Bar</span><span class="crayon-sy">(</span><span class="crayon-s">"柱状图堆叠实例"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"HackWork技术工坊交互图表实战"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-4"><span class="crayon-c">#x轴坐标的数据</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-5"><span class="crayon-v">x_axis</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-s">"衬衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"羊毛衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"雪纺衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"裤子"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"高跟鞋"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"袜子"</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-6">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-7"><span class="crayon-c">#y轴坐标的数据</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-8"><span class="crayon-v">y_axis1</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-cn">5</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">20</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">36</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">75</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">90</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-9"><span class="crayon-v">y_axis2</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-cn">10</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">25</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">8</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">60</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">20</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">80</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-10">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-11"><span class="crayon-c"># 给图表添加数据</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-12"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"商家A"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">x_axis</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y_axis1</span><span class="crayon-sy">,</span><span class="crayon-v">xaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品销量"</span><span class="crayon-sy">,</span><span class="crayon-v">yaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品类型"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-13"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"商家B"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">x_axis</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y_axis2</span><span class="crayon-sy">,</span><span class="crayon-v">xaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品销量"</span><span class="crayon-sy">,</span><span class="crayon-v">yaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品类型"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-14">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d996050169918-15"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们只需要再在y坐标添加一组数据即可。思考一下为什么是y坐标？，如果是三组数据来对比呢？大家应该知道怎么做了吗？</p>
+    <p><strong>数据堆叠</strong></p>
+    <p>为了更加鲜明的对比数据，我们可以把数据进行堆叠显示，这时只需要给add()传入is_stack=True即可。参考下面的代码，修改上面案例的代码，保存后运行，然后打开render.html来查看效果</p>
+            <div id="crayon-5dbc02a93d998117287607" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">bar.add("商家A", x_axis, y_axis1,xaxis_name="商品销量",yaxis_name="商品类型",is_stack=True)
+    bar.add("商家B", x_axis, y_axis2,xaxis_name="商品销量",yaxis_name="商品类型",is_stack=True)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d998117287607-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d998117287607-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d998117287607-1"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"商家A"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">x_axis</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y_axis1</span><span class="crayon-sy">,</span><span class="crayon-v">xaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品销量"</span><span class="crayon-sy">,</span><span class="crayon-v">yaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品类型"</span><span class="crayon-sy">,</span><span class="crayon-v">is_stack</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d998117287607-2"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"商家B"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">x_axis</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">y_axis2</span><span class="crayon-sy">,</span><span class="crayon-v">xaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品销量"</span><span class="crayon-sy">,</span><span class="crayon-v">yaxis_name</span><span class="crayon-o">=</span><span class="crayon-s">"商品类型"</span><span class="crayon-sy">,</span><span class="crayon-v">is_stack</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>折线图Line</h4>
+    <p>折线图是用折线将各个数据点标志连接起来的图表，用于展现数据的变化趋势。</p>
+    <p><strong>折线图案例</strong></p>
+    <p>比如我们用折线图来展示深圳一周气温的变化，除了需要引入Line模块，和制作柱状图没有太大的区别哦~</p>
+            <div id="crayon-5dbc02a93d99a827983219" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#我们要制作一个折线图，所以需要先引入Line
+    from pyecharts import Line
+    
+    days = ["周一", "周二", "周三", "周四", "周五", "周六","周日"]
+    degree1 = [15, 21, 30 , 36, 33, 29, 25]
+    
+    line = Line("一周气温变化")
+    line.add("深圳气温", days, degree1)
+    line.render()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02a93d99a827983219-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-1"><span class="crayon-c">#我们要制作一个折线图，所以需要先引入Line</span></div><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-2"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">pyecharts </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Line</span></div><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-4"><span class="crayon-v">days</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">"周一"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周二"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周三"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周四"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周五"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周六"</span><span class="crayon-sy">,</span><span class="crayon-s">"周日"</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-5"><span class="crayon-v">degree1</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">15</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">21</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">30</span><span class="crayon-h"> </span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">36</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">33</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">29</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">25</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-6">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-7"><span class="crayon-v">line</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">Line</span><span class="crayon-sy">(</span><span class="crayon-s">"一周气温变化"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-8"><span class="crayon-v">line</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"深圳气温"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">days</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">degree1</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99a827983219-9"><span class="crayon-v">line</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>折线设置为平滑曲线</strong></p>
+    <p>气温的变化应该是平滑过度的，我们可以给add()设置is_smooth为True来让折线变成平滑曲线：</p>
+            <div id="crayon-5dbc02a93d99b553890909" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">line.add("深圳气温", days, degree1,is_smooth=True)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d99b553890909-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d99b553890909-1"><span class="crayon-v">line</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"深圳气温"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">days</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">degree1</span><span class="crayon-sy">,</span><span class="crayon-v">is_smooth</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>填充曲线绘制面积</strong></p>
+    <p>要给折线图绘制面积填充，需要设置三个值，is_fill是否填充设置为true，area_color填充的颜色，比如我们设置为#f60，area_opacity填充颜色的透明度，比如我们设置为0.3（值为0~1，越小越透明），将上面的案例对应代码修改为以下代码，然后再来生成render.html，使用浏览器打开查看效果。</p>
+            <div id="crayon-5dbc02a93d99d407373403" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">line.add("深圳气温", days, degree1,is_fill=True,area_color="#f60",area_opacity=0.3,is_smooth=True)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d99d407373403-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d99d407373403-1"><span class="crayon-v">line</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"深圳气温"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">days</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">degree1</span><span class="crayon-sy">,</span><span class="crayon-v">is_fill</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">,</span><span class="crayon-v">area_color</span><span class="crayon-o">=</span><span class="crayon-s">"#f60"</span><span class="crayon-sy">,</span><span class="crayon-v">area_opacity</span><span class="crayon-o">=</span><span class="crayon-cn">0.3</span><span class="crayon-sy">,</span><span class="crayon-v">is_smooth</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>柱状图Bar和折线图Line的堆叠</h4>
+    <p>有的时候我们会在一张图表上使用多种不同的图表类型来展示数据，这时可以使用Overlap将不同类型图表画在一张图上。利用第一个图表为基础，往后的数据都将会画在第一个图表上。</p>
+            <div id="crayon-5dbc02a93d99f608430385" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from pyecharts import Line,Bar,Overlap
+    
+    days = ["周一", "周二", "周三", "周四", "周五", "周六","周日"]
+    
+    degree1 = [15, 21, 30 , 36, 33, 29, 25]
+    quality = [35, 55, 65 , 70, 65, 72, 55]
+    
+    bar =Bar("一周气温变化")
+    bar.add("深圳气温", days, degree1)
+    
+    line=Line("一周空气质量变化")
+    line.add("深圳空气质量", days, quality,is_smooth=True)
+    
+    #声明叠加
+    overlap=Overlap()
+    
+    #先添加一张底图，底图为柱状图
+    overlap.add(bar)
+    
+    #再在柱状图的基础上新增一个折线图
+    overlap.add(line)
+    
+    overlap.render()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5dbc02a93d99f608430385-23" style="height: 20px;">23</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">pyecharts </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">Line</span><span class="crayon-sy">,</span><span class="crayon-v">Bar</span><span class="crayon-sy">,</span><span class="crayon-e">Overlap</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-3"><span class="crayon-v">days</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">"周一"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周二"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周三"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周四"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周五"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"周六"</span><span class="crayon-sy">,</span><span class="crayon-s">"周日"</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-4">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-5"><span class="crayon-v">degree1</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">15</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">21</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">30</span><span class="crayon-h"> </span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">36</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">33</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">29</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">25</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-6"><span class="crayon-v">quality</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">35</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">55</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">65</span><span class="crayon-h"> </span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">70</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">65</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">72</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">55</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-7">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-8"><span class="crayon-v">bar</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-e">Bar</span><span class="crayon-sy">(</span><span class="crayon-s">"一周气温变化"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-9"><span class="crayon-v">bar</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"深圳气温"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">days</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">degree1</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-10">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-11"><span class="crayon-v">line</span><span class="crayon-o">=</span><span class="crayon-e">Line</span><span class="crayon-sy">(</span><span class="crayon-s">"一周空气质量变化"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-12"><span class="crayon-v">line</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"深圳空气质量"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">days</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">quality</span><span class="crayon-sy">,</span><span class="crayon-v">is_smooth</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-13">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-14"><span class="crayon-c">#声明叠加</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-15"><span class="crayon-v">overlap</span><span class="crayon-o">=</span><span class="crayon-e">Overlap</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-16">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-17"><span class="crayon-c">#先添加一张底图，底图为柱状图</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-18"><span class="crayon-v">overlap</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-v">bar</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-19">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-20"><span class="crayon-c">#再在柱状图的基础上新增一个折线图</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-21"><span class="crayon-v">overlap</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-v">line</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-22">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d99f608430385-23"><span class="crayon-v">overlap</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>饼图Pie</h4>
+    <p>饼图主要用于表现不同类目的数据在总和中的占比。每个的弧度表示数据数量的比例。</p>
+    <p>使用VS Code编辑器新建一个pie.py，然后输入以下代码，使用命令行工具执行python文件，使用浏览器打开生成的render.html查看效果。</p>
+            <div id="crayon-5dbc02a93d9a0017827072" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#首先我们饼图Pie的模块
+    from pyecharts import Pie
+    
+    clothing = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+    sales = [11, 12, 13, 10, 10, 10]
+    pie = Pie("小明今天淘宝店的销量")
+    pie.add("",clothing,sales,is_label_show=True)
+    pie.render()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d9a0017827072-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a0017827072-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a0017827072-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a0017827072-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a0017827072-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a0017827072-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a0017827072-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a0017827072-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d9a0017827072-1"><span class="crayon-c">#首先我们饼图Pie的模块</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a0017827072-2"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">pyecharts </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">Pie</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a0017827072-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d9a0017827072-4"><span class="crayon-v">clothing</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">"衬衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"羊毛衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"雪纺衫"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"裤子"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"高跟鞋"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"袜子"</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a0017827072-5"><span class="crayon-v">sales</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">11</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">12</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">13</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a0017827072-6"><span class="crayon-v">pie</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">Pie</span><span class="crayon-sy">(</span><span class="crayon-s">"小明今天淘宝店的销量"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a0017827072-7"><span class="crayon-v">pie</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">""</span><span class="crayon-sy">,</span><span class="crayon-v">clothing</span><span class="crayon-sy">,</span><span class="crayon-v">sales</span><span class="crayon-sy">,</span><span class="crayon-v">is_label_show</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a0017827072-8"><span class="crayon-v">pie</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>设置为环形图</strong></p>
+    <p>饼图默认半径为75，也就是radius的默认值为[0,75]，这里的0是内半径，75为外半径，如果给radius的内半径设置的值大于0，饼图就变成了环形图，比如：</p>
+            <div id="crayon-5dbc02a93d9a2283871882" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pie.add("",clothing,sales,radius=[40, 75],is_label_show=True)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d9a2283871882-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d9a2283871882-1"><span class="crayon-v">pie</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">""</span><span class="crayon-sy">,</span><span class="crayon-v">clothing</span><span class="crayon-sy">,</span><span class="crayon-v">sales</span><span class="crayon-sy">,</span><span class="crayon-v">radius</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-cn">40</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">75</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span><span class="crayon-v">is_label_show</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>地图</h4>
+    <p>要使用Pyecharts生成地图，首先要下载echarts的地图包，大家可以在命令行窗口逐行输入命令，分别下载，Mac要改成pip3哦。</p>
+            <div id="crayon-5dbc02a93d9a4213314327" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">pip install echarts-countries-pypkg 
+    pip install echarts-china-provinces-pypkg 
+    pip install echarts-china-cities-pypkg 
+    pip install echarts-china-counties-pypkg 
+    pip install echarts-china-misc-pypkgkg 
+    pip install echarts-china-misc-pypkg</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d9a4213314327-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a4213314327-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a4213314327-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a4213314327-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a4213314327-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a4213314327-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d9a4213314327-1"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-v">echarts</span><span class="crayon-o">-</span><span class="crayon-v">countries</span><span class="crayon-o">-</span><span class="crayon-e">pypkg </span></div><div class="crayon-line" id="crayon-5dbc02a93d9a4213314327-2"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-v">echarts</span><span class="crayon-o">-</span><span class="crayon-v">china</span><span class="crayon-o">-</span><span class="crayon-v">provinces</span><span class="crayon-o">-</span><span class="crayon-e">pypkg </span></div><div class="crayon-line" id="crayon-5dbc02a93d9a4213314327-3"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-v">echarts</span><span class="crayon-o">-</span><span class="crayon-v">china</span><span class="crayon-o">-</span><span class="crayon-v">cities</span><span class="crayon-o">-</span><span class="crayon-e">pypkg </span></div><div class="crayon-line" id="crayon-5dbc02a93d9a4213314327-4"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-v">echarts</span><span class="crayon-o">-</span><span class="crayon-v">china</span><span class="crayon-o">-</span><span class="crayon-v">counties</span><span class="crayon-o">-</span><span class="crayon-e">pypkg </span></div><div class="crayon-line" id="crayon-5dbc02a93d9a4213314327-5"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-v">echarts</span><span class="crayon-o">-</span><span class="crayon-v">china</span><span class="crayon-o">-</span><span class="crayon-v">misc</span><span class="crayon-o">-</span><span class="crayon-e">pypkgkg </span></div><div class="crayon-line" id="crayon-5dbc02a93d9a4213314327-6"><span class="crayon-e">pip </span><span class="crayon-e">install </span><span class="crayon-v">echarts</span><span class="crayon-o">-</span><span class="crayon-v">china</span><span class="crayon-o">-</span><span class="crayon-v">misc</span><span class="crayon-o">-</span><span class="crayon-v">pypkg</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <ul>
+    <li><strong>echarts-themes-pypkg</strong>：可以让Echarts更换不同的色系；</li>
+    <li><strong>echarts-countries-pypkg</strong>：世界地图和 213 个国家，包括中国地图；</li>
+    <li><strong>echarts-china-provinces-pypkg</strong>：中国23 个省，5 个自治区地图</li>
+    <li><strong>echarts-china-cities-pypkg</strong>：370个中国城市</li>
+    <li><strong>echarts-china-counties-pypkg</strong>：2882 个中国县·区</li>
+    <li><strong>echarts-china-misc-pypkg</strong>：11 个中国区域地图，比如华南、华北。</li>
+    </ul>
+    <p>地图主要用于地理区域数据的可视化。我们来把中国部分省份的人口的数据显示在中国地图上。</p>
+    <ul>
+    <li>这里的value的数量需要是数字；</li>
+    <li>我们直接写省市的名称，程序是自动匹配到地图上，所以这里设置的province列表为省市名，不能随便写名字，比如把“广东”写成“广东省”</li>
+    <li>maptype=’china’，这里是指地图类型，默认为china中国，is_label_show=True表示是否在地图上显示省市的名称。</li>
+    </ul>
+    <p></p>
+            <div id="crayon-5dbc02a93d9a5841645549" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from pyecharts import Map
+    
+    value = [10430.03, 9579.31,9402.36 , 8041.82,7865.99,7185.42,6568.37]
+    province = ["广东", "山东", "河南", "四川","江苏","河北","湖南"]
+    people = Map("全国各省人口数量", width=1200, height=600)
+    people.add("人口：万人", province, value, maptype='china', is_label_show=True)
+    people.render()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d9a5841645549-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a5841645549-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a5841645549-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a5841645549-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a5841645549-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a5841645549-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a5841645549-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d9a5841645549-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">pyecharts </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">Map</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a5841645549-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d9a5841645549-3"><span class="crayon-v">value</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">10430.03</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">9579.31</span><span class="crayon-sy">,</span><span class="crayon-cn">9402.36</span><span class="crayon-h"> </span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">8041.82</span><span class="crayon-sy">,</span><span class="crayon-cn">7865.99</span><span class="crayon-sy">,</span><span class="crayon-cn">7185.42</span><span class="crayon-sy">,</span><span class="crayon-cn">6568.37</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a5841645549-4"><span class="crayon-v">province</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">"广东"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"山东"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"河南"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"四川"</span><span class="crayon-sy">,</span><span class="crayon-s">"江苏"</span><span class="crayon-sy">,</span><span class="crayon-s">"河北"</span><span class="crayon-sy">,</span><span class="crayon-s">"湖南"</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a5841645549-5"><span class="crayon-v">people</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">Map</span><span class="crayon-sy">(</span><span class="crayon-s">"全国各省人口数量"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">width</span><span class="crayon-o">=</span><span class="crayon-cn">1200</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">height</span><span class="crayon-o">=</span><span class="crayon-cn">600</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a5841645549-6"><span class="crayon-v">people</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"人口：万人"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">province</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">value</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">maptype</span><span class="crayon-o">=</span><span class="crayon-s">'china'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">is_label_show</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a5841645549-7"><span class="crayon-v">people</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>使用VS Code新建一个map.py，输入上面代码，保存后执行python文件，使用浏览器打开render.html查看一下效果。</p>
+    <p><strong>给地图着色</strong></p>
+    <p>我们看到上图只是把列表里面的省市使用红点给标记出来了，如果想给地图着色应该怎么处理呢？我们需要设置两个值</p>
+    <ul>
+    <li>is_visualmap=True，是否给地图着色</li>
+    <li>visual_range=[a, b]，着色的数字区域，默认是0到100，由于我们的数据是人口，数字远远超出100，这时我们可以给visual_range设置为[5000, 12000]</li>
+    </ul>
+    <p></p>
+            <div id="crayon-5dbc02a93d9a8357623943" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from pyecharts import Map
+    
+    value = [10430.03, 9579.31,9402.36 , 8041.82,7865.99,7185.42,6568.37]
+    province = ["广东", "山东", "河南", "四川","江苏","河北","湖南"]
+    people = Map("全国各省人口数量", width=1200, height=600)
+    people.add("人口：万人", province, value, 
+        maptype='china', 
+        is_label_show=True,
+        is_visualmap=True,
+        visual_range=[5000, 12000])
+    people.render()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a8357623943-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">pyecharts </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">Map</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-3"><span class="crayon-v">value</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-cn">10430.03</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">9579.31</span><span class="crayon-sy">,</span><span class="crayon-cn">9402.36</span><span class="crayon-h"> </span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">8041.82</span><span class="crayon-sy">,</span><span class="crayon-cn">7865.99</span><span class="crayon-sy">,</span><span class="crayon-cn">7185.42</span><span class="crayon-sy">,</span><span class="crayon-cn">6568.37</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-4"><span class="crayon-v">province</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span><span class="crayon-s">"广东"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"山东"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"河南"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"四川"</span><span class="crayon-sy">,</span><span class="crayon-s">"江苏"</span><span class="crayon-sy">,</span><span class="crayon-s">"河北"</span><span class="crayon-sy">,</span><span class="crayon-s">"湖南"</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-5"><span class="crayon-v">people</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-k ">Map</span><span class="crayon-sy">(</span><span class="crayon-s">"全国各省人口数量"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">width</span><span class="crayon-o">=</span><span class="crayon-cn">1200</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">height</span><span class="crayon-o">=</span><span class="crayon-cn">600</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-6"><span class="crayon-v">people</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">"人口：万人"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">province</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">value</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">maptype</span><span class="crayon-o">=</span><span class="crayon-s">'china'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">is_label_show</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">is_visualmap</span><span class="crayon-o">=</span><span class="crayon-t">True</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">visual_range</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-cn">5000</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">12000</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a8357623943-11"><span class="crayon-v">people</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>如何给标明城市（使用Geo图表）、以及如何只画某一个省份如广东省的地图呢？大家可以去查阅技术文档。</p>
+    <h4>词云图</h4>
+    <p>词云图，也叫文字云，是对文本中出现频率较高的“关键词”予以视觉化的展现，词云图过滤掉大量的低频低质的文本信息，使得浏览者只要一眼扫过文本就可领略文本的主旨。</p>
+            <div id="crayon-5dbc02a93d9a9206410841" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">from pyecharts import WordCloud
+    
+    name = [
+        '云计算','人工智能', '大数据', '可视化', '机器人', '自动驾驶','JavaScript', 'Ruby', '小程序', 
+        '', 'Flutter', 'Vue', 'React','Wordpress','Python', 'SQL', 'Java', 'C/C++','PHP', 'Swift' ]
+    value = [
+        8654, 7181, 6386, 5055, 4467, 3244, 2898, 1484, 1112,
+        3965, 4847, 2582, 1555, 1550, 1462, 1366, 1360, 1282, 2273, 3265]
+    wordcloud = WordCloud(width=1300, height=620)
+    wordcloud.add("", name, value)
+    wordcloud.render()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc02a93d9a9206410841-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-1"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">pyecharts </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">WordCloud</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-3"><span class="crayon-v">name</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">'云计算'</span><span class="crayon-sy">,</span><span class="crayon-s">'人工智能'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'大数据'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'可视化'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'机器人'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'自动驾驶'</span><span class="crayon-sy">,</span><span class="crayon-s">'JavaScript'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Ruby'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'小程序'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">''</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Flutter'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Vue'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'React'</span><span class="crayon-sy">,</span><span class="crayon-s">'Wordpress'</span><span class="crayon-sy">,</span><span class="crayon-s">'Python'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'SQL'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Java'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'C/C++'</span><span class="crayon-sy">,</span><span class="crayon-s">'PHP'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'Swift'</span><span class="crayon-h"> </span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-6"><span class="crayon-v">value</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-cn">8654</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">7181</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">6386</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">5055</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">4467</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">3244</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2898</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1484</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1112</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-cn">3965</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">4847</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2582</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1555</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1550</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1462</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1366</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1360</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">1282</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">2273</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">3265</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-9"><span class="crayon-v">wordcloud</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">WordCloud</span><span class="crayon-sy">(</span><span class="crayon-v">width</span><span class="crayon-o">=</span><span class="crayon-cn">1300</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">height</span><span class="crayon-o">=</span><span class="crayon-cn">620</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-10"><span class="crayon-v">wordcloud</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">""</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">value</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc02a93d9a9206410841-11"><span class="crayon-v">wordcloud</span><span class="crayon-sy">.</span><span class="crayon-e">render</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里的name大家一看就知道是词语，而value是词频，上面的数据比较少，更多数据效果会更佳，大家可以相应添加</p>
+    <p><strong>设置词云图的轮廓</strong></p>
+    <p>词云图轮廓，有’circle’, ‘cardioid’, ‘diamond’, ‘triangle-forward’, ‘triangle’, ‘pentagon’, ‘star’可选，比如我们设置为五角星star</p>
+            <div id="crayon-5dbc02a93d9ab694394260" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wordcloud.add("", name, value,shape='star')</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d9ab694394260-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d9ab694394260-1"><span class="crayon-v">wordcloud</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">""</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">value</span><span class="crayon-sy">,</span><span class="crayon-v">shape</span><span class="crayon-o">=</span><span class="crayon-s">'star'</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>设置词云图文字大小范围</strong></p>
+    <p>词云词文字大小范围默认为12px到60px，也是就word_size_range的默认值为[12,60]，我们可以设置为20px到100px</p>
+            <div id="crayon-5dbc02a93d9ad196640428" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wordcloud.add("", name, value, word_size_range=[20, 100])</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc02a93d9ad196640428-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc02a93d9ad196640428-1"><span class="crayon-v">wordcloud</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-s">""</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">name</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">value</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">word_size_range</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-cn">20</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">100</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+            
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>

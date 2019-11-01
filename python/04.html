@@ -1,0 +1,419 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 用python做数学题评论Feed" href="https://cloudbasegroup.org/handbook/python/79/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="函数、模块和库" href="https://cloudbasegroup.org/handbook/python/77/">
+    <link rel="next" title="日期与时间" href="https://cloudbasegroup.org/handbook/python/81/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/python/79/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=79">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F79%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fpython%2F79%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-79 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+            <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                            <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/python/01.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            Python零基础快速入门			</h1>
+                            </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                        <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/01.html">
+                                    写出第一行python代码					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/02.html">
+                                    基本语法与语句					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/03.html">
+                                    函数、模块和库					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/04.html">
+                                    用python做数学题					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/05.html">
+                                    日期与时间					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/06.html">
+                                    Python操作文件					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/07.html">
+                                    pyecharts数据可视化					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/08.html">
+                                    python操作Excel					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/python/09.html">
+                                    python图片处理					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">用python做数学题</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p>这一节我们将会把Python应用在解答一些更复杂一点的数学知识上。通过用这些有趣而实用的案例，来加深大家对使用模块的理解，以及掌握轻松使用数十个模块的秘技。</p>
+    <h4>递归函数</h4>
+    <p><strong>递归函数求阶乘</strong></p>
+    <p>我们可以在函数内部调用其他函数，而如果一个函数在它内部调用自身这个函数，那么这个函数就是递归函数。我们来看递归函数在<strong>求阶乘</strong>方面的应用。</p>
+    <p>使用VS Code新建一个lesson4文件夹，并在里面新建一个python文件比如lesson4.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbc01fbe4a47506424617" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">def factorial(n):
+        if n==1:
+            return 1
+        else:
+            return n*factorial(n-1)
+    print(factorial(6))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a47506424617-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a47506424617-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a47506424617-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a47506424617-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a47506424617-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a47506424617-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a47506424617-1"><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-e">factorial</span><span class="crayon-sy">(</span><span class="crayon-v">n</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a47506424617-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-v">n</span><span class="crayon-o">==</span><span class="crayon-cn">1</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a47506424617-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a47506424617-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">else</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a47506424617-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-v">n</span><span class="crayon-o">*</span><span class="crayon-e">factorial</span><span class="crayon-sy">(</span><span class="crayon-v">n</span><span class="crayon-o">-</span><span class="crayon-cn">1</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a47506424617-6"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">factorial</span><span class="crayon-sy">(</span><span class="crayon-cn">6</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家要读懂递归函数的逻辑，我们可以像多米诺骨牌的方式来推演：</p>
+    <ul>
+    <li>如果n等于1，就返回1，也就是1的阶乘为1；</li>
+    <li>如果n=2，即factorial(2)，就返回2*factorial(1)，也就是返回2*1，也就是2的阶乘为2；</li>
+    <li>如果n=3，即factorial(3)，就返回3*factorial(3-1)，即3*2！</li>
+    </ul>
+    <p>依次类推，n的阶乘=n*(n-1)！，这就是递归函数的妙用啦。</p>
+    <p><strong>递归函数求斐波纳契数列</strong></p>
+    <p>首先我们先要弄清楚什么是斐波那契数列，<b>斐波那契数列</b>指的是这样一个数列 1, 1, 2, 3, 5, 8, 13, 21, 34, 55…这个数列从第3项开始，每一项都等于前两项之和。</p>
+    <p>使用VS Code在lesson4文件夹里面新建一个python文件比如lesson4-1.py，把下面的代码输入到文件里之后执行。</p>
+            <div id="crayon-5dbc01fbe4a4f293223244" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">def fib(n):
+        if n==1 or n==2:
+            return 1
+        return fib(n-1)+fib(n-2)
+    print(fib(20))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a4f293223244-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a4f293223244-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a4f293223244-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a4f293223244-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a4f293223244-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a4f293223244-1"><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-e">fib</span><span class="crayon-sy">(</span><span class="crayon-v">n</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a4f293223244-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-v">n</span><span class="crayon-o">==</span><span class="crayon-cn">1</span><span class="crayon-h"> </span><span class="crayon-st">or</span><span class="crayon-h"> </span><span class="crayon-v">n</span><span class="crayon-o">==</span><span class="crayon-cn">2</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a4f293223244-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a4f293223244-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-e">fib</span><span class="crayon-sy">(</span><span class="crayon-v">n</span><span class="crayon-o">-</span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-o">+</span><span class="crayon-e">fib</span><span class="crayon-sy">(</span><span class="crayon-v">n</span><span class="crayon-o">-</span><span class="crayon-cn">2</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a4f293223244-5"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">fib</span><span class="crayon-sy">(</span><span class="crayon-cn">20</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家可以根据上面的推演方式来理解Python编程是如何用递归函数来求解斐波那契数列的。</p>
+    <h4>调用外部python文件的函数</h4>
+    <p>我们把上面求阶乘的函数写成一个独立的文件，比如f使用VS Code在lesson4文件夹里面新建Python文件fact.py，然后输入以下代码：</p>
+            <div id="crayon-5dbc01fbe4a52588060015" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">def factorial(n):
+        if n==1:
+            return 1
+        else:
+            return n*factorial(n-1)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a52588060015-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a52588060015-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a52588060015-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a52588060015-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a52588060015-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a52588060015-1"><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-e">factorial</span><span class="crayon-sy">(</span><span class="crayon-v">n</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a52588060015-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-v">n</span><span class="crayon-o">==</span><span class="crayon-cn">1</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a52588060015-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-cn">1</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a52588060015-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">else</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a52588060015-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-v">n</span><span class="crayon-o">*</span><span class="crayon-e">factorial</span><span class="crayon-sy">(</span><span class="crayon-v">n</span><span class="crayon-o">-</span><span class="crayon-cn">1</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>之后在同一文件目录也就是lesson4文件夹下新建一个python文件，如lesson4-2.py，写入以下代码，</p>
+            <div id="crayon-5dbc01fbe4a54507546691" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#这里的fact是文件名，factorial是函数名
+    from fact import factorial
+    print(factorial(6))</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a54507546691-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a54507546691-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a54507546691-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a54507546691-1"><span class="crayon-c">#这里的fact是文件名，factorial是函数名</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a54507546691-2"><span class="crayon-st">from</span><span class="crayon-h"> </span><span class="crayon-e">fact </span><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-e">factorial</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a54507546691-3"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-e">factorial</span><span class="crayon-sy">(</span><span class="crayon-cn">6</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>执行lesson4-2.py查看结果。也就是我们可以用from 文件名 import 函数名，来调用Python外部文件的函数，这样大家是不是对模块和库的引入有了进一步的认识？</p>
+    <blockquote class="task"><p><strong>调用外部文件的函数：</strong>把上面斐波那契数列的案例也写成两个文件来执行。将功能完备且以后会反复调用的函数独立写成一个Python文件，这是一个非常重要的编程思想。模块化、组件化在编程世界里无处不在。</p></blockquote>
+    <h4 id="range">range函数</h4>
+    <p>range() 函数也是Python的内置函数，可创建一个整数列表，一般用在 for 循环中。首先我们来了解一下range函数的语法。</p>
+    <blockquote class="danger"><p>很多人问调用函数的时候为什么有的数据类型是整型，有的是list数据类型，有的又是一个参数，而有的却是多个参数，这个我该怎么判断啊？答案就在技术文档的说明里面，所以大家要擅于查阅技术文档的语法。如果看不懂技术文档，可以百度搜索一些案例来促进自己理解。</p></blockquote>
+    <p></p>
+            <div id="crayon-5dbc01fbe4a55494743243" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">range(start, stop[, step])</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a55494743243-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a55494743243-1"><span class="crayon-e">range</span><span class="crayon-sy">(</span><span class="crayon-v">start</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">stop</span><span class="crayon-sy">[</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">step</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <ul>
+    <li>start: 计数从 start 开始。默认是从 0 开始。例如range（5）等价于range（0， 5）;</li>
+    <li>stop: 计数到 stop 结束，但不包括 stop。例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5</li>
+    <li>step：步长，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)</li>
+    </ul>
+    <p><strong>技术文档</strong>：<a href="https://docs.python.org/3/library/stdtypes.html?highlight=range#range" target="_blank" rel="noopener noreferrer">range函数</a></p>
+    <p>我们来通过实际案例理解range()函数，比如range(20,100,11)，按照range()函数的理解就是从20开始到100结束，间隔为11的整数有哪些。那这个[, step]是啥意思呢？这个括号[]表示里面的参数非必须的意思，也就是你也可以不写，默认为1.</p>
+            <div id="crayon-5dbc01fbe4a57950340719" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">for t in range(20,100,11):
+        print(t)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a57950340719-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a57950340719-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a57950340719-1"><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-i">t</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-k ">range</span><span class="crayon-sy">(</span><span class="crayon-cn">20</span><span class="crayon-sy">,</span><span class="crayon-cn">100</span><span class="crayon-sy">,</span><span class="crayon-cn">11</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a57950340719-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>大家可以在编辑器里试一下，那我们不写后面的11看一下效果：</p>
+            <div id="crayon-5dbc01fbe4a59092756117" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">for t in range(20,100):
+        print(t)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a59092756117-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a59092756117-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a59092756117-1"><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-i">t</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-k ">range</span><span class="crayon-sy">(</span><span class="crayon-cn">20</span><span class="crayon-sy">,</span><span class="crayon-cn">100</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a59092756117-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>打印九九乘法表</strong></p>
+            <div id="crayon-5dbc01fbe4a61529483384" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#前面已经说过for in语句是用于列表List类型或字符串类型，而range（）函数刚好可以建立一个整数列表
+    for i in range(1, 10):
+            for j in range(1, i+1):
+                print('{}x{}={}\t'.format(i, j, i*j), end='')  
+            print()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a61529483384-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a61529483384-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a61529483384-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a61529483384-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a61529483384-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a61529483384-1"><span class="crayon-c">#前面已经说过for in语句是用于列表List类型或字符串类型，而range（）函数刚好可以建立一个整数列表</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a61529483384-2"><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-i">i</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-k ">range</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">10</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a61529483384-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">for</span><span class="crayon-h"> </span><span class="crayon-i">j</span><span class="crayon-h"> </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-k ">range</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-o">+</span><span class="crayon-cn">1</span><span class="crayon-sy">)</span><span class="crayon-o">:</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a61529483384-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-s">'{}x{}={}\t'</span><span class="crayon-sy">.</span><span class="crayon-k ">format</span><span class="crayon-sy">(</span><span class="crayon-v">i</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">j</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">i</span><span class="crayon-o">*</span><span class="crayon-v">j</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">end</span><span class="crayon-o">=</span><span class="crayon-s">''</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a61529483384-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>打印语句中，大括号及其里面的字符 (称作格式化字段) 将会被 .format() 中的参数替换，而\t这个是转义字符，就是按一下Tab</p>
+    <h4>statistics模块</h4>
+    <p>statistics模块是Python的内置模块之一，提供了一些统计学的函数，比如平均值mean()函数、中位数median()函数、方差pvariance()函数、标准差pstdev()等函数。我们来看下具体案例：</p>
+    <p>技术文档：<a href="https://docs.python.org/3/library/statistics.html#module-statistics" target="_blank" rel="noopener noreferrer">statistics模块</a></p>
+    <p><strong>求平均数，就是N个数相加再除以N</strong></p>
+            <div id="crayon-5dbc01fbe4a62162395988" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#引入模块
+    import statistics
+    
+    #调用statistics的mean函数，mean函数的参数是一个list列表类型
+    t=statistics.mean([1,2,4])
+    print (t)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a62162395988-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a62162395988-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a62162395988-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a62162395988-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a62162395988-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a62162395988-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a62162395988-1"><span class="crayon-c">#引入模块</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a62162395988-2"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">statistics</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a62162395988-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc01fbe4a62162395988-4"><span class="crayon-c">#调用statistics的mean函数，mean函数的参数是一个list列表类型</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a62162395988-5"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-v">statistics</span><span class="crayon-sy">.</span><span class="crayon-e">mean</span><span class="crayon-sy">(</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-cn">4</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a62162395988-6"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>求中位数：</strong></p>
+    <p>百度中位数说明：对于有限的数集，可以通过把所有观察值高低排序后找出正中间的一个作为中位数。如果观察值有偶数个，通常取最中间的两个数值的平均数作为中位数。</p>
+            <div id="crayon-5dbc01fbe4a64858813886" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">#引入模块
+    import statistics
+    
+    #调用statistics的median函数，median函数的参数是一个list列表类型
+    t=statistics.median([1,2,7])
+    print (t)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a64858813886-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a64858813886-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a64858813886-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a64858813886-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a64858813886-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a64858813886-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a64858813886-1"><span class="crayon-c">#引入模块</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a64858813886-2"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-v">statistics</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a64858813886-3">&nbsp;</div><div class="crayon-line" id="crayon-5dbc01fbe4a64858813886-4"><span class="crayon-c">#调用statistics的median函数，median函数的参数是一个list列表类型</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a64858813886-5"><span class="crayon-v">t</span><span class="crayon-o">=</span><span class="crayon-v">statistics</span><span class="crayon-sy">.</span><span class="crayon-e">median</span><span class="crayon-sy">(</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-cn">2</span><span class="crayon-sy">,</span><span class="crayon-cn">7</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a64858813886-6"><span class="crayon-k ">print</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>random模块</h4>
+    <p>random模块主要用于生成一个随机数。生成随机数这个场景我们生活中遇到最多的就是抽奖，还有就是游戏里刷出来的一些野怪也是随机的。</p>
+    <p><strong>技术文档</strong>：<a href="https://docs.python.org/3/library/random.html#module-random" target="_blank" rel="noopener noreferrer">random模块技术文档</a></p>
+    <p>首先我们用import引入random模块，这样我们就可以调用random模块里的所有函数啦。比如random.randint()函数，random.random（）函数等。</p>
+            <div id="crayon-5dbc01fbe4a66428651401" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">import random
+    
+    # 产生 1 到 10 的一个整数型随机数
+    print( random.randint(1,10) )
+            
+    # 产生 0 到 1 之间的随机浮点数
+    print( random.random() )
+    
+    # 产生  1.1 到 5.4 之间的随机浮点数，区间可以不是整数
+    print( random.uniform(1.1,5.4) )
+    
+    # 生成从1到100的间隔为2的随机整数
+    print( random.randrange(1,100,2) ) 
+    
+    # 将序列a中的元素顺序打乱
+    a=[1,3,5,6,7]
+    random.shuffle(a)
+    print(a)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5dbc01fbe4a66428651401-18" style="height: 20px;">18</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-1"><span class="crayon-r">import</span><span class="crayon-h"> </span><span class="crayon-k ">random</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-2">&nbsp;</div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-3"><span class="crayon-c"># 产生 1 到 10 的一个整数型随机数</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-4"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-k ">random</span><span class="crayon-sy">.</span><span class="crayon-e">randint</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-cn">10</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-6"><span class="crayon-c"># 产生 0 到 1 之间的随机浮点数</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-7"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-k ">random</span><span class="crayon-sy">.</span><span class="crayon-k ">random</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-8">&nbsp;</div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-9"><span class="crayon-c"># 产生&nbsp;&nbsp;1.1 到 5.4 之间的随机浮点数，区间可以不是整数</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-10"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-k ">random</span><span class="crayon-sy">.</span><span class="crayon-e">uniform</span><span class="crayon-sy">(</span><span class="crayon-cn">1.1</span><span class="crayon-sy">,</span><span class="crayon-cn">5.4</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-11">&nbsp;</div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-12"><span class="crayon-c"># 生成从1到100的间隔为2的随机整数</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-13"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-h"> </span><span class="crayon-k ">random</span><span class="crayon-sy">.</span><span class="crayon-e">randrange</span><span class="crayon-sy">(</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-cn">100</span><span class="crayon-sy">,</span><span class="crayon-cn">2</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-14">&nbsp;</div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-15"><span class="crayon-c"># 将序列a中的元素顺序打乱</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-16"><span class="crayon-v">a</span><span class="crayon-o">=</span><span class="crayon-sy">[</span><span class="crayon-cn">1</span><span class="crayon-sy">,</span><span class="crayon-cn">3</span><span class="crayon-sy">,</span><span class="crayon-cn">5</span><span class="crayon-sy">,</span><span class="crayon-cn">6</span><span class="crayon-sy">,</span><span class="crayon-cn">7</span><span class="crayon-sy">]</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-17"><span class="crayon-k ">random</span><span class="crayon-sy">.</span><span class="crayon-e">shuffle</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5dbc01fbe4a66428651401-18"><span class="crayon-k ">print</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>Python有那么多的函数、模块、库，这里面涉及的函数恐怕有数万之多，通过前面的学习，你是否了解了掌握这些函数的秘技？没错，那就是查阅技术文档。学习技术千万不要死记硬背，而是要善于查阅技术文档。</p></blockquote>
+    <blockquote class="task"><p><strong>年会抽奖号码：</strong>年会抽奖需要从1到100进行摇号，请写一个摇号的代码</p>
+    <p><strong>通过技术文档拓展：</strong>random的shuffle函数是干嘛用的？random还有sample和choice函数，我们的学习文档里面没有介绍过，你知道该怎么查他们的使用方法么</p></blockquote>
+            
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
