@@ -1,0 +1,611 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » HTML5基础知识评论Feed" href="https://cloudbasegroup.org/handbook/webpage/95/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="开发环境与工具" href="https://cloudbasegroup.org/handbook/webpage/93/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/webpage/95/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=95">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fwebpage%2F95%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fwebpage%2F95%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-95 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+    <nav id="header-db" class="row navbar navbar-default">
+            <div class="navbar-header">
+                  <div class="logotop fleft">
+                    <a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                </div>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 </button>
+                <div class="flex nav-items">
+                <h1 class="flex-item navbar-link">
+                    网页开发技术训练营			</h1>
+                  </div>
+            </div>
+    
+            <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+             <div class="sop-menu">
+                <ul>
+                                    <li class="page_item no_current_page_item">
+                        <a href="https://cloudbasegroup.org/handbook/webpage/93/">
+                            开发环境与工具					</a>
+                    </li>
+                                    <li class="page_item current_page_item">
+                        <a href="https://cloudbasegroup.org/handbook/webpage/95/">
+                            HTML5基础知识					</a>
+                    </li>
+                                                    </ul>
+            </div>		
+        </div>
+    </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">HTML5基础知识</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <blockquote class="danger"><p>学习技术推荐大家以实战为导向，先做出效果，然后再回头理解和记忆，HTML和CSS的知识点非常多，<strong>远远超出</strong>高中大学时代一门课的内容，所以<strong>千万不要</strong>死记硬背，而是要学会查阅技术文档。不查阅文档是技术学习的大忌，这会阻碍你对技术知识全面而又系统的了解。</p></blockquote>
+    <h4>写出第一行HTML代码</h4>
+    <p>VS Code编辑器内置一套<strong>emmet语法</strong>，可以大大提高我们书写HTML代码的效率 。下面我们就来看如何使用它。</p>
+    <p>打开编辑器，在hackwork-webpage的文件夹下新建一个html文件，比如lesson2.html（先确定了文件的格式为html，emmet语法才会生效），在lesson2.html里输入一个英文状态下的感叹号!，之后按一下tab键，就会出现以下代码：</p>
+            <div id="crayon-5dde42cd6b8c7439421363" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        
+    &lt;/body&gt;
+    &lt;/html&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dde42cd6b8c7439421363-12" style="height: 20px;">12</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-1"><span class="crayon-n">&lt;!DOCTYPE html&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-2"><span class="crayon-r ">&lt;html </span><span class="crayon-e ">lang</span><span class="crayon-o">=</span><span class="crayon-s ">"en"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-3"><span class="crayon-r ">&lt;head&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;meta </span><span class="crayon-e ">charset</span><span class="crayon-o">=</span><span class="crayon-s ">"UTF-8"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;meta </span><span class="crayon-e ">name</span><span class="crayon-o">=</span><span class="crayon-s ">"viewport"</span><span class="crayon-h"> </span><span class="crayon-e ">content</span><span class="crayon-o">=</span><span class="crayon-s ">"width=device-width, initial-scale=1.0"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;meta </span><span class="crayon-e ">http-equiv</span><span class="crayon-o">=</span><span class="crayon-s ">"X-UA-Compatible"</span><span class="crayon-h"> </span><span class="crayon-e ">content</span><span class="crayon-o">=</span><span class="crayon-s ">"ie=edge"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;title&gt;</span><span class="crayon-i ">Document</span><span class="crayon-r ">&lt;/title&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-8"><span class="crayon-r ">&lt;/head&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-9"><span class="crayon-r ">&lt;body&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-11"><span class="crayon-r ">&lt;/body&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8c7439421363-12"><span class="crayon-r ">&lt;/html&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们可以把上面的代码称之为HTML文件的骨架结构，以后新建完html文件都可以按照上面的操作先把架子搭起来再说。</p>
+    <blockquote><p>emmet语法可以大大提高我们书写html代码的效率，除了!以外，还有哪些快捷方式呢？大家可以查阅emmet技术文档，或直接查看<a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener noreferrer">emmet的快捷方式</a>，先可以放在一边，以后我们会经常用到的。关于emmet，我们在介绍VS Code的上节视频里有说明哦~</p></blockquote>
+    <p><strong>HTML骨架结构代码解读</strong></p>
+    <p>下面这些知识点，大家可以<span style="color: #800000;"><strong>粗略了解</strong></span>即可，很多计算机的概念都是一个约定，一个规则，大家可以不必刨根问底，只需大致了解即可。</p>
+    <ul>
+    <li><strong>&lt;!DOCTYPE&gt;：</strong>&lt;!DOCTYPE html&gt;是HTML5的声明，它定义文档类型，必须是 HTML 文档的第一行，位于 &lt;html&gt; 标签之前。</li>
+    <li><strong>&lt;html&gt;：</strong>告知浏览器其自身是一个 HTML 文档。&lt;html&gt; 与 &lt;/html&gt; 标签限定了html文档的开始点和结束点，在它们之间是文档的头部和主体。</li>
+    <li><strong>&lt;meta&gt;：</strong>meta标签定义了网页的一些信息，比如charset是编码格式，http-equiv向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，viewport则定义页面的宽度与打开页面的屏幕宽度的关系等。</li>
+    <li><strong>&lt;head&gt;：</strong>文档的头部描述了文档的各种属性和信息，包括文档的标题等、Meta以及css等外部链接的引入。</li>
+    </ul>
+    <p><strong>标签栏的标题</strong></p>
+    <p>使用Chrome浏览器打开lesson2.html，发现页面一片空白，但是在页面的标签栏上我们可以看到页面的标题是：Document，这就是&lt;title&gt;&lt;/title&gt;标签的作用，修改title标签里面的内容，比如：</p>
+            <div id="crayon-5dde42cd6b8cf835781448" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;title&gt;HackWork技术工坊&lt;/title&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8cf835781448-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8cf835781448-1"><span class="crayon-r ">&lt;title&gt;</span><span class="crayon-i ">HackWork技术工坊</span><span class="crayon-r ">&lt;/title&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存后，然后刷新浏览器的页面查看效果。</p>
+    <p><strong>页面的内容</strong></p>
+    <p>在&lt;body&gt;和&lt;/body&gt;标签之间的内容是网页的主要内容，在网页上要展示出来的页面内容也一定要放在body标签中，因为lesson2.html的&lt;body&gt;&lt;/body&gt;标签没有内容，所以打开页面时会是空白的。在&lt;body&gt;&lt;/body&gt;里添加如下内容。</p>
+            <div id="crayon-5dde42cd6b8d2768837363" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;body&gt;
+       &lt;!-- 这是一段注释，以后大部分的代码都会写在body标签里面 --&gt;
+       要写Hello，World么？会不会太简单。
+    &lt;/body&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8d2768837363-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d2768837363-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d2768837363-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d2768837363-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8d2768837363-1"><span class="crayon-r ">&lt;body&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d2768837363-2"><span class="crayon-i ">&nbsp;&nbsp; </span><span class="crayon-c">&lt;!-- 这是一段注释，以后大部分的代码都会写在body标签里面 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d2768837363-3"><span class="crayon-i ">&nbsp;&nbsp; 要写Hello，World么？会不会太简单。</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d2768837363-4"><span class="crayon-r ">&lt;/body&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存后，然后刷新浏览器的页面查看效果。<span style="color: #800000;"><strong>下面的代码我们都会添加在&lt;body&gt;&lt;/body&gt;标签之中</strong></span>。</p>
+    <h4>富文本编辑器与HTML代码</h4>
+    <p>打开富文本html编辑器UEditor，这样的界面是不是似曾相识？在Word文档以及很多博客、公众号等写文章的地方都可以看到类似的界面。</p>
+    <p><strong>富文本编辑器：</strong><a href="http://ueditor.baidu.com/website/onlinedemo.html" target="_blank" rel="noopener noreferrer">UEditor</a></p>
+    <p>我们可以在富文本编辑器里写一段文字，比如“HackWork技术工坊”，然后插入一个效果，比如<strong>加粗B</strong>，然后点击左上角的&lt;html&gt;查看对应的html源代码。取消加粗后，我们再来查看对应的html源码。</p>
+    <blockquote class="task"><p>在富文本编辑器UEditor、135编辑器等把获得的html代码复制粘贴在&lt;body&gt;&lt;/body&gt;标签之内，保存之后用浏览器打开查看一下效果。通过富文本编辑器以及与之对应的代码，对网页有哪些标签，以及对标签和样式有一个大致的了解<strong>（无需太深究）</strong></p></blockquote>
+    <p><strong>给文字添加效果</strong></p>
+    <p>我们可以<strong>依次</strong>给”HackWork技术工坊”加<strong>斜体</strong>、<strong>下划线</strong>、<strong>删除线</strong>、<strong>引用</strong>、<strong>颜色</strong>、<strong>背景</strong>、<strong>有序列表</strong>、<strong>无序列表</strong>、<strong>段前距</strong>、<strong>段后距</strong>、<strong>行间距</strong>、<strong>段落</strong>、<strong>字体</strong>、<strong>文字大小</strong>、<strong>居中对齐</strong>、<strong>超链接</strong>等效果以及可以<strong>插入表格</strong>，然后查看对应的html源代码，为了避免混淆，建议一次添加一个。</p>
+    <p><b>标签tag与元素element</b></p>
+    <p>我们看到的&lt;strong&gt;&lt;/strong&gt;、&lt;p&gt;&lt;/p&gt;、&lt;em&gt;&lt;/em&gt;、&lt;h1&gt;&lt;/h1&gt;、&lt;a&gt;&lt;/a&gt;、&lt;blockquote&gt;&lt;/blockquote&gt;等等就是<strong>html标签</strong>，标签是html的基础组成部分，可以说一个网页就是由一个个html标签<strong>组装而成</strong>的。</p>
+            <div id="crayon-5dde42cd6b8d4029161915" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;strong&gt;HackWork技术工坊&lt;/strong&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8d4029161915-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8d4029161915-1"><span class="crayon-r ">&lt;strong&gt;</span><span class="crayon-i ">HackWork技术工坊</span><span class="crayon-r ">&lt;/strong&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>标签+标签里的内容，我们称之为元素element，比如上面这一段加粗代码<strong>&lt;strong&gt;&lt;/strong&gt;</strong>是标签，其中&lt;strong&gt;为起始标签，而&lt;/strong&gt;为闭合标签，而上面整段代码我们可以称之为strong元素。</p>
+    <p><strong>样式style</strong></p>
+    <p>在添加下划线、删除线、颜色、背景、大小等等时，我们会看到HTML标签里面会有一个style=””，引号””里面的我们称之为样式，样式相当于是美化标签。</p>
+    <blockquote><p>很多内容运营人员会常使用<a href="http://www.135editor.com/" target="_blank" rel="noopener noreferrer">135编辑器</a>、<a href="http://ipaiban.com/bianji" target="_blank" rel="noopener noreferrer">i排版</a>（在这上面编辑都可以查看html源码）等来编辑文章，这些工具就是富文本html编辑器。相对于html编程来说，富文本编辑器的功能极其有限，大家可以借助这些编辑器弄一些复杂的排版来了解一下与之对应的HTML代码，但是<span style="color: #800000;"><strong>不要花太多时间在这上面</strong></span>。</p></blockquote>
+    <h4>给页面添加标题和文字</h4>
+    <p><strong>标题标签</strong></p>
+    <p>复制下面的代码到lesson2.html文件的&lt;body&gt;&lt;/body&gt;标签内，然后保存，用浏览器打开查看效果。</p>
+            <div id="crayon-5dde42cd6b8d7192046633" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;!-- 标签标题一共有6个，h1、h2、h3、h4、h5、h6分别为一级标题、二级标题、三级标题、四级标题、五级标题、六级标题。并且依据重要性递减。标题标签的字体系统会默认加粗。 --&gt;
+    &lt;h1&gt;这是一级标题，网页显示的时候，是不是字号非常大？而且字体也是粗体？&lt;/h1&gt;
+    &lt;h2&gt;这是二级标题，是不是比一级标题要小一些？&lt;/h2&gt;
+    &lt;h3&gt;这是三级标题&lt;/h3&gt;
+    &lt;h4&gt;这是四级标题&lt;/h4&gt;
+    &lt;h5&gt;这是五级标题&lt;/h5&gt;
+    &lt;h6&gt;这是六级标题&lt;/h6&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8d7192046633-1" style="height: 40px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d7192046633-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d7192046633-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d7192046633-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d7192046633-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d7192046633-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d7192046633-7" style="height: 20px;">7</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8d7192046633-1"><span class="crayon-c">&lt;!-- 标签标题一共有6个，h1、h2、h3、h4、h5、h6分别为一级标题、二级标题、三级标题、四级标题、五级标题、六级标题。并且依据重要性递减。标题标签的字体系统会默认加粗。 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d7192046633-2"><span class="crayon-r ">&lt;h1&gt;</span><span class="crayon-i ">这是一级标题，网页显示的时候，是不是字号非常大？而且字体也是粗体？</span><span class="crayon-r ">&lt;/h1&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d7192046633-3"><span class="crayon-r ">&lt;h2&gt;</span><span class="crayon-i ">这是二级标题，是不是比一级标题要小一些？</span><span class="crayon-r ">&lt;/h2&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d7192046633-4"><span class="crayon-r ">&lt;h3&gt;</span><span class="crayon-i ">这是三级标题</span><span class="crayon-r ">&lt;/h3&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d7192046633-5"><span class="crayon-r ">&lt;h4&gt;</span><span class="crayon-i ">这是四级标题</span><span class="crayon-r ">&lt;/h4&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d7192046633-6"><span class="crayon-r ">&lt;h5&gt;</span><span class="crayon-i ">这是五级标题</span><span class="crayon-r ">&lt;/h5&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d7192046633-7"><span class="crayon-r ">&lt;h6&gt;</span><span class="crayon-i ">这是六级标题</span><span class="crayon-r ">&lt;/h6&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们只需要把一段文字放在标题标签内，标题在页面的效果就显示出来了。</p>
+    <blockquote><p>为什么给文字加了标题标签就会有加粗以及不同字体大小等效果呢？原因就在于浏览器给这些标签添加了加粗、不同字体大小等<strong>默认样式</strong>。关于样式的知识我们会在CSS里面详述。</p></blockquote>
+    <p><strong>段落标签和强调标签</strong></p>
+    <p>我们可以把文字内容放到段落&lt;p&gt;&lt;/p&gt;标签里，而要<strong>加粗强调</strong>的放在强调标签&lt;strong&gt;&lt;/strong&gt;里，斜体强调的放在&lt;em&gt;&lt;/em&gt;标签里。将下面代码输入到lesson2.html的&lt;body&gt;&lt;/body&gt;标签内，保存后用浏览器打开lesson2.html查看效果。</p>
+            <div id="crayon-5dde42cd6b8d9050437160" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;p&gt;&lt;em&gt;HackWork技术工坊&lt;/em&gt;致力于以最为有效的学习方式让每个人能够享受技术创造所带来的乐趣。&lt;/p&gt;
+    &lt;p&gt;技术也可以是&lt;strong&gt;群体创造&lt;/strong&gt;、&lt;strong&gt;欢乐&lt;/strong&gt;而&lt;strong&gt;有趣&lt;/strong&gt;的社交活动。想学好技术先要培养对技术的兴趣、实战与拓展的习惯以及找到一起学习的伙伴。&lt;/p&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8d9050437160-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8d9050437160-2" style="height: 40px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8d9050437160-1"><span class="crayon-r ">&lt;p&gt;</span><span class="crayon-r ">&lt;em&gt;</span><span class="crayon-i ">HackWork技术工坊</span><span class="crayon-r ">&lt;/em&gt;</span><span class="crayon-i ">致力于以最为有效的学习方式让每个人能够享受技术创造所带来的乐趣。</span><span class="crayon-r ">&lt;/p&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8d9050437160-2"><span class="crayon-r ">&lt;p&gt;</span><span class="crayon-i ">技术也可以是</span><span class="crayon-r ">&lt;strong&gt;</span><span class="crayon-i ">群体创造</span><span class="crayon-r ">&lt;/strong&gt;</span><span class="crayon-i ">、</span><span class="crayon-r ">&lt;strong&gt;</span><span class="crayon-i ">欢乐</span><span class="crayon-r ">&lt;/strong&gt;</span><span class="crayon-i ">而</span><span class="crayon-r ">&lt;strong&gt;</span><span class="crayon-i ">有趣</span><span class="crayon-r ">&lt;/strong&gt;</span><span class="crayon-i ">的社交活动。想学好技术先要培养对技术的兴趣、实战与拓展的习惯以及找到一起学习的伙伴。</span><span class="crayon-r ">&lt;/p&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>注意p标签和strong标签的嵌套写法是&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;，也就是要<strong>成对书写</strong>。</p>
+    <blockquote><p>由于VS Code 内置emmet语法，我们可以在输入法是英文状态的情况下，直接输入p、strong等标签名，然后按一下Tab键，emmet会补全整个成对的标签，这样写代码就非常惬意了。</p></blockquote>
+    <p><strong>块级元素与内联元素</strong></p>
+    <p>在上面的案例中，因为有了p标签，文字换行了，分成了两段，而em元素、strong元素却没有让文本换行，这是为什么呢？因为p元素是块级元素，em、strong是行内元素。</p>
+    <p><strong>块级(block)元素</strong>会换行，高度，行高、内外边距都可控制，行内<strong>(inline)元素</strong>不会换行，高度，行高以及内外边距不可改变。<strong>大家可以先只需要知道大致的概念即可。</strong>还有哪些元素是块级元素或行内元素呢？大家可以查阅技术文档，先花一分钟大致了解有哪些即可。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Block-level_elements" target="_blank" rel="noopener noreferrer">块级元素</a>、<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Inline_elemente" target="_blank" rel="noopener noreferrer">行内元素</a></p>
+    <blockquote><p>为什么块级元素会换行，而内联元素不会换行呢？原因和前面标题标签自带样式一样，浏览器给块级标签默认加了一个display:block;的样式，我们给em加这样的样式也会有换行等效果，如&lt;em style=”display:block”&gt;HackWork技术工坊&lt;/em&gt;。</p></blockquote>
+    <p><strong>span标签</strong></p>
+    <p>有时我们希望给一些文字加一些颜色，但是又不希望文字换行，这时可以使用span标签（因为它是行内标签），大家可以把下面的代码输入到lesson2.html里，保存后用浏览器查看效果。</p>
+            <div id="crayon-5dde42cd6b8db957119717" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;p&gt;&lt;span&gt;温馨提示：&lt;/span&gt;学习技术一定要动手实战才能事半功倍。&lt;/p&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8db957119717-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8db957119717-1"><span class="crayon-r ">&lt;p&gt;</span><span class="crayon-r ">&lt;span&gt;</span><span class="crayon-i ">温馨提示：</span><span class="crayon-r ">&lt;/span&gt;</span><span class="crayon-i ">学习技术一定要动手实战才能事半功倍。</span><span class="crayon-r ">&lt;/p&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>我们发现文字并没有什么效果，这是因为span标签浏览器没有给它提供默认的样式，所以这个标签什么效果也没有，那span标签的意义在哪里呢？它可以方便我们给标签内的内容添加样式，比如：</p>
+            <div id="crayon-5dde42cd6b8dd573285246" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;p&gt;&lt;span style="color: rgb(227, 108, 9);"&gt;温馨提示：&lt;/span&gt;学习技术一定要动手实战才能事半功倍。&lt;/p&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8dd573285246-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8dd573285246-1"><span class="crayon-r ">&lt;p&gt;</span><span class="crayon-r ">&lt;span </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"color: rgb(227, 108, 9);"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">温馨提示：</span><span class="crayon-r ">&lt;/span&gt;</span><span class="crayon-i ">学习技术一定要动手实战才能事半功倍。</span><span class="crayon-r ">&lt;/p&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里的<strong>style</strong>是span标签的<strong>属性attribute，</strong>而双引号””里的内容就是style属性的<strong>值。</strong>大家只需要知道这个概念就可以了。</p>
+    <h4>网页的内容分区</h4>
+    <p><strong>使用emmet语法快速书写代码</strong></p>
+    <p>大家可以使用VS Code新建一个page.html，然后保证输入法是英文状态下的时候，输入感叹号!之后按一下Tab键，然后在body标签内输入main按一下Tab键，在main标签内再输入header按一下Tab键。参考下面的代码（<strong>不用输注释里面的内容</strong>），依次输入div、nav、section、article、aside、footer等后按Tab键快速书写下面的代码（<strong>别复制粘贴</strong>）</p>
+            <div id="crayon-5dde42cd6b8df661751569" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;main&gt;
+        &lt;header&gt;
+            &lt;!-- 几乎每个网页都有一个顶部的导航条，于是先用header标签预留一个位置 --&gt;
+            &lt;div id="logo"&gt;
+                &lt;!-- 这个地方打算放Logo，于是弄一个div分区，一个网页会有无数个div，我取个名字区分一下，名字可以随意取，但是要让人看得懂 --&gt;
+            &lt;/div&gt;
+            &lt;nav&gt;
+                &lt;!-- 打算把导航菜单放在header顶部，于是在顶部放一个nav --&gt;
+            &lt;/nav&gt;
+        &lt;/header&gt;
+        &lt;section id="carousel"&gt;
+            &lt;!-- 这一块想放一个图片的轮播效果，因为网页里面的块太多了，我就命名为carousel区分一下，名字要能让自己和其他人看得懂，你也可以命名为lunbo --&gt;
+        &lt;/section&gt;
+        &lt;section id="content"&gt;
+            &lt;!-- 这一段我打算放文章的主题内容，于是我就加了一个section标签，因为是内容，为了区分，我就命名为content --&gt;
+            &lt;article&gt;
+                &lt;!-- 这是一段文章，会有一大段的文字，于是我就用article标签，让别人看得懂，当然也可以用div,section来分区，但是article浏览器看得懂，我也好认 --&gt;
+            &lt;/article&gt;
+            &lt;aside&gt;
+                &lt;!-- 内容太长，我打算在文章旁边加一个目录导航 --&gt;
+            &lt;/aside&gt;
+        &lt;/section&gt;
+        &lt;footer&gt;
+            &lt;!-- 在网页的底部我打算放一些我的联系信息 --&gt;
+        &lt;/footer&gt;
+    &lt;/main&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-12" style="height: 40px;">12</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-17" style="height: 40px;">17</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-23" style="height: 20px;">23</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-24" style="height: 20px;">24</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-25" style="height: 20px;">25</div><div class="crayon-num" data-line="crayon-5dde42cd6b8df661751569-26" style="height: 20px;">26</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-1"><span class="crayon-r ">&lt;main&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;header&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- 几乎每个网页都有一个顶部的导航条，于是先用header标签预留一个位置 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"logo"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- 这个地方打算放Logo，于是弄一个div分区，一个网页会有无数个div，我取个名字区分一下，名字可以随意取，但是要让人看得懂 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;nav&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- 打算把导航菜单放在header顶部，于是在顶部放一个nav --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/nav&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/header&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-11"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;section </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"carousel"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- 这一块想放一个图片的轮播效果，因为网页里面的块太多了，我就命名为carousel区分一下，名字要能让自己和其他人看得懂，你也可以命名为lunbo --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-13"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/section&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-14"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;section </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"content"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-15"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- 这一段我打算放文章的主题内容，于是我就加了一个section标签，因为是内容，为了区分，我就命名为content --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-16"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;article&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-17"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- 这是一段文章，会有一大段的文字，于是我就用article标签，让别人看得懂，当然也可以用div,section来分区，但是article浏览器看得懂，我也好认 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-18"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/article&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-19"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;aside&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-20"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- 内容太长，我打算在文章旁边加一个目录导航 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-21"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/aside&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-22"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/section&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-23"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;footer&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-24"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!-- 在网页的底部我打算放一些我的联系信息 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-25"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/footer&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8df661751569-26"><span class="crayon-r ">&lt;/main&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>id和class属性</strong></p>
+    <p>为了更好的区分每个标签元素，我们会使用id属性来标识它的唯一性，而使用class属性来给每个标签归类。</p>
+    <p><strong>语义化标签</strong></p>
+    <p>书写完毕之后保存，使用浏览器打开，我们发现页面是空白的，上面的这些标签是为了让网页开发更有规划，让代码结构清晰，方便自己、团队阅读以及浏览器和搜索引擎的解析而写的。这也是语义化标签的作用。<span style="color: #800000;"><strong>大家可以先只大致了解概念即可。</strong></span></p>
+    <ul>
+    <li><strong>main标签</strong>里放的是网站的主体内容；</li>
+    <li><strong>header标签</strong>用于网页或某个元素的头部的展示介绍性内容，比如标题，Logo、搜索框等等；</li>
+    <li><strong>nav标签</strong>用于导航栏的链接列表；</li>
+    <li><strong>article标签</strong>表示文档、页面、应用或网站中的独立结构，其意在成为可独立分配的或可复用的结构，如在发布中，它可能是论坛帖子、杂志或新闻文章、博客、用户提交的评论、交互式组件，或者其他独立的内容项目；</li>
+    <li><strong>footer标签</strong>用于网页或某个元素的页脚，通常包含该作者、版权数据或者与文档相关的链接等信息；</li>
+    <li><strong>aside标签</strong>主要用于侧边栏或widgets，这些内容通常比较独立，与页面内容几乎无关，单独拆分出来也不会使整体受影响；</li>
+    <li><strong>section标签</strong>表示网页中的一个区域，一个节；</li>
+    </ul>
+    <blockquote><p>即使你不用或只部分使用上面的语义化标签对代码都不会有什么影响，很多程序员甚至还只用div标签。这里的&lt;main&gt;标签相当于
+                <span id="crayon-5dde42cd6b8e1629638513" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-o">&amp;</span><span class="crayon-v">lt</span><span class="crayon-sy">;</span><span class="crayon-e">div </span><span class="crayon-t">class</span><span class="crayon-o">=</span><span class="crayon-s">"main"</span><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-o">&amp;</span><span class="crayon-v">lt</span><span class="crayon-sy">;</span><span class="crayon-o">/</span><span class="crayon-v">div</span><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span></span></span>或者
+                <span id="crayon-5dde42cd6b8e3408422468" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-o">&amp;</span><span class="crayon-v">lt</span><span class="crayon-sy">;</span><span class="crayon-e">div </span><span class="crayon-v">id</span><span class="crayon-o">=</span><span class="crayon-s">"main"</span><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-o">&amp;</span><span class="crayon-v">lt</span><span class="crayon-sy">;</span><span class="crayon-o">/</span><span class="crayon-v">div</span><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span></span></span>，同理header、footer、article、aside、section、nav等，甚至标题标签也是如此，但我们建议大家尽可能使用语义化标签。</p></blockquote>
+    <h4>链接a标签</h4>
+    <p>HTML的&lt;a&gt;元素可以创建一个其他网页、文件、当前网页的某一个位置、电子邮件地址、电话以及其他URL的链接。</p>
+    <p><strong>创建链接到其他网页的超链接</strong></p>
+    <p>同样我们不要只看而是结合VS Code，把下面的代码输入到lesson2.html里面。</p>
+            <div id="crayon-5dde42cd6b8e4528469207" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;a href="https://hackwork.org/handbook/html5/782/" title="HackWork HTML5技术工坊" target="_blank"&gt;HackWork零基础网页开发入门与实践&lt;/a&gt;
+    &lt;h3&gt;打开我们之前建好的index.html页面&lt;/h3&gt;
+    &lt;a href="index.html"&gt;lesson2.html与index.html在同一个文件夹里才有效&lt;/a&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8e4528469207-1" style="height: 40px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e4528469207-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e4528469207-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8e4528469207-1"><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork.org/handbook/html5/782/"</span><span class="crayon-h"> </span><span class="crayon-e ">title</span><span class="crayon-o">=</span><span class="crayon-s ">"HackWork HTML5技术工坊"</span><span class="crayon-h"> </span><span class="crayon-e ">target</span><span class="crayon-o">=</span><span class="crayon-s ">"_blank"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">HackWork零基础网页开发入门与实践</span><span class="crayon-r ">&lt;/a&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e4528469207-2"><span class="crayon-r ">&lt;h3&gt;</span><span class="crayon-i ">打开我们之前建好的index.html页面</span><span class="crayon-r ">&lt;/h3&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e4528469207-3"><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"index.html"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">lesson2.html与index.html在同一个文件夹里才有效</span><span class="crayon-r ">&lt;/a&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>保存之后，使用浏览器打开lesson2.html，然后：</p>
+    <ul>
+    <li>思考一下链接的文字为什么会有颜色和下划线；</li>
+    <li>把鼠标放在链接的文字上，注意鼠标变成了手型；</li>
+    <li>把鼠标放在链接的文字上上3秒左右，看会弹出什么内容；</li>
+    <li>点击一下链接会有什么效果，以及注意链接的文字样式的变化；</li>
+    <li>把代码里的target=”_blank” 删掉之后，再来点击链接看和之前有什么不同</li>
+    </ul>
+    <blockquote><p>每一个html标签都有<strong>属性attribute</strong>，有的属性是所有HTML元素都会有的属性，我们称之为全局属性，这里的href、title、target就是a标签的特有属性。要彻底掌握一个标签，我们就要清楚它有哪些属性以及每个属性的作用。</p></blockquote>
+    <ul>
+    <li><strong>href属性</strong>规定指向的链接地址；</li>
+    <li><strong>title属性</strong>表示的是鼠标滑过链接文字时会显示这个属性的文本内容。title属性在实际网页开发中作用很大，主要方便搜索引擎了解链接地址的内容，有利于被搜索引擎检索也就是SEO；</li>
+    <li><strong>target属性</strong>指定在何处显示链接的内容，如果不添加，那它默认的是”_self”，也就是在当前页面打开内容，而”_blank”则是在浏览器新的窗口或标签页来加载内容</li>
+    </ul>
+    <p>通过上面的案例我们也发现html标签的有些属性并非必须，比如第二个链接就没有title属性和target属性。</p>
+    <p><strong>跳转到锚点位置</strong></p>
+    <p>我们希望点击一个链接可以跳转到页面的某一个具体的位置，这个时候就需要锚点，HTML的所有标签都有<strong>id属性</strong>，而id又是独一无二的，只需设置一个id值，跳转的时候就能“精确导航”啦。</p>
+    <p>方法是给要跳转到具体位置的html标签创建一个id值，href值为”#+锚点的id值”即可。（为了让效果更清晰，我们特意加了一些style，大家可以忽略。）输入下面的代码到lesson2.html的body标签，保存后用浏览器打开查看效果。</p>
+            <div id="crayon-5dde42cd6b8e6750485504" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;div style="height:1000px"&gt;
+        &lt;h3&gt;链接到当前文档的锚点&lt;/h3&gt;
+        &lt;a href="#link"&gt;Boostrap技术文档的锚点&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div id="link" style="margin-bottom:400px"&gt;
+        &lt;h3&gt;链接到外部的锚点&lt;/h3&gt;
+        &lt;a href="https://v3.bootcss.com/css/#tables" target="_blank"&gt;Boostrap技术文档的锚点&lt;/a&gt;
+    &lt;/div&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8e6750485504-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e6750485504-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e6750485504-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e6750485504-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e6750485504-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e6750485504-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e6750485504-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e6750485504-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8e6750485504-1"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"height:1000px"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e6750485504-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;h3&gt;</span><span class="crayon-i ">链接到当前文档的锚点</span><span class="crayon-r ">&lt;/h3&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e6750485504-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"#link"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Boostrap技术文档的锚点</span><span class="crayon-r ">&lt;/a&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e6750485504-4"><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e6750485504-5"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">id</span><span class="crayon-o">=</span><span class="crayon-s ">"link"</span><span class="crayon-h"> </span><span class="crayon-e ">style</span><span class="crayon-o">=</span><span class="crayon-s ">"margin-bottom:400px"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e6750485504-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;h3&gt;</span><span class="crayon-i ">链接到外部的锚点</span><span class="crayon-r ">&lt;/h3&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e6750485504-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"https://v3.bootcss.com/css/#tables"</span><span class="crayon-h"> </span><span class="crayon-e ">target</span><span class="crayon-o">=</span><span class="crayon-s ">"_blank"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">Boostrap技术文档的锚点</span><span class="crayon-r ">&lt;/a&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e6750485504-8"><span class="crayon-r ">&lt;/div&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>创建邮件、电话链接</strong></p>
+    <p>为了让交互体验更好，我们可以使用a标签创建邮件和电话的链接，创建邮件链接的方法是让href属性的值为mailto:+邮件地址，当点击链接就会启动邮件客户端；创建电话链接的方式是让href的值为tel:+电话号码，点击链接就可以拨打电话。</p>
+            <div id="crayon-5dde42cd6b8e9273369810" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;a href="mailto:code@hackwork.org"&gt;给我们发邮件&lt;/a&gt;
+    &lt;a href="tel:+1850000000"&gt;给我们打电话&lt;/a&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8e9273369810-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8e9273369810-2" style="height: 20px;">2</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8e9273369810-1"><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"mailto:code@hackwork.org"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">给我们发邮件</span><span class="crayon-r ">&lt;/a&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8e9273369810-2"><span class="crayon-r ">&lt;a </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"tel:+1850000000"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">给我们打电话</span><span class="crayon-r ">&lt;/a&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4><b>图片img标签</b></h4>
+    <p>img 元素向网页中嵌入一幅图像。请注意，从技术上讲，&lt;img&gt; 标签并不会在网页中插入图像，而是从网页上链接图像。</p>
+    <p><strong>插入图像</strong></p>
+    <p>使用&lt;img&gt;标签来插入图片，图像可以是GIF，PNG，JPEG格式的图像文件。在lesson2.html的body标签里输入下面的代码，保存后查看效果。然后右键另存为动图run.gif，把图片放置在之前建好的img文件夹里，刷新页面再来查看效果。</p>
+            <div id="crayon-5dde42cd6b8ea259264702" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;h3&gt;img标签添加外部图片，图片格式为jpg&lt;/h3&gt;
+    &lt;img title="微信小程序技术训练营" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg" width="100px" height="100px" &gt;
+    &lt;h3&gt;添加一张外部的gif动图&lt;/h3&gt;
+    &lt;img src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/run.gif" width="80" height="80"&gt;
+    &lt;h3&gt;把图片放置在之前建好的img文件夹里&lt;/h3&gt;
+    &lt;img alt="Gif动图" src="./img/run.gif" width="64" height="64"&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8ea259264702-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ea259264702-2" style="height: 40px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ea259264702-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ea259264702-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ea259264702-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ea259264702-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8ea259264702-1"><span class="crayon-o">&lt;</span><span class="crayon-v">h3</span><span class="crayon-o">&gt;</span><span class="crayon-i">img</span>标签添加外部图片，图片格式为<span class="crayon-v">jpg</span><span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">h3</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8ea259264702-2"><span class="crayon-o">&lt;</span><span class="crayon-e">img </span><span class="crayon-v">title</span><span class="crayon-o">=</span><span class="crayon-s">"微信小程序技术训练营"</span><span class="crayon-h"> </span><span class="crayon-v">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-h"> </span><span class="crayon-v">width</span><span class="crayon-o">=</span><span class="crayon-s">"100px"</span><span class="crayon-h"> </span><span class="crayon-v">height</span><span class="crayon-o">=</span><span class="crayon-s">"100px"</span><span class="crayon-h"> </span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8ea259264702-3"><span class="crayon-o">&lt;</span><span class="crayon-v">h3</span><span class="crayon-o">&gt;</span>添加一张外部的<span class="crayon-i">gif</span>动图<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">h3</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8ea259264702-4"><span class="crayon-o">&lt;</span><span class="crayon-e">img </span><span class="crayon-v">src</span><span class="crayon-o">=</span><span class="crayon-s">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/run.gif"</span><span class="crayon-h"> </span><span class="crayon-v">width</span><span class="crayon-o">=</span><span class="crayon-s">"80"</span><span class="crayon-h"> </span><span class="crayon-v">height</span><span class="crayon-o">=</span><span class="crayon-s">"80"</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8ea259264702-5"><span class="crayon-o">&lt;</span><span class="crayon-v">h3</span><span class="crayon-o">&gt;</span>把图片放置在之前建好的<span class="crayon-i">img</span>文件夹里<span class="crayon-o">&lt;</span><span class="crayon-o">/</span><span class="crayon-v">h3</span><span class="crayon-o">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8ea259264702-6"><span class="crayon-o">&lt;</span><span class="crayon-e">img </span><span class="crayon-v">alt</span><span class="crayon-o">=</span><span class="crayon-s">"Gif动图"</span><span class="crayon-h"> </span><span class="crayon-v">src</span><span class="crayon-o">=</span><span class="crayon-s">"./img/run.gif"</span><span class="crayon-h"> </span><span class="crayon-v">width</span><span class="crayon-o">=</span><span class="crayon-s">"64"</span><span class="crayon-h"> </span><span class="crayon-v">height</span><span class="crayon-o">=</span><span class="crayon-s">"64"</span><span class="crayon-o">&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <ul>
+    <li><strong>alt属性</strong>规定图像的替代文本，当图像下载不成功时，可看到该属性指定的文本</li>
+    <li>&nbsp;<strong>title属性</strong>提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)；</li>
+    <li><strong>src属性</strong>规定显示图像的 URL。可能的值：绝对 URL – 指向其他站点（比如 src=”http://www.example.com/”）;相对 URL – 指向站点内的文件（比如 src=”/i/image.gif”）</li>
+    <li><strong>height属性</strong>定义图像的高度；<strong>width属性</strong>定义图像的宽度</li>
+    </ul>
+    <p><strong>闭合标签</strong></p>
+    <p>我们发现&lt;img&gt;标签和之前的标签有点不一样，img标签不是成对出现的，这类标签我们可以称之为<strong>闭合标签</strong>，可能有时候大家在看其他的资料时有把&lt;img src=””&gt;写成&lt;img src=”” /&gt;，标签里有一个/的小尾巴，这是以前的写法，新版本的html5不需要（写也没有关系）。</p>
+    <h4>相对路径与绝对路径</h4>
+    <p>在我们学习a标签和img标签的src属性时，都会有相对url和绝对url，这个就涉及到相对路径和绝对路径的知识了。</p>
+    <p><strong>绝对路径</strong></p>
+    <p>绝对路径就是文件的真正存在的路径，是指从硬盘的根目录(盘符)开始，进行一级级目录指向文件，也可以是存放在服务器上的URL链接。</p>
+            <div id="crayon-5dde42cd6b8ec412669194" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">C:/Documents/newproject/img/icon.jpg
+    /* 这个是在电脑上的绝对路径 */
+    
+    https://static.bootcss.com/www/assets/img/w3schools.png
+    /* 这个是在服务器上的绝对路径，也就是我们常见的URL链接 */</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8ec412669194-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ec412669194-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ec412669194-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ec412669194-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ec412669194-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8ec412669194-1">C<span class="crayon-o">:</span><span class="crayon-o">/</span>Documents<span class="crayon-o">/</span>newproject<span class="crayon-o">/</span>img<span class="crayon-o">/</span>icon<span class="crayon-sy">.</span>jpg</div><div class="crayon-line" id="crayon-5dde42cd6b8ec412669194-2"><span class="crayon-o">/</span><span class="crayon-o">*</span><span class="crayon-h"> </span>这个是在电脑上的绝对路径<span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-o">/</span></div><div class="crayon-line" id="crayon-5dde42cd6b8ec412669194-3">&nbsp;</div><div class="crayon-line" id="crayon-5dde42cd6b8ec412669194-4">https<span class="crayon-o">:</span><span class="crayon-o">/</span><span class="crayon-o">/</span>static<span class="crayon-sy">.</span>bootcss<span class="crayon-sy">.</span>com<span class="crayon-o">/</span>www<span class="crayon-o">/</span>assets<span class="crayon-o">/</span>img<span class="crayon-o">/</span>w3schools<span class="crayon-sy">.</span>png</div><div class="crayon-line" id="crayon-5dde42cd6b8ec412669194-5"><span class="crayon-o">/</span><span class="crayon-o">*</span><span class="crayon-h"> </span>这个是在服务器上的绝对路径，也就是我们常见的URL链接<span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-o">/</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这个在电脑的绝对路径是该文件在你电脑上的位置，如果你把文件发给其他人，他存放文件的位置和你的有所不同，那他就打不开链接了。</p>
+    <p><strong>相对路径</strong></p>
+    <div>
+    <div>
+    <p>而相对路径就是以当前文件为基准进行一级级目录指向被引用的资源文件。</p>
+    <ul>
+    <li>../ 表示当前文件所在的目录的上一级目录</li>
+    <li>./ 表示当前文件所在的目录(可以省略)</li>
+    <li>/ 表示当前站点的根目录(域名映射的硬盘目录)</li>
+    </ul>
+    </div>
+    <p></p>
+            <div id="crayon-5dde42cd6b8ee023709119" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">/* 如果我们在index.html写入下面这个地址 */
+    &lt;img src="img/bg.jpg"&gt;
+    /* 那这个图片的地址就在和index.html平级的img文件夹下面 */</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8ee023709119-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ee023709119-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8ee023709119-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8ee023709119-1"><span class="crayon-o">/</span><span class="crayon-o">*</span><span class="crayon-h"> </span>如果我们在index<span class="crayon-sy">.</span>html写入下面这个地址<span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-o">/</span></div><div class="crayon-line" id="crayon-5dde42cd6b8ee023709119-2"><span class="crayon-r ">&lt;img </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"img/bg.jpg"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8ee023709119-3"><span class="crayon-o">/</span><span class="crayon-o">*</span><span class="crayon-h"> </span>那这个图片的地址就在和index<span class="crayon-sy">.</span>html平级的img文件夹下面<span class="crayon-h"> </span><span class="crayon-o">*</span><span class="crayon-o">/</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>相对路径有个好处就是只要把当前项目整体打包发给别人或者上传到服务器上面，文件链接地址都不会失效。</p>
+    <blockquote><p>关于相对路径以及绝对路径，你只需要知道如何把网页里面的图片链接呈现到网页上，知道如何把电脑上面（有多层二三级目录）的图片通过相对路径和绝对路径的方式用img标签显示出来。</p></blockquote>
+    </div>
+    <p><span style="font-size: 20px; font-weight: bold;">列表</span></p>
+    <p>在word文档里面有有序列表和无序列表，对应的，网页里面也就有了这些标签了。</p>
+            <div id="crayon-5dde42cd6b8f0792363888" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;div&gt;
+        &lt;!--&lt;ul&gt;…&lt;/ul&gt;：无序标签 --&gt;
+        &lt;ul&gt;
+            &lt;li&gt;系统指导&lt;/li&gt;
+            &lt;li&gt;注重实战&lt;/li&gt;
+            &lt;li&gt;持续性进阶&lt;/li&gt;
+            &lt;li&gt;贴近实际的案例&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;为什么要学网页开发&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;!--&lt;ol&gt;…&lt;/ol&gt;：有序标签 --&gt;
+        &lt;ol&gt;
+            &lt;li&gt;职场人士必学基础技能&lt;/li&gt;
+            &lt;li&gt;技术爱好者入门首选&lt;/li&gt;
+            &lt;li&gt;UI、UX设计师基础技能&lt;/li&gt;
+            &lt;li&gt;产品经理/创业者需掌握入门技术&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/div&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f0792363888-19" style="height: 20px;">19</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-1"><span class="crayon-r ">&lt;div&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!--&lt;ul&gt;…&lt;/ul&gt;：无序标签 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;ul&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span><span class="crayon-i ">系统指导</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span><span class="crayon-i ">注重实战</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span><span class="crayon-i ">持续性进阶</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span><span class="crayon-i ">贴近实际的案例</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/ul&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-9"><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-10"><span class="crayon-r ">&lt;h3&gt;</span><span class="crayon-i ">为什么要学网页开发</span><span class="crayon-r ">&lt;/h3&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-11"><span class="crayon-r ">&lt;div&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-12"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">&lt;!--&lt;ol&gt;…&lt;/ol&gt;：有序标签 --&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-13"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;ol&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-14"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span><span class="crayon-i ">职场人士必学基础技能</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-15"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span><span class="crayon-i ">技术爱好者入门首选</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-16"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span><span class="crayon-i ">UI、UX设计师基础技能</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-17"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;li&gt;</span><span class="crayon-i ">产品经理/创业者需掌握入门技术</span><span class="crayon-r ">&lt;/li&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-18"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/ol&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f0792363888-19"><span class="crayon-r ">&lt;/div&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <h4>链接内嵌套其他标签</h4>
+    <p>网页是由一个个标签组成的，标签与标签之间是可以嵌套的，而且实际开发中标签往往嵌套的层数非常多。大家可以把下面的代码输入到body标签内，保存之后使用浏览器打开预览效果。</p>
+            <div id="crayon-5dde42cd6b8f2747101966" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;div class="index-event"&gt;
+        &lt;a class="event-link" href="https://hackwork.org/handbook/html5/780/" target="_blank"&gt;
+            &lt;div class="event-top"&gt;
+                &lt;img src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg" width="60px" height="60px"&gt;
+            &lt;/div&gt;
+            &lt;div class="event-content"&gt;                
+                &lt;h3&gt;HackWeek 网页开发技术工坊&lt;/h3&gt;
+                &lt;p&gt;网页开发的核心是HTML和CSS，这些是UI设计师、前端开发工程师、后端开发工程师（Java、Python、Node、PHP等）等必学的基础，严格来说HTML和CSS不是编程语言，但却基本已经是程序员必备的技术技能，从事互联网其他行业如设计、运营营销也需要掌握。&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/a&gt;  
+    &lt;/div&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-4" style="height: 40px;">4</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-8" style="height: 40px;">8</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5dde42cd6b8f2747101966-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-1"><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"index-event"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-2"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;a </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"event-link"</span><span class="crayon-h"> </span><span class="crayon-e ">href</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork.org/handbook/html5/780/"</span><span class="crayon-h"> </span><span class="crayon-e ">target</span><span class="crayon-o">=</span><span class="crayon-s ">"_blank"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-3"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"event-top"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-4"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;img </span><span class="crayon-e ">src</span><span class="crayon-o">=</span><span class="crayon-s ">"https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"</span><span class="crayon-h"> </span><span class="crayon-e ">width</span><span class="crayon-o">=</span><span class="crayon-s ">"60px"</span><span class="crayon-h"> </span><span class="crayon-e ">height</span><span class="crayon-o">=</span><span class="crayon-s ">"60px"</span><span class="crayon-r ">&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-5"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-6"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;div </span><span class="crayon-e ">class</span><span class="crayon-o">=</span><span class="crayon-s ">"event-content"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-7"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;h3&gt;</span><span class="crayon-i ">HackWeek 网页开发技术工坊</span><span class="crayon-r ">&lt;/h3&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-8"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;p&gt;</span><span class="crayon-i ">网页开发的核心是HTML和CSS，这些是UI设计师、前端开发工程师、后端开发工程师（Java、Python、Node、PHP等）等必学的基础，严格来说HTML和CSS不是编程语言，但却基本已经是程序员必备的技术技能，从事互联网其他行业如设计、运营营销也需要掌握。</span><span class="crayon-r ">&lt;/p&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-9"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/div&gt;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-10"><span class="crayon-i ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r ">&lt;/a&gt;</span><span class="crayon-i ">&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5dde42cd6b8f2747101966-11"><span class="crayon-r ">&lt;/div&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>上面这一段代码就嵌套了很多层：</p>
+    <ul>
+    <li>通常我们会使用div像一个集装箱一样把所有的内容都装进去；</li>
+    <li>在这里a标签里面也嵌套了很多层，里面包括标题、图片、文字，当我们点击任一块内容的时候都会跳转链接</li>
+    <li>我们通常会给div等标签的id或class属性添加一些区分它们的值；</li>
+    <li>大家预览效果的时候发现没有添加样式页面会比较难看，而且浏览器给一些标签默认添加了一些样式，比如a标签里面的文字有颜色以及下划线</li>
+    </ul>
+    <h4>技术文档</h4>
+    <p>上面我们只是列举了HTML最常见的一些标签，我们可以在<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">HTML元素参考</a>里面看到所有的标签。掌握最常见的标签才算入门，知道如何找到所有的标签，如何查阅标签的用法，是技术进阶所要必备的。HTML的技术文档比较推荐的有以下两个，大家可以<span style="color: #800000;"><strong>先各花五分钟左右的时间快速</strong></span>浏览一下即可，学习先以我们的教程为主。</p>
+    <ul>
+    <li><strong>技术文档：</strong><a href="http://www.w3school.com.cn/tags/html_ref_byfunc.asp" target="_blank" rel="noopener noreferrer">W3School的中文网站</a>（虽然很多内容已经过时，但比较符合国人的习惯）</li>
+    <li><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">MDN技术文档</a>（最专业全面的技术文档）</li>
+    </ul>
+    <blockquote><p>技术文档的内容是非常多的，在初次使用之时，我们需要快速掌握它们的文档结构，就跟我们看一本书的目录一样。技术文档相当于我们学习英语时的辞典，你无需记住全文，只需要培养查阅辞典（技术文档）的习惯，以及知道如何快速查阅。</p></blockquote>
+	</div><!-- .entry-content -->
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
