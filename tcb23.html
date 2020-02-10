@@ -1,0 +1,1006 @@
+<html><head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+          <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-42802757-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-42802757-2');
+    </script>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43ba6db32083f56ba6b97d4aa8900a0e";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed/">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 云数据库入门评论Feed" href="https://cloudbasegroup.org/handbook/tcb/102/feed/">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="HTML5基础知识" href="https://cloudbasegroup.org/handbook/webpage/95/">
+    <link rel="next" title="存储、数组、对象" href="https://cloudbasegroup.org/handbook/tcb/104/">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/tcb/102/">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=102">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Ftcb%2F102%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Ftcb%2F102%2F&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    </head>
+    
+    <body class="post-template-default single single-post postid-102 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+                <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                          <div class="logotop fleft">
+                            <a href="https://tencentcloudbase.github.io/handbook/tcb21.html" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/logo.png"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                         </button>
+                        <div class="flex nav-items">
+                        <h1 class="flex-item navbar-link">
+                            云开发技术训练营			</h1>
+                          </div>
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                     <div class="sop-menu">
+                        <ul>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb21.html">
+                                    云开发快速入门					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb22.html">
+                                    云开发能力					</a>
+                            </li>
+                                            <li class="page_item current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb23.html">
+                                    云数据库入门					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb24.html">
+                                    存储、数组、对象					</a>
+                            </li>
+                                            <li class="page_item no_current_page_item">
+                                <a href="https://tencentcloudbase.github.io/handbook/tcb25.html">
+                                    云开发与Nodejs					</a>
+                            </li>
+                                                            </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+    <div class="sop-content">
+        <header class="entry-header">
+            <h1 class="entry-title">云数据库入门</h1>
+        </header><!-- .entry-header -->
+    
+        <div class="entry-content">
+            <p><span style="color: #800000;"><strong>任何</strong></span>一个大型的应用程序和服务，都<span style="color: #800000;"><strong>必须</strong></span>会使用到<strong>高性能的</strong>数据存储解决方案，用来<span style="color: #800000;"><strong>准确</strong></span>（ACID,原子性Atomicity、一致性Consistency、隔离性Isolation、持久性Durability，可以拓展了解一下）、<span style="color: #800000;"><strong>快速</strong></span>、<span style="color: #800000;"><strong>可靠</strong></span>地<span style="color: #800000;"><strong>存储和检索</strong></span>用户的账户信息、商品以及商品交易信息、产品数据、资讯文章等等等等，而云开发就自带高性能、高可用、高拓展性且安全的数据库。</p>
+    <h4>云数据库的基础知识</h4>
+    <blockquote class="danger"><p>在操作数据库时，我们要对<strong>数据库database</strong>、<strong>集合collection</strong>、<strong>记录doc</strong>以及<strong>字段field</strong>要有一定的了解，首先要<strong>记住这些对应的英文单词</strong>，当你要操作某个记录doc的字段内容时，就像投送快递一样，要先搞清楚它到底在哪个数据库、在哪个集合、在哪个记录里，一级一级的去找。操作数据库通常都是对数据库、集合、记录、字段进行<strong><span style="color: #800000;">增、删、改、查</span></strong>，当你清楚了这些，操作数据库就不会迷糊了。</p></blockquote>
+    <p><strong>云数据库与Excel、MySQL的对应理解</strong></p>
+    <p>我们可以结合Excel以及MySQL（之前没有接触过MySQL也没有关系，只看与Excel的对应就行）来理解云开发的数据库。</p>
+    <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+    <th>&nbsp;云数据库</th>
+    <td>&nbsp;<strong>MySQL数据库</strong></td>
+    <td><strong>Excel文件</strong></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th>&nbsp;数据库database</th>
+    <td>数据库 <strong>database</strong></td>
+    <td>工作簿</td>
+    </tr>
+    <tr>
+    <th>&nbsp;集合 collection</th>
+    <td>表 <strong>table</strong></td>
+    <td>工作表</td>
+    </tr>
+    <tr>
+    <th>&nbsp;字段field</th>
+    <td>数据列<strong>column</strong></td>
+    <td>&nbsp;数据表的每一列</td>
+    </tr>
+    <tr>
+    <th>记录 record/doc</th>
+    <td>记录<strong>row</strong></td>
+    <td>&nbsp;数据表除开第一行的每一行</td>
+    </tr>
+    </tbody>
+    </table>
+    <p><strong>集合的创建与数据类型</strong></p>
+    <p>我们现在来<span style="color: #008000;">创建一个<strong>books</strong>的集合</span>（相当于创建一张Excel表），用来存放图书馆里面书籍的信息，比如这样一本书：</p>
+    <table class="table table-bordered table-striped">
+    <tbody>
+    <tr>
+    <th>书名title</th>
+    <td colspan="2">JavaScript权威指南(第6版)</td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr>
+    <th>作者author</th>
+    <td colspan="2">弗兰纳根(David Flanagan)</td>
+    </tr>
+    <tr>
+    <th>标准书号isbn</th>
+    <td colspan="2">9787111376613</td>
+    </tr>
+    <tr>
+    <th>出版信息publishInfo</th>
+    <td>出版社press</td>
+    <td>机械工业出版社</td>
+    </tr>
+    <tr>
+    <th></th>
+    <td>出版年份year</td>
+    <td>2012</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>打开云开发控制台的数据库标签，新建集合books，然后选择该集合，给books里添加记录（类似于填写Excel含字段的第一行和其中一行关于书的信息记录），依次添加字段：</p>
+    <ul>
+    <li>字段名：title，类型：string，值：&nbsp;JavaScript权威指南(第6版)</li>
+    <li>字段名：author，类型：string，值：弗兰纳根(David Flanagan)</li>
+    <li>字段名：isbn，类型：string，值：9787111376613</li>
+    <li>字段名：publishInfo，类型：object</li>
+    <li>然后我们再在publishInfo的下面（二级）添加字段press，类型为string，值为：机械工业出版社；year，类型为number，值为：2012</li>
+    </ul>
+    <div>
+    <h4>数据库的权限控制与安全规则</h4>
+    <p>在数据库创建之后，我们需要在云开发控制台-数据库-集合的权限设置标签对数据库进行<strong>权限设置</strong>。<strong>数据库的权限分为</strong><span style="color: #800000;"><strong>小程序端</strong></span><strong>和</strong><span style="color: #800000;"><strong>服务端</strong></span><strong>（云函数、云开发控制台</strong>）。服务端拥有读写所有数据的读写权限，所以这里的权限设置<strong>只是在设置小程序端的用户对数据库的操作权限</strong>。权限控制分简易权限控制和自定义权限（也就是安全规则），<span style="color: #008000;"><strong>建议开发者用安全规则取代简易的权限控制</strong></span>。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/database/permission.html" target="_blank" rel="noopener noreferrer">权限控制</a></p>
+    <p>要使用自定义权限（也就是安全规则）来全面取代简易的权限控制，我们需要了解<strong>4个简易的权限控制</strong>所表示的意思，以及安全规则应该如何一一取代它们，也就是我们在配置集合的权限时，不再选择简易的权限控制，而是<strong>统一选择自定义权限</strong>，填写与之对应的json规则即可。</p>
+    <blockquote><p>安全规则可以让更加灵活而又明确地自定义前端数据库读写权限的能力，通过配置安全规则，开发者可以精细化的控制集合中所有记录的读read、写write权限。其中write权限还可以细分为create新建、update更新、delete删除等权限，还支持比较、逻辑运算符进行更加精细化的权限配置。</p></blockquote>
+    <ul>
+    <li><strong>所有用户可读，仅创建者可读写</strong>：比如用户发的帖子、评论、文章，这里的<span style="color: #800000;"><strong>创建者是指小程序端的用户</strong></span>，也就是<span style="color: #800000;"><strong>存储UGC</strong></span>（用户产生内容）的集合要设置为这个权限；</li>
+    </ul>
+    <p></p>
+            <div id="crayon-5e40dcd5c5cb6823913450" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+      "read": true,
+      "write": "doc._openid == auth.openid"
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cb6823913450-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cb6823913450-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cb6823913450-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cb6823913450-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cb6823913450-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cb6823913450-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"read"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cb6823913450-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"write"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"doc._openid == auth.openid"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cb6823913450-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <ul>
+    <li><strong>仅创建者可读写</strong>：比如私密相册，用户的个人信息、订单，也就是只能<span style="color: #800000;"><strong>用户自己读与写</strong>，<strong>其他人不可读写</strong></span>的数据集合；</li>
+    </ul>
+    <p></p>
+            <div id="crayon-5e40dcd5c5cbf118083257" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+      "read": "doc._openid == auth.openid",
+      "write": "doc._openid == auth.openid"
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cbf118083257-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cbf118083257-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cbf118083257-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cbf118083257-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cbf118083257-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cbf118083257-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"read"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"doc._openid == auth.openid"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cbf118083257-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"write"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"doc._openid == auth.openid"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cbf118083257-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <ul>
+    <li><strong>所有人可读</strong>：比如资讯文章、商品信息、产品数据等你想让<span style="color: #800000;"><strong>所有人可以看到，但是不能修改</strong></span>的内容；</li>
+    </ul>
+    <p></p>
+            <div id="crayon-5e40dcd5c5cc2890327325" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+      "read": true,
+      "write": false
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cc2890327325-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc2890327325-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc2890327325-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc2890327325-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cc2890327325-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc2890327325-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"read"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc2890327325-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"write"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">false</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc2890327325-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <ul>
+    <li><strong>所有用户不可读写</strong>：如后台用的不暴露的数据，<span style="color: #800000;"><strong>只能你自己看到和修改的数据</strong></span>；</li>
+    </ul>
+    <p></p>
+            <div id="crayon-5e40dcd5c5cc3571428688" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">{
+      "read": false,
+      "write": false
+    }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cc3571428688-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc3571428688-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc3571428688-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc3571428688-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cc3571428688-1"><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc3571428688-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"read"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">false</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc3571428688-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"write"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">false</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc3571428688-4"><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>小程序端 API 拥有严格的调用权限控制，比如在小程序端A用户是不能修改B用户的数据的，没有这样的权限，在小程序端只能修改非敏感且只是针对单个用户的数据；对于有更高安全要求的数据，我们可以在云函数内通过服务端 API 来进行操作。</p>
+    <blockquote><p>如果数据库集合里的数据是<strong>通过导入的方式</strong>获取的，这个集合的权限默认为“<strong>仅创建者可读写</strong>”，这个权限在服务端（云函数）可以调用，但是在小程序端可能会返回空数组哦，所以<span style="color: #800000;"><strong>一定要记得根据情况修改权限</strong></span>。</p></blockquote>
+    <blockquote class="danger"><p><strong>小程序端</strong>与云函数的<strong>服务端</strong>无论是在<strong>权限方面</strong>、<strong>API的写法上</strong>（有时看起来一样，但是写法不一样），还是在<strong>异步处理</strong>上（比如服务端不再使用success、fail、complete回调，而是返回Promise对象），都存在非常多的差异，这一点要分清楚。</p></blockquote>
+    </div>
+    <h4><b>一窥数据查询的全貌</b></h4>
+    <p><strong>查询集合collection里的记录</strong></p>
+    <p>查询集合collection里的记录是云开发数据库操作最重要的知识，在上一节我们已经将<a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/china.csv" target="_blank" rel="noopener noreferrer">中国城市经济数据</a>china.csv的数据导入到了集合china之中，<span style="color: #800000;">并已经设置好了集合的权限为“<strong>所有人可读，仅创建者可读写</strong>”（或使用安全规则）</span>，接下来我们就以此为例并结合<a href="https://shimo.im/sheets/HHwXWQ9qHqvG8xDw/MODOC/" target="_blank" rel="noopener noreferrer">中国城市经济线上excel版</a>来讲解数据库的查询。在<a href="https://shimo.im/sheets/HHwXWQ9qHqvG8xDw/MODOC/" target="_blank" rel="noopener noreferrer">中国城市经济线上excel版</a>以及云开发控制台china集合里，我们可以看到中国332个城市的<strong>名称city</strong>、<strong>省份province</strong>、<strong>市区面积city_area</strong>、<strong>建成区面积builtup_area</strong>、<strong>户籍人口reg_pop</strong>、<strong>常住人口resident_pop</strong>、GDP的数据。</p>
+    <p>查询中国<strong><span style="color: #ff6600;">GDP在3000亿元以上</span></strong>的<strong><span style="color: #008000;">前10个城市</span></strong>，并要求<strong><span style="color: #ff6600;">不显示_id字段</span></strong>，<strong><span style="color: #008000;">显示城市名、所在省份以及GDP</span></strong>，并按照<span style="color: #ff6600;"><strong>GDP大小降序排列</strong></span>。</p>
+    <p>使用开发者工具新建一个chinadata页面，然后再在index.js的onLoad生命周期函数里输入以下代码。操作集合里的数据涉及的知识点非常繁杂，下面的案例相对比较完整，便于大家有一个整体性的理解：</p>
+            <div id="crayon-5e40dcd5c5cc6692423310" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const db = wx.cloud.database()  //获取数据库的引用
+    const _ = db.command     //获取数据库查询及更新指令
+    db.collection("china")  //获取集合china的引用
+      .where({              //查询的条件指令where
+        gdp: _.gt(3000)     //查询筛选条件，gt表示字段需大于指定值。
+      })
+      .field({             //显示哪些字段
+        _id:false,         //默认显示_id，这个隐藏
+        city: true,
+        province: true,
+        gdp:true
+      })
+      .orderBy('gdp', 'desc')  //排序方式，降序排列
+      .skip(0)                 //跳过多少个记录（常用于分页），0表示这里不跳过
+      .limit(10)               //限制显示多少条记录，这里为10
+    
+      .get()                   //获取根据查询条件筛选后的集合数据  
+      .then(res =&gt; {
+        console.log(res.data)
+      })
+      .catch(err =&gt; {
+        console.error(err)
+      })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-20" style="height: 20px;">20</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-21" style="height: 20px;">21</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-22" style="height: 20px;">22</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cc6692423310-23" style="height: 20px;">23</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//获取数据库的引用</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-2"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-v">command</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//获取数据库查询及更新指令</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-3"><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">"china"</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//获取集合china的引用</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c">//查询的条件指令where</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//查询筛选条件，gt表示字段需大于指定值。</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">field</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//显示哪些字段</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">_id</span><span class="crayon-o">:</span><span class="crayon-t">false</span><span class="crayon-sy">,</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//默认显示_id，这个隐藏</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">city</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">province</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-t">true</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">orderBy</span><span class="crayon-sy">(</span><span class="crayon-s">'gdp'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'desc'</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">//排序方式，降序排列</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-14"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">skip</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//跳过多少个记录（常用于分页），0表示这里不跳过</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-15"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">limit</span><span class="crayon-sy">(</span><span class="crayon-cn">10</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//限制显示多少条记录，这里为10</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-16">&nbsp;</div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-17"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-c">//获取根据查询条件筛选后的集合数据&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-18"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">then</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-20"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-21"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">catch</span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-22"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">error</span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cc6692423310-23"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>大家可以留意一下数据查询的<strong>链式写法</strong>，
+                <span id="crayon-5e40dcd5c5cc8152114469" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'数据库名'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">then</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">catch</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>，前半部分是数据查询时对对象的引用和方法的调用；后半部分是Promise对象的方法，Promise对象是get的返回值。写的时候为了让结构更加清晰，我们做了换行处理，写在同一行也是可以的。</p></blockquote>
+    <h4>构建查询条件的5个方法</h4>
+    <p>在上面的案例中，就包含了构建查询条件的五个方法：
+                <span id="crayon-5e40dcd5c5cc9098587742" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">Collection</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>、
+                <span id="crayon-5e40dcd5c5ccb498645410" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">Collection</span><span class="crayon-sy">.</span><span class="crayon-e">field</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>、
+                <span id="crayon-5e40dcd5c5ccd149038395" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">Collection</span><span class="crayon-sy">.</span><span class="crayon-e">orderBy</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>、
+                <span id="crayon-5e40dcd5c5cce520703752" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">Collection</span><span class="crayon-sy">.</span><span class="crayon-e">skip</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>、
+                <span id="crayon-5e40dcd5c5cd2742313771" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">Collection</span><span class="crayon-sy">.</span><span class="crayon-e">limit</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>，这五个方法是可以单独拆开使用的，比如只使用where或只使用field、limit，也可以从这5个中抽几个组合在一起使用，还可以一次查询里写多个相同的方法，比如orderBy、where可以写多次相同的。</p>
+    <blockquote class="danger"><p>不过值得注意的是这5个方法顺序不同查询的结果有时也会有所不同（比如orderBy多次打乱顺序的情况下），查询性能也会有所不同。通常skip最好放在后面，不要让skip略过大量数据。skip().limit()和limit().skip()效果是等价的。构建查询条件的5个方法是基于集合引用Collection的，就拿where来说，不能写成
+                <span id="crayon-5e40dcd5c5cd4953828985" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>，也不能是
+                <span id="crayon-5e40dcd5c5cd6514899600" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">"china"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">doc</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>，只能是
+                <span id="crayon-5e40dcd5c5cd7571454637" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">"china"</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>，也就是只能用于查询集合collection里的记录。</p></blockquote>
+    <ul>
+    <li><strong style="color: #2b2b2b; font-size: 16px;">指令查询条件 where，</strong>注意在后面我们会介绍的<strong>command查询指令</strong>比如筛选字段大于/小于/不等于某个值的比较指令，同时满足多个筛选条件的逻辑指令等，以及<strong>模糊查询的正则</strong>都是写在where内；</li>
+    </ul>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.where.html" target="_blank" rel="noopener noreferrer">Collection.where</a></p>
+    <ul>
+    <li><strong>指定返回哪些字段field，</strong>查询时只需要传入 true|false（或 1|-1）就可以返回或不返回哪些字段，在上面的案例里我们就只返回city、province、gdp三个字段的值：</li>
+    </ul>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.field.html" target="_blank" rel="noopener noreferrer">Collection.field</a></p>
+    <ul>
+    <li><strong>数据排序orderBy，</strong>排序的语法如下，里面为排序的条件，这里的字段名可不受field的限制（不在field内，没有显示，但是还是会起作用）：
+                <span id="crayon-5e40dcd5c5cd9816275314" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">orderBy</span><span class="crayon-sy">(</span><span class="crayon-s">'字段名'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'排序方式'</span><span class="crayon-sy">)</span></span></span>。<br>
+    排序方式只支持<strong>desc降序</strong>、<strong>asc升序</strong>这两种方式，如果字段里面的值时数字就按照大小，如果是字母就按照先后顺序，<strong>不支持中文的排序方式</strong>。排序支持按多个字段排序，多次调用&nbsp;
+                <span id="crayon-5e40dcd5c5cda077934642" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">orderBy</span></span></span>&nbsp;即可，多字段排序时的顺序会按照&nbsp;
+                <span id="crayon-5e40dcd5c5cdc688886245" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">orderBy</span></span></span>&nbsp;调用顺序先后对多个字段排序。如果需要对嵌套字段排序，可以使用点表示法，比如上面的books根据出版年份year从旧到新排序，可以写为
+                <span id="crayon-5e40dcd5c5cde474176620" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-e">orderBy</span><span class="crayon-sy">(</span><span class="crayon-s">'publishInfo.year'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'asc'</span><span class="crayon-sy">)</span></span></span>。</li>
+    </ul>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.orderBy.html" target="_blank" rel="noopener noreferrer">Collection.orderBy</a></p>
+    <ul>
+    <li><strong>分页显示skip，</strong>skip常与limit一起用于分页，比如商品列表一页只显示20个商品，第1页显示整个数据的0~20个，那么第2页我们用skip(20)可以跳过第一页的20条数据，第3页则跳过40个数据，第N页则是skip((n-1)*20)个数据：</li>
+    </ul>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.skip.html" target="_blank" rel="noopener noreferrer">Collection.skip</a></p>
+    <ul>
+    <li><strong>限制数量上限的limit，</strong>集合数据查询的数量上限limit在小程序端最大数量为20，在服务端为100，比如limit(30)在小程序端还是只会显示20条数据，更多数据则需要我们结合分页skip与javascript进行编程处理。</li>
+    </ul>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.limit.html" target="_blank" rel="noopener noreferrer">Collection.limit </a></p>
+    <blockquote><p>小程序查询数据显示的结果虽然有数量限制，比如服务端为100个，但是排序仍然是基于整个集合的数据进行排序的，并不是只针对这100个数据。</p></blockquote>
+    <h4><strong>匹配查询</strong></h4>
+    <p>传入的对象的每个&nbsp;
+                <span id="crayon-5e40dcd5c5cdf555963177" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-o">&amp;</span><span class="crayon-v">lt</span><span class="crayon-sy">;</span><span class="crayon-v">key</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">value</span><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span></span></span>&nbsp;构成一个筛选条件，有多个&nbsp;
+                <span id="crayon-5e40dcd5c5ce1207793128" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-o">&amp;</span><span class="crayon-v">lt</span><span class="crayon-sy">;</span><span class="crayon-v">key</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">value</span><span class="crayon-o">&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span></span></span>&nbsp;则表示需同时满足这些条件，是
+                <span id="crayon-5e40dcd5c5ce3996450300" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">与</span></span>的关系，如果需要
+                <span id="crayon-5e40dcd5c5ce4024438441" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;">或</span></span>关系，可使用&nbsp;
+                <span id="crayon-5e40dcd5c5ce5132942723" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-sy">[</span><span class="crayon-v">command</span><span class="crayon-sy">.</span><span class="crayon-st">or</span><span class="crayon-sy">]</span><span class="crayon-sy">(</span><span class="crayon-sy">(</span><span class="crayon-v">Command</span><span class="crayon-sy">.</span><span class="crayon-st">or</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></span></span></p>
+    <h4>查询指令Command</h4>
+    <p><strong>指令用于查询时，都会写在where内</strong>，主要对字段的值进行比较和逻辑的筛选判断。数据库 API 提供了大于、小于等多种查询指令，这些指令都暴露在&nbsp;
+                <span id="crayon-5e40dcd5c5ce7377784466" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-v">command</span></span></span>&nbsp;对象上。</p>
+    <blockquote><p>指令Command可以分为<strong>查询指令</strong>和<strong>更新指令</strong>，这两者的用法有很大的区别，查询指令用于db.collection的where条件筛选，而更新指令则是用于db.collection.doc的update请求的字段的更新里，这两者的区别在后面我们也会反复提及。</p></blockquote>
+    <p><b>比较操作符和逻辑操作符</b></p>
+    <p>下面我们把查询指令的比较操作符和逻辑操作符整理成了一张表格，并附上相应的技术文档，方便大家对它们有一个清晰而整体的认识。</p>
+    <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+    <th style="text-align: center;" colspan="4">查询指令之比较</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gt.html" target="_blank" rel="noopener noreferrer">gt</a></td>
+    <td>大于</td>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lt.html" target="_blank" rel="noopener noreferrer">lt</a></td>
+    <td>小于</td>
+    </tr>
+    <tr>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.eq.html" target="_blank" rel="noopener noreferrer">eq</a></td>
+    <td>等于</td>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.neq.html" target="_blank" rel="noopener noreferrer">neq</a></td>
+    <td>不等于</td>
+    </tr>
+    <tr>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.lte.html" target="_blank" rel="noopener noreferrer">lte</a></td>
+    <td>小于或等于</td>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.gte.html" target="_blank" rel="noopener noreferrer">gte</a></td>
+    <td>大于或等于</td>
+    </tr>
+    <tr>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.in.html" target="_blank" rel="noopener noreferrer">in</a></td>
+    <td>在数组中</td>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.nin.html" target="_blank" rel="noopener noreferrer">nin</a></td>
+    <td>不在数组中</td>
+    </tr>
+    </tbody>
+    <thead>
+    <tr>
+    <th style="text-align: center;" colspan="4">查询指令之逻辑</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.and.html" target="_blank" rel="noopener noreferrer">and</a></td>
+    <td>条件与</td>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.or.html" target="_blank" rel="noopener noreferrer">or</a></td>
+    <td>条件或</td>
+    </tr>
+    <tr>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.not.html" target="_blank" rel="noopener noreferrer">not</a></td>
+    <td>条件非</td>
+    <td><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/command/Command.nor.html" target="_blank" rel="noopener noreferrer">nor</a></td>
+    <td>都不</td>
+    </tr>
+    </tbody>
+    </table>
+    <p><strong>查询指令的写法</strong></p>
+    <p><strong>指令command</strong>是基于database数据库引用的，我们以<strong>大于gt</strong>在小程序端（以大于3000为例）的完整写法为例：</p>
+            <div id="crayon-5e40dcd5c5ce9100123487" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">wx.cloud.database().command.gt(3000)</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5ce9100123487-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5ce9100123487-1"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">command</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>为了简便，通常我们会把
+                <span id="crayon-5e40dcd5c5ceb447576305" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>会赋值给一个变量，如
+                <span id="crayon-5e40dcd5c5ced732682527" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">db</span></span></span>，
+                <span id="crayon-5e40dcd5c5cee034830153" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-v">command</span></span></span>又会赋值给
+                <span id="crayon-5e40dcd5c5cef970935982" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">_</span></span></span>，使用时最终被简化为
+                <span id="crayon-5e40dcd5c5cf1307727471" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span></span></span>。通过一层一层的声明变量并赋值，大大简化了指令的写法，大家可以在其他指令都沿用这种写法。</p>
+    <p><strong>用法丰富的等于指令Command.eq</strong></p>
+    <p>相比于其他的比较指令等于eq和不等于neq操作符的用法非常丰富，它可以<strong>进行数值比较</strong>，我们查询某个字段比如GDP等于某个数值如17502.8亿的城市：</p>
+            <div id="crayon-5e40dcd5c5cf2719275217" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  .where({
+         gdp: _.eq(17502.8),
+         })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cf2719275217-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cf2719275217-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cf2719275217-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cf2719275217-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cf2719275217-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">eq</span><span class="crayon-sy">(</span><span class="crayon-cn">17502.8</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cf2719275217-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>它还可以进行<strong>字符串的匹配</strong>，比如我们查询某个字段比如city完整匹配一个字符串如深圳：</p>
+            <div id="crayon-5e40dcd5c5cf4699023819" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.where({
+         city: _.eq("深圳"),
+         })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cf4699023819-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cf4699023819-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cf4699023819-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cf4699023819-1"><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cf4699023819-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">city</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">eq</span><span class="crayon-sy">(</span><span class="crayon-s">"深圳"</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cf4699023819-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>注意：在查询时，gdp: _.eq(17502.8)的效果等同于gdp:17502.8，而city: _.eq(“深圳”)等同于city:”深圳”，虽然两种方式查询的结果都是一致的，但是它们的原理不同，前者用的是等于指令，后者用的是传递对象值。</p></blockquote>
+    <p>eq还可以用于字段的值是数组以及对象的情况，在后面的章节我们会再来介绍。</p>
+    <p><strong>字段内的逻辑指令</strong></p>
+    <p>查询<span style="color: #ff6600;"><strong>广东省内</strong></span>、<strong><span style="color: #008000;">GDP在3000亿以上且在1万亿以下</span></strong>的城市。在广东省内也就是让字段province的值等于”广东”，而GDP的要求则是GDP这个字段同时满足大于3000亿且小于1万亿，这时就需要用到and（条件与，也就是且的意思）：</p>
+            <div id="crayon-5e40dcd5c5cf5928331181" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  .where({
+        province:_.eq("广东"),
+        gdp:_.gt(3000).and(_.lt(10000))
+      })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cf5928331181-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cf5928331181-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cf5928331181-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cf5928331181-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cf5928331181-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cf5928331181-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">province</span><span class="crayon-o">:</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">eq</span><span class="crayon-sy">(</span><span class="crayon-s">"广东"</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cf5928331181-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">and</span><span class="crayon-sy">(</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">lt</span><span class="crayon-sy">(</span><span class="crayon-cn">10000</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cf5928331181-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>跨字段的逻辑指令</strong></p>
+    <p>上面的案例中where内的两个条件，
+                <span id="crayon-5e40dcd5c5cf7598925327" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">province</span><span class="crayon-o">:</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">eq</span><span class="crayon-sy">(</span><span class="crayon-s">"广东"</span><span class="crayon-sy">)</span></span></span>和
+                <span id="crayon-5e40dcd5c5cf9758550715" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">and</span><span class="crayon-sy">(</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">lt</span><span class="crayon-sy">(</span><span class="crayon-cn">10000</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span></span></span>带有跨字段的<strong>条件与and（也就是且）</strong>的关系，那如何实现跨字段的<strong>条件或or</strong>呢？</p>
+    <p>查询中国<strong><span style="color: #ff6600;">GDP在3000亿元以上</span><span style="color: #800000;">且</span><span style="color: #008000;">常住人口在500万以上</span><span style="color: #800000;">或</span><span style="color: #ff6600;">建城区面积在300平方公里以上</span></strong>的<span style="color: #008000;"><strong>前20个大城市</strong></span>。这里常住人口和建成区面积只需要满足其中一个条件即可，这就涉及到条件或or（<span style="color: #800000;"><strong>注意下面代码的格式写法</strong></span>）：</p>
+            <div id="crayon-5e40dcd5c5cfa978280197" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  .where(
+        {
+         gdp: _.gt(3000),
+         resident_pop:_.gt(500), 
+         },
+        _.or([{
+         builtup_area: _.gt(300)}
+         ]), 
+      )</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5cfa978280197-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">resident_pop</span><span class="crayon-o">:</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">500</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-st">or</span><span class="crayon-sy">(</span><span class="crayon-sy">[</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">builtup_area</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">300</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-sy">]</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5e40dcd5c5cfa978280197-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>注意上面三个条件，
+                <span id="crayon-5e40dcd5c5cfc430771254" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span></span></span>和
+                <span id="crayon-5e40dcd5c5cfd325698234" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">resident_pop</span><span class="crayon-o">:</span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">500</span><span class="crayon-sy">)</span></span></span>是逻辑与，而与
+                <span id="crayon-5e40dcd5c5cff548513456" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">builtup_area</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">300</span><span class="crayon-sy">)</span><span class="crayon-sy">}</span></span></span>的关系是逻辑或。
+                <span id="crayon-5e40dcd5c5d00591833825" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-st">or</span><span class="crayon-sy">(</span><span class="crayon-sy">[</span><span class="crayon-sy">{</span>条件一<span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">,</span><span class="crayon-sy">{</span>条件二<span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">]</span><span class="crayon-sy">)</span></span></span>内是一个数组，条件一与条件二又构成逻辑与的关系。</p>
+    <h4>正则查询db.RegExp</h4>
+    <p>正则表达式能够灵活有效匹配字符串，可以用来检查一个串里是否含有某种子串，比如“CloudBase技术训练营”里是否含有”技术”这个词。云数据库正则查询支持UTF-8的格式，可以进行中英文的模糊查询。<strong>正则查询也是写在where字段的条件筛选里。</strong></p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/Database.RegExp.html" target="_blank" rel="noopener noreferrer">Database.RegExp</a></p>
+    <p><strong>字段字符串的模糊查询</strong></p>
+    <p>我们可以用正则查询来查询某个字段，比如city城市名称内，包含某个字符串比如”州”的城市：</p>
+            <div id="crayon-5e40dcd5c5d02614660360" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  .where({
+        city: db.RegExp({
+          regexp: '州',
+          options: 'i',
+        })
+      })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d02614660360-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d02614660360-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d02614660360-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d02614660360-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d02614660360-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d02614660360-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d02614660360-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d02614660360-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">city</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">RegExp</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d02614660360-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">regexp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'州'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d02614660360-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">options</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'i'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d02614660360-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d02614660360-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>注意这里的city是字段，db.RegExp()里的regexp是正则表达式，而options是flag，i是flag的值表示不区分字母的大小写。当然我们也可以直接在where内用JavaScript的原生写法或调用
+                <span id="crayon-5e40dcd5c5d03021087329" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">RegExp</span></span></span>对象的构造函数。比如上面的案例也可以写成：</p>
+            <div id="crayon-5e40dcd5c5d05390760077" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">//JavaScript原生正则写法
+      .where({
+         city:/州/i
+      })
+    
+    //JavaScript调用RegExp对象的构造函数写法
+      .where({
+        city: new db.RegExp({
+          regexp: "州",
+          options: 'i',
+        })
+      })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d05390760077-12" style="height: 20px;">12</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-1"><span class="crayon-c">//JavaScript原生正则写法</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="crayon-v">city</span><span class="crayon-o">:</span><span class="crayon-c ">/州/i</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-5">&nbsp;</div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-6"><span class="crayon-c">//JavaScript调用RegExp对象的构造函数写法</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">city</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">RegExp</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">regexp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"州"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">options</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'i'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d05390760077-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>数据库查询的正则表达式也支持模板字符串，比如我们可以先声明const cityname=”州”，然后用模板字符串包住cityname变量：</p>
+            <div id="crayon-5e40dcd5c5d06505941552" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">    city: db.RegExp({
+          regexp:`${cityname}`,
+          options: 'i',
+        })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d06505941552-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d06505941552-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d06505941552-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d06505941552-4" style="height: 20px;">4</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d06505941552-1"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">city</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">RegExp</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d06505941552-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">regexp</span><span class="crayon-o">:</span><span class="crayon-sy">`</span><span class="crayon-sy">$</span><span class="crayon-sy">{</span><span class="crayon-v">cityname</span><span class="crayon-sy">}</span><span class="crayon-sy">`</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d06505941552-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">options</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'i'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d06505941552-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>简单的正则表达式入门</strong></p>
+    <p>正则表达式的用法是非常繁杂的，关于正则表达式的知识可以去MDN以及掘金上面搜索了解更多细节。</p>
+    <p><strong>技术文档：</strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="noopener noreferrer">正则表达式</a>、<a href="https://juejin.im/search?query=%E6%AD%A3%E5%88%99&amp;type=all" target="_blank" rel="noopener noreferrer">掘金正则搜索列表</a></p>
+    <blockquote class="danger"><p>值得注意的是，在数据库查询时应尽可能避免过度使用正则表达式来做复杂的匹配，尤其是用户访问触发较多的场景，通常情况下数据查询的响应时间（无论是小程序端还是云函数端）最好要低于500ms。</p></blockquote>
+    <h4>在小程序端新增记录和统计记录</h4>
+    <p>在前面我们已经介绍了集合数据请求的<strong>查询方法get</strong>，除了get查询外，<strong>请求的方法</strong>还有<strong>add新增</strong>，<strong>remove删除</strong>、<strong>update改写/更新</strong>、<strong>count统计</strong>以及<strong>watch监听</strong>，这些方法都是基于数据库集合的引用Collection的，接下来我们再来介绍如何基于Collection新增记录和统计记录的数量。</p>
+    <blockquote><p>基于数据库集合的引用Collection所查询到的记录都是多条记录，也就是说我们可以对N条记录进行增、删、改、查等操作，不过目前还不支持在小程序端进行多条记录的update和remove，<strong>只能在云函数端</strong>进行这样的操作。</p></blockquote>
+    <p><strong>统计记录Collection.count</strong></p>
+    <p>统计集合记录数或统计查询语句对应的结果记录数。小程序端与云函数端的表现会有如下差异：小程序端：注意与集合权限设置有关，一个用户仅能统计其有<strong>读权限</strong>的记录数云函数端：因属于管理端，因此可以统计集合的所有记录数。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.count.html" target="_blank" rel="noopener noreferrer">Collection.count()</a></p>
+            <div id="crayon-5e40dcd5c5d08124738262" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const db = wx.cloud.database()
+    const _ = db.command
+    db.collection("china")
+      .where({             
+        gdp: _.gt(3000)    
+      })
+      .count().then(res =&gt; {
+        console.log(res.total)
+      })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d08124738262-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-2"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">command</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-3"><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">"china"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">count</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-st">then</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">total</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d08124738262-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p>field、orderBy、skip、limit对count是无效的，只有where才会影响count的结果，count只会返回记录数，不会返回查询到的数据。</p></blockquote>
+    <p><strong>新增记录Collection.add</strong></p>
+    <p>在前面我们将知乎日报的数据导入到了zhihu_daily的集合里，接下来，我们就来给zhihu_daily新增记录。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.add.html" target="_blank" rel="noopener noreferrer">Collection.add</a></p>
+    <p>使用开发者工具新建一个zhihudaily的页面，然后在zhihudaily.wxml里输入以下代码，新建一个绑定了事件处理函数为addDaily的button按钮：</p>
+            <div id="crayon-5e40dcd5c5d0a074754381" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button bindtap="addDaily"&gt;新增日报数据&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d0a074754381-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d0a074754381-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"addDaily"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">新增日报数据</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>然后再在zhihudaily.js里输入以下代码，在事件处理函数addDaily里调用Collection.add，往集合zhihu_daily里添加一条记录，如果传入的记录对象没有 _id 字段，则由后台自动生成 _id；若指定了 _id，则不能与已有记录冲突。</p>
+            <div id="crayon-5e40dcd5c5d0c457531727" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  addDaily(){
+        db.collection('zhihu_daily').add({
+          data: {
+            _id:"daily9718005",
+            title: "元素，生生不息的宇宙诸子",
+            images: [
+        "https://pic4.zhimg.com/v2-3c5d866701650615f50ff4016b2f521b.jpg"
+      ],
+            id: 9718005,
+            url: "https://daily.zhihu.com/story/9718005",
+            image: "https://pic2.zhimg.com/v2-c6a33965175cf81a1b6e2d0af633490d.jpg",
+            share_url: "http://daily.zhihu.com/story/9718005",
+            body:"&lt;p&gt;&lt;strong&gt;&lt;strong&gt;谨以此文，纪念元素周期表发布 150 周年。&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;地球，世界，和生活在这里的芸芸众生从何而来，这是每个人都曾有意无意思考过的问题。&lt;/p&gt;\r\n&lt;p&gt;科幻小说家道格拉斯·亚当斯给了一个无厘头的答案，42；宗教也给出了诸神创世的虚构场景；&lt;/p&gt;\r\n&lt;p&gt;最为恢弘的画面，则是由科学给出的，另一个意义上的&lt;strong&gt;生死轮回，一场属于元素的生死轮回&lt;/strong&gt;。&lt;/p&gt;"
+          }
+        })
+          .then(res =&gt; {
+            console.log(res)
+          })
+          .catch(console.error)
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-13" style="height: 60px;">13</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-16" style="height: 20px;">16</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-17" style="height: 20px;">17</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-18" style="height: 20px;">18</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-19" style="height: 20px;">19</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0c457531727-20" style="height: 20px;">20</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">addDaily</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'zhihu_daily'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">_id</span><span class="crayon-o">:</span><span class="crayon-s">"daily9718005"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"元素，生生不息的宇宙诸子"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">images</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"https://pic4.zhimg.com/v2-3c5d866701650615f50ff4016b2f521b.jpg"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">9718005</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://daily.zhihu.com/story/9718005"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">image</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://pic2.zhimg.com/v2-c6a33965175cf81a1b6e2d0af633490d.jpg"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">share_url</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"http://daily.zhihu.com/story/9718005"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">body</span><span class="crayon-o">:</span><span class="crayon-s">"&lt;p&gt;&lt;strong&gt;&lt;strong&gt;谨以此文，纪念元素周期表发布 150 周年。&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;\r\n&lt;p&gt;地球，世界，和生活在这里的芸芸众生从何而来，这是每个人都曾有意无意思考过的问题。&lt;/p&gt;\r\n&lt;p&gt;科幻小说家道格拉斯·亚当斯给了一个无厘头的答案，42；宗教也给出了诸神创世的虚构场景；&lt;/p&gt;\r\n&lt;p&gt;最为恢弘的画面，则是由科学给出的，另一个意义上的&lt;strong&gt;生死轮回，一场属于元素的生死轮回&lt;/strong&gt;。&lt;/p&gt;"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">then</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">catch</span><span class="crayon-sy">(</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-v">error</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0c457531727-20"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>点击<strong>新增日报数据</strong>的button，会看到控制台打印的res对象里包含新增记录的_id为我们自己设置的daily9718005。打开云开发控制台的数据库标签，打开集合zhihu_daily，翻到最后一页，就能看到我们新增的记录啦。</p>
+    <p><strong>_openid与集合权限</strong></p>
+    <p>注意和导入的数据不同的是，在小程序端新增记录，都会自动添加一个_openid的字段，它的值等于用户 openid，_openid的值是不允许修改的。当我们把集合的权限改为<strong>仅创建者可读写</strong>，或<strong>所有人可读，仅创建者可读写</strong>，<span style="color: #800000;"><strong>在小程序端查询或更新记录时，会自动添加一个条件</strong></span>，</p>
+            <div id="crayon-5e40dcd5c5d0e404538260" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">.where({              
+       _openid:"当前用户的openid"    
+    })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d0e404538260-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0e404538260-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d0e404538260-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d0e404538260-1"><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0e404538260-2"><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-v">_openid</span><span class="crayon-o">:</span><span class="crayon-s">"当前用户的openid"</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d0e404538260-3"><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>所以这就是为什么尽管集合里面有数据，但是由于有了这个条件，只要记录里没有_openid或openid不匹配就查询不到记录。</p>
+    <blockquote class="danger"><p><strong>集合请求方法注意事项</strong></p>
+    <p>get、update、count、remove、add等都是请求，在小程序端可以有callback和promise两种写法，但是在云函数端只能用promise，不能用callback。为了方便，建议大家统一使用promise的写法，也就是then、catch。</p>
+    <p>get、update、count、remove、add请求不能在一个数据库引用里同时存在。比如不能又是get()，又是count()的，不能这么写：</p>
+            <div id="crayon-5e40dcd5c5d10876747314" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">db.collection('china').where({
+        _openid: 'xxx',
+    }).get().count().add()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d10876747314-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d10876747314-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d10876747314-3" style="height: 20px;">3</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d10876747314-1"><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'china'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d10876747314-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">_openid</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'xxx'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d10876747314-3"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">count</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">add</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>
+    </p></blockquote>
+    <h4>云函数端操作集合内记录</h4>
+    <p><strong>云函数端调用数据库</strong></p>
+    <p>在<strong>云开发能力章节</strong>我们已经介绍过如何在云函数端调用数据库，这里也是一样。新建一个云函数<strong>chinadata</strong>，然后在
+                <span id="crayon-5e40dcd5c5d12511543752" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">exports</span><span class="crayon-sy">.</span><span class="crayon-v">main</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">async</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>输入以下代码，注意是
+                <span id="crayon-5e40dcd5c5d13990018806" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>，wx.
+                <span id="crayon-5e40dcd5c5d15966938480" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></span></span>，云函数端的数据库引用和小程序端有所不同：</p>
+            <div id="crayon-5e40dcd5c5d16249774648" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">const db = cloud.database()
+    const _ = db.command
+    return await db.collection("china") 
+      .where({           
+        gdp: _.gt(3000)    
+      })
+      .field({           
+        _id: false, 
+        city: true,
+        province: true,
+        gdp: true
+      })
+      .orderBy('gdp', 'desc') 
+      .skip(0) 
+      .limit(10) 
+      .get()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-13" style="height: 20px;">13</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d16249774648-16" style="height: 20px;">16</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-1"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">database</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-2"><span class="crayon-m">const</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">command</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-3"><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">"china"</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">_</span><span class="crayon-sy">.</span><span class="crayon-e">gt</span><span class="crayon-sy">(</span><span class="crayon-cn">3000</span><span class="crayon-sy">)</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">field</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">_id</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">false</span><span class="crayon-sy">,</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">city</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">province</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">gdp</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-t">true</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-13"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">orderBy</span><span class="crayon-sy">(</span><span class="crayon-s">'gdp'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'desc'</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-14"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">skip</span><span class="crayon-sy">(</span><span class="crayon-cn">0</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-15"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">limit</span><span class="crayon-sy">(</span><span class="crayon-cn">10</span><span class="crayon-sy">)</span><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-5e40dcd5c5d16249774648-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+    <blockquote><p><strong>try/catch async错误处理</strong></p>
+    <p>当&nbsp;
+                <span id="crayon-5e40dcd5c5d18167002813" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">async</span></span></span>&nbsp;函数中只要一个&nbsp;
+                <span id="crayon-5e40dcd5c5d19055516388" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">await</span></span></span>&nbsp;出现 reject 状态，则后面的&nbsp;
+                <span id="crayon-5e40dcd5c5d1b174907643" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">await</span></span></span>&nbsp;都不会被执行。如果有多个&nbsp;
+                <span id="crayon-5e40dcd5c5d1c092718816" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">await</span></span></span>&nbsp;则可以将其都放在&nbsp;
+                <span id="crayon-5e40dcd5c5d1e182245685" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-st">try</span><span class="crayon-o">/</span><span class="crayon-st">catch</span></span></span>&nbsp;中。</p></blockquote>
+    <p>然后右键chinadata云函数根目录选择<strong>在终端中打开</strong>，输入npm install，之后<strong>上传并部署所有文件</strong>。</p>
+    <blockquote><p>&nbsp;</p></blockquote>
+    <p>在前面我们了解到，调用云函数可以使用本地调试、云端测试，我们还可以在小程序端调用云函数，将云函数的数据返回到小程序端来。使用开发者工具在chinadata.wxml里输入以下代码，也就是我们通用点击按钮触发事件处理函数：</p>
+            <div id="crayon-5e40dcd5c5d1f026616948" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">&lt;button bindtap="callChinaData"&gt;调用chinadata云函数&lt;/button&gt;</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d1f026616948-1" style="height: 20px;">1</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d1f026616948-1"><span class="crayon-r ">&lt;button </span><span class="crayon-e ">bindtap</span><span class="crayon-o">=</span><span class="crayon-s ">"callChinaData"</span><span class="crayon-r ">&gt;</span><span class="crayon-i ">调用chinadata云函数</span><span class="crayon-r ">&lt;/button&gt;</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>再在事件处理函数里调用云函数，在chinadata.js里输入getChinaData事件处理函数来调用chinadata云函数：</p>
+            <div id="crayon-5e40dcd5c5d21559085494" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  getChinaData() {
+        wx.cloud.callFunction({
+          name: 'chinadata',
+          success: res =&gt; {
+            console.log("云函数返回的数据",res.result.data)
+          },
+          fail: err =&gt; {
+            console.error('云函数调用失败：', err)
+          }
+        })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d21559085494-11" style="height: 20px;">11</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">getChinaData</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">wx</span><span class="crayon-sy">.</span><span class="crayon-v">cloud</span><span class="crayon-sy">.</span><span class="crayon-e">callFunction</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">name</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">'chinadata'</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">success</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">"云函数返回的数据"</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">result</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">fail</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-v">err</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">error</span><span class="crayon-sy">(</span><span class="crayon-s">'云函数调用失败：'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">err</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d21559085494-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在模拟器里点击<strong>调用chinadata云函数</strong>的button按钮，就能在控制台里看到云函数返回的查询到的结果，大家可以通过setData的方式将查询的结果渲染到小程序页面，这里就不介绍啦。</p>
+    <p><strong>删除多条数据记录</strong></p>
+    <p>基于数据库集合的引用Collection，我们可以先匹配&nbsp;
+                <span id="crayon-5e40dcd5c5d22216552414" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">where</span></span></span>&nbsp;语句查询到相关条件的多条记录，再来调用Collection.remove()来进行删除。五个查询方法，skip和limit不支持，field、orderBy没有意义，只有where条件可以用来筛选记录。<strong>数据一旦删除就不能再找回了</strong>。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/collection/Collection.remove.html" target="_blank" rel="noopener noreferrer">Collection.remove()</a></p>
+    <p>我们可以把之前建好的chinadata云函数
+                <span id="crayon-5e40dcd5c5d24071800686" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">exports</span><span class="crayon-sy">.</span><span class="crayon-v">main</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">async</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>里的代码修改为如下，即删除省份province为广东的所有数据：</p>
+            <div id="crayon-5e40dcd5c5d26774866461" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  return await db.collection('china')
+        .where({
+          province:"广东"
+        })
+        .remove()</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d26774866461-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d26774866461-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d26774866461-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d26774866461-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d26774866461-5" style="height: 20px;">5</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d26774866461-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'china'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d26774866461-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d26774866461-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">province</span><span class="crayon-o">:</span><span class="crayon-s">"广东"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d26774866461-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d26774866461-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">remove</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>在模拟器里点击<strong>调用chinadata云函数</strong>的button按钮，就能在控制台里看到云函数返回的对象，其中包含<span class="name">stats</span>:&nbsp;<span class="object-value-object value"><span class="object-properties-preview">{<span class="name">removed</span>:&nbsp;<span class="object-value-number">22</span>}，即删除了22条数据。</span></span></p>
+    <p><strong>更新多条记录Collection.update</strong></p>
+    <p>我们可以把之前建好的chinadata云函数
+                <span id="crayon-5e40dcd5c5d28340787535" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">exports</span><span class="crayon-sy">.</span><span class="crayon-v">main</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-e">async</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">event</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=&amp;</span><span class="crayon-v">gt</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-sy">}</span></span></span>里的代码修改为如下，也就是先查询省份province为湖北的记录，给这个记录更新一个字段英文省份名pro-en：</p>
+            <div id="crayon-5e40dcd5c5d29152718644" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  return await db.collection('china')
+        .where({
+          province:"湖北"
+        })
+        .update({
+          data: {
+            "pro-en": "Hubei"
+          },
+        })</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d29152718644-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-e">await </span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'china'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">where</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">province</span><span class="crayon-o">:</span><span class="crayon-s">"湖北"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">update</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"pro-en"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"Hubei"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d29152718644-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>这里要注意的是，pro-en这个字段之前是没有的，通过Collection.update不只是起到更新的作用，还可以<strong>批量新增字段并赋值</strong>，也就是update时记录里有相同字段就更新，没有就新增；
+                <span id="crayon-5e40dcd5c5d2b026578633" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-s">"pro-en"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"Hubei"</span></span></span>，直接使用pro-en会报错，用双引号效果等价。</p>
+    <blockquote><p>如果你想给导入的数据添加_openid字段，只用云函数是没法实现的，因为云函数没有用户的登录态。我们需要先在小程序端调用云函数比如login返回openid，再将openid的值再传给chinadata云函数，才能给记录添加openid。</p></blockquote>
+    <h4>操作单个记录doc的字段值</h4>
+    <p>在前面我们已经了解了基于集合引用Collection构建查询条件的5个方法，以及一些请求方法，接下来我们来讲一下基于集合记录引用Document的四个请求方法：<strong>获取单个记录数据</strong>Document.get()、<strong>删除单个记录</strong>Document.remove()、<strong>更新单个记录</strong>Document.update()、<strong>替换更新单个记录</strong>Document.set()。和基于Collection不一样的是，前者的增删改查是可以批量多条的，而基于Document则是操作单条记录。</p>
+    <blockquote><p>查询集合collection里的记录常用于获取文章、资讯、商品、产品等等的<strong>列表</strong>；而查询单个记录doc的字段值则常用于这些列表里的<strong>详情</strong>内容。如果你在开发中需要增删改查某个记录的字段值，为了方便让程序可以根据_id找到对应的记录，建议在创建记录的时候_id用程序有规则的生成。</p></blockquote>
+    <p><strong>查询单个记录doc的字段值</strong></p>
+    <p>集合里的每条记录都有一个&nbsp;
+                <span id="crayon-5e40dcd5c5d2d129488464" class="crayon-syntax crayon-syntax-inline  crayon-theme-monokai crayon-theme-monokai-inline crayon-font-monaco" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important;"><span class="crayon-pre crayon-code" style="font-size: 14px !important; line-height: 20px !important;font-size: 14px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><span class="crayon-v">_id</span></span></span>&nbsp;字段用以<strong>唯一标志</strong>一条记录，_id 的数据格式可以是number数字，也可以是string字符串。这个_id是<strong>可以自定义</strong>的，当导入记录或写入记录<strong>没有自定义时系统会自动生成</strong>一个非常长的字符串。<strong>查询记录doc的字段field值就是基于_id的</strong>。</p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/document/Document.get.html" target="_blank" rel="noopener noreferrer">获取单个记录数据Document.get()</a></p>
+    <p>比如我们查询其中知乎日报的一篇文章（也就是其中一条记录）的数据，使用开发者工具zhihudaily页面的zhihudaily.js的onLoad生命周期函数里输入以下代码（<span style="color: #008000;"><strong>db不要重复声明</strong></span>）：</p>
+            <div id="crayon-5e40dcd5c5d2f611126459" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">db.collection('zhihu_daily').doc("daily9718006")
+      .get()
+      .then(res =&gt; {
+      console.log('单个记录的值',res.data)
+      })
+      .catch(err =&gt; {
+        console.error(err)
+      })
+    },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d2f611126459-9" style="height: 20px;">9</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-1"><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'zhihu_daily'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">doc</span><span class="crayon-sy">(</span><span class="crayon-s">"daily9718006"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">then</span><span class="crayon-sy">(</span><span class="crayon-v">res</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">log</span><span class="crayon-sy">(</span><span class="crayon-s">'单个记录的值'</span><span class="crayon-sy">,</span><span class="crayon-v">res</span><span class="crayon-sy">.</span><span class="crayon-v">data</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">catch</span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-e">error</span><span class="crayon-sy">(</span><span class="crayon-v">err</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d2f611126459-9"><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>如果集合的数据是导入的，那_id是自动生成的，自动生成的_id是字符串string，所以doc内使用了单引号（双引号也是可以的哦），如果你自定义的_id是number类型，比如自定义的_id为20191125，查询时为doc(20191125)即可，这只是基础知识啦。</p>
+    <p><strong>删除单条记录</strong></p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/document/Document.remove.html" target="_blank" rel="noopener noreferrer">删除单个记录Document.remove()</a></p>
+            <div id="crayon-5e40dcd5c5d31755273034" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  removeDaily(){
+        db.collection('zhihu_daily').doc("daily9718006")
+          .remove()
+          .then(console.log)
+          .catch(console.error)
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d31755273034-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d31755273034-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d31755273034-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d31755273034-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d31755273034-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d31755273034-6" style="height: 20px;">6</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d31755273034-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">removeDaily</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d31755273034-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'zhihu_daily'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">doc</span><span class="crayon-sy">(</span><span class="crayon-s">"daily9718006"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d31755273034-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">remove</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d31755273034-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">then</span><span class="crayon-sy">(</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-v">log</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d31755273034-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-st">catch</span><span class="crayon-sy">(</span><span class="crayon-v">console</span><span class="crayon-sy">.</span><span class="crayon-v">error</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d31755273034-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p><strong>更新单条记录</strong></p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/document/Document.update.html" target="_blank" rel="noopener noreferrer">更新单个记录Document.update()</a></p>
+            <div id="crayon-5e40dcd5c5d32930606253" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  updateDaily(){
+        db.collection('zhihu_daily').doc("daily9718006")
+          .update({
+            data:{
+              title: "【知乎日报】元素，生生不息的宇宙诸子",
+            }
+          })
+      },</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -20px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d32930606253-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d32930606253-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d32930606253-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d32930606253-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d32930606253-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d32930606253-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d32930606253-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d32930606253-8" style="height: 20px;">8</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d32930606253-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">updateDaily</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d32930606253-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'zhihu_daily'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">doc</span><span class="crayon-sy">(</span><span class="crayon-s">"daily9718006"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d32930606253-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">update</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d32930606253-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d32930606253-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">title</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"【知乎日报】元素，生生不息的宇宙诸子"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d32930606253-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d32930606253-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d32930606253-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p>&nbsp;</p>
+    <p><strong>替换更新记录</strong></p>
+    <p><strong>技术文档：</strong><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/database/document/Document.set.html" target="_blank" rel="noopener noreferrer">替换更新单个记录Document.set()</a></p>
+            <div id="crayon-5e40dcd5c5d34581166834" class="crayon-syntax crayon-theme-monokai crayon-font-monaco crayon-os-mac print-yes notranslate crayon-wrapped" data-settings=" minimize scroll-mouseover disable-anim wrap" style="margin-top: 15px; margin-bottom: 15px; font-size: 14px !important; line-height: 20px !important; height: auto;">
+            
+                <div class="crayon-plain-wrap"><textarea class="crayon-plain print-no" data-settings="" readonly="" style="tab-size: 4; font-size: 14px !important; line-height: 20px !important; z-index: 0; opacity: 0; overflow: hidden;">  setDaily(){
+        db.collection('zhihu_daily').doc("daily9718006")
+          .set({
+            data: {
+              "title": "为什么狗会如此亲近人类?",
+              "images": [
+                "https://pic4.zhimg.com/v2-4cab2fbf4fe9d487910a6f2c54ab3ed3.jpg"
+              ],
+              "id": 9717547,
+              "url": "https://daily.zhihu.com/story/9717547",
+              "image": "https://pic4.zhimg.com/v2-60f220ee6c5bf035d0eaf2dd4736342b.jpg",
+              "share_url": "http://daily.zhihu.com/story/9717547",
+              "body":  "&lt;p&gt;让狗从凶猛的野兽变成忠实的爱宠，涉及了宏观与微观上的两层故事：我们如何在宏观上驯养了它们，以及这些驯养在生理层面究竟意味着什么。&lt;/p&gt;\r\n&lt;p&gt;&lt;img class=\"content-image\" src=\"http://pic1.zhimg.com/70/v2-4147c4b02bf97e95d8a9f00727d4c184_b.jpg\" alt=\"\"&gt;&lt;/p&gt;\r\n&lt;p&gt;狗是灰狼（Canis lupus）被人类驯养后形成的亚种，至少可以追溯到 1 万多年以前，是人类成功驯化的第一种动物。在这漫长的岁月里，人类的定向选择强烈改变了这个驯化亚种的基因频率，使它呈现出极高的多样性，尤其体现在生理形态上。&lt;/p&gt;"
+            }
+          })
+      }</textarea></div>
+                <div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+                    <table class="crayon-table" style="margin-left: -28px;">
+                        <tbody><tr class="crayon-row">
+                    <td class="crayon-nums " data-settings="hide">
+                        <div class="crayon-nums-content" style="font-size: 14px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-1" style="height: 20px;">1</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-2" style="height: 20px;">2</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-3" style="height: 20px;">3</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-4" style="height: 20px;">4</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-5" style="height: 20px;">5</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-6" style="height: 20px;">6</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-7" style="height: 20px;">7</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-8" style="height: 20px;">8</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-9" style="height: 20px;">9</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-10" style="height: 20px;">10</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-11" style="height: 20px;">11</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-12" style="height: 20px;">12</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-13" style="height: 80px;">13</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-14" style="height: 20px;">14</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-15" style="height: 20px;">15</div><div class="crayon-num" data-line="crayon-5e40dcd5c5d34581166834-16" style="height: 20px;">16</div></div>
+                    </td>
+                            <td class="crayon-code"><div class="crayon-pre" style="font-size: 14px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-1"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-e">setDaily</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">db</span><span class="crayon-sy">.</span><span class="crayon-e">collection</span><span class="crayon-sy">(</span><span class="crayon-s">'zhihu_daily'</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-e">doc</span><span class="crayon-sy">(</span><span class="crayon-s">"daily9718006"</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">set</span><span class="crayon-sy">(</span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">data</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"title"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"为什么狗会如此亲近人类?"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"images"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">[</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"https://pic4.zhimg.com/v2-4cab2fbf4fe9d487910a6f2c54ab3ed3.jpg"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">]</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"id"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-cn">9717547</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"url"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://daily.zhihu.com/story/9717547"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"image"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"https://pic4.zhimg.com/v2-60f220ee6c5bf035d0eaf2dd4736342b.jpg"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"share_url"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"http://daily.zhihu.com/story/9717547"</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-s">"body"</span><span class="crayon-o">:</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-s">"&lt;p&gt;让狗从凶猛的野兽变成忠实的爱宠，涉及了宏观与微观上的两层故事：我们如何在宏观上驯养了它们，以及这些驯养在生理层面究竟意味着什么。&lt;/p&gt;\r\n&lt;p&gt;&lt;img class=\"content-image\" src=\"http://pic1.zhimg.com/70/v2-4147c4b02bf97e95d8a9f00727d4c184_b.jpg\" alt=\"\"&gt;&lt;/p&gt;\r\n&lt;p&gt;狗是灰狼（Canis lupus）被人类驯养后形成的亚种，至少可以追溯到 1 万多年以前，是人类成功驯化的第一种动物。在这漫长的岁月里，人类的定向选择强烈改变了这个驯化亚种的基因频率，使它呈现出极高的多样性，尤其体现在生理形态上。&lt;/p&gt;"</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-14"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5e40dcd5c5d34581166834-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div></div></td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div><p></p>
+
+    </div><!-- #post-## -->
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+    
+    
+    </body></html>
