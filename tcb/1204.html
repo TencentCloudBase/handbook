@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>12.4、实时数据推送.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="124-%E5%AE%9E%E6%97%B6%E6%95%B0%E6%8D%AE%E6%8E%A8%E9%80%81">12.4 实时数据推送</h2>
+<p>云开发数据库支持实时推送变更数据的能力，给定查询条件，每当数据库更新而导致查询条件对应的查询结果发生变更时，在小程序端就可收到一个更新事件，通过更新时间返回的对象就可获取更新内容和更新后的查询结果快照。</p>
+<h3 id="1241-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">12.4.1 应用场景与注意事项</h3>
+<h4 id="1%E5%AE%9E%E6%97%B6%E6%95%B0%E6%8D%AE%E6%8E%A8%E9%80%81%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">1、实时数据推送的应用场景</h4>
+<p>当用户在小程序端停留时间比较长，需要关注其他用户的行为而导致的一些数据的实时变化时，就可以使用实时数据推送，只要数据发生变动，都能实时的在前端呈现出来。实时数据推送有着广泛的应用场景：</p>
+<ul>
+<li>聊天/即时通信：小游戏内聊天、大厅广播、区服广播等；企业内部小程序中的即时通信能力等；</li>
+<li>直播实时弹幕：在开视频直播时，用户点赞量、发送的礼物、评论等都可以实时在直播间滚动播放；</li>
+<li>多人小游戏：使用状态同步的小游戏，如棋牌类等回合制游戏等</li>
+<li>协作工具：如在线协作文档、团队任务管理等，用户的编辑信息会实时同步到参与方；</li>
+<li>实时应用状态同步：可以实时获取最新文章、以及最新评论、点赞、通知等内容，让交互更顺畅自然；比如看体育直播，和网友实时互动；</li>
+<li>在线商城：比如抢购时的库存量在不刷新界面的情况下实时更新；价格会实时变化的拼购；</li>
+<li>股票基金报价：股票的价格总是瞬息万变的，当你打开小程序查看股票价格时，你希望是实时的，而不是当你刷新页面时，数据才会同步；</li>
+<li>基于位置的应用，比如你和你的好友开启了位置共享；或者你在景区内不断移动，景区会实时根据你的位置推送相关的景区介绍；</li>
+</ul>
+<h4 id="2%E5%AE%9E%E6%97%B6%E6%95%B0%E6%8D%AE%E6%8E%A8%E9%80%81%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">2、实时数据推送注意事项</h4>
+<p><strong>1、实时数据推送只支持小程序端</strong>
+实时数据推送的watch请求只支持在小程序端调用，不支持云函数端。</p>
+<p><strong>2、不要滥用实时数据推送</strong>
+只有在小程序端需要快速同步数据变动响应时，才需要使用实时数据推送，一般情况用页面刷新即可；也只有在用户在页面停留时间比较长的情况下才可以使用实时数据推送，</p>
+<p><strong>3、注意集合的权限设置</strong>
+集合的权限需要设置为所有人可读，仅创建者可读写。集合的读权限设置在实时数据推送里同样生效，如果权限是设置为仅可读用户自己的数据，则监听的时候无法监听到非用户自己创建的数据。</p>
+<p><strong>4、查询不支持field</strong>
+监听集合中符合查询条件的数据的更新事件。使用 watch 时，支持 where, orderBy, limit，不支持 field。在监听中，orderBy 最多可以指定 5 个排序字段，limit 最大值为 200。limit 默认不存在即取所有数据。</p>
+<p><strong>5、只监听必要的数据</strong>
+监听时应明确查询条件，只监听必须用到的数据，避免监听不必要的数据，以此提高初次加载数据的性能以及接收数据变更的性能。</p>
+<p><strong>6、监听返回的数据不受默认 20 条限制</strong>
+监听返回的数据可能超过 20 条，不受小程序端默认 20 条上限限制。一次监听的记录数上限为 5000，若超出上限会抛错并停止监听。监听过大量的数据时初始化会较慢，对监听效率也有影响，如果预期监听发起时少于 5000，但后续有可能超过 5000，请注意在即将超过时重新监听并保证不超过 5000。</p>
+<h3 id="1242-%E5%AE%9E%E6%97%B6%E6%95%B0%E6%8D%AE%E6%8E%A8%E9%80%81%E6%A1%88%E4%BE%8B">12.4.2 实时数据推送案例</h3>
+<p>使用开发者工具新建一个页面，比如snapshot，然后在snapshot.wxml里输入一个可以修改数据的button，比如点击一下就会增加点赞次数：</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">"addStar"</span>&gt;</span>点赞{{stars}}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>然后在数据库里新建一个集合比如livevideo（注意要修改集合的权限为所有人可读，仅创建者可读写），添加一个简单的记录比如：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"_id"</span>:<span class="hljs-string">"room2020032101"</span>,
+<span class="hljs-string">"star"</span>:<span class="hljs-number">0</span>
+</div></code></pre>
+<p>再在snapshot.js的data属性里声明stars，以及添加事件处理函数addStar,还有就是在页面的onLoad生命周期函数里监听数据的变化，并将数据的变化渲染到页面。</p>
+<pre class="hljs"><code><div>  data:{
+    <span class="hljs-attr">stars</span>:<span class="hljs-number">0</span>
+  },
+  <span class="hljs-attr">onLoad</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> that =<span class="hljs-keyword">this</span>
+    <span class="hljs-keyword">const</span> watcher = db.collection(<span class="hljs-string">'livevideo'</span>).doc(<span class="hljs-string">'room2020032101'</span>)
+    .watch({
+      <span class="hljs-attr">onChange</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">snapshot</span>) </span>{
+        that.setData({
+          <span class="hljs-attr">stars</span>:snapshot.docs[<span class="hljs-number">0</span>].star
+        })
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'文档数据发生变化'</span>, snapshot)
+      },
+      <span class="hljs-attr">onError</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'监听因错误停止'</span>, err)
+      }
+    })
+  }
+  addStar(){
+    db.collection(<span class="hljs-string">'livevideo'</span>).doc(<span class="hljs-string">'room2020032101'</span>).update({
+      <span class="hljs-attr">data</span>: {
+        <span class="hljs-attr">star</span>:  _.inc(<span class="hljs-number">1</span>)
+      },
+      <span class="hljs-attr">success</span>: <span class="hljs-built_in">console</span>.log,
+      <span class="hljs-attr">fail</span>: <span class="hljs-built_in">console</span>.error
+    })
+  } 
+</div></code></pre>
+<p>watch有两个属性，onError是失败回调，onChange是成功回调，成功回调传入的参数 snapshot 是变更快照。onChange 和 onError 是必传参数。onChange 用于接收变更快照，onError 用于处理监听错误。如果监听发起失败或监听过程中出现不可恢复的错误，则会终止监听并通过 onError 抛出异常。onChange 会在第一次监听初始化及后续数据变更时收到推送事件。第一次初始化时会收到的查询条件对应的查询结果，后续变更事件会包含变更内容和变更后的查询结果快照。</p>
+<blockquote>
+<p>如果想要预览实时数据推送的效果，可以使用开发者工具的<strong>多账号调试</strong>，在开发者工具栏-工具-多账号调试即可。当A用户点击点赞的button，点赞的数量就会实时同步给所有在线用户的小程序端。在多账号的控制台里也能实时看到打印的信息。</p>
+</blockquote>
+<p>我们可以留意打印的snapshot对象，这个对象包含的信息非常多，主要有</p>
+<ul>
+<li>type：快照类型，仅在第一次初始化数据时有值为 init,也就是当我们加载snapshot页面，在有用户点击button之前，type为init，一旦数据变化，type为undefined;</li>
+<li>id为变更事件id，记录了事件变更的次数；</li>
+<li>docChanges:表示更新事件数组，前端操作</li>
+<li>docs:数据快照，表示此更新事件发生后查询语句对应的查询结果</li>
+</ul>
+<p>docChanges对象里的queueType和dataType字段，前者表示更新事件对监听列表的影响，后者表示记录的具体更新类型。注意这两者的不同，比如上面的案例我们只是更新了字段的值，所以它为update；如果监听的记录出现增加，或者减少，queueType的值就会有所不同，而removedFields也会有删除的字段；而dataType字段的值则与数据库请求的方法相对应，而所有更新的字段及字段更新后的值都会在updatedFields对象里。</p>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

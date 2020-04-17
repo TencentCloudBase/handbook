@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>12.2、安全规则.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="122-%E5%AE%89%E5%85%A8%E8%A7%84%E5%88%99">12.2 安全规则</h2>
+<p>安全规则是一个让开发者可以灵活地自定义前端数据库和云存储读写权限的权限控制方式，通过配置安全规则，开发者可以在小程序端、网页端精细化的控制云存储与集合中所有记录的读、写权限，自动拒绝不符合安全规则的前端数据库与云存储请求，保障数据和文件安全。</p>
+<h3 id="1221-%E5%AE%89%E5%85%A8%E8%A7%84%E5%88%99%E7%9A%84%E4%BD%9C%E7%94%A8">12.2.1 安全规则的作用</h3>
+<p>在前面我们已经基础权限控制是根据开发过程中最基础常见的情况预置的权限组，可以实现简单的权限管控，但随着应用业务场景越来越复杂，原有的管控方式无法支持类似根据角色、或者登录模式进行管控的需求。基础权限控制下实现类似需求需要将所有的客户端操作收归到云函数中，通过云函数中运行校验判断逻辑，实现访问控制，但在安全规则下，开发者可以自定义管控条件，通过规则语句完成权限配置，系统会根据规则完成访问控制，甚至可以进行数据校验。</p>
+<ul>
+<li>灵活。开发者可根据自己的业务特性自定义规则，规则支持根据应用数据本身来限制数据的可访问性；</li>
+<li>细化粒度。规则可根据需求设置，或简单或复杂。</li>
+<li>安全独立。规则在管理端进行设置，独立于应用业务逻辑之外，客户端不会获取规则，也无法绕过规则验证，保证对应用数据的访问都经过校验。</li>
+<li>便捷。通过配置规则即可完成权限控制，免除接入层管控的开发与部署，可以快速验证。</li>
+</ul>
+<h3 id="1222-%E8%A7%84%E5%88%99%E7%9A%84%E7%BC%96%E5%86%99%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F">12.2.2 规则的编写与表达式</h3>
+<p>前端批量更新（where.update、where.remove），开发者在进行批量更新时应搭配安全规则使用以保障数据安全。</p>
+<p>安全规则要求前端发起的查询条件必须是安全规则的子集，否则拒绝访问。比如定义一个读写访问规则是 auth.openid == doc._openid，则表示访问时的查询条件（doc）的 openid 必须等于当前用户的 openid （由系统赋值的不可篡改的 auth.openid 给出），如果查询条件没有包含这项，则表示尝试越权访问 _openid 字段不等于自身的记录，会被后台拒绝访问。</p>
+<p>ACL 是 Access Control List 的缩写，称为访问控制列表，包含了对一个对象或一条记录可进行何种操作的权限定义。例如一个文件对象的 ACL 为 { &quot;Alice&quot;: { &quot;read&quot;: true, &quot;write&quot;: true }, &quot;Bob&quot;: { &quot;read&quot;: true } }，这代表 Alice 对该文件既能读又能写，而 Bob 只能读取。
+安全规则利用基于 JSON 格式可扩展的配置语言定义用户可访问数据库与存储中的哪些数据开发者可根据应用所需的细化级别，编写简单或复杂的规则来保护应用中的数据。</p>
+<p>https://leancloud.cn/docs/acl-guide.html
+https://leancloud.cn/docs/data_security.html#hash-323468714</p>
+<p>操作类型</p>
+<ol>
+<li>定义规则和数据结构
+安全规则提供了内部变量获取请求数据的内容以根据数据进行访问控制，数据的组织方式可能会影响规则的写法，例如，论坛应用中需要限制所有登录用户可以浏览内容，用户只能修改、删除自己的帖子，那么论坛帖集合（posts）中记录需要存储 userID 表示记录归属，安全规则根据 userID 字段限制 update 与 delete 行为，放过所有的登录用户的 read 行为。</li>
+</ol>
+<p>每个集合都有独立的安全规则配置，配置的格式为 json，比如如下一个在某集合上的安全规则配置：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"true"</span>,
+  <span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid === doc._openid"</span>
+}
+</div></code></pre>
+<p>这配置其实就对应着已有的 &quot;所有用户可读，仅创建者可写&quot; 这一权限配置。配置的 key 表示操作类型，value 是一个表达式，表示需要满足什么条件才允许相应的操作类型。当表达式解析为 true 时即代表相应类型的操作符合安全规则。</p>
+<p>规则表达式
+规则表达式是类 js 的表达式，支持部分表达式，内置全局变量、全局函数。</p>
+<p>全局函数
+get：获取指定记录</p>
+<p>get 函数，用于在安全规则中获取其记录来参与到安全规则的匹配中，函数的参数格式是 <code>database.集合名.记录id</code>，可以接收变量，值可以通过多种计算方式得到，例如使用字符串模版进行拼接（database.${doc.collction}.${doc._id}）。</p>
+<p>如果有对应对象，则函数返回记录的内容，否则返回空。</p>
+<p>示例：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"true"</span>,
+  <span class="hljs-string">"delete"</span>: <span class="hljs-string">"get(`database.user.${id}`).isManager"</span>
+}
+</div></code></pre>
+<p>get 函数有以下限制条件：</p>
+<p>get 参数中存在的变量 doc 需要在 query 条件中以 == 或 in 方式出现，若以 in 方式出现，只允许 in 唯一值， 即 doc.shopId in array, array.length == 1
+一个表达式最多可以有 3 个 get 函数，最多可以访问 3 个不同的文档。
+get 函数的嵌套深度最多为 2， 即 get(get(path))。
+读操作触发与配额消耗说明：</p>
+<p>get 函数的执行会计入数据库请求数，同样受数据库配额限制。在未使用变量的情况下，每个 get 会产生一次读操作，在使用变量时，对每个变量值会产生一次 get 读操作。例如：</p>
+<p>假设某集合 shop 上有如下规则：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == get(`database.shop.${doc._id}`).owner"</span>,
+  <span class="hljs-string">"write"</span>: <span class="hljs-literal">false</span>
+}
+</div></code></pre>
+<p>在执行如下查询语句时会产生 5 次读取。</p>
+<p>db.collection('shop').where(_.or([{_id:1},{_id:2},{_id:3},{_id:4},{_id:5}])).get()</p>
+<p>如果有对应对象，则函数返回记录的内容，否则返回空。</p>
+<p>示例：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"true"</span>,
+  <span class="hljs-string">"delete"</span>: <span class="hljs-string">"get(`database.user.${id}`).isManager"</span>
+}
+</div></code></pre>
+<p>get 函数有以下限制条件：</p>
+<p>get 参数中存在的变量 doc 需要在 query 条件中以 == 或 in 方式出现，若以 in 方式出现，只允许 in 唯一值， 即 doc.shopId in array, array.length == 1
+一个表达式最多可以有 3 个 get 函数，最多可以访问 3 个不同的文档。
+get 函数的嵌套深度最多为 2， 即 get(get(path))。
+读操作触发与配额消耗说明：</p>
+<p>get 函数的执行会计入数据库请求数，同样受数据库配额限制。在未使用变量的情况下，每个 get 会产生一次读操作，在使用变量时，对每个变量值会产生一次 get 读操作。例如：</p>
+<p>假设某集合 shop 上有如下规则：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == get(`database.shop.${doc._id}`).owner"</span>,
+  <span class="hljs-string">"write"</span>: <span class="hljs-literal">false</span>
+}
+</div></code></pre>
+<p>在执行如下查询语句时会产生 5 次读取。</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'shop'</span>).where(_.or([{<span class="hljs-attr">_id</span>:<span class="hljs-number">1</span>},{<span class="hljs-attr">_id</span>:<span class="hljs-number">2</span>},{<span class="hljs-attr">_id</span>:<span class="hljs-number">3</span>},{<span class="hljs-attr">_id</span>:<span class="hljs-number">4</span>},{<span class="hljs-attr">_id</span>:<span class="hljs-number">5</span>}])).get()
+</div></code></pre>
+<p>规则匹配
+对于查询或更新操作，输入的查询条件必须是安全规则的子集。系统不会去实际取数据，而会判断输入的查询条件是否是安全规则的子集，如果不是，则代表正在尝试访问没有权限访问的数据，会直接拒绝操作。</p>
+<p>可能生效的操作类型包括 read、write、update、delete</p>
+<p>示例：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// 集合 test 的安全规则配置限制只能查询 age &gt; 10 的记录</span>
+{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"doc.age &gt; 10"</span>
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 符合安全规则</span>
+<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'test'</span>).where({
+  <span class="hljs-attr">age</span>: _.gt(<span class="hljs-number">10</span>)
+}).get()
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// 不符合安全规则</span>
+<span class="hljs-keyword">const</span> res = db.collection(<span class="hljs-string">'test'</span>).where({
+  <span class="hljs-attr">age</span>: _.gt(<span class="hljs-number">8</span>)
+}).get()
+</div></code></pre>
+<p>对于 create，则会校验写入的数据是否符合安全规则。</p>
+<p>{openid} 变量
+在查询时，当前用户 openid 是常用的变量，在新的安全规则体系下，要求显式传入 openid，因此为了方便开发者、让开发者无需每次先通过云函数获取用户 openid，我们规定查询条件中可使用一个字符串常量 {openid}，在后台中发现该字符串时会自动替换为小程序用户的 openid，如假设有安全规则：
+<code>javascript</code>javascript
+{
+&quot;read&quot;: &quot;doc.publisher == auth.openid&quot;
+}</p>
+<pre class="hljs"><code><div>则发起读请求时可以使用 {openid} 常量，效果等同于显示传入当前用户的实际 openid ：
+```javascript
+db.collection('test').where({
+  publisher: '{openid}'
+}).get()
+</div></code></pre>
+<h3 id="%E5%8D%87%E7%BA%A7%E4%B8%8E%E5%85%BC%E5%AE%B9%E6%8C%87%E5%BC%95">升级与兼容指引</h3>
+<p>由于安全规则要求查询条件是安全规则的子集，同时摒弃了旧有权限配置的隐式默认行为，因此启动安全规则需要开发者注意以下升级/兼容处理：</p>
+<ol>
+<li>doc 操作需转为 where 操作</li>
+</ol>
+<p>因 doc 操作（doc.get, doc.set 等）是仅指定 _id 进行的操作，因此其查询条件大部分情况下并不会满足安全规则（除非在 &quot;read&quot;: true 下进行读操作或在 &quot;write&quot;: true 的情况下进行写操作），因此需要转换为等价的、查询条件包含安全规则或是其子集的形式。例：</p>
+<p>假设在集合 todo 上有以下权限规则：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>,
+  <span class="hljs-string">"write"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>
+}
+</div></code></pre>
+<p>旧权限配置可以通过 db.collection('todo').doc('x').get() 获取记录内容，新安全规则需要改为：</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'todo'</span>).where({
+  <span class="hljs-attr">_id</span>: <span class="hljs-string">'x'</span>,
+  <span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>,
+})
+</div></code></pre>
+<p>doc.update, doc.remove 同理，注意 doc.set 无法使用，需要用 doc.update 替代。</p>
+<ol start="2">
+<li>从旧权限配置升级后，查询更新语句都需明确指定 openid</li>
+</ol>
+<p>因升级前查询条件可以不传 _openid，而升级后要求显示传入以保证查询条件符合安全规则，因此所有查询条件均需传入 openid，还是以上一节中的安全规则示例为例，对旧权限配置中的如下查询语句：</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'todo'</span>).where({
+  <span class="hljs-attr">progress</span>: _.lt(<span class="hljs-number">50</span>)
+}).get()
+</div></code></pre>
+<p>需要改为：</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'todo'</span>).where({
+  <span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>,
+  <span class="hljs-attr">progress</span>: _.lt(<span class="hljs-number">50</span>)
+}).get()
+</div></code></pre>
+<p>在开放安全规则后，where.update 和 where.remove 也在小程序端开放了，可以进行符合安全规则的批量更新，如：</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'todo'</span>).where({
+  <span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>,
+  <span class="hljs-attr">category</span>: <span class="hljs-string">'sport'</span>
+}).update({
+  <span class="hljs-attr">progress</span>: _.inc(<span class="hljs-number">10</span>)
+})
+</div></code></pre>
+<p>安全规则配置中每个表达式（组）最大长度限制为 1024 字符。
+表达式支持变量（不支持正则）、数组表达式（数组成员限制为数字或字符串）、逻辑表达式（&amp;&amp;、||）、一元表达式（+1，-1，!a)、二元表达式（ &gt;、&gt;=、&lt;、&lt;=、==、!=、in），成员表达式（a.b、a[&quot;b&quot;]）、调用表达式（仅云数据库安全规则支持），字符串模板表达式（用户云数据库函数调用动态参数，例：database.collection.${doc.objectId}）。</p>
+<h3 id="1225-%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90">12.2.5 实现数据权限</h3>
+<p>数据权限就是用户在同一页面看到的数据是不同的,比如财务部只能看到其部门下的用户数据,采购部只看采购部的数据,在一些大型的公司,全国有很多城市和分公司。</p>
+<p>比如杭州用户登录系统只能看到杭州的数据,上海用户只能看到上海的数据,解决方案一般是把数据和具体的组织架构关联起来。</p>
+<p>举个例子,再给用户授权的时候,用户选择某个角色同时绑定组织如财务部或者合肥分公司,那么该用户就有了该角色下财务部或合肥分公司下的的数据权限。</p>
+<h3 id="%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6">基于角色的权限控制</h3>
+<p>可以利用 TCB 的数据模型以及自定义的安全规则在您的应用中实现基于角色的访问权限控制。
+假设您正在构建一款协作式撰文应用，用户可以按照以下安全要求在其中撰写“故事”和“评论”：
+每个故事都有一名所有者；故事可共享给撰写者。
+撰写者除了拥有评论者所拥有的全部访问权限之外，还可以编辑故事内容。 所有者可以编辑故事的任意部分，并且可以控制其他用户的访问权限。 普通用户只能查看故事和评论，写自己的评论，不能编辑故事。</p>
+<h4 id="%E5%8F%AA%E6%9C%89%E8%87%AA%E5%B7%B1%E5%8F%AF%E8%AF%BB">只有自己可读</h4>
+<pre class="hljs"><code><div><span class="hljs-string">"read"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>, 
+</div></code></pre>
+<h4 id="%E5%8F%AA%E8%83%BD%E4%BF%AE%E6%94%B9%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BF%A1%E6%81%AF">只能修改自己的信息</h4>
+<pre class="hljs"><code><div><span class="hljs-string">"write"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>, 
+</div></code></pre>
+<h4 id="%E9%83%BD%E5%8F%AF%E4%BB%A5%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9">都可以发布内容</h4>
+<pre class="hljs"><code><div>&quot;create&quot;: &quot;doc.publisher == auth.openid&quot;, 
+</div></code></pre>
+<h4 id="1%E4%BB%85%E7%BE%A4%E6%88%90%E5%91%98%E5%8F%AF%E4%BB%A5%E8%AF%BB">1、仅群成员可以读</h4>
+<p>vip</p>
+<pre class="hljs"><code><div>{
+  _id: string,
+  owner: string, 
+  name: string, 
+  members: string[], 
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid in get('database.vip.${doc._id}').members"</span>
+</div></code></pre>
+<h4 id="%E4%BB%85%E7%AE%A1%E7%90%86%E5%91%98%E5%92%8C%E6%8B%A5%E6%9C%89%E8%80%85%E6%8B%A5%E6%9C%89%E6%9D%83%E9%99%90">仅管理员和拥有者拥有权限</h4>
+<p>shop集合</p>
+<pre class="hljs"><code><div>{
+  _id: string,
+  name: string, 
+  owner: string, 
+  managers: string[], 
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid == get(`database.shop.${doc.shopId}`).owner || auth.openid in get(`database.shop.${doc.shopId}`).managers"</span>,
+</div></code></pre>
+<p>用户角色管理
+创建角色并授予用户角色权限
+这里我们以几种常见场景为例。</p>
+<p>应用程序需要读/写权限。</p>
+<p>运维人员需要完全访问数据库。</p>
+<p>部分开发人员需要读取权限。</p>
+<p>部分开发人员需要读写权限。</p>
+<h3 id="%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6">权限控制</h3>
+<ul>
+<li>会员体系，指定用户有读写权限；
+这是权限最基础也是最核心的模型,它包括用户/角色/权限,其中用户和角色是多对多的关系,角色和权限也是多对多的关系。</li>
+</ul>
+<p>用户是发起操作的主体,按类型分可分为2B和2C用户,可以是后台管理系统的用户,可以是OA系统的内部员工,也可以是面向C端的用户,比如阿里云的用户。</p>
+<p>角色起到了桥梁的作用,连接了用户和权限的关系,每个角色可以关联多个权限,同时一个用户关联多个角色,那么这个用户就有了多个角色的多个权限。</p>
+<p>有人会问了为什么用户不直接关联权限呢?在用户基数小的系统,比如20个人的小系统,管理员可以直接把用户和权限关联,工作量并不大,选择一个用户勾选下需要的权限就完事了。</p>
+<p>但是在实际企业系统中,用户基数比较大,其中很多人的权限都是一样的,就是个普通访问权限,如果管理员给100人甚至更多授权,工作量巨大。</p>
+<p>这就引入了&quot;角色(Role)&quot;概念,一个角色可以与多个用户关联,管理员只需要把该角色赋予用户,那么用户就有了该角色下的所有权限,这样设计既提升了效率,也有很大的拓展性。</p>
+<h3 id="1223-%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90">12.2.3 实现页面的访问权限</h3>
+<p>页面权限: 即用户登录系统可以看到的页面,由菜单来控制,菜单包括一级菜单和二级菜单,只要用户有一级和二级菜单的权限,那么用户就可以访问页面。</p>
+<h3 id="1224-%E5%AE%9E%E7%8E%B0%E6%93%8D%E4%BD%9C%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%9D%83%E9%99%90">12.2.4 实现操作的增删改查权限</h3>
+<p>操作权限: 即页面的功能按钮,包括查看,新增,修改,删除,审核等,用户点击删除按钮时,后台会校验用户角色下的所有权限是否包含该删除权限,如果是,就可以进行下一步操作,反之提示无权限。有的系统要求&quot;可见即可操作&quot;,意思是如果页面上能够看到操作按钮,那么用户就可以操作,要实现此需求,这里就需要前端来配合,前端开发把用户的权限信息缓存,在页面判断用户是否包含此权限,如果有,就显示该按钮,如果没有,就隐藏该按钮。</p>
+<p>某种程度上提升了用户体验,但是在实际场景可自行选择是否需要这样做</p>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

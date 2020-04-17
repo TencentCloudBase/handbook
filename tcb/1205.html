@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>12.5、索引.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="125-%E7%B4%A2%E5%BC%95">12.5 索引</h2>
+<p>数据库的索引与书籍的索引/目录类似，有了索引就不需要翻整本书，数据库可以直接在索引中查找，在索引中找到条目之后，就可以直接跳转到目标文档的位置，这就能使查找速度提高几个数量级。不使用索引的查询称为全表扫描，也就是说服务器必须查找完一整本书才能找到查询结果，对于大集合来说，应该尽量避免全表扫描，否则效率非常低。建立索引是保证数据库性能、保证小程序体验的重要手段。我们应为所有需要成为查询条件的字段建立索引。</p>
+<h3 id="1251-%E7%B4%A2%E5%BC%95%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%AE%A1%E7%90%86">12.5.1 索引的类型与管理</h3>
+<p>我们可以在云开发控制台数据库标签页对每个集合的字段添加索引，设置索引的属性为唯一或非唯一，排序方式为升序或降序，也能查看该索引所占的空间和命中次数。索引是一个文件，它是要占据物理空间的，因此我们可以留意不要过度索引浪费空间，而命中次数也可以用于判断索引是否有效。</p>
+<h4 id="1id%E7%B4%A2%E5%BC%95%E5%92%8Copenid%E7%B4%A2%E5%BC%95">1、_id索引和_openid索引</h4>
+<p>云开发数据库会给每个集合默认建立_id索引和_openid索引。_id索引在我们进行db.collection('集合名').doc(&quot;_id值&quot;)的请求时就会命中。而当我们在where里添加_openid为查询条件，就会命中_openid索引，在小程序端进行db.collection('集合名')查询时，由于自带默认条件_openid为用户的openid，因此在小程序端查询都会命中_openid索引。</p>
+<h4 id="2%E5%8D%95%E5%AD%97%E6%AE%B5%E7%B4%A2%E5%BC%95">2、单字段索引</h4>
+<p>单字段索引是最常见的索引，它不会自动创建。对需要作为查询条件筛选的字段，我们可以创建单字段索引。如果需要对嵌套字段进行索引，那么可以通过 &quot;点表示法&quot; 用点连接起嵌套字段的名称。比如我们需要对如下格式的记录中的 color 字段进行索引时，可以用 style.color 表示。在设置单字段索引时，指定排序为升序或降序都可以，。</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"_id"</span>: <span class="hljs-string">''</span>,
+  <span class="hljs-string">"style"</span>: {
+    <span class="hljs-string">"color"</span>: <span class="hljs-string">''</span>
+  }
+}
+</div></code></pre>
+<h4 id="3%E7%BB%84%E5%90%88%E7%B4%A2%E5%BC%95">3、组合索引</h4>
+<p>组合索引即一个索引包含多个字段，组合索引在添加时要注意字段的顺序，顺序不同索引的效果也会不同。当查询条件使用的字段包含在索引定义的所有字段或前缀字段里时，会命中索引。</p>
+<p>组合索引遵循<strong>最左前缀原则</strong>，比如在 A, B, C 三个字段定义的组合索引(A, B, C)，那么查询条件A，{A, B},{A, C},{A, B, C}索引都会有效，查询条件B，C，{B, C}则不会命中索引。根据最左前缀原则，我们可以明白组合索引(A, B)和调换字段顺序的(B, A)效果是不一样的。当定义组合索引为(A, B)时，索引会先按 A 字段排序再按 B 字段排序。因此当组合索引设为 (A, B) 时，即使我们没有单独对字段 A 设立索引，但对字段 A 的查询可以命中 (A, B) 索引。</p>
+<p>定义索引时字段的排序方式也决定排序查询是否有效，比如我们对字段 A 和 B 设置以下索引：(A: 升序,B: 降序)，那么当我们查询需要对 A, B 进行排序时，可以指定排序结果为 A 升序、B 降序以及完全相反的排序A 降序、B 升序有效，而A升B升，A降B降都不会命中索引。</p>
+<p>还有一些查询条件，需要进行范围查询或者排序，那么范围查询和排序的字段就要尽量往后放，因为范围查询以后的字段索引是不能命中的。组合索引的好处已经在上面有提到了,如果数据库有a索引,现在b列也需要索引,那么直接建立(a,b)即可</p>
+<h4 id="4%E7%B4%A2%E5%BC%95%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7">4、索引的唯一性</h4>
+<p>创建索引时可以指定增加唯一性限制，具有唯一性限制的索引会要求被索引集合不能存在被索引字段值都相同的两个记录。需特别注意的是，假如记录中不存在某个字段，则对索引字段来说其值默认为 null，如果索引有唯一性限制，则不允许存在两个或以上的该字段为空 / 不存在该字段的记录。</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">"china"</span>)  
+  .where({              
+    <span class="hljs-attr">gdp</span>: _.gt(<span class="hljs-number">3000</span>),
+    <span class="hljs-attr">city_area</span>:_.lt(<span class="hljs-number">10000</span>),
+    <span class="hljs-attr">reg_pop</span>:_.gt(<span class="hljs-number">6000</span>)
+  })
+  .field({             
+    <span class="hljs-attr">_id</span>:<span class="hljs-literal">false</span>,         
+    <span class="hljs-attr">city</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">city_area</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">gdp</span>:<span class="hljs-literal">true</span>
+  })
+  .orderBy(<span class="hljs-string">'gdp'</span>, <span class="hljs-string">'desc'</span>)
+  .orderBy(<span class="hljs-string">'city_area'</span>, <span class="hljs-string">'asc'</span>) 
+</div></code></pre>
+<p>由于有三个查询条件，为你可以给三个查询条件按照顺序创建索引，由于这几个值无法做到非唯一，且存在空值的可能（有些城市没有数据），所以创建时选择非唯一。</p>
+<h3 id="1252-%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E8%AF%B4%E6%98%8E">12.5.2 索引的创建说明</h3>
+<h4 id="1%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9">1、索引的优点和缺点</h4>
+<p>索引虽然能非常高效的提高查询速度，同时却会降低更新表的速度。实际上索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录，所以索引列也是要占用空间的。索引需要进行两次查找，一次是查找索引条目，一次是根据索引指针去查找相应的文档，而全表查询只需要进行一次查找。集合较大、文档较大、选择性查询就比较适合用索引。</p>
+<p>其实建索引的原理就是将磁盘I/O操作的最小化，不在磁盘中排序，而是在内存中排好序，通过排序的规则去指定磁盘读取就行，也不需要在磁盘上随机读取。</p>
+<p>索引并非越多越好，一个表中如有大量的索引，不仅占用磁盘空间，而且会影响增删改等语句的性能，因为当表中的数据更改的同时，索引也会进行调整和更新。避免对经常更新的表设计过多的索引，并且索引中的列尽可能要少，而对经常用于查询的字段应该创建索引，但要避免添加不必要的字段。</p>
+<p>为了减少索引的数量，可以建立组合索引，组合索引就是可以使用多个列一起建立一个索引。建立索引时要优先在已经存在的索引上扩展成组合索引，或者在已经存在的组合索引上继续添加字段。因为，索引越多，维护成本就越高，还会导致插入速度变慢等负面效应。</p>
+<h4 id="2%E7%B4%A2%E5%BC%95%E5%88%9B%E5%BB%BA%E7%9A%84%E6%9D%A1%E4%BB%B6">2、索引创建的条件</h4>
+<p>哪些情况需要创建索引：</p>
+<ul>
+<li>频繁作为查询条件的字段一般都应该创建索引；</li>
+<li>查询有多个条件时，组合索引比单字段索引的性价比更高；</li>
+<li>查询中排序的字段，排序字段若通过索引去访问将大大提高排序速度，注意单字段索引和组合索引的排序规则</li>
+<li>查询中统计或分组字段也应该建立索引</li>
+</ul>
+<p>哪些情况不需要创建索引：</p>
+<ul>
+<li>集中中的记录太少或记录内的字段太少；</li>
+<li>经常增删改的集合或字段；索引提高了查询速度，同时也就会降低更新表的速度，因为更新表时，不仅要保存数据，还要保存一下索引文件；因为如果该集合写多读少 ，添加索引会影响写入性能</li>
+<li>where条件里用不到的字段就不要创建索引</li>
+<li>数据重复且发布比较均匀的的字段不适合建索引（唯一性太差的字段不适合建立索引），例如性别，真假值</li>
+<li>参与列计算的列不适合建索引</li>
+</ul>
+<h4 id="3%E7%B4%A2%E5%BC%95%E7%9A%84%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%91%BD%E4%B8%AD">3、索引的空间与命中</h4>
+<p>在云开发控制台每个集合都有相应的索引管理，在这里除了可以创建索引外，还可以了解每个索引占据的空间以及判断查询时索引是否命中的命中数。每个索引建议创建的索引数不要超过5个，索引占据的空间</p>
+<h3 id="1254-%E7%B4%A2%E5%BC%95%E7%9A%84%E5%8E%9F%E5%88%99%E4%B8%8E%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">12.5.4 索引的原则与注意事项</h3>
+<p><strong>1、最好是使用唯一索引</strong></p>
+<p>当唯一性是某种数据本身的特征时，指定唯一索引。使用唯一索引需能确保定义的列的数据完整性，以提高查询速度</p>
+<p><strong>2、和简单的字段为索引</strong></p>
+<p>Innodb 表的普通索引都会保存主键的键值，所以主键要尽可能选择较短的数据类型，可以有效的减少索引的磁盘占用，提高索引的缓存效果。索引的太长首先会占用大量的磁盘空间，其次索引太长会使索引变得臃肿，导致索引查询变慢。通过目录查询书籍指定的章节之所以快，就是因为索引足够轻量，如果索引太长那么这个优势就不明显了。而且索引里的数据和表里的数据本身就是冗余的，如果索引太长，那么磁盘空间浪费的就越多。</p>
+<p><strong>3、用区分度比较高的列建索引</strong></p>
+<p>具有多个重复值的字段，其索引效果最差。比如存放身份证的字段因为值都不同，很容易区分，索引效果比较好，而用来记录性别的字段，因为只含有“男”，“女”，不管搜索哪个值，都会得出大约一半的值，这样的索引对性能的提升不高。如果有几个列都是唯一的，要选择最常作为访问条件的列作为索引的主键。简单枚举值的列不要建立索引。在条件表达式中经常用到的不同值较多的列上建立索引，在不同值较少的列上不要建立索引，比如性别字段只有男和女，就没必要建立索引。如果建立索引不但不会提高查询效率，反而会严重降低更新速度。由于我们建立索引并想让索引能达到最高性能，这个时候我们应当充分考虑该列是否适合建立索引，可以根据列的区分度来判断，区分度太低的情况下可以不考虑建立索引，区分度越高效率越高。</p>
+<p><strong>4、索引的字段的值最好不要有空值</strong></p>
+<p>索引的字段最好不要有空值，有空值的字段建立索引时要选择非唯一性。唯一性的索引是不允许有空值的。</p>
+<p><strong>5、索引的字段最好不要参与计算</strong></p>
+<p>索引列不能参与计算，保持列“干净”;索引列参与计算；应尽量避免在 where 子句中对字段进行表达式操作</p>
+<p><strong>6、查询尽量都走在索引上</strong></p>
+<p>保证索引包含的字段独立在查询语句中，不能是在表达式中，当查询的列都在索引的字段中时，查询的效率更高，所以应该尽量避免使用 select *，需要哪些字段，就只查哪些字段。在索引基数高的地方建立索引（比如邮箱，用户名，而不是性别）</p>
+<p><strong>7、避免重复索引和冗余索引</strong></p>
+<p>重复索引：在同一列或者相同顺序的几个列建立了多个索引，成为重复索引，没有任何意义，删掉 冗余索引：两个或多个索引所覆盖的列有重叠，比如对于列m,n ，加索引index m(m),indexmn(m,n),称为冗余索引。</p>
+<p><strong>8、使用索引获取有序数据</strong>
+索引本身是有序的，利用有序索引获取有序数据（Using Index）。使用索引来优化或者避免排序排序的字段上加入索引，可以提高速度。在频繁排序或分组（即group by或order by操作）的列上建立索引，如果待排序的列有多个，可以在这些列上建立组合索引</p>
+<p><strong>9、组合索引遵循最左前缀原则</strong>
+建立组合索引，要同时考虑列查询的频率和列的区分度，区分度大的优先放在前面。比如一张全球人口的用户表，该表有性别，国籍，年龄等字段。那么一般情况下国籍的区分度就要比性别的区分度更高，比如满足中国人这个条件的要比满足男人这个条件的人要更少。因此建组合索引时国籍优先考虑放在性别的前面。</p>
+<p><strong>10、索引碎片与维护</strong>
+在数据表长期的更改过程中，索引文件和数据文件都会产生空洞，形成碎片。修复表的过程十分耗费资源，可以用比较长的周期修复表。</p>
+<p><strong>11、注意索引的唯一性和非唯一性</strong>
+唯一索引一定要小心使用，它带有唯一约束，由于前期需求不明等情况下，可能造成我们对于唯一列的误判。</p>
+<p><strong>12、建议最好不要用随机生成的_id做主键</strong></p>
+<p>最好是使用自增ID字段做索引的主键，而不要使用随机的_id做主键，因为非递增的主键会导致频繁的页分裂，从而降低了插入的效率。所以一般情况下，我们会在表中使用一个自增ID字段来代替_id(使用原子更新指令inc来做自增)，用该字段来作表的主键。如果需要按照_id查询时，查找就需要回表，查找的效率会低一点。如果表中只需要一个_id的唯一索引，那么就可以使用_id来做主键；如果不满足这个条件就用自增ID做索引；</p>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

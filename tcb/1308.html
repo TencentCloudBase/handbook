@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>13.8、客服消息.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <div id="primary" class="content-area">
+    <div id="content" class="site-content" role="main">			
+      <nav id="header-db" class="row navbar navbar-default">
+        <div class="navbar-header">
+          <div class="logotop fleft">
+            <a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+          </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          <div class="flex nav-items">
+          <h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+          <ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+          <div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+          </div>
+                
+        </div>
+      
+        <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+          <div class="sop-menu">
+          <ul>
+        <li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+        <li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+        <li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+        <li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+        <li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+        <li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+        <li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+        <li class="page_item current_page_item"><a href="./1308.html">客服消息</a></li>
+        <li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+        <li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+        <li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+        <li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+        <li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+        <li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+          </ul>
+        </div>		
+        </div>
+      </nav>
+    <div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="138-%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF">13.8 客服消息</h2>
+<p>在前面的章节，我们已经在小程序端将button 组件open-type 的值设置为 contact ，点击button就可以进入客服消息。不过这个客服消息使用的是官方的后台，没法进行深度的定制，我们可以使用云开发作为后台来自定义客服消息来实现快捷回复、添加常用回答等功能。</p>
+<blockquote>
+<p>如果是使用传统的开发方式，需要填写服务器地址（URL）、令牌（Token） 和 消息加密密钥（EncodingAESKey）等信息，然后结合将token、timestamp、nonce三个参数进行字典序排序、拼接、并进行sha1加密，然后将加密后的字符串与signature对比来验证消息的确来自微信服务器，之后再来进行接收消息和事件的处理，可谓十分繁琐，而使用云开发相对简单很多。</p>
+</blockquote>
+<h3 id="1381-%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E8%AF%B4%E6%98%8E">13.8.1 客服消息的配置与说明</h3>
+<p>使用开发者工具新建一个云函数，比如customer，在config.json里，设置以下权限后部署上传到服务端。</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"permissions"</span>: {
+    <span class="hljs-string">"openapi"</span>: [
+      <span class="hljs-string">"customerServiceMessage.send"</span>,
+      <span class="hljs-string">"customerServiceMessage.getTempMedia"</span>,
+      <span class="hljs-string">"customerServiceMessage.setTyping"</span>,
+      <span class="hljs-string">"customerServiceMessage.uploadTempMedia"</span>
+    ]
+  }
+}
+</div></code></pre>
+<p>然后再打开云开发控制台，点击右上角的<strong>设置</strong>，选择<strong>全局设置</strong>，开启<strong>云函数接收消息推送</strong>，添加消息推送配置。为了学习方便我们将所有的消息类型都指定推送到customer云函数里。</p>
+<ul>
+<li>text，文本消息</li>
+<li>image，图片消息</li>
+<li>miniprogram，小程序卡片</li>
+<li>event，事件类型user_enter_tempsession，进入客服消息时就会触发
+以上有四种消息类型，但是发送客服消息的customerServiceMessage.send的msgtype属性的合法值有text、image、link（图文链接消息）、miniprogrampage四种，也就是我们还可以发图文链接消息。</li>
+</ul>
+<h3 id="1382-%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF%E5%92%8C%E9%93%BE%E6%8E%A5">13.8.2 自动回复文本消息和链接</h3>
+<h4 id="1%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF">1、自动回复文本消息</h4>
+<p>使用开发者工具新建一个页面，比如customer，然后在customer.wxml里输入以下按钮，</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">open-type</span>=<span class="hljs-string">"contact"</span> &gt;</span>进入客服<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>当用户通过button进入到客服消息之后，在聊天界面回复信息，就能触发设置好的customer云函数，比如下面的例子就是当用户发一条消息（包括表情）到客服消息会话界面，云函数就会给调用customerServiceMessage.send接口给用户回复两条文本消息（一次性可以回复多条），内容分别为<code>等候您多时啦</code>和<code>欢迎关注云开发技术训练营</code>，一个云函数里也是可以多次调用接口的：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> wxContext = cloud.getWXContext() 
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.customerServiceMessage.send({
+      <span class="hljs-attr">touser</span>: wxContext.OPENID,
+      <span class="hljs-attr">msgtype</span>: <span class="hljs-string">'text'</span>,
+      <span class="hljs-attr">text</span>: {
+        <span class="hljs-attr">content</span>: <span class="hljs-string">'等候您多时啦'</span>
+      }
+    })
+    
+    <span class="hljs-keyword">const</span> result2 = <span class="hljs-keyword">await</span> cloud.openapi.customerServiceMessage.send({
+      <span class="hljs-attr">touser</span>: wxContext.OPENID,
+      <span class="hljs-attr">msgtype</span>: <span class="hljs-string">'text'</span>,
+      <span class="hljs-attr">text</span>: {
+        <span class="hljs-attr">content</span>: <span class="hljs-string">'欢迎关注云开发技术训练营'</span>
+      }
+    }) 
+
+    <span class="hljs-keyword">return</span> event    
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.log(err)
+    <span class="hljs-keyword">return</span> err
+  }
+}
+</div></code></pre>
+<p>发送文本消息时，支持插入跳小程序的文字链接的，比如我们把上面的文本消息改为以下代码：</p>
+<pre class="hljs"><code><div>content: <span class="hljs-string">'欢迎浏览&lt;a href="http://www.qq.com" data-miniprogram-appid="你的appid" data-miniprogram-path="pages/index/index"&gt;点击跳小程序&lt;/a&gt;'</span> 
+</div></code></pre>
+<ul>
+<li>data-miniprogram-appid 项，填写小程序appid，则表示该链接跳小程序；</li>
+<li>data-miniprogram-path项，填写小程序路径，路径与app.json中保持一致，可带参数；</li>
+<li>对于不支持data-miniprogram-appid 项的客户端版本，如果有herf项，则仍然保持跳href中的网页链接；</li>
+<li>data-miniprogram-appid对应的小程序必须与公众号有绑定关系。</li>
+</ul>
+<h4 id="2%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E9%93%BE%E6%8E%A5">2、自动回复链接</h4>
+<p>我们还可以给用户回复链接，我们可以把customer云函数修改为以下代码，当用户向微信聊天对话界面发送一条消息时，就会回复给用户一个链接，这个链接可以是外部链接哦。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> wxContext = cloud.getWXContext() 
+  <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.customerServiceMessage.send({
+        <span class="hljs-attr">touser</span>: wxContext.OPENID,
+        <span class="hljs-attr">msgtype</span>: <span class="hljs-string">'link'</span>,
+        <span class="hljs-attr">link</span>: {
+          <span class="hljs-attr">title</span>: <span class="hljs-string">'快来加入云开发技术训练营'</span>,
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'零基础也能在10天内学会开发一个小程序'</span>,
+          <span class="hljs-attr">url</span>: <span class="hljs-string">'https://cloud.tencent.com/'</span>,
+          <span class="hljs-attr">thumbUrl</span>: <span class="hljs-string">'https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/love.png'</span>
+        }
+      }) 
+    <span class="hljs-keyword">return</span> event    
+
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.log(err)
+    <span class="hljs-keyword">return</span> err
+  }
+}
+</div></code></pre>
+<h4 id="3%E6%A0%B9%E6%8D%AE%E5%85%B3%E9%94%AE%E8%AF%8D%E6%9D%A5%E5%9B%9E%E5%A4%8D%E7%94%A8%E6%88%B7">3、根据关键词来回复用户</h4>
+<p>将上面的云函数部署之后，当用户向客服消息的聊天会话里输入内容时，不管用户发送的是什么内容，云函数都会回给用户相同的内容，这未免有点过于死板，客服消息能否根据用户发送的关键词回复用户不同的内容呢？要做到这一点我们需要能够获取到用户发送的内容。</p>
+<p>我们可以留意云开发控制台云函数日志里看到，customer云函数返回的event对象里的Content属性就会记录用户发到聊天会话里的内容：</p>
+<pre class="hljs"><code><div>{<span class="hljs-string">"Content"</span>:<span class="hljs-string">"请问怎么加入云开发训练营"</span>,
+<span class="hljs-string">"CreateTime"</span>:<span class="hljs-number">1582877109</span>,
+<span class="hljs-string">"FromUserName"</span>:<span class="hljs-string">"oUL-mu...XbuEDsn8"</span>,
+<span class="hljs-string">"MsgId"</span>:<span class="hljs-number">22661351901594052</span>,
+<span class="hljs-string">"MsgType"</span>:<span class="hljs-string">"text"</span>,
+<span class="hljs-string">"ToUserName"</span>:<span class="hljs-string">"gh_b2bbe22535e4"</span>,
+<span class="hljs-string">"userInfo"</span>:{<span class="hljs-string">"appId"</span>:<span class="hljs-string">"wxda99ae4531b57046"</span>,<span class="hljs-string">"openId"</span>:<span class="hljs-string">"oUL-m5FuRmuVmxvbYOGuXbuEDsn8"</span>}}
+</div></code></pre>
+<p>由于Content是字符串，那这个关键词既可以是非常精准的，比如“训练营”，或“云开发训练营”，还可以是非常模糊的“请问怎么加入云开发训练营”，我们只需要对字符串进行正则匹配处理即可，比如当用户只要发的内容包含“训练营”，就会收到链接：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> wxContext = cloud.getWXContext() 
+  <span class="hljs-keyword">const</span> keyword = event.Content
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">if</span>(keyword.search(<span class="hljs-regexp">/训练营/i</span>)!=<span class="hljs-number">-1</span>){
+      <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.customerServiceMessage.send({
+        <span class="hljs-attr">touser</span>: wxContext.OPENID,
+        <span class="hljs-attr">msgtype</span>: <span class="hljs-string">'link'</span>,
+        <span class="hljs-attr">link</span>: {
+          <span class="hljs-attr">title</span>: <span class="hljs-string">'快来加入云开发技术训练营'</span>,
+          <span class="hljs-attr">description</span>: <span class="hljs-string">'零基础也能在10天内学会开发一个小程序'</span>,
+          <span class="hljs-attr">url</span>: <span class="hljs-string">'https://cloud.tencent.com/'</span>,
+          <span class="hljs-attr">thumbUrl</span>: <span class="hljs-string">'https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/love.png'</span>
+        }
+      })  
+    } 
+    <span class="hljs-keyword">return</span> event
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.log(err)
+    <span class="hljs-keyword">return</span> err
+  }
+}
+</div></code></pre>
+<blockquote>
+<p>在前面的案例里，我们都是使用<code>touser: wxContext.OPENID,</code>，</p>
+</blockquote>
+<h3 id="1382-%E8%87%AA%E5%8A%A8%E8%A7%A6%E5%8F%91event%E4%BA%8B%E4%BB%B6">13.8.2 自动触发event事件</h3>
+<p>要触发event事件，我们可以将customer.wxml的按钮改为如下代码，这里的session-from是用户从该按钮进入客服消息会话界面时，开发者将收到带上本参数的事件推送，可用于区分用户进入客服会话的来源。</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">open-type</span>=<span class="hljs-string">"contact"</span> <span class="hljs-attr">bindcontact</span>=<span class="hljs-string">"onCustomerServiceButtonClick"</span> <span class="hljs-attr">session-from</span>=<span class="hljs-string">"文章详情的客服按钮"</span>&gt;</span>进入客服<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>由于我们开启了event类型的客服消息，事件类型的值为user_enter_tempsession，当用户点击button进入客服时，就会触发云函数，不用用户发消息就能触发，同时我们返回event对象.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> wxContext = cloud.getWXContext() 
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.customerServiceMessage.send({
+      <span class="hljs-attr">touser</span>: wxContext.OPENID,
+      <span class="hljs-attr">msgtype</span>: <span class="hljs-string">'text'</span>,
+      <span class="hljs-attr">text</span>: {
+        <span class="hljs-attr">content</span>: <span class="hljs-string">'欢迎来到等候您多时啦'</span>
+      }
+    })
+    <span class="hljs-keyword">return</span> event
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.log(err)
+    <span class="hljs-keyword">return</span> err
+  }
+}
+</div></code></pre>
+<p>我们可以去云开发控制台查看返回的event对象</p>
+<pre class="hljs"><code><div>{<span class="hljs-string">"CreateTime"</span>:<span class="hljs-number">1582876587</span>,
+<span class="hljs-string">"Event"</span>:<span class="hljs-string">"user_enter_tempsession"</span>,
+<span class="hljs-string">"FromUserName"</span>:<span class="hljs-string">"oUL-m5F...8"</span>,
+<span class="hljs-string">"MsgType"</span>:<span class="hljs-string">"event"</span>,
+<span class="hljs-string">"SessionFrom"</span>:<span class="hljs-string">"文章详情的客服按钮"</span>,
+<span class="hljs-string">"ToUserName"</span>:<span class="hljs-string">"gh_b2bbe22535e4"</span>,
+<span class="hljs-string">"userInfo"</span>:{<span class="hljs-string">"appId"</span>:<span class="hljs-string">"wxda9...57046"</span>,
+<span class="hljs-string">"openId"</span>:<span class="hljs-string">"oUL-m5FuRmuVmx...sn8"</span>}}
+</div></code></pre>
+<p>在云函数端，我们是可以通过event.SessionFrom来获取到用户到底是点击了哪个按钮从而进入客服对话的，也可以根据用户进入客服会话的来源不同，给用户推送不同类型，比如我们可以给session-from的值设置为“训练营”，当用户进入客服消息会话就能推送相关的信息给到用户。</p>
+<p>还有一点就是，bindcontact是给客服按钮绑定了了一个事件处理函数，这里为onCustomerServiceButtonClick，通过事件处理函数我们可以在小程序端做很多事情，比如记录用户点击了多少次带有标记（比如session-from的值设置为“训练营”）的客服消息的按钮等功能。</p>
+<h3 id="1383-%E8%87%AA%E5%8A%A8%E5%9B%9E%E5%A4%8D%E5%9B%BE%E7%89%87">13.8.3 自动回复图片</h3>
+<p>要在客服消息里给用户回复图片，这个图片的来源只能是来源于微信服务器，我们需要先使用customerServiceMessage.uploadTempMedia，把图片文件上传到微信服务器，获取到mediaId（有点类似于微信服务器的fileID）,然后才能在客服消息里使用。</p>
+<p>在customer云函数的index.js里输入以下代码并部署上线，我们将获取到的mediaId使用cloud.openapi.customerServiceMessage.send发给用户：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> wxContext = cloud.getWXContext() 
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">//我们通常会将云存储的图片作为客服消息媒体文件的素材</span>
+    <span class="hljs-keyword">const</span> fileID = <span class="hljs-string">'cloud://xly-xrlur.786c-xly-xrlur-1300446086/1572315793628-366.png'</span>
+ 
+    <span class="hljs-comment">//uploadTempMedia的图片类型为Buffer，而从存储下载的图片格式也是Buffer</span>
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> cloud.downloadFile({
+      <span class="hljs-attr">fileID</span>: fileID,
+    })
+    <span class="hljs-keyword">const</span> Buffer = res.fileContent  
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.customerServiceMessage.uploadTempMedia({
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'image'</span>,
+      <span class="hljs-attr">media</span>: {
+        <span class="hljs-attr">contentType</span>: <span class="hljs-string">'image/png'</span>,
+        <span class="hljs-attr">value</span>: Buffer
+      }
+    })
+
+    <span class="hljs-built_in">console</span>.log(result.mediaId)
+    <span class="hljs-keyword">const</span> mediaId = result.mediaId
+    <span class="hljs-keyword">const</span> wxContext = cloud.getWXContext() 
+    <span class="hljs-keyword">const</span> result2 = <span class="hljs-keyword">await</span> cloud.openapi.customerServiceMessage.send({
+      <span class="hljs-attr">touser</span>: wxContext.OPENID,
+      <span class="hljs-attr">msgtype</span>: <span class="hljs-string">'image'</span>,
+      <span class="hljs-attr">image</span>: {
+        <span class="hljs-attr">mediaId</span>: mediaId
+      }
+    })
+  
+    <span class="hljs-keyword">return</span> event
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.log(err)
+    <span class="hljs-keyword">return</span> err
+  }
+}
+</div></code></pre>
+<p>客服消息还能给用户回复小程序消息卡片，以及客服当前的输入状态给用户（使用customerServiceMessage.setTyping接口）。</p>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

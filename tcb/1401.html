@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>14.1、云开发资源管理.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="14-%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86">14 云开发资源管理</h2>
+<p>管理小程序云开发资源如数据库、存储、云函数的方式有很多，并不局限于微信开发者工具自带的云开发控制台。借助于云开发的Web端SDK、服务端SDK、管理端SDK、Cloudbase CLI以及HTTP API等，我们在本地电脑、服务器、Web网页、其他小程序内以及其他更多语言更多平台对云开发的资源进行管理。</p>
+<h2 id="141-%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86">14.1 云开发资源管理</h2>
+<h3 id="1411-%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE">14.1.1 开发人员的工具链</h3>
+<h4 id="1%E9%80%9A%E8%BF%87%E4%BA%91%E5%BC%80%E5%8F%91%E7%BD%91%E9%A1%B5%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90">1、通过云开发网页后台管理云开发资源</h4>
+<p>我们可以登录腾讯云官网的 <a href="https://console.cloud.tencent.com/tcb">云开发后台管理</a>，选择使用<strong>微信公众号登录</strong>，然后用该小程序管理员的微信扫描二维码，就可以在网页控制台里看到我们使用微信开发者工具创建的小程序云开发资源了。
+<img src="./../img/14/WechatIMG326.png" alt="腾讯云官网的云开发环境列表"></p>
+<p>在这里可以管理小程序云开发的数据库、文件（存储）、云函数、监控告警、日志检索以及环境设置，也可以对云开发资源的服务进行续费，是一个完全可以替代云开发控制台的可视化管理工具。</p>
+<p><img src="./../img/14/WX20200315-093300@2x.png" alt="腾讯云官网的云开发资源管理界面"></p>
+<p>腾讯云的这个云开发网页控制台相比开发者工具的控制台来说，功能更多更全面，很多新的功能也是会先发布在这里，比如：</p>
+<ul>
+<li><strong>静态网站托管</strong>：可以将hexo、vuepress、hugo等生成的静态博客、自己创建的静态网页网站托管到云开发环境里；</li>
+<li><strong>文件存储的缓存设置</strong>：缓存过期配置是一套针对用户文件的缓存策略，可降低CDN回源率；</li>
+<li><strong>云存储安全规则</strong>：</li>
+<li><strong>用户管理的登录设置</strong>：跨多端必不可少的功能，支持自定义登录、微信公众平台、微信开放平台以及匿名登录等；</li>
+<li><strong>云函数的HTTP 触发</strong>：HTTP 触发是云开发为开发者提供的 HTTP 访问服务，让开发者可以通过 HTTP 访问到自己的云开发资源。</li>
+<li><strong>私有网络</strong>，是一块在腾讯云上自定义的逻辑隔离网络空间，可以为云服务器、云数据库等资源构建逻辑隔离的、用户自定义配置的网络空间，以提升用户云上资源的安全性，并满足不同的应用场景需求；</li>
+<li>云函数除了支持Nodejs还<strong>支持php</strong>，之后可能会增加更多的编程语言；</li>
+<li>可以<strong>按资源包购买</strong>云环境的资源，开启按量付费之后，购买资源包更划算；</li>
+<li><strong>云开发环境的自动降配</strong>：云开发环境到期后若满足条件，系统将自动为您降为免费版环境，避免存储的资源因付费不及时而被清空</li>
+<li><strong>拓展能力</strong>：支持图像安全审核、图像标签、图像处理、图像盲水印等，而且拓展能力还在持续添加中</li>
+</ul>
+<h4 id="2%E8%B7%A8%E4%BA%91%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86">2、跨云开发环境进行管理</h4>
+<p>如果你开通了多个云开发环境（小程序云开发环境、Web端云开发环境等），也就有了多个云开发资源环境，那我们是否可以在A小程序的云函数里调用B小程序的云开发资源呢？当然可以，通过tcb-admin-node这个依赖就能很方便的实现。</p>
+<p><a href="https://github.com/TencentCloudBase/tcb-admin-node">tcb-admin-node</a>也就是云开发的<strong>服务端SDK</strong>，让你可以在服务端（如腾讯云云函数或 CVM 等）使用 Nodejs 服务访问 云开发 的服务，也就是服务端SDK是云开发环境必备的一个依赖。在我们给云函数安装wx-server-sdk时就已经同时安装了该依赖，也就是我们无需再安装就可以直接用它来实现跨云开发环境来调用资源。</p>
+<p>比如我们可以在A小程序的云函数里填入B小程序的secretId和secretKey以及环境ID，这里的secretId和secretKey，</p>
+<ul>
+<li>可以填写B小程序的appid和key，这个在B小程序的控制台就可以找到，因为小程序云开发的环境可以创建两个，所以我们可以通过填写环境ID来确定是哪个环境；</li>
+<li>你也可以腾讯云 API 固定密钥对，<a href="https://console.cloud.tencent.com/cam/capi">腾讯云密钥对获取</a>，这个密钥对会管理该账号下的所有云开发环境，我们可以通过填写环境ID来确实是哪个环境</li>
+<li>如果不填写secretId和secretKey，就表示初始化的是A小程序的云开发环境了。</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">secretId</span>: <span class="hljs-string">'xxxxx'</span>,
+  <span class="hljs-attr">secretKey</span>: <span class="hljs-string">'xxxx'</span>,
+  <span class="hljs-attr">env</span>: <span class="hljs-string">'xxx'</span>
+})
+</div></code></pre>
+<p>服务端SDK 也就是tcb-admin-node的用法，与小程序云函数端(服务端)的用法是一致的。该依赖更多信息可以通过阅读在Github上的技术文档来了解。</p>
+<blockquote>
+<p>tcb-admin-node是云开发Nodejs的服务端SDK，而云开发也在不断支持更多的编程语言，比如php，而<a href="https://github.com/TencentCloudBase/tcb-php-sdk">tcb-php-sdk</a>则是云开发php语言的服务端SDK。</p>
+</blockquote>
+<h4 id="3%E9%80%9A%E8%BF%87cli%E5%B7%A5%E5%85%B7%E6%9D%A5%E7%AE%A1%E7%90%86%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90">3、通过CLI工具来管理云开发资源</h4>
+<p>CloudBase CLI 是一个开源的命令行界面交互工具，用于帮助用户快速、方便的部署项目，管理云开发资源。对于开发人员来说，我们还可以通过<a href="https://github.com/TencentCloudBase/cloudbase-cli">cloudbase-cli</a>CLI工具使用命令行对云开发资源进行管理。</p>
+<p>如果你想使用Visual Studio Code在电脑本地来开发小程序和进行Web端云开发，可以使用Cloudbase Cli命令行工具来管理云开发的环境。</p>
+<ul>
+<li>云开发环境的创建、环境配置的创建、更改环境登录方式、展示环境信息；</li>
+<li>云函数列表展示、下载、部署、删除、更新代码、更新配置、拷贝云函数、打印云函数日志、触发云函数；</li>
+<li>文件存储文件列表、文件临时访问地址、文件信息、文件权限的获取与设置、文件/文件夹的上传、删除、列表获取、信息获取；</li>
+<li>静态网站的部署、删除</li>
+<li>HTTP Service的创建、删除、绑定、解绑、查询等</li>
+</ul>
+<blockquote>
+<p>在电脑本地部署Nodejs环境，结合VS Code编辑器，Cloudbase CLI是一个可以取代微信开发者工具来做跨端云开发的重要工具，当然小程序和网页的一些与账号有关调试还是离不开微信开发者工具。</p>
+</blockquote>
+<h3 id="1412-%E4%BA%91%E5%BC%80%E5%8F%91%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91">14.1.2 云开发后台管理系统的开发</h3>
+<p>我们应该如何让市场、运营、产品等来管理云开发的资源（如添加商品、发表文章等），通常我们需要搭建一个后台，便于不懂代码的人员来进行可视化管理，尽管我们可以把这个后台直接搭建在小程序里面，但是PC端的后台可能更加方便一些。</p>
+<h4 id="1cloudbase-manager-node">1、cloudbase-manager-node</h4>
+<p><a href="https://github.com/TencentCloudBase/cloudbase-manager-node">cloudbase-manager-node</a>是云开发的<strong>管理端SDK</strong>，它支持开发者通过接口形式对云开发提供的云函数、数据库、文件存储等资源进行创建、管理、配置等操作。</p>
+<p>相比于云开发的服务端SDK，管理端SDK在管理云开发环境的资源上功能更加丰富；使用管理端SDK可以在本地电脑、Linux、Windows等服务器里搭建云开发环境的管理后台。我们仍然可以把管理端sdk cloudbase-manager-node引入到云函数，取得一些服务端sdk（wx-server-sdk）没有的能力，比如：</p>
+<ul>
+<li><strong>检查集合是否存在以及删除集合</strong> ，通过checkCollectionExists('')接口检查集合是否存在，与创建集合结合起来使用，可以说是天作之合；管理吨SDK也可以deleteCollection('')删除集合；</li>
+<li><strong>操作索引</strong> ，更新索引，判断索引是否存在，获取索引的信息，索引的命中次数、大小；</li>
+<li><strong>导入导出数据</strong> ，将对象存储里的csv 或 json文件导入到数据库，也可以把数据库里的数据导出到csv 或 json文件，并能获取导入导出是否成功；</li>
+<li><strong>文件夹操作</strong> ，上传或删除文件夹，获取文件夹里所有文件的信息，获取并云存储的权限；</li>
+<li><strong>操作云函数</strong>，获取云函数列表，创建和删除云函数，更新云函数的代码和配置，创建和删除云函数的触发器；</li>
+<li><strong>创建发布层Layer</strong> ，通过Layer，同一个账号内的云函数可以复用代码块，跨账号可以共享代码块；</li>
+<li><strong>操作安全规则</strong> ，不仅可以查看数据库和云存储的安全规则，还能修改数据库和云存储的安全规则；</li>
+</ul>
+<p>tcb-php-sdk是云开发php语言的服务端SDK，那与之相应的，tcb-manager-php是云开发php语言的管理端SDK。</p>
+<h4 id="2web%E7%AB%AFsdk">2、Web端SDK</h4>
+<p>云开发同样适用于网站开发，Web 端是云开发中针对网站应用的统称，包含以下几个场景：普通网站应用（PC 端）、移动页面或者 H5 网页、公众号网页。如果你想将云开发这种免服务器免运维的开发理念和方式贯彻到web端，也可以直接把小程序云开发的环境切换到按量付费，那这个环境就可以成为web端开发的环境，实现一云多端，不需额外购置服务器就能来在网页Web端来管理小程序云开发环境里的资源。在后面我们也会简单介绍一下Web端云开发的相关内容。</p>
+<h4 id="3%E4%BA%91%E6%8E%A5%E5%85%A5http%E8%A7%A6%E5%8F%91">3、云接入(HTTP触发)</h4>
+<p>云接入是云开发基于云函数之上为开发者提供的HTTP访问服务，开发者可以轻松使用 POST、PUT、GET、DELETE等方法通过 HTTP 请求访问到云开发环境内的全部资源，而不需要使用Web端 SDK，后面也会具体介绍。</p>
+<h4 id="4%E4%BD%BF%E7%94%A8http-api%E6%9D%A5%E7%AE%A1%E7%90%86%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90">4、使用HTTP API来管理云开发资源</h4>
+<p>开发人员还可以使用HTTP API搭建一个网页后台，HTTP API适用于所有平台所有的编程语言以及所有的平台。云开发官方技术文档有非常详细的 <a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-http-api/">HTTP API技术文档</a> ，通过HTTP API我们可以实现对数据库的集合、记录、文件等的增删改查以及触发云函数。HTTP API<strong>可以完全被云接入以及SDK给取代</strong>，各方面的处理更好更合理，所以我们不再单独介绍HTTP API啦。</p>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

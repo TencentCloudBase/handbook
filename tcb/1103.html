@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>11.3、云函数实用工具库.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="113-%E4%BA%91%E5%87%BD%E6%95%B0%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E5%BA%93">11.3 云函数实用工具库</h2>
+<p>云函数经常需要处理一些非常基础事情，比如时间、数组、数字、对象、字符串、IP等，自己造轮子的成本很高，这时候我们可以到前面提到的awesome nodejs的Github里去找一些别人已经写好的开源模块，我们直接下载引入即可，下面就列举一些比较好用的工具并会结合云函数给出一些详细的案例。</p>
+<h3 id="1131-moment%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E5%92%8Ctimezone%E4%B8%96%E7%95%8C%E6%97%B6%E9%97%B4">11.3.1 moment时间处理和Timezone世界时间</h3>
+<p>开发小程序时经常需要格式化时间、处理相对时间、日历时间以及时间的多语言问题，这个时候就可以使用比较流行的momentjs了，可以参考<a href="http://momentjs.cn/">moment中文文档</a></p>
+<p>使用开发者工具新建一个云函数，比如moment，然后在package.json<strong>增加</strong>moment最新版latest的依赖：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+  <span class="hljs-string">"wx-server-sdk"</span>: <span class="hljs-string">"latest"</span>,
+  <span class="hljs-string">"moment"</span>: <span class="hljs-string">"latest"</span>
+}
+</div></code></pre>
+<p>在index.js里的代码修改为如下，我们将moment区域设置为中国，将时间格式化为  十二月  23日  2019,  4:13:29  下午的样式以及相对时间多少分钟前：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> moment = <span class="hljs-built_in">require</span>(<span class="hljs-string">"moment"</span>);
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+  })
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+    moment.locale(<span class="hljs-string">'zh-cn'</span>);
+    time1 = moment().format(<span class="hljs-string">'MMMM Do YYYY, h:mm:ss a'</span>);
+    time2 = moment().startOf(<span class="hljs-string">'hour'</span>).fromNow();
+    <span class="hljs-keyword">return</span>  { time1,time2}
+}
+</div></code></pre>
+<p>不过云函数中的时区为 UTC+0，不是 UTC+8，格式化得到的时间和在国内的时间是有8个小时的时间差的，我们可以给小时数+8，也可以修改时区。云函数修改时区我们可以使用timezone依赖（和moment是同一个开源作者），<a href="https://momentjs.com/timezone/">timezone技术文档</a></p>
+<p>在package.json<strong>增加</strong>moment-timezone最新版latest的依赖，然后修改上面相应的代码即可，使用起来非常方便：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> moment = <span class="hljs-built_in">require</span>(<span class="hljs-string">'moment-timezone'</span>);
+time1 = moment().tz(<span class="hljs-string">'Asia/Shanghai'</span>).format(<span class="hljs-string">'MMMM Do YYYY, h:mm:ss a'</span>);
+</div></code></pre>
+<blockquote>
+<p>云函数的时区除了可以使用moment来处理外，还可以通过配置云函数的<strong>环境变量</strong>的方法(在云开发控制台)，添加一个字段 TZ，值为<code>Asia/Shanghai</code>来指定时区即可。</p>
+</blockquote>
+<h3 id="1132-%E8%8E%B7%E5%8F%96%E5%85%AC%E7%BD%91ip">11.3.2 获取公网IP</h3>
+<p>有时我们希望能够获取到服务器的公网IP，比如用于IP地址的白名单，或者想根据IP查询到服务器所在的地址，ipify就是一个免费好用的依赖，通过它我们也可以获取到云函数所在服务器的公网IP，<a href="https://github.com/sindresorhus/ipify">ipify Github地址</a>。</p>
+<p>使用开发者工具新建一个getip的云函数，然后输入以下代码，并在package.json的”dependencies”里<strong>增加</strong>最新版的ipify依赖：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+  <span class="hljs-string">"wx-server-sdk"</span>: <span class="hljs-string">"latest"</span>,
+  <span class="hljs-string">"ipify"</span>: <span class="hljs-string">"latest"</span>
+}
+</div></code></pre>
+<p>在index.js里的代码修改为如下，调用ipify返回ipv4的服务器地址：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> ipify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ipify'</span>);
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> ipify({ <span class="hljs-attr">useIPv6</span>: <span class="hljs-literal">false</span> })
+}
+</div></code></pre>
+<p>然后右键getip云函数根目录，选择在终端中打开，输入npm install安装依赖，之后上传并部署所有文件。我们可以在小程序端调用这个云函数，就可以得到云函数服务器的公网IP，这个IP是随机而有限的几个，反复调用getip，就能够穷举所有云函数所在服务器的ip了。可能你会在使用云函数连接数据库或者用云函数来建微信公众号的后台时需要用到IP白名单，我们可以把这些ip都添加到白名单里面，这样云函数就可以做很多事情啦。</p>
+<h3 id="1133-%E5%8A%A0%E8%A7%A3%E5%AF%86crypto">11.3.3 加解密Crypto</h3>
+<p>crypto模块是nodejs的核心模块之一，它提供了安全相关的功能，包含对 OpenSSL 的哈希、HMAC、加密、解密、签名、以及验证功能的一整套封装。由于crypto模块是内置模块，我们引入它是无需下载，就可以直接引入。</p>
+<p>使用开发者工具新建一个云函数，比如crypto，在index.js里输入以下代码，我们来了解一下crypto支持哪些加密算法，并以MD5加密为例：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+<span class="hljs-keyword">const</span> crypto = <span class="hljs-built_in">require</span>(<span class="hljs-string">'crypto'</span>);
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+    <span class="hljs-keyword">const</span> hashes = crypto.getHashes(); <span class="hljs-comment">//获取crypto支持的加密算法种类列表</span>
+ 
+    <span class="hljs-comment">//md5 加密 CloudBase2020 返回十六进制</span>
+    <span class="hljs-keyword">var</span> md5 = crypto.createHash(<span class="hljs-string">'md5'</span>);
+    <span class="hljs-keyword">var</span> message = <span class="hljs-string">'CloudBase2020'</span>;
+    <span class="hljs-keyword">var</span> digest = md5.update(message, <span class="hljs-string">'utf8'</span>).digest(<span class="hljs-string">'hex'</span>);   
+ 
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-string">"crypto支持的加密算法种类"</span>:hashes,
+        <span class="hljs-string">"md5加密返回的十六进制"</span>:digest
+    };
+}
+</div></code></pre>
+<p>将云函数部署之后调用从返回的结果我们可以了解到，云函数crypto模块支持46种加密算法。</p>
+<h3 id="1134-lodash%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7%E5%BA%93">11.3.4 Lodash实用工具库</h3>
+<p>Lodash是一个一致性、模块化、高性能的 JavaScript <strong>实用工具库</strong>，通过降低 array、number、objects、string 等数据类型的使用难度从而让 JavaScript 变得更简单。Lodash 的模块化方法非常适用于：遍历 array、object 和 string；对值进行操作和检测；创建符合功能的函数。</p>
+<p><strong>技术文档：</strong> <a href="https://lodash.com/">Lodash官方文档</a>、<a href="https://www.lodashjs.com/">Lodash中文文档</a></p>
+<p>使用开发者工具新建一个云函数，比如lodash，然后在package.json <strong>增加</strong> lodash最新版latest的依赖：</p>
+<pre class="hljs"><code><div>  <span class="hljs-string">"dependencies"</span>: {
+        <span class="hljs-string">"lodash"</span>: <span class="hljs-string">"latest"</span>
+    }
+</div></code></pre>
+<p>在index.js里的代码修改为如下，这里使用到了lodash的chunk方法来分割数组：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">var</span> _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lodash'</span>);
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+  })
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+    <span class="hljs-comment">//将数组拆分为长度为2的数组</span>
+    <span class="hljs-keyword">const</span> arr= _.chunk([<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>], <span class="hljs-number">2</span>);
+    <span class="hljs-keyword">return</span> arr
+}
+</div></code></pre>
+<p>右键lodash云函数目录，选择“在终端中打开”，npm install 安装模块之后右键部署并上传所有文件。我们就可以通过多种方式来调用它（前面已详细介绍）即可获得结果。Lodash作为工具，非常好用且实用，<strong>它的源码也非常值得学习</strong>，更多相关内容则需要大家去Github和官方技术文档里深入了解。</p>
+<blockquote>
+<p>在<a href="https://github.com/sindresorhus/awesome-nodejs">awesome Nodejs</a>页面我们了解到还有Ramba、immutable、Mout等类似工具库，这些都非常推荐。借助于Github的awesome清单，我们就能一手掌握最酷炫好用的开源项目，避免了自己去收集收藏。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>13.3、图像处理和OCR.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="133-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%92%8Cocr">13.3 图像处理和OCR</h2>
+<p>云调用有些接口属于AI服务的范畴，比如借助于人工智能来进行智能裁剪、扫描条码/二维码、图片的高清化等图像处理和识别银行卡、营业执照、驾驶证、身份证、印刷体、驾驶证等OCR，有了这些接口我们也能在小程序里使用人工智能了。接下来我们以小程序的条码/二维码识别和识别印刷体为例来介绍一下云调用。</p>
+<h3 id="1331-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">13.3.1 图像处理</h3>
+<p>使用开发者工具新建一个云函数，如scancode，然后在config.json里添加img.scanQRCode云调用的权限，使用npm install安装依赖之后，上传并部署所有文件（此时也会更新权限）。</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"permissions"</span>: {
+    <span class="hljs-string">"openapi"</span>: [
+      <span class="hljs-string">"img.scanQRCode"</span>
+    ]
+  }
+}
+</div></code></pre>
+<p>然后再在index.js里输入以下代码，注意<code>cloud.openapi.img.scanQRCode</code>方法和<code>img.scanQRCode</code>权限的对应写法，不然会报604100的错误。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+  })
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.img.scanQRCode({
+      <span class="hljs-attr">imgUrl</span>:<span class="hljs-string">"https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/demo/qrcodetest.png"</span> <span class="hljs-comment">//注意二维码必须是条码/二维码，不能是小程序码</span>
+    })
+    <span class="hljs-keyword">return</span> result
+    
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.log(err)
+    <span class="hljs-keyword">return</span> err
+  }
+} 
+</div></code></pre>
+<p>调用该云函数之后，返回的result对象里包含result对象，在codeResults的data里可以得到二维码里包含的内容。</p>
+<pre class="hljs"><code><div>codeResults: [{
+  <span class="hljs-attr">data</span>: <span class="hljs-string">"使用云开发来开发微信小程序可以免费。。。"</span>,
+  <span class="hljs-attr">pos</span>: {<span class="hljs-attr">leftTop</span>: {…}, <span class="hljs-attr">rightTop</span>: {…}, <span class="hljs-attr">rightBottom</span>: {…}, <span class="hljs-attr">leftBottom</span>: {…}},<span class="hljs-attr">typeName</span>: <span class="hljs-string">"QR_CODE"</span>}]
+<span class="hljs-attr">errCode</span>: <span class="hljs-number">0</span>
+<span class="hljs-attr">errMsg</span>: <span class="hljs-string">"openapi.img.scanQRCode:ok"</span>
+<span class="hljs-attr">imgSize</span>: {<span class="hljs-attr">w</span>: <span class="hljs-number">260</span>, <span class="hljs-attr">h</span>: <span class="hljs-number">260</span>}
+</div></code></pre>
+<h3 id="1332-ocr%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%86%E5%88%AB">13.3.2 OCR人工智能识别</h3>
+<p>使用开发者工具新建一个云函数，如ocrprint，然后在config.json里添加ocr.printedText云调用的权限，使用npm install安装依赖之后，上传并部署所有文件（此时也会更新权限）。</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"permissions"</span>: {
+    <span class="hljs-string">"openapi"</span>: [
+      <span class="hljs-string">"ocr.printedText"</span>
+    ]
+  }
+}
+</div></code></pre>
+<p>调用该云函数之后，返回的result对象里包含result对象，在codeResults的data里可以得到二维码里包含的内容。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+  })
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.ocr.printedText({
+        <span class="hljs-attr">imgUrl</span>: <span class="hljs-string">'https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/demo/ocrprint.png'</span>
+      })
+    <span class="hljs-built_in">console</span>.log(result)
+    <span class="hljs-keyword">return</span> result
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.log(err)
+    <span class="hljs-keyword">return</span> err
+  }
+}
+</div></code></pre>
+<p>调用该云函数之后，返回的result对象里包含result对象，在的items里可以返回图片包含的文字内容。</p>
+<pre class="hljs"><code><div>items: <span class="hljs-built_in">Array</span>(<span class="hljs-number">4</span>)
+<span class="hljs-number">0</span>: {<span class="hljs-attr">text</span>: <span class="hljs-string">"JavaScript入门"</span>, <span class="hljs-attr">pos</span>: {…}}
+<span class="hljs-number">1</span>: {<span class="hljs-attr">text</span>: <span class="hljs-string">"JavaScript是目前世界上最流行的编程语言之一，它也是小程序开发最重要的基础语言。要做出一个功能复杂的小程序，除了需要掌握JavaScript的基本语"</span>, <span class="hljs-attr">pos</span>: {…}}
+<span class="hljs-number">2</span>: {<span class="hljs-attr">text</span>: <span class="hljs-string">"法，还要了解如何使用JavaScript来操作小程序(通过API接口)"</span>, <span class="hljs-attr">pos</span>: {…}}
+<span class="hljs-number">3</span>: {<span class="hljs-attr">text</span>: <span class="hljs-string">"过API接口)。"</span>, <span class="hljs-attr">pos</span>: {…}}
+</div></code></pre>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

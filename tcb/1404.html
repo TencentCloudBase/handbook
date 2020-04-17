@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>14.4、Web端云开发.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <div id="primary" class="content-area">
+    <div id="content" class="site-content" role="main">			
+      <nav id="header-db" class="row navbar navbar-default">
+        <div class="navbar-header">
+          <div class="logotop fleft">
+            <a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+          </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          <div class="flex nav-items">
+          <h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+          <ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+          <div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+          </div>
+                
+        </div>
+      
+        <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+          <div class="sop-menu">
+          <ul>
+        <li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+        <li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+        <li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+        <li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+        <li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+        <li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+        <li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+        <li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+        <li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+        <li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+        <li class="page_item current_page_item"><a href="./1404.html">Web端云开发</a></li>
+        <li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+        <li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+        <li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+          </ul>
+        </div>		
+        </div>
+      </nav>
+    <div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="144-%E4%BA%91%E5%BC%80%E5%8F%91web%E7%AB%AF">14.4 云开发Web端</h2>
+<p>云开发的环境还可以开发网站应用，包括普通的 PC 网页或者公众号中的网页等，在开发过程中即便需要后台服务也无需搭建服务器，可以直接使用云开发提供的云端能力。开发者无需关心具体的后台资源及运维，只需使用平台提供的 API 进行核心业务开发，即可实现产品快速上线和迭代。</p>
+<h3 id="1441-%E5%88%9B%E5%BB%BA%E5%88%9D%E5%A7%8B%E9%A1%B9%E7%9B%AE">14.4.1 创建初始项目</h3>
+<p>在前面我们已经用Cloudbase Cli工具在电脑本地用<code>Cloudbase init</code>创建了一个云开发项目，以及开通了静态网站托管，那我们应该如何在静态的网页里初始化云开发呢？</p>
+<h4 id="1%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84">1、项目文件结构</h4>
+<p>使用编辑器比如 Visual Studio Code，打开前面创建好的项目文件夹tcbweb，然后使用VS Code来新建一个public文件夹，并在public文件夹里面新建</p>
+<ul>
+<li>index.html；</li>
+<li>js文件夹，js文件夹里再新建一个main.js；</li>
+<li>css文件夹，css文件夹里再新建一个style.css；</li>
+<li>assert文件夹，assert文件夹里主要用于存放图片等资源；</li>
+</ul>
+<p>最终文件夹的目录结构如下，一个清晰的项目文件结构便于我们有序的开发管理：</p>
+<pre class="hljs"><code><div>.        
+├── _gitignore
+├── functions <span class="hljs-comment">// 云函数目录</span>
+│   └── app
+│       └── index.js
+├── public <span class="hljs-comment">// 用于存放应用程序的静态文件</span>
+│   └── index.html 
+│   └── js
+│       └── main.js
+│   └── css
+│       └── style.css
+│   └── assert
+└── cloudbaserc.js <span class="hljs-comment">// 项目配置文件</span>
+</div></code></pre>
+<blockquote>
+<p>在前面我们已经介绍过电脑的终端，Visual Studio Code也有终端，也可以在这个终端里面进行终端的命令行操作，和电脑的终端略有不同，大家也可以根据习惯自行选择。</p>
+</blockquote>
+<h4 id="2%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E5%BC%95%E5%85%A5web%E7%AB%AFsdk">2、在网页中引入Web端SDK</h4>
+<p>然后使用VS Code打开index.html文件，VS Code编辑器内置一套<strong>emmet语法</strong>，可以大大提高我们书写HTML代码的效率，在index.html里输入一个英文状态下的感叹号!，之后按一下tab键，就会出现以下代码，并修改一下title和body标签里面的内容：</p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Web端云开发<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  Web端云开发页面内容
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+<p>然后将head标签里添加如下内容，把云开发web端SDK也就是tcb.js添加到Web应用中：</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- 省略--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://imgcache.qq.com/qcloud/tcbjs/1.5.1/tcb.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./js/main.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>注意上面的版本号<code>1.5.1</code>，这个不一定是最新的，建议从云开发网页控制台的<strong>添加应用</strong>（在云开发环境的概览里）弹窗中获取最新的版本号，尤其是需要使用新功能的时候，要注意修改版本号。我们还可以通过<code>npm install --save tcb-js-sdk@latest</code>引入npm包tcb-js-sdk的方式来下载最新版的Web端SDK，而在模块化开发时用<code>const tcb = require(&quot;tcb-js-sdk&quot;);</code>将Web端SDK引入到项目中，这里就不多介绍啦。</p>
+</blockquote>
+<h4 id="3%E5%88%9D%E5%A7%8B%E5%8C%96web%E7%AB%AF%E7%8E%AF%E5%A2%83">3、初始化Web端环境</h4>
+<p>使用VS Code打开js文件夹下main.js文件，在里面输入以下代码就可以完成云开发环境的初始化，和小程序云开发一样，要调用云开发环境里的资源，就需要进行初始化，init 用于设置调用云函数、数据库、文件存储时要访问的环境。</p>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">const</span> app = tcb.init({
+    <span class="hljs-attr">env</span>: <span class="hljs-string">'你的环境ID'</span>  <span class="hljs-comment">// 此处填入你的环境ID</span>
+  });
+</div></code></pre>
+<blockquote>
+<p>我们知道在项目根目录下的配置文件cloudbaserc.js或cloudbaserc.json里也需要填入环境ID，这个配置文件主要用于项目管理，这个和初始化Web端环境是有一定的区别的哦，留意一下。</p>
+</blockquote>
+<p>也就是说我们要初始化云开发能力，一是要引入Web端SDK tcb.js文件，二是要初始化Web端的环境，这两个是必不可少的哦，引入这两个之后，云开发能力就算完成初始化了。</p>
+<h3 id="1442-%E6%9C%AC%E5%9C%B0%E8%B0%83%E8%AF%95%E4%B8%8E%E4%BA%91%E7%AB%AF%E8%B0%83%E8%AF%95web%E7%AB%AF%E4%BA%91%E5%BC%80%E5%8F%91">14.4.2 本地调试与云端调试Web端云开发</h3>
+<p>要在本地电脑里调试Web端云开发，除了前面已经做过的在电脑里安装Nodejs环境、安装Cloudbase Cli工具、初始化云开发项目之外，还需要执行以下操作。
+使用小程序云开发的账号登录到<a href="https://console.cloud.tencent.com/tcb/">腾讯云云开发控制台</a>，也就是登录时选择微信公众号登录，然后用小程序云开发管理员的微信扫码，在云开发控制台选择其中一个环境，进入到该环境的管理页，点击<strong>环境-环境设置</strong>菜单，选择<strong>登录方式</strong>标签页，然后：</p>
+<h4 id="1%E5%BC%80%E5%90%AF%E5%8C%BF%E5%90%8D%E7%99%BB%E5%BD%95">1、开启匿名登录</h4>
+<p>在<strong>登录方式</strong>里可以选择启动匿名登录，匿名登录有点类似于游戏里的游客访问模式，用户不需要注册就可以获取并存储数据，这种方式比较方便我们进行本地调试。</p>
+<blockquote>
+<p>每个设备同时只存在一个匿名用户，并且此用户永不过期（如果用户手动清除了设备或浏览器的本地数据，那么匿名用户的数据便会被同步清除，再次调用匿名登录API会产生一个新的匿名用户）。每个环境的匿名用户数量不超过1000个，所以你的应用不能太依赖匿名用户，需要注意定期删除不活跃的匿名用户，或将匿名用户转为其他登录方式。</p>
+</blockquote>
+<p>打开前面创建的main.js文件，在环境初始化后面添加如下代码，实现匿名登录的功能。window.onload类似于小程序生命周期的onLoad生命周期函数，当包括样式、图像和其他资源的页面被全部加载时，window 对象上的 load 事件就会被触发。</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  app.auth({
+      <span class="hljs-attr">persistence</span>: <span class="hljs-string">'session'</span> <span class="hljs-comment">//在窗口关闭时清除身份验证状态</span>
+  })
+    .anonymousAuthProvider() 
+    .signIn()   <span class="hljs-comment">//AnonymousAuthProvider.signIn() 匿名登录云开发</span>
+    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"登录成功"</span>) <span class="hljs-comment">//登录成功</span>
+    }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"登录失败"</span>,err) <span class="hljs-comment">//登录失败</span>
+    })
+    <span class="hljs-attr">env</span>: <span class="hljs-string">'xly-xrlur'</span>  <span class="hljs-comment">// 此处填入你的环境ID</span>
+  });
+</div></code></pre>
+<h4 id="2%E6%B7%BB%E5%8A%A0%E5%AE%89%E5%85%A8%E5%9F%9F%E5%90%8D">2、添加安全域名</h4>
+<p>在<strong>WEB安全域名</strong>处把 <code>localhost:5000 </code>加入到安全域名的白名单中，这样这个域名下的页面才可以使用 SDK 访问到云开发的服务。如果你希望通过localhost的其他端口或域名地址来访问你的静态托管网站，你需要将这些它们都添加到安全域名的列表里面。</p>
+<h4 id="3%E5%BC%80%E5%90%AF%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">3、开启本地开发环境</h4>
+<p>打开终端，我们先全局安装依赖包serve（注意前面说过的安装权限解决方案，Mac电脑命令前加sudo，Windows要用管理员身份打开终端）：</p>
+<pre class="hljs"><code><div>npm install -g serve
+</div></code></pre>
+<p>然后在项目根目录（注意前面说过的cloudbaserc.js所在的目录即为根目录）执行以下命令运行serve，即可打开一个本地静态服务器：</p>
+<pre class="hljs"><code><div>npx serve
+</div></code></pre>
+<p>成功后就会显示服务开启，以及可以在本地电脑的浏览器访问的localhost端口地址，以及ip地址。在浏览器里输入<code>http://localhost:5000/public/</code>就能打开index.html了。打开浏览器的开发者工具，在Console标签页看到登录成功的log，就表示匿名登录成功啦</p>
+<blockquote>
+<p>建议使用Chrome浏览器，在index.html页面空白处鼠标右键点击”审查元素”(MacBook 为”检查”)，我们就可以打开Chrome的开发者工具，在Console标签页我们就可以调试代码。
+为了调试方便，我们可以不要关闭<code>npx serve</code>的终端窗口，要执行其他任务可以重新开一个终端窗口。当我们更新public文件夹下的index.html、main.js文件时，直接刷新浏览器里的页面即可。</p>
+</blockquote>
+<h4 id="4%E9%83%A8%E7%BD%B2%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%88%B0%E9%9D%99%E6%80%81%E6%89%98%E7%AE%A1">4、部署本地文件到静态托管</h4>
+<p>我们再开一个终端窗口，然后通过cd 命令进入到项目根目录，之后在终端输入以下命令，将public文件夹下面的所有文件上传到静态托管网站的文件夹内，比如上传到web文件夹到环境id为<code>xly-xrlur</code>的环境里：</p>
+<pre class="hljs"><code><div>cloudbase hosting:deploy ./public web -e xly-xrlur
+</div></code></pre>
+<p>然后我们就可以在浏览器通过打开静态托管网站的<code>二级域名/web</code>或<code>你的域名/web</code>访问到这个页面了，同样可以使用浏览器的开发者工具的控制台查看页面的打印日志。</p>
+<blockquote>
+<p>调用Web端SDK并不局限于云开发自带的静态托管服务，我们也可以使用Github Pages等其他静态托管服务，也可以是传统开发的web页，也就是说只要是web也引入sdk，并添加安全域名等之后，也能使用云开发的服务。</p>
+</blockquote>
+<h3 id="1443-%E5%88%9B%E5%BB%BA%E5%B9%B6%E8%B0%83%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0">14.4.3 创建并调用云函数</h3>
+<h4 id="1%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2">1、云函数的创建与部署</h4>
+<p>Web端云开发不仅可以调用你在小程序云开发里创建的云函数，我们也可以在本地创建云函数并部署到云开发环境里供Web端和小程序端来调用，也就是云开发环境里的云函数是Web端和小程序端共用的，小程序端怎么创建并部署云函数大家应该比较熟悉，web端使用vscode来创建并部署云函数和使用微信开发者工具是一样的道理。</p>
+<h4 id="1%E6%9C%AC%E5%9C%B0%E4%BA%91%E5%87%BD%E6%95%B0%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">1、本地云函数目录结构</h4>
+<p>我们可以在web端云开发项目根目录里的functions文件夹下面建和小程序云开发云函数根目录一样的文件夹表示为云函数目录，以及一样新建三个文件并copy里面的内容，比如我们新建一个webtest的云函数，它的目录结构如下：</p>
+<pre class="hljs"><code><div>├── functions   <span class="hljs-comment">//web端云函数根目录</span>
+│   └── webtest  <span class="hljs-comment">//webtest云函数目录</span>
+│       └── index.js
+│       └── config.json 
+│       └── package.json
+</div></code></pre>
+<p>在index.js里我们可以输入以下代码，引入服务端sdk，初始化服务端的环境，以及在main函数里返回数据:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-admin-node'</span>)
+<span class="hljs-keyword">const</span> app = tcb.init({
+  <span class="hljs-attr">env</span>: <span class="hljs-string">'你的环境ID'</span>
+})
+<span class="hljs-keyword">const</span> auth = app.auth()
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+   <span class="hljs-keyword">const</span> ip = auth.getClientIP()  <span class="hljs-comment">//获取客户端ip</span>
+   <span class="hljs-keyword">const</span> {
+    openId, <span class="hljs-comment">//微信openId，非微信授权登录则空</span>
+    appId, <span class="hljs-comment">//微信appId，非微信授权登录则空</span>
+    uid, <span class="hljs-comment">//用户唯一ID</span>
+    customUserId <span class="hljs-comment">//开发者自定义的用户唯一id，非自定义登录则空</span>
+  } = auth.getUserInfo()
+
+  <span class="hljs-keyword">return</span> {<span class="hljs-string">"event对象"</span>:event,
+  <span class="hljs-string">"context对象"</span>:context,
+  <span class="hljs-string">"客户端ip"</span>:ip,
+  <span class="hljs-string">"openId"</span>:openId,
+  <span class="hljs-string">"appId"</span>:appId,
+  <span class="hljs-string">"uid"</span>:uid,
+  <span class="hljs-string">"customUserId"</span>:customUserId
+  }
+}
+</div></code></pre>
+<blockquote>
+<p>web端创建的云函数这里，我们既可以只用 Web端SDK tcb-admin-node，也可以沿用小程序云开发的写法，使用wx-server-sdk，如果是跨端开发建议后者。</p>
+</blockquote>
+<h4 id="2%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%B9%B6%E9%83%A8%E7%BD%B2%E4%B8%8A%E4%BC%A0%E4%BA%91%E5%87%BD%E6%95%B0">2、安装依赖并部署上传云函数</h4>
+<p>然后使用终端打开云函数目录，使用<code>npm install</code>来安装依赖package.json的依赖之后，在cloudbaserc.js的配置文件的<code>functions</code>里添加webtest云函数的配置，比如：</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"webtest"</span>,
+    <span class="hljs-attr">timeout</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">envVariables</span>: {},
+    <span class="hljs-attr">runtime</span>: <span class="hljs-string">"Nodejs8.9"</span>,
+    <span class="hljs-attr">handler</span>: <span class="hljs-string">"index.main"</span>
+},
+</div></code></pre>
+<p>使用Cloudbase Cli工具将云函数部署上传到云端：</p>
+<pre class="hljs"><code><div>cloudbase functions:deploy webtest
+</div></code></pre>
+<p>这里有几个需要注意一下，小程序端云开发与Web端云开发的相同与不同之处：</p>
+<ul>
+<li>如果你的云函数不需要给小程序使用而只在web端使用，你可以只引入<code>tcb-admin-node</code>，而如果要在小程序端使用，你引入的<code>wx-server-sdk</code>，tcb-admin-node是云开发的服务端sdk，wx-server-sdk是小程序云开发的SDK；所以最好是用变量tcb表示引入tcb-admin-node，变量cloud表示wx-server-sdk；</li>
+<li>Web端云开发的云函数和小程序云开发的使用方法大致相同，也要注意web端/小程序端和服务端的不同用法与权限；</li>
+<li>将Web端云函数部署上传到小程序创建的云开发环境，在小程序开发者工具的云开发控制台是可以看到该云函数的，同时调用这个云函数的日志也在云开发控制台的日志里看到。</li>
+<li>如果没有在cloudbaserc.js配置，会显示<code>未找到函数发布配置，是否使用默认配置（仅适用于 Node.js 云函数）</code>的提示</li>
+</ul>
+<h4 id="3web%E7%AB%AF%E8%B0%83%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0">3、web端调用云函数</h4>
+<p>在web端调用云函数，则是使用web端sdk，也就是tcb-js-sdk模块或前面引入tcb.js文件，我们可以在main.js文件里将函数的调用写到app.auth()的回调函数里，当页面加载时匿名用户登录后，就能调用云函数</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">window</span>.onload= <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  app.auth({
+    <span class="hljs-attr">persistence</span>: <span class="hljs-string">'session'</span> <span class="hljs-comment">//在窗口关闭时清除身份验证状态</span>
+  })
+    .anonymousAuthProvider()
+    .signIn()
+    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      app.callFunction({
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'webtest'</span>,
+        <span class="hljs-attr">data</span>: { <span class="hljs-string">"name"</span>: <span class="hljs-string">"李东bbsky"</span>, <span class="hljs-string">"title"</span>: <span class="hljs-string">"杂役"</span>}
+        })
+        .then(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> {
+          <span class="hljs-built_in">console</span>.log(res)
+        });
+    }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"登录失败"</span>,err)
+    })
+</div></code></pre>
+<p>使用浏览器打开（或刷新页面）<code>http://localhost:5000/public/index.html</code>，然后在浏览器开发者工具的控制台就能看到本地调用云函数的结果啦。我们再执行以下命令将public的静态页面更新到静态存储，再来打开<code>二级域名/web</code>下的网页，在浏览器开发者工具的控制台也能调试代码啦：</p>
+<pre class="hljs"><code><div>cloudbase hosting:deploy ./public web -e xly-xrlur
+</div></code></pre>
+<p>通过打印我们可以了解到，web端上传的参数会在event对象里，且event对象会返回用户的userInfo，其中包含微信appId，而context对象则包含关于该云函数的一些信息。</p>
+<blockquote>
+<p>有了web端SDK，我们就能调用云开发环境里的云函数，而云函数也是可以调用云函数、可以对数据库、云存储进行增删改查，还能使用云调用（需要openid的云函数例外），因此我们也可以沿用小程序云开发的云函数的用法。我们也要留意使用CLoudbase Cli触发云函数，以及web端触发云函数和后面使用云接入的方式获取到的云函数的信息会有所不同。</p>
+</blockquote>
+<h3 id="1444-web%E7%AB%AF%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93">14.4.4 web端操作数据库</h3>
+<p>和小程序触发事件处理函数一样，我们既可以使用通过页面的生命周期函数，也可以通过点击的方式，比如在web页面的标签上绑定事件处理函数来触发事件处理函数，来对云函数、数据库、云存储进行一系列的操作。</p>
+<p>比如我们可以在public文件夹下的index.html<code>&lt;body&gt;</code>标签内输入以下代码，一个button标签里，绑定getData()事件处理程序，</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"getData()"</span>&gt;</span>点击获取数据<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>然后在main.js里添加getData()事件处理函数，保存页面之后，点击button按钮就能触发事件处理程序，对数据发起请求，这里还是获取以前在小程序云开发创建的集合china：</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getData</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">const</span> db = app.database();
+  <span class="hljs-keyword">const</span> _ = db.command
+  <span class="hljs-keyword">const</span> $ = db.command.aggregate
+  db.collection(<span class="hljs-string">"china"</span>)  
+    .where({              
+      <span class="hljs-attr">gdp</span>: _.gt(<span class="hljs-number">3000</span>)     
+    })
+    .field({            
+      <span class="hljs-attr">_id</span>:<span class="hljs-literal">false</span>,        
+      <span class="hljs-attr">city</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">province</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">gdp</span>:<span class="hljs-literal">true</span>
+    })
+    .orderBy(<span class="hljs-string">'gdp'</span>, <span class="hljs-string">'desc'</span>)  
+    .skip(<span class="hljs-number">0</span>)              
+    .limit(<span class="hljs-number">10</span>)  
+  
+    .get()          
+    .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(res.data)
+    })
+    .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.error(err)
+    })
+}
+</div></code></pre>
+<p>无论是查询数据，还是对数据库的添加记录、删除数据以及指令、聚合等都和小程序云开发保持了很强的一致性，注意哦，数据库的实时推送也是和小程序端的用法一样。</p>
+<blockquote>
+<p>值得注意的是当匿名用户往数据库里添加数据时，云数据库也会默认生成_openid的字段，这个openid是临时的，在前面已经说过它的机制啦。</p>
+</blockquote>
+<h3 id="1445-web%E7%AB%AF%E6%93%8D%E4%BD%9C%E4%BA%91%E5%AD%98%E5%82%A8">14.4.5 web端操作云存储</h3>
+<h4 id="1web%E7%AB%AF%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6">1、web端上传文件</h4>
+<p>和小程序云开发一样，要在前端上传文件，首先我们需要建一个上传文件的标签，在public文件夹下的index.html里再输入以下代码，我们只允许上传图片，并绑定</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"file"</span> <span class="hljs-attr">accept</span>=<span class="hljs-string">"image/*"</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">"uploadFile()"</span>&gt;</span>
+</div></code></pre>
+<p>然后我们继续在main.js里输入以下代码。被选择的文件以 HTMLInputElement.files 属性返回，它是一个包含一列 File 对象的 FileList 对象。FileList 的行为像一个数组，所以你可以检查 length 属性来获得已选择文件的数量。</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">uploadFile</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> filetemp = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"file"</span>).files[<span class="hljs-number">0</span>]
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"file对象"</span>,filetemp)  <span class="hljs-comment">//打印文件对象</span>
+    <span class="hljs-keyword">const</span> fileName = filetemp.name <span class="hljs-comment">//从打印对象知道，这就是文件的名称</span>
+    app.uploadFile({
+        <span class="hljs-attr">filePath</span>: filetemp,   <span class="hljs-comment">//本地文件</span>
+        <span class="hljs-attr">cloudPath</span>: <span class="hljs-string">`tcb/<span class="hljs-subst">${fileName}</span>`</span>,  <span class="hljs-comment">//云存储的路径</span>
+        <span class="hljs-attr">onUploadProgress</span>: <span class="hljs-function">(<span class="hljs-params">progressEvent</span>) =&gt;</span> { <span class="hljs-comment">//上传进度回调</span>
+          <span class="hljs-keyword">let</span> percentCompleted = <span class="hljs-built_in">Math</span>.round( 
+            (progressEvent.loaded * <span class="hljs-number">100</span>) / progressEvent.total
+            );
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'上传进度: '</span> + percentCompleted, progressEvent);
+        }
+
+      }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, res</span>) </span>{
+          <span class="hljs-built_in">console</span>.log({err,res})     
+    });
+}
+</div></code></pre>
+<blockquote>
+<p>注意，这个云存储的路径前面不要有<code>/</code>，也不能直接是根目录，否则会没有上传权限；尽管云存储可能并没有tcb这个文件夹，但是会自动创建。</p>
+</blockquote>
+<h4 id="2web%E7%AB%AF%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6">2、web端删除文件</h4>
+<p>在public文件夹下的index.html里再输入以下代码，我们写一个绑定了deleteFile事件的button按钮：</p>
+<pre class="hljs"><code><div> <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"deleteFile()"</span>&gt;</span>删除文件<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>然后我们继续在main.js里输入deleteFile事件处理函数，当点击按钮时删除云存储里指定fileID的文件：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deleteFile</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> app.deleteFile({
+    <span class="hljs-attr">fileList</span>: [<span class="hljs-string">'cloud://xly-xrlur.786c-xly-xrlur-1300446086/tcb/WX20200401-144620@2x.png'</span>]
+  })
+
+  result.fileList.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (item.code === <span class="hljs-string">'SUCCESS'</span>) {
+      alert(<span class="hljs-string">"文件删除成功"</span>)
+    }
+  })
+}
+</div></code></pre>
+<p>云开发的登录还支持自定义登录、微信公众平台、微信开放平台登录，这个在后面会介绍。</p>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

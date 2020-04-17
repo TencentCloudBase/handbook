@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>14.6、托管Nodejs Server.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <div id="primary" class="content-area">
+    <div id="content" class="site-content" role="main">			
+      <nav id="header-db" class="row navbar navbar-default">
+        <div class="navbar-header">
+          <div class="logotop fleft">
+            <a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+          </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          <div class="flex nav-items">
+          <h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+          <ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+          <div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+          </div>
+                
+        </div>
+      
+        <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+          <div class="sop-menu">
+          <ul>
+        <li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+        <li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+        <li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+        <li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+        <li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+        <li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+        <li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+        <li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+        <li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+        <li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+        <li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+        <li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+        <li class="page_item current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+        <li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+          </ul>
+        </div>		
+        </div>
+      </nav>
+    <div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="146-%E6%89%98%E7%AE%A1nodejs-server">14.6 托管Nodejs Server</h2>
+<h3 id="1461-nodejs-server%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">14.6.1 Nodejs Server的基础知识</h3>
+<h4 id="1%E5%9F%BA%E7%A1%80%E7%9A%84http%E6%9C%8D%E5%8A%A1%E5%99%A8">1、基础的HTTP服务器</h4>
+<p>只要在本地或服务器安装了Node环境，使用 <code>require('http')</code>引入http模块，就能用http.createServer()方法创建一个服务器。比如我们使用VS Code新建一个app.js的文件（保存在电脑的到哪里都行），然后输入以下代码：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>); <span class="hljs-comment">//引入内置的http模块</span>
+<span class="hljs-keyword">const</span> hostname = <span class="hljs-string">'127.0.0.1'</span>;
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span>;
+
+<span class="hljs-keyword">const</span> requestHandler = <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> { <span class="hljs-comment">//</span>
+  res.statusCode = <span class="hljs-number">200</span>;
+  res.setHeader(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/html;charset=utf-8'</span>);
+  res.end(<span class="hljs-string">'Node Server创建成功啦'</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`请求链接是：<span class="hljs-subst">${req.url}</span>，请求方法是：<span class="hljs-subst">${req.method}</span>`</span>)
+}
+<span class="hljs-keyword">const</span> server = http.createServer(requestHandler) <span class="hljs-comment">//使用 http.createServer() 方法创建服务器</span>
+server.listen(port, hostname, () =&gt; { <span class="hljs-comment">//listen为createServer返回对象的方法，用于指定HTTP服务器监听的端口号</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`通过此链接访问服务器 http://<span class="hljs-subst">${hostname}</span>:<span class="hljs-subst">${port}</span>/`</span>);
+});
+</div></code></pre>
+<p>保存后，在VS Code里右键该文件选择<strong>在终端中打开</strong>，然后在VS Code的终端中输入以下代码按Enter执行:</p>
+<pre class="hljs"><code><div>node app.js
+</div></code></pre>
+<p>在浏览器里输入<code>http://127.0.0.1:3000/</code>，就能访问我们创建好的服务器啦，页面也会显示<code>Node Server创建成功啦</code>，可以说使用Nodejs创建一个HTTP服务器非常容易。</p>
+<p>注意requestHandler有两个参数，req是request请求对象，调用request对象就可以拿到所有HTTP请求的信息，比如request.url获取请求路径；res是response响应对象，调用response对象的方法，就可以把HTTP响应返回给浏览器了。当用户每访问一次(比如刷新一下页面)就会触发requestHandler函数，我们也能在终端看到打印的日志。</p>
+<h4 id="2%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8">2、文件服务器</h4>
+<p>借助于<strong>fs 模块：</strong> 可以对文件目录进行创建、删除、查询以及文件的读取和写入以及<strong>url模块：</strong> 可以处理与解析 URL，我们可以把服务器里的文件发送给客户端。比如我们可以修改一下app.js的代码为如下：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">var</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">var</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">'url'</span>);
+<span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+
+http.createServer( <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> { <span class="hljs-comment">//这里把上面的requestHandler给整到一起了，注意一下</span>
+  <span class="hljs-keyword">const</span> requrl = url.parse(req.url, <span class="hljs-literal">true</span>);
+  <span class="hljs-keyword">const</span> filename = <span class="hljs-string">"."</span> + requrl.pathname; <span class="hljs-comment">//这里的.表示的是相对路径</span>
+  fs.readFile(filename, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, data</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) {
+      res.writeHead(<span class="hljs-number">404</span>, {<span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'text/html;charset=utf-8'</span>});
+      <span class="hljs-keyword">return</span> res.end(<span class="hljs-string">"404 页面没有找到"</span>);
+    } 
+    res.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'text/html;charset=utf-8'</span>});
+    res.write(data);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`请求链接是：<span class="hljs-subst">${req.url}</span>，请求方法是：<span class="hljs-subst">${req.method}</span>`</span>);
+    <span class="hljs-keyword">return</span> res.end();
+  });
+}).listen(<span class="hljs-number">3000</span>);
+</div></code></pre>
+<p>然后再在终端执行<code>node app.js</code>（如果你之前的node server还在执行，你可以连续按两次Ctrl+C来终止服务器，再来执行node app.js）。放一个文件比如tcb.jpg到app.js的相同目录里，在浏览器里输入如下地址（也就是ip地址+文件的路径）看看：</p>
+<pre class="hljs"><code><div>http://127.0.0.1:3000/tcb.jpg
+</div></code></pre>
+<blockquote>
+<p>本地调试时，服务器和客户端都是同一条电脑，我们使用浏览器打开<code>http://127.0.0.1:3000/</code>就能通过浏览器访问到服务器里的文件。</p>
+</blockquote>
+<h3 id="1462-%E6%89%98%E7%AE%A1nodejs-server">14.6.2 托管Nodejs Server</h3>
+<p>那云函数是否可以搭建一个Nodejs的服务器呢，结合云接入和云函数，可以很轻松地托管Nodejs服务端程序。这里就要使用到serverless-http的模块。我们可以<strong>使用serverless-http把集成请求转化为 Node.js Server 能接收的 IncommingMessage，同时把返回的 ServerResponse 转化为集成请求</strong>。
+使用VS Code在functions文件夹里新建一个云函数，比如server，和小程序云开发的云函数一样新建3个文件，以及assets文件夹，里面存放我们要返回的HTML文件、图片等各种静态资源，结构如下：</p>
+<pre class="hljs"><code><div>├── server  //server云函数目录
+│   └── assets  
+│       └── index.html
+│       └── demo.jpg
+│   └── index.js
+│   └── config.json 
+│   └── package.json
+</div></code></pre>
+<p>并在package.json里添加serverless-http依赖，</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+    <span class="hljs-string">"wx-server-sdk"</span>: <span class="hljs-string">"latest"</span>,
+    <span class="hljs-string">"serverless-http"</span>: <span class="hljs-string">"latest"</span>
+}
+</div></code></pre>
+<p>然后再在index.js里输入以下代码，我们把之前Nodejs Server里的代码Copy过来，注意与普通云函数和集成请求写法的不同。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">'url'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+})
+<span class="hljs-keyword">const</span> serverless = <span class="hljs-built_in">require</span>(<span class="hljs-string">'serverless-http'</span>);
+<span class="hljs-keyword">const</span> requestHandler = <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> { <span class="hljs-comment">//</span>
+  <span class="hljs-keyword">const</span> requrl = url.parse(req.url, <span class="hljs-literal">true</span>);
+  <span class="hljs-keyword">const</span> filename = <span class="hljs-string">"."</span> + requrl.pathname; <span class="hljs-comment">//这里的.表示的是相对路径</span>
+  fs.readFile(filename, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, data</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) {
+      res.writeHead(<span class="hljs-number">404</span>, {<span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'text/html;charset=utf-8'</span>});
+      <span class="hljs-keyword">return</span> res.end(<span class="hljs-string">"404 页面没有找到"</span>);
+    } 
+    res.writeHead(<span class="hljs-number">200</span>, {<span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'text/html;charset=utf-8'</span>});
+    res.write(data);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`请求链接是：<span class="hljs-subst">${req.url}</span>，请求方法是：<span class="hljs-subst">${req.method}</span>`</span>);
+    <span class="hljs-keyword">return</span> res.end();
+  });
+}
+exports.main = serverless(requestHandler);
+</div></code></pre>
+<p>终端进入云函数目录server文件夹，使用<code>npm install</code>安装依赖，然后再回退到项目根目录使用CLoudbase Cli命令将云函数部署到云端并创建server云函数云接入的路由，再用浏览器或cURL命令访问云接入链接：</p>
+<pre class="hljs"><code><div>cloudbase functions:deploy server
+cloudbase service:create -p /server -f server
+</div></code></pre>
+<p>这样我们就能通过云接入的链接来访问托管的服务器里面的资源了，只要是云函数目录里面的资源就都能访问，云函数就”化身“成了一个服务器了。<strong>比较一下集成请求返回html与托管Nodejs Server的不同</strong>。</p>
+<pre class="hljs"><code><div>https:<span class="hljs-comment">//xly-xrlur.service.tcloudbase.com/server/assets/index.html</span>
+</div></code></pre>
+<h3 id="1463-%E6%89%98%E7%AE%A1-koajs">14.6.3 托管 Koa.js</h3>
+<p>Koa和Express都是基于Nodejs平台的web应用开发框架，可以对HTTP Request对象和HTTP Response对象进行封装处理，以及生命周期的维护，路由、视图的处理等等。云接入和云函数可以托管Nodejs Server，它也支持托管Koa和Express，下面就以Koa为例。</p>
+<h4 id="1%E6%89%98%E7%AE%A1koa">1、托管Koa</h4>
+<p>我们还是以server云函数为例，首先在server云函数的package.json里添加koa依赖，然后将index.js改为如下代码，仍然读取云函数目录下的assets文件里的index.html文件：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+})
+<span class="hljs-keyword">const</span> serverless = <span class="hljs-built_in">require</span>(<span class="hljs-string">'serverless-http'</span>);
+<span class="hljs-keyword">const</span> Koa = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa'</span>);
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Koa();
+
+app.use(<span class="hljs-keyword">async</span> ctx =&gt; {<span class="hljs-comment">//ctx是由koa传入的封装了request和response的变量，通过它可以访问request和response</span>
+  ctx.response.type = <span class="hljs-string">'text/html;charset=utf-8'</span>; <span class="hljs-comment">//ctx.response就是Node的response对象</span>
+  ctx.response.body = fs.createReadStream(<span class="hljs-string">'./assets/index.html'</span>);
+})
+
+exports.main = serverless(app);
+</div></code></pre>
+<p>进入云函数目录下载云函数的依赖之后，回退到项目根目录部署上传server云函数，再使用浏览器打开server云函数的云接入地址就能看到解析好的index.html了。</p>
+<blockquote>
+<p>Koa 的Context 上下文将 node 的 request 和 response 对象封装到单个对象中，为编写 Web 应用程序和 API 提供了许多有用的方法。为方便起见许多上下文的访问器和方法直接委托给它们的 ctx.request或 ctx.response。ctx.response就是Node的response对象，ctx.request就是Node的request对象。</p>
+</blockquote>
+<h4 id="2koa%E5%8E%9F%E7%94%9F%E8%B7%AF%E7%94%B1">2、Koa原生路由</h4>
+<p>使用Koa也能让云函数+云接入作为文件服务器，把云函数目录下的文件都返回给浏览器，我们将server云函数的代码修改为如下，这个功能和前面的托管Nodejs Server类似：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+<span class="hljs-keyword">const</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">'url'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+})
+<span class="hljs-keyword">const</span> serverless = <span class="hljs-built_in">require</span>(<span class="hljs-string">'serverless-http'</span>);
+<span class="hljs-keyword">const</span> Koa = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa'</span>);
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Koa();
+
+app.use( <span class="hljs-keyword">async</span> ( ctx ) =&gt; {
+  <span class="hljs-keyword">const</span> requrl = url.parse(ctx.request.url, <span class="hljs-literal">true</span>);
+  <span class="hljs-keyword">const</span> filename = <span class="hljs-string">"."</span> + requrl.pathname;
+  ctx.response.type = <span class="hljs-string">'text/html;charset=utf-8'</span>;
+  ctx.body =fs.createReadStream(filename)
+})
+exports.main = serverless(app);
+</div></code></pre>
+<p>将Server云函数部署上传，和前面一样我们可以在浏览器里输入以下地址来访问server云函数目录里的assets文件夹里的index.html页面：</p>
+<pre class="hljs"><code><div>https:<span class="hljs-comment">//xly-xrlur.service.tcloudbase.com/server/assets/index.html</span>
+</div></code></pre>
+<blockquote>
+<p>Koa原生路由通过解析request IncomingMessage 的 url 属性, 利用 if...else 来判断路径返回不同的结果，但是如果路由过多, if...else 的分支也会越庞大, 不利于代码的维护，具体的案例这里就不多写了，下面直接用Koa-router解决方案。</p>
+</blockquote>
+<h3 id="1464-koa-router%E4%B8%AD%E9%97%B4%E4%BB%B6">14.6.4 Koa router中间件</h3>
+<p>尽管我们可以依靠ctx.request.url这种比较原生的方式来手动处理路由，但是这会写很多处理代码，这时候就需要对应的<strong>路由中间件</strong>对路由进行控制，这里推荐使用Koa-router，以及推荐使用koa-bodyparser中间件。对于POST请求的处理，koa-bodyparser可以把ctx的formData数据解析到ctx.request.body中。</p>
+<h4 id="1%E4%BD%BF%E7%94%A8koa-router%E4%B8%AD%E9%97%B4%E4%BB%B6">1、使用Koa router中间件</h4>
+<p>我们仍然以server云函数为例，在package.json添加如下依赖，并进入server云函数目录下载这些依赖：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+  <span class="hljs-string">"wx-server-sdk"</span>: <span class="hljs-string">"latest"</span>,
+  <span class="hljs-string">"serverless-http"</span>: <span class="hljs-string">"latest"</span>,
+  <span class="hljs-string">"koa"</span>:<span class="hljs-string">"latest"</span>,
+  <span class="hljs-string">"koa-bodyparser"</span>:<span class="hljs-string">"latest"</span>,
+  <span class="hljs-string">"koa-router"</span>:<span class="hljs-string">"latest"</span>
+}
+</div></code></pre>
+<p>然后将server云函数修改为如下代码，然后部署上传server云函数，然后访问云接入的地址，注意打开的页面里的<strong>首页</strong>和<strong>关于我们</strong>是可以点击的，会跳转到koa-router指定的路由，并返回相应的内容：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+<span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+})
+
+<span class="hljs-keyword">const</span> serverless = <span class="hljs-built_in">require</span>(<span class="hljs-string">'serverless-http'</span>);
+<span class="hljs-keyword">const</span> Koa = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa'</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa-bodyparser'</span>)
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> Koa();
+
+<span class="hljs-keyword">const</span> Router = <span class="hljs-built_in">require</span>(<span class="hljs-string">'koa-router'</span>)
+<span class="hljs-keyword">const</span> router = <span class="hljs-keyword">new</span> Router()
+
+app.use(bodyParser())
+
+router.get(<span class="hljs-string">'/'</span>,<span class="hljs-keyword">async</span> (ctx) =&gt; {
+  <span class="hljs-comment">//注意这里的路径哈，server为云接入的路由，在前面我们把server云函数的路由设置为server</span>
+  <span class="hljs-keyword">let</span> html = <span class="hljs-string">`
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/server/home"&gt;首页&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/server/about"&gt;关于我们&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+`</span>
+  ctx.body = html
+})
+
+router.get(<span class="hljs-string">'/home'</span>,<span class="hljs-keyword">async</span> (ctx) =&gt; {
+  ctx.response.type = <span class="hljs-string">'text/html;charset=utf-8'</span>; 
+  ctx.response.body = fs.createReadStream(<span class="hljs-string">'./assets/index.html'</span>);
+})
+
+router.get(<span class="hljs-string">'/about'</span>, <span class="hljs-keyword">async</span> ( ctx )=&gt;{
+  ctx.body = <span class="hljs-string">'欢迎您的关注，网页还在建设当中'</span>
+})
+
+app.use(router.routes())    <span class="hljs-comment">// 添加路由中间件</span>
+app.use(router.allowedMethods())   <span class="hljs-comment">// 对请求进行一些限制处理</span>
+
+exports.main = serverless(app);
+</div></code></pre>
+<p>当我们打开<code>云接入地址/home</code>时，返回的是云函数目录下的assets文件夹里的index.html页面，而事实上云函数目录并没有home这个文件夹，按照之前的方式打开<code>云接入地址/assets/index.html</code>也打不开了，这个就是<strong>路由重定向</strong>。</p>
+<p>这个案例仅仅只是使用了GET方法来进行注册路由,我们还可以使用POST、DELETE、PUT、DEL、ALL等方法。而koa-router路由也还支持变量等，这里就不展开啦。</p>
+<h4 id="2%E8%B7%AF%E7%94%B1%E4%B8%AD%E9%97%B4%E4%BB%B6%E4%B8%8E%E4%BA%91%E5%BC%80%E5%8F%91">2、路由中间件与云开发</h4>
+<p>有了路由中间件，我们就能把最常见的GET、POST请求都集成在一个云函数里，比如数据库、云存储的增删改查，从而将该云函数作为API服务器，向前端返回所需数据和执行指定的操作。在小程序端我们可以使用wx.request()接口发起HTTPS网络请求（值得注意的是小程序端需要将云接入的域名添加到小程序里的域名白名单内），在Web端则可以通过axios。</p>
+<p><strong>获取数据库里的数据</strong>
+比如我们用Koa router可以添加一个路由getData，用来返回云数据库查询到的数据结果：</p>
+<pre class="hljs"><code><div>router.get(<span class="hljs-string">'/getData'</span>,<span class="hljs-keyword">async</span> (ctx) =&gt; {
+  ctx.body = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'china'</span>).where({              
+      <span class="hljs-attr">gdp</span>: _.gt(<span class="hljs-number">3000</span>)     
+    })
+    .field({            
+      <span class="hljs-attr">_id</span>:<span class="hljs-literal">false</span>,        
+      <span class="hljs-attr">city</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">province</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">gdp</span>:<span class="hljs-literal">true</span>
+    })
+    .orderBy(<span class="hljs-string">'gdp'</span>, <span class="hljs-string">'desc'</span>)  
+    .skip(<span class="hljs-number">0</span>)              
+    .limit(<span class="hljs-number">10</span>)
+    .get()  
+})
+</div></code></pre>
+<p>在小程序端获取返回数据：</p>
+<pre class="hljs"><code><div>wx.request({
+  <span class="hljs-attr">url</span>: <span class="hljs-string">'https://xly-xrlur.service.tcloudbase.com/server/getData'</span>,
+  success (res) {
+    <span class="hljs-built_in">console</span>.log(res.data.data)
+  }
+})
+</div></code></pre>
+<p>在web端获取返回数据：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> url =<span class="hljs-string">"https://xly-xrlur.service.tcloudbase.com/server/getData"</span>
+axios.get(url).then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(res.data)
+}).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(err)
+})
+</div></code></pre>
+<p><strong>往数据库里添加数据库</strong>
+我们还可以使用Koa router提供POST接口，对前端传来的参数、数据进行处理，比如我们可以往数据库里添加数据，只需要注意Koa是如何获取参数和数据的即可。</p>
+<pre class="hljs"><code><div>router.post(<span class="hljs-string">'/addData'</span>,<span class="hljs-keyword">async</span> (ctx) =&gt; {
+  <span class="hljs-keyword">const</span> {userInfo} = <span class="hljs-keyword">await</span> ctx.request.body
+  <span class="hljs-keyword">const</span> addUser = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'china'</span>).add({
+    <span class="hljs-attr">data</span>:userInfo
+  })
+  ctx.body = addUser  
+})
+</div></code></pre>
+<p>小程序端发起POST请求的代码如下：</p>
+<pre class="hljs"><code><div>wx.request({
+  <span class="hljs-attr">url</span>: <span class="hljs-string">'https://xly-xrlur.service.tcloudbase.com/server/addData'</span>,
+  <span class="hljs-attr">method</span>:<span class="hljs-string">"POST"</span>,
+  <span class="hljs-attr">data</span>:{
+    <span class="hljs-attr">userInfo</span>:{
+      <span class="hljs-attr">Name</span>: <span class="hljs-string">'腾讯云云开发'</span>,
+      <span class="hljs-attr">enName</span>: <span class="hljs-string">'CloudBase'</span>
+    }
+  },
+  success (res) {
+    <span class="hljs-built_in">console</span>.log(res)
+  }
+})
+</div></code></pre>
+<p>在web端发起POST请求的代码如下：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addData</span>(<span class="hljs-params"></span>)</span>{
+  axios.post(<span class="hljs-string">'https://xly-xrlur.service.tcloudbase.com/server/addData'</span>, {
+    <span class="hljs-attr">userInfo</span>:{
+        <span class="hljs-attr">Name</span>: <span class="hljs-string">'腾讯云云开发'</span>,
+        <span class="hljs-attr">enName</span>: <span class="hljs-string">'CloudBase'</span>
+    }
+  })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(response);
+  })
+  .catch(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(error);
+  });
+}
+</div></code></pre>
+<p>我们还可以在小程序端或Web端调用一下server云函数，看看返回的数据对象和以往的有什么不同？大致了解一下<strong>后台函数</strong>与<strong>HTTP函数</strong>的不同。</p>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

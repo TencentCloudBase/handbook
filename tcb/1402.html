@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>14.2、Cloudbase CLI.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="142-cloudbase-cli">14.2 CloudBase CLI</h2>
+<p>CloudBase CLI 是一个开源的命令行界面交互工具，用于帮助用户快速、方便的部署项目，管理云开发资源。有了这个工具，我们就能在电脑本地管理小程序云开发、Web端云开发创建的环境，对环境里的云函数、云存储、云数据库进行增删改查等操作。</p>
+<h3 id="1421-cli%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85%E4%B8%8E%E7%99%BB%E5%BD%95">14.2.1 CLI工具安装与登录</h3>
+<h4 id="1%E5%AE%89%E8%A3%85cloudbase-cli%E5%B7%A5%E5%85%B7">1、安装Cloudbase CLI工具</h4>
+<p>在本地电脑安装好了Node环境之后，我们可以打开电脑终端（Windows电脑为cmd命令提示符，Mac电脑为终端Terminal），然后逐行输入并按Enter执行下面的代码就可在电脑里安装CloudBase Cli工具：</p>
+<pre class="hljs"><code><div>npm install -g @cloudbase/cli
+cloudbase -v
+</div></code></pre>
+<blockquote>
+<p><code>-g</code>是全局安装的意思，可能会出现权限不够的提示，如果是Mac电脑可以在前面加一个sudo，而Windows可以通过管理员的方式打开cmd命令提示符。</p>
+</blockquote>
+<p>安装完成后，你可以使用 <code>cloudbase -v </code>验证是否安装成功，如果输出了版本号，则表明 CloudBase CLI 被成功安装到您的计算机中。</p>
+<h4 id="2cli%E5%B7%A5%E5%85%B7%E7%99%BB%E5%BD%95%E4%B8%8E%E7%99%BB%E5%87%BA">2、CLI工具登录与登出</h4>
+<p>要让Cloudbase Cli工具登录，首先我们打开<a href="https://console.cloud.tencent.com/tcb">腾讯云云开发控制台</a>，选择微信公众号的方式来登录，扫描选择你的小程序账号，这样就可以进入管理控制台查看到你在开发者工具创建的云开发环境了。</p>
+<p>在终端中输入下面的命令，CLI 工具会自动打开云开发控制台获取授权，在控制台的网页上点击同意授权按钮允许 CloudBase CLI 获取授权。登录成功后，在终端就会有登录成功的提示，并附带一些操作的tips，这些操作的tips我们以后会用到。</p>
+<pre class="hljs"><code><div>cloudbase login
+</div></code></pre>
+<p>而要登出命令行工具CloudBase CLI的账号则可以使用 <code>cloudbase logout </code>。</p>
+<p>Cloudbase CLI 还有一种获取授权并登陆的方式，就是使用腾讯云的API 密钥授权。首先到腾讯云官网获取<a href="https://console.cloud.tencent.com/cam/capi">云 API 密钥</a>新建密钥，然后输入以下命令并按提示输入密钥的 SecretId 和 SecretKey 就可以完成登录：</p>
+<pre class="hljs"><code><div>cloudbase login --key
+</div></code></pre>
+<p>通过这种方式可以操作名下的所有腾讯云资源，因此注意要妥善保存和定期更换密钥，旧秘钥要及时删除。这种方式主要用于环境的批量管理。</p>
+<h4 id="3%E4%BA%86%E8%A7%A3cloudbase-cli%E5%91%BD%E4%BB%A4">3、了解CloudBase Cli命令</h4>
+<p>几乎所有的命令行工具，都支持<code>--help</code>的方式输出帮助信息来查看命令行主要支持哪些命令，这样我们就没有必要死记硬背命令了，直接通过这种方式来查看即可。</p>
+<pre class="hljs"><code><div>cloudbase --help
+</div></code></pre>
+<p>打印之后我们就可以看到CloudBase Cli除了我们前面的查看版本、登录腾讯云账号、输出帮助信息等命令外，还有很多命令并予以了一个简单的注解，有了这些命令我们就能对CloudBase Cli工具有了一些非常全面的了解了。比如我们想查看我们的账号下的环境信息，通过帮助信息了解到可以在终端输入以下命令即可：</p>
+<pre class="hljs"><code><div>cloudbase env:list
+</div></code></pre>
+<h3 id="1422-%E5%88%9B%E5%BB%BA%E4%BA%91%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE">14.2.2 创建云开发项目</h3>
+<h4 id="1%E5%88%9D%E5%A7%8B%E5%8C%96%E7%8E%AF%E5%A2%83">1、初始化环境</h4>
+<p>要如何在本地电脑与云开发的环境建立联系呢？就需要我们在电脑本地初始化环境。在电脑的C盘（Windows）或电脑的下载文件夹（Mac）里新建一个文件夹比如tcbweb，然后在终端里输入以下命令进入到该目录，</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash">Windows 电脑</span>
+cd /d C:\download\tcbweb
+<span class="hljs-meta">#</span><span class="bash"> Mac电脑</span>
+cd downloads/tcbweb
+</div></code></pre>
+<p>然后再在终端输入以下命令来创建项目：</p>
+<pre class="hljs"><code><div>cloudbase init
+</div></code></pre>
+<p>这时会需要选择<strong>环境</strong>、<strong>输入项目名称</strong>、<strong>开发语言</strong>、<strong>云开发模板</strong>，我们可以通过键盘的上下键来选择，开发语言要选择<strong>Nodejs</strong>（云开发也支持PHP、Java），模板可以选择<strong>Hello World</strong>（也可以视情需求选择其他模板），确认之后项目就可以创建好了。</p>
+<h4 id="2%E4%BA%91%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE">2、云开发项目</h4>
+<p>使用 cloudbase init 初始化项目时， CloudBase CLI 根据你输入的项目名称创建一个文件夹，并写入相关的配置和模板文件，创建的项目文件结构如下所示：</p>
+<pre class="hljs"><code><div>.
+├── _gitignore
+├── functions <span class="hljs-comment">// 云函数目录</span>
+│   └── app
+│       └── index.js
+└── cloudbaserc.js <span class="hljs-comment">// 项目配置文件</span>
+</div></code></pre>
+<blockquote>
+<p>所有 CloudBase CLI 命令均在配置文件cloudbaserc.js所在目录执行，也就是说<strong>要在终端运行Cloudbase CLI命令，需要先进入cloudbaserc.js所在的目录</strong>，cloudbaserc.js在哪里，哪里就是这个项目的根目录。建议编辑代码时使用编辑器比如 Visual Studio Code或IDE工具Webstrom之类的，打开创建好的项目文件夹tcbweb，这样方便运行、调试、编辑。</p>
+</blockquote>
+<p>云开发项目是和云开发环境资源关联的实体，云开发项目聚合了云函数、数据库、文件存储等服务，您可以在云开发项目中编写函数，存储文件，并通过 CloudBase CLI 工具 快速的操作您的云函数、文件存储、数据库等资源。</p>
+<h4 id="3cli%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">3、CLI配置文件</h4>
+<p>配置文件可以简化 CloudBase CLI 使用，方便项目开发，当使用命令参数缺省时，CloudBase CLI 会从配置文件中解析相关参数并使用，方便开发者以更简单的方式使用 CloudBase CLI。</p>
+<p>默认情况下，使用 cloudbase init 初始化项目时，会生成 cloudbaserc.js 或 cloudbaserc.json 文件作为配置文件，你也可以使用 --config-file 指定其他文件作为配置文件，文件必须满足格式要求。</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"envId"</span>: <span class="hljs-string">"dev-xxxx"</span>,             <span class="hljs-comment">// 关联环境 ID</span>
+  <span class="hljs-string">"functionRoot"</span>: <span class="hljs-string">"functions"</span>,     <span class="hljs-comment">// 云函数文件夹名称，相对路径，可以省略 './</span>
+  <span class="hljs-string">"functions"</span>: [                   <span class="hljs-comment">// 云函数配置</span>
+    {
+      <span class="hljs-string">"name"</span>: <span class="hljs-string">"app"</span>,           <span class="hljs-comment">// functions 文件夹下函数文件夹的名称，即函数名</span>
+      <span class="hljs-string">"config"</span>: {              <span class="hljs-comment">// 云函数配置</span>
+        <span class="hljs-string">"timeout"</span>: <span class="hljs-number">5</span>,        <span class="hljs-comment">// 超时时间，单位：秒 S</span>
+        <span class="hljs-string">"envVariables"</span>: {    <span class="hljs-comment">// 环境变量</span>
+            <span class="hljs-string">"key"</span>: <span class="hljs-string">"value"</span>
+        }
+      }
+    }
+  ]
+}
+</div></code></pre>
+<p>在 CLI 配置文件cloudbaserc.js中，functions是一个数组，可以包含多个函数配置项，函数配置项包含了函数名称（name），函数运行配置（config），函数调用传入参数（params）等多项与函数相关的信息，影响着函数操作的行为表现，更多具体的配置比如私有网络、触发器等可以去参考相关技术文档。</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">envId</span>: <span class="hljs-string">'dev-xxxx'</span>,       <span class="hljs-comment">// 关联环境 ID</span>
+  <span class="hljs-attr">functions</span>: [      <span class="hljs-comment">// 函数配置</span>
+    {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'app'</span>,          <span class="hljs-comment">// functions 文件夹下函数文件夹的名称，即函数名</span>
+      <span class="hljs-attr">config</span>: {            <span class="hljs-comment">// 函数配置</span>
+        <span class="hljs-attr">timeout</span>: <span class="hljs-number">5</span>,        <span class="hljs-comment">// 超时时间，单位：秒 S</span>
+        <span class="hljs-attr">envVariables</span>: {
+          <span class="hljs-attr">key</span>: <span class="hljs-string">'value'</span>      <span class="hljs-comment">// 环境变量</span>
+        },
+        <span class="hljs-attr">vpc</span>: {                  <span class="hljs-comment">// 私有网络配置，如果不使用私有网络，可不配置</span>
+          <span class="hljs-attr">vpcId</span>: <span class="hljs-string">'vpc-xxx'</span>,     <span class="hljs-comment">// vpc id</span>
+          <span class="hljs-attr">subnetId</span>: <span class="hljs-string">'subnet-xxx'</span>  <span class="hljs-comment">// 子网 id</span>
+        },
+        <span class="hljs-attr">runtime</span>: <span class="hljs-string">'Nodejs8.9'</span>,  <span class="hljs-comment">// 运行时，目前可选运行包含：Nodejs8.9, Php7, Java8，默认为Nodejs 8.9</span>
+        <span class="hljs-attr">installDependency</span>: <span class="hljs-literal">true</span>   <span class="hljs-comment">// 是否云端安装依赖，仅支持 Node.js 项目</span>
+      },
+      <span class="hljs-attr">triggers</span>: [          <span class="hljs-comment">// 函数触发器</span>
+        {
+          <span class="hljs-attr">name</span>: <span class="hljs-string">'myTrigger'</span>,  <span class="hljs-comment">// name: 触发器的名字</span>
+          <span class="hljs-attr">type</span>: <span class="hljs-string">'timer'</span>,      <span class="hljs-comment">// type: 触发器类型，目前仅支持 timer （即定时触发器）</span>
+          <span class="hljs-attr">config</span>: <span class="hljs-string">'0 0 2 1 * * *'</span>   <span class="hljs-comment">// config: 触发器配置，在定时触发器下，config 格式为 cron 表达式</span>
+        }
+      ],
+      <span class="hljs-attr">handler</span>: <span class="hljs-string">'index.main'</span>,
+      <span class="hljs-attr">params</span>: {},     <span class="hljs-comment">// functions:invoke 本地触发云函数时的调用参数</span>
+      <span class="hljs-attr">ignore</span>: [        <span class="hljs-comment">// 部署/更新云函数时忽略的文件</span>
+        <span class="hljs-string">'*.md'</span>,           <span class="hljs-comment">// 忽略 markdown 文件</span>
+        <span class="hljs-string">'node_modules'</span>,     <span class="hljs-comment">// 忽略 node_modules 文件夹</span>
+        <span class="hljs-string">'node_modules/**/*'</span>
+      ]
+    }
+  ]
+}
+</div></code></pre>
+<h3 id="1423-%E4%BD%BF%E7%94%A8cli%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C%E4%BA%91%E5%87%BD%E6%95%B0">14.2.3 使用CLI工具操作云函数</h3>
+<h4 id="1%E6%9F%A5%E7%9C%8B%E4%BA%91%E5%87%BD%E6%95%B0%E4%BF%A1%E6%81%AF">1、查看云函数信息</h4>
+<p>我们可以在终端输入以下命令列出所有云函数（一次只会列出前20条）并查看云函数的基本信息：</p>
+<pre class="hljs"><code><div>cloudbase functions:list
+</div></code></pre>
+<p>如果你的函数较多，需要列出其他的函数，你可以通过下面的选项指定返回的数据长度以及数据的偏移量，有点类似于通过skip来翻页了。</p>
+<pre class="hljs"><code><div>-l, --limit &lt;limit&gt;    返回数据长度，默认值为 <span class="hljs-number">20</span>
+-o, --offset &lt;offset&gt;  数据偏移量，默认值为 <span class="hljs-number">0</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash">返回前 10 个函数的信息</span>
+cloudbase functions:list -l 10
+<span class="hljs-meta">#</span><span class="bash">返回第 3 - 22 个函数的信息（包含 3 和 22）</span>
+cloudbase functions:list -l 20 -o 2
+</div></code></pre>
+<p>如果想查看所有云函数的详情、某个云函数的详情或某个云函数的调用日志，可以在终端输入以下命令来获取：</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash"> 查看具体某个云函数的详情，比如云函数名为login</span>
+cloudbase functions:detail login
+<span class="hljs-meta">
+#</span><span class="bash"> 查看配置文件中的所有云函数的详情，注意是配置文件cloudbaserc.js 中的云函数</span>
+cloudbase functions:detail
+<span class="hljs-meta">
+#</span><span class="bash">查看云函数的调用日志，比如云函数名为login</span>
+cloudbase functions:log login
+</div></code></pre>
+<p>我们可以通过查看云函数的详情了解到云函数的运行环境、网络、触发器、修改时间以及具体的代码等等，这是让我们可以在电脑本地了解一个云函数的部署情况的非常重要的命令了。</p>
+<h4 id="2%E8%A7%A6%E5%8F%91%E4%BA%91%E5%87%BD%E6%95%B0">2、触发云函数</h4>
+<p>你可以在本地通过 Cloudbase CLI 直接触发云函数，也就是直接调用在服务端的云函数，调用成功后，会直接返回和在云开发控制台一样的云函数调用日志。</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash"> 比如触发login函数</span>
+cloudbase functions:invoke login
+<span class="hljs-meta">
+#</span><span class="bash"> 触发配置文件中的全部函数</span>
+cloudbase functions:invoke
+</div></code></pre>
+<h4 id="3%E4%B8%8B%E8%BD%BD%E4%BA%91%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81">3、下载云函数代码</h4>
+<p>如果我们想要修改我们在小程序云开发里创建的云函数，首先就需要下载云函数的代码以及它的依赖，默认情况下，函数代码会下载到 functionRoot 下（也就是项目根目录下的functions文件夹里），以函数名称作为存储文件夹。</p>
+<pre class="hljs"><code><div>cloudbase functions:download login
+</div></code></pre>
+<p>当然，你也可以指定函数存放的文件夹地址，函数的所有代码文件会直接下载到指定的文件夹中。这个就和微信开发者工具下载云函数是一样的。</p>
+<pre class="hljs"><code><div>cloudbase functions:download login ./subfile
+</div></code></pre>
+<p>这里的<code>./subfile</code>是指项目根目录下的subfile文件夹，如果你要指定的时候，需要先创建这个文件夹，建议最好是直接默认下载到functionRoot下。</p>
+<h4 id="4%E6%9B%B4%E6%96%B0%E4%B8%8E%E9%83%A8%E7%BD%B2%E4%BA%91%E5%87%BD%E6%95%B0">4、更新与部署云函数</h4>
+<p>当我们修改完本地云函数的代码之后就需要把本地云函数的代码更新或部署上传到服务端，更新代码update只会更新函数的代码以及执行入口，不会修改函数的其他配置，比如下面是更新login云函数</p>
+<pre class="hljs"><code><div>cloudbase functions:code:update login
+</div></code></pre>
+<p>而使用部署代码命令deploy 时，则会修改函数的代码、配置以及触发器等，比如下面命令部署上传login云函数，在部署上传云函数前建议将login云函数的配置写在cloudbaserc.js里：</p>
+<pre class="hljs"><code><div>cloudbase functions:deploy login
+</div></code></pre>
+<p>如果我们不指定函数的名称，Cloudbase CLI 会会更新或部署配置文件中的全部函数：</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash"> 更新配置文件中所有函数的配置信息</span>
+cloudbase functions:config:update
+<span class="hljs-meta">#</span><span class="bash"> 部署配置文件中所有函数的配置信息</span>
+cloudbase functions:deploy
+</div></code></pre>
+<p>如果只是想更新配置文件中云函数的配置信息，可以使用以下命令，目前支持修改的函数配置包含超时时间 timeout、环境变量 envVariables、运行时 runtime，vpc网络以及 installDependency 等选项。</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash"> 更新 login 函数的配置</span>
+cloudbase functions:config:update login
+<span class="hljs-meta">
+#</span><span class="bash"> 更新配置文件中所有函数的配置信息</span>
+cloudbase functions:config:update
+</div></code></pre>
+<p>如果存在同名的云函数需要覆盖，可以在命令后附加 --force 选项指定 Cloudbase CLI 覆盖已存在的云函数。</p>
+<pre class="hljs"><code><div>cloudbase functions:deploy dev --force
+</div></code></pre>
+<h4 id="5%E8%BF%90%E8%A1%8C%E4%BA%91%E5%87%BD%E6%95%B0">5、运行云函数</h4>
+<p>Cloudbase CLI 支持在本地运行云函数，这个有点类似于微信开发者工具的本地调试云函数，运行云函数时默认以 index.main 作为函数执行入口。在本地运行云函数既可以通过云函数的路径运行，也可以通过函数名来运行。</p>
+<blockquote>
+<p>注意，要运行云函数，Node的依赖wx-server-sdk（核心是服务端SDK tcb-admin-node）是必不可少的，本地运行云函数，就需要在本地安装wx-server-sdk，在云端运行就要在云端安装这个依赖，由于我们的云函数是从云端下载下来的，都已经带有wx-server-sdk依赖了，所以不需要安装，但是如果是自己创建的云函数就必须要了哦~</p>
+</blockquote>
+<p>你可以使用 --path 选项指定函数入口文件的路径，直接运行云函数，比如下面的命令是执行login云函数</p>
+<pre class="hljs"><code><div>cloudbase functions:run --path ./functions/login
+</div></code></pre>
+<p>还可以使用 --name 选项指定需要运行的云函数，使用 --name 选项时，可以通过 cloudbaserc.js 配置文件执行函数执行入口</p>
+<pre class="hljs"><code><div>cloudbase functions:run --name login
+</div></code></pre>
+<h4 id="6%E5%88%A0%E9%99%A4%E5%87%BD%E6%95%B0">6、删除函数</h4>
+<p>您可以通过下面的命令来删除指定云函数和配置文件中的所有云函数。</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash">删除 login 函数</span>
+cloudbase functions:delete login 
+<span class="hljs-meta">
+#</span><span class="bash">删除配置文件中的所有的函数</span>
+cloudbase functions:delete
+</div></code></pre>
+<h3 id="1424-%E4%BD%BF%E7%94%A8cli%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C%E6%93%8D%E4%BD%9C%E4%BA%91%E5%AD%98%E5%82%A8">14.2.4 使用CLI工具操作操作云存储</h3>
+<p>云存储是云开发为用户提供的文件存储能力，用户可以通过云开发提供的 CLI 工具、SDK 对存储进行操作，如上传、下载文件。这里需要先了解一下localPath和cloudPath的概念。</p>
+<ul>
+<li>localPath 为本地文件或文件夹的路径，为 目录/文件名 的形式，如 ./index.js（项目根目录下的文件）、static/css（项目根目录下的文件夹static文件夹里的css文件夹）。</li>
+<li>cloudPath 为云存储文件或文件夹的相对根目录的路径，为 目录/文件名 的形式，如cloudbase（云存储根目录下的cloudbase文件夹），cloudPath 不需要以 '/' 开头。</li>
+</ul>
+<p>Windows 系统中localPath为本地路径形式，是系统可以识别的路径，通常使用<code>\</code>分隔符（Mac电脑用<code>/</code>分隔符）。cloudPath 是云端文件路径，均需要使用 / 分隔符。</p>
+<h4 id="1%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9">1、下载文件和文件夹</h4>
+<p>我们可以使用下面的命令来下载文件或文件夹，需要下载文件夹时，需要指定 --dir 参数。</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash"> 下载文件</span>
+cloudbase storage:download cloudPath localPath
+<span class="hljs-meta">
+#</span><span class="bash"> 下载文件夹</span>
+cloudbase storage:download cloudPath localPath --dir
+</div></code></pre>
+<p>比如下面这段命令会将云存储根目录下的cloudbase文件夹里的文件下载到本地项目根目录下的download文件夹里（download文件夹需事先创建），只要我们弄清楚了cloudPath和localPath的写法就能熟练使用这个命令了</p>
+<pre class="hljs"><code><div>cloudbase storage:download cloudbase ./download --dir 
+</div></code></pre>
+<h4 id="2%E4%B8%8A%E4%BC%A0%E6%88%96%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9">2、上传或删除文件/文件夹</h4>
+<p>我们可以使用下面的命令将本地电脑的文件或文件夹上传到云存储，当 CLI 检测到 localPath 为文件夹时，会自动上传文件内的所有文件，如果重复上传会覆盖。</p>
+<pre class="hljs"><code><div>cloudbase storage:upload localPath cloudPath
+</div></code></pre>
+<p>当不传入 cloudPath，文件会上传到云端的根目录下，同时文件夹的层次结构会被保留，比如下面的命令会把项目根目录的download文件夹里的内容直接上传到云存储的根目录里，download的子文件夹会成为云存储的二级目录。</p>
+<pre class="hljs"><code><div>cloudbase storage:upload ./download
+</div></code></pre>
+<p>与之相应的，如果你想删除云存储里的文件或文件夹，可以使用下面的命令，需要删除文件夹时，需要指定 --dir 参数。</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#</span><span class="bash"> 删除文件</span>
+cloudbase storage:delete cloudPath
+<span class="hljs-meta">
+#</span><span class="bash"> 删除文件夹</span>
+cloudbase storage:delete cloudPath --dir
+</div></code></pre>
+<h4 id="3%E4%BA%86%E8%A7%A3%E4%BA%91%E5%AD%98%E5%82%A8%E9%87%8C%E7%9A%84%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9%E4%BF%A1%E6%81%AF">3、了解云存储里的文件或文件夹信息</h4>
+<p>在不打开云开发控制台或网页控制台，我们也可以通过Cloudbase Cli工具了解云存储里的文件夹或文件的信息，比如在终端里输入以下命令可以列出云存储里的文件夹里的所有文件信息，比如大小、修改时间、key、Etag等信息。</p>
+<pre class="hljs"><code><div>cloudbase storage:list cloudPath
+</div></code></pre>
+<p>比如我们可以直接使用以下命令打印云存储根目录里的所有文件（平时不要这么做，打印二级目录里的文件即可），其中二级目录里的文件会用路径的方式显示，比如cloudbase/logo.png表示是cloudbase文件夹下的logo.png图片。</p>
+<pre class="hljs"><code><div>cloudbase storage:list 
+</div></code></pre>
+<p>如果我们想通过浏览器打开云存储里的文件，就需要获取文件临时访问链接。我们知道如果公有读的文件获取的链接不会过期，私有的文件获取的链接只有十分钟有效期。注意这里的cloudPath不能是文件夹，只能是文件哦</p>
+<pre class="hljs"><code><div>cloudbase storage:url cloudPath
+</div></code></pre>
+<p>比如我们想获取云存储cloudbase里的logo.png的临时访问链接，只需要在终端里输入以下命令：</p>
+<pre class="hljs"><code><div>cloudbase storage:url cloudbase/logo.png
+</div></code></pre>
+<p>我们还可以使用下面的命令获取文件的简单信息：</p>
+<pre class="hljs"><code><div>cloudbase storage:detail cloudPath
+</div></code></pre>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

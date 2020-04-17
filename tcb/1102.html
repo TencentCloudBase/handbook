@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>11.2、文件系统的操作.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="112-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%93%8D%E4%BD%9C">11.2 文件系统的操作</h2>
+<h3 id="1121-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E6%A8%A1%E5%9D%97%E4%BB%8B%E7%BB%8D">11.2.1 文件操作模块介绍</h3>
+<p>通过Nodejs的模块，我们可以实现云函数与服务端的文件系统进行一定的交互，比如在前面我们就使用云函数将服务端的图片先使用fs.createReadStream读取，然后上传到云存储。Nodejs的文件处理能力让云函数也能操作服务端的文件，比如文件查找、读取、写入乃至代码编译。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> fileStream = fs.createReadStream(path.join(__dirname, <span class="hljs-string">'demo.jpg'</span>))
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> cloud.uploadFile({
+    <span class="hljs-attr">cloudPath</span>: <span class="hljs-string">'demo.jpg'</span>,
+    <span class="hljs-attr">fileContent</span>: fileStream,
+  })
+}
+</div></code></pre>
+<p>上面的案例使用到了Nodejs文件处理必不可少的fs模块，<strong>fs 模块：</strong> 可以实现文件目录的创建、删除、查询以及文件的读取和写入:</p>
+<ul>
+<li>读取文件，fs.readFile()</li>
+<li>创建文件，fs.appendFile()、fs.open()、fs.writeFile()</li>
+<li>更新文件，fs.appendFile()、fs.writeFile()</li>
+<li>删除文件，fs.unlink()</li>
+<li>重命名文件，fs.rename()
+上面只大致列举了fs模块的一些方法，关于如何使用大家可以去参考Nodejs官方技术文档，当然还有fs.Stats类，封装了文件信息相关的操作；fs.Dir类，封装了和文件目录相关的操作；fs.Dirent类，封装了目录项的相关操作等等。</li>
+</ul>
+<blockquote>
+<p>Nodejs fs模块中的方法都有异步和同步版本，比如读取文件内容的方法有异步的 fs.readFile() 和同步的 fs.readFileSync()。异步的方法函数最后一个参数为回调函数callback，回调函数的参数里都包含了错误信息(error)，通常建议大家使用异步方法，性能更高，速度更快，而且没有阻塞。</p>
+</blockquote>
+<p>操作文件之时，不可避免的都会使用到path模块，<strong>path 模块：</strong> 提供了一些用于处理文件路径的API,它的常用方法有：</p>
+<ul>
+<li>path.basename()，获取路径中文件名；</li>
+<li>path.delimiter()，返回操作系统中目录分隔符；</li>
+<li>path.dirname()，获取路径中目录名；</li>
+<li>path.extname()，获取路径中的扩展名；</li>
+<li>path.join()，路径结合、合并；</li>
+<li>path.normalize(),路径解析，得到规范化的路径格式</li>
+</ul>
+<p>Node读取文件有两种方式，一是利用fs.readFile来读取，还有一个是使用流fs.createReadStream来读取。如果要读取的文件比较小，我们可以使用fs.readFile，fs.readFile读取文件是将文件一次性读取到本地内存。而如果读取一个大文件，比如当文件超过16M左右的时候（文件越大性能也就会越大），一次性读取就会占用大量的内存，效率比较低，这个时候需要用流来读取。流是将文件数据分割成一段段的读取，可以控制速率,效率比较高,不会占用太大的内存。无论文件是大是小，我们都可以使用fs.createReadStream来读取文件。
+为了让大家看的更加明白一些，我们再写两个案例，下面这个案例是使用云函数来读取云函数在云端的目录下有哪些文件：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+  })
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> funFolder = <span class="hljs-string">'.'</span>;<span class="hljs-comment">//.表示当前目录</span>
+  fs.readdir(funFolder, (err, files) =&gt; {
+    files.forEach(<span class="hljs-function"><span class="hljs-params">file</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.log(file);
+    });
+  });
+}
+</div></code></pre>
+<p>上面就用到了fs.readdir()方法，以异步的方式读取云函数在服务端的目录下面所有的文件。我们还可以结合结合Nodejs文件操作的知识，先在云函数的服务端创建一个txt文件，然后将创建的文件上传到云存储。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+  })
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-comment">//创建一个文件</span>
+  <span class="hljs-keyword">const</span> text = <span class="hljs-string">"云开发技术训练营CloudBase Camp. "</span>;
+  <span class="hljs-keyword">await</span> fs.writeFile(<span class="hljs-string">"/tmp/tcb.txt"</span>, text, <span class="hljs-string">'utf8'</span>, (err) =&gt; {
+    <span class="hljs-keyword">if</span> (err) <span class="hljs-built_in">console</span>.log(err);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"成功写入文件."</span>);
+  });
+
+  <span class="hljs-comment">//将创建的txt文件上传到云存储</span>
+  <span class="hljs-keyword">const</span> fileStream = <span class="hljs-keyword">await</span> fs.createReadStream(<span class="hljs-string">'/tmp/tcb.txt'</span>)
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> cloud.uploadFile({
+    <span class="hljs-attr">cloudPath</span>: <span class="hljs-string">'tcb.txt'</span>,
+    <span class="hljs-attr">fileContent</span>: fileStream,
+  })
+}
+</div></code></pre>
+<p>上面创建文件使用的是fs.writeFile()方法，我们也可以使用fs.createWriteStream()的方法来处理：</p>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">const</span> writeStream = fs.createWriteStream(<span class="hljs-string">"tcb.txt"</span>);
+  writeStream.write(<span class="hljs-string">"云开发技术训练营. "</span>);
+  writeStream.write(<span class="hljs-string">"Tencent CloudBase."</span>);
+  writeStream.end();
+</div></code></pre>
+<p>注意，我们创建文件的目录是一个绝对路径<code>/tmp</code>，而不是云函数的当前目录<code>.</code>，云函数的当前目录只能读，不能写，这里就涉及到云函数的运行机制啦。</p>
+<h3 id="1122-%E4%BA%91%E5%87%BD%E6%95%B0%E4%B8%8Ebuffer">11.2.2 云函数与Buffer</h3>
+<p>Nodejs Buffer类的引入，让云函数也拥有操作文件流或网络二进制流的能力，云函数通过downloadFile接口从云存储里下载的数据类型就是Buffer，以及uploadFile接口可以将Buffer数据上传到云存储。Buffer 类在全局作用域中，因此我们无需使用 require('buffer')引入。
+使用Buffer还可以进行编码转换，比如下面的案例是将云存储的图片下载（这个数据类型是Buffer）通过buffer类的toString()方法转换成base64编码，并返回到小程序端。使用开发者工具新建一个downloading的云函数，然后在index.js里输入以下代码：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> fileID = <span class="hljs-string">'cloud://xly-xrlur.786c-xly-xrlur-1300446086/cloudbase/1576500614167-520.png'</span> <span class="hljs-comment">//换成你云存储内的一张图片的fileID，图片不能过大</span>
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> cloud.downloadFile({
+    <span class="hljs-attr">fileID</span>: fileID,
+  })
+  <span class="hljs-keyword">const</span> buffer = res.fileContent
+  <span class="hljs-keyword">return</span> buffer.toString(<span class="hljs-string">'base64'</span>)
+}
+</div></code></pre>
+<p>在小程序端创建一个事件处理函数getServerImg()来调用云函数，将云函数返回的数据（base64编码的图片）赋值给data对象里的img，比如在一个页面的js文件里输入以下代码：</p>
+<pre class="hljs"><code><div>data: {
+  <span class="hljs-attr">img</span>:<span class="hljs-string">""</span>
+},
+getServerImg(){
+    wx.cloud.callFunction({
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'downloadimg'</span>,
+      <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"云函数返回的数据"</span>,res.result)
+        <span class="hljs-keyword">this</span>.setData({
+          <span class="hljs-attr">img</span>:res.result
+        })
+      },
+      <span class="hljs-attr">fail</span>: <span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'云函数调用失败：'</span>, err)
+      }
+    })
+  }
+</div></code></pre>
+<p>在页面的wxml文件里添加一个image组件(注意src的地址)，当点击button时，就会触发事件处理函数来调用云函数将获取到的base64图片渲染到页面。</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">bindtap</span>=<span class="hljs-string">"getServerImg"</span>&gt;</span>点击渲染base64图片<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">image</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400px"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"200px"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"data:image/jpeg;base64,{{img}}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">image</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>云函数在处理图片时，将图片转成base64是有很多限制的，比如图片不能过大，返回到小程序的数据大小<strong>不能</strong>超过1M，而且这些图片最好是临时性的文件，通常建议大家把处理好的图片以云存储为桥梁，将图片处理好后上传到云存储获取fileID，然后在小程序端直接渲染这个fileID即可。</p>
+</blockquote>
+<p>Buffer还可以和字符串String、JSON等转化，还可以处理ascii、utf8、utf16le、ucs2、binary、hex等编码，可以进行copy拷贝、concat拼接、indexOf查找、slice切片等等操作，这些都可以应用到云函数里，就不一一介绍了，具体内容可以阅读Nodejs官方技术文档。</p>
+<blockquote>
+<p>通过云存储来进行大文件的传输从成本的角度上讲也是有必要的，云函数将文件传输给云存储使用的是内网流量，速度快零费用，小程序端获取云存储的文件走的是CDN，传输效果好，成本也比较低，大约0.18元/GB；云函数将文件发送给小程序端消耗的是<strong>云函数外网出流量</strong>，成本相对比较高，大约0.8元/GB。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

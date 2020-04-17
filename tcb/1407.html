@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>14.7、自定义登录.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <div id="primary" class="content-area">
+    <div id="content" class="site-content" role="main">			
+      <nav id="header-db" class="row navbar navbar-default">
+        <div class="navbar-header">
+          <div class="logotop fleft">
+            <a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+          </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          <div class="flex nav-items">
+          <h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+          <ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+          <div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+          </div>
+                
+        </div>
+      
+        <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+          <div class="sop-menu">
+          <ul>
+        <li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+        <li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+        <li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+        <li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+        <li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+        <li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+        <li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+        <li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+        <li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+        <li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+        <li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+        <li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+        <li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+        <li class="page_item current_page_item"><a href="./1407.html">自定义登录</a></li>
+          </ul>
+        </div>		
+        </div>
+      </nav>
+    <div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="147-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%99%BB%E5%BD%95">14.7 自定义登录</h2>
+<p>匿名登录可以让用户在无需注册登录的情况下在短期内使用数据库、云存储以及调用云函数，但是大多数的应用是需要获取用户的身份才能更长期更安全将数据存储在云端，并且可以获取跨设备跨端的一致性的体验。在Web端我们可以使用自定义登录与匿名登录相结合；在微信小程序端，借助于云开发，无需额外操作便可免鉴权登录（实际上就是openId），要实现跨端一致，就需要考虑免鉴权登录与自定义登录相结合。</p>
+<h3 id="1471-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%99%BB%E5%BD%95%E4%B8%8E%E4%BA%91%E5%BC%80%E5%8F%91">14.7.1 自定义登录与云开发</h3>
+<p>微信小程序云开发有一套免鉴权的账号体系openid，我们可以基于这套账号体系结合自定义登录实现Web端和小程序端的跨端登录和权限控制。</p>
+<h4 id="1%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%94%A8%E6%88%B7%E9%9B%86%E5%90%88%E5%92%8C%E8%AE%B0%E5%BD%95">1、创建一个用户集合和记录</h4>
+<p>为了学习的方便，我们先假定（或者模拟）用户已经使用过我们的小程序并留有userId和openid，打开小程序云开发数据库在数据库里<strong>新建一个集合</strong>，<strong>集合的名称为users</strong>，在users里新建一个记录，比如：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">_openid</span>:<span class="hljs-string">"oUL-m5FuRmuVmxvbYOGnXbnEDsn8"</span>,
+  <span class="hljs-attr">userId</span>:<span class="hljs-string">"lidongbbsky"</span>,
+}
+</div></code></pre>
+<p>由于小程序使用的是云开发，用户无需注册登录就可以调用云开发环境里的资源，那当这个用户到Web网页上时，应该怎么样才能登录以前的账号呢？只需要在网页上输入userId即可登录。</p>
+<blockquote>
+<p>直接输入上面这个userId不输入密码就可以登录，这是一个不安全的做法，不过安全的做法也不一定需要密码，我们可以使用云函数每隔十几秒动态刷新userId来取代用户名+密码这种传统方式，比如userId为openid的后三位+只有10几秒生命周期的动态三位数（有点类似于短信的动态验证码），而用户userId的获取只能登录到小程序来获取，这样用户只需要输入6位数，既方便且安全。当然你也可以用其他方式来生成userId。</p>
+</blockquote>
+<p>通过数据库，我们把userId和小程序的唯一openid关联到了一起，那在web网页上又是怎样实现userId的登录呢？又是如何保证登录的安全性的呢？</p>
+<h4 id="2%E8%8E%B7%E5%8F%96%E7%A7%81%E9%92%A5%E5%B9%B6%E7%BC%96%E5%86%99-ticket-%E5%88%9B%E5%BB%BA%E6%A8%A1%E5%9D%97">2、获取私钥并编写 ticket 创建模块</h4>
+<p>打开腾讯云云开发网页控制台，在【环境】-【环境设置】-【登录方式】，单击私钥下载，私钥是一份 JSON 格式的数据，里面包含<code>private_key_id</code>和<code>private_key</code>。接下来我们会用云函数把openid生成唯一用户ID（称之为customUserId）结合这个私钥文件计算出云开发的自定义登录凭证ticket，最后使用ticket登录。</p>
+<p>然后使用VS Code新建一个云函数比如weblogin云函数专门用来处理网页的登录，将私钥json文件的名称自定义一下，比如tcb_custom_login.json保存到与云函数的目录里。</p>
+<pre class="hljs"><code><div>├── weblogin  <span class="hljs-comment">//weblogin云函数目录</span>
+│   └── index.js
+│   └── config.json 
+│   └── package.json
+│   └── tcb_custom_login.json <span class="hljs-comment">//下载的私钥json文件</span>
+</div></code></pre>
+<p>然后再在index.js里输入如下代码，创建一个生成ticket的服务，代码的逻辑如下：</p>
+<ul>
+<li>首先会获取用户在web页面填写的userId，如果这个userId非空，我们就去数据库查询这个userId是否存在；</li>
+<li>如果userId存在，说明用户填写的userId是对的；</li>
+<li>查询这个用户的openid，openid是用户的唯一ID，但是customUserId里不能有特殊有特殊符号，所以我们会把去掉openid的连接符作为customUserId；</li>
+<li>然后用createTicket让customUserId再来结合密钥生成ticket，而且这个ticket是每隔10分钟会刷新；</li>
+<li>再把ticket以集成请求的方式发送给web端，这样web端再来根据这个ticket来登录</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-admin-node'</span>)
+<span class="hljs-keyword">const</span> app = tcb.init({
+  <span class="hljs-attr">env</span>: <span class="hljs-string">'xly-xrlur'</span>,
+  <span class="hljs-attr">credentials</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./tcb_CustomLoginKeys.json'</span>)
+})
+<span class="hljs-keyword">const</span> db = tcb.database();
+
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> userId = event.queryStringParameters.userId <span class="hljs-comment">//从web端传入的userId</span>
+  <span class="hljs-keyword">try</span>{
+    <span class="hljs-keyword">if</span>( userId != <span class="hljs-literal">null</span>){  <span class="hljs-comment">//如果web端传入的userId非空，就从数据库查询是否存在该userId</span>
+      <span class="hljs-keyword">const</span> users = (<span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'users'</span>).where({
+        <span class="hljs-attr">userId</span>:userId
+      }).get()).data
+  
+      <span class="hljs-keyword">if</span>(users.length != <span class="hljs-number">0</span>){  <span class="hljs-comment">//当数据库存在该userId时，users为一个数组，数组长度不为0</span>
+        <span class="hljs-comment">//使用用户的openid为customUserId来生成ticket,因为openid有一个-连接符，把它给替换掉</span>
+        <span class="hljs-keyword">const</span> customUserId = <span class="hljs-keyword">await</span> (users[<span class="hljs-number">0</span>]._openid).replace(<span class="hljs-string">'-'</span>,<span class="hljs-string">''</span>) 
+        <span class="hljs-keyword">const</span> ticket = app.auth().createTicket(customUserId, {
+          <span class="hljs-attr">refresh</span>: <span class="hljs-number">10</span> * <span class="hljs-number">60</span> * <span class="hljs-number">1000</span> <span class="hljs-comment">// 每十分钟刷新一次登录态， 默认为一小时</span>
+        });
+        <span class="hljs-keyword">return</span> {
+          <span class="hljs-attr">statusCode</span>: <span class="hljs-number">200</span>,
+          <span class="hljs-attr">headers</span>: {
+            <span class="hljs-string">'content-type'</span>: <span class="hljs-string">'application/json'</span>,
+            <span class="hljs-string">'Access-Control-Allow-Origin'</span>:<span class="hljs-string">'*'</span>,
+            <span class="hljs-string">'Access-Control-Allow-Methods'</span>:<span class="hljs-string">'*'</span>,/=
+            <span class="hljs-string">'Access-Control-Allow-Headers'</span>:<span class="hljs-string">'Content-Type'</span>
+          },
+          <span class="hljs-attr">body</span>: ticket
+        }
+      }  
+    }
+  }<span class="hljs-keyword">catch</span>(err){
+    <span class="hljs-built_in">console</span>.log(err)
+  }
+}
+</div></code></pre>
+<p>将weblogin云函数部署上传之后，然后开启云接入（HTTP触发）并创建路由比如/weblogin，我们可以在浏览器里输入以下地址(也就是在weblogin云接入里传入参数userId的值为lidongbbsky）获取到生成的ticket：</p>
+<pre class="hljs"><code><div>http:<span class="hljs-comment">//xly-xrlur.service.tcloudbase.com/weblogin?userId=lidongbbsky</span>
+</div></code></pre>
+<h4 id="3web%E5%89%8D%E7%AB%AF%E6%A0%B9%E6%8D%AEticket%E7%99%BB%E5%BD%95">3、web前端根据ticket登录</h4>
+<p>我们已经使用云函数生成了一个ticket，那前端又如何根据这个ticket来登录呢？我们还是使用axios进行HTTP请求，所以在我们的前端页面，比如public文件夹下的index.html里先引入axios</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://imgcache.qq.com/qcloud/tcbjs/1.5.1/tcb.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/axios/dist/axios.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./js/main.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+<p>然后再在main.js里的页面生命周期函数<code>window.onload= function(){//生命周期函数}</code>里输入以下代码，首先返回用户的登录态LoginState来判断用户是否已经登录，如果用户没有登录，则发起HTTP请求，获取云接入返回的ticket，然后使用<code>auth.customAuthProvider().signIn(ticket)</code>用自定义登录凭证ticket来登录云开发：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> auth = app.auth({
+    <span class="hljs-attr">persistence</span>: <span class="hljs-string">'session'</span> <span class="hljs-comment">//在窗口关闭时清除身份验证状态</span>
+})
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">const</span> loginState = app.auth().hasLoginState();
+  <span class="hljs-keyword">if</span>(!loginState){
+    <span class="hljs-keyword">const</span> url =<span class="hljs-string">"https://xly-xrlur.service.tcloudbase.com/weblogin"</span>
+    axios.get(url,{
+      <span class="hljs-attr">userId</span>:<span class="hljs-string">"lidongbbsky"</span>
+    })     
+    .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+      auth.customAuthProvider()
+        .signIn(res.data)
+        .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"登录成功"</span>)
+          <span class="hljs-comment">//登录成功后，就可以操作云开发环境里的各种资源啦</span>
+        })
+        .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"登录失败"</span>,err)
+
+        });
+    }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(err)
+    })
+  }<span class="hljs-keyword">else</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"您已经登录啦"</span>)
+  }
+}
+login()
+</div></code></pre>
+<h3 id="1472-web%E7%AB%AF%E8%B4%A6%E5%8F%B7%E4%B8%8E%E8%B4%A6%E5%8F%B7%E7%9A%84%E6%89%93%E9%80%9A">14.7.2 web端账号与账号的打通</h3>
+<h4 id="1%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96web%E7%AB%AFopeniduid">1、如何获取web端openid(uid)</h4>
+<p>当我们在web端登录了之后，web端用户也会一个类似于小程序的openid（但是不相同），那我们要如何获取到这个openid呢？和小程序用户一样，当我们往云存储和数据库里添加数据时，就会<strong>自动添加一个openid的字段</strong>，里面的值就是web端openid(uid)。</p>
+<p>那除此之外，我们是否能够像小程序云开发一样在云函数里获取到web端用户的openid呢？这个其实我们已经在前面web端云开发里的webtest云函数就已经写了方法啦，这里再单独拿出来：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-admin-node'</span>)
+<span class="hljs-keyword">const</span> app = tcb.init({
+  <span class="hljs-attr">env</span>: <span class="hljs-string">'xly-xrlur'</span>
+})
+<span class="hljs-keyword">const</span> auth = app.auth()
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-keyword">const</span> {openId, uid, customUserId } = auth.getUserInfo()
+  <span class="hljs-keyword">return</span> {openId, uid, customUserId }
+}
+</div></code></pre>
+<p>这里的uid就是web端用户的openid，而openId则是微信用户（小程序）的openid，customUserId就是前面我们用于生成ticket的customUserId。</p>
+<h4 id="2web%E7%AB%AF%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8Fopenid%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB">2、web端和小程序openid的区别与联系</h4>
+<p>当用户在web端使用customUserId自定义登录之后也会有一个不同于小程序账户体系的openid，<strong>这个openid是用户的uid</strong>，customUserId和uid是对应的，只要customUserId不变，web端用户的openid(uid)也不会变更。也就是说由于我们的customUserId是根据小程序的openid生成的唯一且不随设备不随时间变更而变更的，那么web端的openid(uid)也不会因为设备和时间而变更。</p>
+<p>尽管用户在web端传入的userId是可以动态刷新的，但是在云函数里我们并没有把这个可以动态刷新的userId作为customUserId，所以不必担心userId的不同，web端用户在云开发的openid会有所变化；ticket也是可以动态刷新的，但是这只是加强账号的安全性，并不会影响web端用户的openid的唯一性。</p>
+<p>web端用户的openid（也就是uid)的<strong>唯一性</strong>，且不随设备和时间的变更而变更的<strong>永久性</strong>是我们可以进行跨设备操作的基础。不过值得一提的是，即使是相同用户web端的openid和小程序的openid虽然有关联，但是<strong>两者之间是不同的账号体系</strong>，如果我们要把小程序和web端的账号打通则需要进行一定的处理。</p>
+<h4 id="3%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AB%AF%E5%92%8Cweb%E7%AB%AF%E8%B4%A6%E5%8F%B7%E6%89%93%E9%80%9A">3、小程序端和Web端账号打通</h4>
+<p>即使是相同的用户，web端和小程序端的openid都是唯一且永久的，而且都还不同，那如果让相同的用户在Web端和小程序端有一致性的体验和相同的权限呢？我们知道<strong>云开发的权限是非常依赖openid</strong>的，无论是数据库的增删改查，还是云存储的增删改查，都是根据openid来判断用户的权限的。账号体系打通可能比较容易，但是权限又该如何控制呢？</p>
+<p>比如用户在小程序端创建了个人资料，发表了一篇文章，我们要打通账号，就要能让该用户在web端可以查看且能修改他的个人资料或文章数据，比如下面是users集合里的一条记录：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">_openid</span>:<span class="hljs-string">"oUL-m5FuRmuVmxvbYOGnXbnEDsn8"</span>,
+  <span class="hljs-attr">userId</span>:<span class="hljs-string">"lidongbbsky"</span>,
+  <span class="hljs-attr">userInfo</span>:{
+    <span class="hljs-attr">name</span>:<span class="hljs-string">"李东bbsky"</span>,
+    <span class="hljs-attr">title</span>:<span class="hljs-string">"杂役"</span>
+  },
+  <span class="hljs-attr">posts</span>:[{
+    <span class="hljs-attr">title</span>:<span class="hljs-string">"为什么说云开发值得普及？"</span>,
+    <span class="hljs-attr">content</span>:<span class="hljs-string">"&lt;h3&gt;学习门槛特别低&lt;/h3&gt;&lt;p&gt;可以说云开发是最容易上手且最容易出成果的编程方向了&lt;/p&gt;"</span>
+  }]
+}
+</div></code></pre>
+<p>当我们把该集合设置为<code>所有人可读，仅创建者可读写</code>时，用户在小程序端对属于自己的记录可读可写，但是当该用户在web端时，他只能读不能写，除非使用云函数，先在数据库里查询到该用户的openid（如果你把userId设计成动态刷新的话），再进行数据库和存储的增删改查，也就是用户对数据库和云存储的所有操作<strong>都需要经过云函数</strong>且<strong>都需要先查询用户在小程序端的openid</strong>，功能虽然可以实现，但是对web端并不是很友好，一是多了一次查询，二是不能在web端直接进行写操作。</p>
+<h4 id="4%E5%AE%89%E5%85%A8%E8%A7%84%E5%88%99%E4%B9%8Bopenid%E4%B8%8Euid">4、安全规则之openid与uid</h4>
+<p>如果想要<strong>不需要借助于云函数的情况</strong>下，让web端的用户能够更加方便的和小程序端的用户权限打通，则需要<strong>借助于安全规则</strong>，比如<code>仅创建者可读写</code>的安全规则是:</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == doc._openid"</span>,
+  <span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid == doc._openid"</span>
+}
+</div></code></pre>
+<p>这个安全规则让小程序用户的openid与记录的_openid字段的值相同时，就有了读写权限。也就是<code>auth.openid</code> 是小程序用户免登录之后的openid。那如何让web端用户也有一样的权限呢？我们可以给user的每一个记录都新增一个webuid的字段，用来记录web端用户的openid(uid)以及一个wxuid的字段，用来记录小程序端的openid。让权限互通，这里会有四种情况：</p>
+<ul>
+<li>如果<strong>记录A</strong>是用户在小程序端创建的，那这条记录自动添加的_openid为小程序的openid，只要read、write的安全规则为<code>auth.openid == doc._openid</code>，那小程序用户对这条记录有读写权限；</li>
+<li>如果该用户想在web端对<strong>记录A</strong>有读写权限，那我们可以让read、write的安全规则为<code>auth.uid == doc.webuid</code>,这样webd端用户就能对记录有读写权限；</li>
+<li>如果<strong>记录B</strong>是用户在web创建的，那这条记录自动添加的_openid为web端用户的openid(uid），只要read、write的安全规则为<code>auth.uid == doc._openid</code>，那web端用户对这条记录有读写权限；</li>
+<li>如果该用户想在小程序端对<strong>记录B</strong>有读写权限，那我们可以让read、write的安全规则为<code>auth.openid == doc.wxuid</code>,这样webd端用户就能对记录有读写权限；</li>
+</ul>
+<p>所以，我们可以将安全规则设置为如下，无论记录是在小程序端创建还是web端创建，用户都拥有跨端的可读写权限：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == doc._openid || auth.uid == doc.webuid || auth.uid == doc._openid || auth.openid == doc.wxuid"</span>,
+  <span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid == doc._openid || auth.uid == doc.webuid || auth.uid == doc._openid || auth.openid == doc.wxuid"</span>,
+}
+</div></code></pre>
+<p>之所以这么复杂，是因为web端创建记录时的_openid是用户的uid，小程序端创建记录时的_openid是微信生态的_openid，而要做到两套体系容易，则需要一个字段来做过渡，我们也可以只用一个字段，比如只用一个uid的字段，当记录_openid是小程序的_openid时，uid就记录web端用户的uid；当记录_openid是web端用户的uid时，uid就记录该用户在小程序的openid，安全规则就可以写为：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == doc._openid || auth.uid == doc.uid || auth.uid == doc._openid || auth.openid == doc.uid"</span>,
+  <span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid == doc._openid || auth.uid == doc.uid || auth.uid == doc._openid || auth.openid == doc.uid"</span>
+}
+</div></code></pre>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

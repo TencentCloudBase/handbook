@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>11.4、图片处理.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">			
+			<nav id="header-db" class="row navbar navbar-default">
+				<div class="navbar-header">
+					<div class="logotop fleft">
+						<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+					</div>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+					<div class="flex nav-items">
+					<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+					<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+					<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+					</div>
+								
+				</div>
+			
+				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+					<div class="sop-menu">
+					<ul>
+				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+				<li class="page_item current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+				<li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+				<li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+				<li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+				<li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+				<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					</ul>
+				</div>		
+				</div>
+			</nav>
+		<div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="114-%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86">11.4 图像处理</h2>
+<h3 id="1141-%E4%BA%8C%E7%BB%B4%E7%A0%81qrcode">11.4.1 二维码qrcode</h3>
+<p>在移动互联网时代，二维码是一个非常重要的入口，有时候我们需要将一些文本、网址乃至文件、图片、名片等信息放置到一个小小的二维码里，让用户可以通过手机扫码的方式来获取传递的信息。云函数也可以借助于第三方模块，比如node-qrcode来创建二维码。
+<strong>技术文档：</strong><a href="https://github.com/soldair/node-qrcode">node-qrcode Github地址</a>
+使用开发者工具，创建一个云函数，如qrcode，然后在package.json增加node-qrcode最新版latest的依赖并用npm install安装：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+    <span class="hljs-string">"qrcode"</span>: <span class="hljs-string">"latest"</span>
+  }
+</div></code></pre>
+<p>然后再在index.js输入如下代码，这里会先将创建的二维码写入到临时文件夹，然后再用fs.createReadStream方法读取图片，上传到云存储，还是以云存储为过渡，实现文件由服务端到小程序端的一个操作。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+<span class="hljs-keyword">const</span> QRCode = <span class="hljs-built_in">require</span>(<span class="hljs-string">'qrcode'</span>)
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+  })
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+  <span class="hljs-comment">//text为二维码里包含的内容，将创建的二维码图片先存储到/tmp临时文件夹里，命名为qrcode.png</span>
+  <span class="hljs-keyword">const</span> text=<span class="hljs-string">"二维码里的有腾讯云云开发"</span>
+  <span class="hljs-keyword">await</span> QRCode.toFile(<span class="hljs-string">'/tmp/qrcode.png'</span>,text, {
+    <span class="hljs-attr">color</span>: {
+      <span class="hljs-attr">dark</span>: <span class="hljs-string">'#00F'</span>,  <span class="hljs-comment">// 蓝点</span>
+      <span class="hljs-attr">light</span>: <span class="hljs-string">'#0000'</span> <span class="hljs-comment">// 透明底</span>
+    }
+  }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">throw</span> err
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'done'</span>)
+  })
+
+  <span class="hljs-comment">//读取存储到/tmp临时文件夹里的二维码图片并上传到云存储里，返回fileID到小程序端</span>
+  <span class="hljs-keyword">const</span> fileStream = <span class="hljs-keyword">await</span> fs.createReadStream(<span class="hljs-string">'/tmp/qrcode.png'</span>)
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> cloud.uploadFile({
+    <span class="hljs-attr">cloudPath</span>: <span class="hljs-string">'qrcode.jpg'</span>,
+    <span class="hljs-attr">fileContent</span>: fileStream,
+  }) 
+}
+</div></code></pre>
+<h3 id="1142-sharp%E9%AB%98%E9%80%9F%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%BA%93">11.4.2 Sharp高速图像处理库</h3>
+<p>sharp是一个高速图像处理库，可以很方便的实现图片编辑操作，如裁剪、格式转换、旋转变换、滤镜添加、图片合成（如添加水印）、图片拼接等，支持JPEG, PNG, WebP, TIFF, GIF 和 SVG格式。在云函数端使用sharp来处理图片，而云存储则可以作为服务端和小程序端来传递图片的桥梁。</p>
+<blockquote>
+<p>由于图片处理是一件非常消耗性能的事情，不仅会对云函数的内存有要求，也可能会造成云函数的超时，以下只是研究使用云函数来处理图片的可行性，大家在实际开发中不要这么处理，建议使用<strong>云开发的拓展能力</strong>来对图像进行处理，功能更加强大（在后面的章节里，我们会介绍）。</p>
+</blockquote>
+<p><strong>技术文档：</strong><a href="https://sharp.pixelplumbing.com/en/stable/">sharp官方技术文档</a></p>
+<p>使用开发者工具，创建一个云函数，如sharp，然后在package.json<strong>增加n</strong>ode-qrcode最新版latest的依赖，并右键云函数目录选择在终端中打开输入命令npm install安装依赖：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+    <span class="hljs-string">"sharp"</span>: <span class="hljs-string">"latest"</span>
+  }
+</div></code></pre>
+<p>然后再在index.js输入如下代码，这里我们假定图片来源是云存储，我们需要先下载图片，然后用sharp对图片进行处理，处理完之后再把图片传回云存储。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
+cloud.init({
+    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+<span class="hljs-keyword">const</span> sharp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'sharp'</span>);
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+    <span class="hljs-comment">//这里换成自己的fileID，也可以在小程序端上传文件之后，把fileID传进来event.fileID</span>
+    <span class="hljs-keyword">const</span> fileID = <span class="hljs-string">'cloud://xly-xrlur.786c-xly-xrlur-1300446086/1572315793628-366.png'</span>
+ 
+    <span class="hljs-comment">//要用云函数处理图片，需要先下载图片，返回的图片类型为Buffer</span>
+    <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> cloud.downloadFile({
+      <span class="hljs-attr">fileID</span>: fileID,
+    })
+    <span class="hljs-keyword">const</span> buffer = res.fileContent  
+ 
+    <span class="hljs-comment">//sharp对图片进行处理之后，保存为output.png，也可以直接保存为Buffer</span>
+    <span class="hljs-keyword">await</span> sharp(buffer).rotate().resize(<span class="hljs-number">200</span>).toFile(<span class="hljs-string">'output.png'</span>)
+ 
+    <span class="hljs-comment">// 云函数读取模块目录下的图片，并上传到云存储</span>
+    <span class="hljs-keyword">const</span> fileStream = <span class="hljs-keyword">await</span> fs.createReadStream(path.join(__dirname, <span class="hljs-string">'output.png'</span>))
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> cloud.uploadFile({
+        <span class="hljs-attr">cloudPath</span>: <span class="hljs-string">'sharpdemo.jpg'</span>,
+        <span class="hljs-attr">fileContent</span>: fileStream,
+    })  
+}
+</div></code></pre>
+<p>也可以让sharp不需要先toFile转成图片，而是直接转成Buffer，这样就可以直接作为参数传给fileContent上传到云存储，如：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> buffer2 = <span class="hljs-keyword">await</span> sharp(buffer).rotate().resize(<span class="hljs-number">200</span>).toBuffer();
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> cloud.uploadFile({
+        <span class="hljs-attr">cloudPath</span>: <span class="hljs-string">'sharpdemo2.jpg'</span>,
+        <span class="hljs-attr">fileContent</span>: buffer2,
+    })
+</div></code></pre>
+<blockquote>
+<p>需要说明的是sharp有一定的前置条件，Node.js 的版本需要是v10.13.0+，以及云函数所在的服务器配置了libvips binaries，目前云开发的云函数不太支持，未来云开发会升级Nodejs的版本。关于图片处理的库，我们也可以去Github awesome-nodejs 项目里去翻翻看有没有其他合适的解决方案，不过更加推荐的是使用<strong>云开发的图像处理拓展能力</strong>。</p>
+</blockquote>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>14.5、云接入与HTTP触发.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <div id="primary" class="content-area">
+    <div id="content" class="site-content" role="main">			
+      <nav id="header-db" class="row navbar navbar-default">
+        <div class="navbar-header">
+          <div class="logotop fleft">
+            <a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+          </div>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          <div class="flex nav-items">
+          <h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+          <ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/community.html">社区</a></li></ul>
+          <div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+          </div>
+                
+        </div>
+      
+        <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+          <div class="sop-menu">
+          <ul>
+        <li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1104.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1201.html">云函数的模块知识</a></li>
+        <li class="page_item no_current_page_item"><a href="./1202.html">文件系统的操作</a></li>
+        <li class="page_item no_current_page_item"><a href="./1203.html">云函数实用工具库</a></li>
+        <li class="page_item no_current_page_item"><a href="./1204.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1205.html">云函数发邮件</a></li>
+        <li class="page_item no_current_page_item"><a href="./1206.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1207.html">Excel文档处理</a></li>
+        <li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+        <li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+        <li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+        <li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+        <li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+        <li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+        <li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+        <li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+        <li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+        <li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+        <li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+        <li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+        <li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+        <li class="page_item current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+        <li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+        <li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+          </ul>
+        </div>		
+        </div>
+      </nav>
+    <div class="sop-content">
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="145-%E4%BA%91%E6%8E%A5%E5%85%A5%E4%B8%8Ehttp%E8%A7%A6%E5%8F%91">14.5 云接入与HTTP触发</h2>
+<p>云接入是云开发基于云函数之上为开发者提供的HTTP访问服务，开发者可以轻松使用 POST、PUT、GET、DELETE等方法通过 HTTP 请求访问到云开发环境内的全部资源，而不需要使用Web端 SDK。而且云接入天然支持跨域请求，将域名添加至Web 安全域名中，这个域名里的网页便可以跨域访问云接入。当使用云函数时，系统会自动预配TLS证书，因此我们可以通过安全连接调用云函数。</p>
+<h3 id="1451-%E4%BD%BF%E7%94%A8%E4%BA%91%E6%8E%A5%E5%85%A5%E8%AE%BF%E9%97%AE%E4%BA%91%E5%87%BD%E6%95%B0">14.5.1 使用云接入访问云函数</h3>
+<p>给云函数启用云接入的方式非常简单，我们可以使用腾讯云云开发网页控制台以及Cloudbase Cli命令两种方式。</p>
+<h4 id="1%E4%BA%91%E5%BC%80%E5%8F%91%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%90%AF%E5%8A%A8%E4%BA%91%E6%8E%A5%E5%85%A5">1、云开发控制台启动云接入</h4>
+<p>打开腾讯云云开发网页控制台的<strong>云函数</strong>菜单，然后点击<strong>HTTP触发</strong>标签，开启HTTP触发，云接入就启动啦，云接入的默认域名就是<code>https://{你的环境id}.service.tcloudbase.com/</code>。</p>
+<p>在前面我们已经上传了一个webtest的云函数（其他云函数也都可以的哦），点击进入webtest云函数的管理页，然后点击右上角的<strong>编辑</strong>，在HTTP 触发路径里输入<code>/webtest</code>（也可以是其他值），保存之后，在浏览器里打开以下链接（网页控制台直接就有链接）就可以访问云接入了：</p>
+<pre class="hljs"><code><div>https:<span class="hljs-comment">//{你的环境id}.service.tcloudbase.com/webtest</span>
+</div></code></pre>
+<p>大家可以对比一下event、context对象与调用云函数返回的对象有什么不同。使用云接入调用云函数时，HTTP 请求会被转化为特殊的结构体，称之为<strong>集成请求</strong>，结构如下：</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-attr">path</span>: <span class="hljs-string">'HTTP请求路径，如 /hello'</span>,
+    <span class="hljs-attr">httpMethod</span>: <span class="hljs-string">'HTTP请求方法，如 GET'</span>,
+    <span class="hljs-attr">headers</span>: {HTTP请求头},
+    <span class="hljs-attr">queryStringParameters</span>: {HTTP请求的Query，键值对形式},
+    <span class="hljs-attr">requestContext</span>: {云开发相关信息},
+    <span class="hljs-attr">body</span>: <span class="hljs-string">'HTTP请求体'</span>,
+    <span class="hljs-attr">isBase64Encoded</span>: <span class="hljs-string">'true or false，表示body是否为Base64编码'</span>
+}
+</div></code></pre>
+<p>这里的<code>queryStringParameters</code>是HTTP请求的Query,我们可以在链接里传入一些参数，比如在访问云接入的链接里加一些参数：</p>
+<pre class="hljs"><code><div>https:<span class="hljs-comment">//xly-xrlur.service.tcloudbase.com/webtest?name=bbsky&amp;location=shenzhen</span>
+</div></code></pre>
+<h4 id="2%E4%BD%BF%E7%94%A8cloudbase-cli%E5%90%AF%E5%8A%A8%E4%BA%91%E6%8E%A5%E5%85%A5">2、使用Cloudbase Cli启动云接入</h4>
+<p>在前面我们已经了解到通过在终端输入<code>cloudbase --help</code>可以了解到Cloudbase Cli有哪些命令（尽管cloudbase是全局的，建议大家在云开发项目的根目录执行），我们可以看到关于云接入的命令有：</p>
+<pre class="hljs"><code><div>  service:switch [options]                  开启/关闭 HTTP Service 服务
+  service:auth:switch [options]             开启/关闭 HTTP Service 服务访问鉴权
+  service:create [options]                  创建 HTTP Service
+  service:delete [options]                  删除 HTTP Service
+  service:list [options]                    获取 HTTP Service 列表
+  service:domain:bind [options] &lt;domain&gt;    绑定自定义 HTTP Service 域名
+  service:domain:unbind [options] &lt;domain&gt;  解绑自定义 HTTP Service 域名
+  service:domain:list [options]             查询自定义 HTTP Service 域名
+</div></code></pre>
+<p>由这些命令，我们可以在终端里输入以下命令来开启和关闭云接入，比如开启云开发环境id为<code>xly-xrlur</code>的云接入服务：</p>
+<pre class="hljs"><code><div>cloudbase service:switch -e xly-xrlur
+</div></code></pre>
+<p>而我们可以执行以下命令创建一条云接入路由，路径为 /webtest，指向的云函数为 webtest：</p>
+<pre class="hljs"><code><div>cloudbase service:create -p /webtest -f webtest
+</div></code></pre>
+<p>除了可以使用浏览器里打开云接入的链接，我们还可以使用cURL命令行来调用云接入，比如我们可以在终端输入以下命令：</p>
+<pre class="hljs"><code><div>curl https://xly-xrlur.service.tcloudbase.com/webtest
+</div></code></pre>
+<h4 id="3%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E5%85%A5%E4%B8%8E%E8%8E%B7%E5%8F%96%E6%80%BB%E7%BB%93">3、参数的传入与获取总结</h4>
+<p>我们有必要重新梳理一下一些参数的传入与获取相关的知识，我们往云函数里传入参数的方式有调用云函数时传入参数、访问云接入链接时传入参数以及配置云函数环境时添加配置信息，那这三种方法又是如何获取这些参数呢？（还有一种是通过require模块、文件，这里就不多做介绍了）</p>
+<p><strong>调用云函数传入参数</strong></p>
+<p>在小程序端、Web端以及云函数端，我们可以通过callFunction的接口（小程序端为wx.callFunction、云函数端为cloud.callFunction、web端为app.callFunction）来调用云函数，并传入参数:</p>
+<pre class="hljs"><code><div>wx.cloud.callFunction({
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'webtest'</span>, <span class="hljs-comment">//被调用的云函数的名称</span>
+  <span class="hljs-attr">data</span>: {
+    <span class="hljs-attr">userInfo</span>:{
+      <span class="hljs-attr">name</span>:<span class="hljs-string">"李东bbsky"</span>     
+    },
+    <span class="hljs-attr">id</span>:<span class="hljs-string">"20200420001"</span>
+  }
+})
+</div></code></pre>
+<p>那我们应该如何获取使用调用云函数时传递的参数呢？我们可以从event对象里拷贝：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> {userInfo,id} = event
+</div></code></pre>
+<p><strong>访问云接入链接时传入参数</strong></p>
+<p>我们通过访问云接入链接或axios等进行HTTP 请求的方式也能向云函数里传递参数，这个参数会在queryStringParameters对象里，我们可以通过</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> {name,title} = event.queryStringParameters
+</div></code></pre>
+<p><strong>云函数配置信息传入参数</strong></p>
+<p>我们可以在云开发控制台对云函数进行一些参数的配置，也就是新增环境变量的字段，这个参数在云函数的获取方式如下：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> {school,name} = process.env
+</div></code></pre>
+<h3 id="1452-%E5%90%8E%E5%8F%B0%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BA%91%E6%8E%A5%E5%85%A5">14.5.2 后台函数与云接入</h3>
+<blockquote>
+<p>有了云接入的概念，我们可以把云函数分为两类，在前面的章节云函数主要用于调用云函数、处理数据库、云存储云调用，我们可以称之为<strong>后台函数</strong>，而HTTP函数则是我们可以通过标准HTTP请求来调用的。</p>
+</blockquote>
+<p>参考上节Web端云开发的内容，在functions文件夹里新建一个云函数比如backfunction，然后在index.js里输入以下代码，注意有一个dbName的参数会由HTTP请求传入：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-admin-node'</span>)
+tcb.init({
+  <span class="hljs-attr">env</span>: <span class="hljs-string">"xly-xrlur"</span>
+})
+<span class="hljs-keyword">const</span> db = tcb.database()
+<span class="hljs-keyword">const</span> _ = db.command
+exports.main = <span class="hljs-function">(<span class="hljs-params">event,context</span>) =&gt;</span>{
+  <span class="hljs-keyword">const</span> {dbName} = event.queryStringParameters <span class="hljs-comment">//注意queryStringParameters的来源</span>
+  <span class="hljs-keyword">return</span> db.collection(dbName) 
+  .where({              
+    <span class="hljs-attr">gdp</span>: _.gt(<span class="hljs-number">3000</span>)     
+  })
+  .get()
+}
+</div></code></pre>
+<p>然后安装该云函数的依赖，将云函数的代码部署上传到云端，并开启云接入以及设置路由，具体操作前面都有介绍，然后我们在浏览器里打开如下链接，就能看到云函数返回的数据了。</p>
+<pre class="hljs"><code><div>http:<span class="hljs-comment">//xly-xrlur.service.tcloudbase.com/backfunction?dbName=china</span>
+</div></code></pre>
+<p>在小程序端我们知道获取获取可以使用<code>wx.request()</code>接口，而在web端我们则可以使用axios，在静态托管的html页面，比如打开之前public文件夹里的index.html，输入以下代码，然后打开链接，然后在浏览器的控制台可以获取到的数据啦：</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/axios/dist/axios.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> url =<span class="hljs-string">"https://xly-xrlur.service.tcloudbase.com/backfunction?dbName=china"</span>
+    axios.get(url).then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(res)
+        <span class="hljs-built_in">console</span>.log(res.data)
+    }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(err)
+    })
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</div></code></pre>
+<h3 id="1453-%E8%BF%94%E5%9B%9E%E9%9B%86%E6%88%90%E5%93%8D%E5%BA%94">14.5.3 返回集成响应</h3>
+<p>云函数可以返回String、Object、Number等类型的数据，还能返回集成响应，云接入会将返回值转化成正常的HTTP响应，我们接下来使用云接入来返回一些静态资源文件。</p>
+<h4 id="1%E4%BD%BF%E7%94%A8%E9%9B%86%E6%88%90%E5%93%8D%E5%BA%94%E8%BF%94%E5%9B%9Ehtml">1、使用集成响应返回HTML</h4>
+<p>使用VS Code在functions文件夹里新建一个云函数，比如sendhtml，以及assets文件夹，里面存放我们要返回的HTML文件，结构如下：</p>
+<pre class="hljs"><code><div>├── sendhtml   //sendhtml云函数目录
+│   └── assets  
+│       └── index.html
+│   └── index.js
+│   └── config.json 
+│   └── package.json
+</div></code></pre>
+<p>然后在index.js里输入以下代码，读取云函数目录assets文件夹里index.html，并返回HTML，这个云函数就和以往的云函数有很大的不同啦：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-admin-node'</span>)
+tcb.init({
+  <span class="hljs-attr">env</span>: <span class="hljs-string">"xly-xrlur"</span>
+})
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
+exports.main = <span class="hljs-keyword">async</span> (event,context) =&gt;{
+  <span class="hljs-comment">//path.resolve() 方法将路径或路径片段的序列解析为绝对路径</span>
+  <span class="hljs-keyword">const</span> html = fs.readFileSync(path.resolve(__dirname, <span class="hljs-string">'./assets/index.html'</span>), {
+    <span class="hljs-attr">encoding</span>: <span class="hljs-string">'utf-8'</span>
+  })   
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">statusCode</span>: <span class="hljs-number">200</span>,
+    <span class="hljs-attr">headers</span>: {
+        <span class="hljs-string">'content-type'</span>: <span class="hljs-string">'text/html'</span>
+    },
+    <span class="hljs-attr">body</span>: html
+  }
+}
+</div></code></pre>
+<p>在assets文件夹里index.html可以输入一些html代码，然后将sendhtml云函数部署上传并开启云接入，以及设置路由如<code>/sendhtml</code>之后，用浏览器打开云接入的地址，返回的HTML就被浏览器自动解析了。</p>
+<h4 id="2%E4%BD%BF%E7%94%A8%E9%9B%86%E6%88%90%E5%93%8D%E5%BA%94%E8%BF%94%E5%9B%9E%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%87%E4%BB%B6">2、使用集成响应返回其他类型的文件</h4>
+<p>除了html文件，还能返回其他类型的文件，在响应中，Content-Type 实体头部用于指示资源的MIME媒体类型，告诉Web端返回的内容类型。媒体类型有很多，比如：</p>
+<table>
+ <thead>
+  <tr>
+   <th scope="col">类型</th>
+   <th scope="col">描述</th>
+   <th scope="col">典型示例</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>text</code></td>
+   <td>普通文本类型</td>
+   <td><code>text/plain</code>, <code>text/html</code>, <code>text/css</code>, <code>text/javascript</code></td>
+  </tr>
+  <tr>
+   <td><code>image</code></td>
+   <td>图像类型</td>
+   <td><code>image/gif</code>, <code>image/png</code>, <code>image/jpeg</code>, <code>image/bmp</code>, <code>image/webp</code>, <code>image/x-icon</code>, <code>image/vnd.microsoft.icon</code></td>
+  </tr>
+  <tr>
+   <td><code>audio</code></td>
+   <td>音频文件</td>
+   <td><code>audio/midi</code>, <code>audio/mpeg, audio/webm, audio/ogg, audio/wav</code></td>
+  </tr>
+  <tr>
+   <td><code>video</code></td>
+   <td>视频文件</td>
+   <td><code>video/webm</code>, <code>video/ogg</code></td>
+  </tr>
+  <tr>
+   <td><code>application</code></td>
+   <td>二进制数据</td>
+   <td>
+    <p><code>application/octet-stream</code>, <code>application/pkcs12</code>, <code>application/vnd.mspowerpoint</code>, <code>application/xhtml+xml</code>, <code>application/xml</code>,&nbsp; <code>application/pdf</code></p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+<p>将 content-type 分别设置为 application/javascript、text/css，即可在 body 中返回 JavaScript 文件和css文件，html、js、css文件是静态网站的核心文件，都是可以返回的，这样就用集成响应返回一个完整的静态网站啦。<strong>注意用集成请求返回的静态网站和静态托管之间的区别哦</strong>。</p>
+<p>将content-type 设置为 image/png以及将 isBase64Encoded 设置为 true，就能返回图片的二进制文件，这个也可以和云存储结合起来使用。比如我们可以写如下云函数，先下载云存储里面的图片，将Buffer转成base64格式的图片，然后返回，这样我们就能通过云接入的链接查看到图片了：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+  <span class="hljs-attr">env</span>: <span class="hljs-string">"xly-xrlur"</span>
+})
+exports.main = <span class="hljs-keyword">async</span> (event,context) =&gt;{
+  <span class="hljs-keyword">const</span> fileID = <span class="hljs-string">'cloud://xly-xrlur.786c-xly-xrlur-1300446086/1572315793634-953.png'</span>
+  <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> cloud.downloadFile({
+    <span class="hljs-attr">fileID</span>: fileID,
+  })
+  <span class="hljs-keyword">const</span> buffer = res.fileContent
+  <span class="hljs-keyword">const</span> base64img = <span class="hljs-keyword">await</span> buffer.toString(<span class="hljs-string">'base64'</span>)
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">isBase64Encoded</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">statusCode</span>: <span class="hljs-number">200</span>,
+    <span class="hljs-attr">headers</span>: {
+        <span class="hljs-string">'content-type'</span>: <span class="hljs-string">'image/png'</span>
+    },
+    <span class="hljs-attr">body</span>: base64img
+  }
+}
+</div></code></pre>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+</body>
+</html>
