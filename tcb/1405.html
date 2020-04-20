@@ -445,14 +445,7 @@ code {
         </div>
       </nav>
     <div class="sop-content">
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
+   
 <h2 id="145-%E4%BA%91%E6%8E%A5%E5%85%A5%E4%B8%8Ehttp%E8%A7%A6%E5%8F%91">14.5 云接入与HTTP触发</h2>
 <p>云接入是云开发基于云函数之上为开发者提供的HTTP访问服务，开发者可以轻松使用 POST、PUT、GET、DELETE等方法通过 HTTP 请求访问到云开发环境内的全部资源，而不需要使用Web端 SDK。而且云接入天然支持跨域请求，将域名添加至Web 安全域名中，这个域名里的网页便可以跨域访问云接入。当使用云函数时，系统会自动预配TLS证书，因此我们可以通过安全连接调用云函数。</p>
 <h3 id="1451-%E4%BD%BF%E7%94%A8%E4%BA%91%E6%8E%A5%E5%85%A5%E8%AE%BF%E9%97%AE%E4%BA%91%E5%87%BD%E6%95%B0">14.5.1 使用云接入访问云函数</h3>

@@ -445,14 +445,7 @@ code {
 				</div>
 			</nav>
 		<div class="sop-content">
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
+   
 <h2 id="125-%E7%B4%A2%E5%BC%95">12.5 索引</h2>
 <p>数据库的索引与书籍的索引/目录类似，有了索引就不需要翻整本书，数据库可以直接在索引中查找，在索引中找到条目之后，就可以直接跳转到目标文档的位置，这就能使查找速度提高几个数量级。不使用索引的查询称为全表扫描，也就是说服务器必须查找完一整本书才能找到查询结果，对于大集合来说，应该尽量避免全表扫描，否则效率非常低。建立索引是保证数据库性能、保证小程序体验的重要手段。我们应为所有需要成为查询条件的字段建立索引。</p>
 <h3 id="1251-%E7%B4%A2%E5%BC%95%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%B8%8E%E7%AE%A1%E7%90%86">12.5.1 索引的类型与管理</h3>

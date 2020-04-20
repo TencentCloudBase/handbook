@@ -3,7 +3,7 @@
 <head>
 <title>11.1、云函数的模块知识.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,   minimal-ui">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,user-scalable=no,minimal-ui">
 
 <style>
 /* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
@@ -448,14 +448,7 @@ code {
 		</div>
 	</nav>
 <div class="sop-content">
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
+   
 <h1 id="%E7%AC%AC11%E7%AB%A0-%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%AB%AF%E8%83%BD%E5%8A%9B">第11章 用云函数实现后端能力</h1>
 <p>云函数的运行环境是 Node.js，我们可以在云函数中使用Nodejs内置模块以及使用 npm 安装第三方依赖来帮助我们更快的开发。借助于一些优秀的开源项目，避免了我们重复造轮子，相比于小程序端，能够大大扩展云函数的使用，接下来我们会介绍一些在云函数里如何引入这些模块来实现一些通常后端编程语言才具备的能力。</p>
 <h2 id="111-%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E6%A8%A1%E5%9D%97%E7%9F%A5%E8%AF%86">11.1 云函数的模块知识</h2>

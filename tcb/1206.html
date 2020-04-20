@@ -445,14 +445,7 @@ code {
         </div>
       </nav>
     <div class="sop-content">
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
+   
 <h2 id="126-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BA%8B%E5%8A%A1">12.6 原子操作和事务</h2>
 <p>使用更新指令（如 inc、mul、addToSet）可以对云数据库的一条记录和记录内的子文档（结合反范式化设计）进行原子操作，但是如果要跨多个记录或跨多个集合的原子操作时，就需要使用云数据库的事务能力。</p>
 <h3 id="1261-%E6%9B%B4%E6%96%B0%E6%8C%87%E4%BB%A4%E7%9A%84%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C">12.6.1 更新指令的原子操作</h3>
