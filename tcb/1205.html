@@ -533,6 +533,9 @@ code {
 唯一索引一定要小心使用，它带有唯一约束，由于前期需求不明等情况下，可能造成我们对于唯一列的误判。</p>
 <p><strong>12、建议最好不要用随机生成的_id做主键</strong></p>
 <p>最好是使用自增ID字段做索引的主键，而不要使用随机的_id做主键，因为非递增的主键会导致频繁的页分裂，从而降低了插入的效率。所以一般情况下，我们会在表中使用一个自增ID字段来代替_id(使用原子更新指令inc来做自增)，用该字段来作表的主键。如果需要按照_id查询时，查找就需要回表，查找的效率会低一点。如果表中只需要一个_id的唯一索引，那么就可以使用_id来做主键；如果不满足这个条件就用自增ID做索引；</p>
+<div class="sop-footer"> 
+	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
+</div>
 </div>
 </div>
 </div>

@@ -446,178 +446,182 @@ code {
       </nav>
     <div class="sop-content">
    
-<h2 id="126-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BA%8B%E5%8A%A1">12.6 原子操作和事务</h2>
-<p>使用更新指令（如 inc、mul、addToSet）可以对云数据库的一条记录和记录内的子文档（结合反范式化设计）进行原子操作，但是如果要跨多个记录或跨多个集合的原子操作时，就需要使用云数据库的事务能力。</p>
-<h3 id="1261-%E6%9B%B4%E6%96%B0%E6%8C%87%E4%BB%A4%E7%9A%84%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C">12.6.1 更新指令的原子操作</h3>
-<p>关系型数据库是很难做到通过一个语句对数据强制一致性的需求来表示的，只能依赖事务。但是云开发数据库由于可以反范式化设计内嵌子文档，以及更新指定可以对单个记录或同一个记录内的子文档进行原子操作，所以通常情况下，云开发数据库不必使用事务。</p>
-<p>比如调整某个订单项目的数量之后，应该同时更新该订单的总费用，我们可以设计采用如下方式设计该集合，比如订单的集合为order：</p>
-<pre class="hljs"><code><div>{
-  <span class="hljs-string">"_id"</span>: <span class="hljs-string">"2020030922100983"</span>,
-  <span class="hljs-string">"userID"</span>: <span class="hljs-string">"124785"</span>,
-  <span class="hljs-string">"total"</span>:<span class="hljs-number">117</span>,
-  <span class="hljs-string">"orders"</span>: [{
-    <span class="hljs-string">"item"</span>:<span class="hljs-string">"苹果"</span>,
-    <span class="hljs-string">"price"</span>:<span class="hljs-number">15</span>,
-    <span class="hljs-string">"number"</span>:<span class="hljs-number">3</span>
-  },{
-    <span class="hljs-string">"item"</span>:<span class="hljs-string">"火龙果"</span>,
-    <span class="hljs-string">"price"</span>:<span class="hljs-number">18</span>,
-    <span class="hljs-string">"number"</span>:<span class="hljs-number">4</span>
-  }]
-}
-</div></code></pre>
-<p>客户在下单的时候经常会调整订单内某个商品比如苹果的购买数量，而下单的总价又必须同步更新，不能购买数量减少了，但是总价不变，这两个操作必须同时进行，如果是使用关系型数据库，则需要先通过两次查询，更新完数据之后，再存储进数据库，这个很容易出现有的成功，有的没有成功的情况。但是云开发的数据库则可以借助于更新指令做到一条更新来实现两个数据同时成功或失败：</p>
-<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'order'</span>).doc(<span class="hljs-string">'2020030922100983'</span>)
-  .update({
-    <span class="hljs-attr">data</span>: {
-      <span class="hljs-string">"orders.0.number"</span>: _.inc(<span class="hljs-number">1</span>),
-      <span class="hljs-string">"total"</span>:_.inc(<span class="hljs-number">15</span>)
-    }
-  })
-
-</div></code></pre>
-<p>这个操作只是在单个记录里进行，那要实现跨记录要进行原子操作呢？更新指令其实是可以做到事务仿真的，但是比较麻烦，这时就建议用事务了。</p>
-<h3 id="1262-%E4%BA%8B%E5%8A%A1%E4%B8%8Eacid">12.6.2 事务与ACID</h3>
-<p>事务就是一段数据库语句的批处理，但是这个批处理是一个atom（原子），多个增删改的操作是绑定在一起的，不可分割，要么都执行，要么回滚（rollback）都不执行。比如银行转账，需要做到一个账户的钱汇出去了，那另外一个账户就一定会收到钱，不能钱汇出去了，但是钱没有到另外一个的账上；也就是要执行转账这个事务，会对A用户的账户数据和B用户的账户数据做增删改的处理，这两个处理必须一起成功一起失败。</p>
-<h4 id="1acid">1、ACID</h4>
-<p>一般来说，事务是必须满足4个条件（ACID）： Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）：</p>
-<ul>
-<li>原子性：整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中一部分操作，</li>
-<li>一致性：事务的执行不能破坏数据库数据的完整性和一致性，一个事务在执行前后，数据库都必须处于一致性状态。换句话说，事务的执行结果必须是使数据库从一个一致性状态转变到另一个一致性状态。比如在执行事务前，A用户账户有50元，B用户账户有150元；执行B转给A 50元事务后，两个用户账户总和还是200元。</li>
-<li>隔离性：事务的隔离性是指在并发环境中，当不同的事务同时操纵相同的数据时，每个事务都有各自的完整数据空间事务之间，互不干扰。比如在线银行，同时转账的人虽然很多，但是不会出现影响A与B之间的转账；</li>
-<li>持久性：即使发生系统崩溃或机器宕机等故障，只要数据库能够重新启动，那么一定能够将其恢复到事务成功结束时的状态，已提交事务的更新不会丢失。</li>
-</ul>
-<h4 id="2%E4%BA%91%E5%87%BD%E6%95%B0%E4%BA%8B%E5%8A%A1%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">2、云函数事务注意事项</h4>
-<p><strong>1、不支持批量操作，只支持单记录操作</strong></p>
-<p>在事务中不支持批量操作（where 语句），只支持单记录操作（collection.doc, collection.add），这可以避免大量锁冲突、保证运行效率，并且大多数情况下，单记录操作足够满足需求，因为在事务中是可以对多个单个记录进行操作的，也就是可以比如说在一个事务中同时对集合 A 的记录 x 和 y 两个记录操作、又对集合 B 的记录 z 操作。</p>
-<p><strong>2、云数据库采用的是快照隔离</strong></p>
-<p>对于两个并发执行的事务来说，如果涉及到操作同一条记录的时候，可能会发生问题。因为并发操作会带来数据的不一致性，包括脏读、不可重复读、幻读等。</p>
-<ul>
-<li>脏读：指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个数据；</li>
-<li>不可重复读：在一个事务内两次读到的数据是不一样的，受到另一个事务修改后提交的影响，因此称为是不可重复读</li>
-<li>幻读：第一个事务对表进行读取，当第二个事务对表进行增加或删除操作事务提交后，第一个事务再次读取，会出现增加或减少行数的情况</li>
-</ul>
-<p>云开发的数据库系统的事务过程采用的是快照隔离（Snapshot isolation），可以避免并发操作带来数据不一致的问题。</p>
-<ul>
-<li>事务期间，读操作返回的是对象的快照，而非实际数据</li>
-<li>事务期间，写操作会：1. 改变快照，保证接下来的读的一致性；2. 给对象加上事务锁</li>
-<li>事务锁：如果对象上存在事务锁，那么：1. 其它事务的写入会直接失败；2. 普通的更新操作会被阻塞，直到事务锁释放或者超时</li>
-<li>事务提交后，操作完毕的快照会被原子性地写入数据库中</li>
-</ul>
-<h3 id="1263-%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C%E7%9A%84%E4%B8%A4%E5%A5%97api">12.6.3 事务操作的两套API</h3>
-<p>云开发数据库的事务提供两种操作风格的接口，一个是简易的、带有冲突自动重试的 runTransaction 接口，一个是流程自定义控制的 startTransaction 接口。通过 runTransaction 回调中获得的参数 transaction 或通过 startTransaction 获得的返回值 transaction，我们将其类比为 db 对象，只是在其上进行的操作将在事务内的快照完成，保证原子性。transaction 上提供的接口树形图一览：</p>
-<pre class="hljs"><code><div>transaction
-|-- collection       获取集合引用
-|   |-- doc          获取记录引用
-|   |   |-- get      获取记录内容
-|   |   |-- update   更新记录内容
-|   |   |-- set      替换记录内容
-|   |   |-- remove   删除记录
-|   |-- add          新增记录   
-|-- rollback         终止事务并回滚
-|-- commit           提交事务（仅在使用 startTransaction 时需调用）  
-</div></code></pre>
-<h4 id="1%E9%80%9A%E8%BF%87-runtransaction-%E5%9B%9E%E8%B0%83%E8%8E%B7%E5%BE%97-transaction">1、通过 runTransaction 回调获得 transaction</h4>
-<p>以下提供一个使用 runTransaction 接口的，两个账户之间进行转账的简易示例。事务执行函数由开发者传入，函数接收一个参数 transaction，其上提供 collection 方法和 rollback 方法。collection 方法用于取数据库集合记录引用进行操作，rollback 方法用于在不想继续执行事务时终止并回滚事务。</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
-cloud.init({
-  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
-})
-<span class="hljs-keyword">const</span> _ = db.command
-exports.main = <span class="hljs-keyword">async</span> (event) =&gt; {
-  <span class="hljs-keyword">try</span> {
-    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> db.runTransaction(<span class="hljs-keyword">async</span> transaction =&gt; {
-      <span class="hljs-keyword">const</span> aaaRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'aaa'</span>).get()
-      <span class="hljs-keyword">const</span> bbbRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'bbb'</span>).get()
-
-      <span class="hljs-keyword">if</span> (aaaRes.data &amp;&amp; bbbRes.data) {
-        <span class="hljs-keyword">const</span> updateAAARes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'aaa'</span>).update({
+      <h2 id="126-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C%E5%92%8C%E4%BA%8B%E5%8A%A1">12.6 原子操作和事务</h2>
+      <p>使用更新指令（如 inc、mul、addToSet）可以对云数据库的一条记录和记录内的子文档（结合反范式化设计）进行原子操作，但是如果要跨多个记录或跨多个集合的原子操作时，就需要使用云数据库的事务能力。</p>
+      <h3 id="1261-%E6%9B%B4%E6%96%B0%E6%8C%87%E4%BB%A4%E7%9A%84%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C">12.6.1 更新指令的原子操作</h3>
+      <p>关系型数据库是很难做到通过一个语句对数据强制一致性的需求来表示的，只能依赖事务。但是云开发数据库由于可以反范式化设计内嵌子文档，以及更新指定可以对单个记录或同一个记录内的子文档进行原子操作，所以通常情况下，云开发数据库不必使用事务。</p>
+      <p>比如调整某个订单项目的数量之后，应该同时更新该订单的总费用，我们可以设计采用如下方式设计该集合，比如订单的集合为order：</p>
+      <pre class="hljs"><code><div>{
+        <span class="hljs-string">"_id"</span>: <span class="hljs-string">"2020030922100983"</span>,
+        <span class="hljs-string">"userID"</span>: <span class="hljs-string">"124785"</span>,
+        <span class="hljs-string">"total"</span>:<span class="hljs-number">117</span>,
+        <span class="hljs-string">"orders"</span>: [{
+          <span class="hljs-string">"item"</span>:<span class="hljs-string">"苹果"</span>,
+          <span class="hljs-string">"price"</span>:<span class="hljs-number">15</span>,
+          <span class="hljs-string">"number"</span>:<span class="hljs-number">3</span>
+        },{
+          <span class="hljs-string">"item"</span>:<span class="hljs-string">"火龙果"</span>,
+          <span class="hljs-string">"price"</span>:<span class="hljs-number">18</span>,
+          <span class="hljs-string">"number"</span>:<span class="hljs-number">4</span>
+        }]
+      }
+      </div></code></pre>
+      <p>客户在下单的时候经常会调整订单内某个商品比如苹果的购买数量，而下单的总价又必须同步更新，不能购买数量减少了，但是总价不变，这两个操作必须同时进行，如果是使用关系型数据库，则需要先通过两次查询，更新完数据之后，再存储进数据库，这个很容易出现有的成功，有的没有成功的情况。但是云开发的数据库则可以借助于更新指令做到一条更新来实现两个数据同时成功或失败：</p>
+      <pre class="hljs"><code><div>db.collection(<span class="hljs-string">'order'</span>).doc(<span class="hljs-string">'2020030922100983'</span>)
+        .update({
           <span class="hljs-attr">data</span>: {
-            <span class="hljs-attr">amount</span>: _.inc(<span class="hljs-number">-10</span>)
+            <span class="hljs-string">"orders.0.number"</span>: _.inc(<span class="hljs-number">1</span>),
+            <span class="hljs-string">"total"</span>:_.inc(<span class="hljs-number">15</span>)
           }
         })
-
-        <span class="hljs-keyword">const</span> updateBBBRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'bbb'</span>).update({
-          <span class="hljs-attr">data</span>: {
-            <span class="hljs-attr">amount</span>: _.inc(<span class="hljs-number">10</span>)
+      
+      </div></code></pre>
+      <p>这个操作只是在单个记录里进行，那要实现跨记录要进行原子操作呢？更新指令其实是可以做到事务仿真的，但是比较麻烦，这时就建议用事务了。</p>
+      <h3 id="1262-%E4%BA%8B%E5%8A%A1%E4%B8%8Eacid">12.6.2 事务与ACID</h3>
+      <p>事务就是一段数据库语句的批处理，但是这个批处理是一个atom（原子），多个增删改的操作是绑定在一起的，不可分割，要么都执行，要么回滚（rollback）都不执行。比如银行转账，需要做到一个账户的钱汇出去了，那另外一个账户就一定会收到钱，不能钱汇出去了，但是钱没有到另外一个的账上；也就是要执行转账这个事务，会对A用户的账户数据和B用户的账户数据做增删改的处理，这两个处理必须一起成功一起失败。</p>
+      <h4 id="1acid">1、ACID</h4>
+      <p>一般来说，事务是必须满足4个条件（ACID）： Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）：</p>
+      <ul>
+      <li>原子性：整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中一部分操作，</li>
+      <li>一致性：事务的执行不能破坏数据库数据的完整性和一致性，一个事务在执行前后，数据库都必须处于一致性状态。换句话说，事务的执行结果必须是使数据库从一个一致性状态转变到另一个一致性状态。比如在执行事务前，A用户账户有50元，B用户账户有150元；执行B转给A 50元事务后，两个用户账户总和还是200元。</li>
+      <li>隔离性：事务的隔离性是指在并发环境中，当不同的事务同时操纵相同的数据时，每个事务都有各自的完整数据空间事务之间，互不干扰。比如在线银行，同时转账的人虽然很多，但是不会出现影响A与B之间的转账；</li>
+      <li>可靠性：即使发生系统崩溃或机器宕机等故障，只要数据库能够重新启动，那么一定能够将其恢复到事务成功结束时的状态，已提交事务的更新不会丢失。</li>
+      </ul>
+      <h4 id="2%E4%BA%91%E5%87%BD%E6%95%B0%E4%BA%8B%E5%8A%A1%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">2、云函数事务注意事项</h4>
+      <p><strong>1、不支持批量操作，只支持单记录操作</strong></p>
+      <p>在事务中不支持批量操作（where 语句），只支持单记录操作（collection.doc, collection.add），这可以避免大量锁冲突、保证运行效率，并且大多数情况下，单记录操作足够满足需求，因为在事务中是可以对多个单个记录进行操作的，也就是可以比如说在一个事务中同时对集合 A 的记录 x 和 y 两个记录操作、又对集合 B 的记录 z 操作。</p>
+      <p><strong>2、云数据库采用的是快照隔离</strong></p>
+      <p>对于两个并发执行的事务来说，如果涉及到操作同一条记录的时候，可能会发生问题。因为并发操作会带来数据的不一致性，包括脏读、不可重复读、幻读等。</p>
+      <ul>
+      <li>脏读：指当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个数据；</li>
+      <li>不可重复读：在一个事务内两次读到的数据是不一样的，受到另一个事务修改后提交的影响，因此称为是不可重复读</li>
+      <li>幻读：第一个事务对表进行读取，当第二个事务对表进行增加或删除操作事务提交后，第一个事务再次读取，会出现增加或减少行数的情况</li>
+      </ul>
+      <p>云开发的数据库系统的事务过程采用的是快照隔离（Snapshot isolation），可以避免并发操作带来数据不一致的问题。</p>
+      <ul>
+      <li>事务期间，读操作返回的是对象的快照，而非实际数据</li>
+      <li>事务期间，写操作会：1. 改变快照，保证接下来的读的一致性；2. 给对象加上事务锁</li>
+      <li>事务锁：如果对象上存在事务锁，那么：1. 其它事务的写入会直接失败；2. 普通的更新操作会被阻塞，直到事务锁释放或者超时</li>
+      <li>事务提交后，操作完毕的快照会被原子性地写入数据库中</li>
+      </ul>
+      <h3 id="1263-%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C%E7%9A%84%E4%B8%A4%E5%A5%97api">12.6.3 事务操作的两套API</h3>
+      <p>云开发数据库的事务提供两种操作风格的接口，一个是简易的、带有冲突自动重试的 runTransaction 接口，一个是流程自定义控制的 startTransaction 接口。通过 runTransaction 回调中获得的参数 transaction 或通过 startTransaction 获得的返回值 transaction，我们将其类比为 db 对象，只是在其上进行的操作将在事务内的快照完成，保证原子性。transaction 上提供的接口树形图一览：</p>
+      <pre class="hljs"><code><div>transaction
+      |-- collection       获取集合引用
+      |   |-- doc          获取记录引用
+      |   |   |-- get      获取记录内容
+      |   |   |-- update   更新记录内容
+      |   |   |-- set      替换记录内容
+      |   |   |-- remove   删除记录
+      |   |-- add          新增记录   
+      |-- rollback         终止事务并回滚
+      |-- commit           提交事务（仅在使用 startTransaction 时需调用）  
+      </div></code></pre>
+      <h4 id="1%E9%80%9A%E8%BF%87-runtransaction-%E5%9B%9E%E8%B0%83%E8%8E%B7%E5%BE%97-transaction">1、通过 runTransaction 回调获得 transaction</h4>
+      <p>以下提供一个使用 runTransaction 接口的，两个账户之间进行转账的简易示例。事务执行函数由开发者传入，函数接收一个参数 transaction，其上提供 collection 方法和 rollback 方法。collection 方法用于取数据库集合记录引用进行操作，rollback 方法用于在不想继续执行事务时终止并回滚事务。</p>
+      <pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+      cloud.init({
+        <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+      })
+      <span class="hljs-keyword">const</span> _ = db.command
+      exports.main = <span class="hljs-keyword">async</span> (event) =&gt; {
+        <span class="hljs-keyword">try</span> {
+          <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> db.runTransaction(<span class="hljs-keyword">async</span> transaction =&gt; {
+            <span class="hljs-keyword">const</span> aaaRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'aaa'</span>).get()
+            <span class="hljs-keyword">const</span> bbbRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'bbb'</span>).get()
+      
+            <span class="hljs-keyword">if</span> (aaaRes.data &amp;&amp; bbbRes.data) {
+              <span class="hljs-keyword">const</span> updateAAARes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'aaa'</span>).update({
+                <span class="hljs-attr">data</span>: {
+                  <span class="hljs-attr">amount</span>: _.inc(<span class="hljs-number">-10</span>)
+                }
+              })
+      
+              <span class="hljs-keyword">const</span> updateBBBRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'bbb'</span>).update({
+                <span class="hljs-attr">data</span>: {
+                  <span class="hljs-attr">amount</span>: _.inc(<span class="hljs-number">10</span>)
+                }
+              })
+      
+              <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`transaction succeeded`</span>, result)
+              <span class="hljs-keyword">return</span> {
+                <span class="hljs-attr">aaaAccount</span>: aaaRes.data.amount - <span class="hljs-number">10</span>,
+              }
+            } <span class="hljs-keyword">else</span> {
+              <span class="hljs-keyword">await</span> transaction.rollback(<span class="hljs-number">-100</span>)
+            }
+          })
+      
+          <span class="hljs-keyword">return</span> {
+            <span class="hljs-attr">success</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">aaaAccount</span>: result.aaaAccount,
           }
-        })
-
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`transaction succeeded`</span>, result)
-        <span class="hljs-keyword">return</span> {
-          <span class="hljs-attr">aaaAccount</span>: aaaRes.data.amount - <span class="hljs-number">10</span>,
+        } <span class="hljs-keyword">catch</span> (e) {
+          <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`事务报错`</span>, e)
+          <span class="hljs-keyword">return</span> {
+            <span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-attr">error</span>: e
+          }
         }
-      } <span class="hljs-keyword">else</span> {
-        <span class="hljs-keyword">await</span> transaction.rollback(<span class="hljs-number">-100</span>)
       }
-    })
-
-    <span class="hljs-keyword">return</span> {
-      <span class="hljs-attr">success</span>: <span class="hljs-literal">true</span>,
-      <span class="hljs-attr">aaaAccount</span>: result.aaaAccount,
-    }
-  } <span class="hljs-keyword">catch</span> (e) {
-    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`事务报错`</span>, e)
-    <span class="hljs-keyword">return</span> {
-      <span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>,
-      <span class="hljs-attr">error</span>: e
-    }
-  }
-}
-</div></code></pre>
-<p>事务执行函数必须为 async 异步函数或返回 Promise 的函数，当事务执行函数返回时，SDK 会认为用户逻辑已完成，自动提交（commit）事务，因此务必确保用户事务逻辑完成后才在 async 异步函数中返回或 resolve Promise。</p>
-<h4 id="2%E9%80%9A%E8%BF%87-starttransaction-%E8%8E%B7%E5%BE%97transaction">2、通过 startTransaction 获得transaction</h4>
-<ul>
-<li>db.startTransaction(),开启一个新的事务，之后即可进行 CRUD 操作;</li>
-<li>db.startTransaction().transaction.commit()，提交事务保存数据，在提交之前事务中的变更的数据对外是不可见的；</li>
-<li>db.startTransaction().rollback(),事务终止并回滚事务，例如，一部分数据更新失败，对已修改过的数据也进行回滚。</li>
-</ul>
-<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
-cloud.init({
-  <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
-})
-<span class="hljs-keyword">const</span> db = cloud.database({
-  <span class="hljs-attr">throwOnNotFound</span>: <span class="hljs-literal">false</span>,
-})
-<span class="hljs-keyword">const</span> _ = db.command
-
-exports.main = <span class="hljs-keyword">async</span> (event) =&gt; {
-  <span class="hljs-keyword">try</span> {
-    <span class="hljs-keyword">const</span> transaction = <span class="hljs-keyword">await</span> db.startTransaction()
-
-    <span class="hljs-keyword">const</span> aaaRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'aaa'</span>).get()
-    <span class="hljs-keyword">const</span> bbbRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'bbb'</span>).get()
-
-    <span class="hljs-keyword">if</span> (aaaRes.data &amp;&amp; bbbRes.data) {
-      <span class="hljs-keyword">const</span> updateAAARes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'aaa'</span>).update({
-        <span class="hljs-attr">data</span>: {
-          <span class="hljs-attr">amount</span>: _.inc(<span class="hljs-number">-10</span>)
-        }
+      </div></code></pre>
+      <p>事务执行函数必须为 async 异步函数或返回 Promise 的函数，当事务执行函数返回时，SDK 会认为用户逻辑已完成，自动提交（commit）事务，因此务必确保用户事务逻辑完成后才在 async 异步函数中返回或 resolve Promise。</p>
+      <h4 id="2%E9%80%9A%E8%BF%87-starttransaction-%E8%8E%B7%E5%BE%97transaction">2、通过 startTransaction 获得transaction</h4>
+      <ul>
+      <li>db.startTransaction(),开启一个新的事务，之后即可进行 CRUD 操作;</li>
+      <li>db.startTransaction().transaction.commit()，提交事务保存数据，在提交之前事务中的变更的数据对外是不可见的；</li>
+      <li>db.startTransaction().rollback(),事务终止并回滚事务，例如，一部分数据更新失败，对已修改过的数据也进行回滚。</li>
+      </ul>
+      <pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+      cloud.init({
+        <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
       })
-
-      <span class="hljs-keyword">const</span> updateBBBRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'bbb'</span>).update({
-        <span class="hljs-attr">data</span>: {
-          <span class="hljs-attr">amount</span>: _.inc(<span class="hljs-number">10</span>)
-        }
+      <span class="hljs-keyword">const</span> db = cloud.database({
+        <span class="hljs-attr">throwOnNotFound</span>: <span class="hljs-literal">false</span>,
       })
-      <span class="hljs-keyword">await</span> transaction.commit()
-      <span class="hljs-keyword">return</span> {
-        <span class="hljs-attr">success</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">aaaAccount</span>: aaaRes.data.amount - <span class="hljs-number">10</span>,
+      <span class="hljs-keyword">const</span> _ = db.command
+      
+      exports.main = <span class="hljs-keyword">async</span> (event) =&gt; {
+        <span class="hljs-keyword">try</span> {
+          <span class="hljs-keyword">const</span> transaction = <span class="hljs-keyword">await</span> db.startTransaction()
+      
+          <span class="hljs-keyword">const</span> aaaRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'aaa'</span>).get()
+          <span class="hljs-keyword">const</span> bbbRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'bbb'</span>).get()
+      
+          <span class="hljs-keyword">if</span> (aaaRes.data &amp;&amp; bbbRes.data) {
+            <span class="hljs-keyword">const</span> updateAAARes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'aaa'</span>).update({
+              <span class="hljs-attr">data</span>: {
+                <span class="hljs-attr">amount</span>: _.inc(<span class="hljs-number">-10</span>)
+              }
+            })
+      
+            <span class="hljs-keyword">const</span> updateBBBRes = <span class="hljs-keyword">await</span> transaction.collection(<span class="hljs-string">'account'</span>).doc(<span class="hljs-string">'bbb'</span>).update({
+              <span class="hljs-attr">data</span>: {
+                <span class="hljs-attr">amount</span>: _.inc(<span class="hljs-number">10</span>)
+              }
+            })
+            <span class="hljs-keyword">await</span> transaction.commit()
+            <span class="hljs-keyword">return</span> {
+              <span class="hljs-attr">success</span>: <span class="hljs-literal">true</span>,
+              <span class="hljs-attr">aaaAccount</span>: aaaRes.data.amount - <span class="hljs-number">10</span>,
+            }
+          } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">await</span> transaction.rollback()
+            <span class="hljs-keyword">return</span> {
+              <span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>,
+              <span class="hljs-attr">error</span>: <span class="hljs-string">`rollback`</span>,
+              <span class="hljs-attr">rollbackCode</span>: <span class="hljs-number">-100</span>,
+            }
+          }
+        } <span class="hljs-keyword">catch</span> (e) {
+          <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`事务报错`</span>, e)
+        }
       }
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">await</span> transaction.rollback()
-      <span class="hljs-keyword">return</span> {
-        <span class="hljs-attr">success</span>: <span class="hljs-literal">false</span>,
-        <span class="hljs-attr">error</span>: <span class="hljs-string">`rollback`</span>,
-        <span class="hljs-attr">rollbackCode</span>: <span class="hljs-number">-100</span>,
-      }
-    }
-  } <span class="hljs-keyword">catch</span> (e) {
-    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`事务报错`</span>, e)
-  }
-}
-</div></code></pre>
+      </div></code></pre>
+      <p>也就是说对于多用户同时操作（主要是写）数据库的并发处理问题，我们不仅可以使用原子更新，还可以使用事务。其中原子更新主要用户操作单个记录内的字段或单个记录里内嵌的数组对象里的字段，而事务则主要是用于跨记录和跨集合的处理。</p>
+<div class="sop-footer"> 
+  <hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
+</div>      
 </div>
 </div>
 </div>

@@ -549,6 +549,9 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 <li>不要在云函数异步流程中执行关键任务，也就是一些关键任务的函数前面要加一个<code>await</code>，以免任务没有执行完，云函数就终止了;</li>
 <li>由于云函数是无状态的，因此执行环境通常会从头开始初始化（冷启动），当发生冷启动时，系统会对函数的全局环境进行评估。如果云函数导入了模块，那么在冷启动期间加载这些模块会增加延迟时间，因此正确加载依赖项而不加载函数不使用的依赖项，可以缩短此延迟时间以及部署函数所需的时间。</li>
 </ul>
+<div class="sop-footer"> 
+	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
+</div>
 </div>
 </div>
 </div>
