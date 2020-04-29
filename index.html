@@ -1,24 +1,237 @@
-<html lang="en">
-
-<head>
+<html><head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="baidu-site-verification" content="NBNudAVdvA">
-    <meta name="google-site-verification" content="u_9F5q9UrNxwO0uNw5V949s1JTovxX8x_O5f2ZIOlds">
-    <meta name="renderer" content="webkit">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="shortcut icon" type="image/x-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico">
-    <link rel="mask-icon" href="https://res.wx.qq.com/a/wx_fed/assets/res/MjliNWVm.svg" color="#4C4C4C">
-    <link rel="apple-touch-icon-precomposed" href="https://res.wx.qq.com/a/wx_fed/assets/res/OTE0YTAw.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>云开发系列教程</title>
-</head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,   minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+        <link rel="icon" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.jpg">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//s.w.org">
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » Feed" href="https://cloudbasegroup.org/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 评论Feed" href="https://cloudbasegroup.org/comments/feed">
+    <link rel="alternate" type="application/rss+xml" title="云开发技术训练营 » 小程序开发入门评论Feed" href="https://cloudbasegroup.org/handbook/weapp/10/feed">
+            <script type="text/javascript">
+                window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/cloudbasegroup.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.2"}};
+                !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+            </script><script src="https://cloudbasegroup.org/wp-includes/js/wp-emoji-release.min.js?ver=5.2.2" type="text/javascript" defer=""></script>
+            <style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+    </style>
+        <link rel="stylesheet" id="crayon-theme-monokai-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/themes/monokai/monokai.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="crayon-font-monaco-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <link rel="stylesheet" id="wp-block-library-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dist/block-library/style.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="dashicons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/css/dashicons.min.css?ver=5.2.2" type="text/css" media="all">
+    <link rel="stylesheet" id="post-views-counter-frontend-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/post-views-counter/css/frontend.css?ver=1.3.1" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-lato-css" href="https://fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&amp;subset=latin%2Clatin-ext" type="text/css" media="all">
+    <link rel="stylesheet" id="genericons-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/genericons/genericons.css?ver=3.0.3" type="text/css" media="all">
+    <link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/style.css?ver=5.2.2" type="text/css" media="all">
+    <!--[if lt IE 9]>
+    <link rel='stylesheet' id='twentyfourteen-ie-css'  href='https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/css/ie.css?ver=20131205' type='text/css' media='all' />
+    <![endif]-->
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script>
+    <link rel="https://api.w.org/" href="https://cloudbasegroup.org/wp-json/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudbasegroup.org/xmlrpc.php?rsd">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/wlwmanifest.xml"> 
+    <link rel="prev" title="WXML与WXSS" href="https://cloudbasegroup.org/handbook/weapp/13">
+    <meta name="generator" content="WordPress 5.2.2">
+    <link rel="canonical" href="https://cloudbasegroup.org/handbook/weapp/10">
+    <link rel="shortlink" href="https://cloudbasegroup.org/?p=10">
+    <link rel="alternate" type="application/json+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F10">
+    <link rel="alternate" type="text/xml+oembed" href="https://cloudbasegroup.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcloudbasegroup.org%2Fhandbook%2Fweapp%2F10&amp;format=xml">
+            <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+            
+    <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script></head>
+    
+    <body class="post-template-default single single-post postid-10 single-format-standard logged-in masthead-fixed full-width singular">
+    
+        <div id="primary" class="content-area">
+            <div id="content" class="site-content" role="main">
+                
+                <nav id="header-db" class="row navbar navbar-default">
+                    <div class="navbar-header">
+                        <div class="logotop fleft">
+                            <a style="margin-top: 15px;" href="https://tencentcloudbase.github.io/handbook/tcb01.html" target="_blank"><img
+                                    src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+                        </div>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="flex nav-items">
+                            <h1 class="flex-item navbar-link">
+                                云开发技术训练营</h1>
 
-<body>
+                            <div class="tcb-header__col tcb-header__col-right">
+                                <ul class="tcb-header-nav">
+                                    <li class="tcb-header-nav__item ">
+                                        <a target="_blank"  href="https://cloudbase.net/tools.html">工具</a></li>
+                                    <li class="tcb-header-nav__item "><a target="_blank" 
+                                             href="https://cloudbase.net/sdk.html">SDK</a></li>
+                                    <li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li>
+                                    <li class="tcb-header-nav__item "><a target="_blank" 
+                                            href="https://cloudbase.net/community.html">社区</a></li>
+                                    <li class="tcb-header-nav__item "><a target="_blank" 
+                                        href="https://console.cloud.tencent.com/tcb?from=12341">去控制台</a></li>
 
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+            
+                    <div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+                     <div class="sop-menu">
+                        <ul>
+                            <li class="page_item current_page_item"><a href="./index.html">云开发训练营说明</a></li>
+                            <li class="page_item no_current_page_item"><a><strong>小程序技术训练营</strong></a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb01.html">小程序开发入门</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb02.html">WXML与WXSS</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb03.html">链接与图片</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb04.html">WeUI框架</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb05.html">渐变与动画</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb06.html">数据绑定</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb07.html">列表渲染与条件渲染</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb08.html">小程序组件</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb09.html">优化与部署上线</a></li>
+                            <li class="page_item no_current_page_item"><a><strong>小程序与JavaScript</strong></a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb11.html">JavaScript入门</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb12.html">点击事件</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb13.html">页面渲染</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb14.html">生命周期</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb15.html">数据表单</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb16.html">图片、缓存与文件</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb17.html">网络API</a></li>
+                            <li class="page_item no_current_page_item"><a><strong>云开发技术训练营</strong></a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb21.html">云开发快速入门</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb22.html">云开发能力</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb23.html">云数据库入门</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb24.html">存储、数组、对象</a></li>
+                            <li class="page_item no_current_page_item"><a href="./tcb25.html">云开发与Nodejs</a></li>
+                        </ul>
+                    </div>		
+                </div>
+            </nav>
+    
+            <div class="sop-content">
+                <header class="entry-header">
+                    <h1 class="entry-title">云开发训练营说明</h1>
+                </header><!-- .entry-header -->
+            
+                <div class="entry-content">
+                    <p>编程一件非常<strong>简单</strong>、<strong>有趣</strong>而很容易让人<strong>有成就感</strong>的事情，云开发训练营致力于让更多的人能够快速学会小程序的云开发，并做出实际的作品，享受到技术创造的魅力。学习这本手册，<span style="color: #ff9900;"><strong>不需要任何前置的编程知识</strong></span>，可以说零基础也能学会。本教程也同样适合有一定基础的程序员来学习小程序的云开发。</p>
+            <h4>零基础也能学会</h4>
+            <blockquote><p>可能有不少同学在大学期间接触过C、Java等编程语言，学了很久也没有做出东西来，或者自己也曾尝试过自学编程，但是感觉也没能坚持下来，过段时间学的也很快忘记了，就误以为编程太难或需要学习很久，其实是你学习方法和方向的问题。<strong>小程序·云开发是最值得新手、技术爱好者入门编程的方向之一</strong>。</p></blockquote>
+            <p><strong>我之前从来没有接触过编程，能够学会吗？</strong></p>
+            <p>可以的，只要你会<span style="color: #ff9900;"><strong>最基本的电脑操作</strong></span>（比如软件怎么下载安装，会基础的打字、会上网、了解基础的Office办公软件等），你就可以学会。</p>
+            <p><strong>学编程是不是对英语、数学有要求，我基础不好能学吗？</strong></p>
+            <p>编程有很多方向，有的确实对数学、英语这些有很高的要求，但是小程序的云开发对数学基本没有要求，英语只需要看到单词不头疼，最好有初中英语水平就可以。</p>
+            <p><strong>编程学起来难吗，我逻辑能力不强，真的能学会吗？</strong></p>
+            <p>就论逻辑而言，小程序云开发的难度比高中数学的难度要低很多，你高中数学都能够学下来，就不可能学不会。</p>
+            <p><strong>编程是不是要学很久才行，我学多久能够做东西出来？</strong></p>
+            <p>两天的业余时间（5~6个小时左右）就可以做出展示的东西（demo）出来，十天的业余时间大致可以入门，一个月的时间就能独立开发一个完整的项目。</p>
+            <p><strong>学编程是不是一定要用电脑？</strong></p>
+            <p>是，如果没有电脑，不自己<span style="color: #ff9900;"><strong>动手实战</strong></span>，只看书，就不要学了。</p>
+            <p><strong>为什么不是视频？我要按照文档来自学吗？</strong></p>
+            <p>是的，因为视频要讲的内容都写成了<span style="color: #ff9900;"><strong>详细的文字说明和操作步骤</strong></span>，你可以<strong><span style="color: #ff9900;">按照自己学习的进度和节奏</span></strong>来学，更重要的是<span style="color: #ff9900;"><strong>培养实战的习惯</strong></span>。</p>
+            <blockquote class="danger"><p>小程序我知道，但是云开发是啥？小程序与云开发到底什么关系？前端是啥？前端和后端是怎么联系的？开发一个小程序到底要学哪些技术？…<strong>在你想的太多，做的太少的时候，没有人有义务回答你</strong>。停止发问，立即开始动手实战，一切的问题只有探索之后才能明白。</p></blockquote>
+            <h4>成就感与创造力</h4>
+            <blockquote><p>用<strong>云开发</strong>来开发小程序，可以让你<span style="color: #ff9900;"><strong>独立</strong></span>（一个人就可以）开发出一个<strong><span style="color: #ff9900;">完整</span></strong>（横跨前端后端）、而又<span style="color: #ff9900;"><strong>实用</strong></span>的小程序项目，这就是小程序·云开发的产品力。云开发可以大大降低技术的学习成本和开发成本，但并不意味着它只能开发中小型的项目，即使是亿级流量的小程序也同样推荐使用云开发。</p></blockquote>
+            <p>也许你是一个文科生，之前从前接触过编程，但是希望通过技术实现自己的创意；</p>
+            <p>也需你做着产品、市场、运营等相关的工作，想学习一门对工作、生活有一定帮助的技术；</p>
+            <p>也许你是一个创业者，希望快速实践自己的想法，使用小程序来验证Idea的可行性；</p>
+            <p>也许你是一个技术爱好者，希望能够了解Serverless新技术趋势，或开发一些小程序项目赚点广告费或作为副业；</p>
+            <p>云开发，作为一个基于Serverless的云端一体化产品方案，一项普惠技术，致力于降低技术实践门槛，让创意更容易实现。为此，云开发特推出零基础训练营，帮助更多人实现技术梦。</p>
+            <h4>交流与互动</h4>
+            <p>训练营，基于微信群展开，倡导“翻转课堂”教学理念，强调个人驱动力和朋辈互助，每月一期，随到随学，有问必答。</p>
+            <p>目前，训练营已举办超过6次，累计帮助2000+编程爱好者实现从0到1上手编程开发 ，并通过云开发实现自己的技术梦。</p>
+            <p>技术入门，难在心理畏惧。云开发训练营，零基础可学，无须技术基础。</p>
+            <p>还等什么？扫码关注云开发公众号，回复【训练营】，赶紧加入云开发训练营吧！</p>
+            <hr>
 
-</body>
-
-</html>
+            <section style="margin: 10px auto 30px;">
+            <section style="width: 120px; margin: 0px auto;">
+            <section style="box-sizing: border-box; background: #fefefe; border-top: 4px solid #51cbbb; border-left: 4px solid #bee3dc; border-bottom: 4px solid #bee3dc; border-right: 4px solid #51cbbb; padding: 5px;"><img style="width: 100%; display: block;" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/qrcode.png" data-ratio="1" data-w="258" data-width="100%"></section>
+            </section>
+            <section style="margin-top: 20px; display: flex; justify-content: center; align-items: center; height: 1px; box-sizing: border-box;">
+            <section class="assistant" style="border-radius: 100%; width: 10px; height: 10px; background: #ffcece; margin-bottom: 15px; transform: rotate(0deg); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg);"></section>
+            <section class="assistant" style="border-radius: 100%; width: 10px; height: 10px; background: #bff1ff; margin-bottom: -5px; transform: rotate(0deg); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg);"></section>
+            <section class="assistant" style="border-radius: 100%; width: 16px; height: 16px; background: #51cbbb; margin-right: -5px;"></section>
+            <section class="135brush" style="font-size: 16px; color: #333; font-weight: bold; margin: 0px 10px;" data-brushtype="text">扫码关注腾讯云云开发</section>
+            <section class="assistant" style="border-radius: 100%; width: 16px; height: 16px; background: #51cbbb; margin-right: -5px;"></section>
+            <section class="assistant" style="border-radius: 100%; width: 10px; height: 10px; background: #bff1ff; margin-bottom: -5px; transform: rotate(0deg); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg);"></section>
+            <section class="assistant" style="border-radius: 100%; width: 10px; height: 10px; background: #ffcece; margin-bottom: 15px; transform: rotate(0deg); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg);"></section>
+            </section>
+            </section>
+            <hr>
+            <h4>进阶内容</h4>
+            <p>云开发进阶教程：<a href="https://club.cloudbase.net/handbook/tcb/1101.html" target="_blank" rel="noopener noreferrer">https://club.cloudbase.net/handbook/tcb/1101.html</a></p>
+            <div class="sop-footer"> 
+                <hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
+            </div>
+	
+	</div><!-- .entry-content -->
+            </div>
+    <!-- <div class="sop-bottom">
+    <span class="sop-bottom-tip">想要更系统的指导和一起学习的伙伴，欢迎加入：</span>
+    <a target="_blank" class="sop-more" href="https://h5.youzan.com/v2/goods/361m5sscp7awc">线上学习社区</a>
+    <span class="sop-bottom-tip">进群加微信：jishuzu360</span>
+    </div> -->
+            </div><!-- #content -->
+        </div><!-- #primary -->
+    
+    
+    
+        <link rel="stylesheet" id="crayon-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=_2.7.2_beta" type="text/css" media="all">
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/comment-reply.min.js?ver=5.2.2"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/themes/twentyfourteen/js/functions.js?ver=20150315"></script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-includes/js/wp-embed.min.js?ver=5.2.2"></script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/cloudbasegroup.org\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+    var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/cdn/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=_2.7.2_beta"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+        <script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1278701707&web_id=1278701707"></script>
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?8efc2c9aaaffb2f7a4cf6a7ff9c65cbb";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
+        </script>   
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
