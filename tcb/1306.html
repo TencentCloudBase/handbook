@@ -529,92 +529,90 @@ code {
       }]
       </div></code></pre>
       <p>下面是用户在小程序端点击订阅消息之后的完整代码，记录不同的订阅消息被用户点击之后，次数的累积。代码没有记录用户是否拒绝reject，如果业务上有需要也是可以记录的，不过拒绝不存在累积次数的问题。</p>
-      <pre class="hljs"><code><div>  subscribeMessage() {
-          <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>
-          <span class="hljs-comment">//模板ID建议放置在数据库中，便于以后修改</span>
-          <span class="hljs-keyword">const</span> tmplIds= [
-            <span class="hljs-string">"qY7MhvZOnL0QsRzK_C7FFsXTT7Kz0-knXMwkF1ewY44"</span>,
-            <span class="hljs-string">"RCg8DiM_y1erbOXR9DzW_jKs-qSSJ9KF0h8lbKKmoFU"</span>,
-            <span class="hljs-string">"EGKyfjAO2-mrlJQ1u6H9mZS8QquxutBux1QbnfDDtj0"</span>
-          ];
-          wx.requestSubscribeMessage({
-            <span class="hljs-attr">tmplIds</span>:tmplIds,
-            <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
-              <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"订阅消息API调用成功："</span>,res)
-              that.addMessages().then( <span class="hljs-function"><span class="hljs-params">id</span> =&gt;</span>{
-                tmplIds.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item,index</span>)</span>{
-                  <span class="hljs-keyword">if</span>(res[item] === <span class="hljs-string">"accept"</span>){
-                    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"该模板ID用户同意了"</span>,item)  
-                    that.subscribeNum(item,id)
-                  }
-                })
-              })     
+      <pre class="hljs"><code><div>subscribeMessage() {
+        <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>
+        <span class="hljs-comment">//模板ID建议放置在数据库中，便于以后修改</span>
+        <span class="hljs-keyword">const</span> tmplIds= [
+          <span class="hljs-string">"qY7MhvZOnL0QsRzK_C7FFsXTT7Kz0-knXMwkF1ewY44"</span>,
+          <span class="hljs-string">"RCg8DiM_y1erbOXR9DzW_jKs-qSSJ9KF0h8lbKKmoFU"</span>,
+          <span class="hljs-string">"EGKyfjAO2-mrlJQ1u6H9mZS8QquxutBux1QbnfDDtj0"</span>
+        ];
+        wx.requestSubscribeMessage({
+          <span class="hljs-attr">tmplIds</span>:tmplIds,
+          <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"订阅消息API调用成功："</span>,res)
+            that.addMessages().then( <span class="hljs-function"><span class="hljs-params">id</span> =&gt;</span>{
+              tmplIds.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item,index</span>)</span>{
+                <span class="hljs-keyword">if</span>(res[item] === <span class="hljs-string">"accept"</span>){
+                  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"该模板ID用户同意了"</span>,item)  
+                  that.subscribeNum(item,id)
+                }
+              })
+            })     
       
-            },
-            fail(res) {
-              <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"订阅消息API调用失败："</span>,res)
+          },
+          fail(res) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"订阅消息API调用失败："</span>,res)
+          }
+        })
+      },
+      
+      <span class="hljs-keyword">async</span> addMessages(){
+        <span class="hljs-comment">//查询用户订阅过的订阅消息，只会有一条记录，所以没有limit等限制</span>
+        <span class="hljs-keyword">const</span> messages = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'messages'</span>).where({
+          <span class="hljs-attr">_openid</span>:<span class="hljs-string">'{openid}'</span>
+        }).get()  
+      
+        <span class="hljs-comment">//如果用户没有订阅过订阅消息，就创建一条记录</span>
+        <span class="hljs-keyword">if</span>(messages.data.length == <span class="hljs-number">0</span>){  
+          <span class="hljs-keyword">var</span> newMsg = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'messages'</span>).add({
+            <span class="hljs-attr">data</span>:{
+              <span class="hljs-attr">templs</span>:[]
             }
           })
-        },
+        } 
+        <span class="hljs-keyword">var</span> id = messages.data[<span class="hljs-number">0</span>] ? messages.data[<span class="hljs-number">0</span>]._id : newMsg._id  
+        <span class="hljs-keyword">return</span> id
+      },
       
-        <span class="hljs-keyword">async</span> addMessages(){
-          <span class="hljs-comment">//查询用户订阅过的订阅消息，只会有一条记录，所以没有limit等限制</span>
-          <span class="hljs-keyword">const</span> messages = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'messages'</span>).where({
-            <span class="hljs-attr">_openid</span>:<span class="hljs-string">'{openid}'</span>
-          }).get()  
-      
-          <span class="hljs-comment">//如果用户没有订阅过订阅消息，就创建一条记录</span>
-          <span class="hljs-keyword">if</span>(messages.data.length == <span class="hljs-number">0</span>){  
-            <span class="hljs-keyword">var</span> newMsg = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'messages'</span>).add({
-              <span class="hljs-attr">data</span>:{
-                <span class="hljs-attr">templs</span>:[]
-              }
-            })
-          } 
-          <span class="hljs-keyword">var</span> id = messages.data[<span class="hljs-number">0</span>] ? messages.data[<span class="hljs-number">0</span>]._id : newMsg._id  
-          <span class="hljs-keyword">return</span> id
-        },
-       
-        <span class="hljs-keyword">async</span> subscribeNum(item,id){
-          <span class="hljs-comment">//注意传入的item是遍历，id为addMessages的id</span>
-          <span class="hljs-keyword">const</span> subs = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'messages'</span>).where({  
-            <span class="hljs-attr">_openid</span>:<span class="hljs-string">'{openid}'</span>,
-            <span class="hljs-string">"templs"</span>:_.elemMatch({
-              <span class="hljs-attr">templateId</span>:item
-            })
-          }).get()
-          
-          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'用户订阅列表'</span>,subs)
-          <span class="hljs-comment">//如果用户之前没有订阅过订阅消息就创建一个订阅消息的记录</span>
-          <span class="hljs-keyword">if</span>(subs.data.length == <span class="hljs-number">0</span>){  
-            db.collection(<span class="hljs-string">'messages'</span>).doc(id).update({
-              <span class="hljs-attr">data</span>: {
-                <span class="hljs-attr">templs</span>:_.push({
-                  <span class="hljs-attr">each</span>:[{<span class="hljs-attr">templateId</span>:item,<span class="hljs-comment">//订阅</span>
-                    <span class="hljs-attr">page</span>:<span class="hljs-string">""</span>,  
-                    <span class="hljs-attr">data</span>:{},            
-                    <span class="hljs-attr">status</span>:<span class="hljs-number">1</span>,           
-                    <span class="hljs-attr">subStyle</span>:<span class="hljs-string">"daily"</span>, 
-                    <span class="hljs-attr">done</span>:<span class="hljs-literal">false</span>,         
-                    <span class="hljs-attr">subNum</span>:<span class="hljs-number">1</span>}],
-                  <span class="hljs-attr">position</span>:<span class="hljs-number">2</span>                  
-                })
-              }
-            })    
-          }<span class="hljs-keyword">else</span>{
-            db.collection(<span class="hljs-string">'messages'</span>).where({
-              <span class="hljs-attr">_id</span>:id,
-              <span class="hljs-string">"templs.templateId"</span>:item
-            })      
-            .update({
-              <span class="hljs-attr">data</span>:{
-                <span class="hljs-string">"templs.$.subNum"</span>:_.inc(<span class="hljs-number">1</span>)
-              }
-            })
-          }
-              
-        }
-      
+      <span class="hljs-keyword">async</span> subscribeNum(item,id){
+        <span class="hljs-comment">//注意传入的item是遍历，id为addMessages的id</span>
+        <span class="hljs-keyword">const</span> subs = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'messages'</span>).where({  
+          <span class="hljs-attr">_openid</span>:<span class="hljs-string">'{openid}'</span>,
+          <span class="hljs-string">"templs"</span>:_.elemMatch({
+            <span class="hljs-attr">templateId</span>:item
+          })
+        }).get()
+        
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'用户订阅列表'</span>,subs)
+        <span class="hljs-comment">//如果用户之前没有订阅过订阅消息就创建一个订阅消息的记录</span>
+        <span class="hljs-keyword">if</span>(subs.data.length == <span class="hljs-number">0</span>){  
+          db.collection(<span class="hljs-string">'messages'</span>).doc(id).update({
+            <span class="hljs-attr">data</span>: {
+              <span class="hljs-attr">templs</span>:_.push({
+                <span class="hljs-attr">each</span>:[{<span class="hljs-attr">templateId</span>:item,<span class="hljs-comment">//订阅</span>
+                  <span class="hljs-attr">page</span>:<span class="hljs-string">""</span>,  
+                  <span class="hljs-attr">data</span>:{},            
+                  <span class="hljs-attr">status</span>:<span class="hljs-number">1</span>,           
+                  <span class="hljs-attr">subStyle</span>:<span class="hljs-string">"daily"</span>, 
+                  <span class="hljs-attr">done</span>:<span class="hljs-literal">false</span>,         
+                  <span class="hljs-attr">subNum</span>:<span class="hljs-number">1</span>}],
+                <span class="hljs-attr">position</span>:<span class="hljs-number">2</span>                  
+              })
+            }
+          })    
+        }<span class="hljs-keyword">else</span>{
+          db.collection(<span class="hljs-string">'messages'</span>).where({
+            <span class="hljs-attr">_id</span>:id,
+            <span class="hljs-string">"templs.templateId"</span>:item
+          })      
+          .update({
+            <span class="hljs-attr">data</span>:{
+              <span class="hljs-string">"templs.$.subNum"</span>:_.inc(<span class="hljs-number">1</span>)
+            }
+          })
+        }       
+      }
       </div></code></pre>
       <p>这里的<code>&quot;templs.$.subNum&quot;:_.inc(1)</code>就是当用于同意哪条订阅消息，就会给该订阅消息的授权次数进行原子加1。</p>
       <h3 id="1332-%E5%8F%91%E9%80%81%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E6%96%B9%E5%BC%8F%E8%AF%B4%E6%98%8E">13.3.2 发送订阅消息方式说明</h3>
@@ -635,21 +633,21 @@ code {
       </div></code></pre>
       <p>与之相应的data的写法如下phrase1、thing2、thing3、date5、character_string6，这些需要一一对应，参数不能多也不能少，参数后面的数字比如date5不能改成date6，否则会报<code>&quot;openapi.subscribeMessage.send:fail argument invalid! hint:</code>的错误，也就是模板里有什么参数，你就只能按部就班写什么参数：</p>
       <pre class="hljs"><code><div>data: {
-          <span class="hljs-string">"phrase1"</span>: {
-            <span class="hljs-string">"value"</span>: <span class="hljs-string">'李东'</span>
-          },
-          <span class="hljs-string">"thing2"</span>: {
-            <span class="hljs-string">"value"</span>: <span class="hljs-string">'零基础云开发技术训练营第7课'</span>
-          },
-          <span class="hljs-string">"thing3"</span>: {
-            <span class="hljs-string">"value"</span>: <span class="hljs-string">'列表渲染与条件渲染'</span>
-          },
-          <span class="hljs-string">"date5"</span>: {
-            <span class="hljs-string">"value"</span>: <span class="hljs-string">'2019年10月20日 20:00'</span>
-          },
-          <span class="hljs-string">"character_string6"</span>: {
-            <span class="hljs-string">"value"</span>: <span class="hljs-number">3</span>
-          }
+        <span class="hljs-string">"phrase1"</span>: {
+          <span class="hljs-string">"value"</span>: <span class="hljs-string">'李东'</span>
+        },
+        <span class="hljs-string">"thing2"</span>: {
+          <span class="hljs-string">"value"</span>: <span class="hljs-string">'零基础云开发技术训练营第7课'</span>
+        },
+        <span class="hljs-string">"thing3"</span>: {
+          <span class="hljs-string">"value"</span>: <span class="hljs-string">'列表渲染与条件渲染'</span>
+        },
+        <span class="hljs-string">"date5"</span>: {
+          <span class="hljs-string">"value"</span>: <span class="hljs-string">'2019年10月20日 20:00'</span>
+        },
+        <span class="hljs-string">"character_string6"</span>: {
+          <span class="hljs-string">"value"</span>: <span class="hljs-number">3</span>
+        }
       }
       </div></code></pre>
       <p><strong>订阅消息参数值的内容格式必须要符合要求</strong><br>
