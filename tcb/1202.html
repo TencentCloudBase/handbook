@@ -447,218 +447,356 @@ code {
 		<div class="sop-content">
    
 <h2 id="122-%E5%AE%89%E5%85%A8%E8%A7%84%E5%88%99">12.2 安全规则</h2>
-<p>安全规则是一个让开发者可以灵活地自定义前端数据库和云存储读写权限的权限控制方式，通过配置安全规则，开发者可以在小程序端、网页端精细化的控制云存储与集合中所有记录的读、写权限，自动拒绝不符合安全规则的前端数据库与云存储请求，保障数据和文件安全。</p>
-<h3 id="1221-%E5%AE%89%E5%85%A8%E8%A7%84%E5%88%99%E7%9A%84%E4%BD%9C%E7%94%A8">12.2.1 安全规则的作用</h3>
-<p>在前面我们已经基础权限控制是根据开发过程中最基础常见的情况预置的权限组，可以实现简单的权限管控，但随着应用业务场景越来越复杂，原有的管控方式无法支持类似根据角色、或者登录模式进行管控的需求。基础权限控制下实现类似需求需要将所有的客户端操作收归到云函数中，通过云函数中运行校验判断逻辑，实现访问控制，但在安全规则下，开发者可以自定义管控条件，通过规则语句完成权限配置，系统会根据规则完成访问控制，甚至可以进行数据校验。</p>
+<p>安全规则是一个可以灵活地自定义<strong>数据库</strong>和<strong>云存储</strong>读写权限的权限控制方式，通过配置安全规则，开发者可以在<strong>小程序端</strong>、<strong>网页端</strong>精细化的控制云存储和集合中所有记录的增、删、改、查权限，自动拒绝不符合安全规则的前端数据库与云存储请求，保障数据和文件安全。</p>
+<h3 id="1221-openid-%E5%8F%98%E9%87%8F">12.2.1 {openid} 变量</h3>
+<p>在前面我们建议使用安全规则取代简易版的权限设置，当使用安全规则之后，这里有一个重要的核心就是 <strong>{openid} 变量</strong> ，无论在前端（小程序端、web端）查询时，它都是<strong>必不可少</strong>的（也就是说云函数，云开发控制台不受安全规则控制）。</p>
+<h4 id="1%E6%9F%A5%E8%AF%A2%E5%86%99%E5%85%A5%E9%83%BD%E9%9C%80%E6%98%8E%E7%A1%AE%E6%8C%87%E5%AE%9A-openid">1、查询写入都需明确指定 openid</h4>
+<p>{openid} 变量在小程序端使用时<strong>无需</strong>先通过云函数获取用户的 openid，直接使用<code>'{openid}'</code>即可，而我们在查询时<strong>都需要</strong>显式传入openid。之前我们使用简易权限配置时不需要这么做，这时因为查询时会默认给查询条件加上一条 _openid 必须等于用户 openid，但是使用安全规则之后，就没有这个默认的查询条件了。</p>
+<p>比如我们在查询collection时，<strong>都需要</strong>在where里面添加如下如下的条件，{openid}变量就会附带当前用户的openid。</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'china'</span>).where({
+	<span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>, <span class="hljs-comment">//安全规则里有auth.openid时都需要添加</span>
+})
+</div></code></pre>
+<p>更新、删除等数据库的写入请求也都需要明确在where里添加这样的一个条件(<strong>使用安全规则后，在小程序端也可以进行批量更新和删除</strong>)。</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'goods'</span>).where({
+	<span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>,
+	<span class="hljs-attr">category</span>: <span class="hljs-string">'mobile'</span>
+}).update({ <span class="hljs-comment">//批量更新</span>
+	<span class="hljs-attr">data</span>:{
+	<span class="hljs-attr">price</span>: _.inc(<span class="hljs-number">1</span>)
+	}
+})
+</div></code></pre>
+<blockquote>
+<p>开启安全规则之后，都需要在where查询条件里指定<code>_openid: '{openid}'</code>，这是因为大多数安全规则里都有<code>auth.openid</code>，也就是对用户的身份有要求，where查询条件为安全规则的子集，所以都需要添加。当然你也可以根据你的情况，安全规则不要求用户的身份，也就可以不传入<code>_openid: '{openid}'</code>了。</p>
+</blockquote>
+<h4 id="2doc-%E6%93%8D%E4%BD%9C%E9%9C%80%E8%BD%AC%E4%B8%BA-where-%E6%93%8D%E4%BD%9C">2、doc 操作需转为 where 操作</h4>
+<p>由于我们在进行执行doc操作<code>db.collection('china').doc(id)</code>时，没法传入openid的这个条件，那应该怎么控制权限呢？这时候，我们可以把doc操作都转化为where操作就可以了，在where查询里指定 _id 的值，这样就只会查询到一条记录了：</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'china'</span>).where({
+	<span class="hljs-attr">_id</span>: <span class="hljs-string">'tcb20200501'</span>,  <span class="hljs-comment">//条件里面加_id</span>
+	<span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>, <span class="hljs-comment">//安全规则里有auth.openid时都需要添加</span>
+})
+</div></code></pre>
+<p>至于其他的doc操作，都需要转化为基于collection的where操作，也就是说以后<strong>不再使用</strong>doc操作<code>db.collection('china').doc(id)</code>了。其中doc.update、doc.get和doc.remove可以用基于collection的update、get、remove取代，doc.set可以被更新指令<code>_.set</code>取代。当然安全规则只适用于前端（小程序端或Web端），后端不受安全规则的权限限制。</p>
+<h4 id="3%E5%B5%8C%E5%A5%97%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E9%87%8C%E7%9A%84openid">3、嵌套数组对象里的openid</h4>
+<p>在使用简易权限配置时，用户在小程序端往数据库里写入数据时，都会给记录doc里添加一个_openid的字段来记录用户的openid，使用安全规则之后同样也是如此。在创建记录时，可以把{openid}变量赋值给非_openid的字段或者写入到嵌套数组里，后台写入记录时发现该字符串时会自动替换为小程序用户的 openid：</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'posts'</span>).add({
+	<span class="hljs-attr">data</span>:{
+	<span class="hljs-attr">books</span>:[{
+		<span class="hljs-attr">title</span>:<span class="hljs-string">"云开发快速入门"</span>,
+		<span class="hljs-attr">author</span>:<span class="hljs-string">'{openid}'</span>
+	},{
+		<span class="hljs-attr">title</span>:<span class="hljs-string">"数据库入门与实战"</span>,
+		<span class="hljs-attr">author</span>:<span class="hljs-string">'{openid}'</span>
+	}]
+	}
+})
+</div></code></pre>
+<p>以往要进行openid的写入操作时需要先通过云函数返回用户openid，使用安全规则之后，直接使用{openid}变量即可，不过该方法仅支持add添加一条记录时，不支持update的方式。</p>
+<h3 id="1222-%E5%AE%89%E5%85%A8%E8%A7%84%E5%88%99%E7%9A%84%E5%86%99%E6%B3%95">12.2.2 安全规则的写法</h3>
+<p>使用安全规则之后，我们可以在控制台（开发者工具和网页）对每个集合以及云存储的文件夹分别配置安全规则，也就是自定义权限，配置的格式是json，仍然严格遵循json配置文件的写法（比如数组最后一项不能有逗号,，<strong>配置文件里不能有注释</strong>等）。</p>
+<h4 id="1%E7%B2%92%E5%BA%A6%E6%9B%B4%E7%BB%86%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5">1、粒度更细的增删改查</h4>
+<p>我们先来看简易权限配置<code>所有用户可读，仅创建者可写</code>、<code>仅创建者可读写</code>、<code>所有用户可读</code>、<code>所有用户不可读写</code>所对应的安全规则的写法，这个json配置文件的<code>key</code>表示操作类型，<code>value</code>是一个表达式，也是一个条件，解析为true时表示相应的操作符合安全规则。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// 所有人可读，仅创建者可读写</span>
+{
+	<span class="hljs-string">"read"</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-string">"write"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>
+}
+
+<span class="hljs-comment">//仅创建者可读写</span>
+{
+	<span class="hljs-string">"read"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>,
+	<span class="hljs-string">"write"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>
+}
+
+<span class="hljs-comment">//所有人可读</span>
+{
+	<span class="hljs-string">"read"</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-string">"write"</span>: <span class="hljs-literal">false</span>
+}
+
+<span class="hljs-comment">//所有用户不可读写</span>
+{
+	<span class="hljs-string">"read"</span>: <span class="hljs-literal">false</span>,
+	<span class="hljs-string">"write"</span>: <span class="hljs-literal">false</span>
+}
+</div></code></pre>
+<p>简易的权限配置只有读read与写write，而使用安全规则之后，支持权限操作有除了读与写外，还将写权限细分为create新建、update更新、delete删除，也就是既可以只使用写，也可以细分为增、删、改，比如下面的案例为 <code>所有人可读，创建者可写可更新，但是不能删除</code></p>
+<pre class="hljs"><code><div>  <span class="hljs-string">"read"</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-string">"create"</span>:<span class="hljs-string">"auth.openid == doc._openid"</span>,
+	<span class="hljs-string">"update"</span>:<span class="hljs-string">"auth.openid == doc._openid"</span>,
+	<span class="hljs-string">"delete"</span>:<span class="hljs-literal">false</span> 
+</div></code></pre>
+<p>操作类型无外乎增删改查，不过安全规则的value是条件表达式，写法很多，让安全规则也就更加灵活。值得一提的是，如果我们不给read或者write赋值，它们的默认值为false。</p>
+<h4 id="2%E6%89%80%E6%9C%89%E7%94%A8%E6%88%B7%E5%8F%AF%E8%AF%BB%E5%8F%AF%E5%86%99%E7%9A%84%E5%BA%94%E7%94%A8">2、所有用户可读可写的应用</h4>
+<p>安全规则还可以配置所有人可读可写的类型，也就是如下的写法，让所有登录用户（用户登录了之后才有openid,即openid不为空）可以对数据可读可写。</p>
+<pre class="hljs"><code><div>{
+	<span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid != null"</span>, 
+	<span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid != null"</span>
+}
+</div></code></pre>
+<blockquote>
+<p>在小程序端，我们可以把数据库集合的安全规则操作read和write都写为true（这是所有人可读可写，而这里强调的是所有用户），因为只要用户使用开启了云开发的小程序，就会免鉴权登录有了openid，但是上面安全规则的写法则通用于云存储、网页端的安全规则。</p>
+</blockquote>
+<p>集合里的数据让所有用户可读可写在很多方面都有应用，尤其是我们希望有其他用户可以对嵌套数组和嵌套对象里的字段进行更新时。比如集合posts存储的是所有资讯文章，而我们会把文章的评论嵌套在集合里。</p>
+<pre class="hljs"><code><div>{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"tcb20200503112"</span>,
+	<span class="hljs-attr">_openid</span>:<span class="hljs-string">"用户A"</span>, <span class="hljs-comment">//用户A也是作者，他发表的文章</span>
+	<span class="hljs-attr">title</span>:<span class="hljs-string">"云开发安全规则的使用经验总结"</span>,
+	<span class="hljs-attr">stars</span>:<span class="hljs-number">223</span>,
+	<span class="hljs-attr">comments</span>:[{
+	<span class="hljs-attr">_openid</span>:<span class="hljs-string">"用户B"</span>, 
+	<span class="hljs-attr">comment</span>:<span class="hljs-string">"好文章，作者有心了"</span>,
+	}]
+}
+</div></code></pre>
+<p>当用户A发表文章时，也就会创建这条记录，如果用户B希望可以评论（往数组comments里更新数据）、点赞文章（使用inc原子更新更新stars的值），就需要对该记录可读可写（至少是可以更新）。这在简易权限配置是无法做到的（只能使用云函数来操作），有了安全规则之后，一条记录就可以有被多个人同时维护的权限，而这样的场景在云开发这种文档型数据库里比较常见（因为涉及到嵌套数组嵌套对象）。</p>
+<blockquote>
+<p><strong>安全规则与查询where里的条件是相互配合的</strong>，但是两者之间又有一定的区别。所有安全规则的语句指向的都是符合条件的文档记录，而不是集合。使用了安全规则的where查询会先对文档进行安全规则的匹配，比如小程序端使用where查询不到记录，就会报错<code>errCode: -502003 database permission denied | errMsg: Permission denied</code>，然后再进行条件匹配，比如安全规则设置为所有人可读时，当没有符合条件的结果时，会显示查询的结果为0。我们要注意<strong>无权查询和查询结果为0的区别</strong>。</p>
+</blockquote>
+<h4 id="3%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">3、全局变量</h4>
+<p>要搞清楚安全规则写法的意思，我们还需要了解一些全局变量，比如前面提及的<code>auth.openid</code>表示的是登录用户的openid，而<code>doc._openid</code>表示的是当前记录<code>_openid</code>这个字段的值，当用户的openid与当前记录的_openid值相同时，就对该记录有权限。全局变量还有now（当前时间戳）和resource（云存储相关）。</p>
+<table><thead>
+<tr><th>变量</th> <th>类型</th> <th>说明</th></tr>
+</thead> <tbody>
+<tr><td><code>auth</code></td> <td>object</td> <td>用户登录信息，<code>auth.openid</code> 也就是用户的openid，如果是在web端它还有loginType登录方式、uid等值</td></tr> 
+<tr><td><code>doc</code></td> <td>object</td> <td>表示<code>当前记录</code>的内容，用于匹配记录内容/查询条件</td></tr> 
+<tr><td><code>now</code></td> <td>number</td> <td>当前时间的时间戳，也就是以从计时原点开始计算的毫秒</td></tr>
+<tr><td><code>resource</code></td> <td>object</td> <td><code>resource.openid</code>为云存储文件私有归属标识，标记所有者的openid</td></tr> 
+</tbody></table>
+<h4 id="4%E8%BF%90%E7%AE%97%E7%AC%A6">4、运算符</h4>
+<p>安全规则的表达式还支持运算符，比如等于<code>==</code>，不等于<code>!=</code>，大于<code>&gt;</code>，大于等于<code>&gt;=</code>，小于<code>&lt;</code>，小于等于<code>&lt;=</code>，与<code>&amp;&amp;</code>，或<code>||</code>等等，后面会有具体的介绍。</p>
+<table><thead><tr><th style="text-align: left;">运算符</th> <th style="text-align: left;">说明</th> <th style="text-align: left;">示例</th> <th style="text-align: left;"></th></tr></thead> <tbody><tr><td style="text-align: left;">==</td> <td style="text-align: left;">等于</td> <td style="text-align: left;">auth.openid == 'zzz'</td> <td style="text-align: left;">用户的 openid 为 zzz</td></tr> <tr><td style="text-align: left;">!=</td> <td style="text-align: left;">不等于</td> <td style="text-align: left;">auth.openid != 'zzz'</td> <td style="text-align: left;">用户的 openid 不为 zzz</td></tr> <tr><td style="text-align: left;">&gt;</td> <td style="text-align: left;">大于</td> <td style="text-align: left;">doc.age&gt;10</td> <td style="text-align: left;">查询条件的 age 属性大于 10</td></tr> <tr><td style="text-align: left;">&gt;=</td> <td style="text-align: left;">大于等于</td> <td style="text-align: left;">doc.age&gt;=10</td> <td style="text-align: left;">查询条件的 age 属性大于等于 10</td></tr> <tr><td style="text-align: left;">&lt;</td> <td style="text-align: left;">小于</td> <td style="text-align: left;">doc.age&lt;10</td> <td style="text-align: left;">查询条件的 age 属性小于 10</td></tr> <tr><td style="text-align: left;">&lt;=</td> <td style="text-align: left;">小于等于</td> <td style="text-align: left;">doc.age&lt;=10</td> <td style="text-align: left;">查询条件的 age 属性小于等于 10</td></tr> <tr><td style="text-align: left;">in</td> <td style="text-align: left;">存在在集合中</td> <td style="text-align: left;">auth.openid in ['zzz','aaa']</td> <td style="text-align: left;">用户的 openid 是['zzz','aaa']中的一个</td></tr> <tr><td style="text-align: left;">!(xx in [])</td> <td style="text-align: left;">不存在在集合中，使用 in 的方式描述 <code>!(a in [1,2,3])</code></td> <td style="text-align: left;">!(auth.openid in ['zzz','aaa'])</td> <td style="text-align: left;">用户的 openid 不是['zzz','aaa']中的任何一个</td></tr> <tr><td style="text-align: left;">&amp;&amp;</td> <td style="text-align: left;">与</td> <td style="text-align: left;">auth.openid == 'zzz' &amp;&amp; doc.age&gt;10</td> <td style="text-align: left;">用户的 openid 为 zzz 并且查询条件的 age 属性大于 10</td></tr> <tr><td style="text-align: left;">||</td> <td style="text-align: left;">或</td> <td style="text-align: left;">auth.openid == 'zzz' || doc.age&gt;10</td> <td style="text-align: left;">用户的 openid 为 zzz 或者查询条件的 age 属性大于 10</td></tr> <tr><td style="text-align: left;">.</td> <td style="text-align: left;">对象元素访问符</td> <td style="text-align: left;">auth.openid</td> <td style="text-align: left;">用户的 openid</td></tr> <tr><td style="text-align: left;">[]</td> <td style="text-align: left;">数组访问符属性</td> <td style="text-align: left;">doc.favorites[0] == 'zzz'</td> <td style="text-align: left;">查询条件的 <code>favorites</code> 数组字段的第一项的值等于 <code>zzz</code></td></tr></tbody></table>
+<h3 id="1223-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81">12.2.3 身份验证</h3>
+<blockquote>
+<p><strong>全局变量auth与doc的组合使用可以让登录用户的权限依赖于记录的某个字段</strong>，auth表示的是登录用户，而doc、resource则是云开发环境的资源相关，使用安全规则之后用户与数据库、云存储之间就有了联系。resource只有resource.openid，而doc不只有_openid，还可以有很多个字段，也就让数据库的权限有了很大的灵活性，后面我们更多的是以doc全局变量为例。</p>
+</blockquote>
+<h4 id="1%E8%AE%B0%E5%BD%95%E7%9A%84%E5%88%9B%E5%BB%BA%E8%80%85">1、记录的创建者</h4>
+<p>auth.openid是当前的登录用户，而记录doc里的openid则可以让该记录与登录用户之间有紧密的联系，或者可以说让该记录有了一个身份的验证。一般来说doc._openid所表示的是该记录的创建者的openid，简易权限控制比较的也是当前登录用户是否是该记录的创建者（或者为更加开放且粗放的权限）。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//登录用户为记录的创建者时，才有权限读</span>
+<span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == doc._openid"</span>, 
+
+<span class="hljs-comment">//不允许记录的创建者删除记录（只允许其他人删除）</span>
+<span class="hljs-string">"delete"</span>: <span class="hljs-string">"auth.openid != doc._openid"</span>, 
+</div></code></pre>
+<p><strong>安全规则和where查询是配套使用的</strong>，如果你指定记录的权限与创建者的openid有关，你在前端的查询条件的范围就不能比安全规则的大（如果查询条件的范围比安全规则的范围大就会出现<code>database permission denied</code>:</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'集合id'</span>).where({
+	<span class="hljs-attr">_openid</span>:<span class="hljs-string">'{openid}'</span>  <span class="hljs-comment">//有doc._openid，因此查询条件里就需要有_openid这个条件,</span>
+	<span class="hljs-attr">key</span>:<span class="hljs-string">"value"</span>
+})
+.get().then(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>{
+	<span class="hljs-built_in">console</span>.log(res)
+})
+</div></code></pre>
+<h4 id="2%E6%8C%87%E5%AE%9A%E8%AE%B0%E5%BD%95%E7%9A%84%E8%A7%92%E8%89%B2">2、指定记录的角色</h4>
+<p><strong>1、把权限指定给某个人</strong></p>
+<p>安全规则的身份验证则不会局限于记录的创建者，登录用户的权限还可以依赖记录的其他字段，我们还可以给记录的权限指定为某一个人（非记录的创建者），比如很多个学生提交了作业之后，会交给某一个老师审阅批改，老师需要对该记录有读写的权限，在处理时，可以在学生提交作业（创建记录doc)时时可以指定teacher的openid，只让这个老师可以批阅，下面是文档的结构和安全规则示例：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//文档的结构</span>
+{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"handwork20201020"</span>,
+	<span class="hljs-attr">_openid</span>:<span class="hljs-string">"学生的openid"</span>, <span class="hljs-comment">//学生为记录的创建者,</span>
+	<span class="hljs-attr">teacher</span>:<span class="hljs-string">"老师的openid"</span> <span class="hljs-comment">//该学生被指定的老师的openid</span>
+}
+
+<span class="hljs-comment">//安全规则</span>
+{
+	<span class="hljs-string">"read"</span>: <span class="hljs-string">"doc.teacher == auth.openid || doc._openid == auth.openid"</span>, 
+	<span class="hljs-string">"write"</span>: <span class="hljs-string">"doc.teacher == auth.openid || doc._openid == auth.openid"</span>, 
+}
+</div></code></pre>
+<p>让登录用户auth.openid依赖记录的其他字段，在功能表现上相当于给该记录指定了一个角色，如直属老师、批阅者、直接上级、闺蜜、夫妻、任务的直接指派等角色。</p>
+<blockquote>
+<p>对于查询或更新操作，输入的where查询条件<strong>必须是安全规则的子集</strong>，比如你的安全规则如果是<code>doc.teacher == auth.openid</code>，而你在where里没有<code>teacher:'{openid}'</code>这样的条件，就会出现权限报错。</p>
+</blockquote>
+<p>由于<strong>安全规则和where查询需要配套使用</strong>，安全规则里有<code>doc.teacher</code>和<code>doc._openid</code>，在where里也就需要写安全规则的子集条件，比如<code>_openid:'{openid}'</code>或<code>teacher:'{openid}' </code>，由于这里<strong>老师也是用户</strong>，我们可以传入如下条件让学生和老师共用一个数据库请求：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> db = wx.cloud.database()
+<span class="hljs-keyword">const</span> _ = db.command
+	<span class="hljs-comment">//一条记录可以同时被创建者(学生)和被指定的角色(老师)读取</span>
+db.collection(<span class="hljs-string">'集合id'</span>).where(_.or([
+	{<span class="hljs-attr">_openid</span>:<span class="hljs-string">'{openid}'</span> }, <span class="hljs-comment">//与安全规则doc._openid == auth.openid对应</span>
+	{<span class="hljs-attr">teacher</span>:<span class="hljs-string">'{openid}'</span> } <span class="hljs-comment">//与安全规则doc.teacher == auth.openid对应</span>
+]))
+.get().then(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>{
+	<span class="hljs-built_in">console</span>.log(res)
+})
+</div></code></pre>
+<p><strong>2、把权限指定给某些人</strong></p>
+<p>上面的这个角色指定是一对一、或多对一的指定，也可以是一对多的指定，可以使用<code>in</code>或<code>!(xx in [])</code>运算符。比如下面是可以给一个记录指定多个角色（学生创建的记录，多个老师有权读写）：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//文档的结构</span>
+{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"handwork20201020"</span>,
+	<span class="hljs-attr">_openid</span>:<span class="hljs-string">"学生的openid"</span>, <span class="hljs-comment">//学生为记录的创建者,</span>
+	<span class="hljs-attr">teacher</span>:[<span class="hljs-string">"老师1的openid"</span>,<span class="hljs-string">"老师2的openid"</span>,<span class="hljs-string">"老师3的openid"</span>] 
+}
+
+<span class="hljs-comment">//安全规则</span>
+{
+	<span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid in doc.teacher || doc._openid == auth.openid"</span>, 
+	<span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid in doc.teacher || doc._openid == auth.openid"</span>, 
+}
+</div></code></pre>
+<p>这里要再强调的是前端（小程序端）的where条件必须是安全规则权限的子集，比如我们在小程序端针对老师进行如下查询(<code>'{openid}'</code>不支持查询指令，需要后端获取)</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'集合id'</span>).where({
+	<span class="hljs-attr">_openid</span>:<span class="hljs-string">'{openid}'</span>,
+	<span class="hljs-attr">teacher</span>:_.elemMatch(_.eq(<span class="hljs-string">'老师的openid'</span>))
+}).get()
+.then(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>{
+	<span class="hljs-built_in">console</span>.log(res)
+})
+</div></code></pre>
+<blockquote>
+<p>前面我们实现了将记录的权限指定给某个人或某几个人，那如何将记录的权限指定给某类人呢？比如打车软件为了数据的安全性会有司机、乘客、管理员、开发人员、运维人员、市场人员等，这都需要我们在数据库里新建一个字段来存储用户的类型，比如<code>{role:3}</code>，用1、2、3、4等数字来标明，或者用<code>{isManager:true}</code>boolean类型来标明，这个新增的字段可以就在查询的集合文档里<code>doc.role</code>，或者是一个单独的集合(也就是存储权限的集合和要查询的集合是分离的，这需要使用get函数跨集合查询），后面会有具体介绍。</p>
+</blockquote>
+<p><strong>3、doc.auth与文档的创建者</strong></p>
+<p>下面有一个例子可以加深我们对安全规则的理解，比如我们在记录里指定文档的auth为其他人的openid，并配上与之相应的安全规则，即使当前用户实际上就是这个记录的创建者，这个记录有该创建者的_openid，他也没有操作的权限。安全规则会对查询条件进行评估，只要符合安全规则，查询才会成功，违反安全规则，查询就会失败。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//文档的结构，比如以下为一条记录</span>
+{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"handwork20201020"</span>,
+	<span class="hljs-attr">_openid</span>:<span class="hljs-string">"创建者的openid"</span>, 
+	<span class="hljs-attr">auth</span>:<span class="hljs-string">"指定的auth的openid"</span> 
+}
+
+<span class="hljs-comment">//安全规则</span>
+{
+	<span class="hljs-string">"权限操作"</span>: <span class="hljs-string">"auth.openid == doc.auth"</span> <span class="hljs-comment">//权限操作为read、write、update等</span>
+}
+
+<span class="hljs-comment">//前端查询，不符合安全规则，即使是记录的创建者也没有权限</span>
+db.collection(<span class="hljs-string">'集合id'</span>).where({
+	<span class="hljs-attr">auth</span>:<span class="hljs-string">'{openid}'</span>
+})    
+</div></code></pre>
+<h3 id="1224-%E5%AE%89%E5%85%A8%E8%A7%84%E5%88%99%E5%B8%B8%E7%94%A8%E5%9C%BA%E6%99%AF">12.2.4 安全规则常用场景</h3>
+<p>简易版权限设置没法在前端实现记录跨用户的写权限(含update、create、delete），也就是说记录只有创建者可写。而<strong>文档型数据库一个记录因为反范式化嵌套的原因可以承载的信息非常多</strong>，B用户操作A用户创建的记录，尤其是使用<strong>更新指令update字段以及内嵌字段的值</strong>这样的场景是非常常见的。除此之外，仅安全规则可以实现前端对记录的批量更新和删除。</p>
+<p>比如我们可以把评论、收藏、点赞、转发、阅读量等信息内嵌到文章的集合里，以往我们在小程序端（只能通过云函数）是没法让B用户对A用户创建的记录进行操作，比如点赞、收藏、转发时用更新指令inc更新次数，比如没法直接用更新指令将评论push写入到记录里:</p>
+<pre class="hljs"><code><div>{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"post20200515001"</span>,
+	<span class="hljs-attr">title</span>:<span class="hljs-string">"云开发安全规则实战"</span>,
+	<span class="hljs-attr">star</span>:<span class="hljs-number">221</span>, <span class="hljs-comment">//点赞数</span>
+	<span class="hljs-attr">comments</span>:[{    <span class="hljs-comment">//评论和子评论</span>
+	<span class="hljs-attr">content</span>:<span class="hljs-string">"安全规则确实是非常好用"</span>,
+	<span class="hljs-attr">nickName</span>:<span class="hljs-string">"小明"</span>，
+	<span class="hljs-attr">subcomment</span>:[{
+		<span class="hljs-attr">content</span>:<span class="hljs-string">"我也这么觉得"</span>,
+		<span class="hljs-attr">nickName</span>:<span class="hljs-string">"小军"</span>，
+	}]
+	}],
+	<span class="hljs-attr">share</span>:<span class="hljs-number">12</span>, <span class="hljs-comment">//转发数</span>
+	<span class="hljs-attr">collect</span>:<span class="hljs-number">15</span> <span class="hljs-comment">//收藏数</span>
+	<span class="hljs-attr">readNum</span>:<span class="hljs-number">2335</span> <span class="hljs-comment">//阅读量</span>
+}
+</div></code></pre>
+<p>在开启安全规则，我们就可以直接在前端让B用户修改A用户创建的记录，这样用户阅读、点赞、评论、转发、收藏文章等时，就可以直接使用更新指令对文章进行字段级别的更新。</p>
+<pre class="hljs"><code><div><span class="hljs-string">"read"</span>:<span class="hljs-string">"auth.openid != null"</span>,
+<span class="hljs-string">"update"</span>:<span class="hljs-string">"auth.openid != null"</span>
+</div></code></pre>
+<p>这个安全规则相比于<code>所有人可读，仅创建者可读写</code>，开放了update的权限，小程序端也有limit 20的限制。而如果不使用安全规则，把这些放在云函数里进行处理不仅处理速度更慢，而且非常消耗云函数的资源。</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'post'</span>).where({
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"post20200515001"</span>,
+	<span class="hljs-attr">openid</span>:<span class="hljs-string">'{openid}'</span>
+}).update({
+	<span class="hljs-attr">data</span>:{
+	<span class="hljs-comment">//更新指令的应用</span>
+	}
+})
+</div></code></pre>
+<h3 id="1225-%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81doc%E7%9A%84%E8%A7%84%E5%88%99%E5%8C%B9%E9%85%8D">12.2.5 数据验证doc的规则匹配</h3>
+<p>我们还可以把访问权限的控制信息以字段的形式存储在数据库的集合文档里，而安全规则可以根据文档数据动态地允许或拒绝访问，也就是说<strong>doc的规则匹配可以让记录的权限动态依赖于记录的某一个字段的值</strong>。</p>
+<p>doc规则匹配的安全规则针对的是<strong>整个集合</strong>，而且要求<strong>集合里的所有记录都有相应的权限字段</strong>，而只有在权限字段满足一定条件时，<strong>记录才有权限被增删改查</strong>，是一个将集合的权限范围按照条件要求收窄的过程，where查询时的条件不能比安全规则规定的范围大（查询条件为安全规则子集）；配置了安全规则的集合里的记录只有两种状态，有权限和没有权限。</p>
+<blockquote>
+<p>这里仍然再强调的是使用where查询时要求查询条件是安全规则的子集，在进行where查询前会先解析规则与查询条件进行校验，如果where条件不是安全规则的子集就会出现权限报错，不能把安全规则看成是一个筛选条件，而是一个保护记录数据安全的不可逾越的规则。</p>
+</blockquote>
+<h4 id="1%E8%AE%B0%E5%BD%95%E7%9A%84%E7%8A%B6%E6%80%81%E6%9D%83%E9%99%90">1、记录的状态权限</h4>
+<p>doc的规则匹配，特别适合每个记录存在多个状态或每个记录都有一致的权限条件（要么全部是，要么全部否），而<strong>只有一个状态</strong>或满足条件才有权限被用户增删改查时的情形，比如文件审批生效（之前存在审批没有生效的多个状态），文章的发布状态为pubic（之前为private或其他状态），商品的上架（在上架前有多个状态），文字图片内容的安全检测不违规（之前在进行后置校验），消息是否撤回，文件是否删除，由于每个记录我们都需要标记权限，而只有符合条件的记录才有被增删改查的机会。</p>
+<p>比如资讯文章的字段如下，每个记录对应着一篇文章，而status则存储着文章的多个状态，只有public时，文章才能被用户查阅到，我们可以使用安全规则<code>&quot;read&quot;: &quot;doc.status=='public'&quot;</code>。而对于软删除（文章假删除），被删除可以作为一个状态，但是文章还是在数据库里。</p>
+<pre class="hljs"><code><div>{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"post2020051314"</span>,
+	<span class="hljs-attr">title</span>:<span class="hljs-string">"云开发发布新能力，支持微信支付云调用"</span>,
+	<span class="hljs-attr">status</span>:<span class="hljs-string">"public"</span>
+},
+{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"post2020051312"</span>,
+	<span class="hljs-attr">title</span>:<span class="hljs-string">"云函数灰度能力上线"</span>,
+	<span class="hljs-attr">status</span>:<span class="hljs-string">"edit"</span>
+},
+{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"post2020051311"</span>,
+	<span class="hljs-attr">title</span>:<span class="hljs-string">"云开发安全规则深度研究"</span>,
+	<span class="hljs-attr">status</span>:<span class="hljs-string">"delete"</span>
+}
+</div></code></pre>
+<p>而在前端（小程序端）与之对应的数据库查询条件则必须为安全规则的子集，也就是说安全规则不能作为你查询的过滤条件，安全规则会对查询进行评估，如果查询不符合安全规则设置的约束（非子集），那么前端的查询请求没有权限读取文档，而不是过滤文档：</p>
+<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'集合id'</span>).where({
+	<span class="hljs-attr">status</span>:<span class="hljs-string">"public"</span>  <span class="hljs-comment">//你不能不写这个条件，而指望安全规则给你过滤</span>
+}).get()
+.then(<span class="hljs-function"><span class="hljs-params">res</span>=&gt;</span>{
+	<span class="hljs-built_in">console</span>.log(res)
+})
+</div></code></pre>
+<h4 id="2%E8%AE%B0%E5%BD%95%E7%A6%81%E6%AD%A2%E4%B8%BA%E7%A9%BA">2、记录禁止为空</h4>
+<p>有时候我们需要对某些记录有着非常严格的要求，禁止为空，如何为空一律不予被前端增删改查，比如已经上架的shop集合里的商品列表，有些核心数据如价格、利润、库存等就不能为空，给企业造成损失，相应的安全规则和查询如下：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//安全规则</span>
+{
+	<span class="hljs-string">"权限操作"</span>: <span class="hljs-string">"doc.profit != null"</span>,
+}
+
+<span class="hljs-comment">//权限操作，profit = 0.65就是安全规则的子集</span>
+db.collection(<span class="hljs-string">'shop'</span>).where({
+	<span class="hljs-attr">profit</span>:_.eq(<span class="hljs-number">0.65</span>)
+})
+</div></code></pre>
+<h4 id="3%E8%AE%B0%E5%BD%95%E7%9A%84%E5%AD%90%E9%9B%86%E6%9D%83%E9%99%90">3、记录的子集权限</h4>
+<p>安全规则记录的字段值不仅限于一个状态(字符串类型）,还可以是可以运算的范围值，如大于<code>&gt;</code>，小于<code>&lt;</code>、<code>in</code>等，比如商品的客单价都是100以上，管理员在后端（控制台，云函数等）把原本190元的价格写成了19，或者失误把价格写成了负数，这种情况下我们对商品集合使用安全规则<code>doc.price &gt; 100</code>，前端将失去所有价格低于100的商品的操作权限，包括查询。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//安全规则</span>
+<span class="hljs-string">"操作权限"</span>:<span class="hljs-string">"doc.price &gt; 100"</span>
+
+<span class="hljs-comment">//相应的查询</span>
+db.collection(<span class="hljs-string">'shop'</span>).where({
+	<span class="hljs-attr">price</span>:_eq(<span class="hljs-number">125</span>)
+})
+</div></code></pre>
+<p>安全规则的全局变量now表示的是当前时间的时间戳，这让安全规则可以给权限的时间节点和权限的时效性设置一些规则，这里就不具体讲述了。</p>
+<h3 id="1225-%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0get%E6%9E%84%E5%BB%BA%E6%9D%83%E9%99%90%E4%BD%93%E7%B3%BB">12.2.5 全局函数get构建权限体系</h3>
+<p>全局函数get可以实现跨集合来限制权限。doc的权限匹配更多的是基于文档性质的权限，也就是集合内所有文档都有相同的字段，根据这个字段的值的不同来划分权限。但是有时候我们希望实现<strong>多个用户和多个用户角色</strong>来管理集合的文档，拥有不同的权限，如果把用户和角色都写进文档的每个记录里，就会非常难以管理。也就是说doc的权限匹配并不适合复杂的用户管理文档的权限体系。</p>
+<p>我们可以把单个复杂的集合文档（反范式化的设计）拆分成多个集合文档（范式化设计），将用户和角色从文档里分离出来。比如博客有文章post集合，而user集合除了可以把用户划分为作者、编辑、投稿者这样的用户身份，还可以是管理员组，编辑组等。如果我们把记录的权限赋予给的人员比较多或群组比较复杂，则需要把角色存储在其独立的集合中，而不是作为目标文档中的一个字段，用全局函数get来实现跨集合的权限限制。</p>
+<p>get 函数是全局函数，可以跨集合来获取指定的记录，用于在安全规则中获取跨集合的记录来参与到安全规则的匹配中，get函数的参数格式是 <code>database.集合名.记录id</code>。</p>
+<p>比如我们可以给文章post集合设置如下安全规则，只有管理员才可以删除记录，而判断用户是否为管理员则需要跨集合用user集合里的字段值来判断：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//user集合的结构</span>
+{
+	<span class="hljs-attr">_id</span>:<span class="hljs-string">"oUL-m5FuRmuVmxvbYOGuXbuEDsn8"</span>, <span class="hljs-comment">//用户的openid</span>
+	<span class="hljs-attr">isManager</span>:<span class="hljs-literal">true</span>
+}
+
+<span class="hljs-comment">//post集合的权限</span>
+{
+	<span class="hljs-string">"read"</span>: <span class="hljs-string">"true"</span>,
+	<span class="hljs-string">"delete"</span>: <span class="hljs-string">"get(`database.user.${auth.openid}`).isManager== true"</span>
+}
+
+db.collection(<span class="hljs-string">'post'</span>).where({
+	<span class="hljs-comment">//相应的条件，并不受子集的限制</span>
+})
+</div></code></pre>
+<p>get函数还可以接收变量，值可以通过多种计算方式得到，例如使用字符串模版进行拼接，这是一个查询的过程，如果相应的文档里有记录，则函数返回记录的内容，否则返回空（注意反引号的写法）：</p>
+<pre class="hljs"><code><div><span class="hljs-string">`（database.<span class="hljs-subst">${doc.collction}</span>.<span class="hljs-subst">${doc._id}</span>）`</span>
+</div></code></pre>
+<p><strong>get函数的限制条件</strong></p>
 <ul>
-<li>灵活。开发者可根据自己的业务特性自定义规则，规则支持根据应用数据本身来限制数据的可访问性；</li>
-<li>细化粒度。规则可根据需求设置，或简单或复杂。</li>
-<li>安全独立。规则在管理端进行设置，独立于应用业务逻辑之外，客户端不会获取规则，也无法绕过规则验证，保证对应用数据的访问都经过校验。</li>
-<li>便捷。通过配置规则即可完成权限控制，免除接入层管控的开发与部署，可以快速验证。</li>
+<li>安全规则里的get函数 参数中存在的变量 doc 需要在 query 条件中以 == 或 in 方式出现，若以 in 方式出现，只允许 in 唯一值， 即 doc.shopId in array, array.length == 1</li>
+<li>一个表达式最多可以有 3 个 get 函数，最多可以访问 3 个不同的文档。</li>
+<li>get 函数的嵌套深度最多为 2， 即 get(get(path))。</li>
 </ul>
-<h3 id="1222-%E8%A7%84%E5%88%99%E7%9A%84%E7%BC%96%E5%86%99%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F">12.2.2 规则的编写与表达式</h3>
-<p>前端批量更新（where.update、where.remove），开发者在进行批量更新时应搭配安全规则使用以保障数据安全。</p>
-<p>安全规则要求前端发起的查询条件必须是安全规则的子集，否则拒绝访问。比如定义一个读写访问规则是 auth.openid == doc._openid，则表示访问时的查询条件（doc）的 openid 必须等于当前用户的 openid （由系统赋值的不可篡改的 auth.openid 给出），如果查询条件没有包含这项，则表示尝试越权访问 _openid 字段不等于自身的记录，会被后台拒绝访问。</p>
-<p>ACL 是 Access Control List 的缩写，称为访问控制列表，包含了对一个对象或一条记录可进行何种操作的权限定义。例如一个文件对象的 ACL 为 { &quot;Alice&quot;: { &quot;read&quot;: true, &quot;write&quot;: true }, &quot;Bob&quot;: { &quot;read&quot;: true } }，这代表 Alice 对该文件既能读又能写，而 Bob 只能读取。
-安全规则利用基于 JSON 格式可扩展的配置语言定义用户可访问数据库与存储中的哪些数据开发者可根据应用所需的细化级别，编写简单或复杂的规则来保护应用中的数据。</p>
-<p>https://leancloud.cn/docs/acl-guide.html
-https://leancloud.cn/docs/data_security.html#hash-323468714</p>
-<p>操作类型</p>
-<ol>
-<li>定义规则和数据结构
-安全规则提供了内部变量获取请求数据的内容以根据数据进行访问控制，数据的组织方式可能会影响规则的写法，例如，论坛应用中需要限制所有登录用户可以浏览内容，用户只能修改、删除自己的帖子，那么论坛帖集合（posts）中记录需要存储 userID 表示记录归属，安全规则根据 userID 字段限制 update 与 delete 行为，放过所有的登录用户的 read 行为。</li>
-</ol>
-<p>每个集合都有独立的安全规则配置，配置的格式为 json，比如如下一个在某集合上的安全规则配置：</p>
-<pre class="hljs"><code><div>{
-  <span class="hljs-string">"read"</span>: <span class="hljs-string">"true"</span>,
-  <span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid === doc._openid"</span>
-}
-</div></code></pre>
-<p>这配置其实就对应着已有的 &quot;所有用户可读，仅创建者可写&quot; 这一权限配置。配置的 key 表示操作类型，value 是一个表达式，表示需要满足什么条件才允许相应的操作类型。当表达式解析为 true 时即代表相应类型的操作符合安全规则。</p>
-<p>规则表达式
-规则表达式是类 js 的表达式，支持部分表达式，内置全局变量、全局函数。</p>
-<p>全局函数
-get：获取指定记录</p>
-<p>get 函数，用于在安全规则中获取其记录来参与到安全规则的匹配中，函数的参数格式是 <code>database.集合名.记录id</code>，可以接收变量，值可以通过多种计算方式得到，例如使用字符串模版进行拼接（database.${doc.collction}.${doc._id}）。</p>
-<p>如果有对应对象，则函数返回记录的内容，否则返回空。</p>
-<p>示例：</p>
-<pre class="hljs"><code><div>{
-  <span class="hljs-string">"read"</span>: <span class="hljs-string">"true"</span>,
-  <span class="hljs-string">"delete"</span>: <span class="hljs-string">"get(`database.user.${id}`).isManager"</span>
-}
-</div></code></pre>
-<p>get 函数有以下限制条件：</p>
-<p>get 参数中存在的变量 doc 需要在 query 条件中以 == 或 in 方式出现，若以 in 方式出现，只允许 in 唯一值， 即 doc.shopId in array, array.length == 1
-一个表达式最多可以有 3 个 get 函数，最多可以访问 3 个不同的文档。
-get 函数的嵌套深度最多为 2， 即 get(get(path))。
-读操作触发与配额消耗说明：</p>
+<p><strong>读操作触发与配额消耗说明</strong></p>
 <p>get 函数的执行会计入数据库请求数，同样受数据库配额限制。在未使用变量的情况下，每个 get 会产生一次读操作，在使用变量时，对每个变量值会产生一次 get 读操作。例如：</p>
 <p>假设某集合 shop 上有如下规则：</p>
 <pre class="hljs"><code><div>{
-  <span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == get(`database.shop.${doc._id}`).owner"</span>,
-  <span class="hljs-string">"write"</span>: <span class="hljs-literal">false</span>
-}
-</div></code></pre>
-<p>在执行如下查询语句时会产生 5 次读取。</p>
-<p>db.collection('shop').where(_.or([{_id:1},{_id:2},{_id:3},{_id:4},{_id:5}])).get()</p>
-<p>如果有对应对象，则函数返回记录的内容，否则返回空。</p>
-<p>示例：</p>
-<pre class="hljs"><code><div>{
-  <span class="hljs-string">"read"</span>: <span class="hljs-string">"true"</span>,
-  <span class="hljs-string">"delete"</span>: <span class="hljs-string">"get(`database.user.${id}`).isManager"</span>
-}
-</div></code></pre>
-<p>get 函数有以下限制条件：</p>
-<p>get 参数中存在的变量 doc 需要在 query 条件中以 == 或 in 方式出现，若以 in 方式出现，只允许 in 唯一值， 即 doc.shopId in array, array.length == 1
-一个表达式最多可以有 3 个 get 函数，最多可以访问 3 个不同的文档。
-get 函数的嵌套深度最多为 2， 即 get(get(path))。
-读操作触发与配额消耗说明：</p>
-<p>get 函数的执行会计入数据库请求数，同样受数据库配额限制。在未使用变量的情况下，每个 get 会产生一次读操作，在使用变量时，对每个变量值会产生一次 get 读操作。例如：</p>
-<p>假设某集合 shop 上有如下规则：</p>
-<pre class="hljs"><code><div>{
-  <span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == get(`database.shop.${doc._id}`).owner"</span>,
-  <span class="hljs-string">"write"</span>: <span class="hljs-literal">false</span>
+	<span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid == get(`database.shop.${doc._id}`).owner"</span>,
+	<span class="hljs-string">"write"</span>: <span class="hljs-literal">false</span>
 }
 </div></code></pre>
 <p>在执行如下查询语句时会产生 5 次读取。</p>
 <pre class="hljs"><code><div>db.collection(<span class="hljs-string">'shop'</span>).where(_.or([{<span class="hljs-attr">_id</span>:<span class="hljs-number">1</span>},{<span class="hljs-attr">_id</span>:<span class="hljs-number">2</span>},{<span class="hljs-attr">_id</span>:<span class="hljs-number">3</span>},{<span class="hljs-attr">_id</span>:<span class="hljs-number">4</span>},{<span class="hljs-attr">_id</span>:<span class="hljs-number">5</span>}])).get()
 </div></code></pre>
-<p>规则匹配
-对于查询或更新操作，输入的查询条件必须是安全规则的子集。系统不会去实际取数据，而会判断输入的查询条件是否是安全规则的子集，如果不是，则代表正在尝试访问没有权限访问的数据，会直接拒绝操作。</p>
-<p>可能生效的操作类型包括 read、write、update、delete</p>
-<p>示例：</p>
-<pre class="hljs"><code><div><span class="hljs-comment">// 集合 test 的安全规则配置限制只能查询 age &gt; 10 的记录</span>
-{
-  <span class="hljs-string">"read"</span>: <span class="hljs-string">"doc.age &gt; 10"</span>
-}
-</div></code></pre>
-<pre class="hljs"><code><div><span class="hljs-comment">// 符合安全规则</span>
-<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'test'</span>).where({
-  <span class="hljs-attr">age</span>: _.gt(<span class="hljs-number">10</span>)
-}).get()
-</div></code></pre>
-<pre class="hljs"><code><div><span class="hljs-comment">// 不符合安全规则</span>
-<span class="hljs-keyword">const</span> res = db.collection(<span class="hljs-string">'test'</span>).where({
-  <span class="hljs-attr">age</span>: _.gt(<span class="hljs-number">8</span>)
-}).get()
-</div></code></pre>
-<p>对于 create，则会校验写入的数据是否符合安全规则。</p>
-<p>{openid} 变量
-在查询时，当前用户 openid 是常用的变量，在新的安全规则体系下，要求显式传入 openid，因此为了方便开发者、让开发者无需每次先通过云函数获取用户 openid，我们规定查询条件中可使用一个字符串常量 {openid}，在后台中发现该字符串时会自动替换为小程序用户的 openid，如假设有安全规则：
-<code>javascript</code>javascript
-{
-&quot;read&quot;: &quot;doc.publisher == auth.openid&quot;
-}</p>
-<pre class="hljs"><code><div>则发起读请求时可以使用 {openid} 常量，效果等同于显示传入当前用户的实际 openid ：
-```javascript
-db.collection('test').where({
-  publisher: '{openid}'
-}).get()
-</div></code></pre>
-<h3 id="%E5%8D%87%E7%BA%A7%E4%B8%8E%E5%85%BC%E5%AE%B9%E6%8C%87%E5%BC%95">升级与兼容指引</h3>
-<p>由于安全规则要求查询条件是安全规则的子集，同时摒弃了旧有权限配置的隐式默认行为，因此启动安全规则需要开发者注意以下升级/兼容处理：</p>
-<ol>
-<li>doc 操作需转为 where 操作</li>
-</ol>
-<p>因 doc 操作（doc.get, doc.set 等）是仅指定 _id 进行的操作，因此其查询条件大部分情况下并不会满足安全规则（除非在 &quot;read&quot;: true 下进行读操作或在 &quot;write&quot;: true 的情况下进行写操作），因此需要转换为等价的、查询条件包含安全规则或是其子集的形式。例：</p>
-<p>假设在集合 todo 上有以下权限规则：</p>
-<pre class="hljs"><code><div>{
-  <span class="hljs-string">"read"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>,
-  <span class="hljs-string">"write"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>
-}
-</div></code></pre>
-<p>旧权限配置可以通过 db.collection('todo').doc('x').get() 获取记录内容，新安全规则需要改为：</p>
-<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'todo'</span>).where({
-  <span class="hljs-attr">_id</span>: <span class="hljs-string">'x'</span>,
-  <span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>,
-})
-</div></code></pre>
-<p>doc.update, doc.remove 同理，注意 doc.set 无法使用，需要用 doc.update 替代。</p>
-<ol start="2">
-<li>从旧权限配置升级后，查询更新语句都需明确指定 openid</li>
-</ol>
-<p>因升级前查询条件可以不传 _openid，而升级后要求显示传入以保证查询条件符合安全规则，因此所有查询条件均需传入 openid，还是以上一节中的安全规则示例为例，对旧权限配置中的如下查询语句：</p>
-<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'todo'</span>).where({
-  <span class="hljs-attr">progress</span>: _.lt(<span class="hljs-number">50</span>)
-}).get()
-</div></code></pre>
-<p>需要改为：</p>
-<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'todo'</span>).where({
-  <span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>,
-  <span class="hljs-attr">progress</span>: _.lt(<span class="hljs-number">50</span>)
-}).get()
-</div></code></pre>
-<p>在开放安全规则后，where.update 和 where.remove 也在小程序端开放了，可以进行符合安全规则的批量更新，如：</p>
-<pre class="hljs"><code><div>db.collection(<span class="hljs-string">'todo'</span>).where({
-  <span class="hljs-attr">_openid</span>: <span class="hljs-string">'{openid}'</span>,
-  <span class="hljs-attr">category</span>: <span class="hljs-string">'sport'</span>
-}).update({
-  <span class="hljs-attr">progress</span>: _.inc(<span class="hljs-number">10</span>)
-})
-</div></code></pre>
-<p>安全规则配置中每个表达式（组）最大长度限制为 1024 字符。
-表达式支持变量（不支持正则）、数组表达式（数组成员限制为数字或字符串）、逻辑表达式（&amp;&amp;、||）、一元表达式（+1，-1，!a)、二元表达式（ &gt;、&gt;=、&lt;、&lt;=、==、!=、in），成员表达式（a.b、a[&quot;b&quot;]）、调用表达式（仅云数据库安全规则支持），字符串模板表达式（用户云数据库函数调用动态参数，例：database.collection.${doc.objectId}）。</p>
-<h3 id="1225-%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E6%9D%83%E9%99%90">12.2.5 实现数据权限</h3>
-<p>数据权限就是用户在同一页面看到的数据是不同的,比如财务部只能看到其部门下的用户数据,采购部只看采购部的数据,在一些大型的公司,全国有很多城市和分公司。</p>
-<p>比如杭州用户登录系统只能看到杭州的数据,上海用户只能看到上海的数据,解决方案一般是把数据和具体的组织架构关联起来。</p>
-<p>举个例子,再给用户授权的时候,用户选择某个角色同时绑定组织如财务部或者合肥分公司,那么该用户就有了该角色下财务部或合肥分公司下的的数据权限。</p>
-<h3 id="%E5%9F%BA%E4%BA%8E%E8%A7%92%E8%89%B2%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6">基于角色的权限控制</h3>
-<p>可以利用 TCB 的数据模型以及自定义的安全规则在您的应用中实现基于角色的访问权限控制。
-假设您正在构建一款协作式撰文应用，用户可以按照以下安全要求在其中撰写“故事”和“评论”：
-每个故事都有一名所有者；故事可共享给撰写者。
-撰写者除了拥有评论者所拥有的全部访问权限之外，还可以编辑故事内容。 所有者可以编辑故事的任意部分，并且可以控制其他用户的访问权限。 普通用户只能查看故事和评论，写自己的评论，不能编辑故事。</p>
-<h4 id="%E5%8F%AA%E6%9C%89%E8%87%AA%E5%B7%B1%E5%8F%AF%E8%AF%BB">只有自己可读</h4>
-<pre class="hljs"><code><div><span class="hljs-string">"read"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>, 
-</div></code></pre>
-<h4 id="%E5%8F%AA%E8%83%BD%E4%BF%AE%E6%94%B9%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BF%A1%E6%81%AF">只能修改自己的信息</h4>
-<pre class="hljs"><code><div><span class="hljs-string">"write"</span>: <span class="hljs-string">"doc._openid == auth.openid"</span>, 
-</div></code></pre>
-<h4 id="%E9%83%BD%E5%8F%AF%E4%BB%A5%E5%8F%91%E5%B8%83%E5%86%85%E5%AE%B9">都可以发布内容</h4>
-<pre class="hljs"><code><div>&quot;create&quot;: &quot;doc.publisher == auth.openid&quot;, 
-</div></code></pre>
-<h4 id="1%E4%BB%85%E7%BE%A4%E6%88%90%E5%91%98%E5%8F%AF%E4%BB%A5%E8%AF%BB">1、仅群成员可以读</h4>
-<p>vip</p>
-<pre class="hljs"><code><div>{
-  _id: string,
-  owner: string, 
-  name: string, 
-  members: string[], 
-}
-</div></code></pre>
-<pre class="hljs"><code><div><span class="hljs-string">"read"</span>: <span class="hljs-string">"auth.openid in get('database.vip.${doc._id}').members"</span>
-</div></code></pre>
-<h4 id="%E4%BB%85%E7%AE%A1%E7%90%86%E5%91%98%E5%92%8C%E6%8B%A5%E6%9C%89%E8%80%85%E6%8B%A5%E6%9C%89%E6%9D%83%E9%99%90">仅管理员和拥有者拥有权限</h4>
-<p>shop集合</p>
-<pre class="hljs"><code><div>{
-  _id: string,
-  name: string, 
-  owner: string, 
-  managers: string[], 
-</div></code></pre>
-<pre class="hljs"><code><div><span class="hljs-string">"write"</span>: <span class="hljs-string">"auth.openid == get(`database.shop.${doc.shopId}`).owner || auth.openid in get(`database.shop.${doc.shopId}`).managers"</span>,
-</div></code></pre>
-<p>用户角色管理
-创建角色并授予用户角色权限
-这里我们以几种常见场景为例。</p>
-<p>应用程序需要读/写权限。</p>
-<p>运维人员需要完全访问数据库。</p>
-<p>部分开发人员需要读取权限。</p>
-<p>部分开发人员需要读写权限。</p>
-<h3 id="%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6">权限控制</h3>
-<ul>
-<li>会员体系，指定用户有读写权限；
-这是权限最基础也是最核心的模型,它包括用户/角色/权限,其中用户和角色是多对多的关系,角色和权限也是多对多的关系。</li>
-</ul>
-<p>用户是发起操作的主体,按类型分可分为2B和2C用户,可以是后台管理系统的用户,可以是OA系统的内部员工,也可以是面向C端的用户,比如阿里云的用户。</p>
-<p>角色起到了桥梁的作用,连接了用户和权限的关系,每个角色可以关联多个权限,同时一个用户关联多个角色,那么这个用户就有了多个角色的多个权限。</p>
-<p>有人会问了为什么用户不直接关联权限呢?在用户基数小的系统,比如20个人的小系统,管理员可以直接把用户和权限关联,工作量并不大,选择一个用户勾选下需要的权限就完事了。</p>
-<p>但是在实际企业系统中,用户基数比较大,其中很多人的权限都是一样的,就是个普通访问权限,如果管理员给100人甚至更多授权,工作量巨大。</p>
-<p>这就引入了&quot;角色(Role)&quot;概念,一个角色可以与多个用户关联,管理员只需要把该角色赋予用户,那么用户就有了该角色下的所有权限,这样设计既提升了效率,也有很大的拓展性。</p>
-<h3 id="1223-%E5%AE%9E%E7%8E%B0%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90">12.2.3 实现页面的访问权限</h3>
-<p>页面权限: 即用户登录系统可以看到的页面,由菜单来控制,菜单包括一级菜单和二级菜单,只要用户有一级和二级菜单的权限,那么用户就可以访问页面。</p>
-<h3 id="1224-%E5%AE%9E%E7%8E%B0%E6%93%8D%E4%BD%9C%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5%E6%9D%83%E9%99%90">12.2.4 实现操作的增删改查权限</h3>
-<p>操作权限: 即页面的功能按钮,包括查看,新增,修改,删除,审核等,用户点击删除按钮时,后台会校验用户角色下的所有权限是否包含该删除权限,如果是,就可以进行下一步操作,反之提示无权限。有的系统要求&quot;可见即可操作&quot;,意思是如果页面上能够看到操作按钮,那么用户就可以操作,要实现此需求,这里就需要前端来配合,前端开发把用户的权限信息缓存,在页面判断用户是否包含此权限,如果有,就显示该按钮,如果没有,就隐藏该按钮。</p>
-<p>某种程度上提升了用户体验,但是在实际场景可自行选择是否需要这样做</p>
 <div class="sop-footer"> 
 	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
 </div>
