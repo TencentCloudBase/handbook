@@ -455,10 +455,10 @@ code {
 <h4 id="2%E5%8D%95%E5%AD%97%E6%AE%B5%E7%B4%A2%E5%BC%95">2、单字段索引</h4>
 <p>单字段索引是最常见的索引，它不会自动创建。对需要作为查询条件筛选的字段，我们可以创建单字段索引。如果需要对嵌套字段进行索引，那么可以通过 &quot;点表示法&quot; 用点连接起嵌套字段的名称。比如我们需要对如下格式的记录中的 color 字段进行索引时，可以用 style.color 表示。在设置单字段索引时，指定排序为升序或降序都可以，。</p>
 <pre class="hljs"><code><div>{
-  <span class="hljs-string">"_id"</span>: <span class="hljs-string">''</span>,
-  <span class="hljs-string">"style"</span>: {
-    <span class="hljs-string">"color"</span>: <span class="hljs-string">''</span>
-  }
+	<span class="hljs-string">"_id"</span>: <span class="hljs-string">''</span>,
+	<span class="hljs-string">"style"</span>: {
+	<span class="hljs-string">"color"</span>: <span class="hljs-string">''</span>
+	}
 }
 </div></code></pre>
 <h4 id="3%E7%BB%84%E5%90%88%E7%B4%A2%E5%BC%95">3、组合索引</h4>
@@ -469,19 +469,19 @@ code {
 <h4 id="4%E7%B4%A2%E5%BC%95%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7">4、索引的唯一性</h4>
 <p>创建索引时可以指定增加唯一性限制，具有唯一性限制的索引会要求被索引集合不能存在被索引字段值都相同的两个记录。需特别注意的是，假如记录中不存在某个字段，则对索引字段来说其值默认为 null，如果索引有唯一性限制，则不允许存在两个或以上的该字段为空 / 不存在该字段的记录。</p>
 <pre class="hljs"><code><div>db.collection(<span class="hljs-string">"china"</span>)  
-  .where({              
-    <span class="hljs-attr">gdp</span>: _.gt(<span class="hljs-number">3000</span>),
-    <span class="hljs-attr">city_area</span>:_.lt(<span class="hljs-number">10000</span>),
-    <span class="hljs-attr">reg_pop</span>:_.gt(<span class="hljs-number">6000</span>)
-  })
-  .field({             
-    <span class="hljs-attr">_id</span>:<span class="hljs-literal">false</span>,         
-    <span class="hljs-attr">city</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">city_area</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">gdp</span>:<span class="hljs-literal">true</span>
-  })
-  .orderBy(<span class="hljs-string">'gdp'</span>, <span class="hljs-string">'desc'</span>)
-  .orderBy(<span class="hljs-string">'city_area'</span>, <span class="hljs-string">'asc'</span>) 
+	.where({              
+	<span class="hljs-attr">gdp</span>: _.gt(<span class="hljs-number">3000</span>),
+	<span class="hljs-attr">city_area</span>:_.lt(<span class="hljs-number">10000</span>),
+	<span class="hljs-attr">reg_pop</span>:_.gt(<span class="hljs-number">6000</span>)
+	})
+	.field({             
+	<span class="hljs-attr">_id</span>:<span class="hljs-literal">false</span>,         
+	<span class="hljs-attr">city</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-attr">city_area</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-attr">gdp</span>:<span class="hljs-literal">true</span>
+	})
+	.orderBy(<span class="hljs-string">'gdp'</span>, <span class="hljs-string">'desc'</span>)
+	.orderBy(<span class="hljs-string">'city_area'</span>, <span class="hljs-string">'asc'</span>) 
 </div></code></pre>
 <p>由于有三个查询条件，为你可以给三个查询条件按照顺序创建索引，由于这几个值无法做到非唯一，且存在空值的可能（有些城市没有数据），所以创建时选择非唯一。</p>
 <h3 id="1252-%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E8%AF%B4%E6%98%8E">12.5.2 索引的创建说明</h3>
@@ -523,16 +523,17 @@ code {
 <p>保证索引包含的字段独立在查询语句中，不能是在表达式中，当查询的列都在索引的字段中时，查询的效率更高，所以应该尽量避免使用 select *，需要哪些字段，就只查哪些字段。在索引基数高的地方建立索引（比如邮箱，用户名，而不是性别）</p>
 <p><strong>7、避免重复索引和冗余索引</strong></p>
 <p>重复索引：在同一列或者相同顺序的几个列建立了多个索引，成为重复索引，没有任何意义，删掉 冗余索引：两个或多个索引所覆盖的列有重叠，比如对于列m,n ，加索引index m(m),indexmn(m,n),称为冗余索引。</p>
-<p><strong>8、使用索引获取有序数据</strong>
-索引本身是有序的，利用有序索引获取有序数据（Using Index）。使用索引来优化或者避免排序排序的字段上加入索引，可以提高速度。在频繁排序或分组（即group by或order by操作）的列上建立索引，如果待排序的列有多个，可以在这些列上建立组合索引</p>
-<p><strong>9、组合索引遵循最左前缀原则</strong>
-建立组合索引，要同时考虑列查询的频率和列的区分度，区分度大的优先放在前面。比如一张全球人口的用户表，该表有性别，国籍，年龄等字段。那么一般情况下国籍的区分度就要比性别的区分度更高，比如满足中国人这个条件的要比满足男人这个条件的人要更少。因此建组合索引时国籍优先考虑放在性别的前面。</p>
-<p><strong>10、索引碎片与维护</strong>
-在数据表长期的更改过程中，索引文件和数据文件都会产生空洞，形成碎片。修复表的过程十分耗费资源，可以用比较长的周期修复表。</p>
-<p><strong>11、注意索引的唯一性和非唯一性</strong>
-唯一索引一定要小心使用，它带有唯一约束，由于前期需求不明等情况下，可能造成我们对于唯一列的误判。</p>
+<p><strong>8、使用索引获取有序数据</strong></p>
+<p>索引本身是有序的，利用有序索引获取有序数据（Using Index）。使用索引来优化或者避免排序排序的字段上加入索引，可以提高速度。在频繁排序或分组（即group by或order by操作）的列上建立索引，如果待排序的列有多个，可以在这些列上建立组合索引</p>
+<p><strong>9、组合索引遵循最左前缀原则</strong></p>
+<p>建立组合索引，要同时考虑列查询的频率和列的区分度，区分度大的优先放在前面。比如一张全球人口的用户表，该表有性别，国籍，年龄等字段。那么一般情况下国籍的区分度就要比性别的区分度更高，比如满足中国人这个条件的要比满足男人这个条件的人要更少。因此建组合索引时国籍优先考虑放在性别的前面。</p>
+<p><strong>10、索引碎片与维护</strong></p>
+<p>在数据表长期的更改过程中，索引文件和数据文件都会产生空洞，形成碎片。修复表的过程十分耗费资源，可以用比较长的周期修复表。</p>
+<p><strong>11、注意索引的唯一性和非唯一性</strong></p>
+<p>唯一索引一定要小心使用，它带有唯一约束，由于前期需求不明等情况下，可能造成我们对于唯一列的误判。</p>
 <p><strong>12、建议最好不要用随机生成的_id做主键</strong></p>
 <p>最好是使用自增ID字段做索引的主键，而不要使用随机的_id做主键，因为非递增的主键会导致频繁的页分裂，从而降低了插入的效率。所以一般情况下，我们会在表中使用一个自增ID字段来代替_id(使用原子更新指令inc来做自增)，用该字段来作表的主键。如果需要按照_id查询时，查找就需要回表，查找的效率会低一点。如果表中只需要一个_id的唯一索引，那么就可以使用_id来做主键；如果不满足这个条件就用自增ID做索引；</p>
+			
 <div class="sop-footer"> 
 	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
 </div>
