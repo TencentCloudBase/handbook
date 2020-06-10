@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>11.1、云函数的模块知识.md</title>
+<title>11.1、云函数的模块知识</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,user-scalable=no,minimal-ui">
 
@@ -418,6 +418,11 @@ code {
 		<li class="page_item no_current_page_item"><a href="./1104.html">图像处理</a></li>
 		<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
 		<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+		<li class="page_item no_current_page_item"><a href="./1107.html">连接MySQL数据库</a></li>
+		<li class="page_item no_current_page_item"><a href="./1108.html">连接Redis数据库</a></li>
+		<li class="page_item no_current_page_item"><a href="./1109.html">短信发送</a></li>
+		<li class="page_item no_current_page_item"><a href="./1110.html">HTTP处理</a></li>
+		<li class="page_item no_current_page_item"><a href="./1111.html">云函数路由tcb-router</a></li>
 		<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
 		<li class="page_item no_current_page_item"><a href="./1201.html">数据库的管理</a></li>
 		<li class="page_item no_current_page_item"><a href="./1202.html">安全规则</a></li>
@@ -427,14 +432,15 @@ code {
 		<li class="page_item no_current_page_item"><a href="./1206.html">原子操作和事务</a></li>
 		<li class="page_item no_current_page_item"><a href="./1207.html">数据库的性能与优化</a></li>
 		<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
-		<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
+		<li class="page_item no_current_page_item"><a href="./1301.html">云调用与拓展能力</a></li>
 		<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
 		<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
 		<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
 		<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
 		<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
-		<li class="page_item no_current_page_item"><a href="./1307.html">开放能力</a></li>
+		<li class="page_item no_current_page_item"><a href="./1307.html">CloudID和动态消息</a></li>
 		<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+		<li class="page_item no_current_page_item"><a href="./1309.html">微信支付</a></li>
 		<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
 		<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
 		<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
@@ -443,6 +449,7 @@ code {
 		<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
 		<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
 		<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+		<li class="page_item no_current_page_item"><a href="./1408.html">CMS后台管理</a></li>
 			</ul>
 		</div>		
 		</div>
@@ -473,6 +480,7 @@ code {
 <li><strong>dns模块：</strong> 用于域名的解析；</li>
 <li><strong>crypto模块：</strong> 提供加密功能，包括对 OpenSSL 的哈希、HMAC、加密、解密、签名、以及验证功能的一整套封装；</li>
 <li><strong>zlib模块：</strong> zlib 可以用来实现对 HTTP 中定义的 gzip 和 deflate 内容编码机制的支持。</li>
+<li><strong>process模块：</strong> 提供有关当前 Node.js 进程的信息并对其进行控制.作为一个全局变量，它始终可供 Node.js 应用程序使用，<strong>无需使用</strong> require(), 它也可以使用 require() 显式地访问.</li>
 </ul>
 <h3 id="1112-node%E7%9A%84global%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1">11.1.2 Node的global全局对象</h3>
 <p>和JavaScript的全局对象（Global Object）类似，Nodejs也有一个全局对象global，它以及它的所有属性（一些全局变量都是global对象的属性）都可以在程序的任何地方访问。下面就来介绍一下Nodejs在云函数里比较常用的全局变量。</p>
@@ -480,11 +488,11 @@ code {
 <p>__dirname是获得当前执行文件所在目录的完整目录名，node还有另外一个常用变量__filename，它是获得当前执行文件的带有完整绝对路径的文件名。我们可以新建一个云函数比如nodefile，然后在nodefile云函数的index.js里输入以下代码：</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
 cloud.init({
-    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
-  })
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+	})
 exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'当前执行文件的文件名'</span>, __filename );
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'当前执行文件的目录名'</span>, __dirname );
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'当前执行文件的文件名'</span>, __filename );
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'当前执行文件的目录名'</span>, __dirname );
 }
 </div></code></pre>
 <p>将云函数部署上传之后，通过小程序端调用、本地调试或云端测试就可以执行云函数，得到如下的打印结果（还记得云函数的打印日志可以在哪里查看么？）：</p>
@@ -500,11 +508,19 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 <li>exports表示该模块运行时生成的导出对象。如果按确切的文件名没有找到模块，则 Nodejs会尝试带上.js、.json或.node拓展名再加载。</li>
 </ul>
 <p>以<code>/</code>为前缀的模块是文件的绝对路径，放到云函数里<code>require('/var/user/config/config.js')</code> 会加载云函数目录里的config文件夹里的config.js，这里<code>require('/var/user/config/config.js')</code>在云函数的路径里等同于相对路径的<code>require('./config/config.js')</code>。当没有以 '/'、'./' 或  '../' 开头来表示文件时，这个模块必须是一个核心模块或加载自node_modules 目录。</p>
-<p>在nodefile云函数的目录下面新建一个config文件夹，在config文件夹里创建一个config.js，在config.js里输入以下代码：</p>
+<p>在nodefile云函数的目录下面新建一个config文件夹，在config文件夹里创建一个config.js，云函数的目录结构如下图所示：</p>
+<pre class="hljs"><code><div>nodefile <span class="hljs-comment">// 云函数目录</span>
+├── config <span class="hljs-comment">//config文件夹</span>
+│   └── config.js <span class="hljs-comment">//config.js文件</span>
+└── index.js
+└── config.json 
+└── package.json 
+</div></code></pre>
+<p>然后再在config.js里输入以下代码，通常我们用这样的方式申明一些比较敏感的信息，或者比较通用的模块：</p>
 <pre class="hljs"><code><div><span class="hljs-built_in">module</span>.exports = {
-    <span class="hljs-attr">AppID</span>: <span class="hljs-string">'wxda99ae45313257046'</span>,  <span class="hljs-comment">//可以是其他变量，这里只是参考</span>
-    <span class="hljs-attr">AppKey</span>: <span class="hljs-string">'josgjwoijgowjgjsogjo'</span>, 
-  }
+	<span class="hljs-attr">AppID</span>: <span class="hljs-string">'wxda99ae45313257046'</span>,  <span class="hljs-comment">//可以是其他变量，这里只是参考</span>
+	<span class="hljs-attr">AppKey</span>: <span class="hljs-string">'josgjwoijgowjgjsogjo'</span>, 
+	}
 </div></code></pre>
 <p>然后在nodefile云函数的index.js里输入以下代码（下面并非实际代码，大家看着添加）：</p>
 <pre class="hljs"><code><div><span class="hljs-comment">//下面两句放在exports.main函数的前面</span>
@@ -512,16 +528,35 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 <span class="hljs-keyword">const</span> {AppID,AppKey} = config
 <span class="hljs-comment">//省略了部分代码</span>
 exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
-    <span class="hljs-built_in">console</span>.log({AppID,AppKey})
+	<span class="hljs-built_in">console</span>.log({AppID,AppKey})
 }
 </div></code></pre>
-<p>将云函数的文件都部署上传到云端之后，再来执行云函数，我们就可以看到config/config.js里面的变量就被传递到了index.js里了，这同时也说明在云函数目录之下不仅可以创建文件（前面创建过图片），还可以创建模块，通过module.exports和require来达到创建并引入的效果。</p>
+<p>将云函数的所有文件都部署上传到云端之后，再来执行云函数，我们就可以看到config/config.js里面的变量就被传递到了index.js里了，这同时也说明在云函数目录之下不仅可以创建文件（前面创建过图片），还可以创建模块，通过module.exports和require来达到创建并引入的效果。</p>
+<h4 id="3-processenv%E5%B1%9E%E6%80%A7">3） process.env属性</h4>
+<p>process 对象提供有关当前 Node.js 进程的信息并对其进行控制，它有一个比较重要的属性process.env，返回包含用户环境的对象。</p>
+<p>比如上面的nodefile云函数，打开云开发控制台，在云函数列表里找到nodefile，然后点击<strong>配置</strong>在弹窗的环境变量里添加一些环境变量，比如NODE_ENV、ENV_ID、name（因为是常量，建议用大写字母），它的值为字符串，然后我们将nodefile云函数的index.js代码改为如下：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+})
+
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-keyword">return</span> process.env <span class="hljs-comment">//process可以不必使用require就可以直接用</span>
+}
+</div></code></pre>
+<p>右键云函数增量上传之后，调用该云函数，然后在云函数的返回的对象里就可以看到除了有我们设置的变量以外，还有一些关于云函数环境的信息。因此我们可以把一些需要手动可以修改或者比较私密的变量添加到配置里，然后在云函数里调用，比如我们想在小程序上线之后修改小程序的云开发环境，可以添加ENV_ID字段，值到时根据情况来修改：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> {ENV_ID} = process.env
+cloud.init({
+	<span class="hljs-attr">env</span>: ENV_ID
+})
+</div></code></pre>
 <h3 id="1113-wx-server-sdk%E7%9A%84%E6%A8%A1%E5%9D%97">11.1.3 wx-server-sdk的模块</h3>
-<p>再来回顾一下wx-server-sdk这个第三方模块，它也是云开发必备的核心依赖，云开发的诸多API都是基于此。我们可以在给云函数安装了wx-server-sdk之后（也就是右键云函数，在终端执行了 npm install），在电脑上打开云函数的node modules文件夹，可以看到虽然只安装了一个wx-server-sdk，但是却下载了很多个模块，这些模块都是通过三个核心依赖tcb-admin-node、protobuf、jstslib来安装的。</p>
-<p>要想对wx-server-sdk有一个深入了解，我们可以研究一下最核心的tcb-admin-node，具体可以参考<a href="https://github.com/TencentCloudBase/tcb-admin-node">tcb-admin-node的Github官网</a>，同时由于wx-server-sdk顺带下载了很多依赖，比如tcb-admin-node、base64、request等，这些依赖可以在云函数里直接引入。</p>
+<p>再来回顾一下wx-server-sdk这个第三方模块，它也是云开发必备的核心依赖，云开发的诸多API都是基于此。我们可以在给云函数安装了wx-server-sdk之后（也就是右键云函数，在终端执行了 npm install），在电脑上打开云函数的node modules文件夹，可以看到虽然只安装了一个wx-server-sdk，但是却下载了很多个模块，这些模块都是通过三个核心依赖@cloudbase/node-sdk（原tcb-admin-node）、protobuf、jstslib来安装的。</p>
+<p>要想对wx-server-sdk有一个深入了解，我们可以研究一下最核心的@cloudbase/node-sdk（原tcb-admin-node），具体可以参考<a href="https://github.com/TencentCloudBase/node-sdk">@cloudbase/node-sdk的Github官网</a>，同时由于wx-server-sdk顺带下载了很多依赖，比如@cloudbase/node-sdk、xml2js、request等，这些依赖可以在云函数里直接引入。</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">const</span> request = <span class="hljs-built_in">require</span>(<span class="hljs-string">'request'</span>)
 </div></code></pre>
-<p>request模块虽然是第三方模块，但是已经通过wx-server-sdk下载了，在云函数里直接通过require就可以引入。</p>
+<p>request模块虽然是第三方模块，但是已经通过wx-server-sdk下载了，在云函数里直接通过require就可以引入。由于wx-server-sdk模块是每个云函数都会下载安装的，我们完全可以把它当成云函数的内置模块来处理，而通过wx-server-sdk顺带下载的N多个依赖，我们也可以直接引入，不必再来下载，而在使用<code>npm install</code>安装完成之后的package-lock.json里查看这些依赖的版本信息。</p>
 <h3 id="1114-%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97">11.1.4 第三方模块</h3>
 <p>Nodejs生态所拥有的第三方模块是所有编程语言里最多了，比Python、PHP、Java还要多，借助于这些开源的模块，可以大大节省我们的开发成本，这些模块在<a href="https://www.npmjs.com/">npm官网地址</a>都可以搜索到，不过npm官网的第三方模块大而全，哪些才是Nodejs开发人员最常用最优秀的模块呢？我们可以在Github上面找到<a href="https://github.com/sindresorhus/awesome-nodejs">awesome Nodejs</a>，这里有非常全面的推荐。</p>
 <p>在awesome-nodejs里，这些优秀的模块被分为了近50个不同的类别，而其中大多数都是可以用于云函数的，可见云函数的强大远不只停留在云开发的技术文档上，我们接下来会在这一章会选取一些比较有代表性的模块来结合云函数进行讲解。</p>
@@ -534,8 +569,8 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 比如我们要在云函数里引入lodash的最新版，就可以去该云函数package.json里添加<code>&quot;lodash&quot;: &quot;latest&quot;</code>，注意是添加到dependencies属性里面，而且package.json的写法也要符合配置文件的格式要求，尤其要注意最后一项不能有逗号<code>,</code>，以及不能在json配置文件里写注释：</li>
 </ul>
 <pre class="hljs"><code><div>  <span class="hljs-string">"dependencies"</span>: {
-      <span class="hljs-string">"lodash"</span>: <span class="hljs-string">"latest"</span>
-    }
+		<span class="hljs-string">"lodash"</span>: <span class="hljs-string">"latest"</span>
+	}
 </div></code></pre>
 <p>在 <code>npm install</code>时候生成一份package-lock.json文件，用来记录当前状态下实际安装的各个npm package的具体来源和版本号。不同的版本号可能对运行的结果造成不一样的影响，所以为了保证版一致会有package-lock.json，通常我们用最新的即可。</p>
 <h3 id="1115-%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6">11.1.5 云函数的运行机制</h3>

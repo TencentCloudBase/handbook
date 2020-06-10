@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>13.9、微信支付</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,user-scalable=no,minimal-ui">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+
+ 
+
+</head>
+<body>
+<div id="primary" class="content-area">
+<div id="content" class="site-content" role="main">			
+	<nav id="header-db" class="row navbar navbar-default">
+		<div class="navbar-header">
+			<div class="logotop fleft">
+				<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+			</div>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			<div class="flex nav-items">
+			<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+			<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://cloudbase.net/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://cloudbase.net/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://cloudbase.net/community.html">社区</a></li></ul>
+			<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb?from=12341" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+			</div>
+						
+		</div>
+	
+		<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+			<div class="sop-menu">
+				<ul>
+					<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+					<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+					<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+					<li class="page_item no_current_page_item"><a href="./1104.html">图像处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+					<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1107.html">连接MySQL数据库</a></li>
+					<li class="page_item no_current_page_item"><a href="./1108.html">连接Redis数据库</a></li>
+					<li class="page_item no_current_page_item"><a href="./1109.html">短信发送</a></li>
+					<li class="page_item no_current_page_item"><a href="./1110.html">HTTP处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1111.html">云函数路由tcb-router</a></li>
+					<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1201.html">数据库的管理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1202.html">安全规则</a></li>
+					<li class="page_item no_current_page_item"><a href="./1203.html">数据库的设计</a></li>
+					<li class="page_item no_current_page_item"><a href="./1204.html">实时数据推送</a></li>
+					<li class="page_item no_current_page_item"><a href="./1205.html">索引</a></li>
+					<li class="page_item no_current_page_item"><a href="./1206.html">原子操作和事务</a></li>
+					<li class="page_item no_current_page_item"><a href="./1207.html">数据库的性能与优化</a></li>
+					<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1301.html">云调用与拓展能力</a></li>
+					<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+					<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+					<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+					<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+					<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+					<li class="page_item no_current_page_item"><a href="./1307.html">CloudID和动态消息</a></li>
+					<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+					<li class="page_item current_page_item"><a href="./1309.html">微信支付</a></li>
+					<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+					<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+					<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+					<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+					<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+					<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					<li class="page_item no_current_page_item"><a href="./1408.html">CMS后台管理</a></li>
+						</ul>
+		</div>		
+		</div>
+	</nav>
+<div class="sop-content">
+   
+<h2 id="139-%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98">13.9 微信支付</h2>
+<p>微信支付云调用（云支付），可以免鉴权快速调用微信支付的开放能力，开发者无需关心证书、签名、也无需依赖第三方模块，免去了泄漏证书，支付等敏感信息的风险；还支持云函数作为微信支付进行支付和退款的回调地址，不再需要定时轮询，更加高效。只需在开发者工具1.02.2005111 (2020年5月11日版）的云开发控制台绑定微信支付商户号，在绑定完成后可在云开发中原生接入微信支付，</p>
+<h3 id="1391-%E4%BA%91%E6%94%AF%E4%BB%98%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8">13.9.1 云支付快速入门</h3>
+<h4 id="1%E5%BC%80%E9%80%9A%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E4%BA%91%E8%B0%83%E7%94%A8">1、开通微信支付云调用</h4>
+<p>要开通微信支付云调用，首先需要<strong>小程序已经开通了微信支付</strong>，而微信支付是不支持个人小程序的，需要企业账户才行，其次需要小程序已经绑定了商户号。满足这两个条件之后，我们可以在<strong>云开发控制台</strong>（注意开发者工具的版本）- <strong>设置</strong>- <strong>全局设置</strong>中开通。</p>
+<p><img src="./../../img/13/WX20200517.png" alt="开通微信支付云调用"></p>
+<p>点击添加商户号后进行账号绑定，这时候绑定了微信支付的商户号<strong>管理员的微信</strong>会收到一条授权确认的模板消息，点击模板消息会弹出<strong>服务商助手小程序</strong>，确认授权之后就可以在云开发控制台看到绑定状态为“已绑定”，而JS API权限也会显示“已授权”。</p>
+<p>jsapi和api退款权限授权，需要前往<strong>微信支付商户平台</strong>-<strong>产品中心</strong>-<strong>我的授权产品</strong>中进行确认授权完成授权后才可以调用微信支付相关接口能力。如果你在你的产品中心看不到我的授权产品，可以点击链接：<a href="https://pay.weixin.qq.com/index.php/extend/product/submch">https://pay.weixin.qq.com/index.php/extend/product/submch</a></p>
+<p><img src="./../../img/13/WX20200518-163153@2x.png" alt="退款API授权"></p>
+<h4 id="2%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B%E8%AF%B4%E6%98%8E">2、微信支付流程说明</h4>
+<p>用微信支付云调用来实现完整的支付功能，大体上会经过以下4个步骤（后面在代码的写法上有些步骤会整合到一起）：</p>
+<ul>
+<li>1、用户在小程序端点击支付时使用<code>wx.cloud.callFunction</code>调用云函数（比如云函数名为pay），并将商品名称、商品价格等信息传递给pay云函数；</li>
+<li>2、在pay云函数中调用统一下单接口<code>CloudPay.unifiedOrder()</code>，参数包括接收的商品信息、云函数环境id，以及需要填写结果通知回调函数（比如函数名为paynotice）用来接收异步支付结果；pay云函数会返回的成功结果对象中会包含payment字段；</li>
+<li>3、在小程序端<code>wx.cloud.callFunction</code>的success回调函数（也就是拿到云函数返回的对象）里调用<code>wx.requestPayment</code>接口发起支付，而从pay云函数返回的payment对象(字段)就包含这个接口所需要的所有信息（参数）；这时会弹出微信支付的界面；</li>
+<li>4、用户在小程序端支付成功，paynotice就会接受到异步的支付结果，我们可以在paynotice云函数里进行发送订阅消息以及将支付成功的信息更新到数据库等操作</li>
+</ul>
+<h4 id="3%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E7%9A%84%E7%AE%80%E5%8D%95%E6%A1%88%E4%BE%8B">3、微信支付的简单案例</h4>
+<p>我们可以在小程序的wxml页面比如pay.wxml页面，点击某个button组件时，通过事件处理函数比如callPay，来调用pay云函数，代码如下：</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">bindtap</span> =<span class="hljs-string">"callPay"</span>&gt;</span>发起支付<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>然后再在pay.js里输入事件处理函数callPay，调用的支付云函数名称为pay（名称任意），注意成功的回调函数的写法如下，这里把支付流程的第1步和第3步整到了一起：</p>
+<blockquote>
+<p>尤其是<code>const payment = res.result.payment</code>和<code>wx.requestPayment({...payment})</code>不要改（仅对小白用户而言）。因为有不少小白用户啥基础也没有，但是对微信支付比较感兴趣，所以本节内容，会介绍的比较琐碎一些。</p>
+</blockquote>
+<pre class="hljs"><code><div>callPay(){
+	wx.cloud.callFunction({
+	<span class="hljs-attr">name</span>: <span class="hljs-string">'pay'</span>,  <span class="hljs-comment">//云函数的名称，在后面我们会教大家怎么建</span>
+	<span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+		<span class="hljs-built_in">console</span>.log(res)
+		<span class="hljs-keyword">const</span> payment = res.result.payment
+		wx.requestPayment({
+		...payment,
+		success (res) {
+			<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'支付成功'</span>, res) <span class="hljs-comment">//为方便，只打印结果，如果要写支付成功之后的处理函数，写在这后面</span>
+		},
+		fail (err) {
+			<span class="hljs-built_in">console</span>.error(<span class="hljs-string">'支付失败'</span>, err) <span class="hljs-comment">//支付失败之后的处理函数，写在这后面</span>
+		}
+		})
+	},
+	<span class="hljs-attr">fail</span>: <span class="hljs-built_in">console</span>.error,
+	})
+},
+</div></code></pre>
+<p>然后再在云函数根目录文件夹cloudfunctions右键，选择“<strong>新建Nodejs云函数</strong>”，新建一个云函数pay，然后再在index.js里输入以下代码，然后进行一些修改（注意参数名称不要改，大小写也要原样写，不懂你就复制）：</p>
+<ul>
+<li><code>body</code>为你的商家名（店名）-销售商品的类名，代码里有参考；</li>
+<li><code>outTradeNo</code>是商户订单号，32个字符内，只能是数字、大小写字母_-，如果你是在调试学习，注意每次都改一下这个，免得重复；</li>
+<li><code>subMchId</code>你的商户ID或子商户ID，填写<strong>云开发控制台</strong>- <strong>设置</strong>- <strong>全局设置</strong>- <strong>微信支付配置</strong>里的商户号也可以；</li>
+<li><code>totalFee</code>是支付的金额，单位是分，填写100，就是一块钱，注意这个是数值格式，不要写成了字符串格式（不要加单引号或者双引号）；</li>
+<li><code>envId</code>是你的结果通知回调云函数所在的环境ID，<code>functionName</code>结果通知云函数的名称(可以自定义)；可以在<strong>云开发控制台</strong>- <strong>设置</strong>- <strong>环境设置</strong>里看到，<strong>注意是环境ID，不是环境名称</strong>，最好直接复制过来；</li>
+<li>其他地方，不懂的话，不要改，直接copy完事</li>
+</ul>
+<p>修改完之后，点击pay云函数目录下的index.js，然后右键选择“<strong>云函数增量上传：更新文件</strong>”或者右键云函数根目录文件夹cloudfunctions，选择“<strong>上传并部署：云端安装依赖（不上传Node_modules）</strong>”</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+})
+
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> cloud.cloudPay.unifiedOrder({
+	<span class="hljs-string">"body"</span>: <span class="hljs-string">"HackWeek案例-教学费用"</span>,
+	<span class="hljs-string">"outTradeNo"</span> : <span class="hljs-string">"122775224070323234368128"</span>, <span class="hljs-comment">//不能重复，否则报错</span>
+	<span class="hljs-string">"spbillCreateIp"</span> : <span class="hljs-string">"127.0.0.1"</span>, <span class="hljs-comment">//就是这个值，不要改</span>
+	<span class="hljs-string">"subMchId"</span> : <span class="hljs-string">"1520057521"</span>,  <span class="hljs-comment">//你的商户ID或子商户ID</span>
+	<span class="hljs-string">"totalFee"</span> : <span class="hljs-number">100</span>,  <span class="hljs-comment">//单位为分</span>
+	<span class="hljs-string">"envId"</span>: <span class="hljs-string">"xly-xrlur"</span>,  <span class="hljs-comment">//你的云开发环境ID</span>
+	<span class="hljs-string">"functionName"</span>: <span class="hljs-string">"paysuc"</span>,  <span class="hljs-comment">//支付成功的回调云函数，先可以随便写，比如写paysuc，后面会教你怎么建</span>
+	<span class="hljs-string">"nonceStr"</span>:<span class="hljs-string">"F8B31E62AD42045DFB4F2"</span>,  <span class="hljs-comment">//随便弄的32位字符串，建议自己生成</span>
+	<span class="hljs-string">"tradeType"</span>:<span class="hljs-string">"JSAPI"</span>   <span class="hljs-comment">//默认是JSAPI</span>
+	})
+	<span class="hljs-keyword">return</span> res
+}
+</div></code></pre>
+<p>然后就可以在开发者工具的模拟器里点击&quot;发起支付&quot;的按钮了，这时会弹出支付的二维码，扫码支付就可以了；也可以使用预览或真机调试。</p>
+<blockquote>
+<p>这里的outTradeNo是自己生成的，我们可以使用时间戳<code>Date.now().toString()</code>，或者加随机数<code>Date.now().toString()+Math.floor(Math.random()*1000).toString()</code>等来处理，而nonceStr是32位以内的字符串，我们可以使用用户的openid和时间戳拼接而成（你也可以使用其他方法），比如下面是用户的openid先替换掉<code>-</code>字符，然后将字母都大写，最后加上时间戳的字符串<code>&quot;oUL-m5FuRmuVmxvbYOGuXbuEDsn8&quot;.replace('-','').toUpperCase()+Date.now().toString()</code></p>
+</blockquote>
+<h3 id="1392-%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E4%B8%8E%E7%94%B3%E8%AF%B7%E9%80%80%E6%AC%BE">13.9.2 查询订单与申请退款</h3>
+<p>我们可以在云函数里调用<code>cloudPay.queryOrder()</code>来查询订单的支付状态，以及调用<code>cloudPay.refund()</code>来对已经支付成功的订单发起退款。下面的代码只是查询订单与申请退款简单的demo，真正要在实际开发中使用这些接口，都是需要结合云开发数据库的，尤其是申请退款开发时一定要慎重对待。</p>
+<p>使用开发者工具新建一个queryorder的云函数，然后在index.js里输入以下代码，将云函数部署到云端之后，调用该云函数就能查询订单信息了：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span>(event, context) =&gt; {
+	<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> cloud.cloudPay.queryOrder({
+	<span class="hljs-string">"sub_mch_id"</span>:<span class="hljs-string">"1520057521"</span>,
+	<span class="hljs-string">"out_trade_no"</span>:<span class="hljs-string">"122775224070323234368128"</span>, <span class="hljs-comment">//商户订单号，需是云支付成功交易的订单号</span>
+	<span class="hljs-comment">// "transaction_id":"4200000530202005179572346100",  //微信订单号可以不必写</span>
+	<span class="hljs-string">"nonce_str"</span>:<span class="hljs-string">"C380BEC2BFD727A4B6845133519F3AD6"</span> <span class="hljs-comment">//任意的32位字符</span>
+	})
+	<span class="hljs-keyword">return</span> res
+}
+</div></code></pre>
+<p>使用开发者工具新建一个refundorder的云函数，然后在index.js里输入以下代码，退款的金额少于交易的金额时，可以实现部分退款；注意调用该云函数，<strong>退款会直接原路返回给用户</strong>，因此一定要有管理员审核或只能管理员来调用该接口：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span>(event, context) =&gt; {
+	<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> cloud.cloudPay.refund({
+	<span class="hljs-string">"sub_mch_id"</span>:<span class="hljs-string">"1520057521"</span>,
+	<span class="hljs-string">"nonce_str"</span>:<span class="hljs-string">"5K8264ILTKCH16CQ2502SI8ZNMTM67VS"</span>,
+	<span class="hljs-string">"out_trade_no"</span>:<span class="hljs-string">"122775224070323234368128"</span>,<span class="hljs-comment">//商户订单号，需是云支付成功交易的订单号</span>
+	<span class="hljs-string">"out_refund_no"</span>:<span class="hljs-string">"122775224070323234368128001"</span>,<span class="hljs-comment">//退款单号，可以自定义，建议与订单号相关联</span>
+	<span class="hljs-string">"total_fee"</span>:<span class="hljs-number">100</span>,
+	<span class="hljs-string">"refund_fee"</span>:<span class="hljs-number">20</span>,
+	})
+	<span class="hljs-keyword">return</span> res
+}
+</div></code></pre>
+<h3 id="1393-%E6%94%AF%E4%BB%98%E6%88%90%E5%8A%9F%E7%9A%84%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0">13.9.3 支付成功的回调函数</h3>
+<p>在前面发起支付的云函数里我们写过一个参数<code>functionName</code>结果通知云函数paysuc，paysuc云函数在订单支付成功之后才会被调用。我们可以在支付成功的回调函数里处理一些任务，比如把订单支付的重要信息存储到数据库、给用户发送支付成功的订阅消息、以及获取用户的UnionID等等。要处理这些任务，首先需要了解订单支付成功之后，paysuc云函数会接收到哪些数据。我们可以打印paysuc云函数的event对象，可以了解到event对象里包含类似于如下结构的信息，这些都是我们在paysuc云函数处理任务的关键：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"appid"</span>: <span class="hljs-string">"wxd2********65e"</span>, 
+<span class="hljs-string">"bankType"</span>: <span class="hljs-string">"OTHERS"</span>,
+<span class="hljs-string">"cashFee"</span>: <span class="hljs-number">200</span>,
+<span class="hljs-string">"feeType"</span>: <span class="hljs-string">"CNY"</span>,
+<span class="hljs-string">"isSubscribe"</span>: <span class="hljs-string">"N"</span>,
+<span class="hljs-string">"mchId"</span>: <span class="hljs-string">"1800008281"</span>,
+<span class="hljs-string">"nonceStr"</span>: <span class="hljs-string">"F8B31E62AD42045DFB4F2"</span>,
+<span class="hljs-string">"openid"</span>: <span class="hljs-string">"oPoo44....t8gCOUKSncFI"</span>,
+<span class="hljs-string">"outTradeNo"</span>: <span class="hljs-string">"1589720989221"</span>,
+<span class="hljs-string">"resultCode"</span>: <span class="hljs-string">"SUCCESS"</span>,
+<span class="hljs-string">"returnCode"</span>: <span class="hljs-string">"SUCCESS"</span>,
+<span class="hljs-string">"subAppid"</span>: <span class="hljs-string">"wxda99a********57046"</span>,
+<span class="hljs-string">"subIsSubscribe"</span>: <span class="hljs-string">"N"</span>,
+<span class="hljs-string">"subMchId"</span>: <span class="hljs-string">"1520057521"</span>,
+<span class="hljs-string">"subOpenid"</span>: <span class="hljs-string">"oUL********GuXbuEDsn8"</span>,
+<span class="hljs-string">"timeEnd"</span>: <span class="hljs-string">"20200517211001"</span>,
+<span class="hljs-string">"totalFee"</span>: <span class="hljs-number">2</span>,
+<span class="hljs-string">"tradeType"</span>: <span class="hljs-string">"JSAPI"</span>,
+<span class="hljs-string">"transactionId"</span>: <span class="hljs-string">"42000********178943055343"</span>,
+<span class="hljs-string">"userInfo"</span>: {
+	<span class="hljs-attr">"appId"</span>: <span class="hljs-string">"wxd********046"</span>,
+	<span class="hljs-attr">"openId"</span>: <span class="hljs-string">"oUL-m5F********GuXbuEDsn8"</span>
+}
+</div></code></pre>
+<p>要发送订阅消息，首先我们需要去申请订单支付成功的订阅消息模板，比如模板如下，我们需要注意订阅消息里每一个属性对应的具体的格式，以及格式的具体要求，比如支付金额以及支付时间的格式：</p>
+<pre class="hljs"><code><div>商品名称{{thing6.DATA}}
+支付金额{{amount7.DATA}}
+订单号{{character_string9.DATA}}
+支付时间{{date10.DATA}}
+温馨提示{{thing5.DATA}}
+</div></code></pre>
+<p>要发订阅消息，需要调用接口<code>wx.requestSubscribeMessage</code>来获取用户授权以及要有相应的授权次数，在前面我们已经了解到只有用户发生点击行为或者发起支付回调后，才可以调起订阅消息界面，因此我们可以在上面的发起支付的回调函数里直接调用这个接口：</p>
+<pre class="hljs"><code><div>callPay(){
+	wx.cloud.callFunction({
+	<span class="hljs-attr">name</span>: <span class="hljs-string">'pay'</span>,  <span class="hljs-comment">//云函数的名称，在后面我们会教大家怎么建</span>
+	<span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+		<span class="hljs-built_in">console</span>.log(res)
+		<span class="hljs-keyword">const</span> payment = res.result.payment
+		wx.requestPayment({
+		...payment,
+		success (res) {
+			<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'支付成功'</span>, res) <span class="hljs-comment">//为方便，只打印结果，如果要写支付成功之后的处理函数，写在这后面</span>
+			<span class="hljs-keyword">this</span>.subscribeMessage() <span class="hljs-comment">//调用subscribeMessage()函数，如果你不是箭头函数，注意this指代的对象</span>
+		},
+		})
+	},
+	})
+},
+subscribeMessage() {
+	wx.requestSubscribeMessage({
+	<span class="hljs-attr">tmplIds</span>: [
+		<span class="hljs-string">"p5ypZiN4TcZrzke4Q_MBB1qri33rb80z-tb16Sg-Kpg"</span>,<span class="hljs-comment">//订阅消息模板ID，一次可以写三个，可以是同款通知、到货通知、新品上新通知等，通常用户不会拒绝，多写几个就能获取更多授权</span>
+	],
+	success(res) {
+		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"订阅消息API调用成功："</span>,res)
+	},
+	fail(res) {
+		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"订阅消息API调用失败："</span>,res)
+	}
+	})
+},
+</div></code></pre>
+<p>然后在paysuc云函数的index.js里写如下代码，订阅消息所需的全部参数都是来自于event对象，我们只需要稍加修改格式即可。</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV
+})
+
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-keyword">const</span> {cashFee,subOpenid,outTradeNo,timeEnd} = event
+	<span class="hljs-keyword">try</span> {
+	<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.subscribeMessage.send({
+		<span class="hljs-attr">touser</span>: subOpenid,
+		<span class="hljs-attr">page</span>: <span class="hljs-string">'index'</span>,
+		<span class="hljs-attr">templateId</span>: <span class="hljs-string">"p5ypZiN4TcZrzke4Q_MBB1qri33rb80z-tb16Sg-Kpg"</span>,
+		<span class="hljs-attr">data</span>: {
+		<span class="hljs-string">"thing6"</span>: {
+			<span class="hljs-string">"value"</span>: <span class="hljs-string">'零基础小程序云开发训练营'</span>
+		},
+		<span class="hljs-string">"amount7"</span>: {
+			<span class="hljs-string">"value"</span>: cashFee/<span class="hljs-number">100</span> +<span class="hljs-string">'元'</span>
+		},
+		<span class="hljs-string">"character_string9"</span>: {
+			<span class="hljs-string">"value"</span>: outTradeNo
+		},
+		<span class="hljs-string">"date10"</span>: {
+			<span class="hljs-string">"value"</span>: timeEnd.slice(<span class="hljs-number">0</span>,<span class="hljs-number">4</span>)+<span class="hljs-string">'年'</span>+timeEnd.slice(<span class="hljs-number">4</span>,<span class="hljs-number">6</span>)+<span class="hljs-string">'月'</span>+timeEnd.slice(<span class="hljs-number">6</span>,<span class="hljs-number">8</span>)+<span class="hljs-string">'日'</span>+<span class="hljs-string">' '</span>+timeEnd.slice(<span class="hljs-number">8</span>,<span class="hljs-number">10</span>)+<span class="hljs-string">':'</span>+timeEnd.slice(<span class="hljs-number">10</span>,<span class="hljs-number">12</span>)
+		},
+		<span class="hljs-string">"thing5"</span>: {
+			<span class="hljs-string">"value"</span>: <span class="hljs-string">"多谢您的支持哦~爱你哦~"</span>
+		}
+	}
+	})
+	<span class="hljs-keyword">return</span> result
+	} <span class="hljs-keyword">catch</span> (err) {
+	<span class="hljs-built_in">console</span>.log(err)
+	<span class="hljs-keyword">return</span> err
+	}
+}
+</div></code></pre>
+<div class="sop-footer"> 
+	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
+</div>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+<script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+	</script>
+	
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?8efc2c9aaaffb2f7a4cf6a7ff9c65cbb";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+</body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>11.8、连接Redis数据库</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,user-scalable=no,minimal-ui">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+
+ 
+
+</head>
+<body>
+<div id="primary" class="content-area">
+<div id="content" class="site-content" role="main">			
+	<nav id="header-db" class="row navbar navbar-default">
+		<div class="navbar-header">
+			<div class="logotop fleft">
+				<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+			</div>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			<div class="flex nav-items">
+			<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+			<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://cloudbase.net/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://cloudbase.net/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://cloudbase.net/community.html">社区</a></li></ul>
+			<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb?from=12341" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+			</div>
+						
+		</div>
+	
+		<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+			<div class="sop-menu">
+				<ul>
+					<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+					<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+					<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+					<li class="page_item no_current_page_item"><a href="./1104.html">图像处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+					<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1107.html">连接MySQL数据库</a></li>
+					<li class="page_item current_page_item"><a href="./1108.html">连接Redis数据库</a></li>
+					<li class="page_item no_current_page_item"><a href="./1109.html">短信发送</a></li>
+					<li class="page_item no_current_page_item"><a href="./1110.html">HTTP处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1111.html">云函数路由tcb-router</a></li>
+					<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1201.html">数据库的管理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1202.html">安全规则</a></li>
+					<li class="page_item no_current_page_item"><a href="./1203.html">数据库的设计</a></li>
+					<li class="page_item no_current_page_item"><a href="./1204.html">实时数据推送</a></li>
+					<li class="page_item no_current_page_item"><a href="./1205.html">索引</a></li>
+					<li class="page_item no_current_page_item"><a href="./1206.html">原子操作和事务</a></li>
+					<li class="page_item no_current_page_item"><a href="./1207.html">数据库的性能与优化</a></li>
+					<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1301.html">云调用与拓展能力</a></li>
+					<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+					<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+					<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+					<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+					<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+					<li class="page_item no_current_page_item"><a href="./1307.html">CloudID和动态消息</a></li>
+					<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+					<li class="page_item no_current_page_item"><a href="./1309.html">微信支付</a></li>
+					<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+					<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+					<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+					<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+					<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+					<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					<li class="page_item no_current_page_item"><a href="./1408.html">CMS后台管理</a></li>
+						</ul>
+		</div>		
+		</div>
+	</nav>
+<div class="sop-content">
+   
+<h2 id="118-%E8%BF%9E%E6%8E%A5redis%E6%95%B0%E6%8D%AE%E5%BA%93">11.8 连接Redis数据库</h2>
+<p>Redis 是一个开源高性能基于key-value的NoSQL 数据库，支持多种类型的数据结构，如字符串（strings）、散列（hashes）、列表（lists）、集合（sets）、有序集合（sorted set）等而且对数据的操作都是原子性的。Redis运行在内存中，所以具有极高的读写速度，同时也支持数据的持久化，将内存中的数据保存在磁盘中。</p>
+<h3 id="1181-redis%E4%B8%8E%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C">11.8.1 Redis与私有网络</h3>
+<h4 id="1redis%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">1、Redis应用场景</h4>
+<ul>
+<li><strong>计数器</strong>：因为Redis操作是原子性的，通过原子递增或递减来做高并发用户的数据计数，比如点赞数、收藏数、分享数、商品抢购时的库存量、商品文章总数、评论数量等</li>
+<li><strong>排行榜</strong>：Redis支持集合和有序集合的数据结构，且运行在内存中，因此可以存储一些类似于排行榜的数据，比如最近、最热、点击率最高、活跃度最高、评论最多等等的文章、商品、用户等；</li>
+<li><strong>哈希表</strong>：用户粉丝列表、用户点赞列表、用户收藏列表、用户关注列表等；</li>
+<li><strong>自动排序</strong>：存储时间戳，随着时间的变化，按照用户关注用户的最新动态列表等自动排序；</li>
+<li><strong>会话缓存</strong>：使用Redis进行会话缓存，将web session存放在Redis中。</li>
+<li><strong>全页缓存FPC</strong>：可以将服务端渲染结果的缓存在Redis中；</li>
+<li><strong>记录用户操作信息</strong>：用户是否点赞、用户是否收藏、用户是否分享等；</li>
+</ul>
+<h4 id="2%E5%88%9B%E5%BB%BAredis">2、创建Redis</h4>
+<p>在创建了上海可用区的私有网络之后（可以参考上一节的内容），我们可以购买腾讯云在上海可用区的Redis服务，网络类型找到你创建的私有网络以及相应的子网即可。
+<img src="./../../img/11/WX20200527-103917@2x.png" alt="Redis的网络类型"></p>
+<p>在腾讯云网页云开发控制台中，找到需要配置的云函数，比如函数名为redis，点击右上角<strong>编辑</strong>进入配置界面，在函数配置界面中，修改网络配置为Redis所在的同一私有网络子网。
+<img src="./../../img/11/WX20200527-184006@2x.png" alt="云函数的内网访问"></p>
+<h3 id="1182-%E4%BD%BF%E7%94%A8ioredis%E6%93%8D%E4%BD%9Credis">11.8.2 使用ioredis操作redis</h3>
+<p>为了连接和操作 Redis 实例，我们需要一个 Redis 客户端，推荐使用ioredis（类似的还有node_redis、tedis等）。使用开发者工具打开云函数目录中的 package.json ，新增最新版ioredis 依赖，右键云函数目录选择在终端中打开输入命令npm install安装依赖：：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+	<span class="hljs-string">"wx-server-sdk"</span>:<span class="hljs-string">"latest"</span>,
+	<span class="hljs-string">"ioredis"</span>:<span class="hljs-string">"latest"</span>
+}
+</div></code></pre>
+<p>然后在index.js里输入以下代码，里面涉及redis多个命令行，其中zadd命令是往redis里添加有序集合，zscore命令返回有序集合元素相应的分数值，zrevrank命令返回有序集合元素的排名（Redis有多种数据结构，不同的数据结构的数据的增删改查都有着相应的命令，这里就不多介绍了）：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+<span class="hljs-keyword">const</span> Redis = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ioredis'</span>)
+<span class="hljs-keyword">const</span> redis = <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> Redis({
+	<span class="hljs-attr">port</span>: <span class="hljs-number">6379</span>,
+	<span class="hljs-attr">host</span>: <span class="hljs-string">'10.168.0.11'</span>, 
+	<span class="hljs-attr">family</span>: <span class="hljs-number">4</span>, <span class="hljs-comment">// 4 (IPv4) 或 6 (IPv6)</span>
+	<span class="hljs-attr">password</span>: <span class="hljs-string">'cloudbase2020'</span>,<span class="hljs-comment">//redis的密码</span>
+	<span class="hljs-attr">db</span>: <span class="hljs-number">0</span>,
+})
+
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-keyword">await</span> redis.zadd(<span class="hljs-string">'Score'</span>,<span class="hljs-number">145</span>,<span class="hljs-string">'user1'</span>)
+	<span class="hljs-keyword">await</span> redis.zadd(<span class="hljs-string">'Score'</span>,<span class="hljs-number">134</span>,<span class="hljs-string">'user2'</span>)
+	<span class="hljs-keyword">await</span> redis.zadd(<span class="hljs-string">'Score'</span>,<span class="hljs-number">117</span>,<span class="hljs-string">'user3'</span>)
+	<span class="hljs-keyword">await</span> redis.zadd(<span class="hljs-string">'Score'</span>,<span class="hljs-number">147</span>,<span class="hljs-string">'user4'</span>)
+	<span class="hljs-keyword">await</span> redis.zadd(<span class="hljs-string">'Score'</span>,<span class="hljs-number">125</span>,<span class="hljs-string">'user5'</span>)
+
+	<span class="hljs-keyword">const</span> score = <span class="hljs-keyword">await</span> redis.zscore(<span class="hljs-string">'Score'</span>,<span class="hljs-string">'user3'</span>)
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'用户3的分数'</span>,score)
+
+	<span class="hljs-keyword">const</span> rank = <span class="hljs-keyword">await</span> redis.zrevrank(<span class="hljs-string">'Score'</span>,<span class="hljs-string">'user5'</span>)
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'用户5的排名'</span>,rank)
+
+	<span class="hljs-keyword">return</span> {<span class="hljs-string">'用户3的分数'</span>:score,<span class="hljs-string">'用户5的排名'</span>:rank}
+
+}
+</div></code></pre>
+<h3 id="1183-redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8">11.8.3 Redis数据类型和数据的存储</h3>
+<p>Redis常用的数据类型有五种：字符串（strings）、散列（hashes）、列表（lists）、集合（sets）、有序集合（sorted set），而JavaScript和云开发数据库的数据类型主要有字符串(String)、数字(Number)、布尔值(Boolean)、数组(Array)、对象(Object)。当我们要将云数据库或JavaScript的数组和对象这种比较复杂的数据类型存储到Redis时，应该怎么做呢？下面我们只粗略讨论一下Redis与JavaScript以及云开发数据库之间的关联关系。</p>
+<h4 id="1redis%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">1、Redis常用数据类型</h4>
+<p><strong>字符串Strings</strong></p>
+<p>Redis的字符串是二进制安全的，在传输数据时，保证二进制数据的信息安全，也就是不被篡改、破译等，也不会对这些数据进行编码、序列化等。字符串存储的结构为<code>key:value</code>，可以用于存储JavaScript的字符串、数值类型，通常也用于存储HTML的节点或者网页。当然也可以用于存储图片等，尽管一个key的存储上限为512M，但是通常不建议存储的值过长（比如不要超过1024 bytes，不然内存成本和key的比对成本太高)也不建议太短（只是建议）。</p>
+<p>我们还能给字符串的值设置过期时间，以及如果值为整数（Redis没有专门的整数类型，所以key储存的值在执行原子操作命令时会被解释为十进制 64 位有符号整数）可以对数值进行类似于云开发数据库的原子操作，比如<code>INCR storage</code>就是给字符串storage（表示商品库存）原子增加1，而<code>DECRBY storage 30</code>，就是给库存原子减少30。</p>
+<p>我们可以在云函数里使用ioredis、node-redis等依赖，通过<code>redis.set key value</code>或<code>redis.mset key1 value1 key2 value2</code>设置一个或多个key，获取时通过<code>redis.get key</code>或<code>redis.mget key1 key2</code>获取redis数据库中已有的key的值，字符串在redis的结构如下：</p>
+<pre class="hljs"><code><div>SecretId <span class="hljs-string">"AKIDpZ9Wp1pyhFdqrioDF5dmDkMoQ7oVF2shUOE"</span> <span class="hljs-comment">//用于存储一些key、token等数据</span>
+openId <span class="hljs-string">"oUL-m5FuRmuVmxvbYOGuXbuEDsn8"</span>  <span class="hljs-comment">//可以存储云开发经常用到的openID</span>
+storage <span class="hljs-number">1017</span>   <span class="hljs-comment">//表示商品库存为1017，执行原子操作命令会被解释为十进制有符号（正负）整数</span>
+</div></code></pre>
+<p>关于字符串string的命令，有SET、GET、MSET、MGET、INCR、DECR、INCRBY、DECRBY等命令，具体可以阅读Redis技术文档。</p>
+<p><strong>散列哈希表Hashes</strong></p>
+<p>Redis的散列哈希表 Hashes是一个 string 类型的 field 和 value 的映射表，特别适合用于存储<strong>JavaScript的对象</strong>，因此也是使用非常频繁的一个数据类型。Redis 中每个 hash 可以存储的键值对没有上限（除非内存的量不允许）。</p>
+<p>当我们使用JavaScript创建一个对象或者要往云开发数据库里获取/传入数据时，就会涉及到如下的数据样式（下面是一篇文章的数据），那我们应该怎么把这样的数据存储到Redis呢？</p>
+<pre class="hljs"><code><div>{
+	<span class="hljs-string">"title"</span>: <span class="hljs-string">"为什么狗会如此亲近人类?"</span>,
+	<span class="hljs-string">"id"</span>: <span class="hljs-number">9717547</span>,
+	<span class="hljs-string">"url"</span>: <span class="hljs-string">"https://daily.zhihu.com/story/9717547"</span>,
+	<span class="hljs-string">"image"</span>: <span class="hljs-string">"https://pic4.zhimg.com/v2-60f220ee6c5bf035d0eaf2dd4736342b.jpg"</span>,
+	<span class="hljs-string">"body"</span>:  <span class="hljs-string">"&lt;p&gt;让狗从凶猛的野兽变成忠实的爱宠...&lt;/p&gt;"</span>
+}
+</div></code></pre>
+<p>我们可以使用Redis哈希表的hmset命令<code>HMSET key field value</code>，我们把key的值设置为<code>post-${id}</code>，而对象里的属性和值对应的写法如下：</p>
+<pre class="hljs"><code><div>hmset post<span class="hljs-number">-9717547</span> title <span class="hljs-string">"为什么狗会如此亲近人类?"</span> id <span class="hljs-number">9717547</span> url <span class="hljs-string">"https://daily.zhihu.com/story/9717547"</span> image <span class="hljs-string">"https://pic4.zhimg.com/v2-60f220ee6c5bf035d0eaf2dd4736342b.jpg"</span> body <span class="hljs-string">"&lt;p&gt;让狗从凶猛的野兽变成忠实的爱宠...&lt;/p&gt;"</span>
+</div></code></pre>
+<p>而当我们要获取哈希表的值以及要对哈希表里的数据进行增删改查时，相应的操作命令如下（只是列举了部分，更多内容请查看技术文档）：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//HGETALL以列表形式返回哈希表的字段及字段值</span>
+hgetall post<span class="hljs-number">-9717547</span>
+
+<span class="hljs-comment">//HMGET命令返回哈希表中一个或多个给定字段的值，比如获取2个key title和id的值；HGET是只返回一个</span>
+hmget post<span class="hljs-number">-9717547</span> title id
+hget post<span class="hljs-number">-9717547</span> body
+
+<span class="hljs-comment">//HMSET同时将多个键值对设置到哈希表中，比如我们同时设置两个键值对，HSET是只设置一个；如果key相同就会覆盖</span>
+hmset post<span class="hljs-number">-9717547</span> author <span class="hljs-string">"李东bbsky"</span>  city <span class="hljs-string">"深圳"</span>
+hset post<span class="hljs-number">-9717547</span> position <span class="hljs-string">"杂役"</span>
+</div></code></pre>
+<p>还有删除哈希表字段的hdel、查看字段是否存在的hexists、为指定字段的整数原子添加增量（可以为正或负）的hincrby、获取字段数量的hlen、获取所有字段的hkeys等等，这些具体可以看文档。总之，有了哈希表，我们就可以用来存储一些简单的对象（没有嵌套和嵌套数组）了。</p>
+<p><strong>列表Lists</strong></p>
+<p>Redis的列表类型可以用来存储多个<strong>有序的字符串</strong>，列表里的值是<strong>可以重复</strong>的，有点类似于JavaScript的数组（还是有很多不同的哦），主要的应用场景是用户最新的动态信息、最新博客、朋友圈最新动态。在Redis中，可以对列表两端插入（push）和弹出（pop），也可以获取指定范围的元素列表以及指定索引下标的元素等，可以充当栈和队列的角色。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//rpush在列表的尾部（右边）添加一个或多个值，类似于数组方法里的push；lpush在列表的头部（左边）添加一个或多个值,类似于数组方法里的unshift</span>
+rpush code <span class="hljs-string">"Python"</span> <span class="hljs-string">"JavaScript"</span> <span class="hljs-string">"Java"</span> <span class="hljs-string">"C++"</span> <span class="hljs-string">"Golang"</span> <span class="hljs-string">"Dart"</span> <span class="hljs-string">"C"</span> <span class="hljs-string">"C#"</span>
+
+<span class="hljs-comment">//rpop移除并返回列表最后一个元素，类似于数组方法里的pop；lpop移除并返回列表第一个元素，类似于数组方法里的shift</span>
+rpop code
+
+<span class="hljs-comment">//llen返回列表的长度，有点类似于数组的属性length</span>
+llen code
+
+<span class="hljs-comment">//lindex通过索引获取列表中的元素，有点类似于数组的array[n]获取数组第n+1位的元素</span>
+lindex code <span class="hljs-number">3</span>
+
+<span class="hljs-comment">//lrange返回列表中指定区间内的元素，有点类似于数组方法里的slice</span>
+lrange code <span class="hljs-number">2</span> <span class="hljs-number">5</span>
+
+<span class="hljs-comment">//linsert key before|after pivot value,在列表的元素前或者后插入元素。当指定元素不存在于列表中时，不执行任何操作，如下方式是把SQL插入到Dart前，数组的slice方法可以在指定位置插入元素</span>
+linsert code before <span class="hljs-string">"Dart"</span> <span class="hljs-string">"SQL"</span>
+
+<span class="hljs-comment">//lset通过索引来设置元素的值，有点类似于数组的array[n]=""</span>
+lset code <span class="hljs-number">4</span> <span class="hljs-string">"Go"</span>
+</div></code></pre>
+<p><strong>集合Sets</strong></p>
+<p>Redis的集合是字符串类型的无序集合，集合里的元素是<strong>无序且唯一</strong>的，不能出现重复的数据。Redis支持集合内元素的增删改查，还支持多个集合的交集、并集、差集以及跨集合移动元素，特别适合社交系统、电商系统、视频App里等常见的打标签，比如你最感兴趣的人、话题、项目等，网站和App会根据用户的兴趣点来推荐不同的内容。</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//sadd 将一个或多个成员元素加入到集合中，已经存在于集合的成员元素将被忽略</span>
+sadd cloudbase <span class="hljs-string">"云函数"</span> <span class="hljs-string">"云数据库"</span> <span class="hljs-string">"云存储"</span> <span class="hljs-string">"云接入"</span> <span class="hljs-string">"云应用"</span> <span class="hljs-string">"云调用"</span>
+
+<span class="hljs-comment">//smembers返回集合中的所有成员</span>
+smembers cloudbase
+
+<span class="hljs-comment">//scard返回集合中元素的数量</span>
+scard cloudbase
+
+<span class="hljs-comment">//srandmember返回集合中一个或多个随机数,spop移除集合中的指定的一个或多个随机元素，移除后会返回移除的元素</span>
+srandmember cloudbase <span class="hljs-number">2</span>
+spop cloudbase
+
+<span class="hljs-comment">//sismember判断元素是否在集合中，在则返回1，不在返回0</span>
+sismember cloudbase <span class="hljs-string">"云调用"</span>
+</div></code></pre>
+<p>Redis处理跨集合的命令如求并集<code>sunion</code>，存储并集<code>sunionstore</code>，交集<code>sinter</code>、存储交集<code>sinterstore</code>,差集<code>sdiff</code>、存储差集<code>sdiffstore</code>，跨集合移动元素<code>smove</code>，等等这里就不一一举例了。</p>
+<p><strong>有序集合Sorted sets</strong></p>
+<p>Redis的有序集合和集合一样也字符串类型元素且元素不重复的集合，不同的是，有序集合多了一个排序属性score（分数），也就是每个存储元素由两个值构成，一个是元素值，一个是排序值。有序集合的元素是唯一的，但分数(score)却可以重复。有序集合特别适合做排行榜系统，比如点赞排名、销量最多、播放最多、成绩最好、分数排名等。</p>
+<p>下面我们把文章的阅读量以及文章的id写入到Redis的有序集合里，我们可以很方便的将文章按一些要求来排序：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//zadd命令用于将一个或多个元素及分数值加入到有序集中。如果元素已经存在，会更新这个元素的分数值，并通过重新插入这个元素，来保证该元素在正确的位置上。</span>
+zadd read:rank <span class="hljs-number">9932</span> post<span class="hljs-number">-323</span> <span class="hljs-number">3211</span> post<span class="hljs-number">-123</span> <span class="hljs-number">1234</span> post<span class="hljs-number">-77</span> <span class="hljs-number">987</span> post<span class="hljs-number">-33</span> <span class="hljs-number">532</span> post<span class="hljs-number">-21</span>
+
+<span class="hljs-comment">//zrange把元素按分数递增来排序，0为第一位，-1为最后一位，0,-1会把所有元素都排序;而1,3则是取排序的第2、4位;zrevrange则是递减</span>
+zrange read:rank <span class="hljs-number">0</span> <span class="hljs-number">-1</span> withscores
+zrange read:rank <span class="hljs-number">1</span> <span class="hljs-number">3</span> withscores
+zrevrange read:rank <span class="hljs-number">1</span> <span class="hljs-number">3</span> withscores
+
+
+<span class="hljs-comment">//zcount显示分数score在 min 和 max 之间的元素的数量</span>
+zcount read:rank <span class="hljs-number">1000</span> <span class="hljs-number">3000</span>
+
+<span class="hljs-comment">//zrank返回有序集合指定元素的排名（排名以0为底），按分数值递增(从小到大)顺序排列；zrevrank是从大到小</span>
+zrank read:rank post<span class="hljs-number">-323</span>
+zrevrank read:rank post<span class="hljs-number">-987</span>
+</div></code></pre>
+<p>和连接MySQL一样，建议在云函数中使用Redis时，把同一个Redis实例的增删改查等操作都集中写在一个云函数里，这样会减少云函数冷启动的概率以及减少对数据库连接数的占用，而将增删改查的处理集中到一个云函数，我们可以使用到<strong>云函数路由tcb-router</strong>，后面会有介绍。</p>
+<div class="sop-footer"> 
+	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
+</div>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+<script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+	</script>
+	
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?8efc2c9aaaffb2f7a4cf6a7ff9c65cbb";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+</body>
+</html>

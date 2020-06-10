@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>13.7、开放能力.md</title>
+<title>13.7、ClouID与动态消息</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,   minimal-ui">
 <style>
@@ -407,46 +407,53 @@ code {
 			
 				<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
 					<div class="sop-menu">
-					<ul>
-				<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
-				<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
-				<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
-				<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
-				<li class="page_item no_current_page_item"><a href="./1104.html">图像处理</a></li>
-				<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
-				<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
-				<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
-				<li class="page_item no_current_page_item"><a href="./1201.html">数据库的管理</a></li>
-		<li class="page_item no_current_page_item"><a href="./1202.html">安全规则</a></li>
-		<li class="page_item no_current_page_item"><a href="./1203.html">数据库的设计</a></li>
-		<li class="page_item no_current_page_item"><a href="./1204.html">实时数据推送</a></li>
-		<li class="page_item no_current_page_item"><a href="./1205.html">索引</a></li>
-		<li class="page_item no_current_page_item"><a href="./1206.html">原子操作和事务</a></li>
-		<li class="page_item no_current_page_item"><a href="./1207.html">数据库的性能与优化</a></li>
-				<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
-				<li class="page_item no_current_page_item"><a href="./1301.html">云调用快速入门</a></li>
-				<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
-				<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
-				<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
-				<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
-				<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
-				<li class="page_item current_page_item"><a href="./1307.html">开放能力</a></li>
-				<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
-				<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
-				<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
-				<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
-				<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
-				<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
-				<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
-				<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
-				<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
-					</ul>
+						<ul>
+							<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+							<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+							<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+							<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+							<li class="page_item no_current_page_item"><a href="./1104.html">图像处理</a></li>
+							<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+							<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+							<li class="page_item no_current_page_item"><a href="./1107.html">连接MySQL数据库</a></li>
+							<li class="page_item no_current_page_item"><a href="./1108.html">连接Redis数据库</a></li>
+							<li class="page_item no_current_page_item"><a href="./1109.html">短信发送</a></li>
+							<li class="page_item no_current_page_item"><a href="./1110.html">HTTP处理</a></li>
+							<li class="page_item no_current_page_item"><a href="./1111.html">云函数路由tcb-router</a></li>
+							<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+							<li class="page_item no_current_page_item"><a href="./1201.html">数据库的管理</a></li>
+							<li class="page_item no_current_page_item"><a href="./1202.html">安全规则</a></li>
+							<li class="page_item no_current_page_item"><a href="./1203.html">数据库的设计</a></li>
+							<li class="page_item no_current_page_item"><a href="./1204.html">实时数据推送</a></li>
+							<li class="page_item no_current_page_item"><a href="./1205.html">索引</a></li>
+							<li class="page_item no_current_page_item"><a href="./1206.html">原子操作和事务</a></li>
+							<li class="page_item no_current_page_item"><a href="./1207.html">数据库的性能与优化</a></li>
+							<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+							<li class="page_item no_current_page_item"><a href="./1301.html">云调用与拓展能力</a></li>
+							<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+							<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+							<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+							<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+							<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+							<li class="page_item current_page_item"><a href="./1307.html">CloudID和动态消息</a></li>
+							<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+							<li class="page_item no_current_page_item"><a href="./1309.html">微信支付</a></li>
+							<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+							<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+							<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+							<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+							<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+							<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+							<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+							<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+							<li class="page_item no_current_page_item"><a href="./1408.html">CMS后台管理</a></li>
+								</ul>
 				</div>		
 				</div>
 			</nav>
 		<div class="sop-content">
    
-<h2 id="137-%E5%BC%80%E6%94%BE%E8%83%BD%E5%8A%9B">13.7 开放能力</h2>
+<h2 id="137-cloudid%E4%B8%8E%E5%8A%A8%E6%80%81%E6%B6%88%E6%81%AF">13.7 CloudID与动态消息</h2>
 <p>开通了云开发的小程序可以使用Cloud.CloudID接口返回一个 CloudID（开放数据 ID）特殊对象，将该对象传至云函数就可以获取其对应的开放数据，比如获取微信运动的步数、手机号等开放数据，而这个功能如果是使用非云开发的方式除了需要处理登录的问题，还需要进行加解密，十分繁琐。</p>
 <h3 id="1371-%E8%8E%B7%E5%8F%96%E5%BE%AE%E4%BF%A1%E6%AD%A5%E6%95%B0">13.7.1 获取微信步数</h3>
 <p>获取微信运动步数的小程序接口为wx.getWeRunData，可以获取用户过去三十天微信运动步数。使用可开发者工具新建一个页面页面比如openData，然后在openData.wxml里输入一个button按钮：</p>
@@ -454,11 +461,11 @@ code {
 </div></code></pre>
 <p>然后再在openData.js里输入以下代码，我们用事件处理函数getWeRunData来调用wx.getWeRunData接口，并打印结果。</p>
 <pre class="hljs"><code><div>getWeRunData(){
-  wx.getWeRunData({
-    <span class="hljs-attr">success</span>: <span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
-      <span class="hljs-built_in">console</span>.log(result)
-    },
-  })
+	wx.getWeRunData({
+	<span class="hljs-attr">success</span>: <span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+		<span class="hljs-built_in">console</span>.log(result)
+	},
+	})
 }
 </div></code></pre>
 <p>编译之后，点击按钮，我们可以在控制台看到返回的res对象里有encryptedData包括敏感数据在内的完整用户信息的加密数据、iv加密算法的初始向量，	cloudID敏感数据对应的云 ID.</p>
@@ -471,29 +478,29 @@ code {
 使用开发者工具新建云函数比如opendata,再index.js里输入以下代码，并部署上线，在云函数端接收到的 event 将会包含对应开放数据的对象。</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
 cloud.init({
-    <span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
 })
 exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
-    <span class="hljs-keyword">return</span> event
+	<span class="hljs-keyword">return</span> event
 }
 </div></code></pre>
 <p>我们再来在前面的事件处理函数getWeRunData里上传经过cloud.CloudID接口获得的cloudID对象，然后调用opendata云函数，并在success里打印返回来的对象，就可以看到包含微信运动步数的对象啦：</p>
 <pre class="hljs"><code><div>getWeRunData(){
-  wx.getWeRunData({
-    <span class="hljs-attr">success</span>: <span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
-      <span class="hljs-built_in">console</span>.log(result.cloudID)
-      wx.cloud.callFunction({
-        <span class="hljs-attr">name</span>: <span class="hljs-string">'opendata'</span>,
-        <span class="hljs-attr">data</span>: {
-          <span class="hljs-attr">weRunData</span>: wx.cloud.CloudID(result.cloudID), 
-        },
-        <span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span>{
-          <span class="hljs-built_in">console</span>.log(res.result.weRunData.cloudID)
-          <span class="hljs-built_in">console</span>.log(res.result.weRunData.data.stepInfoList)
-        }
-      })
-    }
-  })
+	wx.getWeRunData({
+	<span class="hljs-attr">success</span>: <span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+		<span class="hljs-built_in">console</span>.log(result.cloudID)
+		wx.cloud.callFunction({
+		<span class="hljs-attr">name</span>: <span class="hljs-string">'opendata'</span>,
+		<span class="hljs-attr">data</span>: {
+			<span class="hljs-attr">weRunData</span>: wx.cloud.CloudID(result.cloudID), 
+		},
+		<span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span>{
+			<span class="hljs-built_in">console</span>.log(res.result.weRunData.cloudID)
+			<span class="hljs-built_in">console</span>.log(res.result.weRunData.data.stepInfoList)
+		}
+		})
+	}
+	})
 }
 </div></code></pre>
 <h3 id="1372-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E6%89%8B%E6%9C%BA%E5%8F%B7">13.7.2 获取用户手机号</h3>
@@ -502,8 +509,8 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 </div></code></pre>
 <p>然后再在openData.js里输入以下代码，我们打印事件处理函数getPhoneNumber返回的结果。</p>
 <pre class="hljs"><code><div>  getPhoneNumber (result) {
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"result内容"</span>,result.detail)
-  },
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"result内容"</span>,result.detail)
+	},
 </div></code></pre>
 <p>同样我们也会获得一个类似于微信运动步数的返回结果</p>
 <pre class="hljs"><code><div>{<span class="hljs-attr">errMsg</span>: <span class="hljs-string">"getPhoneNumber:ok"</span>, 
@@ -513,18 +520,220 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 </div></code></pre>
 <p>我们仍然只需要将获取到cloudID经过cloud.CloudID()接口处理返回的对象上传并调用云函数：</p>
 <pre class="hljs"><code><div>getPhoneNumber (result) {
-  wx.cloud.callFunction({
-    <span class="hljs-attr">name</span>: <span class="hljs-string">'opendata'</span>,
-    <span class="hljs-attr">data</span>: {
-      <span class="hljs-attr">getPhoneNumber</span>: wx.cloud.CloudID(result.detail.cloudID), 
-    },
-    <span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span>{
-      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"云函数返回的对象"</span>,res.result.getPhoneNumber)
-    }
-  })
+	wx.cloud.callFunction({
+	<span class="hljs-attr">name</span>: <span class="hljs-string">'opendata'</span>,
+	<span class="hljs-attr">data</span>: {
+		<span class="hljs-attr">getPhoneNumber</span>: wx.cloud.CloudID(result.detail.cloudID), 
+	},
+	<span class="hljs-attr">success</span>:<span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span>{
+		<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"云函数返回的对象"</span>,res.result.getPhoneNumber)
+	}
+	})
 },
 </div></code></pre>
 <p>在getPhoneNumber的data对象里的phoneNumber是用户绑定的手机号（国外手机号会有区号）、purePhoneNumber是没有区号的手机号、countryCode区号。</p>
+<h3 id="1373-%E8%8E%B7%E5%8F%96%E5%BE%AE%E4%BF%A1%E7%BE%A4id%E5%92%8C%E7%BE%A4%E5%90%8D%E7%A7%B0">13.7.3 获取微信群ID和群名称</h3>
+<p>要获取微信群ID和群名称，需要经过一系列相对比较复杂的处理，需要经过以下步骤，具体的代码和开发方式后面会具体介绍：</p>
+<ul>
+<li>首先需要小程序的分享里的<code>withShareTicket: true</code>，分享也必须分享到微信群里；</li>
+<li>点击微信群里的小程序卡片，才能获取到<code>shareTicket</code>，</li>
+<li>然后将shareTicket传入到<code>wx.getShareInfo</code>里就会得到微信群敏感数据对应的cloudID，</li>
+<li>然后我们需要将cloudID通过<code>wx.cloud.CloudID(cloudID)</code>传入到云函数，云函数就可以返回微信群ID，也就是<code>openGId</code></li>
+<li>最后我们需要再通过<code>&lt;open-data type=&quot;groupName&quot; open-gid=&quot;{{openGId}}&quot;&gt;&lt;/open-data&gt;</code>来显示群名</li>
+</ul>
+<h4 id="1%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%BD%AC%E5%8F%91%E5%88%86%E4%BA%AB">1、创建一个转发分享</h4>
+<p>通过给 button 组件设置属性<code>open-type=&quot;share&quot;</code>，可以在用户点击按钮后触发页面的生命周期函数<code>Page.onShareAppMessage</code>事件。首先我们使用开发者工具新建一个页面，比如share，然后再在share.wxml创建一个button组件，比如：</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">open-type</span>=<span class="hljs-string">"share"</span>&gt;</span>转发<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</div></code></pre>
+<p>要获取群聊的名称以及群的标识openGId，需要带shareTicket的转发才可以，我们在share.js页面生命周期函数<code>onShareAppMessage</code>里输入如下代码，设置<code>withShareTicket</code>为true:</p>
+<pre class="hljs"><code><div>onShareAppMessage: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>{
+	wx.updateShareMenu({
+	<span class="hljs-attr">withShareTicket</span>: <span class="hljs-literal">true</span>,
+	success(res) {
+		<span class="hljs-built_in">console</span>.log(res)
+	},
+	fail(err) {
+		<span class="hljs-built_in">console</span>.log(err)
+	}
+	})
+	<span class="hljs-keyword">if</span> (res.from === <span class="hljs-string">'button'</span>) {
+	<span class="hljs-built_in">console</span>.log(res.target) <span class="hljs-comment">//可以在这里将用户点击button的次数存储到数据库，相当于埋点</span>
+	}
+	<span class="hljs-keyword">return</span> {
+	<span class="hljs-attr">title</span>: <span class="hljs-string">'云开发技术训练营'</span>,
+	<span class="hljs-attr">path</span>: <span class="hljs-string">'pages/share/share?openid=oUL-m5FuRmuVmxvbYOGuXbuEDsn8'</span>,
+	<span class="hljs-attr">imageUrl</span>:<span class="hljs-string">"cloud://xly-xrlur.786c-xly-xrlur-1300446086/share.png"</span><span class="hljs-comment">//支持云存储的fileID</span>
+	}
+},
+</div></code></pre>
+<blockquote>
+<p>关于显示右上角菜单的转发按钮可以使用<code>wx.showShareMenu</code>接口，而<code>onShareAppMessage</code>除了可以监听用户点击页面内的button，也可以监听右上角菜单“转发”按钮的行为，无论是哪一种，都可以自定义菜单的title、path、imageUrl等，这里就不具体写代码啦。</p>
+</blockquote>
+<h4 id="2%E8%8E%B7%E5%8F%96sharetickets">2、获取shareTickets</h4>
+<p>值得注意的是，<strong>只有转发到微信群聊中，再通过微信群聊里的小程序卡片进入到小程序才可以获取到shareTickets返回值</strong>，单聊没有shareTickets；shareTicket仅在当前小程序生命周期内有效。但是在开发时，怎么把小程序转发到微信群里面去呢？开发者工具提供了带shareTickets的调试方法。</p>
+<p>在开发者工具的模拟器里点击&quot;转发&quot;button，就会出现一个测试模拟群列表，我们可以将小程序转发到一个群聊里面去，比如<code>测试模拟群4</code>。调试时，我们要添加自定义编译模式，在<strong>进入场景</strong>里选择<code>1044: 带 shareTicket 的小程序消息卡片</code>，<strong>选择进入的群</strong>为你转发的群，具体可以参考如下图：</p>
+<p><img src="./../../img/13/WX20200608-120253@2x.png" alt="带shareTickets的调试"></p>
+<p>获取shareTicket，我们可以使用<code>wx.getLaunchOptionsSync()</code>来获取小程序启动时的参数，这个参数与App.onLaunch 的回调参数一致，而shareTicket就在这个参数对象里。我们可以在share.js的onLoad生命周期函数里来获取它：</p>
+<pre class="hljs"><code><div>onLoad:<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>{
+	<span class="hljs-keyword">const</span> res = wx.getLaunchOptionsSync()
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'小程序启动时的参数'</span>,res)
+	<span class="hljs-keyword">const</span> {shareTicket} = res
+	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'shareTicket的值'</span>,shareTicket)
+},
+</div></code></pre>
+<blockquote>
+<p><strong>如果你</strong>直接使用普通编译（不使用上面的调试方法），是获取不到shareTicket的，shareTicket的值会为<code>undefined</code>，同时如果小程序直接加载（而不是通过点击群聊里分享的小程序卡片进入），shareTicket的值也是<code>undefined</code>。</p>
+</blockquote>
+<h4 id="3%E8%8E%B7%E5%8F%96cloudid%E5%B9%B6%E8%8E%B7%E5%8F%96%E7%BE%A4idopengid">3、获取cloudID并获取群IDopenGId</h4>
+<p>当我们获取到shareTicket之后，就可以调用<code>wx.getShareInfo</code>接口来获取到关于转发的信息，尤其是cloudID。然后我们可以把获取到的CloudID，传入到云函数，比如share云函数。</p>
+<p>使用开发者工具新建一个share云函数，在index.js里输入以下代码（这个其实就是返回event对象，如此简单的云函数我们可以和其他云函数合并到一起使用，比如获取openid等）：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+<span class="hljs-keyword">const</span> TcbRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-router'</span>);
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-keyword">return</span> event
+}
+</div></code></pre>
+<p>然后再在小程序端share.js的生命周期函数里继续写如下代码，先判断shareTicket是否为空（也就是判断是否是通过微信群聊小程序卡片进入的），然后调用wx.getShareInfo来获取CloudID，再将CloudID传入到<code>wx.cloud.CloudID()</code>接口，并将该对象传至云函数share就可以返回这个CloudID对应的开放数据了（这里的开放数据主要是openGId）。</p>
+<pre class="hljs"><code><div>onLoad:<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>{
+	<span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>
+	<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> wx.getLaunchOptionsSync()
+	<span class="hljs-keyword">const</span> {shareTicket} = res
+	<span class="hljs-keyword">if</span>(shareTicket!=<span class="hljs-literal">null</span>){ <span class="hljs-comment">//当shareTicket不为空时，调用wx.getShareInfo来获取CloudID</span>
+	wx.getShareInfo({
+		<span class="hljs-attr">shareTicket</span>:shareTicket,
+		<span class="hljs-attr">success</span>:<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>{                      
+		<span class="hljs-keyword">const</span> cloudID = res.cloudID
+		wx.cloud.callFunction({
+			<span class="hljs-attr">name</span>: <span class="hljs-string">'share'</span>,
+			<span class="hljs-attr">data</span>: {         
+			<span class="hljs-attr">groupData</span>: wx.cloud.CloudID(cloudID)
+			},
+			<span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>{                     
+			that.setData({
+				<span class="hljs-attr">openGId</span>:res.result.groupData.data.openGId
+			})
+			}
+		})
+		}
+	})
+	}
+},
+</div></code></pre>
+<h4 id="4%E6%98%BE%E7%A4%BA%E7%BE%A4%E7%9A%84%E5%90%8D%E7%A7%B0">4、显示群的名称</h4>
+<p>openGId为当前群的唯一标识，也就是每个微信群都有唯一且不变的这样一个ID，可以用于区分不同的微信群。我们可以把微信群内点击了小程序分享卡片的群成员的用户信息与这个openGId相关联，这样就可以弄群排行榜等一些基于微信群的开发。</p>
+<p>不过我们只能获取微信群的群ID，是不能获取微信群的名称的，但是可以通过开放能力来显示微信群的名称，我们只需要把获取到的openGId字符串传入到<code>open-gid</code>就可以了。</p>
+<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">open-data</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"groupName"</span> <span class="hljs-attr">open-gid</span>=<span class="hljs-string">"{{openGId}}"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">open-data</span>&gt;</span>
+</div></code></pre>
+<blockquote>
+<p>可能你在调试的时候会出现，即使你把openGId写入到上面的组件，依然不会显示群名，或者使用真机调试也无法显示，这是因为测试群或者新建的群，可能会无效。</p>
+</blockquote>
+<h3 id="1374-%E5%8A%A8%E6%80%81%E6%B6%88%E6%81%AF">13.7.4 动态消息</h3>
+<p>动态消息发出去之后，开发者可以通过后台接口修改部分消息内容，动态消息也有对应的提醒按钮，用户点击提醒按钮可以订阅提醒，开发者可以通过后台修改消息状态并推送一次提醒消息给订阅了提醒的用户。效果如下所示，这种特别适合我们做抢购、拼团等运营活动：</p>
+<p><img src="./../../img/13/13.png" alt=""></p>
+<p>要让转发的小程序卡片里有动态消息，首先需要使用云调用<code>updatableMessage.createActivityId</code>接口来创建<code>activityId</code>，然后将activityId和templateInfo传入到<code>wx.updateShareMenu</code>，而要更新动态消息则需要使用到<code>updatableMessage.setUpdatableMsg</code>的接口。我们可以把创建动态消息和更新动态消息的云函数使用tcb-router整合到一个云函数里面。</p>
+<h4 id="1%E5%88%9B%E5%BB%BA-activityid">1、创建 activityId</h4>
+<p>使用开发者工具新建一个云函数，云函数的名称为activity，然后在package.json增加tcb-router最新版latest的依赖并用npm install安装：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+	<span class="hljs-string">"wx-server-sdk"</span>:<span class="hljs-string">"latest"</span>,
+	<span class="hljs-string">"tcb-router"</span>: <span class="hljs-string">"latest"</span>
+}
+</div></code></pre>
+<p>以及在config.json里添加云调用的权限，用于生成ActivityId以及修改被分享的动态消息：</p>
+<pre class="hljs"><code><div>{
+	<span class="hljs-string">"permissions"</span>: {
+	<span class="hljs-string">"openapi"</span>: [
+		<span class="hljs-string">"updatableMessage.createActivityId"</span>,
+		<span class="hljs-string">"updatableMessage.setUpdatableMsg"</span>
+	]
+	}
+}
+</div></code></pre>
+<p>然后再在index.js里输入以下代码，使用<code>createActivityId</code>生成ActivityId并返回：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+<span class="hljs-keyword">const</span> TcbRouter = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-router'</span>);
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> TcbRouter({event})
+	app.use(<span class="hljs-keyword">async</span> (ctx, next) =&gt; {
+	ctx.data = {}
+	<span class="hljs-keyword">await</span> next(); 
+	});
+
+	app.router(<span class="hljs-string">'getActivityId'</span>,<span class="hljs-keyword">async</span> (ctx, next)=&gt;{
+	<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.updatableMessage.createActivityId()
+	ctx.data.activityID = result
+	ctx.body = {<span class="hljs-string">"activityID"</span>:ctx.data.activityID}
+	})
+	<span class="hljs-comment">//后面我们会介绍如何更新动态消息，updatableMsg的router可以添加在这里</span>
+
+	<span class="hljs-keyword">return</span> app.serve();
+}
+</div></code></pre>
+<h4 id="2%E5%9C%A8%E8%BD%AC%E5%8F%91%E4%B9%8B%E5%89%8D%E5%A3%B0%E6%98%8E%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E4%B8%BA%E5%8A%A8%E6%80%81%E6%B6%88%E6%81%AF">2、在转发之前声明消息类型为动态消息</h4>
+<p>和前面一样，我们可以通过调用<code>wx.updateShareMenu</code>接口，传入<code>isUpdatableMessage: true</code>，以及 <code>templateInfo</code>、<code>activityId</code>等参数：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">async</span> onShareAppMessage(res) {
+	<span class="hljs-keyword">const</span> activityId = (<span class="hljs-keyword">await</span> wx.cloud.callFunction({
+	<span class="hljs-attr">name</span>: <span class="hljs-string">'activity'</span>,
+	<span class="hljs-attr">data</span>: {
+		<span class="hljs-attr">$url</span>: <span class="hljs-string">"getActivityId"</span>, 
+	}
+	})).result.activityID.activityId
+
+	wx.updateShareMenu({
+	<span class="hljs-attr">withShareTicket</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-attr">isUpdatableMessage</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-attr">activityId</span>: activityId, 
+	<span class="hljs-attr">templateInfo</span>: {
+		<span class="hljs-attr">parameterList</span>: [{
+		<span class="hljs-attr">name</span>: <span class="hljs-string">'member_count'</span>,
+		<span class="hljs-attr">value</span>: <span class="hljs-string">'4'</span> <span class="hljs-comment">//这里的数据可以来自数据库</span>
+		}, {
+		<span class="hljs-attr">name</span>: <span class="hljs-string">'room_limit'</span>,
+		<span class="hljs-attr">value</span>: <span class="hljs-string">'30'</span> <span class="hljs-comment">//这里的数据可以来自数据库</span>
+		}]
+	}
+	})
+	<span class="hljs-keyword">return</span> {
+	<span class="hljs-attr">title</span>: <span class="hljs-string">'HackWeek技术训练营'</span>,
+	<span class="hljs-attr">path</span>: <span class="hljs-string">'pages/share/share?openid=oUL-m5FuRmuVmxvbYOGuXbuEDsn8'</span>,
+	<span class="hljs-attr">imageUrl</span>:<span class="hljs-string">"cloud://xly-xrlur.786c-xly-xrlur-1300446086/1572315793633-633.png"</span>
+	}
+},
+</div></code></pre>
+<h4 id="3%E4%BF%AE%E6%94%B9%E5%8A%A8%E6%80%81%E6%B6%88%E6%81%AF%E5%86%85%E5%AE%B9">3、修改动态消息内容</h4>
+<p>动态消息发出去之后，我们可以通过这个activityId来追踪这个动态消息，当用户进入分享的小程序，报名参与了这个活动时，比如活动为拼团，30人这个团购项目就成功啦，现在已经有4个人参与了（可以从数据库获得），当有新的用户付费参与这个拼团时，我们可以在这个用户付费的回调函数里调用<code>updatableMessage.setUpdatableMsg</code>这个接口来修改动态消息。比如：</p>
+<pre class="hljs"><code><div>wx.cloud.callFunction({
+	<span class="hljs-attr">name</span>: <span class="hljs-string">'activity'</span>,
+	<span class="hljs-attr">data</span>: {
+	<span class="hljs-attr">$url</span>: <span class="hljs-string">"updatableMsg"</span>,
+	<span class="hljs-attr">activityId</span>: activityId, <span class="hljs-comment">//activityId建议由前端传入，获取的方法如上</span>
+	}
+})
+</div></code></pre>
+<p>我们继续在activity云函数里添加一个updatableMsg的router即可</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> {activityID} = event
+app.router(<span class="hljs-string">'updatableMsg'</span>,<span class="hljs-keyword">async</span> (ctx, next)=&gt;{
+	<span class="hljs-comment">//我们可以用从数据库拉取现在拼团的人数，以及满团的人数，从而确定targetState的状态</span>
+	<span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> cloud.openapi.updatableMessage.setUpdatableMsg({
+	<span class="hljs-attr">activityID</span>:activityID,
+	<span class="hljs-attr">targetState</span>:<span class="hljs-number">0</span>,
+	<span class="hljs-attr">templateInfo</span>: {
+		<span class="hljs-attr">parameterList</span>: [{
+		<span class="hljs-attr">name</span>: <span class="hljs-string">'member_count'</span>,
+		<span class="hljs-attr">value</span>: <span class="hljs-string">'5'</span> <span class="hljs-comment">//从数据库拉取</span>
+		}, {
+		<span class="hljs-attr">name</span>: <span class="hljs-string">'room_limit'</span>,
+		<span class="hljs-attr">value</span>: <span class="hljs-string">'30'</span> <span class="hljs-comment">//从数据库拉取</span>
+		}]
+	}
+	})
+})
+</div></code></pre>
 <div class="sop-footer"> 
 	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
 </div>

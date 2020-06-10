@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>11.9、短信发送</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,user-scalable=no,minimal-ui">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" id="twentyfourteen-style-css" href="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/style.css" type="text/css" media="all">
+<style>
+.sop-content{
+	max-width: 1960px;
+}
+.sop-menu ul,.nav-items ul{
+		border-left: none;
+    margin-left: 0;
+    background-color:#f5f6f7;
+    padding: 0;
+    color: #757171;
+	}
+.nav-items ul{
+	background-color:#1C2339;line-height: 50px;height: 50px;
+}	
+</style>
+<link rel="stylesheet" href="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/posts/markdown-pdf.css" type="text/css">
+
+ 
+
+</head>
+<body>
+<div id="primary" class="content-area">
+<div id="content" class="site-content" role="main">			
+	<nav id="header-db" class="row navbar navbar-default">
+		<div class="navbar-header">
+			<div class="logotop fleft">
+				<a href="https://cloudbasegroup.org/" target="_blank"><img src="https://tcb-1251009918.cos.ap-guangzhou.myqcloud.com/pc/icon.svg"></a>
+			</div>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			<div class="flex nav-items">
+			<h1 class="flex-item navbar-link">腾讯云云开发进阶实战</h1>
+			<ul class="tcb-header-nav"><li class="tcb-header-nav__item "><a href="https://cloudbase.net/tools.html">工具</a></li><li class="tcb-header-nav__item "><a href="https://cloudbase.net/sdk.html">SDK</a></li><li class="tcb-header-nav__item "><a href="https://docs.cloudbase.net" target="_blank">文档</a></li><li class="tcb-header-nav__item "><a href="https://cloudbase.net/community.html">社区</a></li></ul>
+			<div class="tcb-header__col tcb-header__col-right"><a href="https://console.cloud.tencent.com/tcb?from=12341" target="_blank" class="tcb-btn tcb-btn--link">去控制台</a></div>
+			</div>
+						
+		</div>
+	
+		<div class="collapse navbar-collapse sop-sider" id="bs-example-navbar-collapse-1">
+			<div class="sop-menu">
+				<ul>
+					<li class="page_item no_current_page_item"><a><strong>用云函数实现后端能力</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1101.html">云函数的模块知识</a></li>
+					<li class="page_item no_current_page_item"><a href="./1102.html">文件系统的操作</a></li>
+					<li class="page_item no_current_page_item"><a href="./1103.html">云函数实用工具库</a></li>
+					<li class="page_item no_current_page_item"><a href="./1104.html">图像处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1105.html">云函数发邮件</a></li>
+					<li class="page_item no_current_page_item"><a href="./1106.html">Excel文档处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1107.html">连接MySQL数据库</a></li>
+					<li class="page_item no_current_page_item"><a href="./1108.html">连接Redis数据库</a></li>
+					<li class="page_item current_page_item"><a href="./1109.html">短信发送</a></li>
+					<li class="page_item no_current_page_item"><a href="./1110.html">HTTP处理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1111.html">云函数路由tcb-router</a></li>
+					<li class="page_item no_current_page_item"><a><strong>云数据库的高阶用法</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1201.html">数据库的管理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1202.html">安全规则</a></li>
+					<li class="page_item no_current_page_item"><a href="./1203.html">数据库的设计</a></li>
+					<li class="page_item no_current_page_item"><a href="./1204.html">实时数据推送</a></li>
+					<li class="page_item no_current_page_item"><a href="./1205.html">索引</a></li>
+					<li class="page_item no_current_page_item"><a href="./1206.html">原子操作和事务</a></li>
+					<li class="page_item no_current_page_item"><a href="./1207.html">数据库的性能与优化</a></li>
+					<li class="page_item no_current_page_item"><a><strong>云调用</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1301.html">云调用与拓展能力</a></li>
+					<li class="page_item no_current_page_item"><a href="./1302.html">小程序二维码</a></li>
+					<li class="page_item no_current_page_item"><a href="./1303.html">图像处理和OCR</a></li>
+					<li class="page_item no_current_page_item"><a href="./1304.html">内容安全</a></li>
+					<li class="page_item no_current_page_item"><a href="./1305.html">定时触发器</a></li>
+					<li class="page_item no_current_page_item"><a href="./1306.html">订阅消息</a></li>
+					<li class="page_item no_current_page_item"><a href="./1307.html">CloudID和动态消息</a></li>
+					<li class="page_item no_current_page_item"><a href="./1308.html">客服消息</a></li>
+					<li class="page_item no_current_page_item"><a href="./1309.html">微信支付</a></li>
+					<li class="page_item no_current_page_item"><a><strong>后台管理与跨平台</strong></a></li>
+					<li class="page_item no_current_page_item"><a href="./1401.html">云开发资源管理</a></li>
+					<li class="page_item no_current_page_item"><a href="./1402.html">CloudBase CLI</a></li>
+					<li class="page_item no_current_page_item"><a href="./1403.html">静态网站托管</a></li>
+					<li class="page_item no_current_page_item"><a href="./1404.html">Web端云开发</a></li>
+					<li class="page_item no_current_page_item"><a href="./1405.html">云接入与HTTP触发</a></li>
+					<li class="page_item no_current_page_item"><a href="./1406.html">托管Nodejs Server</a></li>
+					<li class="page_item no_current_page_item"><a href="./1407.html">自定义登录</a></li>
+					<li class="page_item no_current_page_item"><a href="./1408.html">CMS后台管理</a></li>
+						</ul>
+		</div>		
+		</div>
+	</nav>
+<div class="sop-content">
+   
+<h2 id="119-%E7%9F%AD%E4%BF%A1%E5%8F%91%E9%80%81">11.9 短信发送</h2>
+<p>结合一些第三方提供的短信API，使用云开发的云函数也能发送短信验证码、系统和活动通知等，下面以腾讯云的短信服务为例。腾讯云有针对Node环境的tencentcloud-sdk-nodejs模块，集成了腾讯云多项服务，除了短信之外，腾讯云服务的几乎所有能力都会集成在这个开发者工具套件（SDK）里。</p>
+<h3 id="1191-%E5%BC%80%E9%80%9A%E8%85%BE%E8%AE%AF%E4%BA%91%E7%9F%AD%E4%BF%A1%E6%9C%8D%E5%8A%A1">11.9.1 开通腾讯云短信服务</h3>
+<h4 id="1%E5%BC%80%E9%80%9A%E7%9F%AD%E4%BF%A1%E6%9C%8D%E5%8A%A1">1、开通短信服务</h4>
+<p>登录<a href="https://console.cloud.tencent.com/smsv2">短信控制台</a>，这里的账号不限于小程序的账号，其他账号也可以；也不限于是个人账号还是企业账号，不过账号需要进行实名认证，个人认证用户只能发送短信验证码、短信通知等，不能用于营销短信；企业认证用户可以发送短信验证码、短信通知、营销短信等。如果账号已经认证，直接申请短信服务就可以开通了。</p>
+<h4 id="2%E5%88%9B%E5%BB%BA%E5%BA%94%E7%94%A8">2、创建应用</h4>
+<p>创建应用可用于个性化管理短信发送任务，例如设置不同的发送频率和发送超量提醒等。打开左侧菜单里的<strong>应用管理</strong>-<strong>应用列表</strong>，点击<strong>创建应用</strong>，应用名称可以为你的小程序名称+云开发，便于区分管理。创建后，会有一个<code>SDKAppID</code>，这个之后会用到。</p>
+<h4 id="3%E5%88%9B%E5%BB%BA%E7%AD%BE%E5%90%8D%E5%92%8C%E6%AD%A3%E6%96%87%E6%A8%A1%E6%9D%BF">3、创建签名和正文模板</h4>
+<p>国内短信由签名+正文组成，签名符号为【】，发送短信内容时必须带签名。所以要发送短信，需要申请<strong>短信签名</strong>和<strong>正文模板</strong>，两者都通过审核后，就可以开始发送短信了。</p>
+<p><strong>1、创建签名</strong></p>
+<p>打开左侧菜单里的<strong>国内短信</strong>-<strong>签名管理</strong>，点击<strong>创建签名</strong>，创建完签名后，这个<code>签名内容</code>之后会用到。</p>
+<ul>
+<li>签名用途：选择【自用（签名为本账号实名认证的公司、网站、产品名等）】。</li>
+<li>签名类型：选择【小程序】。</li>
+<li>签名内容：输入公司名或小程序名或产品名称</li>
+<li>证明类型：选择小程序设置页面截图，然后上传小程序<strong>设置页面</strong>截图，可以参考案例；</li>
+</ul>
+<p><img src="./../../img/11/WX20200528-093730@2x.png" alt="创建签名"></p>
+<p><strong>2、创建正文模板</strong></p>
+<p>打开左侧菜单里的<strong>国内短信</strong>-<strong>正文模板管理</strong>，点击<strong>创建正文模板</strong>，创建完模板后，会有一个模板<code>ID</code>，这个之后会用到，也要记住你模板的变量位置。</p>
+<ul>
+<li>模板名称，建议带有明确目的的名称，比如“注册通知”、“购买成功反馈”等；</li>
+<li>短信类型：选择【普通短信】</li>
+<li>短信内容：比如“您正在申请手机注册，验证码为：{1}，{2}分钟内有效！”，这里的<code>{1}</code>和<code>{2}</code>是你要在代码里传入的变量，变量的编码必须是从{1}开始，传入变量时也要按照顺序传入</li>
+</ul>
+<p><img src="./../../img/11/WX20200528-093516@2x.png" alt="创建正文模板"></p>
+<h4 id="3%E8%8E%B7%E5%8F%96%E5%AE%89%E5%85%A8%E5%87%AD%E8%AF%81">3、获取安全凭证</h4>
+<p>在使用云API之前，用户首先需要在腾讯云控制台上申请安全凭证(API密钥)，安全凭证包括 SecretID 和 SecretKey。打开腾讯云访问密钥的<a href="https://console.cloud.tencent.com/cam/capi">API密钥管理</a>，点击<strong>新建密钥</strong>，就可以创建密钥了，创建之后，就可以看到 <code>SecretID</code>和<code>SecretKey</code>，这两个之后会用到。</p>
+<blockquote>
+<p>API 密钥是构建腾讯云 API 请求的重要凭证，使用腾讯云 API 可以操作你这个账号名下的所有腾讯云资源，一定要妥善保管和定期更新，不要分享给别人或者上传到网络上。</p>
+</blockquote>
+<p><img src="./../../img/11/WX20200528-093918@2x.png" alt="获取安全凭证"></p>
+<h3 id="1192-%E4%BD%BF%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1">11.9.2 使用云函数发送短信</h3>
+<p>使用开发者工具新建一个云函数，比如sms，打开云函数目录中的 package.json ，新增最新版tencentcloud-sdk-nodejs 依赖，右键云函数目录选择在终端中打开输入命令npm install安装依赖：：</p>
+<pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {
+	<span class="hljs-string">"wx-server-sdk"</span>:<span class="hljs-string">"latest"</span>,
+	<span class="hljs-string">"tencentcloud-sdk-nodejs"</span>:<span class="hljs-string">"latest"</span>
+}
+</div></code></pre>
+<p>然后再在云函数的目录下面新建一个config文件夹，在config文件夹里创建一个config.js，云函数的目录结构如下图所示：</p>
+<pre class="hljs"><code><div>sms <span class="hljs-comment">// 云函数目录</span>
+├── config <span class="hljs-comment">//config文件夹</span>
+│   └── config.js <span class="hljs-comment">//config.js文件</span>
+└── index.js
+└── config.json 
+└── package.json 
+</div></code></pre>
+<p>然后再在config.js里输入以下代码，填入获取安全凭证里的SecretID 和 SecretKey:</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">module</span>.exports = {
+	<span class="hljs-attr">secretId</span>: <span class="hljs-string">'wxda99ae45313257046'</span>,  
+	<span class="hljs-attr">secretKey</span>: <span class="hljs-string">'josgjwoijgowjgjsogjo'</span>, 
+	}
+</div></code></pre>
+<p>再在index.js里输入以下代码，代码的内容比较多，但是基本都是从腾讯云短信的技术文档里直接Copy过来的，我们只需要改里面相应的参数即可，比如</p>
+<ul>
+<li>req.SmsSdkAppid为<strong>创建应用</strong>环节里的<code>SDKAppID</code>，</li>
+<li>req.Sign为创建签名里的<code>签名内容</code>，</li>
+<li>req.TemplateID为创建正文模板环节里的模板<code>ID</code>，</li>
+<li>req.TemplateParamSet为模板内容里的变量，值为数组，有多少个变量就往数组里填多少个字符串</li>
+<li>req.PhoneNumberSet为用户的手机号码，测试时可以填你自己的</li>
+</ul>
+<p>修改完以上内容之后，就可以触发该云函数给相应的手机号发送短信了：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+<span class="hljs-keyword">const</span> tencentcloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">"tencentcloud-sdk-nodejs"</span>);
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+<span class="hljs-keyword">const</span> config= <span class="hljs-built_in">require</span>(<span class="hljs-string">"./config/config.js"</span>)
+<span class="hljs-keyword">const</span> {secretId,secretKey} = config
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-keyword">const</span> smsClient = tencentcloud.sms.v20190711.Client;
+	<span class="hljs-keyword">const</span> models = tencentcloud.sms.v20190711.Models;
+	<span class="hljs-keyword">const</span> Credential = tencentcloud.common.Credential;
+	<span class="hljs-keyword">const</span> ClientProfile = tencentcloud.common.ClientProfile;
+	<span class="hljs-keyword">const</span> HttpProfile = tencentcloud.common.HttpProfile;
+
+	<span class="hljs-keyword">let</span> cred = <span class="hljs-keyword">new</span> Credential(secretId,secretKey)
+	<span class="hljs-keyword">let</span> httpProfile = <span class="hljs-keyword">new</span> HttpProfile();
+	httpProfile.reqMethod = <span class="hljs-string">"POST"</span>;
+	httpProfile.reqTimeout = <span class="hljs-number">30</span>;
+	httpProfile.endpoint = <span class="hljs-string">"sms.tencentcloudapi.com"</span>;
+	<span class="hljs-keyword">let</span> clientProfile = <span class="hljs-keyword">new</span> ClientProfile();
+	clientProfile.signMethod = <span class="hljs-string">"HmacSHA256"</span>;
+	clientProfile.httpProfile = httpProfile;
+	
+	<span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> smsClient(cred, <span class="hljs-string">"ap-guangzhou"</span>, clientProfile);
+
+	<span class="hljs-keyword">let</span> req = <span class="hljs-keyword">new</span> models.SendSmsRequest();
+
+	req.SmsSdkAppid = <span class="hljs-string">"1400364657"</span>;
+	req.Sign = <span class="hljs-string">"HackWeek"</span>;
+	req.ExtendCode = <span class="hljs-string">""</span>;
+	req.SenderId = <span class="hljs-string">""</span>;
+	req.SessionContext = <span class="hljs-string">""</span>;
+
+	req.PhoneNumberSet = [<span class="hljs-string">"+86185****3"</span>];
+
+	req.TemplateID = <span class="hljs-string">"597853"</span>;
+
+	req.TemplateParamSet = [<span class="hljs-string">"1234"</span>,<span class="hljs-string">"5"</span>];
+	
+
+	client.SendSms(req, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, response</span>) </span>{
+		<span class="hljs-keyword">if</span> (err) {
+			<span class="hljs-built_in">console</span>.log(err);
+			<span class="hljs-keyword">return</span>;
+		}
+		<span class="hljs-built_in">console</span>.log(response.to_json_string());
+	});
+
+}
+</div></code></pre>
+<div class="sop-footer"> 
+	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
+</div>
+</div>
+</div>
+</div>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/jquery.min.js"></script>
+<script src="https://hackweek.oss-cn-shanghai.aliyuncs.com/hw18/component/bootstrap.min.js"></script>
+<script src="https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c74df1b3bfef646324c832a4c59aa5df";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+	</script>
+	
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?8efc2c9aaaffb2f7a4cf6a7ff9c65cbb";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+</body>
+</html>
