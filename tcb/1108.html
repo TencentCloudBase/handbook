@@ -471,9 +471,9 @@ code {
 </ul>
 <h4 id="2%E5%88%9B%E5%BB%BAredis">2、创建Redis</h4>
 <p>在创建了上海可用区的私有网络之后（可以参考上一节的内容），我们可以购买腾讯云在上海可用区的Redis服务，网络类型找到你创建的私有网络以及相应的子网即可。
-<img src="./../../img/11/WX20200527-103917@2x.png" alt="Redis的网络类型"></p>
+<img src="./../img/11/WX20200527-103917@2x.png" alt="Redis的网络类型"></p>
 <p>在腾讯云网页云开发控制台中，找到需要配置的云函数，比如函数名为redis，点击右上角<strong>编辑</strong>进入配置界面，在函数配置界面中，修改网络配置为Redis所在的同一私有网络子网。
-<img src="./../../img/11/WX20200527-184006@2x.png" alt="云函数的内网访问"></p>
+<img src="./../img/11/WX20200527-184006@2x.png" alt="云函数的内网访问"></p>
 <h3 id="1182-%E4%BD%BF%E7%94%A8ioredis%E6%93%8D%E4%BD%9Credis">11.8.2 使用ioredis操作redis</h3>
 <p>为了连接和操作 Redis 实例，我们需要一个 Redis 客户端，推荐使用ioredis（类似的还有node_redis、tedis等）。使用开发者工具打开云函数目录中的 package.json ，新增最新版ioredis 依赖，右键云函数目录选择在终端中打开输入命令npm install安装依赖：：</p>
 <pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {

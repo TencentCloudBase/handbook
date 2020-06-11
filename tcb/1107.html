@@ -592,7 +592,7 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 <p>当然，你还可以使用Sequelize，Sequelize是针对node.js和io.js提供的ORM框架。具体就是突出一个支持广泛，配置和查询方法统一。它支持的数据库包括：PostgreSQL、 MySQL、MariaDB、 SQLite 和 MSSQL。技术文档：<a href="https://sequelize.org/master/">Sequelize</a>，这里就不多举例了。</p>
 </blockquote>
 <p>在云函数中使用MySQL，每个云函数在执行时就都会与MySQL的server有连接），但数据库的最大连接数是非常少的（几百几千），我们可以在数据库管理里看到并设置这个值max_connections。由于数据库的连接数比较少，因此建议将数据库的增删改查都写在一个云函数里。这样会减少云函数冷启动的概率以及减少对数据库连接数的占用，而将增删改查的处理集中到一个云函数，我们可以使用到<strong>云函数路由tcb-router</strong>，后面会有介绍。
-<img src="./../../img/11/WX20200605-105319@2x.png" alt="数据库的最大连接数"></p>
+<img src="./../img/11/WX20200605-105319@2x.png" alt="数据库的最大连接数"></p>
 <div class="sop-footer"> 
 	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
 </div>

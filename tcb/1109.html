@@ -473,7 +473,7 @@ code {
 <li>签名内容：输入公司名或小程序名或产品名称</li>
 <li>证明类型：选择小程序设置页面截图，然后上传小程序<strong>设置页面</strong>截图，可以参考案例；</li>
 </ul>
-<p><img src="./../../img/11/WX20200528-093730@2x.png" alt="创建签名"></p>
+<p><img src="./../img/11/WX20200528-093730@2x.png" alt="创建签名"></p>
 <p><strong>2、创建正文模板</strong></p>
 <p>打开左侧菜单里的<strong>国内短信</strong>-<strong>正文模板管理</strong>，点击<strong>创建正文模板</strong>，创建完模板后，会有一个模板<code>ID</code>，这个之后会用到，也要记住你模板的变量位置。</p>
 <ul>
@@ -481,13 +481,13 @@ code {
 <li>短信类型：选择【普通短信】</li>
 <li>短信内容：比如“您正在申请手机注册，验证码为：{1}，{2}分钟内有效！”，这里的<code>{1}</code>和<code>{2}</code>是你要在代码里传入的变量，变量的编码必须是从{1}开始，传入变量时也要按照顺序传入</li>
 </ul>
-<p><img src="./../../img/11/WX20200528-093516@2x.png" alt="创建正文模板"></p>
+<p><img src="./../img/11/WX20200528-093516@2x.png" alt="创建正文模板"></p>
 <h4 id="3%E8%8E%B7%E5%8F%96%E5%AE%89%E5%85%A8%E5%87%AD%E8%AF%81">3、获取安全凭证</h4>
 <p>在使用云API之前，用户首先需要在腾讯云控制台上申请安全凭证(API密钥)，安全凭证包括 SecretID 和 SecretKey。打开腾讯云访问密钥的<a href="https://console.cloud.tencent.com/cam/capi">API密钥管理</a>，点击<strong>新建密钥</strong>，就可以创建密钥了，创建之后，就可以看到 <code>SecretID</code>和<code>SecretKey</code>，这两个之后会用到。</p>
 <blockquote>
 <p>API 密钥是构建腾讯云 API 请求的重要凭证，使用腾讯云 API 可以操作你这个账号名下的所有腾讯云资源，一定要妥善保管和定期更新，不要分享给别人或者上传到网络上。</p>
 </blockquote>
-<p><img src="./../../img/11/WX20200528-093918@2x.png" alt="获取安全凭证"></p>
+<p><img src="./../img/11/WX20200528-093918@2x.png" alt="获取安全凭证"></p>
 <h3 id="1192-%E4%BD%BF%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0%E5%8F%91%E9%80%81%E7%9F%AD%E4%BF%A1">11.9.2 使用云函数发送短信</h3>
 <p>使用开发者工具新建一个云函数，比如sms，打开云函数目录中的 package.json ，新增最新版tencentcloud-sdk-nodejs 依赖，右键云函数目录选择在终端中打开输入命令npm install安装依赖：：</p>
 <pre class="hljs"><code><div><span class="hljs-string">"dependencies"</span>: {

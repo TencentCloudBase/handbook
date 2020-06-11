@@ -561,7 +561,7 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 </ul>
 <h4 id="1%E5%9B%BE%E5%83%8F%E5%9C%B0%E5%9D%80%E7%9A%84%E6%8B%BC%E6%8E%A5">1、图像地址的拼接</h4>
 <p>在了解图像处理能力之前，我们需要先了解一下云存储文件的fileID、下载地址以及下载地址携带的权限参数sign（图像处理能力的参数拼接就是基于下载地址的），如下图所示：
-<img src="./../../img/13/WX20200609-184638@2x.png" alt="云存储里图片的信息"></p>
+<img src="./../img/13/WX20200609-184638@2x.png" alt="云存储里图片的信息"></p>
 <p>在安装了图像处理拓展能力的情况下，我们可以直接拿云存储的下载地址进行拼接，拼接之后的链接我们既可以在小程序里使用，也可以用于图床，比如原始图片下载地址为：</p>
 <pre class="hljs"><code><div>https://786c-xly-xrlur-1300446086.tcb.qcloud.la/hehe.jpg?sign=b8ac757538940ead8eed4786449b4cd7&amp;t=1591752049
 </div></code></pre>

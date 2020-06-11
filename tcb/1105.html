@@ -460,7 +460,7 @@ code {
 <h4 id="1%E5%BC%80%E5%90%AFsmtp%E6%9C%8D%E5%8A%A1">1、开启SMTP服务</h4>
 <p>自己搭建邮件服务器是非常麻烦的，我们可以借助于QQ邮箱、Gmail、163个人邮件系统或企业邮件系统开启<strong>IMAP/SMTP服务</strong>，IMAP是互联网邮件访问协议，通过这种协议可以从邮件服务器获取邮件的信息、下载邮件，也就是接收邮件；SMTP也就是简单邮件传输协议，通过它可以控制邮件的中转方式，帮助计算机在发送或中转信件时找到下一个目的地，也就是发送邮件。这里我们只介绍如何使用云函数来发送邮件，所使用的就主要是smtp服务。</p>
 <p>不同的邮件系统有着不同的smtp发送邮件服务器，端口号也会有所不同，这些都可以去相应的邮箱的设置里看到相关的说明的，这里仅以QQ邮箱为例，登录QQ邮箱，在<strong>邮件设置</strong>-<strong>账户</strong>里<strong>开启SMTP服务</strong>，QQ邮箱的发送邮件服务器：smtp.qq.com，使用SSL，端口号465或587。</p>
-<p><img src="./../../img/11/WX20200414-005633@2x.png" alt="QQ开启SMTP服务"></p>
+<p><img src="./../img/11/WX20200414-005633@2x.png" alt="QQ开启SMTP服务"></p>
 <p>QQ开启SMTP服务之后会获取到<strong>邮件授权码</strong>（邮件授权码不是邮箱密码），这个后面会用得到。</p>
 <h4 id="2%E4%BD%BF%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6">2、使用云函数发送邮件</h4>
 <p>使用开发者工具创建一个云函数，比如nodemail，然后在package.json<strong>增加</strong>nodemailer最新版latest的依赖，并右键云函数目录选择在终端中打开输入命令npm install安装依赖：</p>

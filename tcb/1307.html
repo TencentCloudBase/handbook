@@ -572,7 +572,7 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 <h4 id="2%E8%8E%B7%E5%8F%96sharetickets">2、获取shareTickets</h4>
 <p>值得注意的是，<strong>只有转发到微信群聊中，再通过微信群聊里的小程序卡片进入到小程序才可以获取到shareTickets返回值</strong>，单聊没有shareTickets；shareTicket仅在当前小程序生命周期内有效。但是在开发时，怎么把小程序转发到微信群里面去呢？开发者工具提供了带shareTickets的调试方法。</p>
 <p>在开发者工具的模拟器里点击&quot;转发&quot;button，就会出现一个测试模拟群列表，我们可以将小程序转发到一个群聊里面去，比如<code>测试模拟群4</code>。调试时，我们要添加自定义编译模式，在<strong>进入场景</strong>里选择<code>1044: 带 shareTicket 的小程序消息卡片</code>，<strong>选择进入的群</strong>为你转发的群，具体可以参考如下图：</p>
-<p><img src="./../../img/13/WX20200608-120253@2x.png" alt="带shareTickets的调试"></p>
+<p><img src="./../img/13/WX20200608-120253@2x.png" alt="带shareTickets的调试"></p>
 <p>获取shareTicket，我们可以使用<code>wx.getLaunchOptionsSync()</code>来获取小程序启动时的参数，这个参数与App.onLaunch 的回调参数一致，而shareTicket就在这个参数对象里。我们可以在share.js的onLoad生命周期函数里来获取它：</p>
 <pre class="hljs"><code><div>onLoad:<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">options</span>) </span>{
 	<span class="hljs-keyword">const</span> res = wx.getLaunchOptionsSync()
@@ -632,7 +632,7 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 </blockquote>
 <h3 id="1374-%E5%8A%A8%E6%80%81%E6%B6%88%E6%81%AF">13.7.4 动态消息</h3>
 <p>动态消息发出去之后，开发者可以通过后台接口修改部分消息内容，动态消息也有对应的提醒按钮，用户点击提醒按钮可以订阅提醒，开发者可以通过后台修改消息状态并推送一次提醒消息给订阅了提醒的用户。效果如下所示，这种特别适合我们做抢购、拼团等运营活动：</p>
-<p><img src="./../../img/13/13.png" alt=""></p>
+<p><img src="./../img/13/13.png" alt=""></p>
 <p>要让转发的小程序卡片里有动态消息，首先需要使用云调用<code>updatableMessage.createActivityId</code>接口来创建<code>activityId</code>，然后将activityId和templateInfo传入到<code>wx.updateShareMenu</code>，而要更新动态消息则需要使用到<code>updatableMessage.setUpdatableMsg</code>的接口。我们可以把创建动态消息和更新动态消息的云函数使用tcb-router整合到一个云函数里面。</p>
 <h4 id="1%E5%88%9B%E5%BB%BA-activityid">1、创建 activityId</h4>
 <p>使用开发者工具新建一个云函数，云函数的名称为activity，然后在package.json增加tcb-router最新版latest的依赖并用npm install安装：</p>
