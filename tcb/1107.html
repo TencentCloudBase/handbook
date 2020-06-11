@@ -474,13 +474,13 @@ code {
 <p>腾讯云控制台需要登录时，选择微信公众号（小程序账号属于公众号体系）的登录方式，扫码选择相应的小程序账号进行登录。</p>
 </blockquote>
 <p>打开腾讯云控制台的<a href="https://console.cloud.tencent.com/vpc/vpc?rid=4">私有网络</a>中<strong>免费</strong>创建私有网络，由于私有网络具有地域（Region）属性，我们需要在函数所在的地域来新建私有网络。云开发的云函数的服务器部署在上海，因此你的私有网络里的资源也要<strong>选择上海</strong>。私有网络有三个核心组成成分：私有网络网段IPv4 CIDR、子网和路由表。一个私有网络下的子网可以属于该地域下不同可用区，同一私有网络下<strong>各个子网内</strong>资源无论是否在同一可用区内，均<strong>默认内网互通</strong>。而初始子网的可用区，你可以根据你的MySQL等数据库所在的可用区来选，如果你之前在腾讯云没有数据库等，选择上海的任意可用区即可。</p>
-<p><img src="../../img/11/WX20200416-200853@2x.png" alt="私有网络的创建"></p>
+<p><img src="./../img/11/WX20200416-200853@2x.png" alt="私有网络的创建"></p>
 <p><strong>2、在腾讯云购买MySQL并加入同一私有网络</strong></p>
 <p>打开腾讯云控制台的<a href="https://console.cloud.tencent.com/cdb">MySQL</a>中购买一个实例，创建实例时<strong>最主要的</strong>是在网络这里找到你之前创建的私有网络以及对应的子网（下拉即可）。</p>
-<p><img src="../../img/11/WX20200416-202211@2x.png" alt="购买MySQL"></p>
+<p><img src="./../img/11/WX20200416-202211@2x.png" alt="购买MySQL"></p>
 <p><strong>3、将需要连接MySQL的云函数加入私有网络</strong>
 打开腾讯云控制台的<a href="https://console.cloud.tencent.com/tcb">云开发CloudBase</a>中选择指定的环境，然后点击云函数菜单，然后新建一个云函数或者选择指定的云函数比如mysql，进入配置页面后，点击右上角的“<strong>编辑</strong>”，在网络配置选择和MySQL服务一样的私有网络。这样云函数就可以通过私有网络的方式连接MySQL了。
-<img src="../../img/11/WX20200416-201636@2x.png" alt="将云函数加入私有网络"></p>
+<img src="./../img/11/WX20200416-201636@2x.png" alt="将云函数加入私有网络"></p>
 <p>然后我们可以根据需要或者结合自身的业务需求，往mysql数据库里导入数据或数据文件，比如可以使用腾讯与自带的DMS往里面导入sql文件。</p>
 <h3 id="1172-%E4%BD%BF%E7%94%A8mysql2%E6%93%8D%E4%BD%9Cmysql">11.7.2 使用mysql2操作MySQL</h3>
 <h4 id="1%E4%BD%BF%E7%94%A8mysql2%E8%BF%9E%E6%8E%A5mysql">1、使用mysql2连接MySQL</h4>
