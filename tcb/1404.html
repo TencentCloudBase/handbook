@@ -453,7 +453,7 @@ code {
       </nav>
     <div class="sop-content">
    
-<h2 id="144-%E4%BA%91%E5%BC%80%E5%8F%91web%E7%AB%AF">14.4 云开发Web端</h2>
+<h2 id="144-web%E7%AB%AF%E4%BA%91%E5%BC%80%E5%8F%91">14.4 Web端云开发</h2>
 <p>云开发的环境还可以开发网站应用，包括普通的 PC 网页或者公众号中的网页等，在开发过程中即便需要后台服务也无需搭建服务器，可以直接使用云开发提供的云端能力。开发者无需关心具体的后台资源及运维，只需使用平台提供的 API 进行核心业务开发，即可实现产品快速上线和迭代。</p>
 <h3 id="1441-%E5%88%9B%E5%BB%BA%E5%88%9D%E5%A7%8B%E9%A1%B9%E7%9B%AE">14.4.1 创建初始项目</h3>
 <p>在前面我们已经用Cloudbase Cli工具在电脑本地用<code>Cloudbase init</code>创建了一个云开发项目，以及开通了静态网站托管，那我们应该如何在静态的网页里初始化云开发呢？</p>
@@ -500,12 +500,12 @@ code {
 <p>然后将head标签里添加如下内容，把云开发web端SDK也就是tcb.js添加到Web应用中：</p>
 <pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- 省略--&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://imgcache.qq.com/qcloud/tcbjs/1.5.1/tcb.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://imgcache.qq.com/qcloud/tcbjs/1.7.0/tcb.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./js/main.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 </div></code></pre>
 <blockquote>
-<p>注意上面的版本号<code>1.5.1</code>，这个不一定是最新的，建议从云开发网页控制台的<strong>添加应用</strong>（在云开发环境的概览里）弹窗中获取最新的版本号，尤其是需要使用新功能的时候，要注意修改版本号。我们还可以通过<code>npm install --save tcb-js-sdk@latest</code>引入npm包tcb-js-sdk的方式来下载最新版的Web端SDK，而在模块化开发时用<code>const tcb = require(&quot;tcb-js-sdk&quot;);</code>将Web端SDK引入到项目中，这里就不多介绍啦。</p>
+<p>注意上面的版本号<code>1.7.0</code>，这个不一定是最新的，建议<a href="https://www.npmjs.com/package/tcb-js-sdk">tcb-js-sdk npm包地址</a>获取最新的版本号，尤其是需要使用新功能的时候，要注意修改版本号。我们还可以通过<code>npm install --save tcb-js-sdk@latest</code>引入npm包tcb-js-sdk的方式来下载最新版的Web端SDK，而在模块化开发时用<code>const tcb = require(&quot;tcb-js-sdk&quot;);</code>将Web端SDK引入到项目中，这里就不多介绍啦。</p>
 </blockquote>
 <h4 id="3%E5%88%9D%E5%A7%8B%E5%8C%96web%E7%AB%AF%E7%8E%AF%E5%A2%83">3、初始化Web端环境</h4>
 <p>使用VS Code打开js文件夹下main.js文件，在里面输入以下代码就可以完成云开发环境的初始化，和小程序云开发一样，要调用云开发环境里的资源，就需要进行初始化，init 用于设置调用云函数、数据库、文件存储时要访问的环境。</p>
@@ -523,7 +523,7 @@ code {
 <h4 id="1%E5%BC%80%E5%90%AF%E5%8C%BF%E5%90%8D%E7%99%BB%E5%BD%95">1、开启匿名登录</h4>
 <p>在<strong>登录方式</strong>里可以选择启动匿名登录，匿名登录有点类似于游戏里的游客访问模式，用户不需要注册就可以获取并存储数据，这种方式比较方便我们进行本地调试。</p>
 <blockquote>
-<p>每个设备同时只存在一个匿名用户，并且此用户永不过期（如果用户手动清除了设备或浏览器的本地数据，那么匿名用户的数据便会被同步清除，再次调用匿名登录API会产生一个新的匿名用户）。每个环境的匿名用户数量不超过1000个，所以你的应用不能太依赖匿名用户，需要注意定期删除不活跃的匿名用户，或将匿名用户转为其他登录方式。</p>
+<p>每个设备同时只存在一个匿名用户，并且此用户永不过期（如果用户手动清除了设备或浏览器的本地数据，那么匿名用户的数据便会被同步清除，再次调用匿名登录API会产生一个新的匿名用户）。每个环境的匿名用户数量不超过1000万个。</p>
 </blockquote>
 <p>打开前面创建的main.js文件，在环境初始化后面添加如下代码，实现匿名登录的功能。window.onload类似于小程序生命周期的onLoad生命周期函数，当包括样式、图像和其他资源的页面被全部加载时，window 对象上的 load 事件就会被触发。</p>
 <pre class="hljs"><code><div><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
@@ -566,22 +566,35 @@ code {
 <h4 id="1%E4%BA%91%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E9%83%A8%E7%BD%B2">1、云函数的创建与部署</h4>
 <p>Web端云开发不仅可以调用你在小程序云开发里创建的云函数，我们也可以在本地创建云函数并部署到云开发环境里供Web端和小程序端来调用，也就是云开发环境里的云函数是Web端和小程序端共用的，小程序端怎么创建并部署云函数大家应该比较熟悉，web端使用vscode来创建并部署云函数和使用微信开发者工具是一样的道理。</p>
 <h4 id="1%E6%9C%AC%E5%9C%B0%E4%BA%91%E5%87%BD%E6%95%B0%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">1、本地云函数目录结构</h4>
-<p>我们可以在web端云开发项目根目录里的functions文件夹下面建和小程序云开发云函数根目录一样的文件夹表示为云函数目录，以及一样新建三个文件并copy里面的内容，比如我们新建一个webtest的云函数，它的目录结构如下：</p>
-<pre class="hljs"><code><div>├── functions   <span class="hljs-comment">//web端云函数根目录</span>
-│   └── webtest  <span class="hljs-comment">//webtest云函数目录</span>
+<p>我们可以在web端云开发项目根目录里的functions文件夹下面建<strong>和小程序云开发云函数根目录一样</strong>的文件夹表示为云函数目录，以及一样新建三个文件并<strong>copy里面的内容（每次创建一个云函数的时候都这么做）</strong>，比如我们新建一个webtest的云函数，它的目录结构如下：</p>
+<pre class="hljs"><code><div>├── _gitignore
+├── functions <span class="hljs-comment">// 云函数根目录</span>
+│   └── app   <span class="hljs-comment">//app云函数目录</span>
 │       └── index.js
 │       └── config.json 
 │       └── package.json
+│   └── webtest  <span class="hljs-comment">//webtest云函数目录</span>
+│       └── index.js       <span class="hljs-comment">//主体结构和小程序云开发云函数里的index.js一样</span>
+│       └── config.json    <span class="hljs-comment">//copy小程序云开发云函数里的config.json</span>
+│       └── package.json  <span class="hljs-comment">//copy小程序云开发云函数里的package.json</span>
+├── public <span class="hljs-comment">// 用于存放应用程序的静态文件</span>
+│   └── index.html 
+│   └── js
+│       └── main.js
+│   └── css
+│       └── style.css
+│   └── assert
+└── cloudbaserc.js <span class="hljs-comment">// 项目配置文件</span>
 </div></code></pre>
 <p>在index.js里我们可以输入以下代码，引入服务端sdk，初始化服务端的环境，以及在main函数里返回数据:</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-admin-node'</span>)
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@cloudbase/node-sdk'</span>)
 <span class="hljs-keyword">const</span> app = tcb.init({
   <span class="hljs-attr">env</span>: <span class="hljs-string">'你的环境ID'</span>
 })
 <span class="hljs-keyword">const</span> auth = app.auth()
 exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
-   <span class="hljs-keyword">const</span> ip = auth.getClientIP()  <span class="hljs-comment">//获取客户端ip</span>
-   <span class="hljs-keyword">const</span> {
+    <span class="hljs-keyword">const</span> ip = auth.getClientIP()  <span class="hljs-comment">//获取客户端ip</span>
+    <span class="hljs-keyword">const</span> {
     openId, <span class="hljs-comment">//微信openId，非微信授权登录则空</span>
     appId, <span class="hljs-comment">//微信appId，非微信授权登录则空</span>
     uid, <span class="hljs-comment">//用户唯一ID</span>
@@ -599,7 +612,7 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 }
 </div></code></pre>
 <blockquote>
-<p>web端创建的云函数这里，我们既可以只用 Web端SDK tcb-admin-node，也可以沿用小程序云开发的写法，使用wx-server-sdk，如果是跨端开发建议后者。</p>
+<p>web端创建的云函数这里，我们既可以只用 Web端SDK @cloudbase/node-sdk，也可以沿用小程序云开发的写法，使用wx-server-sdk，如果是跨端开发建议后者。</p>
 </blockquote>
 <h4 id="2%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%B9%B6%E9%83%A8%E7%BD%B2%E4%B8%8A%E4%BC%A0%E4%BA%91%E5%87%BD%E6%95%B0">2、安装依赖并部署上传云函数</h4>
 <p>然后使用终端打开云函数目录，使用<code>npm install</code>来安装依赖package.json的依赖之后，在cloudbaserc.js的配置文件的<code>functions</code>里添加webtest云函数的配置，比如：</p>
@@ -607,7 +620,7 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
     <span class="hljs-attr">name</span>: <span class="hljs-string">"webtest"</span>,
     <span class="hljs-attr">timeout</span>: <span class="hljs-number">5</span>,
     <span class="hljs-attr">envVariables</span>: {},
-    <span class="hljs-attr">runtime</span>: <span class="hljs-string">"Nodejs8.9"</span>,
+    <span class="hljs-attr">runtime</span>: <span class="hljs-string">"Nodejs10.15"</span>,
     <span class="hljs-attr">handler</span>: <span class="hljs-string">"index.main"</span>
 },
 </div></code></pre>
@@ -616,7 +629,7 @@ exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
 </div></code></pre>
 <p>这里有几个需要注意一下，小程序端云开发与Web端云开发的相同与不同之处：</p>
 <ul>
-<li>如果你的云函数不需要给小程序使用而只在web端使用，你可以只引入<code>tcb-admin-node</code>，而如果要在小程序端使用，你引入的<code>wx-server-sdk</code>，tcb-admin-node是云开发的服务端sdk，wx-server-sdk是小程序云开发的SDK；所以最好是用变量tcb表示引入tcb-admin-node，变量cloud表示wx-server-sdk；</li>
+<li>如果你的云函数不需要给小程序使用而只在web端使用，你可以只引入<code>@cloudbase/node-sdk</code>，而如果要在小程序端使用，你引入的<code>wx-server-sdk</code>，@cloudbase/node-sdk是云开发的服务端sdk，wx-server-sdk是小程序云开发的SDK；所以最好是用变量tcb表示引入@cloudbase/node-sdk，变量cloud表示wx-server-sdk；</li>
 <li>Web端云开发的云函数和小程序云开发的使用方法大致相同，也要注意web端/小程序端和服务端的不同用法与权限；</li>
 <li>将Web端云函数部署上传到小程序创建的云开发环境，在小程序开发者工具的云开发控制台是可以看到该云函数的，同时调用这个云函数的日志也在云开发控制台的日志里看到。</li>
 <li>如果没有在cloudbaserc.js配置，会显示<code>未找到函数发布配置，是否使用默认配置（仅适用于 Node.js 云函数）</code>的提示</li>

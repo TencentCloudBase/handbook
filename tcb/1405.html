@@ -526,7 +526,7 @@ code {
 <p>有了云接入的概念，我们可以把云函数分为两类，在前面的章节云函数主要用于调用云函数、处理数据库、云存储云调用，我们可以称之为<strong>后台函数</strong>，而HTTP函数则是我们可以通过标准HTTP请求来调用的。</p>
 </blockquote>
 <p>参考上节Web端云开发的内容，在functions文件夹里新建一个云函数比如backfunction，然后在index.js里输入以下代码，注意有一个dbName的参数会由HTTP请求传入：</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-admin-node'</span>)
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@cloudbase/node-sdk'</span>)
 tcb.init({
   <span class="hljs-attr">env</span>: <span class="hljs-string">"xly-xrlur"</span>
 })
@@ -568,7 +568,7 @@ exports.main = <span class="hljs-function">(<span class="hljs-params">event,cont
 │   └── package.json
 </div></code></pre>
 <p>然后在index.js里输入以下代码，读取云函数目录assets文件夹里index.html，并返回HTML，这个云函数就和以往的云函数有很大的不同啦：</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcb-admin-node'</span>)
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> tcb = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@cloudbase/node-sdk'</span>)
 tcb.init({
   <span class="hljs-attr">env</span>: <span class="hljs-string">"xly-xrlur"</span>
 })
@@ -592,42 +592,42 @@ exports.main = <span class="hljs-keyword">async</span> (event,context) =&gt;{
 <h4 id="2%E4%BD%BF%E7%94%A8%E9%9B%86%E6%88%90%E5%93%8D%E5%BA%94%E8%BF%94%E5%9B%9E%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%87%E4%BB%B6">2、使用集成响应返回其他类型的文件</h4>
 <p>除了html文件，还能返回其他类型的文件，在响应中，Content-Type 实体头部用于指示资源的MIME媒体类型，告诉Web端返回的内容类型。媒体类型有很多，比如：</p>
 <table>
- <thead>
+  <thead>
   <tr>
-   <th scope="col">类型</th>
-   <th scope="col">描述</th>
-   <th scope="col">典型示例</th>
+    <th scope="col">类型</th>
+    <th scope="col">描述</th>
+    <th scope="col">典型示例</th>
   </tr>
- </thead>
- <tbody>
+  </thead>
+  <tbody>
   <tr>
-   <td><code>text</code></td>
-   <td>普通文本类型</td>
-   <td><code>text/plain</code>, <code>text/html</code>, <code>text/css</code>, <code>text/javascript</code></td>
-  </tr>
-  <tr>
-   <td><code>image</code></td>
-   <td>图像类型</td>
-   <td><code>image/gif</code>, <code>image/png</code>, <code>image/jpeg</code>, <code>image/bmp</code>, <code>image/webp</code>, <code>image/x-icon</code>, <code>image/vnd.microsoft.icon</code></td>
+    <td><code>text</code></td>
+    <td>普通文本类型</td>
+    <td><code>text/plain</code>, <code>text/html</code>, <code>text/css</code>, <code>text/javascript</code></td>
   </tr>
   <tr>
-   <td><code>audio</code></td>
-   <td>音频文件</td>
-   <td><code>audio/midi</code>, <code>audio/mpeg, audio/webm, audio/ogg, audio/wav</code></td>
+    <td><code>image</code></td>
+    <td>图像类型</td>
+    <td><code>image/gif</code>, <code>image/png</code>, <code>image/jpeg</code>, <code>image/bmp</code>, <code>image/webp</code>, <code>image/x-icon</code>, <code>image/vnd.microsoft.icon</code></td>
   </tr>
   <tr>
-   <td><code>video</code></td>
-   <td>视频文件</td>
-   <td><code>video/webm</code>, <code>video/ogg</code></td>
+    <td><code>audio</code></td>
+    <td>音频文件</td>
+    <td><code>audio/midi</code>, <code>audio/mpeg, audio/webm, audio/ogg, audio/wav</code></td>
   </tr>
   <tr>
-   <td><code>application</code></td>
-   <td>二进制数据</td>
-   <td>
+    <td><code>video</code></td>
+    <td>视频文件</td>
+    <td><code>video/webm</code>, <code>video/ogg</code></td>
+  </tr>
+  <tr>
+    <td><code>application</code></td>
+    <td>二进制数据</td>
+    <td>
     <p><code>application/octet-stream</code>, <code>application/pkcs12</code>, <code>application/vnd.mspowerpoint</code>, <code>application/xhtml+xml</code>, <code>application/xml</code>,&nbsp; <code>application/pdf</code></p>
-   </td>
+    </td>
   </tr>
- </tbody>
+  </tbody>
 </table>
 <p>将 content-type 分别设置为 application/javascript、text/css，即可在 body 中返回 JavaScript 文件和css文件，html、js、css文件是静态网站的核心文件，都是可以返回的，这样就用集成响应返回一个完整的静态网站啦。<strong>注意用集成请求返回的静态网站和静态托管之间的区别哦</strong>。</p>
 <p>将content-type 设置为 image/png以及将 isBase64Encoded 设置为 true，就能返回图片的二进制文件，这个也可以和云存储结合起来使用。比如我们可以写如下云函数，先下载云存储里面的图片，将Buffer转成base64格式的图片，然后返回，这样我们就能通过云接入的链接查看到图片了：</p>

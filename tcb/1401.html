@@ -458,7 +458,7 @@ code {
 <h2 id="141-%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86">14.1 云开发资源管理</h2>
 <h3 id="1411-%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%B7%A5%E5%85%B7%E9%93%BE">14.1.1 开发人员的工具链</h3>
 <h4 id="1%E9%80%9A%E8%BF%87%E4%BA%91%E5%BC%80%E5%8F%91%E7%BD%91%E9%A1%B5%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90">1、通过云开发网页后台管理云开发资源</h4>
-<p>我们可以登录腾讯云官网的 <a href="https://console.cloud.tencent.com/tcb?from=12341">云开发后台管理</a>，选择使用<strong>微信公众号登录</strong>，然后用该小程序管理员的微信扫描二维码，就可以在网页控制台里看到我们使用微信开发者工具创建的小程序云开发资源了。
+<p>我们可以登录腾讯云官网的 <a href="https://console.cloud.tencent.com/tcb">云开发后台管理</a>，选择使用<strong>微信公众号登录</strong>，然后用该小程序管理员的微信扫描二维码，就可以在网页控制台里看到我们使用微信开发者工具创建的小程序云开发资源了。
 <img src="./../img/14/WechatIMG326.png" alt="腾讯云官网的云开发环境列表"></p>
 <p>在这里可以管理小程序云开发的数据库、文件（存储）、云函数、监控告警、日志检索以及环境设置，也可以对云开发资源的服务进行续费，是一个完全可以替代云开发控制台的可视化管理工具。</p>
 <p><img src="./../img/14/WX20200315-093300@2x.png" alt="腾讯云官网的云开发资源管理界面"></p>
@@ -476,24 +476,37 @@ code {
 <li><strong>拓展能力</strong>：支持图像安全审核、图像标签、图像处理、图像盲水印等，而且拓展能力还在持续添加中</li>
 </ul>
 <h4 id="2%E8%B7%A8%E4%BA%91%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86">2、跨云开发环境进行管理</h4>
-<p>如果你开通了多个云开发环境（小程序云开发环境、Web端云开发环境等），也就有了多个云开发资源环境，那我们是否可以在A小程序的云函数里调用B小程序的云开发资源呢？当然可以，通过tcb-admin-node这个依赖就能很方便的实现。</p>
-<p><a href="https://github.com/TencentCloudBase/tcb-admin-node">tcb-admin-node</a>也就是云开发的<strong>服务端SDK</strong>，让你可以在服务端（如腾讯云云函数或 CVM 等）使用 Nodejs 服务访问 云开发 的服务，也就是服务端SDK是云开发环境必备的一个依赖。在我们给云函数安装wx-server-sdk时就已经同时安装了该依赖，也就是我们无需再安装就可以直接用它来实现跨云开发环境来调用资源。</p>
+<p>如果你开通了多个云开发环境（小程序云开发环境、Web端云开发环境等），也就有了多个云开发资源环境，那我们是否可以在A小程序的云函数里调用B小程序的云开发资源呢？当然可以，通过@cloudbase/node-sdk这个依赖就能很方便的实现。</p>
+<p><a href="https://github.com/TencentCloudBase/node-sdk">@cloudbase/node-sdk</a>也就是云开发的<strong>服务端SDK</strong>，让你可以在服务端（如腾讯云云函数或 CVM 等）使用 Nodejs 服务访问 云开发 的服务，也就是服务端SDK是云开发环境必备的一个依赖。在我们给云函数安装wx-server-sdk时就已经同时安装了该依赖，也就是我们无需再安装就可以直接用它来实现跨云开发环境来调用资源。</p>
 <p>比如我们可以在A小程序的云函数里填入B小程序的secretId和secretKey以及环境ID，这里的secretId和secretKey，</p>
 <ul>
 <li>可以填写B小程序的appid和key，这个在B小程序的控制台就可以找到，因为小程序云开发的环境可以创建两个，所以我们可以通过填写环境ID来确定是哪个环境；</li>
 <li>你也可以腾讯云 API 固定密钥对，<a href="https://console.cloud.tencent.com/cam/capi">腾讯云密钥对获取</a>，这个密钥对会管理该账号下的所有云开发环境，我们可以通过填写环境ID来确实是哪个环境</li>
 <li>如果不填写secretId和secretKey，就表示初始化的是A小程序的云开发环境了。</li>
 </ul>
+<p>比如我们想在A小程序的云函数里对B小程序的数据库进行增删改查，在A小程序的云函数里比如云函数名为cross，在cross云函数的index.js里写如下代码，当我们在小程序调用cross云函数时，就能往B小程序的数据库里添加一条记录了：</p>
 <pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
-cloud.init({
-  <span class="hljs-attr">secretId</span>: <span class="hljs-string">'xxxxx'</span>,
-  <span class="hljs-attr">secretKey</span>: <span class="hljs-string">'xxxx'</span>,
-  <span class="hljs-attr">env</span>: <span class="hljs-string">'xxx'</span>
+cloud.init({ <span class="hljs-comment">//任意云开发环境，包含B小程序创建的云开发环境，你一定要找到对应的腾讯云的secretId和secretKey哦</span>
+	<span class="hljs-attr">secretId</span>: <span class="hljs-string">'AKIDUmqiIcQUyA...GsDH6frnvcjZ'</span>,
+	<span class="hljs-attr">secretKey</span>: <span class="hljs-string">'iChEVXL7mBKJ...GqRmrgFYZ7'</span>,
+	<span class="hljs-attr">env</span>: <span class="hljs-string">'hac...1279b'</span> 
 })
+<span class="hljs-keyword">const</span> db = cloud.database()
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-keyword">const</span> {OPENID} = cloud.getWXContext()
+	<span class="hljs-keyword">const</span> result =  <span class="hljs-keyword">await</span> db.collection(<span class="hljs-string">'test'</span>).add({
+	<span class="hljs-attr">data</span>:{
+		<span class="hljs-attr">openid</span>:OPENID,
+		<span class="hljs-attr">name</span>:<span class="hljs-string">"李东bbsky"</span>,
+		<span class="hljs-attr">interest</span>:[<span class="hljs-string">'爬山'</span>,<span class="hljs-string">'旅游'</span>,<span class="hljs-string">'读书'</span>]
+	}
+	})
+	<span class="hljs-keyword">return</span> result
+}
 </div></code></pre>
-<p>服务端SDK 也就是tcb-admin-node的用法，与小程序云函数端(服务端)的用法是一致的。该依赖更多信息可以通过阅读在Github上的技术文档来了解。</p>
+<p>服务端SDK 也就是@cloudbase/node-sdk的用法，与小程序云函数端(服务端)的用法是一致的。该依赖更多信息可以通过阅读在Github上的技术文档来了解。</p>
 <blockquote>
-<p>tcb-admin-node是云开发Nodejs的服务端SDK，而云开发也在不断支持更多的编程语言，比如php，而<a href="https://github.com/TencentCloudBase/tcb-php-sdk">tcb-php-sdk</a>则是云开发php语言的服务端SDK。</p>
+<p>@cloudbase/node-sdk是云开发Nodejs的服务端SDK，而云开发也在不断支持更多的编程语言，比如php，而<a href="https://github.com/TencentCloudBase/tcb-php-sdk">tcb-php-sdk</a>则是云开发php语言的服务端SDK。</p>
 </blockquote>
 <h4 id="3%E9%80%9A%E8%BF%87cli%E5%B7%A5%E5%85%B7%E6%9D%A5%E7%AE%A1%E7%90%86%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90">3、通过CLI工具来管理云开发资源</h4>
 <p>CloudBase CLI 是一个开源的命令行界面交互工具，用于帮助用户快速、方便的部署项目，管理云开发资源。对于开发人员来说，我们还可以通过<a href="https://github.com/TencentCloudBase/cloudbase-cli">cloudbase-cli</a>CLI工具使用命令行对云开发资源进行管理。</p>
@@ -529,7 +542,8 @@ cloud.init({
 <p>云接入是云开发基于云函数之上为开发者提供的HTTP访问服务，开发者可以轻松使用 POST、PUT、GET、DELETE等方法通过 HTTP 请求访问到云开发环境内的全部资源，而不需要使用Web端 SDK，后面也会具体介绍。</p>
 <h4 id="4%E4%BD%BF%E7%94%A8http-api%E6%9D%A5%E7%AE%A1%E7%90%86%E4%BA%91%E5%BC%80%E5%8F%91%E8%B5%84%E6%BA%90">4、使用HTTP API来管理云开发资源</h4>
 <p>开发人员还可以使用HTTP API搭建一个网页后台，HTTP API适用于所有平台所有的编程语言以及所有的平台。云开发官方技术文档有非常详细的 <a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-http-api/">HTTP API技术文档</a> ，通过HTTP API我们可以实现对数据库的集合、记录、文件等的增删改查以及触发云函数。HTTP API<strong>可以完全被云接入以及SDK给取代</strong>，各方面的处理更好更合理，所以我们不再单独介绍HTTP API啦。</p>
-<div class="sop-footer"> 
+
+			<div class="sop-footer"> 
 	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
 </div>
 </div>

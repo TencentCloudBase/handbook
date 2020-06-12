@@ -466,7 +466,7 @@ cloudbase -v
 </blockquote>
 <p>安装完成后，你可以使用 <code>cloudbase -v </code>验证是否安装成功，如果输出了版本号，则表明 CloudBase CLI 被成功安装到您的计算机中。</p>
 <h4 id="2cli%E5%B7%A5%E5%85%B7%E7%99%BB%E5%BD%95%E4%B8%8E%E7%99%BB%E5%87%BA">2、CLI工具登录与登出</h4>
-<p>要让Cloudbase Cli工具登录，首先我们打开<a href="https://console.cloud.tencent.com/tcb?from=12341">腾讯云云开发控制台</a>，选择微信公众号的方式来登录，扫描选择你的小程序账号，这样就可以进入管理控制台查看到你在开发者工具创建的云开发环境了。</p>
+<p>要让Cloudbase Cli工具登录，首先我们打开<a href="https://console.cloud.tencent.com/tcb">腾讯云云开发控制台</a>，选择微信公众号的方式来登录，扫描选择你的小程序账号，这样就可以进入管理控制台查看到你在开发者工具创建的云开发环境了。</p>
 <p>在终端中输入下面的命令，CLI 工具会自动打开云开发控制台获取授权，在控制台的网页上点击同意授权按钮允许 CloudBase CLI 获取授权。登录成功后，在终端就会有登录成功的提示，并附带一些操作的tips，这些操作的tips我们以后会用到。</p>
 <pre class="hljs"><code><div>cloudbase login
 </div></code></pre>
@@ -511,55 +511,55 @@ cd downloads/tcbweb
 <p>配置文件可以简化 CloudBase CLI 使用，方便项目开发，当使用命令参数缺省时，CloudBase CLI 会从配置文件中解析相关参数并使用，方便开发者以更简单的方式使用 CloudBase CLI。</p>
 <p>默认情况下，使用 cloudbase init 初始化项目时，会生成 cloudbaserc.js 或 cloudbaserc.json 文件作为配置文件，你也可以使用 --config-file 指定其他文件作为配置文件，文件必须满足格式要求。</p>
 <pre class="hljs"><code><div>{
-  <span class="hljs-string">"envId"</span>: <span class="hljs-string">"dev-xxxx"</span>,             <span class="hljs-comment">// 关联环境 ID</span>
-  <span class="hljs-string">"functionRoot"</span>: <span class="hljs-string">"functions"</span>,     <span class="hljs-comment">// 云函数文件夹名称，相对路径，可以省略 './</span>
-  <span class="hljs-string">"functions"</span>: [                   <span class="hljs-comment">// 云函数配置</span>
-    {
-      <span class="hljs-string">"name"</span>: <span class="hljs-string">"app"</span>,           <span class="hljs-comment">// functions 文件夹下函数文件夹的名称，即函数名</span>
-      <span class="hljs-string">"config"</span>: {              <span class="hljs-comment">// 云函数配置</span>
-        <span class="hljs-string">"timeout"</span>: <span class="hljs-number">5</span>,        <span class="hljs-comment">// 超时时间，单位：秒 S</span>
-        <span class="hljs-string">"envVariables"</span>: {    <span class="hljs-comment">// 环境变量</span>
-            <span class="hljs-string">"key"</span>: <span class="hljs-string">"value"</span>
-        }
-      }
-    }
-  ]
+	<span class="hljs-string">"envId"</span>: <span class="hljs-string">"dev-xxxx"</span>,             <span class="hljs-comment">// 关联环境 ID</span>
+	<span class="hljs-string">"functionRoot"</span>: <span class="hljs-string">"functions"</span>,     <span class="hljs-comment">// 云函数文件夹名称，相对路径，可以省略 './</span>
+	<span class="hljs-string">"functions"</span>: [                   <span class="hljs-comment">// 云函数配置</span>
+	{
+		<span class="hljs-string">"name"</span>: <span class="hljs-string">"app"</span>,           <span class="hljs-comment">// functions 文件夹下函数文件夹的名称，即函数名</span>
+		<span class="hljs-string">"config"</span>: {              <span class="hljs-comment">// 云函数配置</span>
+		<span class="hljs-string">"timeout"</span>: <span class="hljs-number">5</span>,        <span class="hljs-comment">// 超时时间，单位：秒 S</span>
+		<span class="hljs-string">"envVariables"</span>: {    <span class="hljs-comment">// 环境变量</span>
+			<span class="hljs-string">"key"</span>: <span class="hljs-string">"value"</span>
+		}
+		}
+	}
+	]
 }
 </div></code></pre>
 <p>在 CLI 配置文件cloudbaserc.js中，functions是一个数组，可以包含多个函数配置项，函数配置项包含了函数名称（name），函数运行配置（config），函数调用传入参数（params）等多项与函数相关的信息，影响着函数操作的行为表现，更多具体的配置比如私有网络、触发器等可以去参考相关技术文档。</p>
 <pre class="hljs"><code><div>{
-  <span class="hljs-attr">envId</span>: <span class="hljs-string">'dev-xxxx'</span>,       <span class="hljs-comment">// 关联环境 ID</span>
-  <span class="hljs-attr">functions</span>: [      <span class="hljs-comment">// 函数配置</span>
-    {
-      <span class="hljs-attr">name</span>: <span class="hljs-string">'app'</span>,          <span class="hljs-comment">// functions 文件夹下函数文件夹的名称，即函数名</span>
-      <span class="hljs-attr">config</span>: {            <span class="hljs-comment">// 函数配置</span>
-        <span class="hljs-attr">timeout</span>: <span class="hljs-number">5</span>,        <span class="hljs-comment">// 超时时间，单位：秒 S</span>
-        <span class="hljs-attr">envVariables</span>: {
-          <span class="hljs-attr">key</span>: <span class="hljs-string">'value'</span>      <span class="hljs-comment">// 环境变量</span>
-        },
-        <span class="hljs-attr">vpc</span>: {                  <span class="hljs-comment">// 私有网络配置，如果不使用私有网络，可不配置</span>
-          <span class="hljs-attr">vpcId</span>: <span class="hljs-string">'vpc-xxx'</span>,     <span class="hljs-comment">// vpc id</span>
-          <span class="hljs-attr">subnetId</span>: <span class="hljs-string">'subnet-xxx'</span>  <span class="hljs-comment">// 子网 id</span>
-        },
-        <span class="hljs-attr">runtime</span>: <span class="hljs-string">'Nodejs8.9'</span>,  <span class="hljs-comment">// 运行时，目前可选运行包含：Nodejs8.9, Php7, Java8，默认为Nodejs 8.9</span>
-        <span class="hljs-attr">installDependency</span>: <span class="hljs-literal">true</span>   <span class="hljs-comment">// 是否云端安装依赖，仅支持 Node.js 项目</span>
-      },
-      <span class="hljs-attr">triggers</span>: [          <span class="hljs-comment">// 函数触发器</span>
-        {
-          <span class="hljs-attr">name</span>: <span class="hljs-string">'myTrigger'</span>,  <span class="hljs-comment">// name: 触发器的名字</span>
-          <span class="hljs-attr">type</span>: <span class="hljs-string">'timer'</span>,      <span class="hljs-comment">// type: 触发器类型，目前仅支持 timer （即定时触发器）</span>
-          <span class="hljs-attr">config</span>: <span class="hljs-string">'0 0 2 1 * * *'</span>   <span class="hljs-comment">// config: 触发器配置，在定时触发器下，config 格式为 cron 表达式</span>
-        }
-      ],
-      <span class="hljs-attr">handler</span>: <span class="hljs-string">'index.main'</span>,
-      <span class="hljs-attr">params</span>: {},     <span class="hljs-comment">// functions:invoke 本地触发云函数时的调用参数</span>
-      <span class="hljs-attr">ignore</span>: [        <span class="hljs-comment">// 部署/更新云函数时忽略的文件</span>
-        <span class="hljs-string">'*.md'</span>,           <span class="hljs-comment">// 忽略 markdown 文件</span>
-        <span class="hljs-string">'node_modules'</span>,     <span class="hljs-comment">// 忽略 node_modules 文件夹</span>
-        <span class="hljs-string">'node_modules/**/*'</span>
-      ]
-    }
-  ]
+	<span class="hljs-attr">envId</span>: <span class="hljs-string">'dev-xxxx'</span>,       <span class="hljs-comment">// 关联环境 ID</span>
+	<span class="hljs-attr">functions</span>: [      <span class="hljs-comment">// 函数配置</span>
+	{
+		<span class="hljs-attr">name</span>: <span class="hljs-string">'app'</span>,          <span class="hljs-comment">// functions 文件夹下函数文件夹的名称，即函数名</span>
+		<span class="hljs-attr">config</span>: {            <span class="hljs-comment">// 函数配置</span>
+		<span class="hljs-attr">timeout</span>: <span class="hljs-number">5</span>,        <span class="hljs-comment">// 超时时间，单位：秒 S</span>
+		<span class="hljs-attr">envVariables</span>: {
+			<span class="hljs-attr">key</span>: <span class="hljs-string">'value'</span>      <span class="hljs-comment">// 环境变量</span>
+		},
+		<span class="hljs-attr">vpc</span>: {                  <span class="hljs-comment">// 私有网络配置，如果不使用私有网络，可不配置</span>
+			<span class="hljs-attr">vpcId</span>: <span class="hljs-string">'vpc-xxx'</span>,     <span class="hljs-comment">// vpc id</span>
+			<span class="hljs-attr">subnetId</span>: <span class="hljs-string">'subnet-xxx'</span>  <span class="hljs-comment">// 子网 id</span>
+		},
+		<span class="hljs-attr">runtime</span>: <span class="hljs-string">'Nodejs10.15'</span>,  <span class="hljs-comment">// 运行时，目前可选运行包含：Nodejs8.9, Nodejs10.15，Php7, Java8等，默认为Nodejs 10.15</span>
+		<span class="hljs-attr">installDependency</span>: <span class="hljs-literal">true</span>   <span class="hljs-comment">// 是否云端安装依赖，仅支持 Node.js 项目</span>
+		},
+		<span class="hljs-attr">triggers</span>: [          <span class="hljs-comment">// 函数触发器</span>
+		{
+			<span class="hljs-attr">name</span>: <span class="hljs-string">'myTrigger'</span>,  <span class="hljs-comment">// name: 触发器的名字</span>
+			<span class="hljs-attr">type</span>: <span class="hljs-string">'timer'</span>,      <span class="hljs-comment">// type: 触发器类型，目前仅支持 timer （即定时触发器）</span>
+			<span class="hljs-attr">config</span>: <span class="hljs-string">'0 0 2 1 * * *'</span>   <span class="hljs-comment">// config: 触发器配置，在定时触发器下，config 格式为 cron 表达式</span>
+		}
+		],
+		<span class="hljs-attr">handler</span>: <span class="hljs-string">'index.main'</span>,
+		<span class="hljs-attr">params</span>: {},     <span class="hljs-comment">// functions:invoke 本地触发云函数时的调用参数</span>
+		<span class="hljs-attr">ignore</span>: [        <span class="hljs-comment">// 部署/更新云函数时忽略的文件</span>
+		<span class="hljs-string">'*.md'</span>,           <span class="hljs-comment">// 忽略 markdown 文件</span>
+		<span class="hljs-string">'node_modules'</span>,     <span class="hljs-comment">// 忽略 node_modules 文件夹</span>
+		<span class="hljs-string">'node_modules/**/*'</span>
+		]
+	}
+	]
 }
 </div></code></pre>
 <h3 id="1423-%E4%BD%BF%E7%94%A8cli%E5%B7%A5%E5%85%B7%E6%93%8D%E4%BD%9C%E4%BA%91%E5%87%BD%E6%95%B0">14.2.3 使用CLI工具操作云函数</h3>
@@ -629,7 +629,7 @@ cloudbase functions:config:update
 <h4 id="5%E8%BF%90%E8%A1%8C%E4%BA%91%E5%87%BD%E6%95%B0">5、运行云函数</h4>
 <p>Cloudbase CLI 支持在本地运行云函数，这个有点类似于微信开发者工具的本地调试云函数，运行云函数时默认以 index.main 作为函数执行入口。在本地运行云函数既可以通过云函数的路径运行，也可以通过函数名来运行。</p>
 <blockquote>
-<p>注意，要运行云函数，Node的依赖wx-server-sdk（核心是服务端SDK tcb-admin-node）是必不可少的，本地运行云函数，就需要在本地安装wx-server-sdk，在云端运行就要在云端安装这个依赖，由于我们的云函数是从云端下载下来的，都已经带有wx-server-sdk依赖了，所以不需要安装，但是如果是自己创建的云函数就必须要了哦~</p>
+<p>注意，要运行云函数，Node的依赖wx-server-sdk（核心是服务端SDK @cloudbase/node-sdk）是必不可少的，本地运行云函数，就需要在本地安装wx-server-sdk，在云端运行就要在云端安装这个依赖，由于我们的云函数是从云端下载下来的，都已经带有wx-server-sdk依赖了，所以不需要安装，但是如果是自己创建的云函数就必须要了哦~</p>
 </blockquote>
 <p>你可以使用 --path 选项指定函数入口文件的路径，直接运行云函数，比如下面的命令是执行login云函数</p>
 <pre class="hljs"><code><div>cloudbase functions:run --path ./functions/login
