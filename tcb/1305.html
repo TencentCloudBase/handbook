@@ -454,16 +454,81 @@ code {
 		<div class="sop-content">
    
 <h2 id="135-%E5%AE%9A%E6%97%B6%E8%A7%A6%E5%8F%91%E5%99%A8">13.5 定时触发器</h2>
-<p><strong>任何可以产生事件，触发云函数执行的均可以被称为触发器</strong>，而定时触发器则是可以处理周期性的事情，比如时报、日报、周报等通知提醒，也可以处理倒计时任务，比如节假日、纪念日以及你可以指定一个具体时间的倒计时任务，除此之外，定时触发器还可以用来周期性处理一些定时任务。比如定期清理一些不必要的数据，定期更新集合内的数据。</p>
+<p>任何可以产生事件，触发云函数执行的均可以被称为触发器，而定时触发器则是可以处理周期性的事情，比如时报、日报、周报等通知提醒，也可以处理倒计时任务，比如节假日、纪念日以及你可以指定一个具体时间的倒计时任务，除此之外，定时触发器还可以用来周期性处理一些定时任务。比如定期清理一些不必要的数据，定期更新集合内的数据。</p>
 <h3 id="1351-%E5%AE%9A%E6%97%B6%E8%A7%A6%E5%8F%91%E5%99%A8%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">13.5.1 定时触发器使用说明</h3>
 <h4 id="1%E5%AE%9A%E6%97%B6%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE%E4%B8%8E%E9%83%A8%E7%BD%B2">1、定时触发器的配置与部署</h4>
-<p>在使用定时触发器时，要注意在对某个云函数使用触发器前，首先要保证该云函数在小程序端可以调用成功。config.json配置文件的格式，数组最后一项不能有逗号<code>,</code>；配置文件里不能有注释等；Cron 表达式有七个必需字段，不能多也不能少。</p>
-<p>云函数目录里的config.json文件可以用来配置权限和定时触发器，比如该云函数需要使用到订阅消息和内容安全两个权限，以及每5秒钟定时发送一次订阅消息，config.json的写法如下：</p>
+<p>配置了定时触发器的云函数，会在相应时间点被自动触发，云函数的返回结果不会返回给调用方。在对某个云函数使用定时触发器前，<strong>首先要保证</strong>该云函数在小程序端可以调用成功，更准确的说是能够在不传入参数的情况下在云开发控制台的云端测试能调试成功（小程序端调用有登录态）。</p>
+<p>云函数目录里的config.json文件可以用来配置权限和定时触发器，如果你的云函数目录下面没有这个配置文件，可以自己创建一个，创建的结构目录如下：</p>
+<pre class="hljs"><code><div>test <span class="hljs-comment">//云函数目录        </span>
+├── config.json <span class="hljs-comment">//权限和定时触发器等的配置文件</span>
+├── index.js    <span class="hljs-comment">//云函数</span>
+├── package.json  <span class="hljs-comment">//云函数的依赖管理</span>
+</div></code></pre>
+<p>然后再来在配置文件config.json里进行类似如何格式的配置，config.json严格遵循配置文件所要求的格式，比如数组最后一项不能有逗号<code>,</code>；配置文件里<strong>不能有注释</strong>等</p>
+<ul>
+<li>triggers 字段是触发器数组，但是目前云函数只支持一个触发器，即数组只能填写一个，不可添加多个；</li>
+<li>name 是触发器的名字，最大支持 60 个字符，支持 a-z, A-Z, 0-9, - 和 _，必须以字母开头；</li>
+<li>type 为触发器类型，timer是定时触发器</li>
+<li>config 是触发器的定时配置，里面为cron表达式（后面有介绍），cron有七个必需字段，不能多也不能少（以下为每天早上9点到12点每隔5秒触发一次）；</li>
+</ul>
+<pre class="hljs"><code><div>{
+	<span class="hljs-string">"triggers"</span>: [
+	{
+		<span class="hljs-string">"name"</span>: <span class="hljs-string">"tomylove"</span>,
+		<span class="hljs-string">"type"</span>: <span class="hljs-string">"timer"</span>,
+		<span class="hljs-string">"config"</span>: <span class="hljs-string">"*/5 * 9-12 * * * *"</span>
+	}
+	]
+}
+</div></code></pre>
+<p>当我们在修改触发器配置文件config.json后，首先鼠标右键config.json选择“<strong>云函数增量上传：更新文件</strong>”，然后再右键config.json选择“<strong>上传触发器</strong>”。这里的“云函数增量上传：更新文件”是让云函数端的触发器文件更新；而“上传触发器”则是让触发器开始生效执行。如果在云函数端的触发器没有更新的情况下就“上传触发器”来执行定时触发，文件可能没有更新，执行的还是旧的触发器内容。当我们想暂停或删除触发器时，可以右键选择“<strong>删除触发器</strong>”。</p>
+<h4 id="2cron%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95">2、Cron表达式语法</h4>
+<p>Cron表达式有七个<strong>必填</strong>字段，按空格分隔，既不能多写也不能少写，每一个字段都有它的含义对应着不同的时间点，表达式的取值都为整数且为时间制的范围(<strong>注意月在星期的前面</strong>)：</p>
+<table><thead><tr><th>第一位</th> <th>第二位</th> <th>第三位</th> <th>第四位</th> <th>第五位</th> <th>第六位</th> <th>第七位</th></tr></thead> <tbody><tr><td>秒（0-59 ）</td> <td>分钟（0-59）</td> <td>小时（0-23）</td> <td>日（1-31）</td> <td>月（1-12或三个字母的英文缩写）</td> <td>星期（0-6或三个字母的英文缩写）</td> <td>年（1970~2099 ）</td></tr></tbody></table>
+<p>下面是cron表达式的案例，以及我们需要了解一下cron表达式里的通配符以及直接写数字的含义：</p>
+<ul>
+<li><code>,</code>，表示并集，在时间的表述里是“<strong>和</strong>”的意思，比如在“小时”字段中， <code>1,2,3</code>表示1点、2点和3点；</li>
+<li><code>-</code>，指定范围的所有值，在时间的表述里是“<strong>到</strong>”的意思，比如在“日”字段中，<code>1-15</code>包含指定月份的1号到15号；</li>
+<li><code>*</code>，表示所有值，在时间的表述里是“<strong>每</strong>”的意思，比如在“小时”字段中，<code>*</code>表示每小时；</li>
+<li><code>/</code>，指定步长，在时间的表述里是“<strong>隔</strong>”的意思，比如在“秒”字段中，<code>*/5</code>表示每隔5秒；</li>
+<li>直接写数字，在时间的表述里是“<strong>第</strong>”（时间点）的意思，比如在“月”字段中，<code>5</code>表示每月的第5日；</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">//表示每隔5秒触发一次，</span>
+*<span class="hljs-regexp">/5  *  *  *  *  *  * 
+
+/</span><span class="hljs-regexp">/表示在每月的1日的凌晨2点触发
+0  0  2  1  *  *  * 
+
+/</span><span class="hljs-regexp">/表示在周一到周五每天上午10:15触发
+0  15  10  *  *  MON-FRI * 
+
+/</span><span class="hljs-regexp">/表示在每天上午10点，下午2点，4点触发
+0  0  10,14,16  *  *  *  * 
+
+/</span><span class="hljs-regexp">/表示在每天上午9点到下午5点内每半小时触发
+0  */</span><span class="hljs-number">30</span>  <span class="hljs-number">9</span><span class="hljs-number">-17</span>  *  *  *  * 
+
+<span class="hljs-comment">//表示在每个星期三中午12点触发</span>
+<span class="hljs-number">0</span>  <span class="hljs-number">0</span>  <span class="hljs-number">12</span>  *  *  WED * 
+</div></code></pre>
+<blockquote>
+<p>定时触发器的Cron语法<strong>没法实现</strong>每隔90秒钟或90分钟发送一次这样的效果，因为90秒超过了秒的时间制上限60，而cron在跨位组合（比如90秒需要结合秒和分）上无法覆盖所有的时间；除此之外，云开发的触发器暂时不支持多个定时触发器的叠加；在 Cron 表达式中的“日”和“星期”字段同时指定值时，两者为“或”的关系，即两者的条件均生效；值得一提的是，尽管云函数的时区为UTC+0 时区，但是定时触发器的时间还是北京时间。</p>
+</blockquote>
+<h3 id="1352-%E7%94%A8%E5%AE%9A%E6%97%B6%E8%A7%A6%E5%8F%91%E5%99%A8%E8%B0%83%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0">13.5.2 用定时触发器调用云函数</h3>
+<p>定时触发器的使用非常简单，使用开发者工具新建一个云函数比如trigger，然后在index.js里输入以下代码：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">const</span> cloud = <span class="hljs-built_in">require</span>(<span class="hljs-string">'wx-server-sdk'</span>)
+cloud.init({
+	<span class="hljs-attr">env</span>: cloud.DYNAMIC_CURRENT_ENV,
+})
+exports.main = <span class="hljs-keyword">async</span> (event, context) =&gt; {
+	<span class="hljs-built_in">console</span>.log(event)
+	<span class="hljs-keyword">return</span> event
+}
+</div></code></pre>
+<p>再在trigger云函数目录下的config.json（如果没有这个文件，就创建一个），然后输入以下触发器，为了调试方便，我们可以每隔5秒触发一次：</p>
 <pre class="hljs"><code><div>{
 	<span class="hljs-string">"permissions"</span>: {
 	<span class="hljs-string">"openapi"</span>: [
-		<span class="hljs-string">"subscribeMessage.send"</span>,
-		<span class="hljs-string">"security.imgSecCheck"</span>
 	]
 	},
 	<span class="hljs-string">"triggers"</span>: [
@@ -475,38 +540,58 @@ code {
 	]
 }
 </div></code></pre>
-<p>务必要注意的是<strong>更新触发器文件</strong>和<strong>上传触发器</strong>两个概念的不同。当我们在修改触发器配置文件config.json后，首先鼠标右键config.json选择“云函数增量上传：更新文件”，然后再右键config.json选择“上传触发器”。这里的“云函数增量上传：更新文件”是让云函数端的触发器文件更新；而“上传触发器”则是让触发器开始生效执行。不能在云函数端的触发器没有更新的情况下就“上传触发器”来执行定时触发，因为你的文件没有更新，执行的还是旧的触发器内容。</p>
-<h4 id="2cron%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95">2、Cron表达式语法</h4>
-<p>下面展示了一些 Cron 表达式和相关含义的示例：</p>
-<ul>
-<li>*/5  *  *  *  *  *  * 表示每5秒触发一次</li>
-<li>0  0  2  1  *  *  * 表示在每月的1日的凌晨2点触发</li>
-<li>0  15  10  *  *  MON-FRI * 表示在周一到周五每天上午10:15触发</li>
-<li>0  0  10,14,16  *  *  *  * 表示在每天上午10点，下午2点，4点触发</li>
-<li>0  */30  9-17  *  *  *  * 表示在每天上午9点到下午5点内每半小时触发</li>
-<li>0  0  12  *  *  WED * 表示在每个星期三中午12点触发</li>
-</ul>
-<p>在 Cron 表达式中的“日”和“星期”字段同时指定值时，两者为“或”的关系，即两者的条件均生效。更多内容大家可以查看技术文档。</p>
+<p>然后分别右键index.js和config.json，选择“云函数增量上传：更新文件”，然后再来右键config.json选择“上传触发器”。云函数就会每隔5秒自动触发，相关的日志我们可以在开发者工具的云开发控制台以及腾讯云云开发网页控制台的云函数的日志里查看。</p>
+<p>注意小程序端调用trigger云函数返回的event对象，和使用定时触发器返回的event对象的不同，用定时触发器触发云函数是获取不到openId的，同时这里有一个Time时间是时区为UTC+0 的时间，比北京时间晚8个小时：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//在小程序端调用trigger云函数之后返回的event对象</span>
+{
+	<span class="hljs-string">"userInfo"</span>:{
+	<span class="hljs-string">"appId"</span>:<span class="hljs-string">"wxda99******7046"</span>,
+	<span class="hljs-string">"openId"</span>:<span class="hljs-string">"oUL-m5F******buEDsn8"</span>
+	}
+}
+
+<span class="hljs-comment">//使用定时触发器触发云函数之后返回的event对象</span>
+{
+	<span class="hljs-string">"Message"</span>:<span class="hljs-string">""</span>,
+	<span class="hljs-string">"Time"</span>:<span class="hljs-string">"2020-06-11T11:43:35Z"</span>,
+	<span class="hljs-string">"TriggerName"</span>:<span class="hljs-string">"tomylove"</span>,
+	<span class="hljs-string">"Type"</span>:<span class="hljs-string">"timer"</span>,
+	<span class="hljs-string">"userInfo"</span>:{
+	<span class="hljs-string">"appId"</span>:<span class="hljs-string">"wxda99********46"</span>
+	}
+}
+</div></code></pre>
+<h3 id="1353%E5%AE%9A%E6%97%B6%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E5%BA%94%E7%94%A8">13.5.3、定时触发器的应用</h3>
+<p>定时触发器的应用非常广泛，以下仅举一些常用案例，并加以说明：</p>
+<h4 id="1%E7%BB%93%E5%90%88%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81">1、结合消息推送</h4>
+<p>这里的消息推送不仅仅只是指订阅消息，还可以是统一服务消息、公众号的消息（可以用云函数开发微信公众号）、小程序内自己开发的通知（只是用户只有在打开小程序时才能看到）、Email邮件等等。</p>
+<p>比如用户订阅了日报、周报、月报等<strong>周期性的</strong>通知提醒或者我们需要给用户发送一些汇总信息，就可以固定写一个定时触发器，比如我们需要给指定用户发送工作周报，每周五晚上17点30分就定时从数据库获取数据发送消息，cron表达式写法如下：</p>
+<pre class="hljs"><code><div>*  <span class="hljs-number">30</span>  <span class="hljs-number">17</span>  *  *  FRI  * 
+</div></code></pre>
+<p>还可以用来处理一些倒计时（指定时间点）的任务，比如节假日、纪念日以及一些活动时间节点（定时触发器目前只能一个云函数配一个触发器，但是可以提前管理），比如我们希望在六一儿童节的早上9点调用云函数给指定用户群体发送消息：</p>
+<pre class="hljs"><code><div><span class="hljs-number">0</span>  <span class="hljs-number">0</span>  <span class="hljs-number">9</span>  <span class="hljs-number">1</span>  <span class="hljs-number">6</span>  *  * 
+</div></code></pre>
+<p>当然这样的具体时间点显得过于的不灵活，但是如果把<strong>时间与云开发数据库</strong>结合起来，灵活性就会大很多，比如在运营上每天早上11点是你们用户访问最多的时间点，你只需要写一个云函数，把所有的活动都在这个时间点来推送，让定时触发器每天这个时间点都触发，有活动（数据库里有数据）就会发消息，如果没有就不发（云函数调用一次的成本极低）。</p>
+<p>如果是实时数据，我们还可以把定时触发器的频率调高，每5秒就触发一次，比如我们的数据库只要有最新的数据，就会发消息给指定用户。尽管不是完全的实时，但是5秒的频率和实时的差别也就不大了。你也可以根据情况，来调整触发器的频率，毕竟5秒和1分钟的频率给用户的体验差异并没有太大，但是成本却是12倍的关系。</p>
+<p>可能你还希望在指定的时间段才触发云函数，比如你只希望在工作日、或者在早上9点到晚上18点才触发，在指定的时间段才触发既可以让触发更精准不扰民，也可以节约成本，比如下面的触发器就是工作日早上9点到12点和下午14点到18点这个时间段，每5秒触发一次。</p>
+<pre class="hljs"><code><div>*<span class="hljs-regexp">/5  *  9-12,14-18 * MON,TUE,WED,THU,FRI * 
+</span></div></code></pre>
 <blockquote>
-<p>定时触发器的Cron语法<strong>没法实现</strong>每隔90秒钟或90分钟发送一次这样的效果。</p>
+<p>从以上案例我们可以了解到，云函数的定时触发可以来自于cron表达式的配置，我们可以指定时间点时间段和频率来达到我们想要的效果，同时这个时间“也可以来自于数据库的配置”（伪装），意思是我们可以设置触发器的时间段或频率，如果数据库里有数据就发送，没有数据就不发送，这样就可以达到触发器在时间上的灵活性了。</p>
 </blockquote>
-<h3 id="1352-%E7%94%A8%E5%AE%9A%E6%97%B6%E8%A7%A6%E5%8F%91%E5%99%A8%E8%B0%83%E7%94%A8%E4%BA%91%E5%87%BD%E6%95%B0">13.5.2 用定时触发器调用云函数</h3>
-<p>建立汇总表，首先不用考虑分库分表，使用定时器定时去汇总。</p>
-<h3 id="1353%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E5%BA%94%E7%94%A8">13.5.3、定时器的应用</h3>
-<p>定时器的应用是非常广泛的</p>
-<h4 id="1%E6%89%A7%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%B8%85%E7%90%86%E4%B8%8E%E7%BB%B4%E6%8A%A4">1、执行数据库的清理与维护</h4>
-<p>您可以根据用户行为修改实时数据库，使系统保持最新状态，并且整洁有序。例如，在基于实时数据库构建的聊天室应用中，您可以监控写入事件，并从用户的消息中擦除不当或亵渎性文字。
-定期删除过期数据；</p>
-<h4 id="2%E5%AF%86%E9%9B%86%E5%9E%8B%E4%BB%BB%E5%8A%A1">2、密集型任务</h4>
-<p>密集型任务分流</p>
-<p>自动审核上传的图像
-向用户发送批量电子邮件
-定期汇总数据
-处理尚未完成的工作队列</p>
-<p>数据的分批执行
-Insert语句中，根据测试，批量一次插入1000条时效率最高，多于1000条时，要拆分，多次进行同样的插入，应该合并批量进行。注意query语句的长度要小于mysqld的参数 max_allowed_packet
-查询条件中各种逻辑操作符性能顺序是and,or,in,因此在查询条件中应该尽量避免使用在大集合中使用in</p>
-<div class="sop-footer"> 
+<h4 id="2%E5%AE%9E%E6%97%B6%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE">2、实时获取数据</h4>
+<p>有的时候我们的数据并不是来自于数据库，而是来自于第三方服务，比如前面介绍过的历史上的今天的API，天气的API，知乎日报的API等等，以及一些webhook，这些API和第三方服务提供的是json格式的文件，API的数据也会随时更新，但是它们更新了却并不会主动通知我们，这时我们可以使用定时触发器向这些API发起请求，如果数据出现更新，我们就可以将更新的数据存储到我们的数据库或者进行其他处理，比如企业微信的机器人等机器人通知服务就是如此。</p>
+<p>当然定期获取的数据还可以是爬虫，比如我们可以定期抓取指定关键词的新闻或者指定网站的动态，当爬虫获取到了不同的数据的时候，就将最新的动态以机器人消息或者其他方式进行及时的处理。</p>
+<p>也就是说，我们无法实时监听到第三方API或者网站数据的变动，但是可以用定时触发器来发起请求或者爬虫抓取数据，通过数据的变化来达到“实时”获取数据的目的。</p>
+<h4 id="3%E8%87%AA%E5%8A%A8%E5%8C%96%E5%A4%84%E7%90%86">3、自动化处理</h4>
+<p>在数据库的设计里，我们就提到有时候需要对数据库里的数据进行定期的备份与删除等清理维护工作，比如超过一定时间的日志，具有很强时效性的活动数据，以及为了性能考虑而做的虚假删除（数据库性能与优化有介绍）等，毕竟数据库有一定的存储成本而且过多无用数据也会影响数据库的性能，我们可以写一个云函数用定时触发器来执行此类任务。</p>
+<p>我们还可以在用户并发比较少的时间段（比如凌晨几点）来处理一些比较耗云函数、数据库性能的任务，比如图片的审核与裁剪、缩略等处理，用户评论是否包含敏感词汇（尽管经过安全处理，但是有时候我们还会设置特别的敏感词），数据的汇总，云存储里废弃文件的删除，用户信息是否完整等等。</p>
+<p>也就是说，结合定时触发器，我们可以实现一些任务的自动化处理。</p>
+<h4 id="3%E5%AF%86%E9%9B%86%E5%9E%8B%E4%BB%BB%E5%8A%A1%E5%88%86%E6%B5%81">3、密集型任务分流</h4>
+<p>我们知道云函数在处理一些复杂性的任务时是有一些限制的，一是执行时间的限制，建议在设置时执行时间一般不要超过20s，最长不要超过60s；二是并发的限制，云函数最大的并发为1000；三是云函数在查询数据库时一次可以获取最多1000条的数据，面对这三个限制，我们应该如何处理密集型的任务呢，比如发送100万封邮件，导出几百万条数据到Excel，发送十万级的订阅消息或消息等等，这个时候就可以使用到定时触发器来处理了。</p>
+<p>借助于定时触发器，我们可以将需要耗时较长、对并发要求较高以及数据库请求等的任务进行<strong>分批处理</strong>，比如我们要给100万人发邮件：云函数发起数据库请求，一次只请求1000条<strong>未发送过邮件</strong>的用户（用where条件查询某个字段，比如<code>status:false</code>），然后将邮件发给1000个人（可以参考前面的邮件发送），发完邮件并对这1000条数据进行标记（比如使用更新指令将status改为true），这样下次查询未发送过邮件的用户时，就不会重复发送了。通过定时触发器，每2秒执行一次发送任务，几十分钟就可以处理完任务。</p>
+
+			<div class="sop-footer"> 
 	<hr><p><a href="https://www.zhihu.com/people/lidongyx" target="_blank">李东bbsky</a>：致力于互联网技术技能的普及。Tell me and I forget .  Teach me and I remember.  Involve me and I learn. </p>
 </div>
 </div>
